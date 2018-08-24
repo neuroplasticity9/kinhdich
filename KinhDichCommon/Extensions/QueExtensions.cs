@@ -35,7 +35,7 @@ namespace KinhDichCommon
         }
 
 
-        public static string GetLucThan(this Que que, 
+        public static string GetQueDesc(this Que que, 
                                         CanChi nhatThan, CanChi nguyetKien,
                                         bool isHao6Dong = false, bool isHao5Dong = false, bool isHao4Dong = false,
                                         bool isHao3Dong = false, bool isHao2Dong = false, bool isHao1Dong = false)
@@ -88,7 +88,7 @@ namespace KinhDichCommon
             {
                 result = result + "\t";
             }
-            result = result  + $"{hao.LucThan.Name}      \t{hao.Chi.Name} {hao.Chi.Hanh.Name}\t\t";
+            result = result  + $"{hao.Chi.Name} {hao.Chi.Hanh.Name}\t\t{hao.LucThan.Name}      \t";
 
             if (hao.The)
             {
@@ -103,12 +103,31 @@ namespace KinhDichCommon
                 result = result + "\t";
             }
             
-            // Nhật thần
             if (nhatThan.IsLamKhong(hao.Chi))
             {
                 result = result + ", lâm không";
             }
 
+            // Nguyệt kiến
+            if (nguyetKien.Chi.Xung == hao.Chi)
+            {
+                result = result + ", nguyệt phá";
+            }
+            else if (nguyetKien.Chi.Hop == hao.Chi)
+            {
+                result = result + ", nguyệt hợp";
+            }
+
+            if (nguyetKien.IsVuongTuong(hao.Chi))
+            {
+                result = result + ", nguyệt vượng";
+            }
+            else if (nguyetKien.IsHuuTu(hao.Chi))
+            {
+                result = result + ", nguyệt tù";
+            }
+
+            // Nhật thần
             if (nhatThan.Chi.Xung == hao.Chi)
             {
                 if (nhatThan.IsVuongTuong(hao.Chi))
@@ -130,25 +149,6 @@ namespace KinhDichCommon
                 {
                     result = result + ", nhật tù";
                 }
-            }
-
-            // Nguyệt kiến
-            if (nguyetKien.Chi.Xung == hao.Chi)
-            {
-                result = result + ", nguyệt phá";
-            }
-            else if (nguyetKien.Chi.Hop == hao.Chi)
-            {
-                result = result + ", nguyệt hợp";
-            }
-
-            if (nguyetKien.IsVuongTuong(hao.Chi))
-            {
-                result = result + ", nguyệt vượng";
-            }
-            else if (nguyetKien.IsHuuTu(hao.Chi))
-            {
-                result = result + ", nguyệt tù";
             }
 
             return result;

@@ -1,5 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Linq;
+using static KinhDichCommon.DiaChi;
+using static KinhDichCommon.NguHanh;
 
 namespace KinhDichCommon
 {
@@ -87,8 +89,14 @@ namespace KinhDichCommon
         /// <returns></returns>
         public bool IsHuu(Chi chi)
         {
+            if (IsDuKhi(chi))
+            {
+                return false;
+            }
+
             return Chi.Hanh.SinhBoi == chi.Hanh;
         }
+
 
         /// <summary>
         /// Tù: khắc nhật thần hoặc nguyệt kiến nhưng nhật thần nguyệt kiến mạnh nên không khắc được.
@@ -97,6 +105,11 @@ namespace KinhDichCommon
         /// <returns></returns>
         public bool IsTu(Chi chi)
         {
+            if (IsDuKhi(chi))
+            {
+                return false;
+            }
+
             return Chi.Hanh.KhacBoi == chi.Hanh;
         }
 
@@ -107,7 +120,41 @@ namespace KinhDichCommon
         /// <returns></returns>
         public bool IsTuyet(Chi chi)
         {
+            if (IsDuKhi(chi))
+            {
+                return false;
+            }
+
             return Chi.Hanh.Khac == chi.Hanh;
+        }
+
+        private bool IsDuKhi(Chi chi)
+        {
+            // Tháng 3 kiến Thìn, Mộc còn dư khí mùa xuân.
+            if (Chi == Thin && chi.Hanh == Moc)
+            {
+                return true;
+            }
+
+            // Tháng 6 kiến Mùi, Hỏa còn dư khí mùa hạ.
+            if (Chi == Mui && chi.Hanh == Hoa)
+            {
+                return true;
+            }
+
+            // Tháng 9 kiến Tuất, Kim còn dư khí mùa thu.
+            if (Chi == Tuat && chi.Hanh == Kim)
+            {
+                return true;
+            }
+
+            // Tháng 12 kiến Sửu, Thủy còn dư khí mùa đông.
+            if (Chi == Suu && chi.Hanh == Thuy)
+            {
+                return true;
+             }
+
+            return false;
         }
     }
 }

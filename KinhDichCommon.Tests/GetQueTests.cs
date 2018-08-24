@@ -35,11 +35,11 @@ namespace KinhDichCommon.Tests
             // Dia Thien Thai
             Que queThai = QueDich.GetQue(Khon, Kien);
 
-            var aasdfds = queThai.GetLucThan(nhatThan, nguyetKien);
+            var aasdfds = queThai.GetQueDesc(nhatThan, nguyetKien);
 
             // Thuy Thien Nhu
             var queNhu = QueDich.GetQue(Kham, Kien);
-            var csdffd = queNhu.GetLucThan(nhatThan, nguyetKien);
+            var csdffd = queNhu.GetQueDesc(nhatThan, nguyetKien);
 
 
         }
@@ -68,7 +68,7 @@ namespace KinhDichCommon.Tests
 
             // Dia Phong Thang
             var que = QueDich.GetQue(Doai, Doai);
-            var csdffdfaa = que.GetLucThan(nhatThan, nguyetKien);
+            var csdffdfaa = que.GetQueDesc(nhatThan, nguyetKien);
         }
     }
 }
