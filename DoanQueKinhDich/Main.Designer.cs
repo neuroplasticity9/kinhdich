@@ -148,9 +148,12 @@
             // 
             // txtQueChu
             // 
+            this.txtQueChu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtQueChu.Location = new System.Drawing.Point(18, 278);
             this.txtQueChu.Name = "txtQueChu";
-            this.txtQueChu.Size = new System.Drawing.Size(583, 232);
+            this.txtQueChu.Size = new System.Drawing.Size(618, 262);
             this.txtQueChu.TabIndex = 11;
             this.txtQueChu.Text = "";
             // 
@@ -218,9 +221,11 @@
             // 
             // txtQueBien
             // 
-            this.txtQueBien.Location = new System.Drawing.Point(611, 278);
+            this.txtQueBien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtQueBien.Location = new System.Drawing.Point(642, 278);
             this.txtQueBien.Name = "txtQueBien";
-            this.txtQueBien.Size = new System.Drawing.Size(580, 232);
+            this.txtQueBien.Size = new System.Drawing.Size(603, 262);
             this.txtQueBien.TabIndex = 18;
             this.txtQueBien.Text = "";
             // 
@@ -335,7 +340,7 @@
             this.AcceptButton = this.btnGo;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1204, 526);
+            this.ClientSize = new System.Drawing.Size(1258, 556);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbxThangChi);
             this.Controls.Add(this.cbxThangCan);

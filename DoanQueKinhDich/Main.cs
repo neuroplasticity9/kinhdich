@@ -54,10 +54,10 @@ namespace DoanQueKinhDich
 
         private void Main_Load(object sender, EventArgs e)
         {
-            cbxNgayCan.SelectedIndex = 0;
+            cbxNgayCan.SelectedIndex = 6;
             cbxNgayChi.SelectedIndex = 0;
             cbxThangCan.SelectedIndex = 0;
-            cbxThangChi.SelectedIndex = 0;
+            cbxThangChi.SelectedIndex = 2;
         }
     }
 }
