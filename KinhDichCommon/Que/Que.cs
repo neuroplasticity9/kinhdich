@@ -20,8 +20,25 @@ namespace KinhDichCommon
         public Cung NgoaiQuai => BatQuai.GetCung(Hao6.Duong, Hao5.Duong, Hao4.Duong);
         public Cung NoiQuai => BatQuai.GetCung(Hao3.Duong, Hao2.Duong, Hao1.Duong);
 
-        public string QueDesc => GetQueDesc();
+        /// <summary>
+        /// Quẻ lục hợp.
+        /// </summary>
+        /// <returns></returns>
+        public bool IsLucHop()
+        {
+            return Hao1.Chi.Hop == Hao4.Chi && Hao2.Chi.Hop == Hao5.Chi && Hao3.Chi.Hop == Hao6.Chi;
+        }
 
+        /// <summary>
+        /// Quẻ lục xung.
+        /// </summary>
+        /// <returns></returns>
+        public bool IsLucXung()
+        {
+            return Hao1.Chi.Xung == Hao4.Chi && Hao2.Chi.Xung == Hao5.Chi && Hao3.Chi.Xung == Hao6.Chi;
+        }
+
+        public string QueDesc => GetQueDesc();
         private string GetQueDesc()
         {
             var sb = new StringBuilder();

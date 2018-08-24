@@ -20,13 +20,28 @@ namespace KinhDichCommon
 
         public bool Ung { get; set; }
 
-        internal Hao Clone()
+        internal Hao CloneBasic()
         {
-            var hao = new Hao{
+            var hao = new Hao
+            {
+                HanhCuaQue = HanhCuaQue,
                 Id = Id,
                 Duong = Duong,
                 Chi = Chi,
-                HanhCuaQue = HanhCuaQue
+            };
+
+            return hao;
+        }
+
+        internal Hao CloneChoQueBien(Hanh hanhCuaQue)
+        {
+            var hao = new Hao{
+                HanhCuaQue = hanhCuaQue,
+                Id = Id,
+                Duong = Duong,
+                Chi = Chi,
+                The = The,
+                Ung = Ung,
             };
 
             return hao;

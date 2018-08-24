@@ -16,12 +16,14 @@ namespace KinhDichCommon.Tests
             Que que = QueDich.GetQue(true, true, true, true, true, true);
             Assert.AreEqual(que, QueKien);
 
-            var a = que.GetLucThan();
-
             // Khon Vi Dia
-            que = QueDich.GetQue(Khon, Khon);
+            que = QueDich.GetQue(Khon);
             Assert.AreEqual(que, QueKhon);
 
+            // Dia Thien Thai
+            que = QueDich.GetQue(Khon, Kien);
+            Assert.AreEqual(que.NgoaiQuai, Khon);
+            Assert.AreEqual(que.NoiQuai, Kien);
         }
 
         [TestMethod]
@@ -31,15 +33,32 @@ namespace KinhDichCommon.Tests
             var nguyetKien = new CanChi { Can = Giap, Chi = Dan };
 
             // Dia Thien Thai
-            Que que = QueDich.GetQue(Khon, Kien);
+            Que queThai = QueDich.GetQue(Khon, Kien);
 
-            var aasdfds = que.GetLucThan(nhatThan, nguyetKien);
+            var aasdfds = queThai.GetLucThan(nhatThan, nguyetKien);
 
             // Thuy Thien Nhu
-            que = QueDich.GetQue(Kham, Kien);
-            var csdffd = que.GetLucThan(nhatThan, nguyetKien);
+            var queNhu = QueDich.GetQue(Kham, Kien);
+            var csdffd = queNhu.GetLucThan(nhatThan, nguyetKien);
+
+
         }
 
+        [TestMethod]
+        public void GetQueBienTest()
+        {
+            // Dia Thien Thai
+            Que queThai = QueDich.GetQue(Khon, Kien);
+
+            // Thuy Thien Nhu
+            var queNhu = QueDich.GetQue(Kham, Kien);
+
+            // Động hào 5 của quẻ Thái được quẻ Nhu.
+            var queBien = QueDich.GetQueBien(queThai, dongHao5: true);
+            
+            Assert.AreEqual(queNhu.NoiQuai, queBien.NoiQuai);
+            Assert.AreEqual(queNhu.NgoaiQuai, queBien.NgoaiQuai);
+        }
 
         [TestMethod]
         public void GetQueTest()

@@ -39,7 +39,27 @@ namespace KinhDichCommon
         {
             return chi == Tuan.Khong1 || chi == Tuan.Khong2;
         }
-        
+
+        /// <summary>
+        /// Vượng hoặc tướng.
+        /// </summary>
+        /// <param name="chi"></param>
+        /// <returns></returns>
+        public bool IsVuongTuong(Chi chi)
+        {
+            return IsVuong(chi) || IsTuong(chi);
+        }
+
+        /// <summary>
+        /// Hưu tù.
+        /// </summary>
+        /// <param name="chi"></param>
+        /// <returns></returns>
+        public bool IsHuuTu(Chi chi)
+        {
+            return IsHuu(chi) || IsTu(chi) || IsTuyet(chi);
+        }
+
         /// <summary>
         /// Vượng, cùng hành với nhật thìn hoặc nguyệt kiến.
         /// </summary>

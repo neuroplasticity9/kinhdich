@@ -200,12 +200,12 @@ namespace KinhDichCommon
             {
                 QueThuan = queThuan,
                 Hanh = queTruoc.Hanh,
-                Hao6 = queTruoc.Hao6.Clone(),
-                Hao5 = queTruoc.Hao5.Clone(),
-                Hao4 = queTruoc.Hao4.Clone(),
-                Hao3 = queTruoc.Hao3.Clone(),
-                Hao2 = queTruoc.Hao2.Clone(),
-                Hao1 = queTruoc.Hao1.Clone(),
+                Hao6 = queTruoc.Hao6.CloneBasic(),
+                Hao5 = queTruoc.Hao5.CloneBasic(),
+                Hao4 = queTruoc.Hao4.CloneBasic(),
+                Hao3 = queTruoc.Hao3.CloneBasic(),
+                Hao2 = queTruoc.Hao2.CloneBasic(),
+                Hao1 = queTruoc.Hao1.CloneBasic(),
             };
 
             if (soLanBien == 1)
@@ -286,15 +286,83 @@ namespace KinhDichCommon
             que.Hao4.Chi = queThuan.Hao4.Chi;
         }
 
+        /// <summary>
+        /// Lấy quẻ dựa trên âm dương của 6 hào.
+        /// </summary>
+        /// <param name="duong6"></param>
+        /// <param name="duong5"></param>
+        /// <param name="duong4"></param>
+        /// <param name="duong3"></param>
+        /// <param name="duong2"></param>
+        /// <param name="duong1"></param>
+        /// <returns></returns>
         public static Que GetQue(bool duong6, bool duong5, bool duong4, bool duong3, bool duong2, bool duong1)
         {
             return All.FirstOrDefault(q => q.Hao6.Duong == duong6 && q.Hao5.Duong == duong5 && q.Hao4.Duong == duong4 &&
                                            q.Hao3.Duong == duong3 && q.Hao2.Duong == duong2 && q.Hao1.Duong == duong1);
         }
 
+        /// <summary>
+        /// Lấy quẻ dựa trên ngoại quái và nội quái.
+        /// </summary>
+        /// <param name="ngoaiQuai"></param>
+        /// <param name="noiQuai"></param>
+        /// <returns></returns>
         public static Que GetQue(Cung ngoaiQuai, Cung noiQuai)
         {
             return GetQue(ngoaiQuai.Duong3, ngoaiQuai.Duong2, ngoaiQuai.Duong1, noiQuai.Duong3, noiQuai.Duong2, noiQuai.Duong1);
+        }
+
+        /// <summary>
+        /// Lấy quẻ thuần (nội quái và ngoại quái giống nhau).
+        /// </summary>
+        /// <param name="cungThuan"></param>
+        /// <returns></returns>
+        public static Que GetQue(Cung cungThuan)
+        {
+            return GetQue(cungThuan, cungThuan);
+        }
+
+        /// <summary>
+        /// Từ quẻ chủ lấy quẻ biến.
+        /// </summary>
+        /// <param name="queChu"></param>
+        /// <param name="dongHao6"></param>
+        /// <param name="dongHao5"></param>
+        /// <param name="dongHao4"></param>
+        /// <param name="dongHao3"></param>
+        /// <param name="dongHao2"></param>
+        /// <param name="dongHao1"></param>
+        /// <returns></returns>
+        public static Que GetQueBien(Que queChu, bool dongHao6 = false, bool dongHao5 = false, bool dongHao4 = false, bool dongHao3 = false, bool dongHao2 = false, bool dongHao1 = false)
+        {
+            var queBienGoc = GetQue(dongHao6 ? !queChu.Hao6.Duong : queChu.Hao6.Duong,
+                                    dongHao5 ? !queChu.Hao5.Duong : queChu.Hao5.Duong,
+                                    dongHao4 ? !queChu.Hao4.Duong : queChu.Hao4.Duong,
+                                    dongHao3 ? !queChu.Hao3.Duong : queChu.Hao3.Duong,
+                                    dongHao2 ? !queChu.Hao2.Duong : queChu.Hao2.Duong,
+                                    dongHao1 ? !queChu.Hao1.Duong : queChu.Hao1.Duong);
+
+            // Hành của quẻ biến sẽ theo quẻ chủ.
+            var hanhGoc = queChu.Hanh;
+            var queBien = new Que
+            {
+                Id = queBienGoc.Id,
+                Name = queBienGoc.Name,
+                NameShort = queBienGoc.NameShort,
+                NameChinese = queBienGoc.NameChinese,
+                Desc = queBienGoc.Desc,
+                QueThuan = queBienGoc.QueThuan,
+                Hanh = hanhGoc,
+                Hao6 = queBienGoc.Hao6.CloneChoQueBien(hanhGoc),
+                Hao5 = queBienGoc.Hao5.CloneChoQueBien(hanhGoc),
+                Hao4 = queBienGoc.Hao4.CloneChoQueBien(hanhGoc),
+                Hao3 = queBienGoc.Hao3.CloneChoQueBien(hanhGoc),
+                Hao2 = queBienGoc.Hao2.CloneChoQueBien(hanhGoc),
+                Hao1 = queBienGoc.Hao1.CloneChoQueBien(hanhGoc),
+            };
+
+            return queBien;
         }
     }
 }
