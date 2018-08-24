@@ -45,6 +45,12 @@
             this.chkHao5Dong = new System.Windows.Forms.CheckBox();
             this.chkHao6Dong = new System.Windows.Forms.CheckBox();
             this.txtQueBien = new System.Windows.Forms.RichTextBox();
+            this.cbxNgayCan = new System.Windows.Forms.ComboBox();
+            this.cbxNgayChi = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbxThangChi = new System.Windows.Forms.ComboBox();
+            this.cbxThangCan = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // dtpDob
@@ -52,7 +58,7 @@
             this.dtpDob.Location = new System.Drawing.Point(18, 13);
             this.dtpDob.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDob.Name = "dtpDob";
-            this.dtpDob.Size = new System.Drawing.Size(265, 22);
+            this.dtpDob.Size = new System.Drawing.Size(255, 22);
             this.dtpDob.TabIndex = 0;
             // 
             // mcDate
@@ -65,7 +71,7 @@
             // 
             // btnGo
             // 
-            this.btnGo.Location = new System.Drawing.Point(333, 220);
+            this.btnGo.Location = new System.Drawing.Point(704, 200);
             this.btnGo.Margin = new System.Windows.Forms.Padding(4);
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(310, 28);
@@ -77,7 +83,7 @@
             // chkHao6
             // 
             this.chkHao6.AutoSize = true;
-            this.chkHao6.Location = new System.Drawing.Point(333, 50);
+            this.chkHao6.Location = new System.Drawing.Point(704, 30);
             this.chkHao6.Name = "chkHao6";
             this.chkHao6.Size = new System.Drawing.Size(117, 21);
             this.chkHao6.TabIndex = 5;
@@ -87,7 +93,7 @@
             // chkHao5
             // 
             this.chkHao5.AutoSize = true;
-            this.chkHao5.Location = new System.Drawing.Point(333, 77);
+            this.chkHao5.Location = new System.Drawing.Point(704, 57);
             this.chkHao5.Name = "chkHao5";
             this.chkHao5.Size = new System.Drawing.Size(117, 21);
             this.chkHao5.TabIndex = 6;
@@ -97,7 +103,7 @@
             // chkHao4
             // 
             this.chkHao4.AutoSize = true;
-            this.chkHao4.Location = new System.Drawing.Point(333, 104);
+            this.chkHao4.Location = new System.Drawing.Point(704, 84);
             this.chkHao4.Name = "chkHao4";
             this.chkHao4.Size = new System.Drawing.Size(117, 21);
             this.chkHao4.TabIndex = 7;
@@ -109,7 +115,7 @@
             this.chkHao3.AutoSize = true;
             this.chkHao3.Checked = true;
             this.chkHao3.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkHao3.Location = new System.Drawing.Point(333, 131);
+            this.chkHao3.Location = new System.Drawing.Point(704, 111);
             this.chkHao3.Name = "chkHao3";
             this.chkHao3.Size = new System.Drawing.Size(117, 21);
             this.chkHao3.TabIndex = 8;
@@ -121,7 +127,7 @@
             this.chkHao2.AutoSize = true;
             this.chkHao2.Checked = true;
             this.chkHao2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkHao2.Location = new System.Drawing.Point(333, 158);
+            this.chkHao2.Location = new System.Drawing.Point(704, 138);
             this.chkHao2.Name = "chkHao2";
             this.chkHao2.Size = new System.Drawing.Size(117, 21);
             this.chkHao2.TabIndex = 9;
@@ -133,7 +139,7 @@
             this.chkHao1.AutoSize = true;
             this.chkHao1.Checked = true;
             this.chkHao1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkHao1.Location = new System.Drawing.Point(333, 185);
+            this.chkHao1.Location = new System.Drawing.Point(704, 165);
             this.chkHao1.Name = "chkHao1";
             this.chkHao1.Size = new System.Drawing.Size(117, 21);
             this.chkHao1.TabIndex = 10;
@@ -151,7 +157,7 @@
             // chkHao1Dong
             // 
             this.chkHao1Dong.AutoSize = true;
-            this.chkHao1Dong.Location = new System.Drawing.Point(534, 185);
+            this.chkHao1Dong.Location = new System.Drawing.Point(905, 165);
             this.chkHao1Dong.Name = "chkHao1Dong";
             this.chkHao1Dong.Size = new System.Drawing.Size(109, 21);
             this.chkHao1Dong.TabIndex = 17;
@@ -161,7 +167,7 @@
             // chkHao2Dong
             // 
             this.chkHao2Dong.AutoSize = true;
-            this.chkHao2Dong.Location = new System.Drawing.Point(534, 158);
+            this.chkHao2Dong.Location = new System.Drawing.Point(905, 138);
             this.chkHao2Dong.Name = "chkHao2Dong";
             this.chkHao2Dong.Size = new System.Drawing.Size(109, 21);
             this.chkHao2Dong.TabIndex = 16;
@@ -171,7 +177,7 @@
             // chkHao3Dong
             // 
             this.chkHao3Dong.AutoSize = true;
-            this.chkHao3Dong.Location = new System.Drawing.Point(534, 131);
+            this.chkHao3Dong.Location = new System.Drawing.Point(905, 111);
             this.chkHao3Dong.Name = "chkHao3Dong";
             this.chkHao3Dong.Size = new System.Drawing.Size(109, 21);
             this.chkHao3Dong.TabIndex = 15;
@@ -181,7 +187,7 @@
             // chkHao4Dong
             // 
             this.chkHao4Dong.AutoSize = true;
-            this.chkHao4Dong.Location = new System.Drawing.Point(534, 104);
+            this.chkHao4Dong.Location = new System.Drawing.Point(905, 84);
             this.chkHao4Dong.Name = "chkHao4Dong";
             this.chkHao4Dong.Size = new System.Drawing.Size(109, 21);
             this.chkHao4Dong.TabIndex = 14;
@@ -193,7 +199,7 @@
             this.chkHao5Dong.AutoSize = true;
             this.chkHao5Dong.Checked = true;
             this.chkHao5Dong.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkHao5Dong.Location = new System.Drawing.Point(534, 77);
+            this.chkHao5Dong.Location = new System.Drawing.Point(905, 57);
             this.chkHao5Dong.Name = "chkHao5Dong";
             this.chkHao5Dong.Size = new System.Drawing.Size(109, 21);
             this.chkHao5Dong.TabIndex = 13;
@@ -203,7 +209,7 @@
             // chkHao6Dong
             // 
             this.chkHao6Dong.AutoSize = true;
-            this.chkHao6Dong.Location = new System.Drawing.Point(534, 50);
+            this.chkHao6Dong.Location = new System.Drawing.Point(905, 30);
             this.chkHao6Dong.Name = "chkHao6Dong";
             this.chkHao6Dong.Size = new System.Drawing.Size(109, 21);
             this.chkHao6Dong.TabIndex = 12;
@@ -218,12 +224,124 @@
             this.txtQueBien.TabIndex = 18;
             this.txtQueBien.Text = "";
             // 
+            // cbxNgayCan
+            // 
+            this.cbxNgayCan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxNgayCan.FormattingEnabled = true;
+            this.cbxNgayCan.Items.AddRange(new object[] {
+            "Giáp",
+            "Ất",
+            "Bính",
+            "Đinh",
+            "Mậu",
+            "Kỷ",
+            "Canh",
+            "Tân",
+            "Nhâm",
+            "Quý"});
+            this.cbxNgayCan.Location = new System.Drawing.Point(322, 50);
+            this.cbxNgayCan.MaxDropDownItems = 12;
+            this.cbxNgayCan.Name = "cbxNgayCan";
+            this.cbxNgayCan.Size = new System.Drawing.Size(121, 24);
+            this.cbxNgayCan.TabIndex = 19;
+            // 
+            // cbxNgayChi
+            // 
+            this.cbxNgayChi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxNgayChi.FormattingEnabled = true;
+            this.cbxNgayChi.Items.AddRange(new object[] {
+            "Tí",
+            "Sửu",
+            "Dần",
+            "Mão",
+            "Thìn",
+            "Tỵ",
+            "Ngọ",
+            "Mùi",
+            "Thân",
+            "Dậu",
+            "Tuất",
+            "Hợi"});
+            this.cbxNgayChi.Location = new System.Drawing.Point(470, 50);
+            this.cbxNgayChi.MaxDropDownItems = 12;
+            this.cbxNgayChi.Name = "cbxNgayChi";
+            this.cbxNgayChi.Size = new System.Drawing.Size(121, 24);
+            this.cbxNgayChi.TabIndex = 20;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(319, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 17);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Ngày";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(319, 121);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 17);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Tháng";
+            // 
+            // cbxThangChi
+            // 
+            this.cbxThangChi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxThangChi.FormattingEnabled = true;
+            this.cbxThangChi.Items.AddRange(new object[] {
+            "Tí",
+            "Sửu",
+            "Dần",
+            "Mão",
+            "Thìn",
+            "Tỵ",
+            "Ngọ",
+            "Mùi",
+            "Thân",
+            "Dậu",
+            "Tuất",
+            "Hợi"});
+            this.cbxThangChi.Location = new System.Drawing.Point(470, 153);
+            this.cbxThangChi.MaxDropDownItems = 12;
+            this.cbxThangChi.Name = "cbxThangChi";
+            this.cbxThangChi.Size = new System.Drawing.Size(121, 24);
+            this.cbxThangChi.TabIndex = 23;
+            // 
+            // cbxThangCan
+            // 
+            this.cbxThangCan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxThangCan.FormattingEnabled = true;
+            this.cbxThangCan.Items.AddRange(new object[] {
+            "Giáp",
+            "Ất",
+            "Bính",
+            "Đinh",
+            "Mậu",
+            "Kỷ",
+            "Canh",
+            "Tân",
+            "Nhâm",
+            "Quý"});
+            this.cbxThangCan.Location = new System.Drawing.Point(322, 153);
+            this.cbxThangCan.MaxDropDownItems = 12;
+            this.cbxThangCan.Name = "cbxThangCan";
+            this.cbxThangCan.Size = new System.Drawing.Size(121, 24);
+            this.cbxThangCan.TabIndex = 22;
+            // 
             // Main
             // 
             this.AcceptButton = this.btnGo;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1204, 526);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cbxThangChi);
+            this.Controls.Add(this.cbxThangCan);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cbxNgayChi);
+            this.Controls.Add(this.cbxNgayCan);
             this.Controls.Add(this.txtQueBien);
             this.Controls.Add(this.chkHao1Dong);
             this.Controls.Add(this.chkHao2Dong);
@@ -269,6 +387,12 @@
         private System.Windows.Forms.CheckBox chkHao5Dong;
         private System.Windows.Forms.CheckBox chkHao6Dong;
         private System.Windows.Forms.RichTextBox txtQueBien;
+        private System.Windows.Forms.ComboBox cbxNgayCan;
+        private System.Windows.Forms.ComboBox cbxNgayChi;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbxThangChi;
+        private System.Windows.Forms.ComboBox cbxThangCan;
     }
 }
 

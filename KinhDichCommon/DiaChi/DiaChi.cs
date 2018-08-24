@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using static KinhDichCommon.NguHanh;
 
 namespace KinhDichCommon
@@ -27,6 +28,11 @@ namespace KinhDichCommon
         static DiaChi()
         {
             SetHopXung(All);
+        }
+
+        public static Chi GetChi(int chiId)
+        {
+            return All.FirstOrDefault(c => c.Id == chiId);
         }
 
         private static void SetHopXung(List<Chi> list)

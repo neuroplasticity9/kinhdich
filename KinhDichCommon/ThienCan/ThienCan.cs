@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace KinhDichCommon
 {
@@ -20,6 +21,10 @@ namespace KinhDichCommon
 
         // Id order and adding order must be the same.
         public static readonly List<Can> All = new List<Can> { Giap, At, Binh, Dinh, Mau, Ky, Canh, Tan, Nham, Quy };
-        
+
+        public static Can GetCan(int canId)
+        {
+            return All.FirstOrDefault(c => c.Id == canId);
+        }
     }
 }
