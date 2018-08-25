@@ -30,12 +30,33 @@ namespace KinhDichCommon.Tests
         public void TestGetThoiKi()
         {
             // Mùa xuân, vượng ở Mão.
-            var thoiKi = VongTruongSinh.GetThoiKi(Moc, Mao);
+            var thoiKi = GetThoiKi(Moc, Mao);
             Assert.AreEqual(thoiKi, DeVuong);
 
             // Mùa hạ, vượng ở Ngọ.
-            thoiKi = VongTruongSinh.GetThoiKi(Hoa, Ngo);
+            thoiKi = GetThoiKi(Hoa, Ngo);
             Assert.AreEqual(thoiKi, DeVuong);
+        }
+
+        [TestMethod]
+        public void TestMo()
+        {
+            // Hành Kim, trường sinh ở Tỵ, mộ ở Sửu.
+            Assert.IsTrue(IsMo(Kim, Suu));
+
+            // Hành Thủy, trường sinh ở Thân, mộ ở Thìn.
+            Assert.IsTrue(IsMo(Thuy, Thin));
+
+            // Hành Mộc, trường sinh ở Hợi, mộ ở Mùi.
+            Assert.IsTrue(IsMo(Moc, Mui));
+
+            // Hành Hỏa, trường sinh ở Dần, mộ ở Tuất.
+            Assert.IsTrue(IsMo(Hoa, Tuat));
+
+            // Hành Thổ
+            // Tăng san bốc dịch: giống hành Thủy, nghĩa là Thìn là mộ của Thủy và Thổ.
+            // Thiệu Vỹ Hoa: giống hành Hỏa, nghĩa là Tuất là mộ của Hỏa và Thổ.
+            Assert.IsTrue(IsMo(Tho, Tuat));
         }
     }
 }

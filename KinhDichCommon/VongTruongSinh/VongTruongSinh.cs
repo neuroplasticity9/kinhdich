@@ -9,7 +9,7 @@ namespace KinhDichCommon
     /// </summary>
     public static class VongTruongSinh
     {
-        public static readonly ThoiKi TruongSinh = new ThoiKi { Id = 1, Name = "Trường Sinh", NameChinese = "", Desc= "Sinh ra và bắt đầu cuộc sống. Thể hiện nếp sống và phát triển mọi mặt của con người." };
+        public static readonly ThoiKi TruongSinh = new ThoiKi { Id = 1, Name = "Trường Sinh", NameChinese = "", Desc = "Sinh ra và bắt đầu cuộc sống. Thể hiện nếp sống và phát triển mọi mặt của con người." };
         public static readonly ThoiKi MocDuc = new ThoiKi { Id = 2, Name = "Mộc Dục", NameChinese = "", Desc = "Con người đã thích nghi với môi trường xung quanh, tâm sinh lý đã hình thành. Tượng trưng như được tắm gội." };
         public static readonly ThoiKi QuanDoi = new ThoiKi { Id = 3, Name = "Quan Đới", NameChinese = "", Desc = "Bước vào ngưỡng của của sự trưởng thành. Con người có đủ khả năng để lập nghiệp." };
         public static readonly ThoiKi LamQuan = new ThoiKi { Id = 4, Name = "Lâm Quan", NameChinese = "", Desc = "Con người đã chủ động tự lập sự nghiệp và thành đạt trong cuộc sống mang tính tự hào, kiêu hãnh." };
@@ -58,6 +58,17 @@ namespace KinhDichCommon
             throw new System.Exception("Wrong code in VongTruongSinh.");
         }
 
+        /// <summary>
+        /// Từ hành của hào, kiểm tra xem nhật thìn hay nguyệt kiến có bị mộ.
+        /// Giai đoạn mộ sẽ rơi vào thìn tuất sửu mùi.
+        /// </summary>
+        /// <param name="hanh"></param>
+        /// <param name="chi"></param>
+        /// <returns></returns>
+        public static bool IsMo(Hanh hanh, Chi chi)
+        {
+            return GetThoiKi(hanh, chi) == Mo;
+        }
 
     }
 }

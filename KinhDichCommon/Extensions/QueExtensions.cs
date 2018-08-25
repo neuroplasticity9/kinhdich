@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using static KinhDichCommon.NguHanh;
 
 namespace KinhDichCommon
 {
@@ -127,6 +128,15 @@ namespace KinhDichCommon
                 result = result + ", nguyệt tù";
             }
 
+            // Tháng thổ (thìn tuất sửu mùi) sẽ có hào gặp mộ.
+            if (nguyetKien.Chi.Hanh == Tho)
+            {
+                if (VongTruongSinh.IsMo(hao.Chi.Hanh, nguyetKien.Chi))
+                {
+                    result = result + ", nguyệt mộ";
+                }
+            }
+
             // Nhật thần
             if (nhatThan.Chi.Xung == hao.Chi)
             {
@@ -148,6 +158,15 @@ namespace KinhDichCommon
                 else if (nhatThan.IsHuuTu(hao.Chi))
                 {
                     result = result + ", nhật tù";
+                }
+            }
+
+            // Ngày thổ (thìn tuất sửu mùi) sẽ có hào gặp mộ.
+            if (nhatThan.Chi.Hanh == Tho)
+            {
+                if (VongTruongSinh.IsMo(hao.Chi.Hanh, nhatThan.Chi))
+                {
+                    result = result + ", nhật mộ";
                 }
             }
 
