@@ -35,12 +35,12 @@ namespace DoanQueKinhDich
 
             txtQueChu.Text = queChuString;
             txtQueChuDesc.Text = queChu.Desc;
-            linkQueChu.Text = queChu.NameShort;
+            linkQueChu.Text = $"{queChu.NameShort} - Quẻ số {queChu.QueId}";
             _queChuUrl = !string.IsNullOrWhiteSpace(queChu.Url) ? queChu.Url : _defaultUrl;
 
             txtQueBien.Text = queBienString;
             txtQueBienDesc.Text = queBien.Desc;
-            linkQueBien.Text = queBien.NameShort;
+            linkQueBien.Text = $"{queBien.NameShort} - Quẻ số {queBien.QueId}";
             _queBienUrl = !string.IsNullOrWhiteSpace(queBien.Url) ? queBien.Url : _defaultUrl;
         }
 

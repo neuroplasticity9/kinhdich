@@ -350,10 +350,12 @@ namespace KinhDichCommon
             var queBien = new Que
             {
                 Id = queBienGoc.Id,
+                QueId = queBienGoc.QueId,
                 Name = queBienGoc.Name,
                 NameShort = queBienGoc.NameShort,
                 NameChinese = queBienGoc.NameChinese,
                 Desc = queBienGoc.Desc,
+                Url = queBienGoc.Url,
                 QueThuan = queBienGoc.QueThuan,
                 Hanh = hanhGoc,
                 Hao6 = queBienGoc.Hao6.CloneChoQueBien(hanhGoc),
