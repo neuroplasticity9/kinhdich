@@ -51,6 +51,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cbxThangChi = new System.Windows.Forms.ComboBox();
             this.cbxThangCan = new System.Windows.Forms.ComboBox();
+            this.txtQueBienDesc = new System.Windows.Forms.RichTextBox();
+            this.txtQueChuDesc = new System.Windows.Forms.RichTextBox();
+            this.linkQueChu = new System.Windows.Forms.LinkLabel();
+            this.linkQueBien = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // dtpDob
@@ -148,12 +152,11 @@
             // 
             // txtQueChu
             // 
-            this.txtQueChu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtQueChu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtQueChu.Location = new System.Drawing.Point(18, 278);
+            this.txtQueChu.Location = new System.Drawing.Point(19, 259);
             this.txtQueChu.Name = "txtQueChu";
-            this.txtQueChu.Size = new System.Drawing.Size(618, 262);
+            this.txtQueChu.Size = new System.Drawing.Size(618, 180);
             this.txtQueChu.TabIndex = 11;
             this.txtQueChu.Text = "";
             // 
@@ -221,11 +224,10 @@
             // 
             // txtQueBien
             // 
-            this.txtQueBien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtQueBien.Location = new System.Drawing.Point(642, 278);
+            this.txtQueBien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtQueBien.Location = new System.Drawing.Point(643, 259);
             this.txtQueBien.Name = "txtQueBien";
-            this.txtQueBien.Size = new System.Drawing.Size(603, 262);
+            this.txtQueBien.Size = new System.Drawing.Size(603, 180);
             this.txtQueBien.TabIndex = 18;
             this.txtQueBien.Text = "";
             // 
@@ -335,12 +337,62 @@
             this.cbxThangCan.Size = new System.Drawing.Size(121, 24);
             this.cbxThangCan.TabIndex = 22;
             // 
+            // txtQueBienDesc
+            // 
+            this.txtQueBienDesc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtQueBienDesc.Location = new System.Drawing.Point(643, 445);
+            this.txtQueBienDesc.Name = "txtQueBienDesc";
+            this.txtQueBienDesc.Size = new System.Drawing.Size(603, 223);
+            this.txtQueBienDesc.TabIndex = 26;
+            this.txtQueBienDesc.Text = "";
+            // 
+            // txtQueChuDesc
+            // 
+            this.txtQueChuDesc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtQueChuDesc.Font = new System.Drawing.Font("Verdana", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQueChuDesc.Location = new System.Drawing.Point(19, 445);
+            this.txtQueChuDesc.Name = "txtQueChuDesc";
+            this.txtQueChuDesc.Size = new System.Drawing.Size(618, 223);
+            this.txtQueChuDesc.TabIndex = 25;
+            this.txtQueChuDesc.Text = "";
+            // 
+            // linkQueChu
+            // 
+            this.linkQueChu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.linkQueChu.AutoSize = true;
+            this.linkQueChu.Location = new System.Drawing.Point(16, 671);
+            this.linkQueChu.Name = "linkQueChu";
+            this.linkQueChu.Size = new System.Drawing.Size(133, 17);
+            this.linkQueChu.TabIndex = 27;
+            this.linkQueChu.TabStop = true;
+            this.linkQueChu.Text = "Xem quẻ chủ online";
+            this.linkQueChu.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkQueChu_LinkClicked);
+            // 
+            // linkQueBien
+            // 
+            this.linkQueBien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkQueBien.AutoSize = true;
+            this.linkQueBien.Location = new System.Drawing.Point(640, 671);
+            this.linkQueBien.Name = "linkQueBien";
+            this.linkQueBien.Size = new System.Drawing.Size(137, 17);
+            this.linkQueBien.TabIndex = 28;
+            this.linkQueBien.TabStop = true;
+            this.linkQueBien.Text = "Xem quẻ biến online";
+            this.linkQueBien.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkQueBien_LinkClicked);
+            // 
             // Main
             // 
             this.AcceptButton = this.btnGo;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1258, 556);
+            this.ClientSize = new System.Drawing.Size(1258, 715);
+            this.Controls.Add(this.linkQueBien);
+            this.Controls.Add(this.linkQueChu);
+            this.Controls.Add(this.txtQueBienDesc);
+            this.Controls.Add(this.txtQueChuDesc);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbxThangChi);
             this.Controls.Add(this.cbxThangCan);
@@ -398,6 +450,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbxThangChi;
         private System.Windows.Forms.ComboBox cbxThangCan;
+        private System.Windows.Forms.RichTextBox txtQueBienDesc;
+        private System.Windows.Forms.RichTextBox txtQueChuDesc;
+        private System.Windows.Forms.LinkLabel linkQueChu;
+        private System.Windows.Forms.LinkLabel linkQueBien;
     }
 }
 

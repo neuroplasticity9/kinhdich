@@ -164,6 +164,8 @@ namespace KinhDichCommon
             All.AddRange(QueKhamBien);
             All.AddRange(QueCanBien);
             All.AddRange(QueKhonBien);
+
+            Sqlite.SetQueFromDb();
         }
 
         private static void AddQueBien(List<Que> listQue, Que queThuan)

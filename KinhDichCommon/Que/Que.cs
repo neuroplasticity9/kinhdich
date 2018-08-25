@@ -6,8 +6,10 @@ namespace KinhDichCommon
     [DebuggerDisplay("{Name,nq}, thuộc {Hanh.Name,nq}")]
     public class Que : BaseItem
     {
-        public Que QueThuan { get; set; }
+        public int QueId { get; set; }
+        public string Url { get; set; }
 
+        public Que QueThuan { get; set; }
         public Hanh Hanh { get; set; }
 
         public Hao Hao6 { get; set; }

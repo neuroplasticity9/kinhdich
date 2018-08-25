@@ -8,6 +8,9 @@ namespace DoanQueKinhDich
 {
     public partial class Main : Form
     {
+        private string _queChuUrl = "http://cohoc.net/64-que-dich.html";
+        private string _queBienUrl = "http://cohoc.net/64-que-dich.html";
+
         public Main()
         {
             InitializeComponent();
@@ -31,6 +34,18 @@ namespace DoanQueKinhDich
 
             txtQueChu.Text = queChuString;
             txtQueBien.Text = queBienString;
+
+            txtQueChuDesc.Text = queChu.Desc;
+            txtQueBienDesc.Text = queBien.Desc;
+
+            if (!string.IsNullOrWhiteSpace(queChu.Url))
+            {
+                _queChuUrl = queChu.Url;
+            }
+            if (!string.IsNullOrWhiteSpace(queBien.Url))
+            {
+                _queBienUrl = queBien.Url;
+            }
         }
 
         private CanChi GetNguyetKien()
@@ -58,6 +73,30 @@ namespace DoanQueKinhDich
             cbxNgayChi.SelectedIndex = 0;
             cbxThangCan.SelectedIndex = 0;
             cbxThangChi.SelectedIndex = 2;
+        }
+
+        private void linkQueChu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(_queChuUrl);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private void linkQueBien_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(_queBienUrl);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }
