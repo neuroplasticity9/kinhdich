@@ -89,7 +89,7 @@ namespace KinhDichCommon
             {
                 result = result + "\t";
             }
-            result = result  + $"{hao.Chi.Name} {hao.Chi.Hanh.Name}\t\t{hao.LucThan.Name}      \t";
+            result = result  + $"{hao.Chi.Name} {hao.Chi.Hanh.Name}    \t{hao.LucThan.Name}    \t";
 
             if (hao.The)
             {

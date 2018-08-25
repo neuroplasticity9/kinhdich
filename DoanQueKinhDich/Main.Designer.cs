@@ -59,14 +59,16 @@
             // 
             // dtpDob
             // 
+            this.dtpDob.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDob.Location = new System.Drawing.Point(18, 13);
             this.dtpDob.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDob.Name = "dtpDob";
-            this.dtpDob.Size = new System.Drawing.Size(255, 22);
+            this.dtpDob.Size = new System.Drawing.Size(255, 31);
             this.dtpDob.TabIndex = 0;
             // 
             // mcDate
             // 
+            this.mcDate.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mcDate.Location = new System.Drawing.Point(18, 50);
             this.mcDate.Margin = new System.Windows.Forms.Padding(12, 11, 12, 11);
             this.mcDate.MaxSelectionCount = 1;
@@ -75,10 +77,11 @@
             // 
             // btnGo
             // 
-            this.btnGo.Location = new System.Drawing.Point(704, 200);
+            this.btnGo.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGo.Location = new System.Drawing.Point(707, 189);
             this.btnGo.Margin = new System.Windows.Forms.Padding(4);
             this.btnGo.Name = "btnGo";
-            this.btnGo.Size = new System.Drawing.Size(310, 28);
+            this.btnGo.Size = new System.Drawing.Size(351, 48);
             this.btnGo.TabIndex = 2;
             this.btnGo.Text = "Go";
             this.btnGo.UseVisualStyleBackColor = true;
@@ -87,85 +90,93 @@
             // chkHao6
             // 
             this.chkHao6.AutoSize = true;
-            this.chkHao6.Location = new System.Drawing.Point(704, 30);
+            this.chkHao6.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkHao6.Location = new System.Drawing.Point(707, 19);
             this.chkHao6.Name = "chkHao6";
-            this.chkHao6.Size = new System.Drawing.Size(117, 21);
+            this.chkHao6.Size = new System.Drawing.Size(54, 27);
             this.chkHao6.TabIndex = 5;
-            this.chkHao6.Text = "Hào 6 dương?";
+            this.chkHao6.Text = "- -";
             this.chkHao6.UseVisualStyleBackColor = true;
+            this.chkHao6.CheckedChanged += new System.EventHandler(this.chkHao6_CheckedChanged);
             // 
             // chkHao5
             // 
             this.chkHao5.AutoSize = true;
-            this.chkHao5.Location = new System.Drawing.Point(704, 57);
+            this.chkHao5.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkHao5.Location = new System.Drawing.Point(707, 46);
             this.chkHao5.Name = "chkHao5";
-            this.chkHao5.Size = new System.Drawing.Size(117, 21);
+            this.chkHao5.Size = new System.Drawing.Size(54, 27);
             this.chkHao5.TabIndex = 6;
-            this.chkHao5.Text = "Hào 5 dương?";
+            this.chkHao5.Text = "- -";
             this.chkHao5.UseVisualStyleBackColor = true;
+            this.chkHao5.CheckedChanged += new System.EventHandler(this.chkHao5_CheckedChanged);
             // 
             // chkHao4
             // 
             this.chkHao4.AutoSize = true;
-            this.chkHao4.Location = new System.Drawing.Point(704, 84);
+            this.chkHao4.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkHao4.Location = new System.Drawing.Point(707, 73);
             this.chkHao4.Name = "chkHao4";
-            this.chkHao4.Size = new System.Drawing.Size(117, 21);
+            this.chkHao4.Size = new System.Drawing.Size(54, 27);
             this.chkHao4.TabIndex = 7;
-            this.chkHao4.Text = "Hào 4 dương?";
+            this.chkHao4.Text = "- -";
             this.chkHao4.UseVisualStyleBackColor = true;
+            this.chkHao4.CheckedChanged += new System.EventHandler(this.chkHao4_CheckedChanged);
             // 
             // chkHao3
             // 
             this.chkHao3.AutoSize = true;
-            this.chkHao3.Checked = true;
-            this.chkHao3.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkHao3.Location = new System.Drawing.Point(704, 111);
+            this.chkHao3.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkHao3.Location = new System.Drawing.Point(707, 100);
             this.chkHao3.Name = "chkHao3";
-            this.chkHao3.Size = new System.Drawing.Size(117, 21);
+            this.chkHao3.Size = new System.Drawing.Size(54, 27);
             this.chkHao3.TabIndex = 8;
-            this.chkHao3.Text = "Hào 3 dương?";
+            this.chkHao3.Text = "- -";
             this.chkHao3.UseVisualStyleBackColor = true;
+            this.chkHao3.CheckedChanged += new System.EventHandler(this.chkHao3_CheckedChanged);
             // 
             // chkHao2
             // 
             this.chkHao2.AutoSize = true;
-            this.chkHao2.Checked = true;
-            this.chkHao2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkHao2.Location = new System.Drawing.Point(704, 138);
+            this.chkHao2.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkHao2.Location = new System.Drawing.Point(707, 127);
             this.chkHao2.Name = "chkHao2";
-            this.chkHao2.Size = new System.Drawing.Size(117, 21);
+            this.chkHao2.Size = new System.Drawing.Size(54, 27);
             this.chkHao2.TabIndex = 9;
-            this.chkHao2.Text = "Hào 2 dương?";
+            this.chkHao2.Text = "- -";
             this.chkHao2.UseVisualStyleBackColor = true;
+            this.chkHao2.CheckedChanged += new System.EventHandler(this.chkHao2_CheckedChanged);
             // 
             // chkHao1
             // 
             this.chkHao1.AutoSize = true;
-            this.chkHao1.Checked = true;
-            this.chkHao1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkHao1.Location = new System.Drawing.Point(704, 165);
+            this.chkHao1.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkHao1.Location = new System.Drawing.Point(707, 154);
             this.chkHao1.Name = "chkHao1";
-            this.chkHao1.Size = new System.Drawing.Size(117, 21);
+            this.chkHao1.Size = new System.Drawing.Size(54, 27);
             this.chkHao1.TabIndex = 10;
-            this.chkHao1.Text = "Hào 1 dương?";
+            this.chkHao1.Text = "- -";
             this.chkHao1.UseVisualStyleBackColor = true;
+            this.chkHao1.CheckedChanged += new System.EventHandler(this.chkHao1_CheckedChanged);
             // 
             // txtQueChu
             // 
             this.txtQueChu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtQueChu.Font = new System.Drawing.Font("Verdana", 11.26957F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQueChu.Location = new System.Drawing.Point(18, 291);
             this.txtQueChu.Name = "txtQueChu";
-            this.txtQueChu.Size = new System.Drawing.Size(618, 180);
+            this.txtQueChu.Size = new System.Drawing.Size(821, 234);
             this.txtQueChu.TabIndex = 11;
             this.txtQueChu.Text = "";
             // 
             // chkHao1Dong
             // 
             this.chkHao1Dong.AutoSize = true;
-            this.chkHao1Dong.Location = new System.Drawing.Point(905, 165);
+            this.chkHao1Dong.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkHao1Dong.Location = new System.Drawing.Point(908, 154);
             this.chkHao1Dong.Name = "chkHao1Dong";
-            this.chkHao1Dong.Size = new System.Drawing.Size(109, 21);
+            this.chkHao1Dong.Size = new System.Drawing.Size(150, 27);
             this.chkHao1Dong.TabIndex = 17;
             this.chkHao1Dong.Text = "Hào 1 động?";
             this.chkHao1Dong.UseVisualStyleBackColor = true;
@@ -173,9 +184,10 @@
             // chkHao2Dong
             // 
             this.chkHao2Dong.AutoSize = true;
-            this.chkHao2Dong.Location = new System.Drawing.Point(905, 138);
+            this.chkHao2Dong.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkHao2Dong.Location = new System.Drawing.Point(908, 127);
             this.chkHao2Dong.Name = "chkHao2Dong";
-            this.chkHao2Dong.Size = new System.Drawing.Size(109, 21);
+            this.chkHao2Dong.Size = new System.Drawing.Size(150, 27);
             this.chkHao2Dong.TabIndex = 16;
             this.chkHao2Dong.Text = "Hào 2 động?";
             this.chkHao2Dong.UseVisualStyleBackColor = true;
@@ -183,9 +195,10 @@
             // chkHao3Dong
             // 
             this.chkHao3Dong.AutoSize = true;
-            this.chkHao3Dong.Location = new System.Drawing.Point(905, 111);
+            this.chkHao3Dong.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkHao3Dong.Location = new System.Drawing.Point(908, 100);
             this.chkHao3Dong.Name = "chkHao3Dong";
-            this.chkHao3Dong.Size = new System.Drawing.Size(109, 21);
+            this.chkHao3Dong.Size = new System.Drawing.Size(150, 27);
             this.chkHao3Dong.TabIndex = 15;
             this.chkHao3Dong.Text = "Hào 3 động?";
             this.chkHao3Dong.UseVisualStyleBackColor = true;
@@ -193,9 +206,10 @@
             // chkHao4Dong
             // 
             this.chkHao4Dong.AutoSize = true;
-            this.chkHao4Dong.Location = new System.Drawing.Point(905, 84);
+            this.chkHao4Dong.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkHao4Dong.Location = new System.Drawing.Point(908, 73);
             this.chkHao4Dong.Name = "chkHao4Dong";
-            this.chkHao4Dong.Size = new System.Drawing.Size(109, 21);
+            this.chkHao4Dong.Size = new System.Drawing.Size(150, 27);
             this.chkHao4Dong.TabIndex = 14;
             this.chkHao4Dong.Text = "Hào 4 động?";
             this.chkHao4Dong.UseVisualStyleBackColor = true;
@@ -203,11 +217,10 @@
             // chkHao5Dong
             // 
             this.chkHao5Dong.AutoSize = true;
-            this.chkHao5Dong.Checked = true;
-            this.chkHao5Dong.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkHao5Dong.Location = new System.Drawing.Point(905, 57);
+            this.chkHao5Dong.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkHao5Dong.Location = new System.Drawing.Point(908, 46);
             this.chkHao5Dong.Name = "chkHao5Dong";
-            this.chkHao5Dong.Size = new System.Drawing.Size(109, 21);
+            this.chkHao5Dong.Size = new System.Drawing.Size(150, 27);
             this.chkHao5Dong.TabIndex = 13;
             this.chkHao5Dong.Text = "Hào 5 động?";
             this.chkHao5Dong.UseVisualStyleBackColor = true;
@@ -215,9 +228,10 @@
             // chkHao6Dong
             // 
             this.chkHao6Dong.AutoSize = true;
-            this.chkHao6Dong.Location = new System.Drawing.Point(905, 30);
+            this.chkHao6Dong.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkHao6Dong.Location = new System.Drawing.Point(908, 19);
             this.chkHao6Dong.Name = "chkHao6Dong";
-            this.chkHao6Dong.Size = new System.Drawing.Size(109, 21);
+            this.chkHao6Dong.Size = new System.Drawing.Size(150, 27);
             this.chkHao6Dong.TabIndex = 12;
             this.chkHao6Dong.Text = "Hào 6 động?";
             this.chkHao6Dong.UseVisualStyleBackColor = true;
@@ -225,15 +239,17 @@
             // txtQueBien
             // 
             this.txtQueBien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtQueBien.Location = new System.Drawing.Point(642, 291);
+            this.txtQueBien.Font = new System.Drawing.Font("Verdana", 11.26957F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQueBien.Location = new System.Drawing.Point(845, 291);
             this.txtQueBien.Name = "txtQueBien";
-            this.txtQueBien.Size = new System.Drawing.Size(603, 180);
+            this.txtQueBien.Size = new System.Drawing.Size(786, 234);
             this.txtQueBien.TabIndex = 18;
             this.txtQueBien.Text = "";
             // 
             // cbxNgayCan
             // 
             this.cbxNgayCan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxNgayCan.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxNgayCan.FormattingEnabled = true;
             this.cbxNgayCan.Items.AddRange(new object[] {
             "Giáp",
@@ -246,15 +262,16 @@
             "Tân",
             "Nhâm",
             "Quý"});
-            this.cbxNgayCan.Location = new System.Drawing.Point(322, 50);
+            this.cbxNgayCan.Location = new System.Drawing.Point(325, 39);
             this.cbxNgayCan.MaxDropDownItems = 12;
             this.cbxNgayCan.Name = "cbxNgayCan";
-            this.cbxNgayCan.Size = new System.Drawing.Size(121, 24);
+            this.cbxNgayCan.Size = new System.Drawing.Size(121, 31);
             this.cbxNgayCan.TabIndex = 19;
             // 
             // cbxNgayChi
             // 
             this.cbxNgayChi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxNgayChi.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxNgayChi.FormattingEnabled = true;
             this.cbxNgayChi.Items.AddRange(new object[] {
             "Tí",
@@ -269,33 +286,36 @@
             "Dậu",
             "Tuất",
             "Hợi"});
-            this.cbxNgayChi.Location = new System.Drawing.Point(470, 50);
+            this.cbxNgayChi.Location = new System.Drawing.Point(473, 39);
             this.cbxNgayChi.MaxDropDownItems = 12;
             this.cbxNgayChi.Name = "cbxNgayChi";
-            this.cbxNgayChi.Size = new System.Drawing.Size(121, 24);
+            this.cbxNgayChi.Size = new System.Drawing.Size(121, 31);
             this.cbxNgayChi.TabIndex = 20;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(319, 18);
+            this.label1.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(322, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 17);
+            this.label1.Size = new System.Drawing.Size(58, 23);
             this.label1.TabIndex = 21;
             this.label1.Text = "Ngày";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(319, 121);
+            this.label2.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(322, 110);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 17);
+            this.label2.Size = new System.Drawing.Size(69, 23);
             this.label2.TabIndex = 24;
             this.label2.Text = "Tháng";
             // 
             // cbxThangChi
             // 
             this.cbxThangChi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxThangChi.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxThangChi.FormattingEnabled = true;
             this.cbxThangChi.Items.AddRange(new object[] {
             "Tí",
@@ -310,15 +330,16 @@
             "Dậu",
             "Tuất",
             "Hợi"});
-            this.cbxThangChi.Location = new System.Drawing.Point(470, 153);
+            this.cbxThangChi.Location = new System.Drawing.Point(473, 142);
             this.cbxThangChi.MaxDropDownItems = 12;
             this.cbxThangChi.Name = "cbxThangChi";
-            this.cbxThangChi.Size = new System.Drawing.Size(121, 24);
+            this.cbxThangChi.Size = new System.Drawing.Size(121, 31);
             this.cbxThangChi.TabIndex = 23;
             // 
             // cbxThangCan
             // 
             this.cbxThangCan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxThangCan.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxThangCan.FormattingEnabled = true;
             this.cbxThangCan.Items.AddRange(new object[] {
             "Giáp",
@@ -331,19 +352,20 @@
             "Tân",
             "Nhâm",
             "Quý"});
-            this.cbxThangCan.Location = new System.Drawing.Point(322, 153);
+            this.cbxThangCan.Location = new System.Drawing.Point(325, 142);
             this.cbxThangCan.MaxDropDownItems = 12;
             this.cbxThangCan.Name = "cbxThangCan";
-            this.cbxThangCan.Size = new System.Drawing.Size(121, 24);
+            this.cbxThangCan.Size = new System.Drawing.Size(121, 31);
             this.cbxThangCan.TabIndex = 22;
             // 
             // txtQueBienDesc
             // 
             this.txtQueBienDesc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtQueBienDesc.Location = new System.Drawing.Point(642, 477);
+            this.txtQueBienDesc.Font = new System.Drawing.Font("Verdana", 11.26957F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQueBienDesc.Location = new System.Drawing.Point(845, 531);
             this.txtQueBienDesc.Name = "txtQueBienDesc";
-            this.txtQueBienDesc.Size = new System.Drawing.Size(603, 223);
+            this.txtQueBienDesc.Size = new System.Drawing.Size(786, 345);
             this.txtQueBienDesc.TabIndex = 26;
             this.txtQueBienDesc.Text = "";
             // 
@@ -352,19 +374,20 @@
             this.txtQueChuDesc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtQueChuDesc.Font = new System.Drawing.Font("Verdana", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQueChuDesc.Location = new System.Drawing.Point(18, 477);
+            this.txtQueChuDesc.Font = new System.Drawing.Font("Verdana", 11.26957F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQueChuDesc.Location = new System.Drawing.Point(18, 531);
             this.txtQueChuDesc.Name = "txtQueChuDesc";
-            this.txtQueChuDesc.Size = new System.Drawing.Size(618, 223);
+            this.txtQueChuDesc.Size = new System.Drawing.Size(821, 345);
             this.txtQueChuDesc.TabIndex = 25;
             this.txtQueChuDesc.Text = "";
             // 
             // linkQueChu
             // 
             this.linkQueChu.AutoSize = true;
+            this.linkQueChu.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkQueChu.Location = new System.Drawing.Point(15, 259);
             this.linkQueChu.Name = "linkQueChu";
-            this.linkQueChu.Size = new System.Drawing.Size(133, 17);
+            this.linkQueChu.Size = new System.Drawing.Size(200, 23);
             this.linkQueChu.TabIndex = 27;
             this.linkQueChu.TabStop = true;
             this.linkQueChu.Text = "Xem quẻ chủ online";
@@ -374,9 +397,10 @@
             // 
             this.linkQueBien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.linkQueBien.AutoSize = true;
-            this.linkQueBien.Location = new System.Drawing.Point(639, 259);
+            this.linkQueBien.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkQueBien.Location = new System.Drawing.Point(841, 259);
             this.linkQueBien.Name = "linkQueBien";
-            this.linkQueBien.Size = new System.Drawing.Size(137, 17);
+            this.linkQueBien.Size = new System.Drawing.Size(207, 23);
             this.linkQueBien.TabIndex = 28;
             this.linkQueBien.TabStop = true;
             this.linkQueBien.Text = "Xem quẻ biến online";
@@ -387,7 +411,7 @@
             this.AcceptButton = this.btnGo;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1258, 715);
+            this.ClientSize = new System.Drawing.Size(1644, 891);
             this.Controls.Add(this.linkQueBien);
             this.Controls.Add(this.linkQueChu);
             this.Controls.Add(this.txtQueBienDesc);

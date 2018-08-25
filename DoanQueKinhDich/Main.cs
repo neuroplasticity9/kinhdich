@@ -8,6 +8,8 @@ namespace DoanQueKinhDich
 {
     public partial class Main : Form
     {
+        private const string Duong = "—";
+        private const string Am = "- -";
         private const string _defaultUrl = "http://cohoc.net/64-que-dich.html";
         private string _queChuUrl = _defaultUrl;
         private string _queBienUrl = _defaultUrl;
@@ -93,6 +95,41 @@ namespace DoanQueKinhDich
             {
                 throw;
             }
+        }
+
+        private void ChangeTextAmDuong(CheckBox chkHao)
+        {
+            chkHao.Text = chkHao.Checked ? Duong : Am;
+        }
+
+        private void chkHao6_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeTextAmDuong(chkHao6);
+        }
+                
+        private void chkHao5_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeTextAmDuong(chkHao5);
+        }
+
+        private void chkHao4_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeTextAmDuong(chkHao4);
+        }
+
+        private void chkHao3_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeTextAmDuong(chkHao3);
+        }
+
+        private void chkHao2_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeTextAmDuong(chkHao2);
+        }
+
+        private void chkHao1_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeTextAmDuong(chkHao1);
         }
     }
 }
