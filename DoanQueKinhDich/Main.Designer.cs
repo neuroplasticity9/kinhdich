@@ -154,7 +154,7 @@
             // 
             this.txtQueChu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtQueChu.Location = new System.Drawing.Point(19, 259);
+            this.txtQueChu.Location = new System.Drawing.Point(18, 291);
             this.txtQueChu.Name = "txtQueChu";
             this.txtQueChu.Size = new System.Drawing.Size(618, 180);
             this.txtQueChu.TabIndex = 11;
@@ -225,7 +225,7 @@
             // txtQueBien
             // 
             this.txtQueBien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtQueBien.Location = new System.Drawing.Point(643, 259);
+            this.txtQueBien.Location = new System.Drawing.Point(642, 291);
             this.txtQueBien.Name = "txtQueBien";
             this.txtQueBien.Size = new System.Drawing.Size(603, 180);
             this.txtQueBien.TabIndex = 18;
@@ -341,7 +341,7 @@
             // 
             this.txtQueBienDesc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtQueBienDesc.Location = new System.Drawing.Point(643, 445);
+            this.txtQueBienDesc.Location = new System.Drawing.Point(642, 477);
             this.txtQueBienDesc.Name = "txtQueBienDesc";
             this.txtQueBienDesc.Size = new System.Drawing.Size(603, 223);
             this.txtQueBienDesc.TabIndex = 26;
@@ -353,7 +353,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtQueChuDesc.Font = new System.Drawing.Font("Verdana", 8.139131F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQueChuDesc.Location = new System.Drawing.Point(19, 445);
+            this.txtQueChuDesc.Location = new System.Drawing.Point(18, 477);
             this.txtQueChuDesc.Name = "txtQueChuDesc";
             this.txtQueChuDesc.Size = new System.Drawing.Size(618, 223);
             this.txtQueChuDesc.TabIndex = 25;
@@ -361,9 +361,8 @@
             // 
             // linkQueChu
             // 
-            this.linkQueChu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.linkQueChu.AutoSize = true;
-            this.linkQueChu.Location = new System.Drawing.Point(16, 671);
+            this.linkQueChu.Location = new System.Drawing.Point(15, 259);
             this.linkQueChu.Name = "linkQueChu";
             this.linkQueChu.Size = new System.Drawing.Size(133, 17);
             this.linkQueChu.TabIndex = 27;
@@ -373,9 +372,9 @@
             // 
             // linkQueBien
             // 
-            this.linkQueBien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkQueBien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.linkQueBien.AutoSize = true;
-            this.linkQueBien.Location = new System.Drawing.Point(640, 671);
+            this.linkQueBien.Location = new System.Drawing.Point(639, 259);
             this.linkQueBien.Name = "linkQueBien";
             this.linkQueBien.Size = new System.Drawing.Size(137, 17);
             this.linkQueBien.TabIndex = 28;

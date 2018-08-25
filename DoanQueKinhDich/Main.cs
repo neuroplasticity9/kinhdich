@@ -8,8 +8,9 @@ namespace DoanQueKinhDich
 {
     public partial class Main : Form
     {
-        private string _queChuUrl = "http://cohoc.net/64-que-dich.html";
-        private string _queBienUrl = "http://cohoc.net/64-que-dich.html";
+        private const string _defaultUrl = "http://cohoc.net/64-que-dich.html";
+        private string _queChuUrl = _defaultUrl;
+        private string _queBienUrl = _defaultUrl;
 
         public Main()
         {
@@ -33,19 +34,14 @@ namespace DoanQueKinhDich
             var queBienString = queBien.GetQueDesc(nhatThan, nguyetKien, chkHao6Dong.Checked, chkHao5Dong.Checked, chkHao4Dong.Checked, chkHao3Dong.Checked, chkHao2Dong.Checked, chkHao1Dong.Checked);
 
             txtQueChu.Text = queChuString;
-            txtQueBien.Text = queBienString;
-
             txtQueChuDesc.Text = queChu.Desc;
-            txtQueBienDesc.Text = queBien.Desc;
+            linkQueChu.Text = queChu.NameShort;
+            _queChuUrl = !string.IsNullOrWhiteSpace(queChu.Url) ? queChu.Url : _defaultUrl;
 
-            if (!string.IsNullOrWhiteSpace(queChu.Url))
-            {
-                _queChuUrl = queChu.Url;
-            }
-            if (!string.IsNullOrWhiteSpace(queBien.Url))
-            {
-                _queBienUrl = queBien.Url;
-            }
+            txtQueBien.Text = queBienString;
+            txtQueBienDesc.Text = queBien.Desc;
+            linkQueBien.Text = queBien.NameShort;
+            _queBienUrl = !string.IsNullOrWhiteSpace(queBien.Url) ? queBien.Url : _defaultUrl;
         }
 
         private CanChi GetNguyetKien()
