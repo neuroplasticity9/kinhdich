@@ -25,7 +25,12 @@ namespace KinhDichCommon
 
         // Id order and adding order must be the same.
         public static readonly List<Chi> All = new List<Chi> { Ti, Suu, Dan, Mao, Thin, Ty, Ngo, Mui, Than, Dau, Tuat, Hoi };
-                
+
+        public static readonly List<Chi> ThuyCuc = new List<Chi> { Than, Ti, Thin };
+        public static readonly List<Chi> MocCuc = new List<Chi> { Hoi, Mao, Mui };
+        public static readonly List<Chi> HoaCuc = new List<Chi> { Dan, Ngo, Tuat };
+        public static readonly List<Chi> KimCuc = new List<Chi> { Ty, Dau, Suu };
+
         static DiaChi()
         {
             SetHopXung(All);

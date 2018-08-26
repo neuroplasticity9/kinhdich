@@ -66,7 +66,32 @@ namespace KinhDichCommon
             sb.AppendLine(GetHaoDesc(que.Hao2, nhatThan, nguyetKien, isHao2Dong));
             sb.AppendLine(GetHaoDesc(que.Hao1, nhatThan, nguyetKien, isHao1Dong));
 
+            sb.AppendLine();
+            sb.AppendLine(GetTamHopCuc(que));
+
             return sb.ToString();
+        }
+
+        private static string GetTamHopCuc(Que que)
+        {
+            if (que.IsThuyCuc())
+            {
+                return "Thân Tí Thìn hợp thành Thủy cục.";
+            }
+            if (que.IsMocCuc())
+            {
+                return "Hợi Mão Mùi hợp thành Mộc cục.";
+            }
+            if (que.IsHoaCuc())
+            {
+                return "Dần Ngọ Tuất hợp thành Hỏa cục.";
+            }
+            if (que.IsKimCuc())
+            {
+                return "Tỵ Dậu Sửu hợp thành Kim cục.";
+            }
+
+            return "";
         }
 
         private static string GetHopXungString(Que que)

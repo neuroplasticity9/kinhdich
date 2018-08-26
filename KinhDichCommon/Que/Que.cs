@@ -1,4 +1,6 @@
-﻿using System.Diagnostics;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using System.Text;
 
 namespace KinhDichCommon
@@ -38,6 +40,42 @@ namespace KinhDichCommon
         public bool IsLucXung()
         {
             return Hao1.Chi.Xung == Hao4.Chi && Hao2.Chi.Xung == Hao5.Chi && Hao3.Chi.Xung == Hao6.Chi;
+        }
+
+        public bool IsThuyCuc()
+        {
+            return IsHopCuc(DiaChi.ThuyCuc);
+        }
+
+        public bool IsMocCuc()
+        {
+            return IsHopCuc(DiaChi.MocCuc);
+        }
+
+        public bool IsHoaCuc()
+        {
+            return IsHopCuc(DiaChi.HoaCuc);
+        }
+
+        public bool IsKimCuc()
+        {
+            return IsHopCuc(DiaChi.KimCuc);
+        }
+
+        private bool IsHopCuc(List<Chi> tamHopCuc)
+        {
+            var sauHao = new List<Hao> { Hao6, Hao5, Hao4, Hao3, Hao2, Hao1 };
+            int count = 0;
+            for (int i = 0; i < tamHopCuc.Count; i++)
+            {
+                if (sauHao.Count(h => h.Chi == tamHopCuc[i]) == 1)
+                {
+                    count++;
+                }
+            }
+
+            // Hop thanh cuc khi co va chi co 3 chi.
+            return count == 3;
         }
 
         public string QueDesc => GetQueDesc();
