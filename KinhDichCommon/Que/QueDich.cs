@@ -40,6 +40,7 @@ namespace KinhDichCommon
                 Name = "Càn Vi Thiên",
                 NameShort = "Càn",
                 Hanh = Kim,
+                HanhQueThuan = Kim,
                 Hao6 = new Hao { Id = 6, HanhCuaQue = Kim, Duong = true, Chi = Tuat, The = true },
                 Hao5 = new Hao { Id = 5, HanhCuaQue = Kim, Duong = true, Chi = Than },
                 Hao4 = new Hao { Id = 4, HanhCuaQue = Kim, Duong = true, Chi = Ngo },
@@ -54,6 +55,7 @@ namespace KinhDichCommon
                 Name = "Đoài Vi Trạch",
                 NameShort = "Đoài",
                 Hanh = Kim,
+                HanhQueThuan = Kim,
                 Hao6 = new Hao { Id = 6, HanhCuaQue = Kim, Duong = false, Chi = Mui, The = true },
                 Hao5 = new Hao { Id = 5, HanhCuaQue = Kim, Duong = true, Chi = Dau },
                 Hao4 = new Hao { Id = 4, HanhCuaQue = Kim, Duong = true, Chi = Hoi },
@@ -68,6 +70,7 @@ namespace KinhDichCommon
                 Name = "Ly Vi Hỏa",
                 NameShort = "Ly",
                 Hanh = Hoa,
+                HanhQueThuan = Hoa,
                 Hao6 = new Hao { Id = 6, HanhCuaQue = Hoa, Duong = true, Chi = Ty, The = true },
                 Hao5 = new Hao { Id = 5, HanhCuaQue = Hoa, Duong = false, Chi = Mui },
                 Hao4 = new Hao { Id = 4, HanhCuaQue = Hoa, Duong = true, Chi = Dau },
@@ -82,6 +85,7 @@ namespace KinhDichCommon
                 Name = "Chấn Vi Lôi",
                 NameShort = "Lôi",
                 Hanh = Moc,
+                HanhQueThuan = Moc,
                 Hao6 = new Hao { Id = 6, HanhCuaQue = Moc, Duong = false, Chi = Tuat, The = true },
                 Hao5 = new Hao { Id = 5, HanhCuaQue = Moc, Duong = false, Chi = Than },
                 Hao4 = new Hao { Id = 4, HanhCuaQue = Moc, Duong = true, Chi = Ngo },
@@ -96,6 +100,7 @@ namespace KinhDichCommon
                 Name = "Tốn Vi Phong",
                 NameShort = "Tốn",
                 Hanh = Moc,
+                HanhQueThuan = Moc,
                 Hao6 = new Hao { Id = 6, HanhCuaQue = Moc, Duong = true, Chi = Mao, The = true },
                 Hao5 = new Hao { Id = 5, HanhCuaQue = Moc, Duong = true, Chi = Ty },
                 Hao4 = new Hao { Id = 4, HanhCuaQue = Moc, Duong = false, Chi = Mui },
@@ -110,6 +115,7 @@ namespace KinhDichCommon
                 Name = "Khảm Vi Thủy",
                 NameShort = "Khảm",
                 Hanh = Thuy,
+                HanhQueThuan = Thuy,
                 Hao6 = new Hao { Id = 6, HanhCuaQue = Thuy, Duong = false, Chi = Ti, The = true },
                 Hao5 = new Hao { Id = 5, HanhCuaQue = Thuy, Duong = true, Chi = Tuat },
                 Hao4 = new Hao { Id = 4, HanhCuaQue = Thuy, Duong = false, Chi = Than },
@@ -124,6 +130,7 @@ namespace KinhDichCommon
                 Name = "Cấn Vi Sơn",
                 NameShort = "Cấn",
                 Hanh = Tho,
+                HanhQueThuan = Tho,
                 Hao6 = new Hao { Id = 6, HanhCuaQue = Tho, Duong = true, Chi = Dan, The = true },
                 Hao5 = new Hao { Id = 5, HanhCuaQue = Tho, Duong = false, Chi = Ti },
                 Hao4 = new Hao { Id = 4, HanhCuaQue = Tho, Duong = false, Chi = Tuat },
@@ -138,6 +145,7 @@ namespace KinhDichCommon
                 Name = "Khôn Vi Địa",
                 NameShort = "Khôn",
                 Hanh = Tho,
+                HanhQueThuan = Tho,
                 Hao6 = new Hao { Id = 6, HanhCuaQue = Tho, Duong = false, Chi = Dau, The = true },
                 Hao5 = new Hao { Id = 5, HanhCuaQue = Tho, Duong = false, Chi = Hoi },
                 Hao4 = new Hao { Id = 4, HanhCuaQue = Tho, Duong = false, Chi = Suu },
@@ -170,14 +178,6 @@ namespace KinhDichCommon
 
         private static void AddQueBien(List<Que> listQue, Que queThuan)
         {
-            //var bien1 = BienQue(QueKien, 1, "Thiên Phong Cấu", "Cấu", 2);
-            //var bien2 = BienQue(bien1, 2, "Thiên Sơn Độn", "Độn", 3);
-            //var bien3 = BienQue(bien2, 3, "Thiên Địa Phủ", "Phủ", 4);
-            //var bien4 = BienQue(bien3, 4, "Phong Địa Quan", "Quan", 5);
-            //var bien5 = BienQue(bien4, 5, "Sơn Địa Bóc", "Bóc", 6);
-            //var bien6 = BienQue(bien5, 6, "Hỏa Địa Tấn", "Tấn", 7);
-            //var bien7 = BienQue(bien6, 7, "Hỏa Thiên Đại Hữu", "Đại Hữu", 8);
-
             var bien1 = BienQue(queThuan, queThuan, 1);
             var bien2 = BienQue(queThuan, bien1, 2);
             var bien3 = BienQue(queThuan, bien2, 3);
@@ -201,6 +201,7 @@ namespace KinhDichCommon
             var que = new Que
             {
                 QueThuan = queThuan,
+                HanhQueThuan = queThuan.Hanh,
                 Hanh = queTruoc.Hanh,
                 Hao6 = queTruoc.Hao6.CloneBasic(),
                 Hao5 = queTruoc.Hao5.CloneBasic(),
@@ -346,7 +347,7 @@ namespace KinhDichCommon
                                     dongHao1 ? !queChu.Hao1.Duong : queChu.Hao1.Duong);
 
             // Hành của quẻ biến sẽ theo quẻ chủ.
-            var hanhGoc = queChu.Hanh;
+            var hanhQueChu = queChu.Hanh;
             var queBien = new Que
             {
                 Id = queBienGoc.Id,
@@ -357,13 +358,14 @@ namespace KinhDichCommon
                 Desc = queBienGoc.Desc,
                 Url = queBienGoc.Url,
                 QueThuan = queBienGoc.QueThuan,
-                Hanh = hanhGoc,
-                Hao6 = queBienGoc.Hao6.CloneChoQueBien(hanhGoc),
-                Hao5 = queBienGoc.Hao5.CloneChoQueBien(hanhGoc),
-                Hao4 = queBienGoc.Hao4.CloneChoQueBien(hanhGoc),
-                Hao3 = queBienGoc.Hao3.CloneChoQueBien(hanhGoc),
-                Hao2 = queBienGoc.Hao2.CloneChoQueBien(hanhGoc),
-                Hao1 = queBienGoc.Hao1.CloneChoQueBien(hanhGoc),
+                Hanh = hanhQueChu,
+                HanhQueThuan = queBienGoc.HanhQueThuan,
+                Hao6 = queBienGoc.Hao6.CloneChoQueBien(hanhQueChu),
+                Hao5 = queBienGoc.Hao5.CloneChoQueBien(hanhQueChu),
+                Hao4 = queBienGoc.Hao4.CloneChoQueBien(hanhQueChu),
+                Hao3 = queBienGoc.Hao3.CloneChoQueBien(hanhQueChu),
+                Hao2 = queBienGoc.Hao2.CloneChoQueBien(hanhQueChu),
+                Hao1 = queBienGoc.Hao1.CloneChoQueBien(hanhQueChu),
             };
 
             return queBien;

@@ -55,8 +55,8 @@ namespace KinhDichCommon
         {
             var sb = new StringBuilder();
 
-            sb.AppendLine($"{que.Name}, {que.Hanh.Name}{GetHopXungString(que)}");
-            sb.AppendLine($"Ngày: {nhatThan.Name} ({nhatThan.Khong1.Name} {nhatThan.Khong2.Name} lâm không) - Tháng: {nguyetKien.Name}");
+            sb.AppendLine(GetTenQue(que));
+            sb.AppendLine(GetNgayThang(nhatThan, nguyetKien));
             sb.AppendLine();
 
             sb.AppendLine(GetHaoDesc(que.Hao6, nhatThan, nguyetKien, isHao6Dong));
@@ -70,6 +70,16 @@ namespace KinhDichCommon
             sb.AppendLine(GetTamHopCuc(que));
 
             return sb.ToString();
+        }
+
+        private static string GetNgayThang(CanChi nhatThan, CanChi nguyetKien)
+        {
+            return $"Ngày: {nhatThan.Name} ({nhatThan.Khong1.Name} {nhatThan.Khong2.Name} lâm không) - Tháng: {nguyetKien.Name}";
+        }
+
+        private static string GetTenQue(Que que)
+        {
+            return $"{que.Name}, {que.HanhQueThuan.Name}{GetHopXungString(que)}";
         }
 
         private static string GetTamHopCuc(Que que)
@@ -275,8 +285,8 @@ namespace KinhDichCommon
         {
             var sb = new StringBuilder();
 
-            sb.AppendLine($"{queBien.Name}, {queBien.Hanh.Name}{GetHopXungString(queBien)}");
-            sb.AppendLine($"Ngày: {nhatThan.Name} ({nhatThan.Khong1.Name} {nhatThan.Khong2.Name} lâm không) - Tháng: {nguyetKien.Name}");
+            sb.AppendLine(GetTenQue(queBien));
+            sb.AppendLine(GetNgayThang(nhatThan, nguyetKien));
             sb.AppendLine();
 
             sb.AppendLine(GetHaoBienDesc(queBien.Hao6, queChu.Hao6, nhatThan, nguyetKien, isHao6Dong));
