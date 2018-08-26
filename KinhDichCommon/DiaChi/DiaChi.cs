@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using static KinhDichCommon.NguHanh;
 
@@ -28,6 +29,37 @@ namespace KinhDichCommon
         static DiaChi()
         {
             SetHopXung(All);
+            SetTanThoai();
+        }
+
+        /// <summary>
+        /// Set tấn thần và thoái thần cho địa chi.
+        /// </summary>
+        private static void SetTanThoai()
+        {
+            Hoi.Tan = Ti;
+            Ti.Thoai = Hoi;
+
+            Dan.Tan = Mao;
+            Mao.Thoai = Dan;
+
+            Ty.Tan = Ngo;
+            Ngo.Thoai = Ty;
+
+            Than.Tan = Dau;
+            Dau.Thoai = Than;
+
+            Suu.Tan = Thin;
+            Thin.Thoai = Suu;
+
+            Thin.Tan = Mui;
+            Mui.Thoai = Thin;
+
+            Mui.Tan = Tuat;
+            Tuat.Thoai = Mui;
+
+            Tuat.Tan = Suu;
+            Suu.Thoai = Tuat;
         }
 
         public static Chi GetChi(int chiId)

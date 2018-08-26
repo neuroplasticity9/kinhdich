@@ -52,7 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GetQueTests.cs" />
-    <Compile Include="DbTests.cs" />
+    <Compile Include="TanThoaiTests.cs" />
     <Compile Include="VongTruongSinhTests.cs" />
     <Compile Include="QueThuanTests.cs" />
     <Compile Include="QueBienTests.cs" />
