@@ -211,7 +211,11 @@ namespace KinhDichCommon
                 result += ", nguyệt hợp";
             }
 
-            if (nguyetKien.IsVuongTuong(hao.Chi))
+            if (nguyetKien.Chi  == hao.Chi)
+            {
+                result += ", nguyệt kiến";
+            }
+            else if (nguyetKien.IsVuongTuong(hao.Chi))
             {
                 result += ", nguyệt vượng";
             }
@@ -230,7 +234,11 @@ namespace KinhDichCommon
             }
 
             // Nhật thần
-            if (nhatThan.Chi.Xung == hao.Chi)
+            if (nhatThan.Chi == hao.Chi)
+            {
+                result += ", nhật kiến";
+            }
+            else if (nhatThan.Chi.Xung == hao.Chi)
             {
                 if (nhatThan.IsVuongTuong(hao.Chi) || nguyetKien.IsVuongTuong(hao.Chi))
                 {
