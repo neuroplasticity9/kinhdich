@@ -41,9 +41,9 @@ namespace DoanQueKinhDich
 
         public bool Hao6Dong => chkHao6Dong.Checked;
 
-        public CanChi NgayAm => _ngayLayQue.GetNgayAm();
+        public CanChi NgayAm => _ngayLayQue.GetAmLich().GetCanChiNgay();
 
-        public CanChi ThangAm => _ngayLayQue.GetThangAm();
+        public CanChi ThangAm => _ngayLayQue.GetAmLich().GetCanChiThang();
 
         public LayQue()
         {

@@ -53,10 +53,6 @@ namespace KinhDichCommon.Tests
 
             // Hành Hỏa, trường sinh ở Dần, mộ ở Tuất.
             Assert.IsTrue(IsMo(Hoa, Tuat));
-
-            // Hành Thổ
-            // Tăng san bốc dịch: giống hành Thủy, nghĩa là Thìn là mộ của Thủy và Thổ.
-            Assert.IsTrue(IsMo(Tho, Thin));
         }
     }
 }

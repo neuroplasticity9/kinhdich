@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using KinhDichCommon;
-using static KinhDichCommon.DiaChi;
-using static KinhDichCommon.ThienCan;
 
 namespace DoanQueKinhDich
 {
@@ -28,17 +26,17 @@ namespace DoanQueKinhDich
             //var nguyetKien = new CanChi { Can = Giap, Chi = Dan };
             CanChi nhatThan = GetNhatThan();
             CanChi nguyetKien = GetNguyetKien();
-            
-            var queChu = QueDich.GetQue(chkHao6.Checked, chkHao5.Checked, chkHao4.Checked, chkHao3.Checked, chkHao2.Checked, chkHao1.Checked);
-            var queChuString = queChu.GetQueDesc(nhatThan, nguyetKien, chkHao6Dong.Checked, chkHao5Dong.Checked, chkHao4Dong.Checked, chkHao3Dong.Checked, chkHao2Dong.Checked, chkHao1Dong.Checked);
+
+            Que queChu = QueDich.GetQue(chkHao6.Checked, chkHao5.Checked, chkHao4.Checked, chkHao3.Checked, chkHao2.Checked, chkHao1.Checked);
+            string queChuString = queChu.GetQueDesc(nhatThan, nguyetKien, chkHao6Dong.Checked, chkHao5Dong.Checked, chkHao4Dong.Checked, chkHao3Dong.Checked, chkHao2Dong.Checked, chkHao1Dong.Checked);
             txtQueChu.Text = queChuString;
             linkQueChu.Text = $"{queChu.NameShort} - Quẻ số {queChu.QueId}";
             _queChuUrl = !string.IsNullOrWhiteSpace(queChu.Url) ? queChu.Url : _defaultUrl;
 
             if (CoQueBien())
             {
-                var queBien = QueDich.GetQueBien(queChu, chkHao6Dong.Checked, chkHao5Dong.Checked, chkHao4Dong.Checked, chkHao3Dong.Checked, chkHao2Dong.Checked, chkHao1Dong.Checked);
-                var queBienString = queBien.GetQueBienDesc(queChu, nhatThan, nguyetKien, chkHao6Dong.Checked, chkHao5Dong.Checked, chkHao4Dong.Checked, chkHao3Dong.Checked, chkHao2Dong.Checked, chkHao1Dong.Checked);
+                Que queBien = QueDich.GetQueBien(queChu, chkHao6Dong.Checked, chkHao5Dong.Checked, chkHao4Dong.Checked, chkHao3Dong.Checked, chkHao2Dong.Checked, chkHao1Dong.Checked);
+                string queBienString = queBien.GetQueBienDesc(queChu, nhatThan, nguyetKien, chkHao6Dong.Checked, chkHao5Dong.Checked, chkHao4Dong.Checked, chkHao3Dong.Checked, chkHao2Dong.Checked, chkHao1Dong.Checked);
                 txtQueBien.Text = queBienString;
                 linkQueBien.Text = $"{queBien.NameShort} - Quẻ số {queBien.QueId}";
                 _queBienUrl = !string.IsNullOrWhiteSpace(queBien.Url) ? queBien.Url : _defaultUrl;
@@ -82,13 +80,17 @@ namespace DoanQueKinhDich
         /// <param name="e"></param>
         private void Main_Load(object sender, EventArgs e)
         {
-            cbxNgayCan.SelectedIndex = 0;
-            cbxNgayChi.SelectedIndex = 0;
-            cbxThangCan.SelectedIndex = 0;
-            cbxThangChi.SelectedIndex = 0;
-
             cbxNgoaiQuai.SelectedIndex = 0;
             cbxNoiQuai.SelectedIndex = 0;
+
+            DateTime ngayLayQue = DateTime.Now;
+            CanChi ngayAm = ngayLayQue.GetAmLich().GetCanChiNgay();
+            CanChi thangAm = ngayLayQue.GetAmLich().GetCanChiThang();
+
+            cbxNgayCan.SelectedIndex = ngayAm.Can.Id - 1;
+            cbxNgayChi.SelectedIndex = ngayAm.Chi.Id - 1;
+            cbxThangCan.SelectedIndex = thangAm.Can.Id - 1;
+            cbxThangChi.SelectedIndex = thangAm.Chi.Id - 1;
         }
 
         private void linkQueChu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -190,7 +192,7 @@ namespace DoanQueKinhDich
 
         private void cbxNgoaiQuai_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var cung = BatQuai.All[cbxNgoaiQuai.SelectedIndex];
+            Cung cung = BatQuai.All[cbxNgoaiQuai.SelectedIndex];
             chkHao6.Checked = cung.Duong3;
             chkHao5.Checked = cung.Duong2;
             chkHao4.Checked = cung.Duong1;
@@ -198,7 +200,7 @@ namespace DoanQueKinhDich
 
         private void cbxNoiQuai_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var cung = BatQuai.All[cbxNoiQuai.SelectedIndex];
+            Cung cung = BatQuai.All[cbxNoiQuai.SelectedIndex];
             chkHao3.Checked = cung.Duong3;
             chkHao2.Checked = cung.Duong2;
             chkHao1.Checked = cung.Duong1;
@@ -206,7 +208,7 @@ namespace DoanQueKinhDich
 
         private void btnLayQue_Click(object sender, EventArgs e)
         {
-            var formLayQue = new LayQue();
+            LayQue formLayQue = new LayQue();
             formLayQue.ShowDialog(this);
 
             if (formLayQue.IsDone)
