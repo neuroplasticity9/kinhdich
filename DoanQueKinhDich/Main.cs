@@ -235,5 +235,17 @@ namespace DoanQueKinhDich
                 btnGo.PerformClick();
             }
         }
+
+        private void linkAmLich_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("http://www.informatik.uni-leipzig.de/~duc/amlich/");
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

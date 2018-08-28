@@ -56,6 +56,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnLayQue = new System.Windows.Forms.Button();
+            this.linkAmLich = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // btnGo
@@ -438,12 +439,25 @@
             this.btnLayQue.UseVisualStyleBackColor = true;
             this.btnLayQue.Click += new System.EventHandler(this.btnLayQue_Click);
             // 
+            // linkAmLich
+            // 
+            this.linkAmLich.AutoSize = true;
+            this.linkAmLich.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkAmLich.Location = new System.Drawing.Point(15, 149);
+            this.linkAmLich.Name = "linkAmLich";
+            this.linkAmLich.Size = new System.Drawing.Size(194, 23);
+            this.linkAmLich.TabIndex = 34;
+            this.linkAmLich.TabStop = true;
+            this.linkAmLich.Text = "Xem âm lịch online";
+            this.linkAmLich.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkAmLich_LinkClicked);
+            // 
             // Main
             // 
             this.AcceptButton = this.btnGo;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1644, 592);
+            this.Controls.Add(this.linkAmLich);
             this.Controls.Add(this.btnLayQue);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -510,6 +524,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnLayQue;
+        private System.Windows.Forms.LinkLabel linkAmLich;
     }
 }
 

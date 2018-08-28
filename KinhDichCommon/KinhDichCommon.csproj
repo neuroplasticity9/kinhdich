@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AmLich\AmLich.cs" />
     <Compile Include="BaseItem.cs" />
     <Compile Include="BatQuai\Cung.cs" />
     <Compile Include="BatQuai\BatQuai.cs" />
@@ -87,9 +88,7 @@
     <Compile Include="NguHanh\NguHanh.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="AmLich\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />

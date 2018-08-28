@@ -9,7 +9,7 @@ namespace DoanQueKinhDich
     {
         private const string Duong = "—";
         private const string Am = "- -";
-        private const int SleepSeconds = 2;
+        private const int SleepSeconds = 1;
         private const int MaxRandomNumber = 100;
 
         private int _lanLayQue = 0;

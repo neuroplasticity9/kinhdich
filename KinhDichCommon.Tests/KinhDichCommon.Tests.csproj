@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AmLichTests.cs" />
     <Compile Include="GetQueTests.cs" />
     <Compile Include="TanThoaiTests.cs" />
     <Compile Include="VongTruongSinhTests.cs" />
