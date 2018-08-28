@@ -62,6 +62,7 @@
     <Compile Include="BatQuai\Cung.cs" />
     <Compile Include="BatQuai\BatQuai.cs" />
     <Compile Include="Db\Sqlite.cs" />
+    <Compile Include="Extensions\DateTimeExtensions.cs" />
     <Compile Include="Extensions\QueExtensions.cs" />
     <Compile Include="Extensions\CanChiExtensions.cs" />
     <Compile Include="Hao\Hao.cs" />

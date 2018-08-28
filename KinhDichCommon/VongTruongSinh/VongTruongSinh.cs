@@ -27,9 +27,9 @@ namespace KinhDichCommon
 
         public static readonly TruongSinhNguHanh MocTruongSinh = new TruongSinhNguHanh(Moc, Hoi); // Xuân, Mộc trường sinh ở Hợi
         public static readonly TruongSinhNguHanh HoaTruongSinh = new TruongSinhNguHanh(Hoa, Dan); // Hạ, Hỏa trường sinh ở Dần
-        public static readonly TruongSinhNguHanh ThoTruongSinh = new TruongSinhNguHanh(Tho, Dan); // Hạ, Hỏa trường sinh ở Dần
         public static readonly TruongSinhNguHanh KimTruongSinh = new TruongSinhNguHanh(Kim, Ty); // Thu, Kim trường sinh ở Tỵ
         public static readonly TruongSinhNguHanh ThuyTruongSinh = new TruongSinhNguHanh(Thuy, Than); // Đông, Thủy trường sinh ở Thân
+        public static readonly TruongSinhNguHanh ThoTruongSinh = new TruongSinhNguHanh(Tho, Than); // Thổ giống Thủy, trường sinh ở Thân
 
         public static readonly List<TruongSinhNguHanh> TruongSinhList = new List<TruongSinhNguHanh> { MocTruongSinh, HoaTruongSinh, ThoTruongSinh, KimTruongSinh, ThuyTruongSinh };
 
@@ -67,6 +67,13 @@ namespace KinhDichCommon
         /// <returns></returns>
         public static bool IsMo(Hanh hanh, Chi chi)
         {
+            if (hanh == Tho)
+            {
+                // Hành thổ không thể có mộ ở Thìn giống Thủy, 
+                // vì không lẽ Thìn thổ (nhật kiến, nguyệt kiến) cũng mộ ở Thìn?
+                return false;
+            }
+
             return GetThoiKi(hanh, chi) == Mo;
         }
 

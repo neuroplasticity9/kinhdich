@@ -21,29 +21,39 @@ namespace DoanQueKinhDich
 
         private void btnGo_Click(object sender, EventArgs e)
         {
-            var date = mcDate.SelectionRange.Start;
+            // var date = mcDate.SelectionRange.Start;
+
             // MessageBox.Show(date.ToString());
-
-            var queChu = QueDich.GetQue(chkHao6.Checked, chkHao5.Checked, chkHao4.Checked, chkHao3.Checked, chkHao2.Checked, chkHao1.Checked);
-            var queBien = QueDich.GetQueBien(queChu, chkHao6Dong.Checked, chkHao5Dong.Checked, chkHao4Dong.Checked, chkHao3Dong.Checked, chkHao2Dong.Checked, chkHao1Dong.Checked);
-
             //var nhatThan = new CanChi { Can = Canh, Chi = Ti };
             //var nguyetKien = new CanChi { Can = Giap, Chi = Dan };
             CanChi nhatThan = GetNhatThan();
             CanChi nguyetKien = GetNguyetKien();
-
+            
+            var queChu = QueDich.GetQue(chkHao6.Checked, chkHao5.Checked, chkHao4.Checked, chkHao3.Checked, chkHao2.Checked, chkHao1.Checked);
             var queChuString = queChu.GetQueDesc(nhatThan, nguyetKien, chkHao6Dong.Checked, chkHao5Dong.Checked, chkHao4Dong.Checked, chkHao3Dong.Checked, chkHao2Dong.Checked, chkHao1Dong.Checked);
-            var queBienString = queBien.GetQueBienDesc(queChu, nhatThan, nguyetKien, chkHao6Dong.Checked, chkHao5Dong.Checked, chkHao4Dong.Checked, chkHao3Dong.Checked, chkHao2Dong.Checked, chkHao1Dong.Checked);
-
             txtQueChu.Text = queChuString;
-            txtQueChuDesc.Text = queChu.Desc;
             linkQueChu.Text = $"{queChu.NameShort} - Quẻ số {queChu.QueId}";
             _queChuUrl = !string.IsNullOrWhiteSpace(queChu.Url) ? queChu.Url : _defaultUrl;
 
-            txtQueBien.Text = queBienString;
-            txtQueBienDesc.Text = queBien.Desc;
-            linkQueBien.Text = $"{queBien.NameShort} - Quẻ số {queBien.QueId}";
-            _queBienUrl = !string.IsNullOrWhiteSpace(queBien.Url) ? queBien.Url : _defaultUrl;
+            if (CoQueBien())
+            {
+                var queBien = QueDich.GetQueBien(queChu, chkHao6Dong.Checked, chkHao5Dong.Checked, chkHao4Dong.Checked, chkHao3Dong.Checked, chkHao2Dong.Checked, chkHao1Dong.Checked);
+                var queBienString = queBien.GetQueBienDesc(queChu, nhatThan, nguyetKien, chkHao6Dong.Checked, chkHao5Dong.Checked, chkHao4Dong.Checked, chkHao3Dong.Checked, chkHao2Dong.Checked, chkHao1Dong.Checked);
+                txtQueBien.Text = queBienString;
+                linkQueBien.Text = $"{queBien.NameShort} - Quẻ số {queBien.QueId}";
+                _queBienUrl = !string.IsNullOrWhiteSpace(queBien.Url) ? queBien.Url : _defaultUrl;
+            }
+            else
+            {
+                txtQueBien.Text = "";
+                linkQueBien.Text = "";
+            }
+        }
+
+        private bool CoQueBien()
+        {
+            return chkHao6Dong.Checked || chkHao5Dong.Checked || chkHao4Dong.Checked ||
+                   chkHao3Dong.Checked || chkHao2Dong.Checked || chkHao1Dong.Checked;
         }
 
         private CanChi GetNguyetKien()
@@ -192,6 +202,38 @@ namespace DoanQueKinhDich
             chkHao3.Checked = cung.Duong3;
             chkHao2.Checked = cung.Duong2;
             chkHao1.Checked = cung.Duong1;
+        }
+
+        private void btnLayQue_Click(object sender, EventArgs e)
+        {
+            var formLayQue = new LayQue();
+            formLayQue.ShowDialog(this);
+
+            if (formLayQue.IsDone)
+            {
+                IQue que = formLayQue as IQue;
+                chkHao6.Checked = que.Hao6;
+                chkHao5.Checked = que.Hao5;
+                chkHao4.Checked = que.Hao4;
+                chkHao3.Checked = que.Hao3;
+                chkHao2.Checked = que.Hao2;
+                chkHao1.Checked = que.Hao1;
+
+                chkHao6Dong.Checked = que.Hao6Dong;
+                chkHao5Dong.Checked = que.Hao5Dong;
+                chkHao4Dong.Checked = que.Hao4Dong;
+                chkHao3Dong.Checked = que.Hao3Dong;
+                chkHao2Dong.Checked = que.Hao2Dong;
+                chkHao1Dong.Checked = que.Hao1Dong;
+
+                cbxNgayCan.SelectedIndex = que.NgayAm.Can.Id - 1;
+                cbxNgayChi.SelectedIndex = que.NgayAm.Chi.Id - 1;
+
+                cbxThangCan.SelectedIndex = que.ThangAm.Can.Id - 1;
+                cbxThangChi.SelectedIndex = que.ThangAm.Chi.Id - 1;
+
+                btnGo.PerformClick();
+            }
         }
     }
 }

@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dtpDob = new System.Windows.Forms.DateTimePicker();
-            this.mcDate = new System.Windows.Forms.MonthCalendar();
             this.btnGo = new System.Windows.Forms.Button();
             this.chkHao6 = new System.Windows.Forms.CheckBox();
             this.chkHao5 = new System.Windows.Forms.CheckBox();
@@ -51,38 +49,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cbxThangChi = new System.Windows.Forms.ComboBox();
             this.cbxThangCan = new System.Windows.Forms.ComboBox();
-            this.txtQueBienDesc = new System.Windows.Forms.RichTextBox();
-            this.txtQueChuDesc = new System.Windows.Forms.RichTextBox();
             this.linkQueChu = new System.Windows.Forms.LinkLabel();
             this.linkQueBien = new System.Windows.Forms.LinkLabel();
             this.cbxNgoaiQuai = new System.Windows.Forms.ComboBox();
             this.cbxNoiQuai = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnLayQue = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // dtpDob
-            // 
-            this.dtpDob.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDob.Location = new System.Drawing.Point(18, 13);
-            this.dtpDob.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpDob.Name = "dtpDob";
-            this.dtpDob.Size = new System.Drawing.Size(255, 31);
-            this.dtpDob.TabIndex = 0;
-            // 
-            // mcDate
-            // 
-            this.mcDate.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mcDate.Location = new System.Drawing.Point(18, 50);
-            this.mcDate.Margin = new System.Windows.Forms.Padding(12, 11, 12, 11);
-            this.mcDate.MaxSelectionCount = 1;
-            this.mcDate.Name = "mcDate";
-            this.mcDate.TabIndex = 1;
             // 
             // btnGo
             // 
             this.btnGo.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGo.Location = new System.Drawing.Point(1168, 50);
+            this.btnGo.Location = new System.Drawing.Point(1168, 54);
             this.btnGo.Margin = new System.Windows.Forms.Padding(4);
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(186, 92);
@@ -95,7 +74,7 @@
             // 
             this.chkHao6.AutoSize = true;
             this.chkHao6.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao6.Location = new System.Drawing.Point(813, 18);
+            this.chkHao6.Location = new System.Drawing.Point(801, 22);
             this.chkHao6.Name = "chkHao6";
             this.chkHao6.Size = new System.Drawing.Size(54, 27);
             this.chkHao6.TabIndex = 5;
@@ -107,7 +86,7 @@
             // 
             this.chkHao5.AutoSize = true;
             this.chkHao5.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao5.Location = new System.Drawing.Point(813, 45);
+            this.chkHao5.Location = new System.Drawing.Point(801, 49);
             this.chkHao5.Name = "chkHao5";
             this.chkHao5.Size = new System.Drawing.Size(54, 27);
             this.chkHao5.TabIndex = 6;
@@ -119,7 +98,7 @@
             // 
             this.chkHao4.AutoSize = true;
             this.chkHao4.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao4.Location = new System.Drawing.Point(813, 72);
+            this.chkHao4.Location = new System.Drawing.Point(801, 76);
             this.chkHao4.Name = "chkHao4";
             this.chkHao4.Size = new System.Drawing.Size(54, 27);
             this.chkHao4.TabIndex = 7;
@@ -131,7 +110,7 @@
             // 
             this.chkHao3.AutoSize = true;
             this.chkHao3.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao3.Location = new System.Drawing.Point(813, 99);
+            this.chkHao3.Location = new System.Drawing.Point(801, 103);
             this.chkHao3.Name = "chkHao3";
             this.chkHao3.Size = new System.Drawing.Size(54, 27);
             this.chkHao3.TabIndex = 8;
@@ -143,7 +122,7 @@
             // 
             this.chkHao2.AutoSize = true;
             this.chkHao2.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao2.Location = new System.Drawing.Point(813, 126);
+            this.chkHao2.Location = new System.Drawing.Point(801, 130);
             this.chkHao2.Name = "chkHao2";
             this.chkHao2.Size = new System.Drawing.Size(54, 27);
             this.chkHao2.TabIndex = 9;
@@ -155,7 +134,7 @@
             // 
             this.chkHao1.AutoSize = true;
             this.chkHao1.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao1.Location = new System.Drawing.Point(813, 153);
+            this.chkHao1.Location = new System.Drawing.Point(801, 157);
             this.chkHao1.Name = "chkHao1";
             this.chkHao1.Size = new System.Drawing.Size(54, 27);
             this.chkHao1.TabIndex = 10;
@@ -170,7 +149,7 @@
             this.txtQueChu.Font = new System.Drawing.Font("Verdana", 11.26957F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQueChu.Location = new System.Drawing.Point(18, 291);
             this.txtQueChu.Name = "txtQueChu";
-            this.txtQueChu.Size = new System.Drawing.Size(821, 234);
+            this.txtQueChu.Size = new System.Drawing.Size(821, 273);
             this.txtQueChu.TabIndex = 11;
             this.txtQueChu.Text = "";
             // 
@@ -178,7 +157,7 @@
             // 
             this.chkHao1Dong.AutoSize = true;
             this.chkHao1Dong.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao1Dong.Location = new System.Drawing.Point(971, 153);
+            this.chkHao1Dong.Location = new System.Drawing.Point(959, 157);
             this.chkHao1Dong.Name = "chkHao1Dong";
             this.chkHao1Dong.Size = new System.Drawing.Size(150, 27);
             this.chkHao1Dong.TabIndex = 17;
@@ -189,7 +168,7 @@
             // 
             this.chkHao2Dong.AutoSize = true;
             this.chkHao2Dong.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao2Dong.Location = new System.Drawing.Point(971, 126);
+            this.chkHao2Dong.Location = new System.Drawing.Point(959, 130);
             this.chkHao2Dong.Name = "chkHao2Dong";
             this.chkHao2Dong.Size = new System.Drawing.Size(150, 27);
             this.chkHao2Dong.TabIndex = 16;
@@ -200,7 +179,7 @@
             // 
             this.chkHao3Dong.AutoSize = true;
             this.chkHao3Dong.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao3Dong.Location = new System.Drawing.Point(971, 99);
+            this.chkHao3Dong.Location = new System.Drawing.Point(959, 103);
             this.chkHao3Dong.Name = "chkHao3Dong";
             this.chkHao3Dong.Size = new System.Drawing.Size(150, 27);
             this.chkHao3Dong.TabIndex = 15;
@@ -211,7 +190,7 @@
             // 
             this.chkHao4Dong.AutoSize = true;
             this.chkHao4Dong.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao4Dong.Location = new System.Drawing.Point(971, 72);
+            this.chkHao4Dong.Location = new System.Drawing.Point(959, 76);
             this.chkHao4Dong.Name = "chkHao4Dong";
             this.chkHao4Dong.Size = new System.Drawing.Size(150, 27);
             this.chkHao4Dong.TabIndex = 14;
@@ -222,7 +201,7 @@
             // 
             this.chkHao5Dong.AutoSize = true;
             this.chkHao5Dong.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao5Dong.Location = new System.Drawing.Point(971, 45);
+            this.chkHao5Dong.Location = new System.Drawing.Point(959, 49);
             this.chkHao5Dong.Name = "chkHao5Dong";
             this.chkHao5Dong.Size = new System.Drawing.Size(150, 27);
             this.chkHao5Dong.TabIndex = 13;
@@ -233,7 +212,7 @@
             // 
             this.chkHao6Dong.AutoSize = true;
             this.chkHao6Dong.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao6Dong.Location = new System.Drawing.Point(971, 18);
+            this.chkHao6Dong.Location = new System.Drawing.Point(959, 22);
             this.chkHao6Dong.Name = "chkHao6Dong";
             this.chkHao6Dong.Size = new System.Drawing.Size(150, 27);
             this.chkHao6Dong.TabIndex = 12;
@@ -246,7 +225,7 @@
             this.txtQueBien.Font = new System.Drawing.Font("Verdana", 11.26957F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQueBien.Location = new System.Drawing.Point(845, 291);
             this.txtQueBien.Name = "txtQueBien";
-            this.txtQueBien.Size = new System.Drawing.Size(786, 234);
+            this.txtQueBien.Size = new System.Drawing.Size(786, 273);
             this.txtQueBien.TabIndex = 18;
             this.txtQueBien.Text = "";
             // 
@@ -266,7 +245,7 @@
             "Tân",
             "Nhâm",
             "Quý"});
-            this.cbxNgayCan.Location = new System.Drawing.Point(325, 39);
+            this.cbxNgayCan.Location = new System.Drawing.Point(266, 54);
             this.cbxNgayCan.MaxDropDownItems = 12;
             this.cbxNgayCan.Name = "cbxNgayCan";
             this.cbxNgayCan.Size = new System.Drawing.Size(121, 31);
@@ -290,7 +269,7 @@
             "Dậu",
             "Tuất",
             "Hợi"});
-            this.cbxNgayChi.Location = new System.Drawing.Point(473, 39);
+            this.cbxNgayChi.Location = new System.Drawing.Point(414, 54);
             this.cbxNgayChi.MaxDropDownItems = 12;
             this.cbxNgayChi.Name = "cbxNgayChi";
             this.cbxNgayChi.Size = new System.Drawing.Size(121, 31);
@@ -300,7 +279,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(322, 7);
+            this.label1.Location = new System.Drawing.Point(263, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 23);
             this.label1.TabIndex = 21;
@@ -310,7 +289,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(322, 110);
+            this.label2.Location = new System.Drawing.Point(263, 114);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 23);
             this.label2.TabIndex = 24;
@@ -334,7 +313,7 @@
             "Dậu",
             "Tuất",
             "Hợi"});
-            this.cbxThangChi.Location = new System.Drawing.Point(473, 142);
+            this.cbxThangChi.Location = new System.Drawing.Point(414, 146);
             this.cbxThangChi.MaxDropDownItems = 12;
             this.cbxThangChi.Name = "cbxThangChi";
             this.cbxThangChi.Size = new System.Drawing.Size(121, 31);
@@ -356,34 +335,11 @@
             "Tân",
             "Nhâm",
             "Quý"});
-            this.cbxThangCan.Location = new System.Drawing.Point(325, 142);
+            this.cbxThangCan.Location = new System.Drawing.Point(266, 146);
             this.cbxThangCan.MaxDropDownItems = 12;
             this.cbxThangCan.Name = "cbxThangCan";
             this.cbxThangCan.Size = new System.Drawing.Size(121, 31);
             this.cbxThangCan.TabIndex = 22;
-            // 
-            // txtQueBienDesc
-            // 
-            this.txtQueBienDesc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtQueBienDesc.Font = new System.Drawing.Font("Verdana", 11.26957F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQueBienDesc.Location = new System.Drawing.Point(845, 531);
-            this.txtQueBienDesc.Name = "txtQueBienDesc";
-            this.txtQueBienDesc.Size = new System.Drawing.Size(786, 345);
-            this.txtQueBienDesc.TabIndex = 26;
-            this.txtQueBienDesc.Text = "";
-            // 
-            // txtQueChuDesc
-            // 
-            this.txtQueChuDesc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtQueChuDesc.Font = new System.Drawing.Font("Verdana", 11.26957F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQueChuDesc.Location = new System.Drawing.Point(18, 531);
-            this.txtQueChuDesc.Name = "txtQueChuDesc";
-            this.txtQueChuDesc.Size = new System.Drawing.Size(821, 345);
-            this.txtQueChuDesc.TabIndex = 25;
-            this.txtQueChuDesc.Text = "";
             // 
             // linkQueChu
             // 
@@ -424,7 +380,7 @@
             "Khảm",
             "Cấn",
             "Khôn"});
-            this.cbxNgoaiQuai.Location = new System.Drawing.Point(661, 39);
+            this.cbxNgoaiQuai.Location = new System.Drawing.Point(649, 54);
             this.cbxNgoaiQuai.MaxDropDownItems = 12;
             this.cbxNgoaiQuai.Name = "cbxNgoaiQuai";
             this.cbxNgoaiQuai.Size = new System.Drawing.Size(121, 31);
@@ -445,7 +401,7 @@
             "Khảm",
             "Cấn",
             "Khôn"});
-            this.cbxNoiQuai.Location = new System.Drawing.Point(661, 142);
+            this.cbxNoiQuai.Location = new System.Drawing.Point(649, 146);
             this.cbxNoiQuai.MaxDropDownItems = 12;
             this.cbxNoiQuai.Name = "cbxNoiQuai";
             this.cbxNoiQuai.Size = new System.Drawing.Size(121, 31);
@@ -456,7 +412,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(657, 7);
+            this.label3.Location = new System.Drawing.Point(645, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(113, 23);
             this.label3.TabIndex = 31;
@@ -466,26 +422,35 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(657, 110);
+            this.label4.Location = new System.Drawing.Point(645, 114);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(90, 23);
             this.label4.TabIndex = 32;
             this.label4.Text = "Nội quái";
+            // 
+            // btnLayQue
+            // 
+            this.btnLayQue.Location = new System.Drawing.Point(18, 17);
+            this.btnLayQue.Name = "btnLayQue";
+            this.btnLayQue.Size = new System.Drawing.Size(150, 59);
+            this.btnLayQue.TabIndex = 33;
+            this.btnLayQue.Text = "Tung Xu Lấy Quẻ";
+            this.btnLayQue.UseVisualStyleBackColor = true;
+            this.btnLayQue.Click += new System.EventHandler(this.btnLayQue_Click);
             // 
             // Main
             // 
             this.AcceptButton = this.btnGo;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1644, 891);
+            this.ClientSize = new System.Drawing.Size(1644, 592);
+            this.Controls.Add(this.btnLayQue);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cbxNoiQuai);
             this.Controls.Add(this.cbxNgoaiQuai);
             this.Controls.Add(this.linkQueBien);
             this.Controls.Add(this.linkQueChu);
-            this.Controls.Add(this.txtQueBienDesc);
-            this.Controls.Add(this.txtQueChuDesc);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbxThangChi);
             this.Controls.Add(this.cbxThangCan);
@@ -507,8 +472,6 @@
             this.Controls.Add(this.chkHao5);
             this.Controls.Add(this.chkHao6);
             this.Controls.Add(this.btnGo);
-            this.Controls.Add(this.mcDate);
-            this.Controls.Add(this.dtpDob);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Main";
             this.Text = "Kinh Dịch";
@@ -519,9 +482,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DateTimePicker dtpDob;
-        private System.Windows.Forms.MonthCalendar mcDate;
         private System.Windows.Forms.Button btnGo;
         private System.Windows.Forms.CheckBox chkHao6;
         private System.Windows.Forms.CheckBox chkHao5;
@@ -543,14 +503,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbxThangChi;
         private System.Windows.Forms.ComboBox cbxThangCan;
-        private System.Windows.Forms.RichTextBox txtQueBienDesc;
-        private System.Windows.Forms.RichTextBox txtQueChuDesc;
         private System.Windows.Forms.LinkLabel linkQueChu;
         private System.Windows.Forms.LinkLabel linkQueBien;
         private System.Windows.Forms.ComboBox cbxNgoaiQuai;
         private System.Windows.Forms.ComboBox cbxNoiQuai;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnLayQue;
     }
 }
 
