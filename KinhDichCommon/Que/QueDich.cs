@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using static KinhDichCommon.DiaChi;
 using static KinhDichCommon.NguHanh;
@@ -173,7 +174,17 @@ namespace KinhDichCommon
             All.AddRange(QueCanBien);
             All.AddRange(QueKhonBien);
 
+            InitAllQue();
+
             Sqlite.SetQueFromDb();
+        }
+
+        private static void InitAllQue()
+        {
+            foreach (var que in All)
+            {
+                que.Init();
+            }
         }
 
         private static void AddQueBien(List<Que> listQue, Que queThuan)

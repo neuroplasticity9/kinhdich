@@ -151,7 +151,7 @@
             this.txtQueChu.Font = new System.Drawing.Font("Courier New", 11.26957F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQueChu.Location = new System.Drawing.Point(18, 291);
             this.txtQueChu.Name = "txtQueChu";
-            this.txtQueChu.Size = new System.Drawing.Size(1601, 301);
+            this.txtQueChu.Size = new System.Drawing.Size(1601, 312);
             this.txtQueChu.TabIndex = 11;
             this.txtQueChu.Text = "";
             // 
@@ -459,7 +459,7 @@
             this.AcceptButton = this.btnGo;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1644, 616);
+            this.ClientSize = new System.Drawing.Size(1644, 627);
             this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.linkAmLich);
             this.Controls.Add(this.btnLayQue);

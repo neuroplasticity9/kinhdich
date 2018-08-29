@@ -54,6 +54,7 @@
     <Compile Include="CalendarTests.cs" />
     <Compile Include="AmLichTests.cs" />
     <Compile Include="GetQueTests.cs" />
+    <Compile Include="PhucThanTests.cs" />
     <Compile Include="TanThoaiTests.cs" />
     <Compile Include="VongTruongSinhTests.cs" />
     <Compile Include="QueThuanTests.cs" />

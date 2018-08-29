@@ -6,35 +6,6 @@ namespace KinhDichCommon
 {
     public static class QueExtensions
     {
-        public static string GetLucThan(this Que que)
-        {
-            var sb = new StringBuilder();
-
-            sb.AppendLine(GetHaoDesc(que.Hao6));
-            sb.AppendLine(GetHaoDesc(que.Hao5));
-            sb.AppendLine(GetHaoDesc(que.Hao4));
-            sb.AppendLine(GetHaoDesc(que.Hao3));
-            sb.AppendLine(GetHaoDesc(que.Hao2));
-            sb.AppendLine(GetHaoDesc(que.Hao1));
-
-            return sb.ToString();
-        }
-
-        private static string GetHaoDesc(Hao hao)
-        {
-            var result = $"{hao.LucThan.Name} {hao.Chi.Name} {hao.Chi.Hanh.Name}";
-            if (hao.The)
-            {
-                result += ", thế";
-            }
-            else if (hao.Ung)
-            {
-                result += ", ứng";
-            }
-
-            return result;
-        }
-
         /// <summary>
         /// Get que desc.
         /// </summary>
@@ -68,9 +39,21 @@ namespace KinhDichCommon
             sb.AppendLine(GetHaoDesc(que.Hao1, nhatThan, nguyetKien, isHao1Dong));
 
             sb.AppendLine();
+            sb.AppendLine(GetHaoPhucDesc(que));
+            sb.AppendLine();
             sb.AppendLine(GetTamHopCuc(que));
 
             return sb.ToString();
+        }
+
+        private static string GetHaoPhucDesc(Que que)
+        {
+            if (que.ViTriHaoPhuc != ViTriHao.None)
+            {
+                return $"{que.HaoPhuc.LucThan.Name} {que.HaoPhuc.Chi.Name} {que.HaoPhuc.Hanh.Name} phục thần ở hào {(int)que.ViTriHaoPhuc}.";
+            }
+
+            return "";
         }
 
         private static string GetNgayThang(CanChi nhatThan, CanChi nguyetKien)
@@ -297,7 +280,7 @@ namespace KinhDichCommon
                                             bool isHao6Dong = false, bool isHao5Dong = false, bool isHao4Dong = false,
                                             bool isHao3Dong = false, bool isHao2Dong = false, bool isHao1Dong = false)
         {
-            var padRight = 80;
+            var padRight = 72;
             var sb = new StringBuilder();
 
             sb.AppendLine(GetNgayThang(nhatThan, nguyetKien));
@@ -332,6 +315,8 @@ namespace KinhDichCommon
             sb.Append(GetHaoBienDesc(queBien.Hao1, queChu.Hao1, nhatThan, nguyetKien, isHao1Dong));
             sb.AppendLine();
 
+            sb.AppendLine();
+            sb.AppendLine(GetHaoPhucDesc(queChu));
             sb.AppendLine();
             sb.AppendLine(GetTamHopCuc(queChu));
 

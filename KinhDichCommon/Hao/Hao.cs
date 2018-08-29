@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 
 namespace KinhDichCommon
 {
@@ -21,6 +20,8 @@ namespace KinhDichCommon
         public bool Ung { get; set; }
 
         public string AmDuongString => Duong ? Utils.Duong : Utils.Am;
+
+        public Hao HaoPhuc { get; set; }
 
         internal Hao CloneBasic()
         {

@@ -1,10 +1,23 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using static KinhDichCommon.NguHanh;
 
 namespace KinhDichCommon
 {
+    public enum ViTriHao
+    {
+        None = 0,
+        Hao1 = 1,
+        Hao2 = 2,
+        Hao3 = 3,
+        Hao4 = 4,
+        Hao5 = 5,
+        Hao6 = 6,
+    }
+
     [DebuggerDisplay("{Name,nq}, thuộc {Hanh.Name,nq}")]
     public class Que : BaseItem
     {
@@ -25,6 +38,17 @@ namespace KinhDichCommon
 
         public Cung NgoaiQuai => BatQuai.GetCung(Hao6.Duong, Hao5.Duong, Hao4.Duong);
         public Cung NoiQuai => BatQuai.GetCung(Hao3.Duong, Hao2.Duong, Hao1.Duong);
+
+        public ViTriHao ViTriHaoPhuc { get; set; }
+        public Hao HaoPhuc { get; set; }
+
+        public List<Hao> SauHao;
+
+        public void Init()
+        {
+            SauHao = new List<Hao> { Hao6, Hao5, Hao4, Hao3, Hao2, Hao1 };
+            SetPhucThan();
+        }
 
         /// <summary>
         /// Quẻ lục hợp.
@@ -66,11 +90,10 @@ namespace KinhDichCommon
 
         private bool IsHopCuc(List<Chi> tamHopCuc)
         {
-            var sauHao = new List<Hao> { Hao6, Hao5, Hao4, Hao3, Hao2, Hao1 };
             int count = 0;
             for (int i = 0; i < tamHopCuc.Count; i++)
             {
-                if (sauHao.Count(h => h.Chi == tamHopCuc[i]) == 1)
+                if (SauHao.Count(h => h.Chi == tamHopCuc[i]) == 1)
                 {
                     count++;
                 }
@@ -93,5 +116,49 @@ namespace KinhDichCommon
 
             return sb.ToString();
         }
+
+        public void SetPhucThan()
+        {
+            var lucThanSauHao = new List<Hanh> { Hao6.LucThan, Hao5.LucThan, Hao4.LucThan, Hao3.LucThan, Hao2.LucThan, Hao1.LucThan };
+            if (!lucThanSauHao.Exists(lt => lt == TuTon))
+            {
+                SetPhucThan(TuTon);
+            }
+            else if (!lucThanSauHao.Exists(lt => lt == TheTai))
+            {
+                SetPhucThan(TheTai);
+            }
+            else if (!lucThanSauHao.Exists(lt => lt == QuanQuy))
+            {
+                SetPhucThan(QuanQuy);
+            }
+            else if (!lucThanSauHao.Exists(lt => lt == PhuMau))
+            {
+                SetPhucThan(PhuMau);
+            }
+            else if (!lucThanSauHao.Exists(lt => lt == HuynhDe))
+            {
+                SetPhucThan(HuynhDe);
+            }
+            else
+            {
+                ViTriHaoPhuc = ViTriHao.None;
+                HaoPhuc = null;
+            }
+        }
+
+        private void SetPhucThan(Hanh lucThanBiThieu)
+        {
+            for (int i = QueThuan.SauHao.Count - 1; i >= 0; i--)
+            {
+                if (QueThuan.SauHao[i].LucThan == lucThanBiThieu)
+                {
+                    ViTriHaoPhuc = (ViTriHao)(6 - i);
+                    HaoPhuc = QueThuan.SauHao[i];
+                    break;
+                }
+            }
+        }
+
     }
 }
