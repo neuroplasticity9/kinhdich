@@ -25,23 +25,22 @@ namespace DoanQueKinhDich
             CanChi nguyetKien = GetNguyetKien();
 
             Que queChu = QueDich.GetQue(chkHao6.Checked, chkHao5.Checked, chkHao4.Checked, chkHao3.Checked, chkHao2.Checked, chkHao1.Checked);
-            string queChuString = queChu.GetQueDesc(nhatThan, nguyetKien, chkHao6Dong.Checked, chkHao5Dong.Checked, chkHao4Dong.Checked, chkHao3Dong.Checked, chkHao2Dong.Checked, chkHao1Dong.Checked);
-            txtQueChu.Text = queChuString;
             linkQueChu.Text = $"{queChu.NameShort} - Quẻ số {queChu.QueId}";
             _queChuUrl = GetUrl(queChu.Name, queChu.QueId);
 
             if (CoQueBien())
             {
                 Que queBien = QueDich.GetQueBien(queChu, chkHao6Dong.Checked, chkHao5Dong.Checked, chkHao4Dong.Checked, chkHao3Dong.Checked, chkHao2Dong.Checked, chkHao1Dong.Checked);
-                string queBienString = queBien.GetQueBienDesc(queChu, nhatThan, nguyetKien, chkHao6Dong.Checked, chkHao5Dong.Checked, chkHao4Dong.Checked, chkHao3Dong.Checked, chkHao2Dong.Checked, chkHao1Dong.Checked);
-                txtQueBien.Text = queBienString;
+                string queChuString = queChu.GetQueBienDesc(queBien, nhatThan, nguyetKien, chkHao6Dong.Checked, chkHao5Dong.Checked, chkHao4Dong.Checked, chkHao3Dong.Checked, chkHao2Dong.Checked, chkHao1Dong.Checked);
+                txtQueChu.Text = queChuString;
+
                 linkQueBien.Text = $"{queBien.NameShort} - Quẻ số {queBien.QueId}";
                 _queBienUrl = GetUrl(queBien.Name, queBien.QueId);
             }
             else
             {
-                txtQueBien.Text = "";
-                linkQueBien.Text = "";
+                string queChuString = queChu.GetQueDesc(nhatThan, nguyetKien, chkHao6Dong.Checked, chkHao5Dong.Checked, chkHao4Dong.Checked, chkHao3Dong.Checked, chkHao2Dong.Checked, chkHao1Dong.Checked);
+                txtQueChu.Text = queChuString;
             }
         }
 
@@ -255,6 +254,11 @@ namespace DoanQueKinhDich
             {
                 throw;
             }
+        }
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(txtQueChu.Text);
         }
     }
 }

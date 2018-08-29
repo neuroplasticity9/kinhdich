@@ -55,8 +55,9 @@ namespace KinhDichCommon
         {
             var sb = new StringBuilder();
 
-            sb.AppendLine(GetTenQue(que));
             sb.AppendLine(GetNgayThang(nhatThan, nguyetKien));
+            sb.AppendLine();
+            sb.AppendLine(GetTenQue(que));
             sb.AppendLine();
 
             sb.AppendLine(GetHaoDesc(que.Hao6, nhatThan, nguyetKien, isHao6Dong));
@@ -74,12 +75,12 @@ namespace KinhDichCommon
 
         private static string GetNgayThang(CanChi nhatThan, CanChi nguyetKien)
         {
-            return $"Ngày: {nhatThan.Name} ({nhatThan.Khong1.Name} {nhatThan.Khong2.Name} lâm không) - Tháng: {nguyetKien.Name}";
+            return $"Tháng: {nguyetKien.Name} - Ngày: {nhatThan.Name} ({nhatThan.Khong1.Name} {nhatThan.Khong2.Name} lâm không)";
         }
 
         private static string GetTenQue(Que que)
         {
-            return $"{que.Name}, {que.HanhQueThuan.Name}{GetHopXungString(que)}";
+            return $"   {que.Name}, {que.HanhQueThuan.Name}{GetHopXungString(que)}";
         }
 
         private static string GetTamHopCuc(Que que)
@@ -152,42 +153,47 @@ namespace KinhDichCommon
         private static string GetDiaChiVaLucThanCuaHao(Hao hao, bool isHaoDong, bool isAmDong = false)
         {
             string result = "";
-
             if (isHaoDong)
             {
                 if (hao.Duong)
                 {
-                    result += "o\t"; // Dương động biến âm.
+                    result = "o"; // Dương động biến âm.
                 }
                 else
                 {
-                    result += "x\t"; // Âm động biến dương.
+                    result += "x"; // Âm động biến dương.
                 }
             }
             else
             {
                 if (isAmDong)
                 {
-                    result += "+\t"; // Ám động.
-                }
-                else
-                {
-                    result += "\t";
+                    result += "+"; // Ám động.
                 }
             }
-            result += $"{hao.Chi.Name} {hao.Chi.Hanh.Name}    \t{hao.LucThan.Name}    \t";
+
+            result = result.PadRight(3);
+
+            result += $"{hao.Chi.Name} {hao.Chi.Hanh.Name}";
+            result = result.PadRight(13);
+
+            result += $"{hao.AmDuongString}";
+            result = result.PadRight(18);
+            
+            result += $"{hao.LucThan.Name}";
+            result = result.PadRight(28);
 
             if (hao.The)
             {
-                result += "THẾ\t";
+                result += "THẾ";
             }
             else if (hao.Ung)
             {
-                result += "ỨNG\t";
+                result += "ỨNG";
             }
             else
             {
-                result += "\t";
+                result += "   ";
             }
 
             return result;
@@ -286,23 +292,48 @@ namespace KinhDichCommon
         /// <param name="isHao2Dong"></param>
         /// <param name="isHao1Dong"></param>
         /// <returns></returns>
-        public static string GetQueBienDesc(this Que queBien, Que queChu,
+        public static string GetQueBienDesc(this Que queChu, Que queBien,
                                             CanChi nhatThan, CanChi nguyetKien,
                                             bool isHao6Dong = false, bool isHao5Dong = false, bool isHao4Dong = false,
                                             bool isHao3Dong = false, bool isHao2Dong = false, bool isHao1Dong = false)
         {
+            var padRight = 80;
             var sb = new StringBuilder();
 
-            sb.AppendLine(GetTenQue(queBien));
             sb.AppendLine(GetNgayThang(nhatThan, nguyetKien));
             sb.AppendLine();
 
-            sb.AppendLine(GetHaoBienDesc(queBien.Hao6, queChu.Hao6, nhatThan, nguyetKien, isHao6Dong));
-            sb.AppendLine(GetHaoBienDesc(queBien.Hao5, queChu.Hao5, nhatThan, nguyetKien, isHao5Dong));
-            sb.AppendLine(GetHaoBienDesc(queBien.Hao4, queChu.Hao4, nhatThan, nguyetKien, isHao4Dong));
-            sb.AppendLine(GetHaoBienDesc(queBien.Hao3, queChu.Hao3, nhatThan, nguyetKien, isHao3Dong));
-            sb.AppendLine(GetHaoBienDesc(queBien.Hao2, queChu.Hao2, nhatThan, nguyetKien, isHao2Dong));
-            sb.AppendLine(GetHaoBienDesc(queBien.Hao1, queChu.Hao1, nhatThan, nguyetKien, isHao1Dong));
+            sb.Append(GetTenQue(queChu).PadRight(padRight));
+            sb.Append(GetTenQue(queBien));
+            sb.AppendLine();
+            sb.AppendLine();
+
+            sb.Append(GetHaoDesc(queChu.Hao6, nhatThan, nguyetKien, isHao6Dong).PadRight(padRight));
+            sb.Append(GetHaoBienDesc(queBien.Hao6, queChu.Hao6, nhatThan, nguyetKien, isHao6Dong));
+            sb.AppendLine();
+
+            sb.Append(GetHaoDesc(queChu.Hao5, nhatThan, nguyetKien, isHao5Dong).PadRight(padRight));
+            sb.Append(GetHaoBienDesc(queBien.Hao5, queChu.Hao5, nhatThan, nguyetKien, isHao5Dong));
+            sb.AppendLine();
+
+            sb.Append(GetHaoDesc(queChu.Hao4, nhatThan, nguyetKien, isHao4Dong).PadRight(padRight));
+            sb.Append(GetHaoBienDesc(queBien.Hao4, queChu.Hao4, nhatThan, nguyetKien, isHao4Dong));
+            sb.AppendLine();
+
+            sb.Append(GetHaoDesc(queChu.Hao3, nhatThan, nguyetKien, isHao3Dong).PadRight(padRight));
+            sb.Append(GetHaoBienDesc(queBien.Hao3, queChu.Hao3, nhatThan, nguyetKien, isHao3Dong));
+            sb.AppendLine();
+
+            sb.Append(GetHaoDesc(queChu.Hao2, nhatThan, nguyetKien, isHao2Dong).PadRight(padRight));
+            sb.Append(GetHaoBienDesc(queBien.Hao2, queChu.Hao2, nhatThan, nguyetKien, isHao2Dong));
+            sb.AppendLine();
+
+            sb.Append(GetHaoDesc(queChu.Hao1, nhatThan, nguyetKien, isHao1Dong).PadRight(padRight));
+            sb.Append(GetHaoBienDesc(queBien.Hao1, queChu.Hao1, nhatThan, nguyetKien, isHao1Dong));
+            sb.AppendLine();
+
+            sb.AppendLine();
+            sb.AppendLine(GetTamHopCuc(queChu));
 
             return sb.ToString();
         }

@@ -20,6 +20,8 @@ namespace KinhDichCommon
 
         public bool Ung { get; set; }
 
+        public string AmDuongString => Duong ? Utils.Duong : Utils.Am;
+
         internal Hao CloneBasic()
         {
             var hao = new Hao

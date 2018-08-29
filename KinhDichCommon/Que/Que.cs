@@ -84,19 +84,14 @@ namespace KinhDichCommon
         private string GetQueDesc()
         {
             var sb = new StringBuilder();
-            GetAmDuongString(sb, Hao6.Duong);
-            GetAmDuongString(sb, Hao5.Duong);
-            GetAmDuongString(sb, Hao4.Duong);
-            GetAmDuongString(sb, Hao3.Duong);
-            GetAmDuongString(sb, Hao2.Duong);
-            GetAmDuongString(sb, Hao1.Duong);
+            sb.AppendLine(Hao6.AmDuongString);
+            sb.AppendLine(Hao5.AmDuongString);
+            sb.AppendLine(Hao4.AmDuongString);
+            sb.AppendLine(Hao3.AmDuongString);
+            sb.AppendLine(Hao2.AmDuongString);
+            sb.AppendLine(Hao1.AmDuongString);
 
             return sb.ToString();
-        }
-
-        private void GetAmDuongString(StringBuilder sb, bool isDuong)
-        {
-            sb.AppendLine(isDuong ? Utils.Duong : Utils.Am);
         }
     }
 }

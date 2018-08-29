@@ -46,11 +46,11 @@
             // 
             // btnGo
             // 
-            this.btnGo.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGo.Location = new System.Drawing.Point(13, 58);
+            this.btnGo.Font = new System.Drawing.Font("Courier New", 11.26957F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGo.Location = new System.Drawing.Point(16, 90);
             this.btnGo.Margin = new System.Windows.Forms.Padding(4);
             this.btnGo.Name = "btnGo";
-            this.btnGo.Size = new System.Drawing.Size(186, 108);
+            this.btnGo.Size = new System.Drawing.Size(250, 108);
             this.btnGo.TabIndex = 2;
             this.btnGo.Text = "Go";
             this.btnGo.UseVisualStyleBackColor = true;
@@ -60,10 +60,10 @@
             // 
             this.chkHao6.AutoSize = true;
             this.chkHao6.Enabled = false;
-            this.chkHao6.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao6.Location = new System.Drawing.Point(301, 19);
+            this.chkHao6.Font = new System.Drawing.Font("Courier New", 11.26957F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkHao6.Location = new System.Drawing.Point(342, 65);
             this.chkHao6.Name = "chkHao6";
-            this.chkHao6.Size = new System.Drawing.Size(54, 27);
+            this.chkHao6.Size = new System.Drawing.Size(62, 25);
             this.chkHao6.TabIndex = 5;
             this.chkHao6.Text = "- -";
             this.chkHao6.UseVisualStyleBackColor = true;
@@ -73,10 +73,10 @@
             // 
             this.chkHao5.AutoSize = true;
             this.chkHao5.Enabled = false;
-            this.chkHao5.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao5.Location = new System.Drawing.Point(301, 46);
+            this.chkHao5.Font = new System.Drawing.Font("Courier New", 11.26957F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkHao5.Location = new System.Drawing.Point(342, 92);
             this.chkHao5.Name = "chkHao5";
-            this.chkHao5.Size = new System.Drawing.Size(54, 27);
+            this.chkHao5.Size = new System.Drawing.Size(62, 25);
             this.chkHao5.TabIndex = 6;
             this.chkHao5.Text = "- -";
             this.chkHao5.UseVisualStyleBackColor = true;
@@ -86,10 +86,10 @@
             // 
             this.chkHao4.AutoSize = true;
             this.chkHao4.Enabled = false;
-            this.chkHao4.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao4.Location = new System.Drawing.Point(301, 73);
+            this.chkHao4.Font = new System.Drawing.Font("Courier New", 11.26957F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkHao4.Location = new System.Drawing.Point(342, 119);
             this.chkHao4.Name = "chkHao4";
-            this.chkHao4.Size = new System.Drawing.Size(54, 27);
+            this.chkHao4.Size = new System.Drawing.Size(62, 25);
             this.chkHao4.TabIndex = 7;
             this.chkHao4.Text = "- -";
             this.chkHao4.UseVisualStyleBackColor = true;
@@ -99,10 +99,10 @@
             // 
             this.chkHao3.AutoSize = true;
             this.chkHao3.Enabled = false;
-            this.chkHao3.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao3.Location = new System.Drawing.Point(301, 100);
+            this.chkHao3.Font = new System.Drawing.Font("Courier New", 11.26957F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkHao3.Location = new System.Drawing.Point(342, 146);
             this.chkHao3.Name = "chkHao3";
-            this.chkHao3.Size = new System.Drawing.Size(54, 27);
+            this.chkHao3.Size = new System.Drawing.Size(62, 25);
             this.chkHao3.TabIndex = 8;
             this.chkHao3.Text = "- -";
             this.chkHao3.UseVisualStyleBackColor = true;
@@ -112,10 +112,10 @@
             // 
             this.chkHao2.AutoSize = true;
             this.chkHao2.Enabled = false;
-            this.chkHao2.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao2.Location = new System.Drawing.Point(301, 127);
+            this.chkHao2.Font = new System.Drawing.Font("Courier New", 11.26957F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkHao2.Location = new System.Drawing.Point(342, 173);
             this.chkHao2.Name = "chkHao2";
-            this.chkHao2.Size = new System.Drawing.Size(54, 27);
+            this.chkHao2.Size = new System.Drawing.Size(62, 25);
             this.chkHao2.TabIndex = 9;
             this.chkHao2.Text = "- -";
             this.chkHao2.UseVisualStyleBackColor = true;
@@ -125,10 +125,10 @@
             // 
             this.chkHao1.AutoSize = true;
             this.chkHao1.Enabled = false;
-            this.chkHao1.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao1.Location = new System.Drawing.Point(301, 154);
+            this.chkHao1.Font = new System.Drawing.Font("Courier New", 11.26957F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkHao1.Location = new System.Drawing.Point(342, 200);
             this.chkHao1.Name = "chkHao1";
-            this.chkHao1.Size = new System.Drawing.Size(54, 27);
+            this.chkHao1.Size = new System.Drawing.Size(62, 25);
             this.chkHao1.TabIndex = 10;
             this.chkHao1.Text = "- -";
             this.chkHao1.UseVisualStyleBackColor = true;
@@ -138,10 +138,10 @@
             // 
             this.chkHao1Dong.AutoSize = true;
             this.chkHao1Dong.Enabled = false;
-            this.chkHao1Dong.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao1Dong.Location = new System.Drawing.Point(439, 154);
+            this.chkHao1Dong.Font = new System.Drawing.Font("Courier New", 11.26957F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkHao1Dong.Location = new System.Drawing.Point(471, 200);
             this.chkHao1Dong.Name = "chkHao1Dong";
-            this.chkHao1Dong.Size = new System.Drawing.Size(150, 27);
+            this.chkHao1Dong.Size = new System.Drawing.Size(150, 25);
             this.chkHao1Dong.TabIndex = 17;
             this.chkHao1Dong.Text = "Hào 1 động?";
             this.chkHao1Dong.UseVisualStyleBackColor = true;
@@ -150,10 +150,10 @@
             // 
             this.chkHao2Dong.AutoSize = true;
             this.chkHao2Dong.Enabled = false;
-            this.chkHao2Dong.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao2Dong.Location = new System.Drawing.Point(439, 127);
+            this.chkHao2Dong.Font = new System.Drawing.Font("Courier New", 11.26957F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkHao2Dong.Location = new System.Drawing.Point(471, 173);
             this.chkHao2Dong.Name = "chkHao2Dong";
-            this.chkHao2Dong.Size = new System.Drawing.Size(150, 27);
+            this.chkHao2Dong.Size = new System.Drawing.Size(150, 25);
             this.chkHao2Dong.TabIndex = 16;
             this.chkHao2Dong.Text = "Hào 2 động?";
             this.chkHao2Dong.UseVisualStyleBackColor = true;
@@ -162,10 +162,10 @@
             // 
             this.chkHao3Dong.AutoSize = true;
             this.chkHao3Dong.Enabled = false;
-            this.chkHao3Dong.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao3Dong.Location = new System.Drawing.Point(439, 100);
+            this.chkHao3Dong.Font = new System.Drawing.Font("Courier New", 11.26957F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkHao3Dong.Location = new System.Drawing.Point(471, 146);
             this.chkHao3Dong.Name = "chkHao3Dong";
-            this.chkHao3Dong.Size = new System.Drawing.Size(150, 27);
+            this.chkHao3Dong.Size = new System.Drawing.Size(150, 25);
             this.chkHao3Dong.TabIndex = 15;
             this.chkHao3Dong.Text = "Hào 3 động?";
             this.chkHao3Dong.UseVisualStyleBackColor = true;
@@ -174,10 +174,10 @@
             // 
             this.chkHao4Dong.AutoSize = true;
             this.chkHao4Dong.Enabled = false;
-            this.chkHao4Dong.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao4Dong.Location = new System.Drawing.Point(439, 73);
+            this.chkHao4Dong.Font = new System.Drawing.Font("Courier New", 11.26957F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkHao4Dong.Location = new System.Drawing.Point(471, 119);
             this.chkHao4Dong.Name = "chkHao4Dong";
-            this.chkHao4Dong.Size = new System.Drawing.Size(150, 27);
+            this.chkHao4Dong.Size = new System.Drawing.Size(150, 25);
             this.chkHao4Dong.TabIndex = 14;
             this.chkHao4Dong.Text = "Hào 4 động?";
             this.chkHao4Dong.UseVisualStyleBackColor = true;
@@ -186,10 +186,10 @@
             // 
             this.chkHao5Dong.AutoSize = true;
             this.chkHao5Dong.Enabled = false;
-            this.chkHao5Dong.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao5Dong.Location = new System.Drawing.Point(439, 46);
+            this.chkHao5Dong.Font = new System.Drawing.Font("Courier New", 11.26957F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkHao5Dong.Location = new System.Drawing.Point(471, 92);
             this.chkHao5Dong.Name = "chkHao5Dong";
-            this.chkHao5Dong.Size = new System.Drawing.Size(150, 27);
+            this.chkHao5Dong.Size = new System.Drawing.Size(150, 25);
             this.chkHao5Dong.TabIndex = 13;
             this.chkHao5Dong.Text = "Hào 5 động?";
             this.chkHao5Dong.UseVisualStyleBackColor = true;
@@ -198,10 +198,10 @@
             // 
             this.chkHao6Dong.AutoSize = true;
             this.chkHao6Dong.Enabled = false;
-            this.chkHao6Dong.Font = new System.Drawing.Font("Verdana", 11.89565F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao6Dong.Location = new System.Drawing.Point(439, 19);
+            this.chkHao6Dong.Font = new System.Drawing.Font("Courier New", 11.26957F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkHao6Dong.Location = new System.Drawing.Point(471, 65);
             this.chkHao6Dong.Name = "chkHao6Dong";
-            this.chkHao6Dong.Size = new System.Drawing.Size(150, 27);
+            this.chkHao6Dong.Size = new System.Drawing.Size(150, 25);
             this.chkHao6Dong.TabIndex = 12;
             this.chkHao6Dong.Text = "Hào 6 động?";
             this.chkHao6Dong.UseVisualStyleBackColor = true;
@@ -209,9 +209,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Courier New", 11.26957F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(255, 17);
+            this.label1.Size = new System.Drawing.Size(428, 21);
             this.label1.TabIndex = 18;
             this.label1.Text = "Nghĩ về việc cần đoán rồi nhấn nút Go.";
             // 
@@ -220,7 +221,7 @@
             this.AcceptButton = this.btnGo;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(621, 205);
+            this.ClientSize = new System.Drawing.Size(659, 252);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.chkHao1Dong);
             this.Controls.Add(this.chkHao2Dong);
