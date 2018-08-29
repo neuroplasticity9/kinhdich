@@ -96,7 +96,7 @@ namespace KinhDichCommon
 
         private void GetAmDuongString(StringBuilder sb, bool isDuong)
         {
-            sb.AppendLine(isDuong ? "—" : "..");
+            sb.AppendLine(isDuong ? Utils.Duong : Utils.Am);
         }
     }
 }

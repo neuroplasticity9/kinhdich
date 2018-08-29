@@ -76,6 +76,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Support\Utils.cs" />
     <Compile Include="VongTruongSinh\ThoiKi.cs" />
     <Compile Include="VongTruongSinh\TruongSinhNguHanh.cs" />
     <Compile Include="VongTruongSinh\VongTruongSinh.cs" />

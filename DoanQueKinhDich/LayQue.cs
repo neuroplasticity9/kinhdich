@@ -10,7 +10,7 @@ namespace DoanQueKinhDich
         private const string Duong = "—";
         private const string Am = "- -";
         private const int SleepSeconds = 1;
-        private const int MaxRandomNumber = 100;
+        private const int MaxRandomNumber = 100000;
 
         private int _lanLayQue = 0;
         private DateTime _ngayLayQue = DateTime.Now;

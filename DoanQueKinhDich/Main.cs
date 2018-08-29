@@ -6,11 +6,8 @@ namespace DoanQueKinhDich
 {
     public partial class Main : Form
     {
-        private const string Duong = "—";
-        private const string Am = "- -";
-        private const string _defaultUrl = "http://cohoc.net/64-que-dich.html";
-        private string _queChuUrl = _defaultUrl;
-        private string _queBienUrl = _defaultUrl;
+        private string _queChuUrl;
+        private string _queBienUrl;
 
         public Main()
         {
@@ -31,7 +28,7 @@ namespace DoanQueKinhDich
             string queChuString = queChu.GetQueDesc(nhatThan, nguyetKien, chkHao6Dong.Checked, chkHao5Dong.Checked, chkHao4Dong.Checked, chkHao3Dong.Checked, chkHao2Dong.Checked, chkHao1Dong.Checked);
             txtQueChu.Text = queChuString;
             linkQueChu.Text = $"{queChu.NameShort} - Quẻ số {queChu.QueId}";
-            _queChuUrl = !string.IsNullOrWhiteSpace(queChu.Url) ? queChu.Url : _defaultUrl;
+            _queChuUrl = GetUrl(queChu.Name, queChu.QueId);
 
             if (CoQueBien())
             {
@@ -39,13 +36,23 @@ namespace DoanQueKinhDich
                 string queBienString = queBien.GetQueBienDesc(queChu, nhatThan, nguyetKien, chkHao6Dong.Checked, chkHao5Dong.Checked, chkHao4Dong.Checked, chkHao3Dong.Checked, chkHao2Dong.Checked, chkHao1Dong.Checked);
                 txtQueBien.Text = queBienString;
                 linkQueBien.Text = $"{queBien.NameShort} - Quẻ số {queBien.QueId}";
-                _queBienUrl = !string.IsNullOrWhiteSpace(queBien.Url) ? queBien.Url : _defaultUrl;
+                _queBienUrl = GetUrl(queBien.Name, queBien.QueId);
             }
             else
             {
                 txtQueBien.Text = "";
                 linkQueBien.Text = "";
             }
+        }
+
+        private string GetUrl(string name, int queId)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                return "http://cohoc.net/64-que-dich.html";
+            }
+
+            return $"http://cohoc.net/{name.Replace(" ", "-")}-kid-{queId}.html";
         }
 
         private bool CoQueBien()
@@ -155,7 +162,7 @@ namespace DoanQueKinhDich
 
         private void ChangeTextAmDuong(CheckBox chkHao)
         {
-            chkHao.Text = chkHao.Checked ? Duong : Am;
+            chkHao.Text = chkHao.Checked ? Utils.Duong : Utils.Am;
         }
 
         private void UpdateNgoaiQuai()
