@@ -70,7 +70,7 @@ namespace DoanQueKinhDich
                 if (_lanLayQue >= 6)
                 {
                     IsDone = true;
-                    btnGo.Text = "Close";
+                    btnGo.Text = "Lấy Quẻ";
                 }
                 else
                 {

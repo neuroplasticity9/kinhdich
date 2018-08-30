@@ -64,7 +64,7 @@
             // 
             this.btnGo.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGo.Location = new System.Drawing.Point(1307, 54);
-            this.btnGo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGo.Margin = new System.Windows.Forms.Padding(4);
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(187, 92);
             this.btnGo.TabIndex = 2;
@@ -367,7 +367,7 @@
             // 
             this.linkQueBien.AutoSize = true;
             this.linkQueBien.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkQueBien.Location = new System.Drawing.Point(1175, 258);
+            this.linkQueBien.Location = new System.Drawing.Point(1179, 258);
             this.linkQueBien.Name = "linkQueBien";
             this.linkQueBien.Size = new System.Drawing.Size(278, 25);
             this.linkQueBien.TabIndex = 28;
@@ -525,7 +525,7 @@
             this.Controls.Add(this.chkHao5);
             this.Controls.Add(this.chkHao6);
             this.Controls.Add(this.btnGo);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMain";
             this.Text = "Kinh Dịch";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
