@@ -57,6 +57,7 @@
             this.btnLayQue = new System.Windows.Forms.Button();
             this.linkAmLich = new System.Windows.Forms.LinkLabel();
             this.btnCopy = new System.Windows.Forms.Button();
+            this.btnLayQueTheoNgay = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnGo
@@ -391,11 +392,11 @@
             "Khảm",
             "Cấn",
             "Khôn"});
-            this.cbxNgoaiQuai.Location = new System.Drawing.Point(558, 44);
+            this.cbxNgoaiQuai.Location = new System.Drawing.Point(550, 44);
             this.cbxNgoaiQuai.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbxNgoaiQuai.MaxDropDownItems = 12;
             this.cbxNgoaiQuai.Name = "cbxNgoaiQuai";
-            this.cbxNgoaiQuai.Size = new System.Drawing.Size(92, 29);
+            this.cbxNgoaiQuai.Size = new System.Drawing.Size(117, 29);
             this.cbxNgoaiQuai.TabIndex = 29;
             this.cbxNgoaiQuai.SelectedIndexChanged += new System.EventHandler(this.cbxNgoaiQuai_SelectedIndexChanged);
             // 
@@ -413,11 +414,11 @@
             "Khảm",
             "Cấn",
             "Khôn"});
-            this.cbxNoiQuai.Location = new System.Drawing.Point(558, 119);
+            this.cbxNoiQuai.Location = new System.Drawing.Point(550, 119);
             this.cbxNoiQuai.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbxNoiQuai.MaxDropDownItems = 12;
             this.cbxNoiQuai.Name = "cbxNoiQuai";
-            this.cbxNoiQuai.Size = new System.Drawing.Size(92, 29);
+            this.cbxNoiQuai.Size = new System.Drawing.Size(117, 29);
             this.cbxNoiQuai.TabIndex = 30;
             this.cbxNoiQuai.SelectedIndexChanged += new System.EventHandler(this.cbxNoiQuai_SelectedIndexChanged);
             // 
@@ -425,7 +426,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(555, 18);
+            this.label3.Location = new System.Drawing.Point(547, 18);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 21);
@@ -436,7 +437,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(555, 93);
+            this.label4.Location = new System.Drawing.Point(547, 93);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(98, 21);
@@ -446,7 +447,7 @@
             // btnLayQue
             // 
             this.btnLayQue.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLayQue.Location = new System.Drawing.Point(14, 27);
+            this.btnLayQue.Location = new System.Drawing.Point(14, 25);
             this.btnLayQue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLayQue.Name = "btnLayQue";
             this.btnLayQue.Size = new System.Drawing.Size(205, 48);
@@ -482,12 +483,25 @@
             this.btnCopy.UseVisualStyleBackColor = true;
             this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
+            // btnLayQueTheoNgay
+            // 
+            this.btnLayQueTheoNgay.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLayQueTheoNgay.Location = new System.Drawing.Point(14, 100);
+            this.btnLayQueTheoNgay.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLayQueTheoNgay.Name = "btnLayQueTheoNgay";
+            this.btnLayQueTheoNgay.Size = new System.Drawing.Size(205, 48);
+            this.btnLayQueTheoNgay.TabIndex = 36;
+            this.btnLayQueTheoNgay.Text = "Lấy Quẻ Theo Ngày";
+            this.btnLayQueTheoNgay.UseVisualStyleBackColor = true;
+            this.btnLayQueTheoNgay.Click += new System.EventHandler(this.btnLayQueTheoNgay_Click);
+            // 
             // Main
             // 
             this.AcceptButton = this.btnGo;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1376, 509);
+            this.Controls.Add(this.btnLayQueTheoNgay);
             this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.linkAmLich);
             this.Controls.Add(this.btnLayQue);
@@ -556,6 +570,7 @@
         private System.Windows.Forms.Button btnLayQue;
         private System.Windows.Forms.LinkLabel linkAmLich;
         private System.Windows.Forms.Button btnCopy;
+        private System.Windows.Forms.Button btnLayQueTheoNgay;
     }
 }
 

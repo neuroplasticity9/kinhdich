@@ -220,7 +220,7 @@ namespace DoanQueKinhDich
 
         private void btnLayQue_Click(object sender, EventArgs e)
         {
-            LayQue formLayQue = new LayQue();
+            FormTungXu formLayQue = new FormTungXu();
             formLayQue.ShowDialog(this);
 
             if (formLayQue.IsDone)
@@ -265,6 +265,11 @@ namespace DoanQueKinhDich
         private void btnCopy_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(txtQueChu.Text);
+        }
+
+        private void btnLayQueTheoNgay_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

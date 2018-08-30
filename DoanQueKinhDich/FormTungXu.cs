@@ -5,7 +5,7 @@ using KinhDichCommon;
 
 namespace DoanQueKinhDich
 {
-    public partial class LayQue : Form, IQue
+    public partial class FormTungXu : Form, IQue
     {
         private const string Duong = "—";
         private const string Am = "- -";
@@ -20,13 +20,13 @@ namespace DoanQueKinhDich
         public bool Hao1 => chkHao1.Checked;
 
         public bool Hao2 => chkHao2.Checked;
-                            
+
         public bool Hao3 => chkHao3.Checked;
-                            
+
         public bool Hao4 => chkHao4.Checked;
-                            
+
         public bool Hao5 => chkHao5.Checked;
-                            
+
         public bool Hao6 => chkHao6.Checked;
 
         public bool Hao1Dong => chkHao1Dong.Checked;
@@ -45,7 +45,7 @@ namespace DoanQueKinhDich
 
         public CanChi ThangAm => _ngayLayQue.GetAmLich().GetCanChiThang();
 
-        public LayQue()
+        public FormTungXu()
         {
             InitializeComponent();
         }
@@ -62,8 +62,9 @@ namespace DoanQueKinhDich
             try
             {
                 btnGo.Enabled = false;
+                //labelKetQua.Text = "Đang tung xu...";
 
-                TungXu();
+                DoTungXu();
             }
             finally
             {
@@ -80,7 +81,7 @@ namespace DoanQueKinhDich
             }
         }
 
-        private void TungXu()
+        private void DoTungXu()
         {
             switch (_lanLayQue)
             {
@@ -115,26 +116,16 @@ namespace DoanQueKinhDich
 
         private void SetResultForHao(CheckBox chkHao, CheckBox chkHaoDong)
         {
-            int soTong = GetQue();
+            var tungXu = new TungXu();
+            tungXu.Run();
+
             chkHao.Visible = true;
             chkHaoDong.Visible = true;
-            chkHao.Checked = soTong % 3 == 1; // Chỉ có 1 đồng dương.
-            chkHaoDong.Checked = soTong % 3 == 0; // Cả 3 đồng tiền cùng âm hay cùng dương.
+            chkHao.Checked = tungXu.Duong;
+            chkHaoDong.Checked = tungXu.Dong;
+
+            labelKetQua.Text = tungXu.GetKetQua();
         }
-
-        private int GetQue()
-        {
-            // Sleep some seconds.
-            Thread.Sleep(SleepSeconds * 1000);
-
-            var random = new Random(DateTime.Now.Millisecond);
-            int xu1 = random.Next(0, MaxRandomNumber) % 2;
-            int xu2 = random.Next(0, MaxRandomNumber) % 2;
-            int xu3 = random.Next(0, MaxRandomNumber) % 2;
-
-            return xu1 + xu2 + xu3;
-        }
-
 
         /// <summary>
         /// Form load event.
@@ -191,6 +182,52 @@ namespace DoanQueKinhDich
         private void ChangeTextAmDuong(CheckBox chkHao)
         {
             chkHao.Text = chkHao.Checked ? Duong : Am;
+        }
+
+        private class TungXu
+        {
+            public int Xu1 { get; set; }
+            public int Xu2 { get; set; }
+            public int Xu3 { get; set; }
+
+            public int Tong3Xu => Xu1 + Xu2 + Xu3;
+
+            public bool Duong => Tong3Xu % 2 == 1; // Chỉ có 1 đồng dương hoặc 3 đồng dương.
+            public bool Dong => (Xu1 + Xu2 + Xu3) % 3 == 0; // Cả 3 đồng tiền cùng loại (cùng âm hay cùng dương).
+
+            public void Run()
+            {
+                // Sleep some seconds.
+                Thread.Sleep(SleepSeconds * 1000);
+
+                var random = new Random(DateTime.Now.Millisecond);
+
+                Xu1 = random.Next(0, MaxRandomNumber) % 2;
+                Xu2 = random.Next(0, MaxRandomNumber) % 2;
+                Xu3 = random.Next(0, MaxRandomNumber) % 2;
+            }
+
+            public string GetKetQua()
+            {
+                string result = $"{GetXu(Xu1)} {GetXu(Xu2)} {GetXu(Xu3)} => được hào ";
+
+                result += Duong ? "Dương" : "Âm";
+                if (Dong)
+                {
+                    result += " Động.";
+                }
+                else
+                {
+                    result += ".";
+                }
+
+                return result;
+            }
+
+            private string GetXu(int xu)
+            {
+                return xu == 1 ? "Dương" : "Âm";
+            }
         }
     }
 }
