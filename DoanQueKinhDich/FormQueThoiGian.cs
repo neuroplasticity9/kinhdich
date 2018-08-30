@@ -206,13 +206,18 @@ namespace DoanQueKinhDich
         private void GetQue()
         {
             DateTime selectedDate = uiDate.SelectionRange.Start;
-            //var selectedTime = uiHour.Value.TimeOfDay;
+            var selectedTime = uiHour.Value.TimeOfDay;
+            if (selectedTime >= TimeSpan.FromHours(23))
+            {
+                // Increase 1 day if it passed 11PM.
+                selectedDate = selectedDate.AddDays(1);
+            }
 
             var amLich = selectedDate.ToAmLich();
 
             IsDone = true;
 
-            SetNgayThangComboboxes(amLich);
+            SetUIControls(amLich);
 
             SetNoiQuaiNgoaiQuai(amLich);
         }
@@ -246,7 +251,7 @@ namespace DoanQueKinhDich
             chkHao6Dong.Checked = haoDongIndex == 0;
         }
 
-        private void SetNgayThangComboboxes(AmLich amLich)
+        private void SetUIControls(AmLich amLich)
         {
             CanChi ngayAm = amLich.GetCanChiNgay();
             CanChi thangAm = amLich.GetCanChiThang();
@@ -262,6 +267,8 @@ namespace DoanQueKinhDich
             Chi gioChi = DiaChi.All[cbxGioChi.SelectedIndex];
             Can gioCan = amLich.GetCanCuaGio(gioChi);
             cbxGioCan.SelectedIndex = gioCan.Id - 1;
+
+            labelNgayAmLich.Text = $"Ngày âm lịch: {amLich.LunarYear}-{amLich.LunarMonth}-{amLich.LunarDay}";
         }
 
         private void uiDatePicker_ValueChanged(object sender, EventArgs e)

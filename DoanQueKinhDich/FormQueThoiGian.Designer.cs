@@ -61,13 +61,14 @@
             this.chkUseNamCan = new System.Windows.Forms.CheckBox();
             this.uiDatePicker = new System.Windows.Forms.DateTimePicker();
             this.uiHour = new System.Windows.Forms.DateTimePicker();
+            this.labelNgayAmLich = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnGo
             // 
             this.btnGo.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGo.Location = new System.Drawing.Point(1415, 171);
-            this.btnGo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGo.Margin = new System.Windows.Forms.Padding(4);
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(187, 92);
             this.btnGo.TabIndex = 2;
@@ -290,7 +291,6 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Enabled = false;
             this.label1.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(380, 238);
             this.label1.Name = "label1";
@@ -301,7 +301,6 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Enabled = false;
             this.label2.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(380, 149);
             this.label2.Name = "label2";
@@ -408,7 +407,6 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Enabled = false;
             this.label3.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(768, 129);
             this.label3.Name = "label3";
@@ -419,7 +417,6 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Enabled = false;
             this.label4.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(768, 222);
             this.label4.Name = "label4";
@@ -565,7 +562,7 @@
             this.chkUseNamCan.AutoSize = true;
             this.chkUseNamCan.Font = new System.Drawing.Font("Courier New", 14F);
             this.chkUseNamCan.Location = new System.Drawing.Point(384, 9);
-            this.chkUseNamCan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkUseNamCan.Margin = new System.Windows.Forms.Padding(4);
             this.chkUseNamCan.Name = "chkUseNamCan";
             this.chkUseNamCan.Size = new System.Drawing.Size(437, 29);
             this.chkUseNamCan.TabIndex = 41;
@@ -579,7 +576,7 @@
             this.uiDatePicker.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.uiDatePicker.Location = new System.Drawing.Point(28, 57);
-            this.uiDatePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uiDatePicker.Margin = new System.Windows.Forms.Padding(4);
             this.uiDatePicker.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
             this.uiDatePicker.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.uiDatePicker.Name = "uiDatePicker";
@@ -593,7 +590,7 @@
             this.uiHour.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiHour.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.uiHour.Location = new System.Drawing.Point(28, 358);
-            this.uiHour.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uiHour.Margin = new System.Windows.Forms.Padding(4);
             this.uiHour.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
             this.uiHour.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.uiHour.Name = "uiHour";
@@ -601,12 +598,23 @@
             this.uiHour.TabIndex = 43;
             this.uiHour.ValueChanged += new System.EventHandler(this.uiHour_ValueChanged);
             // 
+            // labelNgayAmLich
+            // 
+            this.labelNgayAmLich.AutoSize = true;
+            this.labelNgayAmLich.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNgayAmLich.Location = new System.Drawing.Point(381, 422);
+            this.labelNgayAmLich.Name = "labelNgayAmLich";
+            this.labelNgayAmLich.Size = new System.Drawing.Size(194, 25);
+            this.labelNgayAmLich.TabIndex = 44;
+            this.labelNgayAmLich.Text = "Ngày âm lịch:";
+            // 
             // FormQueThoiGian
             // 
             this.AcceptButton = this.btnGo;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1681, 460);
+            this.ClientSize = new System.Drawing.Size(1681, 475);
+            this.Controls.Add(this.labelNgayAmLich);
             this.Controls.Add(this.uiHour);
             this.Controls.Add(this.uiDatePicker);
             this.Controls.Add(this.chkUseNamCan);
@@ -640,7 +648,7 @@
             this.Controls.Add(this.chkHao5);
             this.Controls.Add(this.chkHao6);
             this.Controls.Add(this.btnGo);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormQueThoiGian";
@@ -686,6 +694,7 @@
         private System.Windows.Forms.CheckBox chkUseNamCan;
         private System.Windows.Forms.DateTimePicker uiDatePicker;
         private System.Windows.Forms.DateTimePicker uiHour;
+        private System.Windows.Forms.Label labelNgayAmLich;
     }
 }
 
