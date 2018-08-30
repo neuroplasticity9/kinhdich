@@ -61,5 +61,49 @@ namespace KinhDichCommon.Tests
             Assert.AreEqual(ngayAm.Can, Canh);
             Assert.AreEqual(ngayAm.Chi, Ti);
         }
+
+        [TestMethod]
+        public void TestGioAm()
+        {
+            DateTime duongLich = new DateTime(2018, 8, 28);
+            Can canGioTi = duongLich.ToAmLich().GetCanGioTi();
+            Assert.AreEqual(canGioTi, Canh);
+
+            duongLich = new DateTime(2018, 8, 29);
+            canGioTi = duongLich.ToAmLich().GetCanGioTi();
+            Assert.AreEqual(canGioTi, Nham);
+
+            duongLich = new DateTime(2018, 8, 30);
+            canGioTi = duongLich.ToAmLich().GetCanGioTi();
+            Assert.AreEqual(canGioTi, Giap);
+
+            duongLich = new DateTime(1983, 3, 13);
+            canGioTi = duongLich.ToAmLich().GetCanGioTi();
+            Assert.AreEqual(canGioTi, Binh);
+        }
+
+        [TestMethod]
+        public void TestCanGioAm()
+        {
+            DateTime duongLich = new DateTime(2018, 8, 30);
+            AmLich amLich = duongLich.ToAmLich();
+
+            Can canGioTi = amLich.GetCanGioTi();
+
+            Can can = amLich.GetCanCuaGio(Ti);
+            Assert.AreEqual(canGioTi, can);
+
+            can = amLich.GetCanCuaGio(Suu);
+            Assert.AreEqual(can, At);
+
+            can = amLich.GetCanCuaGio(Ngo);
+            Assert.AreEqual(can, Canh);
+
+            can = amLich.GetCanCuaGio(Dau);
+            Assert.AreEqual(can, Quy);
+
+            can = amLich.GetCanCuaGio(Hoi);
+            Assert.AreEqual(can, At);
+        }
     }
 }

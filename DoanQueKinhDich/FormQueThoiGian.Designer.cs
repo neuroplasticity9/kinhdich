@@ -51,7 +51,6 @@
             this.cbxNoiQuai = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.linkAmLich = new System.Windows.Forms.LinkLabel();
             this.uiDate = new System.Windows.Forms.MonthCalendar();
             this.label5 = new System.Windows.Forms.Label();
             this.cbxNamChi = new System.Windows.Forms.ComboBox();
@@ -431,20 +430,6 @@
             this.label4.TabIndex = 32;
             this.label4.Text = "Nội quái";
             // 
-            // linkAmLich
-            // 
-            this.linkAmLich.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkAmLich.AutoSize = true;
-            this.linkAmLich.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkAmLich.Location = new System.Drawing.Point(1042, 12);
-            this.linkAmLich.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkAmLich.Name = "linkAmLich";
-            this.linkAmLich.Size = new System.Drawing.Size(208, 21);
-            this.linkAmLich.TabIndex = 34;
-            this.linkAmLich.TabStop = true;
-            this.linkAmLich.Text = "Xem âm lịch online";
-            this.linkAmLich.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkAmLich_LinkClicked);
-            // 
             // uiDate
             // 
             this.uiDate.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
@@ -632,7 +617,6 @@
             this.Controls.Add(this.cbxNamChi);
             this.Controls.Add(this.cbxNamCan);
             this.Controls.Add(this.uiDate);
-            this.Controls.Add(this.linkAmLich);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cbxNoiQuai);
@@ -691,7 +675,6 @@
         private System.Windows.Forms.ComboBox cbxNoiQuai;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.LinkLabel linkAmLich;
         private System.Windows.Forms.MonthCalendar uiDate;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbxNamChi;

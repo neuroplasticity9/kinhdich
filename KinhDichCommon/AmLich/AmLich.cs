@@ -47,9 +47,52 @@ namespace KinhDichCommon
             return new CanChi { Can = ThienCan.All[canIndex], Chi = DiaChi.All[chiIndex] };
         }
 
-        public Can GetCanNgay(Chi chi)
+        /// <summary>
+        /// Giáp Kỷ hoàn gia Giáp
+        /// Ất Canh, Bính tác sơ
+        /// Bính Tân tòng Mậu khởi
+        /// Đinh Nhâm, Canh tí cư.
+        /// Mậu Quí hà phương pháp?
+        /// Nhâm tí thị thuận hành.
+        /// </summary>
+        /// <returns></returns>
+        public Can GetCanGioTi()
         {
-            return ThienCan.Giap;
+            int gioTiCanIndex = (GetCanChiNgay().Can.Id * 2 - 2) % 10;
+            return ThienCan.All[gioTiCanIndex];
+        }
+
+        /// <summary>
+        /// Từ địa chi của giờ, lấy ra thiên can của giờ.
+        /// </summary>
+        /// <param name="chi"></param>
+        /// <returns></returns>
+        public Can GetCanCuaGio(Chi chi)
+        {
+            int chiIndex = 0;
+            for (int i = 0; i < DiaChi.All.Count; i++)
+            {
+                if (chi == DiaChi.All[i])
+                {
+                    chiIndex = i;
+                    break;
+                }
+            }
+
+            Can canGioTi = GetCanGioTi();
+            int canGioTiIndex = 0;
+            for (int i = 0; i < ThienCan.All.Count; i++)
+            {
+                if (canGioTi == ThienCan.All[i])
+                {
+                    canGioTiIndex = i;
+                    break;
+                }
+            }
+
+            int canIndex = (canGioTiIndex + chiIndex) % 10;
+
+            return ThienCan.All[canIndex];
         }
     }
 }

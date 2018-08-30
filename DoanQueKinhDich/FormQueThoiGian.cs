@@ -174,50 +174,6 @@ namespace DoanQueKinhDich
             chkHao1.Checked = cung.Duong1;
         }
 
-        private void btnLayQue_Click(object sender, EventArgs e)
-        {
-            FormQueTungXu formLayQue = new FormQueTungXu();
-            formLayQue.ShowDialog(this);
-
-            if (formLayQue.IsDone)
-            {
-                IQue que = formLayQue as IQue;
-                chkHao6.Checked = que.Hao6;
-                chkHao5.Checked = que.Hao5;
-                chkHao4.Checked = que.Hao4;
-                chkHao3.Checked = que.Hao3;
-                chkHao2.Checked = que.Hao2;
-                chkHao1.Checked = que.Hao1;
-
-                chkHao6Dong.Checked = que.Hao6Dong;
-                chkHao5Dong.Checked = que.Hao5Dong;
-                chkHao4Dong.Checked = que.Hao4Dong;
-                chkHao3Dong.Checked = que.Hao3Dong;
-                chkHao2Dong.Checked = que.Hao2Dong;
-                chkHao1Dong.Checked = que.Hao1Dong;
-
-                cbxNgayCan.SelectedIndex = que.NgayAm.Can.Id - 1;
-                cbxNgayChi.SelectedIndex = que.NgayAm.Chi.Id - 1;
-
-                cbxThangCan.SelectedIndex = que.ThangAm.Can.Id - 1;
-                cbxThangChi.SelectedIndex = que.ThangAm.Chi.Id - 1;
-
-                btnGo.PerformClick();
-            }
-        }
-
-        private void linkAmLich_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            try
-            {
-                System.Diagnostics.Process.Start("http://www.informatik.uni-leipzig.de/~duc/amlich/");
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
         private void uiDate_DateChanged(object sender, DateRangeEventArgs e)
         {
             GetQue(uiDate.SelectionRange.Start);
@@ -275,6 +231,10 @@ namespace DoanQueKinhDich
             cbxThangChi.SelectedIndex = thangAm.Chi.Id - 1;
             cbxNamCan.SelectedIndex = namAm.Can.Id - 1;
             cbxNamChi.SelectedIndex = namAm.Chi.Id - 1;
+
+            Chi gioChi = DiaChi.All[cbxGioChi.SelectedIndex];
+            Can gioCan = amLich.GetCanCuaGio(gioChi);
+            cbxGioCan.SelectedIndex = gioCan.Id - 1;
         }
 
         private void uiDatePicker_ValueChanged(object sender, EventArgs e)

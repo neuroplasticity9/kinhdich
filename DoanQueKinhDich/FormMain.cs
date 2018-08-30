@@ -16,8 +16,6 @@ namespace DoanQueKinhDich
 
         private void btnGo_Click(object sender, EventArgs e)
         {
-            //var nhatThan = new CanChi { Can = Canh, Chi = Ti };
-            //var nguyetKien = new CanChi { Can = Giap, Chi = Dan };
             CanChi nhatThan = GetNhatThan();
             CanChi nguyetKien = GetNguyetKien();
 
@@ -260,7 +258,7 @@ namespace DoanQueKinhDich
         {
             try
             {
-                System.Diagnostics.Process.Start("http://www.informatik.uni-leipzig.de/~duc/amlich/");
+                System.Diagnostics.Process.Start("http://lichvannien.vietbao.vn/");
             }
             catch (Exception)
             {
