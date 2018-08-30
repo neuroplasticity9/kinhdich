@@ -25,6 +25,7 @@ namespace DoanQueKinhDich
             CanChi nguyetKien = GetNguyetKien();
 
             Que queChu = QueDich.GetQue(chkHao6.Checked, chkHao5.Checked, chkHao4.Checked, chkHao3.Checked, chkHao2.Checked, chkHao1.Checked);
+            linkQueChu.Visible = true;
             linkQueChu.Text = $"{queChu.NameShort} - Quẻ số {queChu.QueId}";
             _queChuUrl = GetUrl(queChu.Name, queChu.QueId);
 
@@ -34,11 +35,13 @@ namespace DoanQueKinhDich
                 string queChuString = queChu.GetQueBienDesc(queBien, nhatThan, nguyetKien, chkHao6Dong.Checked, chkHao5Dong.Checked, chkHao4Dong.Checked, chkHao3Dong.Checked, chkHao2Dong.Checked, chkHao1Dong.Checked);
                 txtQueChu.Text = queChuString;
 
+                linkQueBien.Visible = true;
                 linkQueBien.Text = $"{queBien.NameShort} - Quẻ số {queBien.QueId}";
                 _queBienUrl = GetUrl(queBien.Name, queBien.QueId);
             }
             else
             {
+                linkQueBien.Visible = false;
                 string queChuString = queChu.GetQueDesc(nhatThan, nguyetKien, chkHao6Dong.Checked, chkHao5Dong.Checked, chkHao4Dong.Checked, chkHao3Dong.Checked, chkHao2Dong.Checked, chkHao1Dong.Checked);
                 txtQueChu.Text = queChuString;
             }
@@ -86,6 +89,9 @@ namespace DoanQueKinhDich
         /// <param name="e"></param>
         private void Main_Load(object sender, EventArgs e)
         {
+            linkQueChu.Visible = false;
+            linkQueBien.Visible = false;
+
             cbxNgoaiQuai.SelectedIndex = 0;
             cbxNoiQuai.SelectedIndex = 0;
 

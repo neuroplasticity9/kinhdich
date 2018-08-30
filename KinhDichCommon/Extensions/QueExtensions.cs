@@ -280,7 +280,7 @@ namespace KinhDichCommon
                                             bool isHao6Dong = false, bool isHao5Dong = false, bool isHao4Dong = false,
                                             bool isHao3Dong = false, bool isHao2Dong = false, bool isHao1Dong = false)
         {
-            var padRight = 72;
+            var padRight = 76;
             var sb = new StringBuilder();
 
             sb.AppendLine(GetNgayThang(nhatThan, nguyetKien));
