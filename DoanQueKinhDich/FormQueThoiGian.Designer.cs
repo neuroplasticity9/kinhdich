@@ -600,6 +600,7 @@
             this.uiHour.Name = "uiHour";
             this.uiHour.Size = new System.Drawing.Size(227, 29);
             this.uiHour.TabIndex = 43;
+            this.uiHour.ValueChanged += new System.EventHandler(this.uiHour_ValueChanged);
             // 
             // FormQueThoiGian
             // 

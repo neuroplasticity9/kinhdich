@@ -70,17 +70,41 @@ namespace DoanQueKinhDich
         /// <param name="e"></param>
         private void Main_Load(object sender, EventArgs e)
         {
-            cbxGioChi.SelectedIndex = 0;
-
             cbxNgoaiQuai.SelectedIndex = 0;
             cbxNoiQuai.SelectedIndex = 0;
 
-            GetQue(uiDate.SelectionRange.Start);
+            SetChiCuaGio();
+
+            GetQue();
         }
-        
+
+        private void SetChiCuaGio()
+        {
+            var currentTime = uiHour.Value.TimeOfDay;
+
+            var chiIndex = 0;
+            if (currentTime <= TimeSpan.FromHours(1))
+            {
+                chiIndex = 0;
+            }
+            else
+            {
+                for (int i = 1; i < DiaChi.All.Count; i++)
+                {
+                    if (currentTime <= TimeSpan.FromHours(i * 2 + 1))
+                    {
+                        chiIndex = i;
+                        break;
+                    }
+                }
+            }
+
+            cbxGioChi.SelectedIndex = chiIndex;
+        }
+
         private void btnGo_Click(object sender, EventArgs e)
         {
-            GetQue(uiDate.SelectionRange.Start);
+            GetQue();
 
             this.Close();
         }
@@ -176,11 +200,14 @@ namespace DoanQueKinhDich
 
         private void uiDate_DateChanged(object sender, DateRangeEventArgs e)
         {
-            GetQue(uiDate.SelectionRange.Start);
+            GetQue();
         }
 
-        private void GetQue(DateTime selectedDate)
+        private void GetQue()
         {
+            DateTime selectedDate = uiDate.SelectionRange.Start;
+            //var selectedTime = uiHour.Value.TimeOfDay;
+
             var amLich = selectedDate.ToAmLich();
 
             IsDone = true;
@@ -244,13 +271,17 @@ namespace DoanQueKinhDich
 
         private void chkUseNamCan_CheckedChanged(object sender, EventArgs e)
         {
-            GetQue(uiDate.SelectionRange.Start);
+            GetQue();
         }
 
         private void cbxGioChi_SelectedIndexChanged(object sender, EventArgs e)
         {
-            GetQue(uiDate.SelectionRange.Start);
+            GetQue();
         }
 
+        private void uiHour_ValueChanged(object sender, EventArgs e)
+        {
+            SetChiCuaGio();
+        }
     }
 }
