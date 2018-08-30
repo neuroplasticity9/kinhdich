@@ -4,64 +4,45 @@ using KinhDichCommon;
 
 namespace DoanQueKinhDich
 {
-    public partial class Main : Form
+    public partial class FormQueThoiGian : Form, IQue
     {
         private string _queChuUrl;
         private string _queBienUrl;
 
-        public Main()
+        public FormQueThoiGian()
         {
             InitializeComponent();
         }
 
-        private void btnGo_Click(object sender, EventArgs e)
-        {
-            // var date = mcDate.SelectionRange.Start;
+        public bool IsDone { get; private set; } = false;
 
-            // MessageBox.Show(date.ToString());
-            //var nhatThan = new CanChi { Can = Canh, Chi = Ti };
-            //var nguyetKien = new CanChi { Can = Giap, Chi = Dan };
-            CanChi nhatThan = GetNhatThan();
-            CanChi nguyetKien = GetNguyetKien();
+        public bool Hao1 => chkHao1.Checked;
 
-            Que queChu = QueDich.GetQue(chkHao6.Checked, chkHao5.Checked, chkHao4.Checked, chkHao3.Checked, chkHao2.Checked, chkHao1.Checked);
-            linkQueChu.Visible = true;
-            linkQueChu.Text = $"{queChu.NameShort} - Quẻ số {queChu.QueId}";
-            _queChuUrl = GetUrl(queChu.Name, queChu.QueId);
+        public bool Hao2 => chkHao2.Checked;
 
-            if (CoQueBien())
-            {
-                Que queBien = QueDich.GetQueBien(queChu, chkHao6Dong.Checked, chkHao5Dong.Checked, chkHao4Dong.Checked, chkHao3Dong.Checked, chkHao2Dong.Checked, chkHao1Dong.Checked);
-                string queChuString = queChu.GetQueBienDesc(queBien, nhatThan, nguyetKien, chkHao6Dong.Checked, chkHao5Dong.Checked, chkHao4Dong.Checked, chkHao3Dong.Checked, chkHao2Dong.Checked, chkHao1Dong.Checked);
-                txtQueChu.Text = queChuString;
+        public bool Hao3 => chkHao3.Checked;
 
-                linkQueBien.Visible = true;
-                linkQueBien.Text = $"{queBien.NameShort} - Quẻ số {queBien.QueId}";
-                _queBienUrl = GetUrl(queBien.Name, queBien.QueId);
-            }
-            else
-            {
-                linkQueBien.Visible = false;
-                string queChuString = queChu.GetQueDesc(nhatThan, nguyetKien, chkHao6Dong.Checked, chkHao5Dong.Checked, chkHao4Dong.Checked, chkHao3Dong.Checked, chkHao2Dong.Checked, chkHao1Dong.Checked);
-                txtQueChu.Text = queChuString;
-            }
-        }
+        public bool Hao4 => chkHao4.Checked;
 
-        private string GetUrl(string name, int queId)
-        {
-            if (string.IsNullOrWhiteSpace(name))
-            {
-                return "http://cohoc.net/64-que-dich.html";
-            }
+        public bool Hao5 => chkHao5.Checked;
 
-            return $"http://cohoc.net/{name.Replace(" ", "-")}-kid-{queId}.html";
-        }
+        public bool Hao6 => chkHao6.Checked;
 
-        private bool CoQueBien()
-        {
-            return chkHao6Dong.Checked || chkHao5Dong.Checked || chkHao4Dong.Checked ||
-                   chkHao3Dong.Checked || chkHao2Dong.Checked || chkHao1Dong.Checked;
-        }
+        public bool Hao1Dong => chkHao1Dong.Checked;
+
+        public bool Hao2Dong => chkHao2Dong.Checked;
+
+        public bool Hao3Dong => chkHao3Dong.Checked;
+
+        public bool Hao4Dong => chkHao4Dong.Checked;
+
+        public bool Hao5Dong => chkHao5Dong.Checked;
+
+        public bool Hao6Dong => chkHao6Dong.Checked;
+
+        public CanChi NgayAm => GetNhatThan();
+
+        public CanChi ThangAm => GetNguyetKien();
 
         private CanChi GetNguyetKien()
         {
@@ -89,44 +70,19 @@ namespace DoanQueKinhDich
         /// <param name="e"></param>
         private void Main_Load(object sender, EventArgs e)
         {
-            linkQueChu.Visible = false;
-            linkQueBien.Visible = false;
+            cbxGioChi.SelectedIndex = 0;
 
             cbxNgoaiQuai.SelectedIndex = 0;
             cbxNoiQuai.SelectedIndex = 0;
 
-            DateTime ngayLayQue = DateTime.Now;
-            CanChi ngayAm = ngayLayQue.GetAmLich().GetCanChiNgay();
-            CanChi thangAm = ngayLayQue.GetAmLich().GetCanChiThang();
-
-            cbxNgayCan.SelectedIndex = ngayAm.Can.Id - 1;
-            cbxNgayChi.SelectedIndex = ngayAm.Chi.Id - 1;
-            cbxThangCan.SelectedIndex = thangAm.Can.Id - 1;
-            cbxThangChi.SelectedIndex = thangAm.Chi.Id - 1;
+            GetQue(uiDate.SelectionRange.Start);
         }
-
-        private void linkQueChu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        
+        private void btnGo_Click(object sender, EventArgs e)
         {
-            try
-            {
-                System.Diagnostics.Process.Start(_queChuUrl);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
+            GetQue(uiDate.SelectionRange.Start);
 
-        private void linkQueBien_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            try
-            {
-                System.Diagnostics.Process.Start(_queBienUrl);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            this.Close();
         }
 
         private void chkHao6_CheckedChanged(object sender, EventArgs e)
@@ -220,7 +176,7 @@ namespace DoanQueKinhDich
 
         private void btnLayQue_Click(object sender, EventArgs e)
         {
-            FormTungXu formLayQue = new FormTungXu();
+            FormQueTungXu formLayQue = new FormQueTungXu();
             formLayQue.ShowDialog(this);
 
             if (formLayQue.IsDone)
@@ -262,14 +218,79 @@ namespace DoanQueKinhDich
             }
         }
 
-        private void btnCopy_Click(object sender, EventArgs e)
+        private void uiDate_DateChanged(object sender, DateRangeEventArgs e)
         {
-            Clipboard.SetText(txtQueChu.Text);
+            GetQue(uiDate.SelectionRange.Start);
         }
 
-        private void btnLayQueTheoNgay_Click(object sender, EventArgs e)
+        private void GetQue(DateTime selectedDate)
         {
+            var amLich = selectedDate.ToAmLich();
 
+            IsDone = true;
+
+            SetNgayThangComboboxes(amLich);
+
+            SetNoiQuaiNgoaiQuai(amLich);
         }
+
+        private void SetNoiQuaiNgoaiQuai(AmLich amLich)
+        {
+            var totalNamThangNgay = 0;
+            if (chkUseNamCan.Checked)
+            {
+                totalNamThangNgay = amLich.GetCanChiNam().Can.Id + amLich.LunarMonth + amLich.LunarDay;
+            }
+            else
+            {
+                totalNamThangNgay = amLich.GetCanChiNam().Chi.Id + amLich.LunarMonth + amLich.LunarDay;
+            }
+
+            var ngoaiQuaiIndex = (totalNamThangNgay - 1) % 8;
+            cbxNgoaiQuai.SelectedIndex = ngoaiQuaiIndex;
+
+            Chi gioChi = DiaChi.All[cbxGioChi.SelectedIndex];
+            var totalNamThangNgayGio = totalNamThangNgay + gioChi.Id;
+            var noiQuaiIndex = (totalNamThangNgayGio - 1) % 8;
+            cbxNoiQuai.SelectedIndex = noiQuaiIndex;
+
+            var haoDongIndex = totalNamThangNgayGio % 6;
+            chkHao1Dong.Checked = haoDongIndex == 1;
+            chkHao2Dong.Checked = haoDongIndex == 2;
+            chkHao3Dong.Checked = haoDongIndex == 3;
+            chkHao4Dong.Checked = haoDongIndex == 4;
+            chkHao5Dong.Checked = haoDongIndex == 5;
+            chkHao6Dong.Checked = haoDongIndex == 0;
+        }
+
+        private void SetNgayThangComboboxes(AmLich amLich)
+        {
+            CanChi ngayAm = amLich.GetCanChiNgay();
+            CanChi thangAm = amLich.GetCanChiThang();
+            CanChi namAm = amLich.GetCanChiNam();
+
+            cbxNgayCan.SelectedIndex = ngayAm.Can.Id - 1;
+            cbxNgayChi.SelectedIndex = ngayAm.Chi.Id - 1;
+            cbxThangCan.SelectedIndex = thangAm.Can.Id - 1;
+            cbxThangChi.SelectedIndex = thangAm.Chi.Id - 1;
+            cbxNamCan.SelectedIndex = namAm.Can.Id - 1;
+            cbxNamChi.SelectedIndex = namAm.Chi.Id - 1;
+        }
+
+        private void uiDatePicker_ValueChanged(object sender, EventArgs e)
+        {
+            uiDate.SelectionRange = new SelectionRange(uiDatePicker.Value, uiDatePicker.Value);
+        }
+
+        private void chkUseNamCan_CheckedChanged(object sender, EventArgs e)
+        {
+            GetQue(uiDate.SelectionRange.Start);
+        }
+
+        private void cbxGioChi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GetQue(uiDate.SelectionRange.Start);
+        }
+
     }
 }

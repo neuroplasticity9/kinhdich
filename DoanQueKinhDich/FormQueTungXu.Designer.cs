@@ -1,6 +1,6 @@
 ﻿namespace DoanQueKinhDich
 {
-    partial class FormTungXu
+    partial class FormQueTungXu
     {
         /// <summary>
         /// Required designer variable.
@@ -52,7 +52,7 @@
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(188, 88);
             this.btnGo.TabIndex = 2;
-            this.btnGo.Text = "Go";
+            this.btnGo.Text = "Tung Xu";
             this.btnGo.UseVisualStyleBackColor = true;
             this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
             // 
@@ -62,7 +62,7 @@
             this.chkHao6.Enabled = false;
             this.chkHao6.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkHao6.Location = new System.Drawing.Point(277, 49);
-            this.chkHao6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkHao6.Margin = new System.Windows.Forms.Padding(2);
             this.chkHao6.Name = "chkHao6";
             this.chkHao6.Size = new System.Drawing.Size(62, 25);
             this.chkHao6.TabIndex = 5;
@@ -76,7 +76,7 @@
             this.chkHao5.Enabled = false;
             this.chkHao5.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkHao5.Location = new System.Drawing.Point(277, 71);
-            this.chkHao5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkHao5.Margin = new System.Windows.Forms.Padding(2);
             this.chkHao5.Name = "chkHao5";
             this.chkHao5.Size = new System.Drawing.Size(62, 25);
             this.chkHao5.TabIndex = 6;
@@ -90,7 +90,7 @@
             this.chkHao4.Enabled = false;
             this.chkHao4.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkHao4.Location = new System.Drawing.Point(277, 93);
-            this.chkHao4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkHao4.Margin = new System.Windows.Forms.Padding(2);
             this.chkHao4.Name = "chkHao4";
             this.chkHao4.Size = new System.Drawing.Size(62, 25);
             this.chkHao4.TabIndex = 7;
@@ -104,7 +104,7 @@
             this.chkHao3.Enabled = false;
             this.chkHao3.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkHao3.Location = new System.Drawing.Point(277, 115);
-            this.chkHao3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkHao3.Margin = new System.Windows.Forms.Padding(2);
             this.chkHao3.Name = "chkHao3";
             this.chkHao3.Size = new System.Drawing.Size(62, 25);
             this.chkHao3.TabIndex = 8;
@@ -118,7 +118,7 @@
             this.chkHao2.Enabled = false;
             this.chkHao2.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkHao2.Location = new System.Drawing.Point(277, 137);
-            this.chkHao2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkHao2.Margin = new System.Windows.Forms.Padding(2);
             this.chkHao2.Name = "chkHao2";
             this.chkHao2.Size = new System.Drawing.Size(62, 25);
             this.chkHao2.TabIndex = 9;
@@ -132,7 +132,7 @@
             this.chkHao1.Enabled = false;
             this.chkHao1.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkHao1.Location = new System.Drawing.Point(277, 158);
-            this.chkHao1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkHao1.Margin = new System.Windows.Forms.Padding(2);
             this.chkHao1.Name = "chkHao1";
             this.chkHao1.Size = new System.Drawing.Size(62, 25);
             this.chkHao1.TabIndex = 10;
@@ -146,7 +146,7 @@
             this.chkHao1Dong.Enabled = false;
             this.chkHao1Dong.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkHao1Dong.Location = new System.Drawing.Point(374, 158);
-            this.chkHao1Dong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkHao1Dong.Margin = new System.Windows.Forms.Padding(2);
             this.chkHao1Dong.Name = "chkHao1Dong";
             this.chkHao1Dong.Size = new System.Drawing.Size(150, 25);
             this.chkHao1Dong.TabIndex = 17;
@@ -159,7 +159,7 @@
             this.chkHao2Dong.Enabled = false;
             this.chkHao2Dong.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkHao2Dong.Location = new System.Drawing.Point(374, 137);
-            this.chkHao2Dong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkHao2Dong.Margin = new System.Windows.Forms.Padding(2);
             this.chkHao2Dong.Name = "chkHao2Dong";
             this.chkHao2Dong.Size = new System.Drawing.Size(150, 25);
             this.chkHao2Dong.TabIndex = 16;
@@ -172,7 +172,7 @@
             this.chkHao3Dong.Enabled = false;
             this.chkHao3Dong.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkHao3Dong.Location = new System.Drawing.Point(374, 115);
-            this.chkHao3Dong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkHao3Dong.Margin = new System.Windows.Forms.Padding(2);
             this.chkHao3Dong.Name = "chkHao3Dong";
             this.chkHao3Dong.Size = new System.Drawing.Size(150, 25);
             this.chkHao3Dong.TabIndex = 15;
@@ -185,7 +185,7 @@
             this.chkHao4Dong.Enabled = false;
             this.chkHao4Dong.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkHao4Dong.Location = new System.Drawing.Point(374, 93);
-            this.chkHao4Dong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkHao4Dong.Margin = new System.Windows.Forms.Padding(2);
             this.chkHao4Dong.Name = "chkHao4Dong";
             this.chkHao4Dong.Size = new System.Drawing.Size(150, 25);
             this.chkHao4Dong.TabIndex = 14;
@@ -198,7 +198,7 @@
             this.chkHao5Dong.Enabled = false;
             this.chkHao5Dong.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkHao5Dong.Location = new System.Drawing.Point(374, 71);
-            this.chkHao5Dong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkHao5Dong.Margin = new System.Windows.Forms.Padding(2);
             this.chkHao5Dong.Name = "chkHao5Dong";
             this.chkHao5Dong.Size = new System.Drawing.Size(150, 25);
             this.chkHao5Dong.TabIndex = 13;
@@ -211,7 +211,7 @@
             this.chkHao6Dong.Enabled = false;
             this.chkHao6Dong.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkHao6Dong.Location = new System.Drawing.Point(374, 49);
-            this.chkHao6Dong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkHao6Dong.Margin = new System.Windows.Forms.Padding(2);
             this.chkHao6Dong.Name = "chkHao6Dong";
             this.chkHao6Dong.Size = new System.Drawing.Size(150, 25);
             this.chkHao6Dong.TabIndex = 12;
@@ -225,9 +225,9 @@
             this.label1.Location = new System.Drawing.Point(9, 15);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(428, 21);
+            this.label1.Size = new System.Drawing.Size(483, 21);
             this.label1.TabIndex = 18;
-            this.label1.Text = "Nghĩ về việc cần đoán rồi nhấn nút Go.";
+            this.label1.Text = "Nghĩ về việc cần đoán rồi nhấn nút Tung Xu.";
             // 
             // labelKetQua
             // 
@@ -240,7 +240,7 @@
             this.labelKetQua.TabIndex = 19;
             this.labelKetQua.Text = "Kết quả tung xu...";
             // 
-            // FormTungXu
+            // FormQueTungXu
             // 
             this.AcceptButton = this.btnGo;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -263,9 +263,9 @@
             this.Controls.Add(this.btnGo);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FormTungXu";
+            this.Name = "FormQueTungXu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Lấy quẻ 6 hào";
+            this.Text = "Tung Xu Lấy Quẻ";
             this.Load += new System.EventHandler(this.Main_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -4,6 +4,8 @@ namespace DoanQueKinhDich
 {
     public interface IQue
     {
+        bool IsDone { get; }
+
         bool Hao1 { get; }
         bool Hao2 { get; }
         bool Hao3 { get; }

@@ -50,26 +50,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormQueThoiGian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQueThoiGian.Designer.cs">
+      <DependentUpon>FormQueThoiGian.cs</DependentUpon>
+    </Compile>
     <Compile Include="IQue.cs" />
-    <Compile Include="FormTungXu.cs">
+    <Compile Include="FormQueTungXu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTungXu.Designer.cs">
-      <DependentUpon>FormTungXu.cs</DependentUpon>
+    <Compile Include="FormQueTungXu.Designer.cs">
+      <DependentUpon>FormQueTungXu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main.cs">
+    <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormTungXu.resx">
-      <DependentUpon>FormTungXu.cs</DependentUpon>
+    <EmbeddedResource Include="FormQueThoiGian.resx">
+      <DependentUpon>FormQueThoiGian.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main.resx">
-      <DependentUpon>Main.cs</DependentUpon>
+    <EmbeddedResource Include="FormQueTungXu.resx">
+      <DependentUpon>FormQueTungXu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -30,7 +30,7 @@ namespace KinhDichCommon
         public CanChi GetCanChiThang()
         {
             // 0=Giap, 1=At, ...
-            var canIndex = (LunarYear * 12 + LunarMonth + 3 ) % 10;
+            var canIndex = (LunarYear * 12 + LunarMonth + 3) % 10;
 
             // 0=Ti, 1=Suu, ..., 11=Hoi.
             var chiIndex = (LunarMonth + 1) % 12;
@@ -45,6 +45,11 @@ namespace KinhDichCommon
             var chiIndex = (int)(jd + 1) % 12;
 
             return new CanChi { Can = ThienCan.All[canIndex], Chi = DiaChi.All[chiIndex] };
+        }
+
+        public Can GetCanNgay(Chi chi)
+        {
+            return ThienCan.Giap;
         }
     }
 }

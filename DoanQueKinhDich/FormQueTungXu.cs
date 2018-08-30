@@ -5,7 +5,7 @@ using KinhDichCommon;
 
 namespace DoanQueKinhDich
 {
-    public partial class FormTungXu : Form, IQue
+    public partial class FormQueTungXu : Form, IQue
     {
         private const string Duong = "—";
         private const string Am = "- -";
@@ -41,11 +41,11 @@ namespace DoanQueKinhDich
 
         public bool Hao6Dong => chkHao6Dong.Checked;
 
-        public CanChi NgayAm => _ngayLayQue.GetAmLich().GetCanChiNgay();
+        public CanChi NgayAm => _ngayLayQue.ToAmLich().GetCanChiNgay();
 
-        public CanChi ThangAm => _ngayLayQue.GetAmLich().GetCanChiThang();
+        public CanChi ThangAm => _ngayLayQue.ToAmLich().GetCanChiThang();
 
-        public FormTungXu()
+        public FormQueTungXu()
         {
             InitializeComponent();
         }
@@ -184,6 +184,9 @@ namespace DoanQueKinhDich
             chkHao.Text = chkHao.Checked ? Duong : Am;
         }
 
+        /// <summary>
+        /// Tung xu va lưu kết quả.
+        /// </summary>
         private class TungXu
         {
             public int Xu1 { get; set; }
@@ -193,7 +196,7 @@ namespace DoanQueKinhDich
             public int Tong3Xu => Xu1 + Xu2 + Xu3;
 
             public bool Duong => Tong3Xu % 2 == 1; // Chỉ có 1 đồng dương hoặc 3 đồng dương.
-            public bool Dong => (Xu1 + Xu2 + Xu3) % 3 == 0; // Cả 3 đồng tiền cùng loại (cùng âm hay cùng dương).
+            public bool Dong => Tong3Xu % 3 == 0; // Cả 3 đồng tiền cùng loại (cùng âm hay cùng dương).
 
             public void Run()
             {
