@@ -7,8 +7,6 @@ namespace DoanQueKinhDich
 {
     public partial class FormQueTungXu : Form, IQue
     {
-        private const string Duong = "—";
-        private const string Am = "- -";
         private const int SleepSeconds = 1;
         private const int MaxRandomNumber = 100000;
 
@@ -181,7 +179,7 @@ namespace DoanQueKinhDich
 
         private void ChangeTextAmDuong(CheckBox chkHao)
         {
-            chkHao.Text = chkHao.Checked ? Duong : Am;
+            chkHao.Text = chkHao.Checked ? Utils.Duong : Utils.Am;
         }
 
         /// <summary>
