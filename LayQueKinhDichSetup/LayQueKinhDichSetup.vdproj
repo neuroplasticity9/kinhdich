@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_4FD02BE7B7C6470A97F39D2EC017DCB8"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_61185564FF774BE6AA49592C864F4402"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -45,14 +51,14 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_FF9ADFAB8E47EA310ABEAF1368ACA459"
-        "OwnerKey" = "8:_E2EE803691154A5BB3E41E14C02D7BD7"
+        "MsmKey" = "8:_FAE38416FF0C429F8BAB3F6BFDC18A73"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_FF9ADFAB8E47EA310ABEAF1368ACA459"
+        "MsmKey" = "8:_FF9ADFAB8E47EA310ABEAF1368ACA459"
+        "OwnerKey" = "8:_E2EE803691154A5BB3E41E14C02D7BD7"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -73,6 +79,12 @@
         "OwnerKey" = "8:_D8FC2F132E537F5BEB0EA13100BAD266"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_FF9ADFAB8E47EA310ABEAF1368ACA459"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -91,6 +103,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -107,6 +135,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -136,6 +172,26 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4FD02BE7B7C6470A97F39D2EC017DCB8"
+            {
+            "SourcePath" = "8:..\\DoanQueKinhDich\\bin\\Debug\\x86\\SQLite.Interop.dll"
+            "TargetName" = "8:SQLite.Interop.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_2BC59FDB0EC74BFB8AF8D622020212C2"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_61185564FF774BE6AA49592C864F4402"
             {
             "SourcePath" = "8:..\\KinhDich.sqlite"
@@ -218,6 +274,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FAE38416FF0C429F8BAB3F6BFDC18A73"
+            {
+            "SourcePath" = "8:..\\star.ico"
+            "TargetName" = "8:star.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_2BC59FDB0EC74BFB8AF8D622020212C2"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_FF9ADFAB8E47EA310ABEAF1368ACA459"
             {
             "AssemblyRegister" = "3:1"
@@ -258,7 +334,7 @@
             "{1525181F-901A-416C-8A58-119130FE478E}:_18D8749A68E34FA386AD6D801201EAE0"
             {
             "Name" = "8:#1916"
-            "AlwaysCreate" = "11:FALSE"
+            "AlwaysCreate" = "11:TRUE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Property" = "8:DesktopFolder"
@@ -268,7 +344,7 @@
             }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_2BC59FDB0EC74BFB8AF8D622020212C2"
             {
-            "DefaultLocation" = "8:[ProgramFilesFolder][Manufacturer]\\[ProductName]"
+            "DefaultLocation" = "8:[ProgramFilesFolder]\\[ProductName]"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
@@ -281,7 +357,7 @@
             "{1525181F-901A-416C-8A58-119130FE478E}:_4353F6A75E5842BB838234761AF68A9A"
             {
             "Name" = "8:#1919"
-            "AlwaysCreate" = "11:FALSE"
+            "AlwaysCreate" = "11:TRUE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Property" = "8:ProgramMenuFolder"
@@ -306,7 +382,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Lay Que Kinh Dich"
         "ProductCode" = "8:{C9269CEF-C6C0-44C6-A591-62479537A485}"
-        "PackageCode" = "8:{6CF6B40E-F58B-4A1F-8ED7-9CB706B6613D}"
+        "PackageCode" = "8:{4F8A876C-5682-448E-883F-A3CEBEC23EA7}"
         "UpgradeCode" = "8:{B70DF8DD-7FF6-4881-B5B4-61374910687B}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -426,6 +502,34 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_15E402C74CBC46FF900E417FDF71ECF1"
+            {
+            "Name" = "8:Lay Que Kinh Dich"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_E2EE803691154A5BB3E41E14C02D7BD7"
+            "Folder" = "8:_4353F6A75E5842BB838234761AF68A9A"
+            "WorkingFolder" = "8:_2BC59FDB0EC74BFB8AF8D622020212C2"
+            "Icon" = "8:_FAE38416FF0C429F8BAB3F6BFDC18A73"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_7504A3715AF2439E8243FB803C5146C1"
+            {
+            "Name" = "8:Lay Que Kinh Dich"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_E2EE803691154A5BB3E41E14C02D7BD7"
+            "Folder" = "8:_18D8749A68E34FA386AD6D801201EAE0"
+            "WorkingFolder" = "8:_2BC59FDB0EC74BFB8AF8D622020212C2"
+            "Icon" = "8:_FAE38416FF0C429F8BAB3F6BFDC18A73"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {

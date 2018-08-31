@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.btnGo = new System.Windows.Forms.Button();
             this.chkHao6 = new System.Windows.Forms.CheckBox();
             this.chkHao5 = new System.Windows.Forms.CheckBox();
@@ -80,7 +81,7 @@
             this.chkHao6.AutoSize = true;
             this.chkHao6.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkHao6.Location = new System.Drawing.Point(189, 30);
-            this.chkHao6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkHao6.Margin = new System.Windows.Forms.Padding(2);
             this.chkHao6.Name = "chkHao6";
             this.chkHao6.Size = new System.Drawing.Size(62, 26);
             this.chkHao6.TabIndex = 5;
@@ -93,7 +94,7 @@
             this.chkHao5.AutoSize = true;
             this.chkHao5.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkHao5.Location = new System.Drawing.Point(189, 54);
-            this.chkHao5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkHao5.Margin = new System.Windows.Forms.Padding(2);
             this.chkHao5.Name = "chkHao5";
             this.chkHao5.Size = new System.Drawing.Size(62, 26);
             this.chkHao5.TabIndex = 6;
@@ -106,7 +107,7 @@
             this.chkHao4.AutoSize = true;
             this.chkHao4.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkHao4.Location = new System.Drawing.Point(189, 78);
-            this.chkHao4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkHao4.Margin = new System.Windows.Forms.Padding(2);
             this.chkHao4.Name = "chkHao4";
             this.chkHao4.Size = new System.Drawing.Size(62, 26);
             this.chkHao4.TabIndex = 7;
@@ -119,7 +120,7 @@
             this.chkHao3.AutoSize = true;
             this.chkHao3.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkHao3.Location = new System.Drawing.Point(189, 101);
-            this.chkHao3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkHao3.Margin = new System.Windows.Forms.Padding(2);
             this.chkHao3.Name = "chkHao3";
             this.chkHao3.Size = new System.Drawing.Size(62, 26);
             this.chkHao3.TabIndex = 8;
@@ -132,7 +133,7 @@
             this.chkHao2.AutoSize = true;
             this.chkHao2.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkHao2.Location = new System.Drawing.Point(189, 125);
-            this.chkHao2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkHao2.Margin = new System.Windows.Forms.Padding(2);
             this.chkHao2.Name = "chkHao2";
             this.chkHao2.Size = new System.Drawing.Size(62, 26);
             this.chkHao2.TabIndex = 9;
@@ -145,7 +146,7 @@
             this.chkHao1.AutoSize = true;
             this.chkHao1.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkHao1.Location = new System.Drawing.Point(189, 150);
-            this.chkHao1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkHao1.Margin = new System.Windows.Forms.Padding(2);
             this.chkHao1.Name = "chkHao1";
             this.chkHao1.Size = new System.Drawing.Size(62, 26);
             this.chkHao1.TabIndex = 10;
@@ -160,7 +161,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtQueChu.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQueChu.Location = new System.Drawing.Point(17, 241);
-            this.txtQueChu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtQueChu.Margin = new System.Windows.Forms.Padding(2);
             this.txtQueChu.Name = "txtQueChu";
             this.txtQueChu.Size = new System.Drawing.Size(1737, 305);
             this.txtQueChu.TabIndex = 11;
@@ -171,7 +172,7 @@
             this.chkHao1Dong.AutoSize = true;
             this.chkHao1Dong.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkHao1Dong.Location = new System.Drawing.Point(295, 150);
-            this.chkHao1Dong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkHao1Dong.Margin = new System.Windows.Forms.Padding(2);
             this.chkHao1Dong.Name = "chkHao1Dong";
             this.chkHao1Dong.Size = new System.Drawing.Size(150, 25);
             this.chkHao1Dong.TabIndex = 17;
@@ -183,7 +184,7 @@
             this.chkHao2Dong.AutoSize = true;
             this.chkHao2Dong.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkHao2Dong.Location = new System.Drawing.Point(295, 125);
-            this.chkHao2Dong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkHao2Dong.Margin = new System.Windows.Forms.Padding(2);
             this.chkHao2Dong.Name = "chkHao2Dong";
             this.chkHao2Dong.Size = new System.Drawing.Size(150, 25);
             this.chkHao2Dong.TabIndex = 16;
@@ -195,7 +196,7 @@
             this.chkHao3Dong.AutoSize = true;
             this.chkHao3Dong.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkHao3Dong.Location = new System.Drawing.Point(295, 101);
-            this.chkHao3Dong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkHao3Dong.Margin = new System.Windows.Forms.Padding(2);
             this.chkHao3Dong.Name = "chkHao3Dong";
             this.chkHao3Dong.Size = new System.Drawing.Size(150, 25);
             this.chkHao3Dong.TabIndex = 15;
@@ -207,7 +208,7 @@
             this.chkHao4Dong.AutoSize = true;
             this.chkHao4Dong.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkHao4Dong.Location = new System.Drawing.Point(295, 78);
-            this.chkHao4Dong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkHao4Dong.Margin = new System.Windows.Forms.Padding(2);
             this.chkHao4Dong.Name = "chkHao4Dong";
             this.chkHao4Dong.Size = new System.Drawing.Size(150, 25);
             this.chkHao4Dong.TabIndex = 14;
@@ -219,7 +220,7 @@
             this.chkHao5Dong.AutoSize = true;
             this.chkHao5Dong.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkHao5Dong.Location = new System.Drawing.Point(295, 54);
-            this.chkHao5Dong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkHao5Dong.Margin = new System.Windows.Forms.Padding(2);
             this.chkHao5Dong.Name = "chkHao5Dong";
             this.chkHao5Dong.Size = new System.Drawing.Size(150, 25);
             this.chkHao5Dong.TabIndex = 13;
@@ -231,7 +232,7 @@
             this.chkHao6Dong.AutoSize = true;
             this.chkHao6Dong.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkHao6Dong.Location = new System.Drawing.Point(295, 30);
-            this.chkHao6Dong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkHao6Dong.Margin = new System.Windows.Forms.Padding(2);
             this.chkHao6Dong.Name = "chkHao6Dong";
             this.chkHao6Dong.Size = new System.Drawing.Size(150, 25);
             this.chkHao6Dong.TabIndex = 12;
@@ -255,7 +256,7 @@
             "Nhâm",
             "Quý"});
             this.cbxNgayCan.Location = new System.Drawing.Point(33, 56);
-            this.cbxNgayCan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxNgayCan.Margin = new System.Windows.Forms.Padding(2);
             this.cbxNgayCan.MaxDropDownItems = 12;
             this.cbxNgayCan.Name = "cbxNgayCan";
             this.cbxNgayCan.Size = new System.Drawing.Size(92, 29);
@@ -280,7 +281,7 @@
             "Tuất",
             "Hợi"});
             this.cbxNgayChi.Location = new System.Drawing.Point(144, 56);
-            this.cbxNgayChi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxNgayChi.Margin = new System.Windows.Forms.Padding(2);
             this.cbxNgayChi.MaxDropDownItems = 12;
             this.cbxNgayChi.Name = "cbxNgayChi";
             this.cbxNgayChi.Size = new System.Drawing.Size(92, 29);
@@ -327,7 +328,7 @@
             "Tuất",
             "Hợi"});
             this.cbxThangChi.Location = new System.Drawing.Point(144, 130);
-            this.cbxThangChi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxThangChi.Margin = new System.Windows.Forms.Padding(2);
             this.cbxThangChi.MaxDropDownItems = 12;
             this.cbxThangChi.Name = "cbxThangChi";
             this.cbxThangChi.Size = new System.Drawing.Size(92, 29);
@@ -350,7 +351,7 @@
             "Nhâm",
             "Quý"});
             this.cbxThangCan.Location = new System.Drawing.Point(33, 130);
-            this.cbxThangCan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxThangCan.Margin = new System.Windows.Forms.Padding(2);
             this.cbxThangCan.MaxDropDownItems = 12;
             this.cbxThangCan.Name = "cbxThangCan";
             this.cbxThangCan.Size = new System.Drawing.Size(92, 29);
@@ -397,7 +398,7 @@
             "Cấn",
             "Khôn"});
             this.cbxNgoaiQuai.Location = new System.Drawing.Point(35, 56);
-            this.cbxNgoaiQuai.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxNgoaiQuai.Margin = new System.Windows.Forms.Padding(2);
             this.cbxNgoaiQuai.MaxDropDownItems = 12;
             this.cbxNgoaiQuai.Name = "cbxNgoaiQuai";
             this.cbxNgoaiQuai.Size = new System.Drawing.Size(117, 29);
@@ -419,7 +420,7 @@
             "Cấn",
             "Khôn"});
             this.cbxNoiQuai.Location = new System.Drawing.Point(35, 130);
-            this.cbxNoiQuai.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxNoiQuai.Margin = new System.Windows.Forms.Padding(2);
             this.cbxNoiQuai.MaxDropDownItems = 12;
             this.cbxNoiQuai.Name = "cbxNoiQuai";
             this.cbxNoiQuai.Size = new System.Drawing.Size(117, 29);
@@ -452,7 +453,7 @@
             // 
             this.btnLayQue.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLayQue.Location = new System.Drawing.Point(17, 47);
-            this.btnLayQue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLayQue.Margin = new System.Windows.Forms.Padding(2);
             this.btnLayQue.Name = "btnLayQue";
             this.btnLayQue.Size = new System.Drawing.Size(240, 48);
             this.btnLayQue.TabIndex = 33;
@@ -479,7 +480,7 @@
             this.btnCopy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCopy.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCopy.Location = new System.Drawing.Point(1600, 186);
-            this.btnCopy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCopy.Margin = new System.Windows.Forms.Padding(2);
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.Size = new System.Drawing.Size(154, 48);
             this.btnCopy.TabIndex = 35;
@@ -491,7 +492,7 @@
             // 
             this.btnLayQueTheoNgay.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLayQueTheoNgay.Location = new System.Drawing.Point(17, 121);
-            this.btnLayQueTheoNgay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLayQueTheoNgay.Margin = new System.Windows.Forms.Padding(2);
             this.btnLayQueTheoNgay.Name = "btnLayQueTheoNgay";
             this.btnLayQueTheoNgay.Size = new System.Drawing.Size(240, 48);
             this.btnLayQueTheoNgay.TabIndex = 36;
@@ -519,9 +520,9 @@
             this.groupBox1.Controls.Add(this.chkHao1Dong);
             this.groupBox1.Font = new System.Drawing.Font("Courier New", 13.77391F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(593, 2);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(469, 195);
             this.groupBox1.TabIndex = 37;
             this.groupBox1.TabStop = false;
@@ -536,9 +537,9 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Font = new System.Drawing.Font("Courier New", 13.77391F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(290, 2);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(269, 195);
             this.groupBox2.TabIndex = 38;
             this.groupBox2.TabStop = false;
@@ -559,6 +560,7 @@
             this.Controls.Add(this.linkQueChu);
             this.Controls.Add(this.txtQueChu);
             this.Controls.Add(this.btnGo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMain";
             this.Padding = new System.Windows.Forms.Padding(3);
             this.Text = "Kinh Dịch";

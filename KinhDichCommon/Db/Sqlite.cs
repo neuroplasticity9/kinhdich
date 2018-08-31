@@ -5,8 +5,7 @@ namespace KinhDichCommon
 {
     public static class Sqlite
     {
-        private const string DatabaseFile = "KinhDich.sqlite";
-        private static string DatabaseSource = $"Data Source={DatabaseFile};";
+        private static string DatabaseSource = @"Data Source=.\KinhDich.sqlite;";
 
         public static void SetQueFromDb()
         {
@@ -37,9 +36,9 @@ namespace KinhDichCommon
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw new Exception("Cannot read Sqlite db.");
+                throw new Exception($"Cannot read Sqlite db: {ex.ToString()}");
             }
         }
 

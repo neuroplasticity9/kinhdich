@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQueTungXu));
             this.btnGo = new System.Windows.Forms.Button();
             this.chkHao6 = new System.Windows.Forms.CheckBox();
             this.chkHao5 = new System.Windows.Forms.CheckBox();
@@ -355,6 +356,7 @@
             this.Controls.Add(this.labelKetQua);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnGo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormQueTungXu";
