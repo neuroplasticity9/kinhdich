@@ -111,75 +111,48 @@ namespace DoanQueKinhDich
 
         private void chkHao6_CheckedChanged(object sender, EventArgs e)
         {
-            ChangeTextAmDuong(chkHao6);
+            FormUtils.ChangeTextAmDuong(chkHao6);
             UpdateNgoaiQuai();
         }
 
         private void chkHao5_CheckedChanged(object sender, EventArgs e)
         {
-            ChangeTextAmDuong(chkHao5);
+            FormUtils.ChangeTextAmDuong(chkHao5);
             UpdateNgoaiQuai();
         }
 
         private void chkHao4_CheckedChanged(object sender, EventArgs e)
         {
-            ChangeTextAmDuong(chkHao4);
+            FormUtils.ChangeTextAmDuong(chkHao4);
             UpdateNgoaiQuai();
         }
 
         private void chkHao3_CheckedChanged(object sender, EventArgs e)
         {
-            ChangeTextAmDuong(chkHao3);
+            FormUtils.ChangeTextAmDuong(chkHao3);
             UpdateNoiQuai();
         }
 
         private void chkHao2_CheckedChanged(object sender, EventArgs e)
         {
-            ChangeTextAmDuong(chkHao2);
+            FormUtils.ChangeTextAmDuong(chkHao2);
             UpdateNoiQuai();
         }
 
         private void chkHao1_CheckedChanged(object sender, EventArgs e)
         {
-            ChangeTextAmDuong(chkHao1);
+            FormUtils.ChangeTextAmDuong(chkHao1);
             UpdateNoiQuai();
-        }
-
-        private void ChangeTextAmDuong(CheckBox chkHao)
-        {
-            chkHao.Text = chkHao.Checked ? Utils.Duong : Utils.Am;
         }
 
         private void UpdateNgoaiQuai()
         {
-            Cung cung;
-            for (int i = 0; i < BatQuai.All.Count; i++)
-            {
-                cung = BatQuai.All[i];
-                if (cung.Duong3 == chkHao6.Checked &&
-                    cung.Duong2 == chkHao5.Checked &&
-                    cung.Duong1 == chkHao4.Checked)
-                {
-                    cbxNgoaiQuai.SelectedIndex = i;
-                    return;
-                }
-            }
+            FormUtils.UpdateBatQuai(cbxNgoaiQuai, chkHao6, chkHao5, chkHao4);
         }
 
         private void UpdateNoiQuai()
         {
-            Cung cung;
-            for (int i = 0; i < BatQuai.All.Count; i++)
-            {
-                cung = BatQuai.All[i];
-                if (cung.Duong3 == chkHao3.Checked &&
-                    cung.Duong2 == chkHao2.Checked &&
-                    cung.Duong1 == chkHao1.Checked)
-                {
-                    cbxNoiQuai.SelectedIndex = i;
-                    return;
-                }
-            }
+            FormUtils.UpdateBatQuai(cbxNoiQuai, chkHao3, chkHao2, chkHao1);
         }
 
         private void cbxNgoaiQuai_SelectedIndexChanged(object sender, EventArgs e)
@@ -290,5 +263,6 @@ namespace DoanQueKinhDich
         {
             SetChiCuaGio();
         }
+
     }
 }

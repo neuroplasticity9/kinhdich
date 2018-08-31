@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading;
 using System.Windows.Forms;
 using KinhDichCommon;
 
@@ -7,9 +6,6 @@ namespace DoanQueKinhDich
 {
     public partial class FormQueTungXu : Form, IQue
     {
-        private const int SleepSeconds = 1;
-        private const int MaxRandomNumber = 100000;
-
         private int _lanLayQue = 0;
         private DateTime _ngayLayQue = DateTime.Now;
 
@@ -114,13 +110,14 @@ namespace DoanQueKinhDich
 
         private void SetResultForHao(CheckBox chkHao, CheckBox chkHaoDong)
         {
-            var tungXu = new TungXu();
+            TungXu tungXu = new TungXu();
             tungXu.Run();
+
+            chkHao.Checked = tungXu.Duong;
+            chkHaoDong.Checked = tungXu.Dong;
 
             chkHao.Visible = true;
             chkHaoDong.Visible = true;
-            chkHao.Checked = tungXu.Duong;
-            chkHaoDong.Checked = tungXu.Dong;
 
             labelKetQua.Text = tungXu.GetKetQua();
         }
@@ -149,86 +146,68 @@ namespace DoanQueKinhDich
 
         private void chkHao6_CheckedChanged(object sender, EventArgs e)
         {
-            ChangeTextAmDuong(chkHao6);
+            FormUtils.ChangeTextAmDuong(chkHao6);
+            UpdateNgoaiQuai();
         }
 
         private void chkHao5_CheckedChanged(object sender, EventArgs e)
         {
-            ChangeTextAmDuong(chkHao5);
+            FormUtils.ChangeTextAmDuong(chkHao5);
+            UpdateNgoaiQuai();
         }
 
         private void chkHao4_CheckedChanged(object sender, EventArgs e)
         {
-            ChangeTextAmDuong(chkHao4);
+            FormUtils.ChangeTextAmDuong(chkHao4);
+            UpdateNgoaiQuai();
         }
 
         private void chkHao3_CheckedChanged(object sender, EventArgs e)
         {
-            ChangeTextAmDuong(chkHao3);
+            FormUtils.ChangeTextAmDuong(chkHao3);
+            UpdateNoiQuai();
         }
 
         private void chkHao2_CheckedChanged(object sender, EventArgs e)
         {
-            ChangeTextAmDuong(chkHao2);
+            FormUtils.ChangeTextAmDuong(chkHao2);
+            UpdateNoiQuai();
         }
 
         private void chkHao1_CheckedChanged(object sender, EventArgs e)
         {
-            ChangeTextAmDuong(chkHao1);
+            FormUtils.ChangeTextAmDuong(chkHao1);
+            UpdateNoiQuai();
         }
 
-        private void ChangeTextAmDuong(CheckBox chkHao)
+        private void UpdateNgoaiQuai()
         {
-            chkHao.Text = chkHao.Checked ? Utils.Duong : Utils.Am;
+            FormUtils.UpdateBatQuai(cbxNgoaiQuai, chkHao6, chkHao5, chkHao4);
+        }
+
+        private void UpdateNoiQuai()
+        {
+            FormUtils.UpdateBatQuai(cbxNoiQuai, chkHao3, chkHao2, chkHao1);
         }
 
         /// <summary>
-        /// Tung xu va lưu kết quả.
+        /// Update ngoại quái khi hào 6 hay 5 hay 4 hiện ra.
         /// </summary>
-        private class TungXu
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void chkHao6Dong_VisibleChanged(object sender, EventArgs e)
         {
-            public int Xu1 { get; set; }
-            public int Xu2 { get; set; }
-            public int Xu3 { get; set; }
+            UpdateNgoaiQuai();
+        }
 
-            public int Tong3Xu => Xu1 + Xu2 + Xu3;
-
-            public bool Duong => Tong3Xu % 2 == 1; // Chỉ có 1 đồng dương hoặc 3 đồng dương.
-            public bool Dong => Tong3Xu % 3 == 0; // Cả 3 đồng tiền cùng loại (cùng âm hay cùng dương).
-
-            public void Run()
-            {
-                // Sleep some seconds.
-                Thread.Sleep(SleepSeconds * 1000);
-
-                var random = new Random(DateTime.Now.Millisecond);
-
-                Xu1 = random.Next(0, MaxRandomNumber) % 2;
-                Xu2 = random.Next(0, MaxRandomNumber) % 2;
-                Xu3 = random.Next(0, MaxRandomNumber) % 2;
-            }
-
-            public string GetKetQua()
-            {
-                string result = $"{GetXu(Xu1)} {GetXu(Xu2)} {GetXu(Xu3)} => được hào ";
-
-                result += Duong ? "Dương" : "Âm";
-                if (Dong)
-                {
-                    result += " Động.";
-                }
-                else
-                {
-                    result += ".";
-                }
-
-                return result;
-            }
-
-            private string GetXu(int xu)
-            {
-                return xu == 1 ? "Dương" : "Âm";
-            }
+        /// <summary>
+        /// Update nội quái khi hào 3 hay 2 hay 1 hiện ra.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void chkHao3Dong_VisibleChanged(object sender, EventArgs e)
+        {
+            UpdateNoiQuai();
         }
     }
 }
