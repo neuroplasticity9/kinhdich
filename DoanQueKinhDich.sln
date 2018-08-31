@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KinhDichCommon", "KinhDichC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KinhDichCommon.Tests", "KinhDichCommon.Tests\KinhDichCommon.Tests.csproj", "{727C8ED7-06CA-4185-8127-142A2C5EB6B0}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "LayQueKinhDichSetup", "LayQueKinhDichSetup\LayQueKinhDichSetup.vdproj", "{6BAFA32E-0AD3-4C9A-83D8-1D4DDF78D11E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,9 +26,10 @@ Global
 		{1D760E66-34C1-4E4A-8911-7CDD707A3A30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D760E66-34C1-4E4A-8911-7CDD707A3A30}.Release|Any CPU.Build.0 = Release|Any CPU
 		{727C8ED7-06CA-4185-8127-142A2C5EB6B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{727C8ED7-06CA-4185-8127-142A2C5EB6B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{727C8ED7-06CA-4185-8127-142A2C5EB6B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{727C8ED7-06CA-4185-8127-142A2C5EB6B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BAFA32E-0AD3-4C9A-83D8-1D4DDF78D11E}.Debug|Any CPU.ActiveCfg = Debug
+		{6BAFA32E-0AD3-4C9A-83D8-1D4DDF78D11E}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
