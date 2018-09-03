@@ -63,7 +63,7 @@ namespace KinhDichCommon
 
         private static string GetTenQue(Que que)
         {
-            return $"   {que.Name}, {que.HanhQueThuan.Name}{GetHopXungString(que)}, trên {que.NgoaiQuai.Name} dưới {que.NoiQuai.Name}";
+            return $"   {que.Name} ({que.Desc}), {que.HanhQueThuan.Name}{GetHopXungString(que)}, trên {que.NgoaiQuai.Name} dưới {que.NoiQuai.Name}";
         }
 
         private static string GetTamHopCuc(Que que)

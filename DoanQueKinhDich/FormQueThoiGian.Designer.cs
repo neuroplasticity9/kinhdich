@@ -608,7 +608,7 @@
             // 
             this.labelNgayAmLich.AutoSize = true;
             this.labelNgayAmLich.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNgayAmLich.Location = new System.Drawing.Point(288, 337);
+            this.labelNgayAmLich.Location = new System.Drawing.Point(21, 351);
             this.labelNgayAmLich.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNgayAmLich.Name = "labelNgayAmLich";
             this.labelNgayAmLich.Size = new System.Drawing.Size(153, 21);
