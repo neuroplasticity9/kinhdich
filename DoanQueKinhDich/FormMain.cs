@@ -5,7 +5,7 @@ using KinhDichCommon;
 
 namespace DoanQueKinhDich
 {
-    public partial class FormMain : Form
+    public partial class FormMain : Form, IQue
     {
         private string _queChuUrl;
         private string _queBienUrl;
@@ -15,30 +15,57 @@ namespace DoanQueKinhDich
             InitializeComponent();
         }
 
+        public bool IsDone { get; private set; } = false;
+
+        public bool Hao1 => chkHao1.Checked;
+
+        public bool Hao2 => chkHao2.Checked;
+
+        public bool Hao3 => chkHao3.Checked;
+
+        public bool Hao4 => chkHao4.Checked;
+
+        public bool Hao5 => chkHao5.Checked;
+
+        public bool Hao6 => chkHao6.Checked;
+
+        public bool Hao1Dong => chkHao1Dong.Checked;
+
+        public bool Hao2Dong => chkHao2Dong.Checked;
+
+        public bool Hao3Dong => chkHao3Dong.Checked;
+
+        public bool Hao4Dong => chkHao4Dong.Checked;
+
+        public bool Hao5Dong => chkHao5Dong.Checked;
+
+        public bool Hao6Dong => chkHao6Dong.Checked;
+
+        public CanChi NgayAm => GetNhatThan();
+
+        public CanChi ThangAm => GetNguyetKien();
+
         private void btnGo_Click(object sender, EventArgs e)
         {
-            CanChi nhatThan = GetNhatThan();
-            CanChi nguyetKien = GetNguyetKien();
+            var queService = new QueService(this);
 
-            Que queChu = QueDich.GetQue(chkHao6.Checked, chkHao5.Checked, chkHao4.Checked, chkHao3.Checked, chkHao2.Checked, chkHao1.Checked);
             linkQueChu.Visible = true;
-            linkQueChu.Text = $"{queChu.NameShort} - Quẻ số {queChu.QueId}";
-            _queChuUrl = GetUrl(queChu.Name, queChu.QueId);
+            linkQueChu.Text = $"{queService.QueChu.NameShort} - Quẻ số {queService.QueChu.QueId}";
+            _queChuUrl = GetUrl(queService.QueChu.Name, queService.QueChu.QueId);
 
             if (CoQueBien())
             {
-                Que queBien = QueDich.GetQueBien(queChu, chkHao6Dong.Checked, chkHao5Dong.Checked, chkHao4Dong.Checked, chkHao3Dong.Checked, chkHao2Dong.Checked, chkHao1Dong.Checked);
-                string queChuString = queChu.GetQueBienDesc(queBien, nhatThan, nguyetKien, chkHao6Dong.Checked, chkHao5Dong.Checked, chkHao4Dong.Checked, chkHao3Dong.Checked, chkHao2Dong.Checked, chkHao1Dong.Checked);
+                string queChuString = queService.GetQueChuVaQueBienDesc();
                 txtQueChu.Text = queChuString;
 
                 linkQueBien.Visible = true;
-                linkQueBien.Text = $"{queBien.NameShort} - Quẻ số {queBien.QueId}";
-                _queBienUrl = GetUrl(queBien.Name, queBien.QueId);
+                linkQueBien.Text = $"{queService.QueBien.NameShort} - Quẻ số {queService.QueBien.QueId}";
+                _queBienUrl = GetUrl(queService.QueBien.Name, queService.QueBien.QueId);
             }
             else
             {
                 linkQueBien.Visible = false;
-                string queChuString = queChu.GetQueDesc(nhatThan, nguyetKien, chkHao6Dong.Checked, chkHao5Dong.Checked, chkHao4Dong.Checked, chkHao3Dong.Checked, chkHao2Dong.Checked, chkHao1Dong.Checked);
+                string queChuString = queService.GetQueDesc();
                 txtQueChu.Text = queChuString;
             }
         }
