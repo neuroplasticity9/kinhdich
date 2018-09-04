@@ -51,7 +51,7 @@
             // btnGo
             // 
             this.btnGo.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGo.Location = new System.Drawing.Point(1201, 58);
+            this.btnGo.Location = new System.Drawing.Point(1207, 58);
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(156, 83);
             this.btnGo.TabIndex = 2;
@@ -286,9 +286,9 @@
             // 
             // ucQueDich
             // 
-            this.ucQueDich.Location = new System.Drawing.Point(564, 8);
+            this.ucQueDich.Location = new System.Drawing.Point(592, 8);
             this.ucQueDich.Name = "ucQueDich";
-            this.ucQueDich.Size = new System.Drawing.Size(608, 189);
+            this.ucQueDich.Size = new System.Drawing.Size(585, 189);
             this.ucQueDich.TabIndex = 39;
             // 
             // FormMain
