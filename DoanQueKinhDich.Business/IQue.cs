@@ -1,6 +1,4 @@
-﻿using KinhDichCommon;
-
-namespace DoanQueKinhDich.Business
+﻿namespace DoanQueKinhDich.Business
 {
     public interface IQue
     {
@@ -17,9 +15,5 @@ namespace DoanQueKinhDich.Business
         bool Hao3Dong { get; }
         bool Hao2Dong { get; }
         bool Hao1Dong { get; }
-
-        bool IsDone { get; }
-        CanChi NgayAm { get; }
-        CanChi ThangAm { get; }
     }
 }

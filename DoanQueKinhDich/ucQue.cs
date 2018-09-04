@@ -38,10 +38,6 @@ namespace DoanQueKinhDich
         public bool Hao2Dong => chkHao2Dong.Checked;
         public bool Hao1Dong => chkHao1Dong.Checked;
 
-        bool IQue.IsDone { get => throw new NotImplementedException(); }
-        CanChi IQue.NgayAm { get => throw new NotImplementedException(); }
-        CanChi IQue.ThangAm { get => throw new NotImplementedException(); }
-
         public ucQue()
         {
             InitializeComponent();

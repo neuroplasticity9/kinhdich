@@ -8,7 +8,6 @@ namespace DoanQueKinhDich
     public partial class FormQueTungXu : Form, IQue
     {
         private int _lanLayQue = 0;
-        private DateTime _ngayLayQue = DateTime.Now;
 
         public bool Hao6 => ucQueDich.Hao6;
         public bool Hao5 => ucQueDich.Hao5;
@@ -25,14 +24,25 @@ namespace DoanQueKinhDich
         public bool Hao1Dong => ucQueDich.Hao1Dong;
 
         public bool IsDone { get; private set; } = false;
-
-        public CanChi NgayAm => _ngayLayQue.ToAmLich().GetCanChiNgay();
-
-        public CanChi ThangAm => _ngayLayQue.ToAmLich().GetCanChiThang();
+        public AmLich AmLich { get; private set; }
 
         public FormQueTungXu()
         {
             InitializeComponent();
+        }
+
+        /// <summary>
+        /// Form load event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Main_Load(object sender, EventArgs e)
+        {
+            ucQueDich.DisableAllControls();
+
+            ucQueDich.HideAllControls();
+
+            AmLich = DateTime.Now.ToAmLich();
         }
 
         private void btnGo_Click(object sender, EventArgs e)
@@ -115,18 +125,6 @@ namespace DoanQueKinhDich
         {
             chkHao.Checked = tungXu.Duong;
             chkHaoDong.Checked = tungXu.Dong;
-        }
-
-        /// <summary>
-        /// Form load event.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Main_Load(object sender, EventArgs e)
-        {
-            ucQueDich.DisableAllControls();
-
-            ucQueDich.HideAllControls();
         }
 
     }

@@ -45,13 +45,14 @@
             this.btnLayQueTheoNgay = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.ucQueDich = new DoanQueKinhDich.ucQue();
+            this.chkNotUseNhatThanNguyetKien = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnGo
             // 
             this.btnGo.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGo.Location = new System.Drawing.Point(1207, 58);
+            this.btnGo.Location = new System.Drawing.Point(1207, 114);
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(156, 83);
             this.btnGo.TabIndex = 2;
@@ -291,12 +292,24 @@
             this.ucQueDich.Size = new System.Drawing.Size(585, 189);
             this.ucQueDich.TabIndex = 39;
             // 
+            // chkNotUseNhatThanNguyetKien
+            // 
+            this.chkNotUseNhatThanNguyetKien.AutoSize = true;
+            this.chkNotUseNhatThanNguyetKien.Font = new System.Drawing.Font("Courier New", 14F);
+            this.chkNotUseNhatThanNguyetKien.Location = new System.Drawing.Point(1207, 62);
+            this.chkNotUseNhatThanNguyetKien.Name = "chkNotUseNhatThanNguyetKien";
+            this.chkNotUseNhatThanNguyetKien.Size = new System.Drawing.Size(414, 25);
+            this.chkNotUseNhatThanNguyetKien.TabIndex = 42;
+            this.chkNotUseNhatThanNguyetKien.Text = "Không dùng nhật thần và nguyệt kiến";
+            this.chkNotUseNhatThanNguyetKien.UseVisualStyleBackColor = true;
+            // 
             // FormMain
             // 
             this.AcceptButton = this.btnGo;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1774, 566);
+            this.Controls.Add(this.chkNotUseNhatThanNguyetKien);
             this.Controls.Add(this.ucQueDich);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnLayQueTheoNgay);
@@ -337,6 +350,7 @@
         private System.Windows.Forms.Button btnLayQueTheoNgay;
         private System.Windows.Forms.GroupBox groupBox2;
         private ucQue ucQueDich;
+        private System.Windows.Forms.CheckBox chkNotUseNhatThanNguyetKien;
     }
 }
 

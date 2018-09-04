@@ -5,7 +5,7 @@ using KinhDichCommon;
 
 namespace DoanQueKinhDich
 {
-    public partial class FormQueThoiGian : Form, IQue
+    public partial class FormQueThoiGian : Form, IQue, IQueThoi
     {
         private string _queChuUrl;
         private string _queBienUrl;
@@ -30,8 +30,7 @@ namespace DoanQueKinhDich
         public bool Hao1Dong => ucQueDich.Hao1Dong;
 
         public bool IsDone { get; private set; } = false;
-        public CanChi NgayAm => GetNhatThan();
-        public CanChi ThangAm => GetNguyetKien();
+        public AmLich AmLich { get; private set; }
 
         private CanChi GetNguyetKien()
         {
@@ -102,33 +101,25 @@ namespace DoanQueKinhDich
 
         private void GetQue()
         {
-            DateTime selectedDate = uiDate.SelectionRange.Start;
-            var selectedTime = uiHour.Value.TimeOfDay;
-            if (selectedTime >= TimeSpan.FromHours(23))
-            {
-                // Increase 1 day if it passed 11PM.
-                selectedDate = selectedDate.AddDays(1);
-            }
-
-            var amLich = selectedDate.ToAmLich();
+            AmLich = uiDate.SelectionRange.Start.ToAmLich();
 
             IsDone = true;
 
-            SetUIControls(amLich);
+            SetUIControls(AmLich);
 
-            SetNoiQuaiNgoaiQuai(amLich);
+            SetNoiQuaiNgoaiQuai(AmLich);
         }
-
+        
         private void SetNoiQuaiNgoaiQuai(AmLich amLich)
         {
             var totalNamThangNgay = 0;
             if (chkUseNamCan.Checked)
             {
-                totalNamThangNgay = amLich.GetCanChiNam().Can.Id + amLich.LunarMonth + amLich.LunarDay;
+                totalNamThangNgay = amLich.NamAm.Can.Id + amLich.LunarMonth + amLich.LunarDay;
             }
             else
             {
-                totalNamThangNgay = amLich.GetCanChiNam().Chi.Id + amLich.LunarMonth + amLich.LunarDay;
+                totalNamThangNgay = amLich.NamAm.Chi.Id + amLich.LunarMonth + amLich.LunarDay;
             }
 
             var ngoaiQuaiIndex = (totalNamThangNgay - 1) % 8;
@@ -150,9 +141,9 @@ namespace DoanQueKinhDich
 
         private void SetUIControls(AmLich amLich)
         {
-            CanChi ngayAm = amLich.GetCanChiNgay();
-            CanChi thangAm = amLich.GetCanChiThang();
-            CanChi namAm = amLich.GetCanChiNam();
+            CanChi ngayAm = amLich.NgayAm;
+            CanChi thangAm = amLich.ThangAm;
+            CanChi namAm = amLich.NamAm;
 
             cbxNgayCan.SelectedIndex = ngayAm.Can.Id - 1;
             cbxNgayChi.SelectedIndex = ngayAm.Chi.Id - 1;

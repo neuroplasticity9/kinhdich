@@ -32,12 +32,13 @@ namespace DoanQueKinhDich
         public bool IsDone { get; private set; } = false;
 
         public CanChi NgayAm => GetNhatThan();
-
         public CanChi ThangAm => GetNguyetKien();
-        
+
+        public AmLich AmLich { get; set; }
+
         private void btnGo_Click(object sender, EventArgs e)
         {
-            var queService = new QueService(this);
+            var queService = new QueService(this, AmLich);
 
             linkQueChu.Visible = true;
             linkQueChu.Text = $"{queService.QueChu.NameShort} - Quẻ số {queService.QueChu.QueId}";
@@ -45,7 +46,7 @@ namespace DoanQueKinhDich
 
             if (this.CoQueBien())
             {
-                string queChuString = queService.GetQueChuVaQueBienDesc();
+                string queChuString = queService.GetQueChuVaQueBienDesc(NgayAm, ThangAm);
                 txtQueChu.Text = queChuString;
 
                 linkQueBien.Visible = true;
@@ -55,7 +56,7 @@ namespace DoanQueKinhDich
             else
             {
                 linkQueBien.Visible = false;
-                string queChuString = queService.GetQueDesc();
+                string queChuString = queService.GetQueDesc(NgayAm, ThangAm);
                 txtQueChu.Text = queChuString;
             }
         }
@@ -104,8 +105,8 @@ namespace DoanQueKinhDich
 
         private void SetNgayThangComboboxes(DateTime ngayLayQue)
         {
-            CanChi ngayAm = ngayLayQue.ToAmLich().GetCanChiNgay();
-            CanChi thangAm = ngayLayQue.ToAmLich().GetCanChiThang();
+            CanChi ngayAm = ngayLayQue.ToAmLich().NgayAm;
+            CanChi thangAm = ngayLayQue.ToAmLich().ThangAm;
 
             cbxNgayCan.SelectedIndex = ngayAm.Can.Id - 1;
             cbxNgayChi.SelectedIndex = ngayAm.Chi.Id - 1;
@@ -137,35 +138,30 @@ namespace DoanQueKinhDich
             }
         }
 
-
-
         private void LoadQue(IQue que)
         {
-            if (que.IsDone)
-            {
-                ucQueDich.uiHao6.Checked = que.Hao6;
-                ucQueDich.uiHao5.Checked = que.Hao5;
-                ucQueDich.uiHao4.Checked = que.Hao4;
-                ucQueDich.uiHao3.Checked = que.Hao3;
-                ucQueDich.uiHao2.Checked = que.Hao2;
-                ucQueDich.uiHao1.Checked = que.Hao1;
+            ucQueDich.uiHao6.Checked = que.Hao6;
+            ucQueDich.uiHao5.Checked = que.Hao5;
+            ucQueDich.uiHao4.Checked = que.Hao4;
+            ucQueDich.uiHao3.Checked = que.Hao3;
+            ucQueDich.uiHao2.Checked = que.Hao2;
+            ucQueDich.uiHao1.Checked = que.Hao1;
 
-                ucQueDich.uiHao6Dong.Checked = que.Hao6Dong;
-                ucQueDich.uiHao5Dong.Checked = que.Hao5Dong;
-                ucQueDich.uiHao4Dong.Checked = que.Hao4Dong;
-                ucQueDich.uiHao3Dong.Checked = que.Hao3Dong;
-                ucQueDich.uiHao2Dong.Checked = que.Hao2Dong;
-                ucQueDich.uiHao1Dong.Checked = que.Hao1Dong;
+            ucQueDich.uiHao6Dong.Checked = que.Hao6Dong;
+            ucQueDich.uiHao5Dong.Checked = que.Hao5Dong;
+            ucQueDich.uiHao4Dong.Checked = que.Hao4Dong;
+            ucQueDich.uiHao3Dong.Checked = que.Hao3Dong;
+            ucQueDich.uiHao2Dong.Checked = que.Hao2Dong;
+            ucQueDich.uiHao1Dong.Checked = que.Hao1Dong;
 
 
-                cbxNgayCan.SelectedIndex = que.NgayAm.Can.Id - 1;
-                cbxNgayChi.SelectedIndex = que.NgayAm.Chi.Id - 1;
+            cbxNgayCan.SelectedIndex = AmLich.NgayAm.Can.Id - 1;
+            cbxNgayChi.SelectedIndex = AmLich.NgayAm.Chi.Id - 1;
 
-                cbxThangCan.SelectedIndex = que.ThangAm.Can.Id - 1;
-                cbxThangChi.SelectedIndex = que.ThangAm.Chi.Id - 1;
+            cbxThangCan.SelectedIndex = AmLich.ThangAm.Can.Id - 1;
+            cbxThangChi.SelectedIndex = AmLich.ThangAm.Chi.Id - 1;
 
-                btnGo.PerformClick();
-            }
+            btnGo.PerformClick();
         }
 
         private void linkAmLich_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -191,7 +187,11 @@ namespace DoanQueKinhDich
 
             formLayQue.ShowDialog(this);
 
-            LoadQue(formLayQue);
+            if (formLayQue.IsDone)
+            {
+                AmLich = formLayQue.AmLich;
+                LoadQue(formLayQue);
+            }
         }
 
         private void btnLayQueTheoNgay_Click(object sender, EventArgs e)
@@ -200,7 +200,11 @@ namespace DoanQueKinhDich
 
             formLayQue.ShowDialog(this);
 
-            LoadQue(formLayQue);
+            if (formLayQue.IsDone)
+            {
+                AmLich = formLayQue.AmLich;
+                LoadQue(formLayQue);
+            }
         }
     }
 }

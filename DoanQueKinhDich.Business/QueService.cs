@@ -8,13 +8,15 @@ namespace DoanQueKinhDich.Business
     public class QueService
     {
         private readonly IQue _que;
+        private readonly AmLich _amLich;
 
         public Que QueChu { get; }
         public Que QueBien { get; }
-
-        public QueService(IQue que)
+               
+        public QueService(IQue que, AmLich amLich)
         {
             _que = que;
+            _amLich = amLich;
 
             QueChu = QueDich.GetQue(que.Hao6, que.Hao5, que.Hao4, que.Hao3, que.Hao2, que.Hao1);
 
@@ -25,16 +27,16 @@ namespace DoanQueKinhDich.Business
 
         }
 
-        public string GetQueDesc()
+        public string GetQueDesc(CanChi nhatThan, CanChi nguyetKien)
         {
-            return GetQueDesc(QueChu, _que.NgayAm, _que.ThangAm,
+            return GetQueDesc(QueChu, nhatThan, nguyetKien,
                               _que.Hao6Dong, _que.Hao5Dong, _que.Hao4Dong,
                               _que.Hao3Dong, _que.Hao2Dong, _que.Hao1Dong);
         }
 
-        public string GetQueChuVaQueBienDesc()
+        public string GetQueChuVaQueBienDesc(CanChi nhatThan, CanChi nguyetKien)
         {
-            return GetQueChuVaQueBienDesc(QueChu, QueBien, _que.NgayAm, _que.ThangAm,
+            return GetQueChuVaQueBienDesc(QueChu, QueBien, nhatThan, nguyetKien,
                                           _que.Hao6Dong, _que.Hao5Dong, _que.Hao4Dong,
                                           _que.Hao3Dong, _que.Hao2Dong, _que.Hao1Dong);
         }
@@ -53,9 +55,9 @@ namespace DoanQueKinhDich.Business
         /// <param name="isHao1Dong"></param>
         /// <returns></returns>
         private string GetQueDesc(Que queChu, 
-                                    CanChi nhatThan, CanChi nguyetKien,
-                                    bool isHao6Dong = false, bool isHao5Dong = false, bool isHao4Dong = false,
-                                    bool isHao3Dong = false, bool isHao2Dong = false, bool isHao1Dong = false)
+                                  CanChi nhatThan, CanChi nguyetKien,
+                                  bool isHao6Dong = false, bool isHao5Dong = false, bool isHao4Dong = false,
+                                  bool isHao3Dong = false, bool isHao2Dong = false, bool isHao1Dong = false)
         {
             var sb = new StringBuilder();
 
