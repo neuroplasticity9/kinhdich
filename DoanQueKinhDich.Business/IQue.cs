@@ -1,6 +1,6 @@
 ﻿using KinhDichCommon;
 
-namespace DoanQueKinhDich
+namespace DoanQueKinhDich.Business
 {
     public interface IQue
     {

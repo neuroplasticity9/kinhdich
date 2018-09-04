@@ -76,7 +76,6 @@
     </Compile>
     <Compile Include="TungXu.cs" />
     <Compile Include="FormUtils.cs" />
-    <Compile Include="IQue.cs" />
     <Compile Include="FormQueTungXu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +123,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DoanQueKinhDich.Business\DoanQueKinhDich.Business.csproj">
+      <Project>{a5c20c01-1e3e-4510-a91e-c7be21790150}</Project>
+      <Name>DoanQueKinhDich.Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\KinhDichCommon\KinhDichCommon.csproj">
       <Project>{1d760e66-34c1-4e4a-8911-7cdd707a3a30}</Project>
       <Name>KinhDichCommon</Name>

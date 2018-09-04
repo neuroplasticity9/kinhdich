@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KinhDichCommon.Tests", "Kin
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "LayQueKinhDichSetup", "LayQueKinhDichSetup\LayQueKinhDichSetup.vdproj", "{6BAFA32E-0AD3-4C9A-83D8-1D4DDF78D11E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoanQueKinhDich.Business", "DoanQueKinhDich.Business\DoanQueKinhDich.Business.csproj", "{A5C20C01-1E3E-4510-A91E-C7BE21790150}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +32,10 @@ Global
 		{727C8ED7-06CA-4185-8127-142A2C5EB6B0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6BAFA32E-0AD3-4C9A-83D8-1D4DDF78D11E}.Debug|Any CPU.ActiveCfg = Debug
 		{6BAFA32E-0AD3-4C9A-83D8-1D4DDF78D11E}.Release|Any CPU.ActiveCfg = Release
+		{A5C20C01-1E3E-4510-A91E-C7BE21790150}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5C20C01-1E3E-4510-A91E-C7BE21790150}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5C20C01-1E3E-4510-A91E-C7BE21790150}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5C20C01-1E3E-4510-A91E-C7BE21790150}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
