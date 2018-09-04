@@ -40,6 +40,7 @@ namespace DoanQueKinhDich
             if (IsDone)
             {
                 this.Close();
+                return;
             }
 
             _lanLayQue++;
@@ -47,9 +48,8 @@ namespace DoanQueKinhDich
             try
             {
                 btnGo.Enabled = false;
-                //labelKetQua.Text = "Đang tung xu...";
 
-                DoTungXu();
+                SetResultForHaoAndHaoDong((ViTriHao)_lanLayQue);
             }
             finally
             {
@@ -66,51 +66,55 @@ namespace DoanQueKinhDich
             }
         }
 
-        private void DoTungXu()
+        private void SetResultForHaoAndHaoDong(ViTriHao viTriHao)
         {
-            switch (_lanLayQue)
+            TungXu tungXu = new TungXu();
+            tungXu.Run();
+
+            SetHao(viTriHao, tungXu);
+            ucQueDich.ShowCacHao(viTriHao);
+
+            labelKetQua.Text = tungXu.GetKetQua();
+        }
+
+        private void SetHao(ViTriHao viTriHao, TungXu tungXu)
+        {
+            switch (viTriHao)
             {
-                case 1:
-                    SetResultForHao(ucQueDich.uiHao1, ucQueDich.uiHao1Dong);
+                case ViTriHao.None:
                     break;
 
-                case 2:
-                    SetResultForHao(ucQueDich.uiHao2, ucQueDich.uiHao2Dong);
+                case ViTriHao.Hao1:
+                    CheckHaoAndHaoDong(ucQueDich.uiHao1, ucQueDich.uiHao1Dong, tungXu);
                     break;
 
-                case 3:
-                    SetResultForHao(ucQueDich.uiHao3, ucQueDich.uiHao3Dong);
+                case ViTriHao.Hao2:
+                    CheckHaoAndHaoDong(ucQueDich.uiHao2, ucQueDich.uiHao2Dong, tungXu);
                     break;
 
-                case 4:
-                    SetResultForHao(ucQueDich.uiHao4, ucQueDich.uiHao4Dong);
+                case ViTriHao.Hao3:
+                    CheckHaoAndHaoDong(ucQueDich.uiHao3, ucQueDich.uiHao3Dong, tungXu);
                     break;
 
-                case 5:
-                    SetResultForHao(ucQueDich.uiHao5, ucQueDich.uiHao5Dong);
+                case ViTriHao.Hao4:
+                    CheckHaoAndHaoDong(ucQueDich.uiHao4, ucQueDich.uiHao4Dong, tungXu);
                     break;
 
-                case 6:
-                    SetResultForHao(ucQueDich.uiHao6, ucQueDich.uiHao6Dong);
+                case ViTriHao.Hao5:
+                    CheckHaoAndHaoDong(ucQueDich.uiHao5, ucQueDich.uiHao5Dong, tungXu);
                     break;
-
+                case ViTriHao.Hao6:
+                    CheckHaoAndHaoDong(ucQueDich.uiHao6, ucQueDich.uiHao6Dong, tungXu);
+                    break;
                 default:
                     break;
             }
         }
 
-        private void SetResultForHao(CheckBox chkHao, CheckBox chkHaoDong)
+        private void CheckHaoAndHaoDong(CheckBox chkHao, CheckBox chkHaoDong, TungXu tungXu)
         {
-            TungXu tungXu = new TungXu();
-            tungXu.Run();
-
             chkHao.Checked = tungXu.Duong;
             chkHaoDong.Checked = tungXu.Dong;
-
-            chkHao.Visible = true;
-            chkHaoDong.Visible = true;
-
-            labelKetQua.Text = tungXu.GetKetQua();
         }
 
         /// <summary>
@@ -122,22 +126,7 @@ namespace DoanQueKinhDich
         {
             ucQueDich.DisableAllControls();
 
-            ucQueDich.uiHao6.Visible = false;
-            ucQueDich.uiHao5.Visible = false;
-            ucQueDich.uiHao4.Visible = false;
-            ucQueDich.uiHao3.Visible = false;
-            ucQueDich.uiHao2.Visible = false;
-            ucQueDich.uiHao1.Visible = false;
-
-            ucQueDich.uiHao6Dong.Visible = false;
-            ucQueDich.uiHao5Dong.Visible = false;
-            ucQueDich.uiHao4Dong.Visible = false;
-            ucQueDich.uiHao3Dong.Visible = false;
-            ucQueDich.uiHao2Dong.Visible = false;
-            ucQueDich.uiHao1Dong.Visible = false;
-
-            //ucQueDich.uiNgoaiQuai.SelectedIndex = -1;
-            //ucQueDich.uiNoiQuai.SelectedIndex = -1;
+            ucQueDich.HideAllControls();
         }
 
     }

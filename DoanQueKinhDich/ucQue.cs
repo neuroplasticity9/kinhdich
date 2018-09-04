@@ -31,12 +31,12 @@ namespace DoanQueKinhDich
         public bool Hao2 => chkHao2.Checked;
         public bool Hao1 => chkHao1.Checked;
 
-        public bool Hao1Dong => chkHao6Dong.Checked;
-        public bool Hao2Dong => chkHao5Dong.Checked;
-        public bool Hao3Dong => chkHao4Dong.Checked;
-        public bool Hao4Dong => chkHao3Dong.Checked;
-        public bool Hao5Dong => chkHao2Dong.Checked;
-        public bool Hao6Dong => chkHao1Dong.Checked;
+        public bool Hao6Dong => chkHao6Dong.Checked;
+        public bool Hao5Dong => chkHao5Dong.Checked;
+        public bool Hao4Dong => chkHao4Dong.Checked;
+        public bool Hao3Dong => chkHao3Dong.Checked;
+        public bool Hao2Dong => chkHao2Dong.Checked;
+        public bool Hao1Dong => chkHao1Dong.Checked;
 
         bool IQue.IsDone { get => throw new NotImplementedException(); }
         CanChi IQue.NgayAm { get => throw new NotImplementedException(); }
@@ -47,24 +47,96 @@ namespace DoanQueKinhDich
             InitializeComponent();
         }
 
+        public void ShowCacHao(ViTriHao viTriHao)
+        {
+            switch (viTriHao)
+            {
+                case ViTriHao.None:
+                    break;
+                case ViTriHao.Hao1:
+                    chkHao1.Visible = uiBienHao1.Visible = true;
+                    chkHao1Dong.Visible = chkHao1Dong.Checked;
+                    break;
+
+                case ViTriHao.Hao2:
+                    chkHao2.Visible = uiBienHao2.Visible = true;
+                    chkHao2Dong.Visible = chkHao2Dong.Checked;
+                    break;
+
+                case ViTriHao.Hao3:
+                    chkHao3.Visible = uiBienHao3.Visible = true;
+                    chkHao3Dong.Visible = chkHao3Dong.Checked;
+                    break;
+
+                case ViTriHao.Hao4:
+                    chkHao4.Visible = uiBienHao4.Visible = true;
+                    chkHao4Dong.Visible = chkHao4Dong.Checked;
+                    break;
+
+                case ViTriHao.Hao5:
+                    chkHao5.Visible = uiBienHao5.Visible = true;
+                    chkHao5Dong.Visible = chkHao5Dong.Checked;
+                    break;
+
+                case ViTriHao.Hao6:
+                    chkHao6.Visible = uiBienHao6.Visible = true;
+                    chkHao6Dong.Visible = chkHao6Dong.Checked;
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
         public void DisableAllControls()
         {
-            uiHao6.Enabled = false;
-            uiHao5.Enabled = false;
-            uiHao4.Enabled = false;
-            uiHao3.Enabled = false;
-            uiHao2.Enabled = false;
-            uiHao1.Enabled = false;
+            var newValue = false;
 
-            uiHao6Dong.Enabled = false;
-            uiHao5Dong.Enabled = false;
-            uiHao4Dong.Enabled = false;
-            uiHao3Dong.Enabled = false;
-            uiHao2Dong.Enabled = false;
-            uiHao1Dong.Enabled = false;
+            uiHao6.Enabled = newValue;
+            uiHao5.Enabled = newValue;
+            uiHao4.Enabled = newValue;
+            uiHao3.Enabled = newValue;
+            uiHao2.Enabled = newValue;
+            uiHao1.Enabled = newValue;
 
-            uiNgoaiQuai.Enabled = false;
-            uiNoiQuai.Enabled = false;
+            uiHao6Dong.Enabled = newValue;
+            uiHao5Dong.Enabled = newValue;
+            uiHao4Dong.Enabled = newValue;
+            uiHao3Dong.Enabled = newValue;
+            uiHao2Dong.Enabled = newValue;
+            uiHao1Dong.Enabled = newValue;
+
+            uiNgoaiQuai.Enabled = newValue;
+            uiNoiQuai.Enabled = newValue;
+        }
+
+        public void HideAllControls()
+        {
+            var newValue = false;
+
+            uiHao6.Visible = newValue;
+            uiHao5.Visible = newValue;
+            uiHao4.Visible = newValue;
+            uiHao3.Visible = newValue;
+            uiHao2.Visible = newValue;
+            uiHao1.Visible = newValue;
+
+            uiHao6Dong.Visible = newValue;
+            uiHao5Dong.Visible = newValue;
+            uiHao4Dong.Visible = newValue;
+            uiHao3Dong.Visible = newValue;
+            uiHao2Dong.Visible = newValue;
+            uiHao1Dong.Visible = newValue;
+
+            uiNgoaiQuai.Visible = newValue;
+            uiNoiQuai.Visible = newValue;
+
+            uiBienHao6.Visible = newValue;
+            uiBienHao5.Visible = newValue;
+            uiBienHao4.Visible = newValue;
+            uiBienHao3.Visible = newValue;
+            uiBienHao2.Visible = newValue;
+            uiBienHao1.Visible = newValue;
         }
 
         private void ucQue_Load(object sender, EventArgs e)

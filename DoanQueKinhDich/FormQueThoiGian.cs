@@ -166,6 +166,7 @@ namespace DoanQueKinhDich
             cbxGioCan.SelectedIndex = gioCan.Id - 1;
 
             labelNgayAmLich.Text = $"Ngày âm lịch: {amLich.LunarYear}-{amLich.LunarMonth}-{amLich.LunarDay}";
+            labelNgayDuongLich.Text = $"Ngày dương lịch: {amLich.SonarDate.Year}-{amLich.SonarDate.Month}-{amLich.SonarDate.Day}";
         }
 
         private void uiDatePicker_ValueChanged(object sender, EventArgs e)

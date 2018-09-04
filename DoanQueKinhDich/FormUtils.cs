@@ -30,6 +30,7 @@ namespace DoanQueKinhDich
                         cung.Duong1 == haoHa.Checked)
                     {
                         batQuai.SelectedIndex = i;
+                        batQuai.Visible = true;
                         return;
                     }
                 }
