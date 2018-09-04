@@ -10,31 +10,21 @@ namespace DoanQueKinhDich
         private int _lanLayQue = 0;
         private DateTime _ngayLayQue = DateTime.Now;
 
+        public bool Hao6 => ucQueDich.Hao6;
+        public bool Hao5 => ucQueDich.Hao5;
+        public bool Hao4 => ucQueDich.Hao4;
+        public bool Hao3 => ucQueDich.Hao3;
+        public bool Hao2 => ucQueDich.Hao2;
+        public bool Hao1 => ucQueDich.Hao1;
+
+        public bool Hao6Dong => ucQueDich.Hao6Dong;
+        public bool Hao5Dong => ucQueDich.Hao5Dong;
+        public bool Hao4Dong => ucQueDich.Hao4Dong;
+        public bool Hao3Dong => ucQueDich.Hao3Dong;
+        public bool Hao2Dong => ucQueDich.Hao2Dong;
+        public bool Hao1Dong => ucQueDich.Hao1Dong;
+
         public bool IsDone { get; private set; } = false;
-
-        public bool Hao1 => chkHao1.Checked;
-
-        public bool Hao2 => chkHao2.Checked;
-
-        public bool Hao3 => chkHao3.Checked;
-
-        public bool Hao4 => chkHao4.Checked;
-
-        public bool Hao5 => chkHao5.Checked;
-
-        public bool Hao6 => chkHao6.Checked;
-
-        public bool Hao1Dong => chkHao1Dong.Checked;
-
-        public bool Hao2Dong => chkHao2Dong.Checked;
-
-        public bool Hao3Dong => chkHao3Dong.Checked;
-
-        public bool Hao4Dong => chkHao4Dong.Checked;
-
-        public bool Hao5Dong => chkHao5Dong.Checked;
-
-        public bool Hao6Dong => chkHao6Dong.Checked;
 
         public CanChi NgayAm => _ngayLayQue.ToAmLich().GetCanChiNgay();
 
@@ -81,27 +71,27 @@ namespace DoanQueKinhDich
             switch (_lanLayQue)
             {
                 case 1:
-                    SetResultForHao(chkHao1, chkHao1Dong);
+                    SetResultForHao(ucQueDich.uiHao1, ucQueDich.uiHao1Dong);
                     break;
 
                 case 2:
-                    SetResultForHao(chkHao2, chkHao2Dong);
+                    SetResultForHao(ucQueDich.uiHao2, ucQueDich.uiHao2Dong);
                     break;
 
                 case 3:
-                    SetResultForHao(chkHao3, chkHao3Dong);
+                    SetResultForHao(ucQueDich.uiHao3, ucQueDich.uiHao3Dong);
                     break;
 
                 case 4:
-                    SetResultForHao(chkHao4, chkHao4Dong);
+                    SetResultForHao(ucQueDich.uiHao4, ucQueDich.uiHao4Dong);
                     break;
 
                 case 5:
-                    SetResultForHao(chkHao5, chkHao5Dong);
+                    SetResultForHao(ucQueDich.uiHao5, ucQueDich.uiHao5Dong);
                     break;
 
                 case 6:
-                    SetResultForHao(chkHao6, chkHao6Dong);
+                    SetResultForHao(ucQueDich.uiHao6, ucQueDich.uiHao6Dong);
                     break;
 
                 default:
@@ -130,85 +120,25 @@ namespace DoanQueKinhDich
         /// <param name="e"></param>
         private void Main_Load(object sender, EventArgs e)
         {
-            chkHao6.Visible = false;
-            chkHao5.Visible = false;
-            chkHao4.Visible = false;
-            chkHao3.Visible = false;
-            chkHao2.Visible = false;
-            chkHao1.Visible = false;
+            ucQueDich.DisableAllControls();
 
-            chkHao6Dong.Visible = false;
-            chkHao5Dong.Visible = false;
-            chkHao4Dong.Visible = false;
-            chkHao3Dong.Visible = false;
-            chkHao2Dong.Visible = false;
-            chkHao1Dong.Visible = false;
+            ucQueDich.uiHao6.Visible = false;
+            ucQueDich.uiHao5.Visible = false;
+            ucQueDich.uiHao4.Visible = false;
+            ucQueDich.uiHao3.Visible = false;
+            ucQueDich.uiHao2.Visible = false;
+            ucQueDich.uiHao1.Visible = false;
+
+            ucQueDich.uiHao6Dong.Visible = false;
+            ucQueDich.uiHao5Dong.Visible = false;
+            ucQueDich.uiHao4Dong.Visible = false;
+            ucQueDich.uiHao3Dong.Visible = false;
+            ucQueDich.uiHao2Dong.Visible = false;
+            ucQueDich.uiHao1Dong.Visible = false;
+
+            //ucQueDich.uiNgoaiQuai.SelectedIndex = -1;
+            //ucQueDich.uiNoiQuai.SelectedIndex = -1;
         }
 
-        private void chkHao6_CheckedChanged(object sender, EventArgs e)
-        {
-            FormUtils.ChangeTextAmDuong(chkHao6);
-            UpdateNgoaiQuai();
-        }
-
-        private void chkHao5_CheckedChanged(object sender, EventArgs e)
-        {
-            FormUtils.ChangeTextAmDuong(chkHao5);
-            UpdateNgoaiQuai();
-        }
-
-        private void chkHao4_CheckedChanged(object sender, EventArgs e)
-        {
-            FormUtils.ChangeTextAmDuong(chkHao4);
-            UpdateNgoaiQuai();
-        }
-
-        private void chkHao3_CheckedChanged(object sender, EventArgs e)
-        {
-            FormUtils.ChangeTextAmDuong(chkHao3);
-            UpdateNoiQuai();
-        }
-
-        private void chkHao2_CheckedChanged(object sender, EventArgs e)
-        {
-            FormUtils.ChangeTextAmDuong(chkHao2);
-            UpdateNoiQuai();
-        }
-
-        private void chkHao1_CheckedChanged(object sender, EventArgs e)
-        {
-            FormUtils.ChangeTextAmDuong(chkHao1);
-            UpdateNoiQuai();
-        }
-
-        private void UpdateNgoaiQuai()
-        {
-            FormUtils.UpdateBatQuai(cbxNgoaiQuai, chkHao6, chkHao5, chkHao4);
-        }
-
-        private void UpdateNoiQuai()
-        {
-            FormUtils.UpdateBatQuai(cbxNoiQuai, chkHao3, chkHao2, chkHao1);
-        }
-
-        /// <summary>
-        /// Update ngoại quái khi hào 6 hay 5 hay 4 hiện ra.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void chkHao6Dong_VisibleChanged(object sender, EventArgs e)
-        {
-            UpdateNgoaiQuai();
-        }
-
-        /// <summary>
-        /// Update nội quái khi hào 3 hay 2 hay 1 hiện ra.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void chkHao3Dong_VisibleChanged(object sender, EventArgs e)
-        {
-            UpdateNoiQuai();
-        }
     }
 }

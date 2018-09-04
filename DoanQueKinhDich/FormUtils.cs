@@ -10,6 +10,13 @@ namespace DoanQueKinhDich
             chkHao.Text = chkHao.Checked ? Utils.Duong : Utils.Am;
         }
 
+        public static void ChangeTextAmDuong(Label labelHaoBien, CheckBox chkHao, CheckBox chkHaoDong)
+        {
+            var amDuong = chkHaoDong.Checked ? !chkHao.Checked : chkHao.Checked;
+            labelHaoBien.Text = amDuong ? Utils.Duong : Utils.Am;
+
+        }
+
         public static void UpdateBatQuai(ComboBox batQuai, CheckBox haoThuong, CheckBox haoTrung, CheckBox haoHa)
         {
             if (haoThuong.Visible && haoTrung.Visible && haoHa.Visible)

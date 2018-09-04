@@ -18,21 +18,11 @@ namespace DoanQueKinhDich.Business
 
             QueChu = QueDich.GetQue(que.Hao6, que.Hao5, que.Hao4, que.Hao3, que.Hao2, que.Hao1);
 
-            if (CoQueBien(que))
+            if (que.CoQueBien())
             {
                 QueBien = QueDich.GetQueBien(QueChu, que.Hao6Dong, que.Hao5Dong, que.Hao4Dong, que.Hao3Dong, que.Hao2Dong, que.Hao1Dong);
             }
 
-        }
-
-        /// <summary>
-        /// Nếu trong 6 hào có 1 hào động thì ta có quẻ biến.
-        /// </summary>
-        /// <param name="que"></param>
-        /// <returns></returns>
-        private bool CoQueBien(IQue que)
-        {
-            return que.Hao6Dong || que.Hao5Dong || que.Hao4Dong || que.Hao3Dong || que.Hao2Dong || que.Hao1Dong;
         }
 
         public string GetQueDesc()

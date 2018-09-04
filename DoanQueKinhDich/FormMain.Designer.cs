@@ -30,19 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.btnGo = new System.Windows.Forms.Button();
-            this.chkHao6 = new System.Windows.Forms.CheckBox();
-            this.chkHao5 = new System.Windows.Forms.CheckBox();
-            this.chkHao4 = new System.Windows.Forms.CheckBox();
-            this.chkHao3 = new System.Windows.Forms.CheckBox();
-            this.chkHao2 = new System.Windows.Forms.CheckBox();
-            this.chkHao1 = new System.Windows.Forms.CheckBox();
             this.txtQueChu = new System.Windows.Forms.RichTextBox();
-            this.chkHao1Dong = new System.Windows.Forms.CheckBox();
-            this.chkHao2Dong = new System.Windows.Forms.CheckBox();
-            this.chkHao3Dong = new System.Windows.Forms.CheckBox();
-            this.chkHao4Dong = new System.Windows.Forms.CheckBox();
-            this.chkHao5Dong = new System.Windows.Forms.CheckBox();
-            this.chkHao6Dong = new System.Windows.Forms.CheckBox();
             this.cbxNgayCan = new System.Windows.Forms.ComboBox();
             this.cbxNgayChi = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,108 +39,25 @@
             this.cbxThangCan = new System.Windows.Forms.ComboBox();
             this.linkQueChu = new System.Windows.Forms.LinkLabel();
             this.linkQueBien = new System.Windows.Forms.LinkLabel();
-            this.cbxNgoaiQuai = new System.Windows.Forms.ComboBox();
-            this.cbxNoiQuai = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.btnLayQue = new System.Windows.Forms.Button();
             this.linkAmLich = new System.Windows.Forms.LinkLabel();
             this.btnCopy = new System.Windows.Forms.Button();
             this.btnLayQueTheoNgay = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox1.SuspendLayout();
+            this.ucQueDich = new DoanQueKinhDich.ucQue();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnGo
             // 
             this.btnGo.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGo.Location = new System.Drawing.Point(1098, 57);
+            this.btnGo.Location = new System.Drawing.Point(1201, 58);
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(156, 83);
             this.btnGo.TabIndex = 2;
             this.btnGo.Text = "Hiện Quẻ";
             this.btnGo.UseVisualStyleBackColor = true;
             this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
-            // 
-            // chkHao6
-            // 
-            this.chkHao6.AutoSize = true;
-            this.chkHao6.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao6.Location = new System.Drawing.Point(189, 30);
-            this.chkHao6.Margin = new System.Windows.Forms.Padding(2);
-            this.chkHao6.Name = "chkHao6";
-            this.chkHao6.Size = new System.Drawing.Size(62, 26);
-            this.chkHao6.TabIndex = 5;
-            this.chkHao6.Text = "- -";
-            this.chkHao6.UseVisualStyleBackColor = true;
-            this.chkHao6.CheckedChanged += new System.EventHandler(this.chkHao6_CheckedChanged);
-            // 
-            // chkHao5
-            // 
-            this.chkHao5.AutoSize = true;
-            this.chkHao5.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao5.Location = new System.Drawing.Point(189, 54);
-            this.chkHao5.Margin = new System.Windows.Forms.Padding(2);
-            this.chkHao5.Name = "chkHao5";
-            this.chkHao5.Size = new System.Drawing.Size(62, 26);
-            this.chkHao5.TabIndex = 6;
-            this.chkHao5.Text = "- -";
-            this.chkHao5.UseVisualStyleBackColor = true;
-            this.chkHao5.CheckedChanged += new System.EventHandler(this.chkHao5_CheckedChanged);
-            // 
-            // chkHao4
-            // 
-            this.chkHao4.AutoSize = true;
-            this.chkHao4.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao4.Location = new System.Drawing.Point(189, 78);
-            this.chkHao4.Margin = new System.Windows.Forms.Padding(2);
-            this.chkHao4.Name = "chkHao4";
-            this.chkHao4.Size = new System.Drawing.Size(62, 26);
-            this.chkHao4.TabIndex = 7;
-            this.chkHao4.Text = "- -";
-            this.chkHao4.UseVisualStyleBackColor = true;
-            this.chkHao4.CheckedChanged += new System.EventHandler(this.chkHao4_CheckedChanged);
-            // 
-            // chkHao3
-            // 
-            this.chkHao3.AutoSize = true;
-            this.chkHao3.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao3.Location = new System.Drawing.Point(189, 101);
-            this.chkHao3.Margin = new System.Windows.Forms.Padding(2);
-            this.chkHao3.Name = "chkHao3";
-            this.chkHao3.Size = new System.Drawing.Size(62, 26);
-            this.chkHao3.TabIndex = 8;
-            this.chkHao3.Text = "- -";
-            this.chkHao3.UseVisualStyleBackColor = true;
-            this.chkHao3.CheckedChanged += new System.EventHandler(this.chkHao3_CheckedChanged);
-            // 
-            // chkHao2
-            // 
-            this.chkHao2.AutoSize = true;
-            this.chkHao2.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao2.Location = new System.Drawing.Point(189, 125);
-            this.chkHao2.Margin = new System.Windows.Forms.Padding(2);
-            this.chkHao2.Name = "chkHao2";
-            this.chkHao2.Size = new System.Drawing.Size(62, 26);
-            this.chkHao2.TabIndex = 9;
-            this.chkHao2.Text = "- -";
-            this.chkHao2.UseVisualStyleBackColor = true;
-            this.chkHao2.CheckedChanged += new System.EventHandler(this.chkHao2_CheckedChanged);
-            // 
-            // chkHao1
-            // 
-            this.chkHao1.AutoSize = true;
-            this.chkHao1.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao1.Location = new System.Drawing.Point(189, 150);
-            this.chkHao1.Margin = new System.Windows.Forms.Padding(2);
-            this.chkHao1.Name = "chkHao1";
-            this.chkHao1.Size = new System.Drawing.Size(62, 26);
-            this.chkHao1.TabIndex = 10;
-            this.chkHao1.Text = "- -";
-            this.chkHao1.UseVisualStyleBackColor = true;
-            this.chkHao1.CheckedChanged += new System.EventHandler(this.chkHao1_CheckedChanged);
             // 
             // txtQueChu
             // 
@@ -166,78 +71,6 @@
             this.txtQueChu.Size = new System.Drawing.Size(1737, 305);
             this.txtQueChu.TabIndex = 11;
             this.txtQueChu.Text = "";
-            // 
-            // chkHao1Dong
-            // 
-            this.chkHao1Dong.AutoSize = true;
-            this.chkHao1Dong.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao1Dong.Location = new System.Drawing.Point(295, 150);
-            this.chkHao1Dong.Margin = new System.Windows.Forms.Padding(2);
-            this.chkHao1Dong.Name = "chkHao1Dong";
-            this.chkHao1Dong.Size = new System.Drawing.Size(150, 25);
-            this.chkHao1Dong.TabIndex = 17;
-            this.chkHao1Dong.Text = "Hào 1 động?";
-            this.chkHao1Dong.UseVisualStyleBackColor = true;
-            // 
-            // chkHao2Dong
-            // 
-            this.chkHao2Dong.AutoSize = true;
-            this.chkHao2Dong.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao2Dong.Location = new System.Drawing.Point(295, 125);
-            this.chkHao2Dong.Margin = new System.Windows.Forms.Padding(2);
-            this.chkHao2Dong.Name = "chkHao2Dong";
-            this.chkHao2Dong.Size = new System.Drawing.Size(150, 25);
-            this.chkHao2Dong.TabIndex = 16;
-            this.chkHao2Dong.Text = "Hào 2 động?";
-            this.chkHao2Dong.UseVisualStyleBackColor = true;
-            // 
-            // chkHao3Dong
-            // 
-            this.chkHao3Dong.AutoSize = true;
-            this.chkHao3Dong.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao3Dong.Location = new System.Drawing.Point(295, 101);
-            this.chkHao3Dong.Margin = new System.Windows.Forms.Padding(2);
-            this.chkHao3Dong.Name = "chkHao3Dong";
-            this.chkHao3Dong.Size = new System.Drawing.Size(150, 25);
-            this.chkHao3Dong.TabIndex = 15;
-            this.chkHao3Dong.Text = "Hào 3 động?";
-            this.chkHao3Dong.UseVisualStyleBackColor = true;
-            // 
-            // chkHao4Dong
-            // 
-            this.chkHao4Dong.AutoSize = true;
-            this.chkHao4Dong.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao4Dong.Location = new System.Drawing.Point(295, 78);
-            this.chkHao4Dong.Margin = new System.Windows.Forms.Padding(2);
-            this.chkHao4Dong.Name = "chkHao4Dong";
-            this.chkHao4Dong.Size = new System.Drawing.Size(150, 25);
-            this.chkHao4Dong.TabIndex = 14;
-            this.chkHao4Dong.Text = "Hào 4 động?";
-            this.chkHao4Dong.UseVisualStyleBackColor = true;
-            // 
-            // chkHao5Dong
-            // 
-            this.chkHao5Dong.AutoSize = true;
-            this.chkHao5Dong.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao5Dong.Location = new System.Drawing.Point(295, 54);
-            this.chkHao5Dong.Margin = new System.Windows.Forms.Padding(2);
-            this.chkHao5Dong.Name = "chkHao5Dong";
-            this.chkHao5Dong.Size = new System.Drawing.Size(150, 25);
-            this.chkHao5Dong.TabIndex = 13;
-            this.chkHao5Dong.Text = "Hào 5 động?";
-            this.chkHao5Dong.UseVisualStyleBackColor = true;
-            // 
-            // chkHao6Dong
-            // 
-            this.chkHao6Dong.AutoSize = true;
-            this.chkHao6Dong.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao6Dong.Location = new System.Drawing.Point(295, 30);
-            this.chkHao6Dong.Margin = new System.Windows.Forms.Padding(2);
-            this.chkHao6Dong.Name = "chkHao6Dong";
-            this.chkHao6Dong.Size = new System.Drawing.Size(150, 25);
-            this.chkHao6Dong.TabIndex = 12;
-            this.chkHao6Dong.Text = "Hào 6 động?";
-            this.chkHao6Dong.UseVisualStyleBackColor = true;
             // 
             // cbxNgayCan
             // 
@@ -383,72 +216,6 @@
             this.linkQueBien.Text = "Xem quẻ biến online";
             this.linkQueBien.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkQueBien_LinkClicked);
             // 
-            // cbxNgoaiQuai
-            // 
-            this.cbxNgoaiQuai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxNgoaiQuai.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxNgoaiQuai.FormattingEnabled = true;
-            this.cbxNgoaiQuai.Items.AddRange(new object[] {
-            "Càn",
-            "Đoài",
-            "Ly",
-            "Chấn",
-            "Tốn",
-            "Khảm",
-            "Cấn",
-            "Khôn"});
-            this.cbxNgoaiQuai.Location = new System.Drawing.Point(35, 56);
-            this.cbxNgoaiQuai.Margin = new System.Windows.Forms.Padding(2);
-            this.cbxNgoaiQuai.MaxDropDownItems = 12;
-            this.cbxNgoaiQuai.Name = "cbxNgoaiQuai";
-            this.cbxNgoaiQuai.Size = new System.Drawing.Size(117, 29);
-            this.cbxNgoaiQuai.TabIndex = 29;
-            this.cbxNgoaiQuai.SelectedIndexChanged += new System.EventHandler(this.cbxNgoaiQuai_SelectedIndexChanged);
-            // 
-            // cbxNoiQuai
-            // 
-            this.cbxNoiQuai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxNoiQuai.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxNoiQuai.FormattingEnabled = true;
-            this.cbxNoiQuai.Items.AddRange(new object[] {
-            "Càn",
-            "Đoài",
-            "Ly",
-            "Chấn",
-            "Tốn",
-            "Khảm",
-            "Cấn",
-            "Khôn"});
-            this.cbxNoiQuai.Location = new System.Drawing.Point(35, 130);
-            this.cbxNoiQuai.Margin = new System.Windows.Forms.Padding(2);
-            this.cbxNoiQuai.MaxDropDownItems = 12;
-            this.cbxNoiQuai.Name = "cbxNoiQuai";
-            this.cbxNoiQuai.Size = new System.Drawing.Size(117, 29);
-            this.cbxNoiQuai.TabIndex = 30;
-            this.cbxNoiQuai.SelectedIndexChanged += new System.EventHandler(this.cbxNoiQuai_SelectedIndexChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(32, 30);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 21);
-            this.label3.TabIndex = 31;
-            this.label3.Text = "Ngoại quái";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(32, 104);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 21);
-            this.label4.TabIndex = 32;
-            this.label4.Text = "Nội quái";
-            // 
             // btnLayQue
             // 
             this.btnLayQue.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -500,33 +267,6 @@
             this.btnLayQueTheoNgay.UseVisualStyleBackColor = true;
             this.btnLayQueTheoNgay.Click += new System.EventHandler(this.btnLayQueTheoNgay_Click);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.chkHao6Dong);
-            this.groupBox1.Controls.Add(this.chkHao6);
-            this.groupBox1.Controls.Add(this.chkHao5);
-            this.groupBox1.Controls.Add(this.chkHao4);
-            this.groupBox1.Controls.Add(this.chkHao3);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.chkHao2);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.chkHao1);
-            this.groupBox1.Controls.Add(this.cbxNoiQuai);
-            this.groupBox1.Controls.Add(this.chkHao5Dong);
-            this.groupBox1.Controls.Add(this.cbxNgoaiQuai);
-            this.groupBox1.Controls.Add(this.chkHao4Dong);
-            this.groupBox1.Controls.Add(this.chkHao3Dong);
-            this.groupBox1.Controls.Add(this.chkHao2Dong);
-            this.groupBox1.Controls.Add(this.chkHao1Dong);
-            this.groupBox1.Font = new System.Drawing.Font("Courier New", 13.77391F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(593, 2);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(469, 195);
-            this.groupBox1.TabIndex = 37;
-            this.groupBox1.TabStop = false;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.cbxNgayChi);
@@ -544,14 +284,21 @@
             this.groupBox2.TabIndex = 38;
             this.groupBox2.TabStop = false;
             // 
+            // ucQueDich
+            // 
+            this.ucQueDich.Location = new System.Drawing.Point(564, 8);
+            this.ucQueDich.Name = "ucQueDich";
+            this.ucQueDich.Size = new System.Drawing.Size(608, 189);
+            this.ucQueDich.TabIndex = 39;
+            // 
             // FormMain
             // 
             this.AcceptButton = this.btnGo;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1774, 566);
+            this.Controls.Add(this.ucQueDich);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnLayQueTheoNgay);
             this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.linkAmLich);
@@ -566,8 +313,6 @@
             this.Text = "Kinh Dịch";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -577,19 +322,7 @@
 
         #endregion
         private System.Windows.Forms.Button btnGo;
-        private System.Windows.Forms.CheckBox chkHao6;
-        private System.Windows.Forms.CheckBox chkHao5;
-        private System.Windows.Forms.CheckBox chkHao4;
-        private System.Windows.Forms.CheckBox chkHao3;
-        private System.Windows.Forms.CheckBox chkHao2;
-        private System.Windows.Forms.CheckBox chkHao1;
         private System.Windows.Forms.RichTextBox txtQueChu;
-        private System.Windows.Forms.CheckBox chkHao1Dong;
-        private System.Windows.Forms.CheckBox chkHao2Dong;
-        private System.Windows.Forms.CheckBox chkHao3Dong;
-        private System.Windows.Forms.CheckBox chkHao4Dong;
-        private System.Windows.Forms.CheckBox chkHao5Dong;
-        private System.Windows.Forms.CheckBox chkHao6Dong;
         private System.Windows.Forms.ComboBox cbxNgayCan;
         private System.Windows.Forms.ComboBox cbxNgayChi;
         private System.Windows.Forms.Label label1;
@@ -598,16 +331,12 @@
         private System.Windows.Forms.ComboBox cbxThangCan;
         private System.Windows.Forms.LinkLabel linkQueChu;
         private System.Windows.Forms.LinkLabel linkQueBien;
-        private System.Windows.Forms.ComboBox cbxNgoaiQuai;
-        private System.Windows.Forms.ComboBox cbxNoiQuai;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnLayQue;
         private System.Windows.Forms.LinkLabel linkAmLich;
         private System.Windows.Forms.Button btnCopy;
         private System.Windows.Forms.Button btnLayQueTheoNgay;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private ucQue ucQueDich;
     }
 }
 

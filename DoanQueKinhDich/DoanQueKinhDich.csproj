@@ -90,6 +90,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ucQue.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucQue.Designer.cs">
+      <DependentUpon>ucQue.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormQueThoiGian.resx">
       <DependentUpon>FormQueThoiGian.cs</DependentUpon>
     </EmbeddedResource>
@@ -108,6 +114,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ucQue.resx">
+      <DependentUpon>ucQue.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

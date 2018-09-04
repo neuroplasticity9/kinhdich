@@ -15,34 +15,22 @@ namespace DoanQueKinhDich
             InitializeComponent();
         }
 
+        public bool Hao6 => ucQueDich.Hao6;
+        public bool Hao5 => ucQueDich.Hao5;
+        public bool Hao4 => ucQueDich.Hao4;
+        public bool Hao3 => ucQueDich.Hao3;
+        public bool Hao2 => ucQueDich.Hao2;
+        public bool Hao1 => ucQueDich.Hao1;
+
+        public bool Hao6Dong => ucQueDich.Hao6Dong;
+        public bool Hao5Dong => ucQueDich.Hao5Dong;
+        public bool Hao4Dong => ucQueDich.Hao4Dong;
+        public bool Hao3Dong => ucQueDich.Hao3Dong;
+        public bool Hao2Dong => ucQueDich.Hao2Dong;
+        public bool Hao1Dong => ucQueDich.Hao1Dong;
+
         public bool IsDone { get; private set; } = false;
-
-        public bool Hao1 => chkHao1.Checked;
-
-        public bool Hao2 => chkHao2.Checked;
-
-        public bool Hao3 => chkHao3.Checked;
-
-        public bool Hao4 => chkHao4.Checked;
-
-        public bool Hao5 => chkHao5.Checked;
-
-        public bool Hao6 => chkHao6.Checked;
-
-        public bool Hao1Dong => chkHao1Dong.Checked;
-
-        public bool Hao2Dong => chkHao2Dong.Checked;
-
-        public bool Hao3Dong => chkHao3Dong.Checked;
-
-        public bool Hao4Dong => chkHao4Dong.Checked;
-
-        public bool Hao5Dong => chkHao5Dong.Checked;
-
-        public bool Hao6Dong => chkHao6Dong.Checked;
-
         public CanChi NgayAm => GetNhatThan();
-
         public CanChi ThangAm => GetNguyetKien();
 
         private CanChi GetNguyetKien()
@@ -71,9 +59,6 @@ namespace DoanQueKinhDich
         /// <param name="e"></param>
         private void Main_Load(object sender, EventArgs e)
         {
-            cbxNgoaiQuai.SelectedIndex = 0;
-            cbxNoiQuai.SelectedIndex = 0;
-
             SetChiCuaGio();
 
             GetQue();
@@ -108,68 +93,6 @@ namespace DoanQueKinhDich
             GetQue();
 
             this.Close();
-        }
-
-        private void chkHao6_CheckedChanged(object sender, EventArgs e)
-        {
-            FormUtils.ChangeTextAmDuong(chkHao6);
-            UpdateNgoaiQuai();
-        }
-
-        private void chkHao5_CheckedChanged(object sender, EventArgs e)
-        {
-            FormUtils.ChangeTextAmDuong(chkHao5);
-            UpdateNgoaiQuai();
-        }
-
-        private void chkHao4_CheckedChanged(object sender, EventArgs e)
-        {
-            FormUtils.ChangeTextAmDuong(chkHao4);
-            UpdateNgoaiQuai();
-        }
-
-        private void chkHao3_CheckedChanged(object sender, EventArgs e)
-        {
-            FormUtils.ChangeTextAmDuong(chkHao3);
-            UpdateNoiQuai();
-        }
-
-        private void chkHao2_CheckedChanged(object sender, EventArgs e)
-        {
-            FormUtils.ChangeTextAmDuong(chkHao2);
-            UpdateNoiQuai();
-        }
-
-        private void chkHao1_CheckedChanged(object sender, EventArgs e)
-        {
-            FormUtils.ChangeTextAmDuong(chkHao1);
-            UpdateNoiQuai();
-        }
-
-        private void UpdateNgoaiQuai()
-        {
-            FormUtils.UpdateBatQuai(cbxNgoaiQuai, chkHao6, chkHao5, chkHao4);
-        }
-
-        private void UpdateNoiQuai()
-        {
-            FormUtils.UpdateBatQuai(cbxNoiQuai, chkHao3, chkHao2, chkHao1);
-        }
-
-        private void cbxNgoaiQuai_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Cung cung = BatQuai.All[cbxNgoaiQuai.SelectedIndex];
-            chkHao6.Checked = cung.Duong3;
-            chkHao5.Checked = cung.Duong2;
-            chkHao4.Checked = cung.Duong1;
-        }
-
-        private void cbxNoiQuai_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Cung cung = BatQuai.All[cbxNoiQuai.SelectedIndex];
-            chkHao3.Checked = cung.Duong3;
-            chkHao2.Checked = cung.Duong2;
-            chkHao1.Checked = cung.Duong1;
         }
 
         private void uiDate_DateChanged(object sender, DateRangeEventArgs e)
@@ -209,20 +132,20 @@ namespace DoanQueKinhDich
             }
 
             var ngoaiQuaiIndex = (totalNamThangNgay - 1) % 8;
-            cbxNgoaiQuai.SelectedIndex = ngoaiQuaiIndex;
+            ucQueDich.uiNgoaiQuai.SelectedIndex = ngoaiQuaiIndex;
 
             Chi gioChi = DiaChi.All[cbxGioChi.SelectedIndex];
             var totalNamThangNgayGio = totalNamThangNgay + gioChi.Id;
             var noiQuaiIndex = (totalNamThangNgayGio - 1) % 8;
-            cbxNoiQuai.SelectedIndex = noiQuaiIndex;
+            ucQueDich.uiNoiQuai.SelectedIndex = noiQuaiIndex;
 
             var haoDongIndex = totalNamThangNgayGio % 6;
-            chkHao1Dong.Checked = haoDongIndex == 1;
-            chkHao2Dong.Checked = haoDongIndex == 2;
-            chkHao3Dong.Checked = haoDongIndex == 3;
-            chkHao4Dong.Checked = haoDongIndex == 4;
-            chkHao5Dong.Checked = haoDongIndex == 5;
-            chkHao6Dong.Checked = haoDongIndex == 0;
+            ucQueDich.uiHao1Dong.Checked = haoDongIndex == 1;
+            ucQueDich.uiHao2Dong.Checked = haoDongIndex == 2;
+            ucQueDich.uiHao3Dong.Checked = haoDongIndex == 3;
+            ucQueDich.uiHao4Dong.Checked = haoDongIndex == 4;
+            ucQueDich.uiHao5Dong.Checked = haoDongIndex == 5;
+            ucQueDich.uiHao6Dong.Checked = haoDongIndex == 0;
         }
 
         private void SetUIControls(AmLich amLich)
