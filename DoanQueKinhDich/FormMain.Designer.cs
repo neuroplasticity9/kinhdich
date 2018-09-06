@@ -42,7 +42,7 @@
             this.btnLayQue = new System.Windows.Forms.Button();
             this.linkAmLich = new System.Windows.Forms.LinkLabel();
             this.btnCopy = new System.Windows.Forms.Button();
-            this.btnLayQueTheoNgay = new System.Windows.Forms.Button();
+            this.btnLayQueMaiHoa = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radLucHao = new System.Windows.Forms.RadioButton();
             this.radMaiHoa = new System.Windows.Forms.RadioButton();
@@ -260,17 +260,17 @@
             this.btnCopy.UseVisualStyleBackColor = true;
             this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
-            // btnLayQueTheoNgay
+            // btnLayQueMaiHoa
             // 
-            this.btnLayQueTheoNgay.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLayQueTheoNgay.Location = new System.Drawing.Point(17, 121);
-            this.btnLayQueTheoNgay.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLayQueTheoNgay.Name = "btnLayQueTheoNgay";
-            this.btnLayQueTheoNgay.Size = new System.Drawing.Size(240, 48);
-            this.btnLayQueTheoNgay.TabIndex = 36;
-            this.btnLayQueTheoNgay.Text = "Lấy Quẻ Theo Ngày";
-            this.btnLayQueTheoNgay.UseVisualStyleBackColor = true;
-            this.btnLayQueTheoNgay.Click += new System.EventHandler(this.btnLayQueTheoNgay_Click);
+            this.btnLayQueMaiHoa.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLayQueMaiHoa.Location = new System.Drawing.Point(17, 121);
+            this.btnLayQueMaiHoa.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLayQueMaiHoa.Name = "btnLayQueMaiHoa";
+            this.btnLayQueMaiHoa.Size = new System.Drawing.Size(240, 48);
+            this.btnLayQueMaiHoa.TabIndex = 36;
+            this.btnLayQueMaiHoa.Text = "Lấy Quẻ Mai Hoa";
+            this.btnLayQueMaiHoa.UseVisualStyleBackColor = true;
+            this.btnLayQueMaiHoa.Click += new System.EventHandler(this.btnLayQueTheoNgay_Click);
             // 
             // groupBox2
             // 
@@ -345,7 +345,7 @@
             this.Controls.Add(this.radLucHao);
             this.Controls.Add(this.ucQueDich);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.btnLayQueTheoNgay);
+            this.Controls.Add(this.btnLayQueMaiHoa);
             this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.linkAmLich);
             this.Controls.Add(this.btnLayQue);
@@ -380,7 +380,7 @@
         private System.Windows.Forms.Button btnLayQue;
         private System.Windows.Forms.LinkLabel linkAmLich;
         private System.Windows.Forms.Button btnCopy;
-        private System.Windows.Forms.Button btnLayQueTheoNgay;
+        private System.Windows.Forms.Button btnLayQueMaiHoa;
         private System.Windows.Forms.GroupBox groupBox2;
         private ucQue ucQueDich;
         private System.Windows.Forms.RadioButton radLucHao;

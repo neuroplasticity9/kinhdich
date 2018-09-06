@@ -5,10 +5,26 @@ using KinhDichCommon;
 
 namespace DoanQueKinhDich
 {
+    public enum CachLayQue
+    {
+        None = 0,
+        MaiHoaTienThien1 = 1,
+        MaiHoaTienThien2 = 2,
+        MaiHoaTienThien3 = 3,
+    }
+
+    public class QueIndex
+    {
+        public int NgoaiQuaiIndex { get; set; }
+        public int NoiQuaiIndex { get; set; }
+        public int HaoDongIndex { get; set; }
+    }
+
     public partial class FormQueThoiGian : Form, IQue, IQueThoi
     {
         private string _queChuUrl;
         private string _queBienUrl;
+        private CachLayQue _cachLayQue;
 
         public FormQueThoiGian()
         {
@@ -58,6 +74,11 @@ namespace DoanQueKinhDich
         /// <param name="e"></param>
         private void Main_Load(object sender, EventArgs e)
         {
+            // Test
+            uiDatePicker.Value = new DateTime(1983, 3, 13);
+
+            radThoiGian.Checked = true;
+
             SetChiCuaGio();
 
             GetQue();
@@ -112,31 +133,114 @@ namespace DoanQueKinhDich
         
         private void SetNoiQuaiNgoaiQuai(AmLich amLich)
         {
-            var totalNamThangNgay = 0;
-            if (chkUseNamCan.Checked)
+            var queIndex = new QueIndex();
+
+            switch (_cachLayQue)
             {
-                totalNamThangNgay = amLich.NamAm.Can.Id + amLich.LunarMonth + amLich.LunarDay;
+                case CachLayQue.None:
+                    break;
+
+                case CachLayQue.MaiHoaTienThien1:
+                    queIndex = GetQueIndexByTime(amLich);
+                    break;
+
+                case CachLayQue.MaiHoaTienThien2:
+                    queIndex = GetQueIndexBySoAndTime(txtQueNgoai1.Text, amLich);
+                    break;
+
+                case CachLayQue.MaiHoaTienThien3:
+                    queIndex = GetQueIndexBySoAndSo(txtQueNgoai2.Text, txtQueNoi2.Text, amLich);
+                    break;
+
+                default:
+                    break;
+            }
+
+            ucQueDich.uiNgoaiQuai.SelectedIndex = queIndex.NgoaiQuaiIndex;
+            ucQueDich.uiNoiQuai.SelectedIndex = queIndex.NoiQuaiIndex;
+            
+            ucQueDich.uiHao1Dong.Checked = queIndex.HaoDongIndex == 1;
+            ucQueDich.uiHao2Dong.Checked = queIndex.HaoDongIndex == 2;
+            ucQueDich.uiHao3Dong.Checked = queIndex.HaoDongIndex == 3;
+            ucQueDich.uiHao4Dong.Checked = queIndex.HaoDongIndex == 4;
+            ucQueDich.uiHao5Dong.Checked = queIndex.HaoDongIndex == 5;
+            ucQueDich.uiHao6Dong.Checked = queIndex.HaoDongIndex == 0;
+        }
+
+        private QueIndex GetQueIndexBySoAndTime(string textCuaQuai, AmLich amLich)
+        {
+            int tongNgoaiQuai = GetTongCuaQuai(textCuaQuai);
+            int tongNoiQuai = GetTongNamThangNgayGio(amLich);
+
+            return new QueIndex
+            {
+                NgoaiQuaiIndex = (tongNgoaiQuai - 1) % 8,
+                NoiQuaiIndex = (tongNoiQuai - 1) % 8,
+                HaoDongIndex = (tongNgoaiQuai + tongNoiQuai + amLich.GioAm.Chi.Id) % 6,
+            };
+        }
+
+        private QueIndex GetQueIndexBySoAndSo(string textCuaNgoaiQuai, string textCuaNoiQuai, AmLich amLich)
+        {
+            int tongNgoaiQuai = GetTongCuaQuai(textCuaNgoaiQuai);
+            int tongNoiQuai = GetTongCuaQuai(textCuaNoiQuai);
+
+            return new QueIndex
+            {
+                NgoaiQuaiIndex = (tongNgoaiQuai - 1) % 8,
+                NoiQuaiIndex = (tongNoiQuai - 1) % 8,
+                HaoDongIndex = (tongNgoaiQuai + tongNoiQuai + amLich.GioAm.Chi.Id) % 6,
+            };
+        }
+
+        private int GetTongCuaQuai(string textCuaQuai)
+        {
+            if (int.TryParse(textCuaQuai, out int soCuaQuai))
+            {
+                // Nếu là 1 số thì lấy chính số đó.
+                return soCuaQuai;
             }
             else
             {
-                totalNamThangNgay = amLich.NamAm.Chi.Id + amLich.LunarMonth + amLich.LunarDay;
+                // Đếm số chữ cái trong đoạn text.
+                return textCuaQuai.Replace(" ", "").Length;
+            }
+        }
+
+        private QueIndex GetQueIndexByTime(AmLich amLich)
+        {
+            int tongNgoaiQuai = GetTongNamThangNgay(amLich);
+            int tongNoiQuai = GetTongNamThangNgayGio(amLich);
+
+            return new QueIndex {
+                NgoaiQuaiIndex = (tongNgoaiQuai - 1) % 8,
+                NoiQuaiIndex = (tongNoiQuai - 1) % 8,
+                HaoDongIndex = tongNoiQuai % 6,
+            };
+        }
+
+        private int GetTongNamThangNgay(AmLich amLich)
+        {
+            var tongNamThangNgay = 0;
+            if (chkUseNamCan.Checked)
+            {
+                // Dùng can của năm, theo Thiệu Vỹ Hoa.
+                tongNamThangNgay = amLich.NamAm.Can.Id + amLich.LunarMonth + amLich.LunarDay;
+            }
+            else
+            {
+                // Dùng chi của năm, theo Thiệu Khang Tiết.
+                tongNamThangNgay = amLich.NamAm.Chi.Id + amLich.LunarMonth + amLich.LunarDay;
             }
 
-            var ngoaiQuaiIndex = (totalNamThangNgay - 1) % 8;
-            ucQueDich.uiNgoaiQuai.SelectedIndex = ngoaiQuaiIndex;
+            return tongNamThangNgay;
+        }
 
+
+        private int GetTongNamThangNgayGio(AmLich amLich)
+        {
             Chi gioChi = DiaChi.All[cbxGioChi.SelectedIndex];
-            var totalNamThangNgayGio = totalNamThangNgay + gioChi.Id;
-            var noiQuaiIndex = (totalNamThangNgayGio - 1) % 8;
-            ucQueDich.uiNoiQuai.SelectedIndex = noiQuaiIndex;
-
-            var haoDongIndex = totalNamThangNgayGio % 6;
-            ucQueDich.uiHao1Dong.Checked = haoDongIndex == 1;
-            ucQueDich.uiHao2Dong.Checked = haoDongIndex == 2;
-            ucQueDich.uiHao3Dong.Checked = haoDongIndex == 3;
-            ucQueDich.uiHao4Dong.Checked = haoDongIndex == 4;
-            ucQueDich.uiHao5Dong.Checked = haoDongIndex == 5;
-            ucQueDich.uiHao6Dong.Checked = haoDongIndex == 0;
+            return  GetTongNamThangNgay(amLich) + gioChi.Id;
         }
 
         private void SetUIControls(AmLich amLich)
@@ -180,5 +284,47 @@ namespace DoanQueKinhDich
             SetChiCuaGio();
         }
 
+        private void radThoiGian_CheckedChanged(object sender, EventArgs e)
+        {
+            _cachLayQue = CachLayQue.MaiHoaTienThien1;
+
+            chkUseNamCan.Enabled = true;
+            txtQueNgoai1.Text = "";
+            txtQueNgoai1.Enabled = false;
+            txtQueNgoai2.Text = "";
+            txtQueNgoai2.Enabled = false;
+            txtQueNoi2.Text = "";
+            txtQueNoi2.Enabled = false;
+        }
+
+        private void radNgoaiSo_CheckedChanged(object sender, EventArgs e)
+        {
+            _cachLayQue = CachLayQue.MaiHoaTienThien2;
+
+            chkUseNamCan.Enabled = false;
+            txtQueNgoai1.Text = "";
+            txtQueNgoai1.Enabled = true;
+            txtQueNgoai2.Text = "";
+            txtQueNgoai2.Enabled = false;
+            txtQueNoi2.Text = "";
+            txtQueNoi2.Enabled = false;
+
+            txtQueNgoai1.Focus();
+        }
+
+        private void radioNgoaiSoNoiSo_CheckedChanged(object sender, EventArgs e)
+        {
+            _cachLayQue = CachLayQue.MaiHoaTienThien3;
+
+            chkUseNamCan.Enabled = false;
+            txtQueNgoai1.Text = "";
+            txtQueNgoai1.Enabled = false;
+            txtQueNgoai2.Text = "";
+            txtQueNgoai2.Enabled = true;
+            txtQueNoi2.Text = "";
+            txtQueNoi2.Enabled = true;
+
+            txtQueNgoai2.Focus();
+        }
     }
 }
