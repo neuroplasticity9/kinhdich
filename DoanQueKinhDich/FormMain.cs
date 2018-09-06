@@ -8,6 +8,7 @@ namespace DoanQueKinhDich
     public partial class FormMain : Form, IQue
     {
         private string _queChuUrl;
+        private string _queHoUrl;
         private string _queBienUrl;
 
         public FormMain()
@@ -41,24 +42,54 @@ namespace DoanQueKinhDich
             var queService = new QueService(this, AmLich);
 
             linkQueChu.Visible = true;
-            linkQueChu.Text = $"{queService.QueChu.NameShort} - Quẻ số {queService.QueChu.QueId}";
+            linkQueChu.Text = GetNameForLink(queService.QueChu);
             _queChuUrl = GetUrl(queService.QueChu.Name, queService.QueChu.QueId);
+
+            string queDesc;
+            if (radLucHao.Checked)
+            {
+                queDesc = queService.GetLucHaoDesc(NgayAm, ThangAm);
+
+                linkQueHo.Visible = false;
+                linkQueBien.Location = new System.Drawing.Point(927, linkQueChu.Location.Y);
+            }
+            else
+            {
+                queDesc = queService.GetMaiHoaDesc(NgayAm, ThangAm);
+                linkQueBien.Location = new System.Drawing.Point(1147, linkQueChu.Location.Y);
+            }
+            
+            txtQueDesc.Text = queDesc;
 
             if (this.CoQueBien())
             {
-                string queChuString = queService.GetQueChuVaQueBienDesc(NgayAm, ThangAm);
-                txtQueChu.Text = queChuString;
-
                 linkQueBien.Visible = true;
-                linkQueBien.Text = $"{queService.QueBien.NameShort} - Quẻ số {queService.QueBien.QueId}";
+                linkQueBien.Text = GetNameForLink(queService.QueBien);
                 _queBienUrl = GetUrl(queService.QueBien.Name, queService.QueBien.QueId);
+
+                if (radMaiHoa.Checked)
+                {
+                    linkQueHo.Visible = true;
+                    linkQueHo.Text = GetNameForLink(queService.QueHo);
+                    _queHoUrl = GetUrl(queService.QueHo.Name, queService.QueHo.QueId);
+                }
             }
             else
             {
                 linkQueBien.Visible = false;
-                string queChuString = queService.GetQueDesc(NgayAm, ThangAm);
-                txtQueChu.Text = queChuString;
             }
+        }
+
+        private string GetNameForLink(Que que)
+        {
+            var result = $"{que.NameShort} {que.NameChinese} - Quẻ {que.QueId}";
+
+            if (que.QueThuan != null)
+            {
+                result += $" thuộc {que.QueThuan.NameShort} {que.QueThuan.NameChinese}";
+            }
+
+            return result;
         }
 
         private string GetUrl(string name, int queId)
@@ -126,6 +157,19 @@ namespace DoanQueKinhDich
             }
         }
 
+
+        private void linkQueHo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(_queHoUrl);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         private void linkQueBien_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             try
@@ -178,7 +222,7 @@ namespace DoanQueKinhDich
 
         private void btnCopy_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(txtQueChu.Text);
+            Clipboard.SetText(txtQueDesc.Text);
         }
 
         private void btnLayQue_Click(object sender, EventArgs e)
@@ -206,5 +250,6 @@ namespace DoanQueKinhDich
                 LoadQue(formLayQue);
             }
         }
+
     }
 }

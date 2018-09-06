@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.btnGo = new System.Windows.Forms.Button();
-            this.txtQueChu = new System.Windows.Forms.RichTextBox();
+            this.txtQueDesc = new System.Windows.Forms.RichTextBox();
             this.cbxNgayCan = new System.Windows.Forms.ComboBox();
             this.cbxNgayChi = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,34 +44,36 @@
             this.btnCopy = new System.Windows.Forms.Button();
             this.btnLayQueTheoNgay = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.radLucHao = new System.Windows.Forms.RadioButton();
+            this.radMaiHoa = new System.Windows.Forms.RadioButton();
             this.ucQueDich = new DoanQueKinhDich.ucQue();
-            this.chkNotUseNhatThanNguyetKien = new System.Windows.Forms.CheckBox();
+            this.linkQueHo = new System.Windows.Forms.LinkLabel();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnGo
             // 
             this.btnGo.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGo.Location = new System.Drawing.Point(1207, 114);
+            this.btnGo.Location = new System.Drawing.Point(1209, 93);
             this.btnGo.Name = "btnGo";
-            this.btnGo.Size = new System.Drawing.Size(156, 83);
+            this.btnGo.Size = new System.Drawing.Size(230, 76);
             this.btnGo.TabIndex = 2;
             this.btnGo.Text = "Hiện Quẻ";
             this.btnGo.UseVisualStyleBackColor = true;
             this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
             // 
-            // txtQueChu
+            // txtQueDesc
             // 
-            this.txtQueChu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtQueDesc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtQueChu.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQueChu.Location = new System.Drawing.Point(17, 241);
-            this.txtQueChu.Margin = new System.Windows.Forms.Padding(2);
-            this.txtQueChu.Name = "txtQueChu";
-            this.txtQueChu.Size = new System.Drawing.Size(1737, 305);
-            this.txtQueChu.TabIndex = 11;
-            this.txtQueChu.Text = "";
+            this.txtQueDesc.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQueDesc.Location = new System.Drawing.Point(17, 241);
+            this.txtQueDesc.Margin = new System.Windows.Forms.Padding(2);
+            this.txtQueDesc.Name = "txtQueDesc";
+            this.txtQueDesc.Size = new System.Drawing.Size(1737, 305);
+            this.txtQueDesc.TabIndex = 11;
+            this.txtQueDesc.Text = "";
             // 
             // cbxNgayCan
             // 
@@ -194,27 +196,29 @@
             // linkQueChu
             // 
             this.linkQueChu.AutoSize = true;
-            this.linkQueChu.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkQueChu.Location = new System.Drawing.Point(49, 213);
+            this.linkQueChu.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkQueChu.Location = new System.Drawing.Point(49, 209);
             this.linkQueChu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkQueChu.Name = "linkQueChu";
-            this.linkQueChu.Size = new System.Drawing.Size(208, 21);
+            this.linkQueChu.Size = new System.Drawing.Size(264, 27);
             this.linkQueChu.TabIndex = 27;
             this.linkQueChu.TabStop = true;
             this.linkQueChu.Text = "Xem quẻ chủ online";
+            this.linkQueChu.Visible = false;
             this.linkQueChu.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkQueChu_LinkClicked);
             // 
             // linkQueBien
             // 
             this.linkQueBien.AutoSize = true;
-            this.linkQueBien.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkQueBien.Location = new System.Drawing.Point(930, 213);
+            this.linkQueBien.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkQueBien.Location = new System.Drawing.Point(930, 209);
             this.linkQueBien.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkQueBien.Name = "linkQueBien";
-            this.linkQueBien.Size = new System.Drawing.Size(219, 21);
+            this.linkQueBien.Size = new System.Drawing.Size(278, 27);
             this.linkQueBien.TabIndex = 28;
             this.linkQueBien.TabStop = true;
             this.linkQueBien.Text = "Xem quẻ biến online";
+            this.linkQueBien.Visible = false;
             this.linkQueBien.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkQueBien_LinkClicked);
             // 
             // btnLayQue
@@ -234,7 +238,7 @@
             this.linkAmLich.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.linkAmLich.AutoSize = true;
             this.linkAmLich.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkAmLich.Location = new System.Drawing.Point(1486, 12);
+            this.linkAmLich.Location = new System.Drawing.Point(1486, 10);
             this.linkAmLich.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkAmLich.Name = "linkAmLich";
             this.linkAmLich.Size = new System.Drawing.Size(274, 21);
@@ -285,23 +289,50 @@
             this.groupBox2.TabIndex = 38;
             this.groupBox2.TabStop = false;
             // 
+            // radLucHao
+            // 
+            this.radLucHao.AutoSize = true;
+            this.radLucHao.Checked = true;
+            this.radLucHao.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLucHao.Location = new System.Drawing.Point(1209, 49);
+            this.radLucHao.Name = "radLucHao";
+            this.radLucHao.Size = new System.Drawing.Size(105, 25);
+            this.radLucHao.TabIndex = 43;
+            this.radLucHao.TabStop = true;
+            this.radLucHao.Text = "Lục Hào";
+            this.radLucHao.UseVisualStyleBackColor = true;
+            // 
+            // radMaiHoa
+            // 
+            this.radMaiHoa.AutoSize = true;
+            this.radMaiHoa.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radMaiHoa.Location = new System.Drawing.Point(1334, 49);
+            this.radMaiHoa.Name = "radMaiHoa";
+            this.radMaiHoa.Size = new System.Drawing.Size(105, 25);
+            this.radMaiHoa.TabIndex = 44;
+            this.radMaiHoa.Text = "Mai Hoa";
+            this.radMaiHoa.UseVisualStyleBackColor = true;
+            // 
             // ucQueDich
             // 
             this.ucQueDich.Location = new System.Drawing.Point(592, 8);
             this.ucQueDich.Name = "ucQueDich";
-            this.ucQueDich.Size = new System.Drawing.Size(585, 189);
+            this.ucQueDich.Size = new System.Drawing.Size(611, 189);
             this.ucQueDich.TabIndex = 39;
             // 
-            // chkNotUseNhatThanNguyetKien
+            // linkQueHo
             // 
-            this.chkNotUseNhatThanNguyetKien.AutoSize = true;
-            this.chkNotUseNhatThanNguyetKien.Font = new System.Drawing.Font("Courier New", 14F);
-            this.chkNotUseNhatThanNguyetKien.Location = new System.Drawing.Point(1207, 62);
-            this.chkNotUseNhatThanNguyetKien.Name = "chkNotUseNhatThanNguyetKien";
-            this.chkNotUseNhatThanNguyetKien.Size = new System.Drawing.Size(414, 25);
-            this.chkNotUseNhatThanNguyetKien.TabIndex = 42;
-            this.chkNotUseNhatThanNguyetKien.Text = "Không dùng nhật thần và nguyệt kiến";
-            this.chkNotUseNhatThanNguyetKien.UseVisualStyleBackColor = true;
+            this.linkQueHo.AutoSize = true;
+            this.linkQueHo.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkQueHo.Location = new System.Drawing.Point(599, 209);
+            this.linkQueHo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkQueHo.Name = "linkQueHo";
+            this.linkQueHo.Size = new System.Drawing.Size(250, 27);
+            this.linkQueHo.TabIndex = 45;
+            this.linkQueHo.TabStop = true;
+            this.linkQueHo.Text = "Xem quẻ hỗ online";
+            this.linkQueHo.Visible = false;
+            this.linkQueHo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkQueHo_LinkClicked);
             // 
             // FormMain
             // 
@@ -309,7 +340,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1774, 566);
-            this.Controls.Add(this.chkNotUseNhatThanNguyetKien);
+            this.Controls.Add(this.linkQueHo);
+            this.Controls.Add(this.radMaiHoa);
+            this.Controls.Add(this.radLucHao);
             this.Controls.Add(this.ucQueDich);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnLayQueTheoNgay);
@@ -318,7 +351,7 @@
             this.Controls.Add(this.btnLayQue);
             this.Controls.Add(this.linkQueBien);
             this.Controls.Add(this.linkQueChu);
-            this.Controls.Add(this.txtQueChu);
+            this.Controls.Add(this.txtQueDesc);
             this.Controls.Add(this.btnGo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMain";
@@ -335,7 +368,7 @@
 
         #endregion
         private System.Windows.Forms.Button btnGo;
-        private System.Windows.Forms.RichTextBox txtQueChu;
+        private System.Windows.Forms.RichTextBox txtQueDesc;
         private System.Windows.Forms.ComboBox cbxNgayCan;
         private System.Windows.Forms.ComboBox cbxNgayChi;
         private System.Windows.Forms.Label label1;
@@ -350,7 +383,9 @@
         private System.Windows.Forms.Button btnLayQueTheoNgay;
         private System.Windows.Forms.GroupBox groupBox2;
         private ucQue ucQueDich;
-        private System.Windows.Forms.CheckBox chkNotUseNhatThanNguyetKien;
+        private System.Windows.Forms.RadioButton radLucHao;
+        private System.Windows.Forms.RadioButton radMaiHoa;
+        private System.Windows.Forms.LinkLabel linkQueHo;
     }
 }
 

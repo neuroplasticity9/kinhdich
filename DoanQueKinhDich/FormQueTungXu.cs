@@ -116,6 +116,7 @@ namespace DoanQueKinhDich
                 case ViTriHao.Hao6:
                     CheckHaoAndHaoDong(ucQueDich.uiHao6, ucQueDich.uiHao6Dong, tungXu);
                     break;
+
                 default:
                     break;
             }
