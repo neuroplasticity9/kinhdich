@@ -49,7 +49,6 @@
             this.labelNgayAmLich = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.labelNgayDuongLich = new System.Windows.Forms.Label();
-            this.ucQueDich = new DoanQueKinhDich.ucQue();
             this.radNgoaiSo = new System.Windows.Forms.RadioButton();
             this.radThoiGian = new System.Windows.Forms.RadioButton();
             this.radioNgoaiSoNoiSo = new System.Windows.Forms.RadioButton();
@@ -60,14 +59,19 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radHauThien = new System.Windows.Forms.RadioButton();
+            this.radTienThien = new System.Windows.Forms.RadioButton();
+            this.ucQueDich = new DoanQueKinhDich.ucQue();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnGo
             // 
             this.btnGo.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGo.Location = new System.Drawing.Point(210, 449);
+            this.btnGo.Location = new System.Drawing.Point(824, 470);
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(140, 75);
             this.btnGo.TabIndex = 2;
@@ -335,7 +339,7 @@
             // 
             this.chkUseNamCan.AutoSize = true;
             this.chkUseNamCan.Font = new System.Drawing.Font("Courier New", 14F);
-            this.chkUseNamCan.Location = new System.Drawing.Point(74, 68);
+            this.chkUseNamCan.Location = new System.Drawing.Point(74, 63);
             this.chkUseNamCan.Name = "chkUseNamCan";
             this.chkUseNamCan.Size = new System.Drawing.Size(348, 25);
             this.chkUseNamCan.TabIndex = 41;
@@ -400,11 +404,11 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.cbxNamChi);
             this.groupBox2.Font = new System.Drawing.Font("Courier New", 13.77391F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(17, 8);
+            this.groupBox2.Location = new System.Drawing.Point(621, 10);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(527, 414);
+            this.groupBox2.Size = new System.Drawing.Size(522, 419);
             this.groupBox2.TabIndex = 46;
             this.groupBox2.TabStop = false;
             // 
@@ -419,18 +423,11 @@
             this.labelNgayDuongLich.TabIndex = 45;
             this.labelNgayDuongLich.Text = "Ngày dương lịch:";
             // 
-            // ucQueDich
-            // 
-            this.ucQueDich.Location = new System.Drawing.Point(564, 16);
-            this.ucQueDich.Name = "ucQueDich";
-            this.ucQueDich.Size = new System.Drawing.Size(608, 189);
-            this.ucQueDich.TabIndex = 47;
-            // 
             // radNgoaiSo
             // 
             this.radNgoaiSo.AutoSize = true;
             this.radNgoaiSo.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radNgoaiSo.Location = new System.Drawing.Point(29, 100);
+            this.radNgoaiSo.Location = new System.Drawing.Point(29, 96);
             this.radNgoaiSo.Name = "radNgoaiSo";
             this.radNgoaiSo.Size = new System.Drawing.Size(479, 25);
             this.radNgoaiSo.TabIndex = 49;
@@ -442,7 +439,7 @@
             // 
             this.radThoiGian.AutoSize = true;
             this.radThoiGian.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radThoiGian.Location = new System.Drawing.Point(29, 33);
+            this.radThoiGian.Location = new System.Drawing.Point(29, 28);
             this.radThoiGian.Name = "radThoiGian";
             this.radThoiGian.Size = new System.Drawing.Size(182, 25);
             this.radThoiGian.TabIndex = 48;
@@ -454,7 +451,7 @@
             // 
             this.radioNgoaiSoNoiSo.AutoSize = true;
             this.radioNgoaiSoNoiSo.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioNgoaiSoNoiSo.Location = new System.Drawing.Point(29, 172);
+            this.radioNgoaiSoNoiSo.Location = new System.Drawing.Point(29, 170);
             this.radioNgoaiSoNoiSo.Name = "radioNgoaiSoNoiSo";
             this.radioNgoaiSoNoiSo.Size = new System.Drawing.Size(402, 25);
             this.radioNgoaiSoNoiSo.TabIndex = 50;
@@ -465,7 +462,7 @@
             // txtQueNgoai1
             // 
             this.txtQueNgoai1.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQueNgoai1.Location = new System.Drawing.Point(193, 136);
+            this.txtQueNgoai1.Location = new System.Drawing.Point(193, 132);
             this.txtQueNgoai1.Name = "txtQueNgoai1";
             this.txtQueNgoai1.Size = new System.Drawing.Size(350, 29);
             this.txtQueNgoai1.TabIndex = 51;
@@ -474,7 +471,7 @@
             // txtQueNgoai2
             // 
             this.txtQueNgoai2.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQueNgoai2.Location = new System.Drawing.Point(193, 205);
+            this.txtQueNgoai2.Location = new System.Drawing.Point(193, 203);
             this.txtQueNgoai2.Name = "txtQueNgoai2";
             this.txtQueNgoai2.Size = new System.Drawing.Size(350, 29);
             this.txtQueNgoai2.TabIndex = 52;
@@ -483,7 +480,7 @@
             // txtQueNoi2
             // 
             this.txtQueNoi2.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQueNoi2.Location = new System.Drawing.Point(193, 240);
+            this.txtQueNoi2.Location = new System.Drawing.Point(193, 238);
             this.txtQueNoi2.Name = "txtQueNoi2";
             this.txtQueNoi2.Size = new System.Drawing.Size(350, 29);
             this.txtQueNoi2.TabIndex = 53;
@@ -493,7 +490,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(68, 139);
+            this.label3.Location = new System.Drawing.Point(68, 135);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 21);
@@ -504,7 +501,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(68, 208);
+            this.label4.Location = new System.Drawing.Point(68, 206);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 21);
@@ -515,7 +512,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(90, 243);
+            this.label7.Location = new System.Drawing.Point(90, 241);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(98, 21);
@@ -524,6 +521,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.radThoiGian);
             this.groupBox1.Controls.Add(this.label4);
@@ -535,20 +533,62 @@
             this.groupBox1.Controls.Add(this.txtQueNgoai2);
             this.groupBox1.Controls.Add(this.txtQueNgoai1);
             this.groupBox1.Font = new System.Drawing.Font("Courier New", 13.77391F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(565, 217);
+            this.groupBox1.Location = new System.Drawing.Point(20, 10);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(577, 307);
+            this.groupBox1.Size = new System.Drawing.Size(580, 360);
             this.groupBox1.TabIndex = 47;
             this.groupBox1.TabStop = false;
+            // 
+            // radHauThien
+            // 
+            this.radHauThien.AutoSize = true;
+            this.radHauThien.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radHauThien.Location = new System.Drawing.Point(202, 22);
+            this.radHauThien.Name = "radHauThien";
+            this.radHauThien.Size = new System.Drawing.Size(127, 25);
+            this.radHauThien.TabIndex = 57;
+            this.radHauThien.Text = "Hậu thiên";
+            this.radHauThien.UseVisualStyleBackColor = true;
+            this.radHauThien.CheckedChanged += new System.EventHandler(this.radTienThien_CheckedChanged);
+            // 
+            // radTienThien
+            // 
+            this.radTienThien.AutoSize = true;
+            this.radTienThien.Checked = true;
+            this.radTienThien.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radTienThien.Location = new System.Drawing.Point(26, 22);
+            this.radTienThien.Name = "radTienThien";
+            this.radTienThien.Size = new System.Drawing.Size(138, 25);
+            this.radTienThien.TabIndex = 56;
+            this.radTienThien.TabStop = true;
+            this.radTienThien.Text = "Tiên thiên";
+            this.radTienThien.UseVisualStyleBackColor = true;
+            this.radTienThien.CheckedChanged += new System.EventHandler(this.radTienThien_CheckedChanged);
+            // 
+            // ucQueDich
+            // 
+            this.ucQueDich.Location = new System.Drawing.Point(18, 388);
+            this.ucQueDich.Name = "ucQueDich";
+            this.ucQueDich.Size = new System.Drawing.Size(589, 189);
+            this.ucQueDich.TabIndex = 47;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.radHauThien);
+            this.panel1.Controls.Add(this.radTienThien);
+            this.panel1.Location = new System.Drawing.Point(193, 273);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(350, 67);
+            this.panel1.TabIndex = 48;
             // 
             // FormQueThoiGian
             // 
             this.AcceptButton = this.btnGo;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1165, 548);
+            this.ClientSize = new System.Drawing.Size(1167, 592);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ucQueDich);
             this.Controls.Add(this.groupBox2);
@@ -564,6 +604,8 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -600,6 +642,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton radHauThien;
+        private System.Windows.Forms.RadioButton radTienThien;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

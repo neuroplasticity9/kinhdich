@@ -36,5 +36,15 @@ namespace DoanQueKinhDich
                 }
             }
         }
+
+        public static CanChi GetCanChi(ComboBox canCombobox, ComboBox chiCombobox)
+        {
+            return new CanChi
+            {
+                Can = ThienCan.GetCan(canCombobox.SelectedIndex + 1),
+                Chi = DiaChi.GetChi(chiCombobox.SelectedIndex + 1),
+            };
+        }
+
     }
 }

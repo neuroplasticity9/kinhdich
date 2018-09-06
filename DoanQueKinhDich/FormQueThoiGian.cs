@@ -30,7 +30,7 @@ namespace DoanQueKinhDich
         public bool Hao2Dong => ucQueDich.Hao2Dong;
         public bool Hao1Dong => ucQueDich.Hao1Dong;
 
-        public bool IsDone { get; private set; } = false;
+        public bool IsDone { get; set; } = false;
         public AmLich AmLich { get; private set; }
 
         private CanChi GetNguyetKien()
@@ -60,6 +60,8 @@ namespace DoanQueKinhDich
         private void Main_Load(object sender, EventArgs e)
         {
             radThoiGian.Checked = true;
+
+            ucQueDich.DisableAllControls();
 
             SetChiCuaGio();
 
@@ -94,19 +96,20 @@ namespace DoanQueKinhDich
         {
             GetQue();
 
+            IsDone = true;
             this.Close();
         }
 
         private void uiDate_DateChanged(object sender, DateRangeEventArgs e)
         {
             GetQue();
+
+            uiDatePicker.Value = uiDate.SelectionRange.Start;
         }
 
         private void GetQue()
         {
-            AmLich = uiDate.SelectionRange.Start.ToAmLich();
-
-            IsDone = true;
+            AmLich = (uiDate.SelectionRange.Start + uiHour.Value.TimeOfDay).ToAmLich();
 
             SetUIControls(AmLich);
 
@@ -167,11 +170,14 @@ namespace DoanQueKinhDich
             int tongNgoaiQuai = GetTongCuaQuai(textCuaNgoaiQuai);
             int tongNoiQuai = GetTongCuaQuai(textCuaNoiQuai);
 
+            // Tiên thiên đoán bằng số nên không cần giờ. Hậu thiên đoán bằng bát quái nên cần thêm giờ vào để tìm hào động.
+            int chiNumber = radTienThien.Checked ? 0 : amLich.GioAm.Chi.Id; 
+
             return new QueIndex
             {
                 NgoaiQuaiIndex = (tongNgoaiQuai - 1 + 8) % 8,
                 NoiQuaiIndex = (tongNoiQuai - 1 + 8) % 8,
-                HaoDongIndex = (tongNgoaiQuai + tongNoiQuai + amLich.GioAm.Chi.Id) % 6,
+                HaoDongIndex = (tongNgoaiQuai + tongNoiQuai + chiNumber) % 6,
             };
         }
 
@@ -258,6 +264,12 @@ namespace DoanQueKinhDich
 
         private void cbxGioChi_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Cập nhật giờ dựa vào địa chi đã chọn.
+            var datePart = uiHour.Value.Date;
+            var chiGioIndex = cbxGioChi.SelectedIndex;
+            var hourPart = TimeSpan.FromHours(chiGioIndex * 2);
+            uiHour.Value = datePart + hourPart;
+
             GetQue();
         }
 
@@ -277,6 +289,8 @@ namespace DoanQueKinhDich
             txtQueNgoai2.Enabled = false;
             txtQueNoi2.Text = "";
             txtQueNoi2.Enabled = false;
+            radTienThien.Enabled = false;
+            radHauThien.Enabled = false;
         }
 
         private void radNgoaiSo_CheckedChanged(object sender, EventArgs e)
@@ -290,7 +304,9 @@ namespace DoanQueKinhDich
             txtQueNgoai2.Enabled = false;
             txtQueNoi2.Text = "";
             txtQueNoi2.Enabled = false;
-
+            radTienThien.Enabled = false;
+            radHauThien.Enabled = false;
+            
             txtQueNgoai1.Focus();
         }
 
@@ -305,6 +321,9 @@ namespace DoanQueKinhDich
             txtQueNgoai2.Enabled = true;
             txtQueNoi2.Text = "";
             txtQueNoi2.Enabled = true;
+            radTienThien.Enabled = true;
+            radHauThien.Enabled = true;
+            radTienThien.Checked = true;
 
             txtQueNgoai2.Focus();
         }
@@ -315,6 +334,16 @@ namespace DoanQueKinhDich
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void txtQueNgoai1_TextChanged(object sender, EventArgs e)
+        {
+            GetQue();
+        }
+
+        /// <summary>
+        /// Note: events for 2 radio buttons.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void radTienThien_CheckedChanged(object sender, EventArgs e)
         {
             GetQue();
         }

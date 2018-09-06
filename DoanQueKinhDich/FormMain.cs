@@ -10,6 +10,7 @@ namespace DoanQueKinhDich
         private string _queChuUrl;
         private string _queHoUrl;
         private string _queBienUrl;
+        private FormQueThoiGian _formQueThoiGian = new FormQueThoiGian();
 
         public FormMain()
         {
@@ -104,21 +105,12 @@ namespace DoanQueKinhDich
 
         private CanChi GetNguyetKien()
         {
-            return GetCanChi(cbxThangCan.SelectedIndex, cbxThangChi.SelectedIndex);
+            return FormUtils.GetCanChi(cbxThangCan, cbxThangChi);
         }
 
         private CanChi GetNhatThan()
         {
-            return GetCanChi(cbxNgayCan.SelectedIndex, cbxNgayChi.SelectedIndex);
-        }
-
-        private CanChi GetCanChi(int canIndex, int chiIndex)
-        {
-            return new CanChi
-            {
-                Can = ThienCan.GetCan(canIndex + 1),
-                Chi = DiaChi.GetChi(chiIndex + 1),
-            };
+            return FormUtils.GetCanChi(cbxNgayCan, cbxNgayChi);
         }
 
         /// <summary>
@@ -240,14 +232,13 @@ namespace DoanQueKinhDich
 
         private void btnLayQueTheoNgay_Click(object sender, EventArgs e)
         {
-            var formLayQue = new FormQueThoiGian();
+            _formQueThoiGian.IsDone = false;
+            _formQueThoiGian.ShowDialog(this);
 
-            formLayQue.ShowDialog(this);
-
-            if (formLayQue.IsDone)
+            if (_formQueThoiGian.IsDone)
             {
-                AmLich = formLayQue.AmLich;
-                LoadQue(formLayQue);
+                AmLich = _formQueThoiGian.AmLich;
+                LoadQue(_formQueThoiGian);
             }
         }
 
