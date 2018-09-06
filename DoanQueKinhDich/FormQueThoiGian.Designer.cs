@@ -469,6 +469,7 @@
             this.txtQueNgoai1.Name = "txtQueNgoai1";
             this.txtQueNgoai1.Size = new System.Drawing.Size(350, 29);
             this.txtQueNgoai1.TabIndex = 51;
+            this.txtQueNgoai1.TextChanged += new System.EventHandler(this.txtQueNgoai1_TextChanged);
             // 
             // txtQueNgoai2
             // 
@@ -477,6 +478,7 @@
             this.txtQueNgoai2.Name = "txtQueNgoai2";
             this.txtQueNgoai2.Size = new System.Drawing.Size(350, 29);
             this.txtQueNgoai2.TabIndex = 52;
+            this.txtQueNgoai2.TextChanged += new System.EventHandler(this.txtQueNgoai1_TextChanged);
             // 
             // txtQueNoi2
             // 
@@ -485,6 +487,7 @@
             this.txtQueNoi2.Name = "txtQueNoi2";
             this.txtQueNoi2.Size = new System.Drawing.Size(350, 29);
             this.txtQueNoi2.TabIndex = 53;
+            this.txtQueNoi2.TextChanged += new System.EventHandler(this.txtQueNgoai1_TextChanged);
             // 
             // label3
             // 
@@ -550,6 +553,7 @@
             this.Controls.Add(this.ucQueDich);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnGo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormQueThoiGian";

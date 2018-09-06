@@ -5,21 +5,6 @@ using KinhDichCommon;
 
 namespace DoanQueKinhDich
 {
-    public enum CachLayQue
-    {
-        None = 0,
-        MaiHoaTienThien1 = 1,
-        MaiHoaTienThien2 = 2,
-        MaiHoaTienThien3 = 3,
-    }
-
-    public class QueIndex
-    {
-        public int NgoaiQuaiIndex { get; set; }
-        public int NoiQuaiIndex { get; set; }
-        public int HaoDongIndex { get; set; }
-    }
-
     public partial class FormQueThoiGian : Form, IQue, IQueThoi
     {
         private string _queChuUrl;
@@ -74,9 +59,6 @@ namespace DoanQueKinhDich
         /// <param name="e"></param>
         private void Main_Load(object sender, EventArgs e)
         {
-            // Test
-            uiDatePicker.Value = new DateTime(1983, 3, 13);
-
             radThoiGian.Checked = true;
 
             SetChiCuaGio();
@@ -174,8 +156,8 @@ namespace DoanQueKinhDich
 
             return new QueIndex
             {
-                NgoaiQuaiIndex = (tongNgoaiQuai - 1) % 8,
-                NoiQuaiIndex = (tongNoiQuai - 1) % 8,
+                NgoaiQuaiIndex = (tongNgoaiQuai - 1 + 8) % 8,
+                NoiQuaiIndex = (tongNoiQuai - 1 + 8) % 8,
                 HaoDongIndex = (tongNgoaiQuai + tongNoiQuai + amLich.GioAm.Chi.Id) % 6,
             };
         }
@@ -187,8 +169,8 @@ namespace DoanQueKinhDich
 
             return new QueIndex
             {
-                NgoaiQuaiIndex = (tongNgoaiQuai - 1) % 8,
-                NoiQuaiIndex = (tongNoiQuai - 1) % 8,
+                NgoaiQuaiIndex = (tongNgoaiQuai - 1 + 8) % 8,
+                NoiQuaiIndex = (tongNoiQuai - 1 + 8) % 8,
                 HaoDongIndex = (tongNgoaiQuai + tongNoiQuai + amLich.GioAm.Chi.Id) % 6,
             };
         }
@@ -213,8 +195,8 @@ namespace DoanQueKinhDich
             int tongNoiQuai = GetTongNamThangNgayGio(amLich);
 
             return new QueIndex {
-                NgoaiQuaiIndex = (tongNgoaiQuai - 1) % 8,
-                NoiQuaiIndex = (tongNoiQuai - 1) % 8,
+                NgoaiQuaiIndex = (tongNgoaiQuai - 1 + 8) % 8,
+                NoiQuaiIndex = (tongNoiQuai - 1 + 8) % 8,
                 HaoDongIndex = tongNoiQuai % 6,
             };
         }
@@ -326,5 +308,31 @@ namespace DoanQueKinhDich
 
             txtQueNgoai2.Focus();
         }
+
+        /// <summary>
+        /// Note: events for 3 text controls.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtQueNgoai1_TextChanged(object sender, EventArgs e)
+        {
+            GetQue();
+        }
     }
+
+    public enum CachLayQue
+    {
+        None = 0,
+        MaiHoaTienThien1 = 1,
+        MaiHoaTienThien2 = 2,
+        MaiHoaTienThien3 = 3,
+    }
+
+    public class QueIndex
+    {
+        public int NgoaiQuaiIndex { get; set; }
+        public int NoiQuaiIndex { get; set; }
+        public int HaoDongIndex { get; set; }
+    }
+
 }
