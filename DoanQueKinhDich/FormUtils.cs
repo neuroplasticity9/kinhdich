@@ -1,23 +1,40 @@
 ﻿using System.Windows.Forms;
+using DoanQueKinhDich.UserControls;
 using KinhDichCommon;
 
 namespace DoanQueKinhDich
 {
     public static class FormUtils
     {
+        public static void ToggleTextAmDuong(Label label)
+        {
+            if (label.Text == Utils.Duong)
+            {
+                label.Text = Utils.Am;
+            }
+            else
+            {
+                label.Text = Utils.Duong;
+            }
+        }
+
+        public static void ChangeTextAmDuong(ucLabel chkHao)
+        {
+            chkHao.Text = chkHao.Checked ? Utils.Duong : Utils.Am;
+        }
+
         public static void ChangeTextAmDuong(CheckBox chkHao)
         {
             chkHao.Text = chkHao.Checked ? Utils.Duong : Utils.Am;
         }
 
-        public static void ChangeTextAmDuong(Label labelHaoBien, CheckBox chkHao, CheckBox chkHaoDong)
+        public static void ChangeTextAmDuong(Label labelHaoBien, ucLabel chkHao, CheckBox chkHaoDong)
         {
             var amDuong = chkHaoDong.Checked ? !chkHao.Checked : chkHao.Checked;
             labelHaoBien.Text = amDuong ? Utils.Duong : Utils.Am;
-
         }
 
-        public static void UpdateBatQuai(ComboBox batQuai, CheckBox haoThuong, CheckBox haoTrung, CheckBox haoHa)
+        public static void UpdateBatQuai(ComboBox batQuai, ucLabel haoThuong, ucLabel haoTrung, ucLabel haoHa)
         {
             if (haoThuong.Visible && haoTrung.Visible && haoHa.Visible)
             {

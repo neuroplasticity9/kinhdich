@@ -242,5 +242,14 @@ namespace DoanQueKinhDich
             }
         }
 
+        /// <summary>
+        /// Event for 2 radio buttons.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void radMaiHoa_CheckedChanged(object sender, EventArgs e)
+        {
+            btnGo.PerformClick();
+        }
     }
 }

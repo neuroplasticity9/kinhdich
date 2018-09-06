@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using DoanQueKinhDich.Business;
+using DoanQueKinhDich.UserControls;
 using KinhDichCommon;
 
 namespace DoanQueKinhDich
@@ -128,5 +129,11 @@ namespace DoanQueKinhDich
             chkHaoDong.Checked = tungXu.Dong;
         }
 
+
+        private void CheckHaoAndHaoDong(ucLabel chkHao, CheckBox chkHaoDong, TungXu tungXu)
+        {
+            chkHao.Checked = tungXu.Duong;
+            chkHaoDong.Checked = tungXu.Dong;
+        }
     }
 }

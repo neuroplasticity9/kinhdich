@@ -1,4 +1,5 @@
 ﻿using DoanQueKinhDich.Business;
+using DoanQueKinhDich.UserControls;
 using KinhDichCommon;
 using System;
 using System.Windows.Forms;
@@ -8,12 +9,12 @@ namespace DoanQueKinhDich
     public partial class ucQue : UserControl, IQue
     {
 
-        public CheckBox uiHao6 => chkHao6;
-        public CheckBox uiHao5 => chkHao5;
-        public CheckBox uiHao4 => chkHao4;
-        public CheckBox uiHao3 => chkHao3;
-        public CheckBox uiHao2 => chkHao2;
-        public CheckBox uiHao1 => chkHao1;
+        public ucLabel uiHao6 => chkHao6;
+        public ucLabel uiHao5 => chkHao5;
+        public ucLabel uiHao4 => chkHao4;
+        public ucLabel uiHao3 => chkHao3;
+        public ucLabel uiHao2 => chkHao2;
+        public ucLabel uiHao1 => chkHao1;
         public CheckBox uiHao6Dong => chkHao6Dong;
         public CheckBox uiHao5Dong => chkHao5Dong;
         public CheckBox uiHao4Dong => chkHao4Dong;
@@ -88,12 +89,12 @@ namespace DoanQueKinhDich
         {
             var newValue = false;
 
-            uiHao6.Enabled = newValue;
-            uiHao5.Enabled = newValue;
-            uiHao4.Enabled = newValue;
-            uiHao3.Enabled = newValue;
-            uiHao2.Enabled = newValue;
-            uiHao1.Enabled = newValue;
+            uiHao6.EnableClick = newValue;
+            uiHao5.EnableClick = newValue;
+            uiHao4.EnableClick = newValue;
+            uiHao3.EnableClick = newValue;
+            uiHao2.EnableClick = newValue;
+            uiHao1.EnableClick = newValue;
 
             uiHao6Dong.Enabled = newValue;
             uiHao5Dong.Enabled = newValue;

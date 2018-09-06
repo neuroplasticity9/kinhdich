@@ -59,10 +59,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.radHauThien = new System.Windows.Forms.RadioButton();
             this.radTienThien = new System.Windows.Forms.RadioButton();
             this.ucQueDich = new DoanQueKinhDich.ucQue();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -541,6 +541,15 @@
             this.groupBox1.TabIndex = 47;
             this.groupBox1.TabStop = false;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.radHauThien);
+            this.panel1.Controls.Add(this.radTienThien);
+            this.panel1.Location = new System.Drawing.Point(193, 273);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(350, 67);
+            this.panel1.TabIndex = 48;
+            // 
             // radHauThien
             // 
             this.radHauThien.AutoSize = true;
@@ -569,26 +578,17 @@
             // 
             // ucQueDich
             // 
-            this.ucQueDich.Location = new System.Drawing.Point(18, 388);
+            this.ucQueDich.Location = new System.Drawing.Point(17, 389);
             this.ucQueDich.Name = "ucQueDich";
-            this.ucQueDich.Size = new System.Drawing.Size(589, 189);
+            this.ucQueDich.Size = new System.Drawing.Size(589, 201);
             this.ucQueDich.TabIndex = 47;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.radHauThien);
-            this.panel1.Controls.Add(this.radTienThien);
-            this.panel1.Location = new System.Drawing.Point(193, 273);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(350, 67);
-            this.panel1.TabIndex = 48;
             // 
             // FormQueThoiGian
             // 
             this.AcceptButton = this.btnGo;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1167, 592);
+            this.ClientSize = new System.Drawing.Size(1167, 602);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ucQueDich);
             this.Controls.Add(this.groupBox2);

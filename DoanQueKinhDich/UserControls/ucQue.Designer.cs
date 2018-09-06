@@ -36,14 +36,14 @@
             this.uiBienHao5 = new System.Windows.Forms.Label();
             this.uiBienHao6 = new System.Windows.Forms.Label();
             this.chkHao6Dong = new System.Windows.Forms.CheckBox();
-            this.chkHao6 = new System.Windows.Forms.CheckBox();
-            this.chkHao5 = new System.Windows.Forms.CheckBox();
-            this.chkHao4 = new System.Windows.Forms.CheckBox();
-            this.chkHao3 = new System.Windows.Forms.CheckBox();
+            this.chkHao6 = new DoanQueKinhDich.UserControls.ucLabel();
+            this.chkHao5 = new DoanQueKinhDich.UserControls.ucLabel();
+            this.chkHao4 = new DoanQueKinhDich.UserControls.ucLabel();
+            this.chkHao3 = new DoanQueKinhDich.UserControls.ucLabel();
             this.label4 = new System.Windows.Forms.Label();
-            this.chkHao2 = new System.Windows.Forms.CheckBox();
+            this.chkHao2 = new DoanQueKinhDich.UserControls.ucLabel();
             this.label3 = new System.Windows.Forms.Label();
-            this.chkHao1 = new System.Windows.Forms.CheckBox();
+            this.chkHao1 = new DoanQueKinhDich.UserControls.ucLabel();
             this.cbxNoiQuai = new System.Windows.Forms.ComboBox();
             this.chkHao5Dong = new System.Windows.Forms.CheckBox();
             this.cbxNgoaiQuai = new System.Windows.Forms.ComboBox();
@@ -79,11 +79,11 @@
             this.uiGroupBox.Controls.Add(this.chkHao2Dong);
             this.uiGroupBox.Controls.Add(this.chkHao1Dong);
             this.uiGroupBox.Font = new System.Drawing.Font("Courier New", 13.77391F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiGroupBox.Location = new System.Drawing.Point(2, -7);
+            this.uiGroupBox.Location = new System.Drawing.Point(2, -3);
             this.uiGroupBox.Margin = new System.Windows.Forms.Padding(2);
             this.uiGroupBox.Name = "uiGroupBox";
             this.uiGroupBox.Padding = new System.Windows.Forms.Padding(2);
-            this.uiGroupBox.Size = new System.Drawing.Size(580, 195);
+            this.uiGroupBox.Size = new System.Drawing.Size(580, 192);
             this.uiGroupBox.TabIndex = 38;
             this.uiGroupBox.TabStop = false;
             // 
@@ -164,15 +164,12 @@
             // 
             this.chkHao6.AutoSize = true;
             this.chkHao6.Checked = true;
-            this.chkHao6.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkHao6.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkHao6.Location = new System.Drawing.Point(189, 30);
             this.chkHao6.Margin = new System.Windows.Forms.Padding(2);
             this.chkHao6.Name = "chkHao6";
             this.chkHao6.Size = new System.Drawing.Size(62, 26);
             this.chkHao6.TabIndex = 5;
-            this.chkHao6.Text = "———";
-            this.chkHao6.UseVisualStyleBackColor = true;
             this.chkHao6.CheckedChanged += new System.EventHandler(this.chkHao6_CheckedChanged);
             this.chkHao6.VisibleChanged += new System.EventHandler(this.chkHao4_VisibleChanged);
             // 
@@ -180,15 +177,12 @@
             // 
             this.chkHao5.AutoSize = true;
             this.chkHao5.Checked = true;
-            this.chkHao5.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkHao5.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkHao5.Location = new System.Drawing.Point(189, 54);
             this.chkHao5.Margin = new System.Windows.Forms.Padding(2);
             this.chkHao5.Name = "chkHao5";
             this.chkHao5.Size = new System.Drawing.Size(62, 26);
             this.chkHao5.TabIndex = 6;
-            this.chkHao5.Text = "———";
-            this.chkHao5.UseVisualStyleBackColor = true;
             this.chkHao5.CheckedChanged += new System.EventHandler(this.chkHao5_CheckedChanged);
             this.chkHao5.VisibleChanged += new System.EventHandler(this.chkHao4_VisibleChanged);
             // 
@@ -196,15 +190,12 @@
             // 
             this.chkHao4.AutoSize = true;
             this.chkHao4.Checked = true;
-            this.chkHao4.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkHao4.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkHao4.Location = new System.Drawing.Point(189, 78);
             this.chkHao4.Margin = new System.Windows.Forms.Padding(2);
             this.chkHao4.Name = "chkHao4";
             this.chkHao4.Size = new System.Drawing.Size(62, 26);
             this.chkHao4.TabIndex = 7;
-            this.chkHao4.Text = "———";
-            this.chkHao4.UseVisualStyleBackColor = true;
             this.chkHao4.CheckedChanged += new System.EventHandler(this.chkHao4_CheckedChanged);
             this.chkHao4.VisibleChanged += new System.EventHandler(this.chkHao4_VisibleChanged);
             // 
@@ -212,15 +203,12 @@
             // 
             this.chkHao3.AutoSize = true;
             this.chkHao3.Checked = true;
-            this.chkHao3.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkHao3.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkHao3.Location = new System.Drawing.Point(189, 101);
             this.chkHao3.Margin = new System.Windows.Forms.Padding(2);
             this.chkHao3.Name = "chkHao3";
             this.chkHao3.Size = new System.Drawing.Size(62, 26);
             this.chkHao3.TabIndex = 8;
-            this.chkHao3.Text = "———";
-            this.chkHao3.UseVisualStyleBackColor = true;
             this.chkHao3.CheckedChanged += new System.EventHandler(this.chkHao3_CheckedChanged);
             this.chkHao3.VisibleChanged += new System.EventHandler(this.chkHao1_VisibleChanged);
             // 
@@ -239,15 +227,12 @@
             // 
             this.chkHao2.AutoSize = true;
             this.chkHao2.Checked = true;
-            this.chkHao2.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkHao2.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkHao2.Location = new System.Drawing.Point(189, 125);
             this.chkHao2.Margin = new System.Windows.Forms.Padding(2);
             this.chkHao2.Name = "chkHao2";
             this.chkHao2.Size = new System.Drawing.Size(62, 26);
             this.chkHao2.TabIndex = 9;
-            this.chkHao2.Text = "———";
-            this.chkHao2.UseVisualStyleBackColor = true;
             this.chkHao2.CheckedChanged += new System.EventHandler(this.chkHao2_CheckedChanged);
             this.chkHao2.VisibleChanged += new System.EventHandler(this.chkHao1_VisibleChanged);
             // 
@@ -266,15 +251,12 @@
             // 
             this.chkHao1.AutoSize = true;
             this.chkHao1.Checked = true;
-            this.chkHao1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkHao1.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkHao1.Location = new System.Drawing.Point(189, 150);
             this.chkHao1.Margin = new System.Windows.Forms.Padding(2);
             this.chkHao1.Name = "chkHao1";
             this.chkHao1.Size = new System.Drawing.Size(62, 26);
             this.chkHao1.TabIndex = 10;
-            this.chkHao1.Text = "———";
-            this.chkHao1.UseVisualStyleBackColor = true;
             this.chkHao1.CheckedChanged += new System.EventHandler(this.chkHao1_CheckedChanged);
             this.chkHao1.VisibleChanged += new System.EventHandler(this.chkHao1_VisibleChanged);
             // 
@@ -393,7 +375,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.uiGroupBox);
             this.Name = "ucQue";
-            this.Size = new System.Drawing.Size(585, 189);
+            this.Size = new System.Drawing.Size(584, 195);
             this.Load += new System.EventHandler(this.ucQue_Load);
             this.uiGroupBox.ResumeLayout(false);
             this.uiGroupBox.PerformLayout();
@@ -405,14 +387,14 @@
 
         private System.Windows.Forms.GroupBox uiGroupBox;
         private System.Windows.Forms.CheckBox chkHao6Dong;
-        private System.Windows.Forms.CheckBox chkHao6;
-        private System.Windows.Forms.CheckBox chkHao5;
-        private System.Windows.Forms.CheckBox chkHao4;
-        private System.Windows.Forms.CheckBox chkHao3;
+        private UserControls.ucLabel chkHao6;
+        private UserControls.ucLabel chkHao5;
+        private UserControls.ucLabel chkHao4;
+        private UserControls.ucLabel chkHao3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.CheckBox chkHao2;
+        private UserControls.ucLabel chkHao2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.CheckBox chkHao1;
+        private UserControls.ucLabel chkHao1;
         private System.Windows.Forms.ComboBox cbxNoiQuai;
         private System.Windows.Forms.CheckBox chkHao5Dong;
         private System.Windows.Forms.ComboBox cbxNgoaiQuai;

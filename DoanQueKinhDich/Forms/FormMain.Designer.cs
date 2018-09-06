@@ -46,8 +46,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radLucHao = new System.Windows.Forms.RadioButton();
             this.radMaiHoa = new System.Windows.Forms.RadioButton();
-            this.ucQueDich = new DoanQueKinhDich.ucQue();
             this.linkQueHo = new System.Windows.Forms.LinkLabel();
+            this.ucQueDich = new DoanQueKinhDich.ucQue();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -281,7 +281,7 @@
             this.groupBox2.Controls.Add(this.cbxThangChi);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Font = new System.Drawing.Font("Courier New", 13.77391F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(290, 2);
+            this.groupBox2.Location = new System.Drawing.Point(290, 1);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
@@ -301,6 +301,7 @@
             this.radLucHao.TabStop = true;
             this.radLucHao.Text = "Lục Hào";
             this.radLucHao.UseVisualStyleBackColor = true;
+            this.radLucHao.CheckedChanged += new System.EventHandler(this.radMaiHoa_CheckedChanged);
             // 
             // radMaiHoa
             // 
@@ -312,13 +313,7 @@
             this.radMaiHoa.TabIndex = 44;
             this.radMaiHoa.Text = "Mai Hoa";
             this.radMaiHoa.UseVisualStyleBackColor = true;
-            // 
-            // ucQueDich
-            // 
-            this.ucQueDich.Location = new System.Drawing.Point(592, 8);
-            this.ucQueDich.Name = "ucQueDich";
-            this.ucQueDich.Size = new System.Drawing.Size(611, 189);
-            this.ucQueDich.TabIndex = 39;
+            this.radMaiHoa.CheckedChanged += new System.EventHandler(this.radMaiHoa_CheckedChanged);
             // 
             // linkQueHo
             // 
@@ -333,6 +328,13 @@
             this.linkQueHo.Text = "Xem quẻ hỗ online";
             this.linkQueHo.Visible = false;
             this.linkQueHo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkQueHo_LinkClicked);
+            // 
+            // ucQueDich
+            // 
+            this.ucQueDich.Location = new System.Drawing.Point(592, 8);
+            this.ucQueDich.Name = "ucQueDich";
+            this.ucQueDich.Size = new System.Drawing.Size(591, 198);
+            this.ucQueDich.TabIndex = 39;
             // 
             // FormMain
             // 
