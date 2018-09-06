@@ -99,7 +99,10 @@ namespace DoanQueKinhDich.Business
 
             sb.AppendLine(GetNgayThang(nhatThan, nguyetKien));
             sb.AppendLine();
-            sb.AppendLine(GetTenQueLong(queChu));
+            sb.Append(GetTenQueLong(queChu));
+            sb.AppendLine();
+            sb.Append(GetChiChuCuaQue(queChu));
+            sb.AppendLine();
             sb.AppendLine();
 
             sb.AppendLine(GetHaoDesc(queChu.Hao6, isHao6Dong, nhatThan, nguyetKien));
@@ -144,6 +147,9 @@ namespace DoanQueKinhDich.Business
 
             sb.Append(GetTenQueLong(queChu).PadRight(padRight));
             sb.Append(GetTenQueLong(queBien));
+            sb.AppendLine();
+            sb.Append(GetChiChuCuaQue(queChu).PadRight(padRight));
+            sb.Append(GetChiChuCuaQue(queBien));
             sb.AppendLine();
             sb.AppendLine();
 
@@ -207,6 +213,10 @@ namespace DoanQueKinhDich.Business
             sb.Append(GetTenQueShort(queHo).PadRight(padRight));
             sb.Append(GetTenQueShort(queBien));
             sb.AppendLine();
+            sb.Append(GetChiChuCuaQue(queChu).PadRight(padRight));
+            sb.Append(GetChiChuCuaQue(queHo).PadRight(padRight));
+            sb.Append(GetChiChuCuaQue(queBien));
+            sb.AppendLine();
             sb.AppendLine();
 
             sb.Append(GetHaoDesc(queChu.Hao6, isHao6Dong).PadRight(padRight));
@@ -260,12 +270,17 @@ namespace DoanQueKinhDich.Business
 
         private string GetTenQueLong(Que que)
         {
-            return $"   {que.Name} ({que.Desc}), {que.HanhQueThuan.Name}{GetHopXungString(que)}, trên {que.NgoaiQuai.Name} dưới {que.NoiQuai.Name}";
+            return $"   {que.Name} ({que.HanhQueThuan.Name}), {que.NgoaiQuai.Name} {que.NgoaiQuai.Hanh.Name} / {que.NoiQuai.Name} {que.NoiQuai.Hanh.Name}{GetHopXungString(que)}";
         }
 
         private string GetTenQueShort(Que que)
         {
-            return $"   {que.Name} ({que.Desc}), {que.HanhQueThuan.Name}";
+            return $"   {que.Name} ({que.HanhQueThuan.Name}), {que.NgoaiQuai.Name} {que.NgoaiQuai.Hanh.Name} / {que.NoiQuai.Name} {que.NoiQuai.Hanh.Name}";
+        }
+
+        private string GetChiChuCuaQue(Que que)
+        {
+            return $"   {que.Desc}";
         }
 
         private string GetTamHopCuc(Que que)
