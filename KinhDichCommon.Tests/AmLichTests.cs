@@ -98,5 +98,22 @@ namespace KinhDichCommon.Tests
             can = amLich.GetCanCuaGio(Hoi);
             Assert.AreEqual(can, At);
         }
+        
+        [TestMethod]
+        public void TestDoiNgayDoGioTi()
+        {
+            DateTime duongLichGoc = new DateTime(2018, 8, 30);
+            AmLich amLichGoc = duongLichGoc.ToAmLich();
+
+            DateTime duongLichCuoiNgay = duongLichGoc.AddHours(23);
+            AmLich amLichPlus1 = duongLichCuoiNgay.ToAmLich();
+
+            Assert.AreEqual(amLichGoc.NgayAm.Can, Nham);
+            Assert.AreEqual(amLichGoc.NgayAm.Chi, Thin);
+
+            // Do đã qua giờ Tí nên phải ra âm lịch của ngày kế tiếp.
+            Assert.AreEqual(amLichPlus1.NgayAm.Can, Quy);
+            Assert.AreEqual(amLichPlus1.NgayAm.Chi, Ty);
+        }
     }
 }

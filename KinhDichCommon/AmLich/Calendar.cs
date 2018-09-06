@@ -20,10 +20,24 @@ namespace KinhDichCommon
         /* Comvert solar date dd/mm/yyyy to the corresponding lunar date */
         public static AmLich ConvertSolar2Lunar(DateTime solarDate, int timeZone = 7)
         {
-            return ConvertSolar2Lunar(solarDate.Year, solarDate.Month, solarDate.Day, timeZone);
+            DateTime ngayDuong = solarDate;
+
+            var gioDuong = ngayDuong.TimeOfDay;
+            if (gioDuong >= TimeSpan.FromHours(23))
+            {
+                // Do ngày âm bắt đầu từ 23h (giờ Tí) nên phải tăng ngày dương lên 1 để tính ngày âm cho đúng.
+                ngayDuong = ngayDuong.AddDays(1);
+            }
+
+            var amLich = ConvertSolar2Lunar(ngayDuong);
+
+            // Set lại ngày dương gốc cho đúng.
+            amLich.SonarDate = solarDate;
+
+            return amLich;
         }
 
-        public static AmLich ConvertSolar2Lunar(int yy, int mm, int dd, int timeZone)
+        private static AmLich ConvertSolar2Lunar(int yy, int mm, int dd, int timeZone)
         {
             long dayNumber = jdFromDate(yy, mm, dd);
             long k = INT((dayNumber - 2415021.076998695) / 29.530588853);
