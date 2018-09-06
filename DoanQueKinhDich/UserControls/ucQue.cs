@@ -4,7 +4,7 @@ using KinhDichCommon;
 using System;
 using System.Windows.Forms;
 
-namespace DoanQueKinhDich
+namespace DoanQueKinhDich.UserControls
 {
     public partial class ucQue : UserControl, IQue
     {

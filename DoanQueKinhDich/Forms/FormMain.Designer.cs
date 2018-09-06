@@ -47,7 +47,7 @@
             this.radLucHao = new System.Windows.Forms.RadioButton();
             this.radMaiHoa = new System.Windows.Forms.RadioButton();
             this.linkQueHo = new System.Windows.Forms.LinkLabel();
-            this.ucQueDich = new DoanQueKinhDich.ucQue();
+            this.ucQueDich = new UserControls.ucQue();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -384,7 +384,7 @@
         private System.Windows.Forms.Button btnCopy;
         private System.Windows.Forms.Button btnLayQueMaiHoa;
         private System.Windows.Forms.GroupBox groupBox2;
-        private ucQue ucQueDich;
+        private UserControls.ucQue ucQueDich;
         private System.Windows.Forms.RadioButton radLucHao;
         private System.Windows.Forms.RadioButton radMaiHoa;
         private System.Windows.Forms.LinkLabel linkQueHo;

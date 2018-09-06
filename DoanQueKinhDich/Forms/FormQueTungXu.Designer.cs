@@ -32,7 +32,7 @@
             this.btnGo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.labelKetQua = new System.Windows.Forms.Label();
-            this.ucQueDich = new DoanQueKinhDich.ucQue();
+            this.ucQueDich = new UserControls.ucQue();
             this.SuspendLayout();
             // 
             // btnGo
@@ -101,7 +101,7 @@
         private System.Windows.Forms.Button btnGo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelKetQua;
-        private ucQue ucQueDich;
+        private UserControls.ucQue ucQueDich;
     }
 }
 

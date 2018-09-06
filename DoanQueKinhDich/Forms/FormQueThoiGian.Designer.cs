@@ -62,7 +62,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.radHauThien = new System.Windows.Forms.RadioButton();
             this.radTienThien = new System.Windows.Forms.RadioButton();
-            this.ucQueDich = new DoanQueKinhDich.ucQue();
+            this.ucQueDich = new UserControls.ucQue();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -631,7 +631,7 @@
         private System.Windows.Forms.Label labelNgayAmLich;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label labelNgayDuongLich;
-        private ucQue ucQueDich;
+        private UserControls.ucQue ucQueDich;
         private System.Windows.Forms.RadioButton radNgoaiSo;
         private System.Windows.Forms.RadioButton radThoiGian;
         private System.Windows.Forms.RadioButton radioNgoaiSoNoiSo;

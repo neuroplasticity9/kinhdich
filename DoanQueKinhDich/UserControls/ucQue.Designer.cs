@@ -1,4 +1,4 @@
-﻿namespace DoanQueKinhDich
+﻿namespace DoanQueKinhDich.UserControls
 {
     partial class ucQue
     {
