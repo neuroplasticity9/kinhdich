@@ -21,10 +21,11 @@ namespace DoanQueKinhDich.Business
 
             QueChu = QueDich.GetQue(que.Hao6, que.Hao5, que.Hao4, que.Hao3, que.Hao2, que.Hao1);
 
+            QueHo = QueDich.GetQue(que.Hao5, que.Hao4, que.Hao3, que.Hao4, que.Hao3, que.Hao2);
+
             if (que.CoQueBien())
             {
                 QueBien = QueDich.GetQueBien(QueChu, que.Hao6Dong, que.Hao5Dong, que.Hao4Dong, que.Hao3Dong, que.Hao2Dong, que.Hao1Dong);
-                QueHo = QueDich.GetQue(QueBien.Hao5.Duong, QueBien.Hao4.Duong, QueBien.Hao3.Duong, QueBien.Hao4.Duong, QueBien.Hao3.Duong, QueBien.Hao2.Duong);
             }
 
         }
