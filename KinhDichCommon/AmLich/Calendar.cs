@@ -29,7 +29,7 @@ namespace KinhDichCommon
                 ngayDuong = ngayDuong.AddDays(1);
             }
 
-            var amLich = ConvertSolar2Lunar(ngayDuong);
+            var amLich = ConvertSolar2Lunar(ngayDuong.Year, ngayDuong.Month, ngayDuong.Day, timeZone);
 
             // Set lại ngày dương gốc cho đúng.
             amLich.SonarDate = solarDate;
