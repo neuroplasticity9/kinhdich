@@ -209,12 +209,12 @@ namespace DoanQueKinhDich
             ucQueDich.uiHao2.Checked = que.Hao2;
             ucQueDich.uiHao1.Checked = que.Hao1;
 
-            ucQueDich.uiHao6Dong.Checked = que.Hao6Dong;
-            ucQueDich.uiHao5Dong.Checked = que.Hao5Dong;
-            ucQueDich.uiHao4Dong.Checked = que.Hao4Dong;
-            ucQueDich.uiHao3Dong.Checked = que.Hao3Dong;
-            ucQueDich.uiHao2Dong.Checked = que.Hao2Dong;
-            ucQueDich.uiHao1Dong.Checked = que.Hao1Dong;
+            ucQueDich.uiIsHao6Dong.Checked = que.Hao6Dong;
+            ucQueDich.uiIsHao5Dong.Checked = que.Hao5Dong;
+            ucQueDich.uiIsHao4Dong.Checked = que.Hao4Dong;
+            ucQueDich.uiIsHao3Dong.Checked = que.Hao3Dong;
+            ucQueDich.uiIsHao2Dong.Checked = que.Hao2Dong;
+            ucQueDich.uiIsHao1Dong.Checked = que.Hao1Dong;
 
             _disableNgayThangChange = true;
             cbxNgayCan.SelectedIndex = AmLich.NgayAm.Can.Id - 1;
