@@ -16,7 +16,6 @@ namespace DoanQueKinhDich
         {
             InitializeComponent();
         }
-
         public bool Hao6 => ucQueDich.Hao6; 
         public bool Hao5 => ucQueDich.Hao5; 
         public bool Hao4 => ucQueDich.Hao4; 
@@ -36,9 +35,20 @@ namespace DoanQueKinhDich
         public bool IsDone { get; private set; } = false;
         public AmLich AmLich { get; set; }
 
-        public CanChi NgayAm => GetNhatThan();
-        public CanChi ThangAm => GetNguyetKien();
+        /// <summary>
+        /// Form load event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Main_Load(object sender, EventArgs e)
+        {
+            linkQueChu.Visible = false;
+            linkQueBien.Visible = false;
 
+            SetNgayThangComboboxes(DateTime.Now);
+
+            this.ucQueDich.CheckedChanged += new System.EventHandler(ucQueDich_CheckedChanged);
+        }
 
         private void btnGo_Click(object sender, EventArgs e)
         {
@@ -51,14 +61,14 @@ namespace DoanQueKinhDich
             string queDesc;
             if (radLucHao.Checked)
             {
-                queDesc = queService.GetLucHaoDesc(NgayAm, ThangAm);
+                queDesc = queService.GetLucHaoDesc();
 
                 linkQueHo.Visible = false;
                 linkQueBien.Location = new System.Drawing.Point(927, linkQueChu.Location.Y);
             }
             else
             {
-                queDesc = queService.GetMaiHoaDesc(NgayAm, ThangAm);
+                queDesc = queService.GetMaiHoaDesc();
                 linkQueBien.Location = new System.Drawing.Point(1147, linkQueChu.Location.Y);
             }
             
@@ -125,17 +135,9 @@ namespace DoanQueKinhDich
             return FormUtils.GetCanChi(cbxNgayCan, cbxNgayChi);
         }
 
-        /// <summary>
-        /// Form load event.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Main_Load(object sender, EventArgs e)
+        private void ucQueDich_CheckedChanged(object sender, EventArgs e)
         {
-            linkQueChu.Visible = false;
-            linkQueBien.Visible = false;
-
-            SetNgayThangComboboxes(DateTime.Now);
+            btnGo.PerformClick();
         }
 
         private void SetNgayThangComboboxes(DateTime ngayLayQue)

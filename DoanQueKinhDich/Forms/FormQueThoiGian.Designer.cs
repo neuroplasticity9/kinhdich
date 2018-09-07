@@ -62,7 +62,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.radHauThien = new System.Windows.Forms.RadioButton();
             this.radTienThien = new System.Windows.Forms.RadioButton();
-            this.ucQueDich = new UserControls.ucQue();
+            this.ucQueDich = new DoanQueKinhDich.UserControls.ucQue();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -74,7 +74,7 @@
             this.btnGo.Location = new System.Drawing.Point(824, 470);
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(140, 75);
-            this.btnGo.TabIndex = 2;
+            this.btnGo.TabIndex = 3;
             this.btnGo.Text = "Lấy Quẻ";
             this.btnGo.UseVisualStyleBackColor = true;
             this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
@@ -308,7 +308,7 @@
             this.cbxGioChi.MaxDropDownItems = 12;
             this.cbxGioChi.Name = "cbxGioChi";
             this.cbxGioChi.Size = new System.Drawing.Size(92, 29);
-            this.cbxGioChi.TabIndex = 39;
+            this.cbxGioChi.TabIndex = 3;
             this.cbxGioChi.SelectedIndexChanged += new System.EventHandler(this.cbxGioChi_SelectedIndexChanged);
             // 
             // cbxGioCan
@@ -342,7 +342,7 @@
             this.chkUseNamCan.Location = new System.Drawing.Point(74, 63);
             this.chkUseNamCan.Name = "chkUseNamCan";
             this.chkUseNamCan.Size = new System.Drawing.Size(348, 25);
-            this.chkUseNamCan.TabIndex = 41;
+            this.chkUseNamCan.TabIndex = 1;
             this.chkUseNamCan.Text = "Dùng Can của năm để tính quẻ.";
             this.chkUseNamCan.UseVisualStyleBackColor = true;
             this.chkUseNamCan.CheckedChanged += new System.EventHandler(this.chkUseNamCan_CheckedChanged);
@@ -357,7 +357,7 @@
             this.uiDatePicker.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.uiDatePicker.Name = "uiDatePicker";
             this.uiDatePicker.Size = new System.Drawing.Size(227, 29);
-            this.uiDatePicker.TabIndex = 42;
+            this.uiDatePicker.TabIndex = 0;
             this.uiDatePicker.ValueChanged += new System.EventHandler(this.uiDatePicker_ValueChanged);
             // 
             // uiHour
@@ -370,7 +370,7 @@
             this.uiHour.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.uiHour.Name = "uiHour";
             this.uiHour.Size = new System.Drawing.Size(227, 29);
-            this.uiHour.TabIndex = 43;
+            this.uiHour.TabIndex = 2;
             this.uiHour.ValueChanged += new System.EventHandler(this.uiHour_ValueChanged);
             // 
             // labelNgayAmLich
@@ -409,7 +409,7 @@
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(522, 419);
-            this.groupBox2.TabIndex = 46;
+            this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
             // labelNgayDuongLich
@@ -430,7 +430,7 @@
             this.radNgoaiSo.Location = new System.Drawing.Point(29, 96);
             this.radNgoaiSo.Name = "radNgoaiSo";
             this.radNgoaiSo.Size = new System.Drawing.Size(479, 25);
-            this.radNgoaiSo.TabIndex = 49;
+            this.radNgoaiSo.TabIndex = 2;
             this.radNgoaiSo.Text = "Quẻ ngoại dùng số, quẻ nội dùng thời gian";
             this.radNgoaiSo.UseVisualStyleBackColor = true;
             this.radNgoaiSo.CheckedChanged += new System.EventHandler(this.radNgoaiSo_CheckedChanged);
@@ -442,7 +442,7 @@
             this.radThoiGian.Location = new System.Drawing.Point(29, 28);
             this.radThoiGian.Name = "radThoiGian";
             this.radThoiGian.Size = new System.Drawing.Size(182, 25);
-            this.radThoiGian.TabIndex = 48;
+            this.radThoiGian.TabIndex = 0;
             this.radThoiGian.Text = "Dùng thời gian";
             this.radThoiGian.UseVisualStyleBackColor = true;
             this.radThoiGian.CheckedChanged += new System.EventHandler(this.radThoiGian_CheckedChanged);
@@ -454,7 +454,7 @@
             this.radioNgoaiSoNoiSo.Location = new System.Drawing.Point(29, 170);
             this.radioNgoaiSoNoiSo.Name = "radioNgoaiSoNoiSo";
             this.radioNgoaiSoNoiSo.Size = new System.Drawing.Size(402, 25);
-            this.radioNgoaiSoNoiSo.TabIndex = 50;
+            this.radioNgoaiSoNoiSo.TabIndex = 4;
             this.radioNgoaiSoNoiSo.Text = "Quẻ ngoại dùng số, quẻ nội dùng số";
             this.radioNgoaiSoNoiSo.UseVisualStyleBackColor = true;
             this.radioNgoaiSoNoiSo.CheckedChanged += new System.EventHandler(this.radioNgoaiSoNoiSo_CheckedChanged);
@@ -465,7 +465,7 @@
             this.txtQueNgoai1.Location = new System.Drawing.Point(193, 132);
             this.txtQueNgoai1.Name = "txtQueNgoai1";
             this.txtQueNgoai1.Size = new System.Drawing.Size(350, 29);
-            this.txtQueNgoai1.TabIndex = 51;
+            this.txtQueNgoai1.TabIndex = 3;
             this.txtQueNgoai1.TextChanged += new System.EventHandler(this.txtQueNgoai1_TextChanged);
             // 
             // txtQueNgoai2
@@ -474,7 +474,7 @@
             this.txtQueNgoai2.Location = new System.Drawing.Point(193, 203);
             this.txtQueNgoai2.Name = "txtQueNgoai2";
             this.txtQueNgoai2.Size = new System.Drawing.Size(350, 29);
-            this.txtQueNgoai2.TabIndex = 52;
+            this.txtQueNgoai2.TabIndex = 5;
             this.txtQueNgoai2.TextChanged += new System.EventHandler(this.txtQueNgoai1_TextChanged);
             // 
             // txtQueNoi2
@@ -483,7 +483,7 @@
             this.txtQueNoi2.Location = new System.Drawing.Point(193, 238);
             this.txtQueNoi2.Name = "txtQueNoi2";
             this.txtQueNoi2.Size = new System.Drawing.Size(350, 29);
-            this.txtQueNoi2.TabIndex = 53;
+            this.txtQueNoi2.TabIndex = 6;
             this.txtQueNoi2.TextChanged += new System.EventHandler(this.txtQueNgoai1_TextChanged);
             // 
             // label3
@@ -538,7 +538,7 @@
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(580, 360);
-            this.groupBox1.TabIndex = 47;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // panel1
@@ -557,7 +557,7 @@
             this.radHauThien.Location = new System.Drawing.Point(202, 22);
             this.radHauThien.Name = "radHauThien";
             this.radHauThien.Size = new System.Drawing.Size(127, 25);
-            this.radHauThien.TabIndex = 57;
+            this.radHauThien.TabIndex = 1;
             this.radHauThien.Text = "Hậu thiên";
             this.radHauThien.UseVisualStyleBackColor = true;
             this.radHauThien.CheckedChanged += new System.EventHandler(this.radTienThien_CheckedChanged);
@@ -570,7 +570,7 @@
             this.radTienThien.Location = new System.Drawing.Point(26, 22);
             this.radTienThien.Name = "radTienThien";
             this.radTienThien.Size = new System.Drawing.Size(138, 25);
-            this.radTienThien.TabIndex = 56;
+            this.radTienThien.TabIndex = 0;
             this.radTienThien.TabStop = true;
             this.radTienThien.Text = "Tiên thiên";
             this.radTienThien.UseVisualStyleBackColor = true;
@@ -581,7 +581,7 @@
             this.ucQueDich.Location = new System.Drawing.Point(17, 389);
             this.ucQueDich.Name = "ucQueDich";
             this.ucQueDich.Size = new System.Drawing.Size(589, 201);
-            this.ucQueDich.TabIndex = 47;
+            this.ucQueDich.TabIndex = 2;
             // 
             // FormQueThoiGian
             // 

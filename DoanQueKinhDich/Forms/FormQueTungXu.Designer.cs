@@ -32,7 +32,7 @@
             this.btnGo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.labelKetQua = new System.Windows.Forms.Label();
-            this.ucQueDich = new UserControls.ucQue();
+            this.ucQueDich = new DoanQueKinhDich.UserControls.ucQue();
             this.SuspendLayout();
             // 
             // btnGo
@@ -41,7 +41,7 @@
             this.btnGo.Location = new System.Drawing.Point(72, 124);
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(188, 103);
-            this.btnGo.TabIndex = 2;
+            this.btnGo.TabIndex = 0;
             this.btnGo.Text = "Tung Xu";
             this.btnGo.UseVisualStyleBackColor = true;
             this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
@@ -73,7 +73,7 @@
             this.ucQueDich.Location = new System.Drawing.Point(316, 75);
             this.ucQueDich.Name = "ucQueDich";
             this.ucQueDich.Size = new System.Drawing.Size(608, 189);
-            this.ucQueDich.TabIndex = 40;
+            this.ucQueDich.TabIndex = 1;
             // 
             // FormQueTungXu
             // 

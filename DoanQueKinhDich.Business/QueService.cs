@@ -28,7 +28,7 @@ namespace DoanQueKinhDich.Business
 
         }
 
-        public string GetLucHaoDesc(CanChi nhatThan, CanChi nguyetKien)
+        public string GetLucHaoDesc()
         {
             if (!_que.CoQueBien())
             {
@@ -45,7 +45,7 @@ namespace DoanQueKinhDich.Business
 
         }
 
-        public string GetMaiHoaDesc(CanChi nhatThan, CanChi nguyetKien)
+        public string GetMaiHoaDesc()
         {
             if (!_que.CoQueBien())
             {
