@@ -142,12 +142,12 @@ namespace DoanQueKinhDich
             ucQueDich.uiNgoaiQuai.SelectedIndex = queIndex.NgoaiQuaiIndex;
             ucQueDich.uiNoiQuai.SelectedIndex = queIndex.NoiQuaiIndex;
             
-            ucQueDich.uiHao1Dong.Checked = queIndex.HaoDongIndex == 1;
-            ucQueDich.uiHao2Dong.Checked = queIndex.HaoDongIndex == 2;
-            ucQueDich.uiHao3Dong.Checked = queIndex.HaoDongIndex == 3;
-            ucQueDich.uiHao4Dong.Checked = queIndex.HaoDongIndex == 4;
-            ucQueDich.uiHao5Dong.Checked = queIndex.HaoDongIndex == 5;
-            ucQueDich.uiHao6Dong.Checked = queIndex.HaoDongIndex == 0;
+            ucQueDich.uiIsHao1Dong.Checked = queIndex.HaoDongIndex == 1;
+            ucQueDich.uiIsHao2Dong.Checked = queIndex.HaoDongIndex == 2;
+            ucQueDich.uiIsHao3Dong.Checked = queIndex.HaoDongIndex == 3;
+            ucQueDich.uiIsHao4Dong.Checked = queIndex.HaoDongIndex == 4;
+            ucQueDich.uiIsHao5Dong.Checked = queIndex.HaoDongIndex == 5;
+            ucQueDich.uiIsHao6Dong.Checked = queIndex.HaoDongIndex == 0;
         }
 
         private QueIndex GetQueIndexBySoAndTime(string textCuaQuai, AmLich amLich)

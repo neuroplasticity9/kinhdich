@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.uiGroupBox = new System.Windows.Forms.GroupBox();
-            this.uiBienHao1 = new System.Windows.Forms.Label();
-            this.uiBienHao2 = new System.Windows.Forms.Label();
-            this.uiBienHao3 = new System.Windows.Forms.Label();
-            this.uiBienHao4 = new System.Windows.Forms.Label();
-            this.uiBienHao5 = new System.Windows.Forms.Label();
-            this.uiBienHao6 = new System.Windows.Forms.Label();
-            this.chkHao6Dong = new System.Windows.Forms.CheckBox();
+            this.uiBienHao1 = new DoanQueKinhDich.UserControls.ucLabel();
+            this.uiBienHao2 = new DoanQueKinhDich.UserControls.ucLabel();
+            this.uiBienHao3 = new DoanQueKinhDich.UserControls.ucLabel();
+            this.uiBienHao4 = new DoanQueKinhDich.UserControls.ucLabel();
+            this.uiBienHao5 = new DoanQueKinhDich.UserControls.ucLabel();
+            this.uiBienHao6 = new DoanQueKinhDich.UserControls.ucLabel();
+            this.chkIsHao6Dong = new System.Windows.Forms.CheckBox();
             this.chkHao6 = new DoanQueKinhDich.UserControls.ucLabel();
             this.chkHao5 = new DoanQueKinhDich.UserControls.ucLabel();
             this.chkHao4 = new DoanQueKinhDich.UserControls.ucLabel();
@@ -45,12 +45,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.chkHao1 = new DoanQueKinhDich.UserControls.ucLabel();
             this.cbxNoiQuai = new System.Windows.Forms.ComboBox();
-            this.chkHao5Dong = new System.Windows.Forms.CheckBox();
+            this.chkIsHao5Dong = new System.Windows.Forms.CheckBox();
             this.cbxNgoaiQuai = new System.Windows.Forms.ComboBox();
-            this.chkHao4Dong = new System.Windows.Forms.CheckBox();
-            this.chkHao3Dong = new System.Windows.Forms.CheckBox();
-            this.chkHao2Dong = new System.Windows.Forms.CheckBox();
-            this.chkHao1Dong = new System.Windows.Forms.CheckBox();
+            this.chkIsHao4Dong = new System.Windows.Forms.CheckBox();
+            this.chkIsHao3Dong = new System.Windows.Forms.CheckBox();
+            this.chkIsHao2Dong = new System.Windows.Forms.CheckBox();
+            this.chkIsHao1Dong = new System.Windows.Forms.CheckBox();
             this.uiGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,7 +62,7 @@
             this.uiGroupBox.Controls.Add(this.uiBienHao4);
             this.uiGroupBox.Controls.Add(this.uiBienHao5);
             this.uiGroupBox.Controls.Add(this.uiBienHao6);
-            this.uiGroupBox.Controls.Add(this.chkHao6Dong);
+            this.uiGroupBox.Controls.Add(this.chkIsHao6Dong);
             this.uiGroupBox.Controls.Add(this.chkHao6);
             this.uiGroupBox.Controls.Add(this.chkHao5);
             this.uiGroupBox.Controls.Add(this.chkHao4);
@@ -72,12 +72,12 @@
             this.uiGroupBox.Controls.Add(this.label3);
             this.uiGroupBox.Controls.Add(this.chkHao1);
             this.uiGroupBox.Controls.Add(this.cbxNoiQuai);
-            this.uiGroupBox.Controls.Add(this.chkHao5Dong);
+            this.uiGroupBox.Controls.Add(this.chkIsHao5Dong);
             this.uiGroupBox.Controls.Add(this.cbxNgoaiQuai);
-            this.uiGroupBox.Controls.Add(this.chkHao4Dong);
-            this.uiGroupBox.Controls.Add(this.chkHao3Dong);
-            this.uiGroupBox.Controls.Add(this.chkHao2Dong);
-            this.uiGroupBox.Controls.Add(this.chkHao1Dong);
+            this.uiGroupBox.Controls.Add(this.chkIsHao4Dong);
+            this.uiGroupBox.Controls.Add(this.chkIsHao3Dong);
+            this.uiGroupBox.Controls.Add(this.chkIsHao2Dong);
+            this.uiGroupBox.Controls.Add(this.chkIsHao1Dong);
             this.uiGroupBox.Font = new System.Drawing.Font("Courier New", 13.77391F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiGroupBox.Location = new System.Drawing.Point(2, -3);
             this.uiGroupBox.Margin = new System.Windows.Forms.Padding(2);
@@ -90,75 +90,93 @@
             // uiBienHao1
             // 
             this.uiBienHao1.AutoSize = true;
+            this.uiBienHao1.Checked = true;
+            this.uiBienHao1.EnableClick = true;
             this.uiBienHao1.Font = new System.Drawing.Font("Courier New", 13.77391F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiBienHao1.Location = new System.Drawing.Point(502, 152);
             this.uiBienHao1.Name = "uiBienHao1";
             this.uiBienHao1.Size = new System.Drawing.Size(43, 22);
             this.uiBienHao1.TabIndex = 38;
             this.uiBienHao1.Text = "———";
+            this.uiBienHao1.CheckedChanged += new System.EventHandler(this.uiBienHao1_CheckedChanged);
             // 
             // uiBienHao2
             // 
             this.uiBienHao2.AutoSize = true;
+            this.uiBienHao2.Checked = true;
+            this.uiBienHao2.EnableClick = true;
             this.uiBienHao2.Font = new System.Drawing.Font("Courier New", 13.77391F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiBienHao2.Location = new System.Drawing.Point(502, 127);
             this.uiBienHao2.Name = "uiBienHao2";
             this.uiBienHao2.Size = new System.Drawing.Size(43, 22);
             this.uiBienHao2.TabIndex = 37;
             this.uiBienHao2.Text = "———";
+            this.uiBienHao2.CheckedChanged += new System.EventHandler(this.uiBienHao2_CheckedChanged);
             // 
             // uiBienHao3
             // 
             this.uiBienHao3.AutoSize = true;
+            this.uiBienHao3.Checked = true;
+            this.uiBienHao3.EnableClick = true;
             this.uiBienHao3.Font = new System.Drawing.Font("Courier New", 13.77391F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiBienHao3.Location = new System.Drawing.Point(502, 103);
             this.uiBienHao3.Name = "uiBienHao3";
             this.uiBienHao3.Size = new System.Drawing.Size(43, 22);
             this.uiBienHao3.TabIndex = 36;
             this.uiBienHao3.Text = "———";
+            this.uiBienHao3.CheckedChanged += new System.EventHandler(this.uiBienHao3_CheckedChanged);
             // 
             // uiBienHao4
             // 
             this.uiBienHao4.AutoSize = true;
+            this.uiBienHao4.Checked = true;
+            this.uiBienHao4.EnableClick = true;
             this.uiBienHao4.Font = new System.Drawing.Font("Courier New", 13.77391F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiBienHao4.Location = new System.Drawing.Point(502, 80);
             this.uiBienHao4.Name = "uiBienHao4";
             this.uiBienHao4.Size = new System.Drawing.Size(43, 22);
             this.uiBienHao4.TabIndex = 35;
             this.uiBienHao4.Text = "———";
+            this.uiBienHao4.CheckedChanged += new System.EventHandler(this.uiBienHao4_CheckedChanged);
             // 
             // uiBienHao5
             // 
             this.uiBienHao5.AutoSize = true;
+            this.uiBienHao5.Checked = true;
+            this.uiBienHao5.EnableClick = true;
             this.uiBienHao5.Font = new System.Drawing.Font("Courier New", 13.77391F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiBienHao5.Location = new System.Drawing.Point(502, 56);
             this.uiBienHao5.Name = "uiBienHao5";
             this.uiBienHao5.Size = new System.Drawing.Size(43, 22);
             this.uiBienHao5.TabIndex = 34;
             this.uiBienHao5.Text = "———";
+            this.uiBienHao5.CheckedChanged += new System.EventHandler(this.uiBienHao5_CheckedChanged);
             // 
             // uiBienHao6
             // 
             this.uiBienHao6.AutoSize = true;
+            this.uiBienHao6.Checked = true;
+            this.uiBienHao6.EnableClick = true;
             this.uiBienHao6.Font = new System.Drawing.Font("Courier New", 13.77391F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiBienHao6.Location = new System.Drawing.Point(502, 31);
             this.uiBienHao6.Name = "uiBienHao6";
             this.uiBienHao6.Size = new System.Drawing.Size(43, 22);
             this.uiBienHao6.TabIndex = 33;
             this.uiBienHao6.Text = "———";
+            this.uiBienHao6.CheckedChanged += new System.EventHandler(this.uiBienHao6_CheckedChanged);
             // 
             // chkHao6Dong
             // 
-            this.chkHao6Dong.AutoSize = true;
-            this.chkHao6Dong.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao6Dong.Location = new System.Drawing.Point(304, 30);
-            this.chkHao6Dong.Margin = new System.Windows.Forms.Padding(2);
-            this.chkHao6Dong.Name = "chkHao6Dong";
-            this.chkHao6Dong.Size = new System.Drawing.Size(139, 25);
-            this.chkHao6Dong.TabIndex = 2;
-            this.chkHao6Dong.Text = "Hào 6 động";
-            this.chkHao6Dong.UseVisualStyleBackColor = true;
-            this.chkHao6Dong.CheckedChanged += new System.EventHandler(this.chkHao6Dong_CheckedChanged);
+            this.chkIsHao6Dong.AutoSize = true;
+            this.chkIsHao6Dong.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkIsHao6Dong.Location = new System.Drawing.Point(304, 30);
+            this.chkIsHao6Dong.Margin = new System.Windows.Forms.Padding(2);
+            this.chkIsHao6Dong.Name = "chkHao6Dong";
+            this.chkIsHao6Dong.Size = new System.Drawing.Size(139, 25);
+            this.chkIsHao6Dong.TabIndex = 2;
+            this.chkIsHao6Dong.Text = "Hào 6 động";
+            this.chkIsHao6Dong.UseVisualStyleBackColor = true;
+            this.chkIsHao6Dong.CheckedChanged += new System.EventHandler(this.chkHao6Dong_CheckedChanged);
             // 
             // chkHao6
             // 
@@ -296,16 +314,16 @@
             // 
             // chkHao5Dong
             // 
-            this.chkHao5Dong.AutoSize = true;
-            this.chkHao5Dong.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao5Dong.Location = new System.Drawing.Point(304, 54);
-            this.chkHao5Dong.Margin = new System.Windows.Forms.Padding(2);
-            this.chkHao5Dong.Name = "chkHao5Dong";
-            this.chkHao5Dong.Size = new System.Drawing.Size(139, 25);
-            this.chkHao5Dong.TabIndex = 3;
-            this.chkHao5Dong.Text = "Hào 5 động";
-            this.chkHao5Dong.UseVisualStyleBackColor = true;
-            this.chkHao5Dong.CheckedChanged += new System.EventHandler(this.chkHao5Dong_CheckedChanged);
+            this.chkIsHao5Dong.AutoSize = true;
+            this.chkIsHao5Dong.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkIsHao5Dong.Location = new System.Drawing.Point(304, 54);
+            this.chkIsHao5Dong.Margin = new System.Windows.Forms.Padding(2);
+            this.chkIsHao5Dong.Name = "chkHao5Dong";
+            this.chkIsHao5Dong.Size = new System.Drawing.Size(139, 25);
+            this.chkIsHao5Dong.TabIndex = 3;
+            this.chkIsHao5Dong.Text = "Hào 5 động";
+            this.chkIsHao5Dong.UseVisualStyleBackColor = true;
+            this.chkIsHao5Dong.CheckedChanged += new System.EventHandler(this.chkHao5Dong_CheckedChanged);
             // 
             // cbxNgoaiQuai
             // 
@@ -331,55 +349,55 @@
             // 
             // chkHao4Dong
             // 
-            this.chkHao4Dong.AutoSize = true;
-            this.chkHao4Dong.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao4Dong.Location = new System.Drawing.Point(304, 78);
-            this.chkHao4Dong.Margin = new System.Windows.Forms.Padding(2);
-            this.chkHao4Dong.Name = "chkHao4Dong";
-            this.chkHao4Dong.Size = new System.Drawing.Size(139, 25);
-            this.chkHao4Dong.TabIndex = 5;
-            this.chkHao4Dong.Text = "Hào 4 động";
-            this.chkHao4Dong.UseVisualStyleBackColor = true;
-            this.chkHao4Dong.CheckedChanged += new System.EventHandler(this.chkHao4Dong_CheckedChanged);
+            this.chkIsHao4Dong.AutoSize = true;
+            this.chkIsHao4Dong.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkIsHao4Dong.Location = new System.Drawing.Point(304, 78);
+            this.chkIsHao4Dong.Margin = new System.Windows.Forms.Padding(2);
+            this.chkIsHao4Dong.Name = "chkHao4Dong";
+            this.chkIsHao4Dong.Size = new System.Drawing.Size(139, 25);
+            this.chkIsHao4Dong.TabIndex = 5;
+            this.chkIsHao4Dong.Text = "Hào 4 động";
+            this.chkIsHao4Dong.UseVisualStyleBackColor = true;
+            this.chkIsHao4Dong.CheckedChanged += new System.EventHandler(this.chkHao4Dong_CheckedChanged);
             // 
             // chkHao3Dong
             // 
-            this.chkHao3Dong.AutoSize = true;
-            this.chkHao3Dong.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao3Dong.Location = new System.Drawing.Point(304, 101);
-            this.chkHao3Dong.Margin = new System.Windows.Forms.Padding(2);
-            this.chkHao3Dong.Name = "chkHao3Dong";
-            this.chkHao3Dong.Size = new System.Drawing.Size(139, 25);
-            this.chkHao3Dong.TabIndex = 6;
-            this.chkHao3Dong.Text = "Hào 3 động";
-            this.chkHao3Dong.UseVisualStyleBackColor = true;
-            this.chkHao3Dong.CheckedChanged += new System.EventHandler(this.chkHao3Dong_CheckedChanged);
+            this.chkIsHao3Dong.AutoSize = true;
+            this.chkIsHao3Dong.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkIsHao3Dong.Location = new System.Drawing.Point(304, 101);
+            this.chkIsHao3Dong.Margin = new System.Windows.Forms.Padding(2);
+            this.chkIsHao3Dong.Name = "chkHao3Dong";
+            this.chkIsHao3Dong.Size = new System.Drawing.Size(139, 25);
+            this.chkIsHao3Dong.TabIndex = 6;
+            this.chkIsHao3Dong.Text = "Hào 3 động";
+            this.chkIsHao3Dong.UseVisualStyleBackColor = true;
+            this.chkIsHao3Dong.CheckedChanged += new System.EventHandler(this.chkHao3Dong_CheckedChanged);
             // 
             // chkHao2Dong
             // 
-            this.chkHao2Dong.AutoSize = true;
-            this.chkHao2Dong.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao2Dong.Location = new System.Drawing.Point(304, 125);
-            this.chkHao2Dong.Margin = new System.Windows.Forms.Padding(2);
-            this.chkHao2Dong.Name = "chkHao2Dong";
-            this.chkHao2Dong.Size = new System.Drawing.Size(139, 25);
-            this.chkHao2Dong.TabIndex = 7;
-            this.chkHao2Dong.Text = "Hào 2 động";
-            this.chkHao2Dong.UseVisualStyleBackColor = true;
-            this.chkHao2Dong.CheckedChanged += new System.EventHandler(this.chkHao2Dong_CheckedChanged);
+            this.chkIsHao2Dong.AutoSize = true;
+            this.chkIsHao2Dong.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkIsHao2Dong.Location = new System.Drawing.Point(304, 125);
+            this.chkIsHao2Dong.Margin = new System.Windows.Forms.Padding(2);
+            this.chkIsHao2Dong.Name = "chkHao2Dong";
+            this.chkIsHao2Dong.Size = new System.Drawing.Size(139, 25);
+            this.chkIsHao2Dong.TabIndex = 7;
+            this.chkIsHao2Dong.Text = "Hào 2 động";
+            this.chkIsHao2Dong.UseVisualStyleBackColor = true;
+            this.chkIsHao2Dong.CheckedChanged += new System.EventHandler(this.chkHao2Dong_CheckedChanged);
             // 
             // chkHao1Dong
             // 
-            this.chkHao1Dong.AutoSize = true;
-            this.chkHao1Dong.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkHao1Dong.Location = new System.Drawing.Point(304, 150);
-            this.chkHao1Dong.Margin = new System.Windows.Forms.Padding(2);
-            this.chkHao1Dong.Name = "chkHao1Dong";
-            this.chkHao1Dong.Size = new System.Drawing.Size(139, 25);
-            this.chkHao1Dong.TabIndex = 8;
-            this.chkHao1Dong.Text = "Hào 1 động";
-            this.chkHao1Dong.UseVisualStyleBackColor = true;
-            this.chkHao1Dong.CheckedChanged += new System.EventHandler(this.chkHao1Dong_CheckedChanged);
+            this.chkIsHao1Dong.AutoSize = true;
+            this.chkIsHao1Dong.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkIsHao1Dong.Location = new System.Drawing.Point(304, 150);
+            this.chkIsHao1Dong.Margin = new System.Windows.Forms.Padding(2);
+            this.chkIsHao1Dong.Name = "chkHao1Dong";
+            this.chkIsHao1Dong.Size = new System.Drawing.Size(139, 25);
+            this.chkIsHao1Dong.TabIndex = 8;
+            this.chkIsHao1Dong.Text = "Hào 1 động";
+            this.chkIsHao1Dong.UseVisualStyleBackColor = true;
+            this.chkIsHao1Dong.CheckedChanged += new System.EventHandler(this.chkHao1Dong_CheckedChanged);
             // 
             // ucQue
             // 
@@ -398,7 +416,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox uiGroupBox;
-        private System.Windows.Forms.CheckBox chkHao6Dong;
+        private System.Windows.Forms.CheckBox chkIsHao6Dong;
         private UserControls.ucLabel chkHao6;
         private UserControls.ucLabel chkHao5;
         private UserControls.ucLabel chkHao4;
@@ -408,17 +426,17 @@
         private System.Windows.Forms.Label label3;
         private UserControls.ucLabel chkHao1;
         private System.Windows.Forms.ComboBox cbxNoiQuai;
-        private System.Windows.Forms.CheckBox chkHao5Dong;
+        private System.Windows.Forms.CheckBox chkIsHao5Dong;
         private System.Windows.Forms.ComboBox cbxNgoaiQuai;
-        private System.Windows.Forms.CheckBox chkHao4Dong;
-        private System.Windows.Forms.CheckBox chkHao3Dong;
-        private System.Windows.Forms.CheckBox chkHao2Dong;
-        private System.Windows.Forms.CheckBox chkHao1Dong;
-        private System.Windows.Forms.Label uiBienHao1;
-        private System.Windows.Forms.Label uiBienHao2;
-        private System.Windows.Forms.Label uiBienHao3;
-        private System.Windows.Forms.Label uiBienHao4;
-        private System.Windows.Forms.Label uiBienHao5;
-        private System.Windows.Forms.Label uiBienHao6;
+        private System.Windows.Forms.CheckBox chkIsHao4Dong;
+        private System.Windows.Forms.CheckBox chkIsHao3Dong;
+        private System.Windows.Forms.CheckBox chkIsHao2Dong;
+        private System.Windows.Forms.CheckBox chkIsHao1Dong;
+        private UserControls.ucLabel uiBienHao1;
+        private UserControls.ucLabel uiBienHao2;
+        private UserControls.ucLabel uiBienHao3;
+        private UserControls.ucLabel uiBienHao4;
+        private UserControls.ucLabel uiBienHao5;
+        private UserControls.ucLabel uiBienHao6;
     }
 }

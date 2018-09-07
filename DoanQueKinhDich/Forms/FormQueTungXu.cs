@@ -98,26 +98,26 @@ namespace DoanQueKinhDich
                     break;
 
                 case ViTriHao.Hao1:
-                    CheckHaoAndHaoDong(ucQueDich.uiHao1, ucQueDich.uiHao1Dong, tungXu);
+                    CheckHaoAndHaoDong(ucQueDich.uiHao1, ucQueDich.uiIsHao1Dong, tungXu);
                     break;
 
                 case ViTriHao.Hao2:
-                    CheckHaoAndHaoDong(ucQueDich.uiHao2, ucQueDich.uiHao2Dong, tungXu);
+                    CheckHaoAndHaoDong(ucQueDich.uiHao2, ucQueDich.uiIsHao2Dong, tungXu);
                     break;
 
                 case ViTriHao.Hao3:
-                    CheckHaoAndHaoDong(ucQueDich.uiHao3, ucQueDich.uiHao3Dong, tungXu);
+                    CheckHaoAndHaoDong(ucQueDich.uiHao3, ucQueDich.uiIsHao3Dong, tungXu);
                     break;
 
                 case ViTriHao.Hao4:
-                    CheckHaoAndHaoDong(ucQueDich.uiHao4, ucQueDich.uiHao4Dong, tungXu);
+                    CheckHaoAndHaoDong(ucQueDich.uiHao4, ucQueDich.uiIsHao4Dong, tungXu);
                     break;
 
                 case ViTriHao.Hao5:
-                    CheckHaoAndHaoDong(ucQueDich.uiHao5, ucQueDich.uiHao5Dong, tungXu);
+                    CheckHaoAndHaoDong(ucQueDich.uiHao5, ucQueDich.uiIsHao5Dong, tungXu);
                     break;
                 case ViTriHao.Hao6:
-                    CheckHaoAndHaoDong(ucQueDich.uiHao6, ucQueDich.uiHao6Dong, tungXu);
+                    CheckHaoAndHaoDong(ucQueDich.uiHao6, ucQueDich.uiIsHao6Dong, tungXu);
                     break;
 
                 default:

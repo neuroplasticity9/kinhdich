@@ -35,6 +35,9 @@ namespace DoanQueKinhDich
         public bool IsDone { get; private set; } = false;
         public AmLich AmLich { get; set; }
 
+        private bool _isFirstLoadFinished;
+        private bool _disableNgayThangChange;
+
         /// <summary>
         /// Form load event.
         /// </summary>
@@ -48,10 +51,17 @@ namespace DoanQueKinhDich
             SetNgayThangComboboxes(DateTime.Now);
 
             this.ucQueDich.CheckedChanged += new System.EventHandler(ucQueDich_CheckedChanged);
+
+            _isFirstLoadFinished = true;
         }
 
         private void btnGo_Click(object sender, EventArgs e)
         {
+            if (!_isFirstLoadFinished)
+            {
+                return;
+            }
+
             var queService = new QueService(this);
 
             linkQueChu.Visible = true;
@@ -199,19 +209,20 @@ namespace DoanQueKinhDich
             ucQueDich.uiHao2.Checked = que.Hao2;
             ucQueDich.uiHao1.Checked = que.Hao1;
 
-            ucQueDich.uiHao6Dong.Checked = que.Hao6Dong;
-            ucQueDich.uiHao5Dong.Checked = que.Hao5Dong;
-            ucQueDich.uiHao4Dong.Checked = que.Hao4Dong;
-            ucQueDich.uiHao3Dong.Checked = que.Hao3Dong;
-            ucQueDich.uiHao2Dong.Checked = que.Hao2Dong;
-            ucQueDich.uiHao1Dong.Checked = que.Hao1Dong;
+            ucQueDich.uiIsHao6Dong.Checked = que.Hao6Dong;
+            ucQueDich.uiIsHao5Dong.Checked = que.Hao5Dong;
+            ucQueDich.uiIsHao4Dong.Checked = que.Hao4Dong;
+            ucQueDich.uiIsHao3Dong.Checked = que.Hao3Dong;
+            ucQueDich.uiIsHao2Dong.Checked = que.Hao2Dong;
+            ucQueDich.uiIsHao1Dong.Checked = que.Hao1Dong;
 
-
+            _disableNgayThangChange = true;
             cbxNgayCan.SelectedIndex = AmLich.NgayAm.Can.Id - 1;
             cbxNgayChi.SelectedIndex = AmLich.NgayAm.Chi.Id - 1;
 
             cbxThangCan.SelectedIndex = AmLich.ThangAm.Can.Id - 1;
             cbxThangChi.SelectedIndex = AmLich.ThangAm.Chi.Id - 1;
+            _disableNgayThangChange = false;
 
             btnGo.PerformClick();
         }
@@ -270,30 +281,58 @@ namespace DoanQueKinhDich
 
         private void cbxThangCan_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (_disableNgayThangChange)
+            {
+                return;
+            }
+
             var combobox = sender as ComboBox;
             var comboboxToUpdate = cbxThangChi;
             CapNhatChi(combobox, comboboxToUpdate);
+            CachLayQue = CachLayQue.Manual;
+            btnGo.PerformClick();
         }
 
         private void cbxThangChi_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (_disableNgayThangChange)
+            {
+                return;
+            }
+
             var combobox = sender as ComboBox;
             var comboboxToUpdate = cbxThangCan;
             CapNhatCan(combobox, comboboxToUpdate);
+            CachLayQue = CachLayQue.Manual;
+            btnGo.PerformClick();
         }
 
         private void cbxNgayCan_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (_disableNgayThangChange)
+            {
+                return;
+            }
+
             var combobox = sender as ComboBox;
             var comboboxToUpdate = cbxNgayChi;
             CapNhatChi(combobox, comboboxToUpdate);
+            CachLayQue = CachLayQue.Manual;
+            btnGo.PerformClick();
         }
 
         private void cbxNgayChi_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (_disableNgayThangChange)
+            {
+                return;
+            }
+
             var combobox = sender as ComboBox;
             var comboboxToUpdate = cbxNgayCan;
             CapNhatCan(combobox, comboboxToUpdate);
+            CachLayQue = CachLayQue.Manual;
+            btnGo.PerformClick();
         }
 
         /// <summary>
