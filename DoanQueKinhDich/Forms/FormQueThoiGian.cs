@@ -64,6 +64,8 @@ namespace DoanQueKinhDich
             SetChiCuaGio();
 
             GetQue();
+
+            txtSoHoacChu.Focus();
         }
 
         private void SetChiCuaGio()
@@ -141,7 +143,8 @@ namespace DoanQueKinhDich
 
             ucQueDich.uiNgoaiQuai.SelectedIndex = queIndex.NgoaiQuaiIndex;
             ucQueDich.uiNoiQuai.SelectedIndex = queIndex.NoiQuaiIndex;
-            
+
+            ucQueDich.ResetHaoDong();
             ucQueDich.uiIsHao1Dong.Checked = queIndex.HaoDongIndex == 1;
             ucQueDich.uiIsHao2Dong.Checked = queIndex.HaoDongIndex == 2;
             ucQueDich.uiIsHao3Dong.Checked = queIndex.HaoDongIndex == 3;
@@ -195,8 +198,9 @@ namespace DoanQueKinhDich
 
         private QueIndex GetQueIndexByTime(AmLich amLich)
         {
-            int tongNgoaiQuai = GetTongNamThangNgay(amLich);
-            int tongNoiQuai = GetTongNamThangNgayGio(amLich);
+            int soHoacChu = GetTongCuaQuai(txtSoHoacChu.Text);
+            int tongNgoaiQuai = GetTongNamThangNgay(amLich) + soHoacChu;
+            int tongNoiQuai = GetTongNamThangNgayGio(amLich) + soHoacChu;
 
             return new QueIndex {
                 NgoaiQuaiIndex = (tongNgoaiQuai - 1 + 8) % 8,
@@ -281,6 +285,7 @@ namespace DoanQueKinhDich
             CachLayQue = CachLayQue.MaiHoaTienThien1;
 
             chkUseNamCan.Enabled = true;
+            txtSoHoacChu.Enabled = true;
             txtQueNgoai1.Text = "";
             txtQueNgoai1.Enabled = false;
             txtQueNgoai2.Text = "";
@@ -289,6 +294,8 @@ namespace DoanQueKinhDich
             txtQueNoi2.Enabled = false;
             radTienThien.Enabled = false;
             radHauThien.Enabled = false;
+
+            txtSoHoacChu.Focus();
         }
 
         private void radNgoaiSo_CheckedChanged(object sender, EventArgs e)
@@ -296,6 +303,7 @@ namespace DoanQueKinhDich
             CachLayQue = CachLayQue.MaiHoaTienThien2;
 
             chkUseNamCan.Enabled = false;
+            txtSoHoacChu.Enabled = false;
             txtQueNgoai1.Text = "";
             txtQueNgoai1.Enabled = true;
             txtQueNgoai2.Text = "";
@@ -313,6 +321,7 @@ namespace DoanQueKinhDich
             CachLayQue = CachLayQue.MaiHoaTienThien3;
 
             chkUseNamCan.Enabled = false;
+            txtSoHoacChu.Enabled = false;
             txtQueNgoai1.Text = "";
             txtQueNgoai1.Enabled = false;
             txtQueNgoai2.Text = "";
@@ -342,6 +351,11 @@ namespace DoanQueKinhDich
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void radTienThien_CheckedChanged(object sender, EventArgs e)
+        {
+            GetQue();
+        }
+
+        private void txtSoHoacChu_TextChanged(object sender, EventArgs e)
         {
             GetQue();
         }

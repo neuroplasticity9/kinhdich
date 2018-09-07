@@ -86,6 +86,16 @@ namespace DoanQueKinhDich.UserControls
             }
         }
 
+        public void ResetHaoDong()
+        {
+            chkIsHao6Dong.Checked = false;
+            chkIsHao5Dong.Checked = false;
+            chkIsHao4Dong.Checked = false;
+            chkIsHao3Dong.Checked = false;
+            chkIsHao2Dong.Checked = false;
+            chkIsHao1Dong.Checked = false;
+        }
+
         public void DisableAllControls()
         {
             var newValue = false;
