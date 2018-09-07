@@ -598,7 +598,7 @@
             this.MinimizeBox = false;
             this.Name = "FormQueThoiGian";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Lấy Quẻ Thời Gian";
+            this.Text = "Lấy Quẻ Theo Mai Hoa Dịch Số";
             this.Load += new System.EventHandler(this.Main_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

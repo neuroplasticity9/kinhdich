@@ -90,7 +90,7 @@
             this.MinimizeBox = false;
             this.Name = "FormQueTungXu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Tung Xu Lấy Quẻ";
+            this.Text = "Tung Xu 6 Lần Để Lấy Quẻ";
             this.Load += new System.EventHandler(this.Main_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
