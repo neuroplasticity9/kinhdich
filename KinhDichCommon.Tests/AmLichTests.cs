@@ -13,21 +13,18 @@ namespace KinhDichCommon.Tests
         {
             DateTime duongLich = new DateTime(1992, 7, 1);
             AmLich amLich = Calendar.ConvertSolar2Lunar(duongLich);
-            CanChi namAm = amLich.GetCanChiNam();
-            Assert.AreEqual(namAm.Can, Nham);
-            Assert.AreEqual(namAm.Chi, Than);
+            Assert.AreEqual(amLich.NamAm.Can, Nham);
+            Assert.AreEqual(amLich.NamAm.Chi, Than);
 
             duongLich = new DateTime(1983, 3, 13);
             amLich = Calendar.ConvertSolar2Lunar(duongLich);
-            namAm = amLich.GetCanChiNam();
-            Assert.AreEqual(namAm.Can, Quy);
-            Assert.AreEqual(namAm.Chi, Hoi);
+            Assert.AreEqual(amLich.NamAm.Can, Quy);
+            Assert.AreEqual(amLich.NamAm.Chi, Hoi);
 
             duongLich = new DateTime(1986, 4, 14);
             amLich = Calendar.ConvertSolar2Lunar(duongLich);
-            namAm = amLich.GetCanChiNam();
-            Assert.AreEqual(namAm.Can, Binh);
-            Assert.AreEqual(namAm.Chi, Dan);
+            Assert.AreEqual(amLich.NamAm.Can, Binh);
+            Assert.AreEqual(amLich.NamAm.Chi, Dan);
         }
 
         [TestMethod]
@@ -35,15 +32,13 @@ namespace KinhDichCommon.Tests
         {
             DateTime duongLich = new DateTime(2018, 8, 28);
             AmLich amLich = Calendar.ConvertSolar2Lunar(duongLich);
-            CanChi thangAm = amLich.GetCanChiThang();
-            Assert.AreEqual(thangAm.Can, Canh);
-            Assert.AreEqual(thangAm.Chi, Than);
+            Assert.AreEqual(amLich.ThangAm.Can, Canh);
+            Assert.AreEqual(amLich.ThangAm.Chi, Than);
 
             duongLich = new DateTime(1983, 3, 13);
             amLich = Calendar.ConvertSolar2Lunar(duongLich);
-            thangAm = amLich.GetCanChiThang();
-            Assert.AreEqual(thangAm.Can, Giap);
-            Assert.AreEqual(thangAm.Chi, Dan);
+            Assert.AreEqual(amLich.ThangAm.Can, Giap);
+            Assert.AreEqual(amLich.ThangAm.Chi, Dan);
         }
 
         [TestMethod]
@@ -51,15 +46,13 @@ namespace KinhDichCommon.Tests
         {
             DateTime duongLich = new DateTime(2018, 8, 28);
             AmLich amLich = Calendar.ConvertSolar2Lunar(duongLich);
-            CanChi ngayAm = amLich.GetCanChiNgay();
-            Assert.AreEqual(ngayAm.Can, Nham);
-            Assert.AreEqual(ngayAm.Chi, Thin);
+            Assert.AreEqual(amLich.NgayAm.Can, Nham);
+            Assert.AreEqual(amLich.NgayAm.Chi, Thin);
 
             duongLich = new DateTime(1983, 3, 13);
             amLich = Calendar.ConvertSolar2Lunar(duongLich);
-            ngayAm = amLich.GetCanChiNgay();
-            Assert.AreEqual(ngayAm.Can, Canh);
-            Assert.AreEqual(ngayAm.Chi, Ti);
+            Assert.AreEqual(amLich.NgayAm.Can, Canh);
+            Assert.AreEqual(amLich.NgayAm.Chi, Ti);
         }
 
         [TestMethod]
@@ -104,6 +97,23 @@ namespace KinhDichCommon.Tests
 
             can = amLich.GetCanCuaGio(Hoi);
             Assert.AreEqual(can, At);
+        }
+        
+        [TestMethod]
+        public void TestDoiNgayDoGioTi()
+        {
+            DateTime duongLichGoc = new DateTime(2018, 8, 30);
+            AmLich amLichGoc = duongLichGoc.ToAmLich();
+
+            DateTime duongLichCuoiNgay = duongLichGoc.AddHours(23);
+            AmLich amLichPlus1 = duongLichCuoiNgay.ToAmLich();
+
+            Assert.AreEqual(amLichGoc.NgayAm.Can, Nham);
+            Assert.AreEqual(amLichGoc.NgayAm.Chi, Thin);
+
+            // Do đã qua giờ Tí nên phải ra âm lịch của ngày kế tiếp.
+            Assert.AreEqual(amLichPlus1.NgayAm.Can, Quy);
+            Assert.AreEqual(amLichPlus1.NgayAm.Chi, Ty);
         }
     }
 }

@@ -68,36 +68,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormQueThoiGian.cs">
+    <Compile Include="Forms\FormQueThoiGian.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormQueThoiGian.Designer.cs">
+    <Compile Include="Forms\FormQueThoiGian.Designer.cs">
       <DependentUpon>FormQueThoiGian.cs</DependentUpon>
     </Compile>
     <Compile Include="TungXu.cs" />
     <Compile Include="FormUtils.cs" />
-    <Compile Include="IQue.cs" />
-    <Compile Include="FormQueTungXu.cs">
+    <Compile Include="Forms\FormQueTungXu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormQueTungXu.Designer.cs">
+    <Compile Include="Forms\FormQueTungXu.Designer.cs">
       <DependentUpon>FormQueTungXu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMain.cs">
+    <Compile Include="Forms\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMain.Designer.cs">
+    <Compile Include="Forms\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormQueThoiGian.resx">
+    <Compile Include="UserControls\ucQue.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucQue.Designer.cs">
+      <DependentUpon>ucQue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucLabel.Designer.cs">
+      <DependentUpon>ucLabel.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\FormQueThoiGian.resx">
       <DependentUpon>FormQueThoiGian.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormQueTungXu.resx">
+    <EmbeddedResource Include="Forms\FormQueTungXu.resx">
       <DependentUpon>FormQueTungXu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMain.resx">
+    <EmbeddedResource Include="Forms\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -109,6 +120,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControls\ucLabel.resx">
+      <DependentUpon>ucLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucQue.resx">
+      <DependentUpon>ucQue.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -124,6 +141,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DoanQueKinhDich.Business\DoanQueKinhDich.Business.csproj">
+      <Project>{a5c20c01-1e3e-4510-a91e-c7be21790150}</Project>
+      <Name>DoanQueKinhDich.Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\KinhDichCommon\KinhDichCommon.csproj">
       <Project>{1d760e66-34c1-4e4a-8911-7cdd707a3a30}</Project>
       <Name>KinhDichCommon</Name>
