@@ -78,7 +78,7 @@ namespace DoanQueKinhDich
                 linkQueBien.Location = new System.Drawing.Point(1147, linkQueChu.Location.Y);
             }
             
-            txtQueDesc.Text = queService.GetQueDesc();;
+            txtQueDesc.Text = queService.GetQueDesc();
 
             if (this.CoQueBien())
             {

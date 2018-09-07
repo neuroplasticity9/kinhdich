@@ -7,14 +7,14 @@ namespace DoanQueKinhDich.Business
 {
     public abstract class QueService
     {
-        public IQueLayDuoc QueLayDuoc { get; set; }
+        public IQueLayDuoc Que { get; set; }
         public Que QueChu { get; }
         public Que QueHo { get; }
         public Que QueBien { get; }
                
         public QueService(IQueLayDuoc que)
         {
-            QueLayDuoc = que;
+            Que = que;
 
             QueChu = QueDich.GetQue(que.Hao6, que.Hao5, que.Hao4, que.Hao3, que.Hao2, que.Hao1);
 
@@ -81,22 +81,42 @@ namespace DoanQueKinhDich.Business
 
         protected string GetTenQueLong(Que que)
         {
+            if (que == null)
+            {
+                return "";
+            }
+
             return $"   {que.Name} ({que.HanhQueThuan.Name}), {que.NgoaiQuai.Name} {que.NgoaiQuai.Hanh.Name} / {que.NoiQuai.Name} {que.NoiQuai.Hanh.Name}{GetHopXungString(que)}";
         }
 
         protected string GetTenQueShort(Que que)
         {
+            if (que == null)
+            {
+                return "";
+            }
+
             return $"   {que.Name} ({que.HanhQueThuan.Name}), {que.NgoaiQuai.Name} {que.NgoaiQuai.Hanh.Name} / {que.NoiQuai.Name} {que.NoiQuai.Hanh.Name}";
         }
 
         protected string GetChiChuCuaQue(Que que)
         {
+            if (que == null)
+            {
+                return "";
+            }
+
             return $"   {que.Desc}";
         }
 
 
         protected string GetHopXungString(Que que)
         {
+            if (que == null)
+            {
+                return "";
+            }
+
             if (que.IsLucHop())
             {
                 return ", quẻ lục hợp";
