@@ -62,27 +62,23 @@ namespace DoanQueKinhDich
                 return;
             }
 
-            var queService = new QueService(this);
+            QueService queService = radLucHao.Checked ? new LucHaoQueService(this) : new MaiHoaQueService(this) as QueService;
 
             linkQueChu.Visible = true;
             linkQueChu.Text = GetNameForLink(queService.QueChu);
             _queChuUrl = GetUrl(queService.QueChu.Name, queService.QueChu.QueId);
 
-            string queDesc;
             if (radLucHao.Checked)
             {
-                queDesc = queService.GetLucHaoDesc();
-
                 linkQueHo.Visible = false;
                 linkQueBien.Location = new System.Drawing.Point(927, linkQueChu.Location.Y);
             }
             else
             {
-                queDesc = queService.GetMaiHoaDesc();
                 linkQueBien.Location = new System.Drawing.Point(1147, linkQueChu.Location.Y);
             }
             
-            txtQueDesc.Text = queDesc;
+            txtQueDesc.Text = queService.GetQueDesc();;
 
             if (this.CoQueBien())
             {
