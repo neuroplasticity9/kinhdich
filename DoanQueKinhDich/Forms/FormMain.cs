@@ -267,5 +267,84 @@ namespace DoanQueKinhDich
         {
             btnGo.PerformClick();
         }
+
+        private void cbxThangCan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var combobox = sender as ComboBox;
+            var comboboxToUpdate = cbxThangChi;
+            CapNhatChi(combobox, comboboxToUpdate);
+        }
+
+        private void cbxThangChi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var combobox = sender as ComboBox;
+            var comboboxToUpdate = cbxThangCan;
+            CapNhatCan(combobox, comboboxToUpdate);
+        }
+
+        private void cbxNgayCan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var combobox = sender as ComboBox;
+            var comboboxToUpdate = cbxNgayChi;
+            CapNhatChi(combobox, comboboxToUpdate);
+        }
+
+        private void cbxNgayChi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var combobox = sender as ComboBox;
+            var comboboxToUpdate = cbxNgayCan;
+            CapNhatCan(combobox, comboboxToUpdate);
+        }
+
+        /// <summary>
+        /// Nếu chọn can thì phải cập nhật lại chi.
+        /// </summary>
+        /// <param name="combobox"></param>
+        /// <param name="comboboxToUpdate"></param>
+        private void CapNhatChi(ComboBox combobox, ComboBox comboboxToUpdate)
+        {
+            Can selectedCan = ThienCan.All[combobox.SelectedIndex];
+            Chi firstChi = CanChi.GetChiDauTienHopLe(selectedCan);
+
+            if (comboboxToUpdate.SelectedIndex < 0)
+            {
+                comboboxToUpdate.SelectedIndex = firstChi.Id - 1;
+            }
+            else
+            {
+                Chi currentChi = DiaChi.All[comboboxToUpdate.SelectedIndex];
+                // Cập nhật chi nếu khác loại âm dương.
+                if (currentChi.Duong != firstChi.Duong)
+                {
+                    comboboxToUpdate.SelectedIndex = firstChi.Id - 1;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Nếu chọn chi thì phải cập nhật lại can.
+        /// </summary>
+        /// <param name="combobox"></param>
+        /// <param name="comboboxToUpdate"></param>
+        private void CapNhatCan(ComboBox combobox, ComboBox comboboxToUpdate)
+        {
+            Chi selectedChi = DiaChi.All[combobox.SelectedIndex];
+            Can firstCan = CanChi.GetCanDauTienHopLe(selectedChi);
+
+            if (comboboxToUpdate.SelectedIndex < 0)
+            {
+                comboboxToUpdate.SelectedIndex = firstCan.Id - 1;
+            }
+            else
+            {
+                Can currentCan = ThienCan.All[comboboxToUpdate.SelectedIndex];
+                // Cập nhật chi nếu khác loại âm dương.
+                if (currentCan.Duong != firstCan.Duong)
+                {
+                    comboboxToUpdate.SelectedIndex = firstCan.Id - 1;
+                }
+            }
+        }
+
     }
 }

@@ -224,7 +224,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(32, 104);
+            this.label4.Location = new System.Drawing.Point(32, 107);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(98, 21);
@@ -250,7 +250,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(32, 30);
+            this.label3.Location = new System.Drawing.Point(32, 34);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 21);
@@ -286,7 +286,7 @@
             "Khảm",
             "Cấn",
             "Khôn"});
-            this.cbxNoiQuai.Location = new System.Drawing.Point(35, 130);
+            this.cbxNoiQuai.Location = new System.Drawing.Point(35, 133);
             this.cbxNoiQuai.Margin = new System.Windows.Forms.Padding(2);
             this.cbxNoiQuai.MaxDropDownItems = 12;
             this.cbxNoiQuai.Name = "cbxNoiQuai";
@@ -321,7 +321,7 @@
             "Khảm",
             "Cấn",
             "Khôn"});
-            this.cbxNgoaiQuai.Location = new System.Drawing.Point(35, 56);
+            this.cbxNgoaiQuai.Location = new System.Drawing.Point(35, 60);
             this.cbxNgoaiQuai.Margin = new System.Windows.Forms.Padding(2);
             this.cbxNgoaiQuai.MaxDropDownItems = 12;
             this.cbxNgoaiQuai.Name = "cbxNgoaiQuai";

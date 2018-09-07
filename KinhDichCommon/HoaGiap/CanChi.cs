@@ -1,7 +1,9 @@
-﻿using System.Diagnostics;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using static KinhDichCommon.DiaChi;
 using static KinhDichCommon.NguHanh;
+using static KinhDichCommon.ThienCan;
 
 namespace KinhDichCommon
 {
@@ -30,6 +32,33 @@ namespace KinhDichCommon
 
         public Chi Khong1 => Tuan.Khong1;
         public Chi Khong2 => Tuan.Khong2;
+
+        public static List<Can> CanDuong = new List<Can> { Giap, Binh, Mau, Canh, Nham };
+        public static List<Can> CanAm = new List<Can> { At, Dinh, Ky, Tan, Quy };
+        public static List<Chi> ChiDuong = new List<Chi> { Ti, Dan, Thin, Ngo, Than, Tuat };
+        public static List<Chi> ChiAm = new List<Chi> { Suu, Mao, Ty, Mui, Dau, Hoi };
+
+        /// <summary>
+        /// Chi dương (Tí, ...) sẽ đi với can dương là Giáp, Bính, Mậu, Canh và Nhâm.
+        /// Chi âm (Hợi, ...) sẽ đi với can âm là Ất, Đinh, Kỷ, Tân, Quý.
+        /// </summary>
+        /// <param name="chi"></param>
+        /// <returns></returns>
+        public static Can GetCanDauTienHopLe(Chi chi)
+        {
+            return chi.Duong ? CanDuong[0] : CanAm[0];
+        }
+
+        /// <summary>
+        /// Can dương (Giáp, ...) sẽ đi với chi dương (Tí, Dần, Thìn, Ngọ, Thân và Tuất).
+        /// Can âm (Ất, ...) sẽ đi với chi âm (Sửu, Mão, Tỵ, Mùi, Dậu và Hợi).
+        /// </summary>
+        /// <param name="can"></param>
+        /// <returns></returns>
+        public static Chi GetChiDauTienHopLe(Can can)
+        {
+            return can.Duong ? ChiDuong[0] : ChiAm[0];
+        }
 
         /// <summary>
         /// Kiểm tra 1 địa chi có phải lâm không vào nhật thần hay không?

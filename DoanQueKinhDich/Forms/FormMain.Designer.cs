@@ -92,12 +92,13 @@
             "Tân",
             "Nhâm",
             "Quý"});
-            this.cbxNgayCan.Location = new System.Drawing.Point(34, 128);
+            this.cbxNgayCan.Location = new System.Drawing.Point(34, 132);
             this.cbxNgayCan.Margin = new System.Windows.Forms.Padding(2);
             this.cbxNgayCan.MaxDropDownItems = 12;
             this.cbxNgayCan.Name = "cbxNgayCan";
             this.cbxNgayCan.Size = new System.Drawing.Size(92, 29);
             this.cbxNgayCan.TabIndex = 2;
+            this.cbxNgayCan.SelectedIndexChanged += new System.EventHandler(this.cbxNgayCan_SelectedIndexChanged);
             // 
             // cbxNgayChi
             // 
@@ -117,18 +118,19 @@
             "Dậu",
             "Tuất",
             "Hợi"});
-            this.cbxNgayChi.Location = new System.Drawing.Point(145, 128);
+            this.cbxNgayChi.Location = new System.Drawing.Point(145, 132);
             this.cbxNgayChi.Margin = new System.Windows.Forms.Padding(2);
             this.cbxNgayChi.MaxDropDownItems = 12;
             this.cbxNgayChi.Name = "cbxNgayChi";
             this.cbxNgayChi.Size = new System.Drawing.Size(92, 29);
             this.cbxNgayChi.TabIndex = 3;
+            this.cbxNgayChi.SelectedIndexChanged += new System.EventHandler(this.cbxNgayChi_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(31, 102);
+            this.label1.Location = new System.Drawing.Point(31, 106);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 21);
@@ -139,7 +141,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(31, 27);
+            this.label2.Location = new System.Drawing.Point(31, 31);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 21);
@@ -164,12 +166,13 @@
             "Dậu",
             "Tuất",
             "Hợi"});
-            this.cbxThangChi.Location = new System.Drawing.Point(145, 53);
+            this.cbxThangChi.Location = new System.Drawing.Point(145, 57);
             this.cbxThangChi.Margin = new System.Windows.Forms.Padding(2);
             this.cbxThangChi.MaxDropDownItems = 12;
             this.cbxThangChi.Name = "cbxThangChi";
             this.cbxThangChi.Size = new System.Drawing.Size(92, 29);
             this.cbxThangChi.TabIndex = 1;
+            this.cbxThangChi.SelectedIndexChanged += new System.EventHandler(this.cbxThangChi_SelectedIndexChanged);
             // 
             // cbxThangCan
             // 
@@ -187,12 +190,13 @@
             "Tân",
             "Nhâm",
             "Quý"});
-            this.cbxThangCan.Location = new System.Drawing.Point(34, 53);
+            this.cbxThangCan.Location = new System.Drawing.Point(34, 57);
             this.cbxThangCan.Margin = new System.Windows.Forms.Padding(2);
             this.cbxThangCan.MaxDropDownItems = 12;
             this.cbxThangCan.Name = "cbxThangCan";
             this.cbxThangCan.Size = new System.Drawing.Size(92, 29);
             this.cbxThangCan.TabIndex = 0;
+            this.cbxThangCan.SelectedIndexChanged += new System.EventHandler(this.cbxThangCan_SelectedIndexChanged);
             // 
             // linkQueChu
             // 
