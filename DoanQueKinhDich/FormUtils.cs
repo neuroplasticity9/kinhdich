@@ -18,16 +18,6 @@ namespace DoanQueKinhDich
             }
         }
 
-        public static void ChangeTextAmDuong(ucLabel chkHao)
-        {
-            chkHao.Text = chkHao.Checked ? Utils.Duong : Utils.Am;
-        }
-
-        public static void ChangeTextAmDuong(CheckBox chkHao)
-        {
-            chkHao.Text = chkHao.Checked ? Utils.Duong : Utils.Am;
-        }
-
         public static void ChangeTextAmDuong(Label labelHaoBien, ucLabel chkHao, CheckBox chkHaoDong)
         {
             var amDuong = chkHaoDong.Checked ? !chkHao.Checked : chkHao.Checked;

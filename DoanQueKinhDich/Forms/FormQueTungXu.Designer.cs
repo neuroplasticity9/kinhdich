@@ -72,7 +72,7 @@
             // 
             this.ucQueDich.Location = new System.Drawing.Point(316, 75);
             this.ucQueDich.Name = "ucQueDich";
-            this.ucQueDich.Size = new System.Drawing.Size(608, 189);
+            this.ucQueDich.Size = new System.Drawing.Size(685, 189);
             this.ucQueDich.TabIndex = 1;
             // 
             // FormQueTungXu
@@ -80,7 +80,7 @@
             this.AcceptButton = this.btnGo;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(942, 338);
+            this.ClientSize = new System.Drawing.Size(1023, 338);
             this.Controls.Add(this.ucQueDich);
             this.Controls.Add(this.labelKetQua);
             this.Controls.Add(this.label1);
