@@ -54,7 +54,7 @@
             // btnGo
             // 
             this.btnGo.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGo.Location = new System.Drawing.Point(1209, 93);
+            this.btnGo.Location = new System.Drawing.Point(1305, 93);
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(230, 76);
             this.btnGo.TabIndex = 6;
@@ -207,6 +207,7 @@
             this.linkQueChu.Name = "linkQueChu";
             this.linkQueChu.Size = new System.Drawing.Size(264, 27);
             this.linkQueChu.TabIndex = 7;
+            this.linkQueChu.TabStop = true;
             this.linkQueChu.Text = "Xem quẻ chủ online";
             this.linkQueChu.Visible = false;
             this.linkQueChu.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkQueChu_LinkClicked);
@@ -220,6 +221,7 @@
             this.linkQueBien.Name = "linkQueBien";
             this.linkQueBien.Size = new System.Drawing.Size(278, 27);
             this.linkQueBien.TabIndex = 9;
+            this.linkQueBien.TabStop = true;
             this.linkQueBien.Text = "Xem quẻ biến online";
             this.linkQueBien.Visible = false;
             this.linkQueBien.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkQueBien_LinkClicked);
@@ -246,6 +248,7 @@
             this.linkAmLich.Name = "linkAmLich";
             this.linkAmLich.Size = new System.Drawing.Size(274, 21);
             this.linkAmLich.TabIndex = 34;
+            this.linkAmLich.TabStop = true;
             this.linkAmLich.Text = "Xem lịch vạn niên online";
             this.linkAmLich.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkAmLich_LinkClicked);
             // 
@@ -296,7 +299,7 @@
             this.radLucHao.AutoSize = true;
             this.radLucHao.Checked = true;
             this.radLucHao.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLucHao.Location = new System.Drawing.Point(1209, 49);
+            this.radLucHao.Location = new System.Drawing.Point(1305, 49);
             this.radLucHao.Name = "radLucHao";
             this.radLucHao.Size = new System.Drawing.Size(105, 25);
             this.radLucHao.TabIndex = 4;
@@ -309,7 +312,7 @@
             // 
             this.radMaiHoa.AutoSize = true;
             this.radMaiHoa.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radMaiHoa.Location = new System.Drawing.Point(1334, 49);
+            this.radMaiHoa.Location = new System.Drawing.Point(1430, 49);
             this.radMaiHoa.Name = "radMaiHoa";
             this.radMaiHoa.Size = new System.Drawing.Size(105, 25);
             this.radMaiHoa.TabIndex = 5;
@@ -326,6 +329,7 @@
             this.linkQueHo.Name = "linkQueHo";
             this.linkQueHo.Size = new System.Drawing.Size(250, 27);
             this.linkQueHo.TabIndex = 8;
+            this.linkQueHo.TabStop = true;
             this.linkQueHo.Text = "Xem quẻ hỗ online";
             this.linkQueHo.Visible = false;
             this.linkQueHo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkQueHo_LinkClicked);
@@ -334,7 +338,7 @@
             // 
             this.ucQueDich.Location = new System.Drawing.Point(592, 8);
             this.ucQueDich.Name = "ucQueDich";
-            this.ucQueDich.Size = new System.Drawing.Size(591, 198);
+            this.ucQueDich.Size = new System.Drawing.Size(685, 198);
             this.ucQueDich.TabIndex = 3;
             // 
             // FormMain
@@ -359,7 +363,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMain";
             this.Padding = new System.Windows.Forms.Padding(3);
-            this.Text = "Kinh Dịch";
+            this.Text = "Lấy Quẻ Kinh Dịch";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
             this.groupBox2.ResumeLayout(false);

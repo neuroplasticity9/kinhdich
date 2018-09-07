@@ -71,7 +71,7 @@
             // btnGo
             // 
             this.btnGo.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGo.Location = new System.Drawing.Point(824, 470);
+            this.btnGo.Location = new System.Drawing.Point(922, 475);
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(140, 75);
             this.btnGo.TabIndex = 3;
@@ -404,7 +404,7 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.cbxNamChi);
             this.groupBox2.Font = new System.Drawing.Font("Courier New", 13.77391F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(621, 10);
+            this.groupBox2.Location = new System.Drawing.Point(730, 11);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
@@ -464,7 +464,7 @@
             this.txtQueNgoai1.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQueNgoai1.Location = new System.Drawing.Point(193, 132);
             this.txtQueNgoai1.Name = "txtQueNgoai1";
-            this.txtQueNgoai1.Size = new System.Drawing.Size(350, 29);
+            this.txtQueNgoai1.Size = new System.Drawing.Size(444, 29);
             this.txtQueNgoai1.TabIndex = 3;
             this.txtQueNgoai1.TextChanged += new System.EventHandler(this.txtQueNgoai1_TextChanged);
             // 
@@ -473,7 +473,7 @@
             this.txtQueNgoai2.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQueNgoai2.Location = new System.Drawing.Point(193, 203);
             this.txtQueNgoai2.Name = "txtQueNgoai2";
-            this.txtQueNgoai2.Size = new System.Drawing.Size(350, 29);
+            this.txtQueNgoai2.Size = new System.Drawing.Size(444, 29);
             this.txtQueNgoai2.TabIndex = 5;
             this.txtQueNgoai2.TextChanged += new System.EventHandler(this.txtQueNgoai1_TextChanged);
             // 
@@ -482,7 +482,7 @@
             this.txtQueNoi2.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQueNoi2.Location = new System.Drawing.Point(193, 238);
             this.txtQueNoi2.Name = "txtQueNoi2";
-            this.txtQueNoi2.Size = new System.Drawing.Size(350, 29);
+            this.txtQueNoi2.Size = new System.Drawing.Size(444, 29);
             this.txtQueNoi2.TabIndex = 6;
             this.txtQueNoi2.TextChanged += new System.EventHandler(this.txtQueNgoai1_TextChanged);
             // 
@@ -537,7 +537,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(580, 360);
+            this.groupBox1.Size = new System.Drawing.Size(678, 360);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -547,14 +547,14 @@
             this.panel1.Controls.Add(this.radTienThien);
             this.panel1.Location = new System.Drawing.Point(193, 273);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(350, 67);
+            this.panel1.Size = new System.Drawing.Size(444, 67);
             this.panel1.TabIndex = 48;
             // 
             // radHauThien
             // 
             this.radHauThien.AutoSize = true;
             this.radHauThien.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radHauThien.Location = new System.Drawing.Point(202, 22);
+            this.radHauThien.Location = new System.Drawing.Point(249, 21);
             this.radHauThien.Name = "radHauThien";
             this.radHauThien.Size = new System.Drawing.Size(127, 25);
             this.radHauThien.TabIndex = 1;
@@ -567,7 +567,7 @@
             this.radTienThien.AutoSize = true;
             this.radTienThien.Checked = true;
             this.radTienThien.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTienThien.Location = new System.Drawing.Point(26, 22);
+            this.radTienThien.Location = new System.Drawing.Point(68, 21);
             this.radTienThien.Name = "radTienThien";
             this.radTienThien.Size = new System.Drawing.Size(138, 25);
             this.radTienThien.TabIndex = 0;
@@ -578,9 +578,9 @@
             // 
             // ucQueDich
             // 
-            this.ucQueDich.Location = new System.Drawing.Point(17, 389);
+            this.ucQueDich.Location = new System.Drawing.Point(20, 386);
             this.ucQueDich.Name = "ucQueDich";
-            this.ucQueDich.Size = new System.Drawing.Size(589, 201);
+            this.ucQueDich.Size = new System.Drawing.Size(698, 201);
             this.ucQueDich.TabIndex = 2;
             // 
             // FormQueThoiGian
@@ -588,7 +588,7 @@
             this.AcceptButton = this.btnGo;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1167, 602);
+            this.ClientSize = new System.Drawing.Size(1313, 595);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ucQueDich);
             this.Controls.Add(this.groupBox2);
@@ -598,7 +598,7 @@
             this.MinimizeBox = false;
             this.Name = "FormQueThoiGian";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Lấy Quẻ Thời Gian";
+            this.Text = "Lấy Quẻ Theo Mai Hoa Dịch Số";
             this.Load += new System.EventHandler(this.Main_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

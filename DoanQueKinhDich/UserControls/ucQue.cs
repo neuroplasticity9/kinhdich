@@ -23,6 +23,8 @@ namespace DoanQueKinhDich.UserControls
 
         public ComboBox uiNgoaiQuai => cbxNgoaiQuai;
         public ComboBox uiNoiQuai => cbxNoiQuai;
+        public ComboBox uiBienNgoaiQuai => cbxBienNgoaiQuai;
+        public ComboBox uiBienNoiQuai => cbxBienNoiQuai;
 
         public bool Hao6 => chkHao6.Checked;
         public bool Hao5 => chkHao5.Checked;
@@ -50,32 +52,32 @@ namespace DoanQueKinhDich.UserControls
                 case ViTriHao.None:
                     break;
                 case ViTriHao.Hao1:
-                    chkHao1.Visible = uiBienHao1.Visible = true;
+                    chkHao1.Visible = chkBienHao1.Visible = true;
                     chkIsHao1Dong.Visible = chkIsHao1Dong.Checked;
                     break;
 
                 case ViTriHao.Hao2:
-                    chkHao2.Visible = uiBienHao2.Visible = true;
+                    chkHao2.Visible = chkBienHao2.Visible = true;
                     chkIsHao2Dong.Visible = chkIsHao2Dong.Checked;
                     break;
 
                 case ViTriHao.Hao3:
-                    chkHao3.Visible = uiBienHao3.Visible = true;
+                    chkHao3.Visible = chkBienHao3.Visible = true;
                     chkIsHao3Dong.Visible = chkIsHao3Dong.Checked;
                     break;
 
                 case ViTriHao.Hao4:
-                    chkHao4.Visible = uiBienHao4.Visible = true;
+                    chkHao4.Visible = chkBienHao4.Visible = true;
                     chkIsHao4Dong.Visible = chkIsHao4Dong.Checked;
                     break;
 
                 case ViTriHao.Hao5:
-                    chkHao5.Visible = uiBienHao5.Visible = true;
+                    chkHao5.Visible = chkBienHao5.Visible = true;
                     chkIsHao5Dong.Visible = chkIsHao5Dong.Checked;
                     break;
 
                 case ViTriHao.Hao6:
-                    chkHao6.Visible = uiBienHao6.Visible = true;
+                    chkHao6.Visible = chkBienHao6.Visible = true;
                     chkIsHao6Dong.Visible = chkIsHao6Dong.Checked;
                     break;
 
@@ -102,15 +104,17 @@ namespace DoanQueKinhDich.UserControls
             uiIsHao2Dong.Enabled = newValue;
             uiIsHao1Dong.Enabled = newValue;
 
-            uiBienHao6.EnableClick = newValue;
-            uiBienHao5.EnableClick = newValue;
-            uiBienHao4.EnableClick = newValue;
-            uiBienHao3.EnableClick = newValue;
-            uiBienHao2.EnableClick = newValue;
-            uiBienHao1.EnableClick = newValue;
+            chkBienHao6.EnableClick = newValue;
+            chkBienHao5.EnableClick = newValue;
+            chkBienHao4.EnableClick = newValue;
+            chkBienHao3.EnableClick = newValue;
+            chkBienHao2.EnableClick = newValue;
+            chkBienHao1.EnableClick = newValue;
 
             uiNgoaiQuai.Enabled = newValue;
             uiNoiQuai.Enabled = newValue;
+            uiBienNgoaiQuai.Enabled = newValue;
+            uiBienNoiQuai.Enabled = newValue;
         }
 
         public void HideAllControls()
@@ -131,16 +135,17 @@ namespace DoanQueKinhDich.UserControls
             uiIsHao2Dong.Visible = newValue;
             uiIsHao1Dong.Visible = newValue;
 
-            uiBienHao6.Visible = newValue;
-            uiBienHao5.Visible = newValue;
-            uiBienHao4.Visible = newValue;
-            uiBienHao3.Visible = newValue;
-            uiBienHao2.Visible = newValue;
-            uiBienHao1.Visible = newValue;
+            chkBienHao6.Visible = newValue;
+            chkBienHao5.Visible = newValue;
+            chkBienHao4.Visible = newValue;
+            chkBienHao3.Visible = newValue;
+            chkBienHao2.Visible = newValue;
+            chkBienHao1.Visible = newValue;
 
             uiNgoaiQuai.Visible = newValue;
             uiNoiQuai.Visible = newValue;
-
+            uiBienNgoaiQuai.Visible = newValue;
+            uiBienNoiQuai.Visible = newValue;
         }
 
         private void ucQue_Load(object sender, EventArgs e)
@@ -151,55 +156,45 @@ namespace DoanQueKinhDich.UserControls
 
         private void chkHao6_CheckedChanged(object sender, EventArgs e)
         {
-            FormUtils.ChangeTextAmDuong(chkHao6);
-            FormUtils.ChangeTextAmDuong(uiBienHao6, chkHao6, chkIsHao6Dong);
             UpdateNgoaiQuai();
         }
 
         private void chkHao5_CheckedChanged(object sender, EventArgs e)
         {
-            FormUtils.ChangeTextAmDuong(chkHao5);
-            FormUtils.ChangeTextAmDuong(uiBienHao5, chkHao5, chkIsHao5Dong);
             UpdateNgoaiQuai();
         }
 
         private void chkHao4_CheckedChanged(object sender, EventArgs e)
         {
-            FormUtils.ChangeTextAmDuong(chkHao4);
-            FormUtils.ChangeTextAmDuong(uiBienHao4, chkHao4, chkIsHao4Dong);
             UpdateNgoaiQuai();
         }
 
         private void chkHao3_CheckedChanged(object sender, EventArgs e)
         {
-            FormUtils.ChangeTextAmDuong(chkHao3);
-            FormUtils.ChangeTextAmDuong(uiBienHao3, chkHao3, chkIsHao3Dong);
             UpdateNoiQuai();
         }
 
         private void chkHao2_CheckedChanged(object sender, EventArgs e)
         {
-            FormUtils.ChangeTextAmDuong(chkHao2);
-            FormUtils.ChangeTextAmDuong(uiBienHao2, chkHao2, chkIsHao2Dong);
             UpdateNoiQuai();
         }
 
         private void chkHao1_CheckedChanged(object sender, EventArgs e)
         {
-            FormUtils.ChangeTextAmDuong(chkHao1);
-            FormUtils.ChangeTextAmDuong(uiBienHao1, chkHao1, chkIsHao1Dong);
             UpdateNoiQuai();
         }
 
         private void UpdateNgoaiQuai()
         {
             FormUtils.UpdateBatQuai(cbxNgoaiQuai, chkHao6, chkHao5, chkHao4);
+            FormUtils.UpdateBatQuai(cbxBienNgoaiQuai, chkBienHao6, chkBienHao5, chkBienHao4);
             CheckedChanged?.Invoke(null, null);
         }
 
         private void UpdateNoiQuai()
         {
             FormUtils.UpdateBatQuai(cbxNoiQuai, chkHao3, chkHao2, chkHao1);
+            FormUtils.UpdateBatQuai(cbxBienNoiQuai, chkBienHao3, chkBienHao2, chkBienHao1);
             CheckedChanged?.Invoke(null, null);
         }
 
@@ -225,37 +220,43 @@ namespace DoanQueKinhDich.UserControls
 
         private void chkHao6Dong_CheckedChanged(object sender, EventArgs e)
         {
-            FormUtils.ChangeTextAmDuong(uiBienHao6, chkHao6, chkIsHao6Dong);
+            FormUtils.ChangeTextAmDuong(chkBienHao6, chkHao6, chkIsHao6Dong);
+            UpdateNgoaiQuai();
             CheckedChanged?.Invoke(null, null);
         }
 
         private void chkHao5Dong_CheckedChanged(object sender, EventArgs e)
         {
-            FormUtils.ChangeTextAmDuong(uiBienHao5, chkHao5, chkIsHao5Dong);
+            FormUtils.ChangeTextAmDuong(chkBienHao5, chkHao5, chkIsHao5Dong);
+            UpdateNgoaiQuai();
             CheckedChanged?.Invoke(null, null);
         }
 
         private void chkHao4Dong_CheckedChanged(object sender, EventArgs e)
         {
-            FormUtils.ChangeTextAmDuong(uiBienHao4, chkHao4, chkIsHao4Dong);
+            FormUtils.ChangeTextAmDuong(chkBienHao4, chkHao4, chkIsHao4Dong);
+            UpdateNgoaiQuai();
             CheckedChanged?.Invoke(null, null);
         }
 
         private void chkHao3Dong_CheckedChanged(object sender, EventArgs e)
         {
-            FormUtils.ChangeTextAmDuong(uiBienHao3, chkHao3, chkIsHao3Dong);
+            FormUtils.ChangeTextAmDuong(chkBienHao3, chkHao3, chkIsHao3Dong);
+            UpdateNoiQuai();
             CheckedChanged?.Invoke(null, null);
         }
 
         private void chkHao2Dong_CheckedChanged(object sender, EventArgs e)
         {
-            FormUtils.ChangeTextAmDuong(uiBienHao2, chkHao2, chkIsHao2Dong);
+            FormUtils.ChangeTextAmDuong(chkBienHao2, chkHao2, chkIsHao2Dong);
+            UpdateNoiQuai();
             CheckedChanged?.Invoke(null, null);
         }
 
         private void chkHao1Dong_CheckedChanged(object sender, EventArgs e)
         {
-            FormUtils.ChangeTextAmDuong(uiBienHao1, chkHao1, chkIsHao1Dong);
+            FormUtils.ChangeTextAmDuong(chkBienHao1, chkHao1, chkIsHao1Dong);
+            UpdateNoiQuai();
             CheckedChanged?.Invoke(null, null);
         }
 
@@ -281,32 +282,58 @@ namespace DoanQueKinhDich.UserControls
 
         private void uiBienHao6_CheckedChanged(object sender, EventArgs e)
         {
-            chkIsHao6Dong.Checked = uiBienHao6.IsDuong != chkHao6.IsDuong;
+            chkIsHao6Dong.Checked = chkBienHao6.IsDuong != chkHao6.IsDuong;
+            UpdateNgoaiQuai();
         }
 
         private void uiBienHao5_CheckedChanged(object sender, EventArgs e)
         {
-            chkIsHao5Dong.Checked = uiBienHao5.IsDuong != chkHao5.IsDuong;
+            chkIsHao5Dong.Checked = chkBienHao5.IsDuong != chkHao5.IsDuong;
+            UpdateNgoaiQuai();
         }
 
         private void uiBienHao4_CheckedChanged(object sender, EventArgs e)
         {
-            chkIsHao4Dong.Checked = uiBienHao4.IsDuong != chkHao4.IsDuong;
+            chkIsHao4Dong.Checked = chkBienHao4.IsDuong != chkHao4.IsDuong;
+            UpdateNgoaiQuai();
         }
 
         private void uiBienHao3_CheckedChanged(object sender, EventArgs e)
         {
-            chkIsHao3Dong.Checked = uiBienHao3.IsDuong != chkHao3.IsDuong;
+            chkIsHao3Dong.Checked = chkBienHao3.IsDuong != chkHao3.IsDuong;
+            UpdateNoiQuai();
         }
 
         private void uiBienHao2_CheckedChanged(object sender, EventArgs e)
         {
-            chkIsHao2Dong.Checked = uiBienHao2.IsDuong != chkHao2.IsDuong;
+            chkIsHao2Dong.Checked = chkBienHao2.IsDuong != chkHao2.IsDuong;
+            UpdateNoiQuai();
         }
 
         private void uiBienHao1_CheckedChanged(object sender, EventArgs e)
         {
-            chkIsHao1Dong.Checked = uiBienHao1.IsDuong != chkHao1.IsDuong;
+            chkIsHao1Dong.Checked = chkBienHao1.IsDuong != chkHao1.IsDuong;
+            UpdateNoiQuai();
+        }
+
+        private void cbxBienNgoaiQuai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Cung cung = BatQuai.All[cbxBienNgoaiQuai.SelectedIndex];
+            chkBienHao6.Checked = cung.Duong3;
+            chkBienHao5.Checked = cung.Duong2;
+            chkBienHao4.Checked = cung.Duong1;
+
+            CheckedChanged?.Invoke(null, null);
+        }
+
+        private void cbxBienNoiQuai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Cung cung = BatQuai.All[cbxBienNoiQuai.SelectedIndex];
+            chkBienHao3.Checked = cung.Duong3;
+            chkBienHao2.Checked = cung.Duong2;
+            chkBienHao1.Checked = cung.Duong1;
+
+            CheckedChanged?.Invoke(null, null);
         }
     }
 }
