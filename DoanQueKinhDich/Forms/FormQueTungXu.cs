@@ -6,7 +6,7 @@ using KinhDichCommon;
 
 namespace DoanQueKinhDich
 {
-    public partial class FormQueTungXu : Form, IQue
+    public partial class FormQueTungXu : Form, IQueLayDuoc
     {
         private int _lanLayQue = 0;
 
@@ -26,6 +26,8 @@ namespace DoanQueKinhDich
 
         public bool IsDone { get; private set; } = false;
         public AmLich AmLich { get; private set; }
+        public CachLayQue CachLayQue => CachLayQue.TungXu;
+        public NgayLayQue NgayLayQue => AmLich.ToNgayLayQue();
 
         public FormQueTungXu()
         {

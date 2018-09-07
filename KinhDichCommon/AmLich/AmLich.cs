@@ -7,7 +7,7 @@ namespace KinhDichCommon
     /// </summary>
     public class AmLich
     {
-        public DateTime SonarDate { get; set; }
+        public DateTime SolarDate { get; set; }
 
         public int LunarYear { get; set; }
         public int LunarMonth { get; set; }
@@ -16,10 +16,19 @@ namespace KinhDichCommon
 
         private CanChi _gioAm, _ngayAm, _thangAm, _namAm;
 
-        public CanChi GioAm => GetCanChiGio();
-        public CanChi NgayAm => GetCanChiNgay();
-        public CanChi ThangAm => GetCanChiThang();
         public CanChi NamAm => GetCanChiNam();
+        public CanChi ThangAm => GetCanChiThang();
+        public CanChi NgayAm => GetCanChiNgay();
+        public CanChi GioAm => GetCanChiGio();
+
+        public AmLich(int lunarYear, int lunarMonth, int lunarDay, int lunarLeap, DateTime solarDate)
+        {
+            this.LunarYear = lunarYear;
+            this.LunarMonth = lunarMonth;
+            this.LunarDay = lunarDay;
+            this.LunarLeap = lunarLeap;
+            this.SolarDate = SolarDate;
+        }
 
         private CanChi GetCanChiNam()
         {
@@ -59,7 +68,7 @@ namespace KinhDichCommon
         {
             if (_ngayAm == null)
             {
-                long jd = Calendar.jdFromDate(SonarDate);
+                long jd = Calendar.jdFromDate(SolarDate);
                 var canIndex = (int)(jd + 9) % 10;
                 var chiIndex = (int)(jd + 1) % 12;
 
@@ -145,7 +154,7 @@ namespace KinhDichCommon
         {
             if (_gioAm == null)
             {
-                Chi chi = GetChiCuaGio(SonarDate);
+                Chi chi = GetChiCuaGio(SolarDate);
                 Can can = GetCanCuaGio(chi);
 
                 _gioAm = new CanChi { Can = can, Chi = chi };

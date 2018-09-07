@@ -7,17 +7,15 @@ namespace DoanQueKinhDich.Business
 {
     public class QueService
     {
-        private readonly IQue _que;
-        private readonly AmLich _amLich;
+        private readonly IQueLayDuoc _que;
 
         public Que QueChu { get; }
         public Que QueHo { get; }
         public Que QueBien { get; }
                
-        public QueService(IQue que, AmLich amLich)
+        public QueService(IQueLayDuoc que)
         {
             _que = que;
-            _amLich = amLich;
 
             QueChu = QueDich.GetQue(que.Hao6, que.Hao5, que.Hao4, que.Hao3, que.Hao2, que.Hao1);
 
@@ -34,13 +32,13 @@ namespace DoanQueKinhDich.Business
         {
             if (!_que.CoQueBien())
             {
-                return GetQueDesc(QueChu, nhatThan, nguyetKien,
+                return GetQueDesc(QueChu, _que.NgayLayQue, _que.CachLayQue,
                                   _que.Hao6Dong, _que.Hao5Dong, _que.Hao4Dong,
                                   _que.Hao3Dong, _que.Hao2Dong, _que.Hao1Dong);
             }
             else
             {
-                return GetQueChuVaQueBienDesc(QueChu, QueBien, nhatThan, nguyetKien,
+                return GetQueChuVaQueBienDesc(QueChu, QueBien, _que.NgayLayQue, _que.CachLayQue,
                                               _que.Hao6Dong, _que.Hao5Dong, _que.Hao4Dong,
                                               _que.Hao3Dong, _que.Hao2Dong, _que.Hao1Dong);
             }
@@ -51,30 +49,16 @@ namespace DoanQueKinhDich.Business
         {
             if (!_que.CoQueBien())
             {
-                return GetQueDesc(QueChu, nhatThan, nguyetKien,
+                return GetQueDesc(QueChu, _que.NgayLayQue, _que.CachLayQue,
                                   _que.Hao6Dong, _que.Hao5Dong, _que.Hao4Dong,
                                   _que.Hao3Dong, _que.Hao2Dong, _que.Hao1Dong);
             }
             else
             {
-                return GetQueChuQueHoQueBienDesc(QueChu, QueBien, QueHo, nhatThan, nguyetKien,
+                return GetQueChuQueHoQueBienDesc(QueChu, QueBien, QueHo, _que.NgayLayQue, _que.CachLayQue,
                                               _que.Hao6Dong, _que.Hao5Dong, _que.Hao4Dong,
                                               _que.Hao3Dong, _que.Hao2Dong, _que.Hao1Dong);
             }
-        }
-
-        public string GetQueDesc(CanChi nhatThan, CanChi nguyetKien)
-        {
-            return GetQueDesc(QueChu, nhatThan, nguyetKien,
-                              _que.Hao6Dong, _que.Hao5Dong, _que.Hao4Dong,
-                              _que.Hao3Dong, _que.Hao2Dong, _que.Hao1Dong);
-        }
-
-        public string GetQueChuVaQueBienDesc(CanChi nhatThan, CanChi nguyetKien)
-        {
-            return GetQueChuVaQueBienDesc(QueChu, QueBien, nhatThan, nguyetKien,
-                                          _que.Hao6Dong, _que.Hao5Dong, _que.Hao4Dong,
-                                          _que.Hao3Dong, _que.Hao2Dong, _que.Hao1Dong);
         }
 
         /// <summary>
@@ -90,14 +74,16 @@ namespace DoanQueKinhDich.Business
         /// <param name="isHao2Dong"></param>
         /// <param name="isHao1Dong"></param>
         /// <returns></returns>
-        private string GetQueDesc(Que queChu, 
-                                  CanChi nhatThan, CanChi nguyetKien,
+        private string GetQueDesc(Que queChu, NgayLayQue ngayLayQue, CachLayQue cachLayQue,
                                   bool isHao6Dong = false, bool isHao5Dong = false, bool isHao4Dong = false,
                                   bool isHao3Dong = false, bool isHao2Dong = false, bool isHao1Dong = false)
         {
+            var nhatThan = ngayLayQue.NgayAm;
+            var nguyetKien = ngayLayQue.ThangAm;
+
             var sb = new StringBuilder();
 
-            sb.AppendLine(GetNgayThang(nhatThan, nguyetKien));
+            sb.AppendLine(GetNgayThang(ngayLayQue, cachLayQue));
             sb.AppendLine();
             sb.Append(GetTenQueLong(queChu));
             sb.AppendLine();
@@ -134,15 +120,17 @@ namespace DoanQueKinhDich.Business
         /// <param name="isHao2Dong"></param>
         /// <param name="isHao1Dong"></param>
         /// <returns></returns>
-        private string GetQueChuVaQueBienDesc(Que queChu, Que queBien,
-                                                CanChi nhatThan, CanChi nguyetKien,
+        private string GetQueChuVaQueBienDesc(Que queChu, Que queBien, NgayLayQue ngayLayQue, CachLayQue cachLayQue,
                                                 bool isHao6Dong = false, bool isHao5Dong = false, bool isHao4Dong = false,
                                                 bool isHao3Dong = false, bool isHao2Dong = false, bool isHao1Dong = false)
         {
+            var nhatThan = ngayLayQue.NgayAm;
+            var nguyetKien = ngayLayQue.ThangAm;
+
             var padRight = 80;
             var sb = new StringBuilder();
 
-            sb.AppendLine(GetNgayThang(nhatThan, nguyetKien));
+            sb.AppendLine(GetNgayThang(ngayLayQue, cachLayQue));
             sb.AppendLine();
 
             sb.Append(GetTenQueLong(queChu).PadRight(padRight));
@@ -198,15 +186,17 @@ namespace DoanQueKinhDich.Business
         /// <param name="isHao2Dong"></param>
         /// <param name="isHao1Dong"></param>
         /// <returns></returns>
-        private string GetQueChuQueHoQueBienDesc(Que queChu, Que queBien, Que queHo,
-                                                    CanChi nhatThan, CanChi nguyetKien,
+        private string GetQueChuQueHoQueBienDesc(Que queChu, Que queBien, Que queHo, NgayLayQue ngayLayQue, CachLayQue cachLayQue,
                                                     bool isHao6Dong = false, bool isHao5Dong = false, bool isHao4Dong = false,
                                                     bool isHao3Dong = false, bool isHao2Dong = false, bool isHao1Dong = false)
         {
+            var nhatThan = ngayLayQue.NgayAm;
+            var nguyetKien = ngayLayQue.ThangAm;
+
             var padRight = 50;
             var sb = new StringBuilder();
 
-            sb.AppendLine(GetNgayThang(nhatThan, nguyetKien));
+            sb.AppendLine(GetNgayThang(ngayLayQue, cachLayQue));
             sb.AppendLine();
 
             sb.Append(GetTenQueShort(queChu).PadRight(padRight));
@@ -263,9 +253,46 @@ namespace DoanQueKinhDich.Business
             return "";
         }
 
-        private string GetNgayThang(CanChi nhatThan, CanChi nguyetKien)
+        private string GetNgayThang(NgayLayQue ngayLayQue, CachLayQue cachLayQue)
         {
-            return $"Tháng: {nguyetKien.Name} - Ngày: {nhatThan.Name} ({nhatThan.Khong1.Name} {nhatThan.Khong2.Name} lâm không)";
+            var nhatThan = ngayLayQue.NgayAm;
+            var nguyetKien = ngayLayQue.ThangAm;
+            var result = "";
+
+            switch (cachLayQue)
+            {
+                case CachLayQue.None:
+                    break;
+
+                case CachLayQue.Manual:
+                    result = $"   Tháng: {nguyetKien.Name} - Ngày: {nhatThan.Name} ({nhatThan.Khong1.Name} {nhatThan.Khong2.Name} lâm không)";
+                    break;
+
+                case CachLayQue.TungXu:
+                case CachLayQue.MaiHoaTienThien1:
+                case CachLayQue.MaiHoaTienThien2:
+                case CachLayQue.MaiHoaTienThien3:
+                    var sb = new StringBuilder();
+                    var columnLen = 17;
+                    sb.Append($"   Năm {ngayLayQue.LunarYear}".PadRight(columnLen + 2));
+                    sb.Append($"Tháng {ngayLayQue.LunarMonth}".PadRight(columnLen));
+                    sb.Append($"Ngày {ngayLayQue.LunarDay}".PadRight(columnLen));
+                    sb.Append($"Giờ {ngayLayQue.GioAm.Chi.Name} (dương lịch: {ngayLayQue.SolarDate.ToString("yyyy-MM-dd")})");
+                    sb.AppendLine();
+
+                    sb.Append($"   {ngayLayQue.NamAm.Name}".PadRight(columnLen + 2));
+                    sb.Append($"{ngayLayQue.ThangAm.Name}".PadRight(columnLen));
+                    sb.Append($"{ngayLayQue.NgayAm.Name}".PadRight(columnLen));
+                    sb.Append($"{ngayLayQue.GioAm.Name} ({nhatThan.Khong1.Name} {nhatThan.Khong2.Name} lâm không)");
+
+                    result = sb.ToString();
+
+                    break;
+                default:
+                    break;
+            }
+
+            return result;
         }
 
         private string GetTenQueLong(Que que)

@@ -5,7 +5,7 @@ using KinhDichCommon;
 
 namespace DoanQueKinhDich
 {
-    public partial class FormMain : Form, IQue
+    public partial class FormMain : Form, IQueLayDuoc
     {
         private string _queChuUrl;
         private string _queHoUrl;
@@ -29,18 +29,20 @@ namespace DoanQueKinhDich
         public bool Hao4Dong => ucQueDich.Hao4Dong; 
         public bool Hao3Dong => ucQueDich.Hao3Dong; 
         public bool Hao2Dong => ucQueDich.Hao2Dong; 
-        public bool Hao1Dong => ucQueDich.Hao1Dong; 
+        public bool Hao1Dong => ucQueDich.Hao1Dong;
 
+        public CachLayQue CachLayQue { get; private set; } = CachLayQue.Manual;
+        public NgayLayQue NgayLayQue => GetNgayLayQue();
         public bool IsDone { get; private set; } = false;
+        public AmLich AmLich { get; set; }
 
         public CanChi NgayAm => GetNhatThan();
         public CanChi ThangAm => GetNguyetKien();
 
-        public AmLich AmLich { get; set; }
 
         private void btnGo_Click(object sender, EventArgs e)
         {
-            var queService = new QueService(this, AmLich);
+            var queService = new QueService(this);
 
             linkQueChu.Visible = true;
             linkQueChu.Text = GetNameForLink(queService.QueChu);
@@ -79,6 +81,16 @@ namespace DoanQueKinhDich
             {
                 linkQueBien.Visible = false;
             }
+        }
+
+        private NgayLayQue GetNgayLayQue()
+        {
+            if (CachLayQue == CachLayQue.Manual)
+            {
+                return new NgayLayQue(GetNhatThan(), GetNguyetKien());
+            }
+            
+            return AmLich.ToNgayLayQue();
         }
 
         private string GetNameForLink(Que que)
@@ -174,8 +186,10 @@ namespace DoanQueKinhDich
             }
         }
 
-        private void LoadQue(IQue que)
+        private void LoadQue(IQueLayDuoc que)
         {
+            this.CachLayQue = que.CachLayQue;
+
             ucQueDich.uiHao6.Checked = que.Hao6;
             ucQueDich.uiHao5.Checked = que.Hao5;
             ucQueDich.uiHao4.Checked = que.Hao4;

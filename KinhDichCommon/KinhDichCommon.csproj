@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AmLich\NgayLayQue.cs" />
     <Compile Include="AmLich\Calendar.cs" />
     <Compile Include="AmLich\AmLich.cs" />
     <Compile Include="BaseItem.cs" />

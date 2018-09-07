@@ -32,7 +32,7 @@ namespace KinhDichCommon
             var amLich = ConvertSolar2Lunar(ngayDuong.Year, ngayDuong.Month, ngayDuong.Day, timeZone);
 
             // Set lại ngày dương gốc cho đúng.
-            amLich.SonarDate = solarDate;
+            amLich.SolarDate = solarDate;
 
             return amLich;
         }
@@ -83,10 +83,8 @@ namespace KinhDichCommon
             {
                 lunarYear -= 1;
             }
-            return new AmLich { LunarDay = (int)lunarDay, LunarMonth = (int)lunarMonth, LunarYear = lunarYear,
-                                LunarLeap = lunarLeap,
-                                SonarDate = new DateTime(yy, mm, dd)
-            };
+
+            return new AmLich(lunarYear, (int)lunarMonth, (int)lunarDay, lunarLeap, new DateTime(yy, mm, dd));
         }
 
         private static long INT(double d)

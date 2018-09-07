@@ -5,12 +5,8 @@ using KinhDichCommon;
 
 namespace DoanQueKinhDich
 {
-    public partial class FormQueThoiGian : Form, IQue, IQueThoi
+    public partial class FormQueThoiGian : Form, IQueLayDuoc
     {
-        private string _queChuUrl;
-        private string _queBienUrl;
-        private CachLayQue _cachLayQue;
-
         public FormQueThoiGian()
         {
             InitializeComponent();
@@ -32,6 +28,8 @@ namespace DoanQueKinhDich
 
         public bool IsDone { get; set; } = false;
         public AmLich AmLich { get; private set; }
+        public NgayLayQue NgayLayQue => AmLich.ToNgayLayQue();
+        public CachLayQue CachLayQue { get; private set; }
 
         private CanChi GetNguyetKien()
         {
@@ -120,7 +118,7 @@ namespace DoanQueKinhDich
         {
             var queIndex = new QueIndex();
 
-            switch (_cachLayQue)
+            switch (CachLayQue)
             {
                 case CachLayQue.None:
                     break;
@@ -249,7 +247,7 @@ namespace DoanQueKinhDich
             cbxGioCan.SelectedIndex = gioCan.Id - 1;
 
             labelNgayAmLich.Text = $"Ngày âm lịch: {amLich.LunarYear}-{amLich.LunarMonth}-{amLich.LunarDay}";
-            labelNgayDuongLich.Text = $"Ngày dương lịch: {amLich.SonarDate.Year}-{amLich.SonarDate.Month}-{amLich.SonarDate.Day}";
+            labelNgayDuongLich.Text = $"Ngày dương lịch: {amLich.SolarDate.Year}-{amLich.SolarDate.Month}-{amLich.SolarDate.Day}";
         }
 
         private void uiDatePicker_ValueChanged(object sender, EventArgs e)
@@ -280,7 +278,7 @@ namespace DoanQueKinhDich
 
         private void radThoiGian_CheckedChanged(object sender, EventArgs e)
         {
-            _cachLayQue = CachLayQue.MaiHoaTienThien1;
+            CachLayQue = CachLayQue.MaiHoaTienThien1;
 
             chkUseNamCan.Enabled = true;
             txtQueNgoai1.Text = "";
@@ -295,7 +293,7 @@ namespace DoanQueKinhDich
 
         private void radNgoaiSo_CheckedChanged(object sender, EventArgs e)
         {
-            _cachLayQue = CachLayQue.MaiHoaTienThien2;
+            CachLayQue = CachLayQue.MaiHoaTienThien2;
 
             chkUseNamCan.Enabled = false;
             txtQueNgoai1.Text = "";
@@ -312,7 +310,7 @@ namespace DoanQueKinhDich
 
         private void radioNgoaiSoNoiSo_CheckedChanged(object sender, EventArgs e)
         {
-            _cachLayQue = CachLayQue.MaiHoaTienThien3;
+            CachLayQue = CachLayQue.MaiHoaTienThien3;
 
             chkUseNamCan.Enabled = false;
             txtQueNgoai1.Text = "";
@@ -349,15 +347,7 @@ namespace DoanQueKinhDich
         }
     }
 
-    public enum CachLayQue
-    {
-        None = 0,
-        MaiHoaTienThien1 = 1,
-        MaiHoaTienThien2 = 2,
-        MaiHoaTienThien3 = 3,
-    }
-
-    public class QueIndex
+    class QueIndex
     {
         public int NgoaiQuaiIndex { get; set; }
         public int NoiQuaiIndex { get; set; }

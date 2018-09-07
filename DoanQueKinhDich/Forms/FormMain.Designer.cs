@@ -47,7 +47,7 @@
             this.radLucHao = new System.Windows.Forms.RadioButton();
             this.radMaiHoa = new System.Windows.Forms.RadioButton();
             this.linkQueHo = new System.Windows.Forms.LinkLabel();
-            this.ucQueDich = new UserControls.ucQue();
+            this.ucQueDich = new DoanQueKinhDich.UserControls.ucQue();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -281,11 +281,11 @@
             this.groupBox2.Controls.Add(this.cbxThangChi);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Font = new System.Drawing.Font("Courier New", 13.77391F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(290, 1);
+            this.groupBox2.Location = new System.Drawing.Point(290, 5);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(269, 195);
+            this.groupBox2.Size = new System.Drawing.Size(269, 191);
             this.groupBox2.TabIndex = 38;
             this.groupBox2.TabStop = false;
             // 
