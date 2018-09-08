@@ -86,6 +86,18 @@ namespace DoanQueKinhDich.Business
             sb.Append(GetHaoDesc(queChu, queChu.Hao1, isHao1Dong).PadRight(padRight));
             sb.Append(GetHaoDesc(queHo, queHo.Hao1, false).PadRight(padRight));
             sb.Append(queBien != null ? GetHaoDesc(queBien, queBien.Hao1, isHao1Dong) : "");
+            sb.AppendLine();
+            sb.AppendLine();
+
+            sb.AppendLine($"{queChu.Name}: {queChu.TuongQue}");
+            sb.AppendLine();
+            sb.AppendLine($"{queHo.Name}: {queHo.TuongQue}");
+            sb.AppendLine();
+            if (queBien != null)
+            {
+                sb.AppendLine($"{queBien.Name}: {queBien.TuongQue}");
+                sb.AppendLine();
+            }
 
             return sb.ToString();
         }

@@ -51,6 +51,7 @@ namespace KinhDichCommon
             que.NameChinese = reader["NameChinese"].ToString();
             que.Desc = reader["Desc"].ToString();
             que.Url = reader["Url"].ToString();
+            que.TuongQue = reader["TuongQue"].ToString();
         }
     }
 }

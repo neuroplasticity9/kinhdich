@@ -23,6 +23,7 @@ namespace KinhDichCommon
     {
         public int QueId { get; set; }
         public string Url { get; set; }
+        public string TuongQue { get; internal set; }
 
         public Hanh Hanh { get; set; }
 
@@ -105,6 +106,7 @@ namespace KinhDichCommon
         }
 
         public string QueDesc => GetQueDesc();
+
         private string GetQueDesc()
         {
             var sb = new StringBuilder();
@@ -177,7 +179,17 @@ namespace KinhDichCommon
         /// <returns></returns>
         internal Que Clone()
         {
-            var que = new Que {
+            return Clone(this.Hanh);
+        }
+
+        /// <summary>
+        /// Clone que.
+        /// </summary>
+        /// <returns></returns>
+        internal Que Clone(Hanh hanhCuaQue)
+        {
+            var que = new Que
+            {
                 Id = this.Id,
                 Name = this.Name,
                 NameShort = this.NameShort,
@@ -185,14 +197,15 @@ namespace KinhDichCommon
                 Desc = this.Desc,
                 QueId = this.QueId,
                 Url = this.Url,
-                Hanh = this.Hanh,
+                TuongQue = this.TuongQue,
                 QueThuan = this.QueThuan,
-                Hao6 = this.Hao6.CloneChoQueBien(this.Hanh),
-                Hao5 = this.Hao5.CloneChoQueBien(this.Hanh),
-                Hao4 = this.Hao4.CloneChoQueBien(this.Hanh),
-                Hao3 = this.Hao3.CloneChoQueBien(this.Hanh),
-                Hao2 = this.Hao2.CloneChoQueBien(this.Hanh),
-                Hao1 = this.Hao1.CloneChoQueBien(this.Hanh),
+                Hanh = hanhCuaQue,
+                Hao6 = this.Hao6.CloneChoQueBien(hanhCuaQue),
+                Hao5 = this.Hao5.CloneChoQueBien(hanhCuaQue),
+                Hao4 = this.Hao4.CloneChoQueBien(hanhCuaQue),
+                Hao3 = this.Hao3.CloneChoQueBien(hanhCuaQue),
+                Hao2 = this.Hao2.CloneChoQueBien(hanhCuaQue),
+                Hao1 = this.Hao1.CloneChoQueBien(hanhCuaQue),
             };
 
             return que;

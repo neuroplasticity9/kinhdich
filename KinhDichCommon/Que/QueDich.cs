@@ -365,26 +365,8 @@ namespace KinhDichCommon
 
             // Hành của quẻ biến sẽ theo quẻ chủ.
             var hanhQueChu = queChu.Hanh;
-            var queBien = new Que
-            {
-                Id = queBienGoc.Id,
-                QueId = queBienGoc.QueId,
-                Name = queBienGoc.Name,
-                NameShort = queBienGoc.NameShort,
-                NameChinese = queBienGoc.NameChinese,
-                Desc = queBienGoc.Desc,
-                Url = queBienGoc.Url,
-                QueThuan = queBienGoc.QueThuan,
-                Hanh = hanhQueChu,
-                Hao6 = queBienGoc.Hao6.CloneChoQueBien(hanhQueChu),
-                Hao5 = queBienGoc.Hao5.CloneChoQueBien(hanhQueChu),
-                Hao4 = queBienGoc.Hao4.CloneChoQueBien(hanhQueChu),
-                Hao3 = queBienGoc.Hao3.CloneChoQueBien(hanhQueChu),
-                Hao2 = queBienGoc.Hao2.CloneChoQueBien(hanhQueChu),
-                Hao1 = queBienGoc.Hao1.CloneChoQueBien(hanhQueChu),
-            };
 
-            return queBien;
+            return queBienGoc.Clone(hanhQueChu);
         }
     }
 }
