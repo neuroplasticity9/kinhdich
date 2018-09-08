@@ -91,8 +91,11 @@ namespace DoanQueKinhDich.Business
 
             sb.AppendLine($"{queChu.Name}: {queChu.TuongQue}");
             sb.AppendLine();
-            sb.AppendLine($"{queHo.Name}: {queHo.TuongQue}");
-            sb.AppendLine();
+            if (queChu.Id != queHo.Id)
+            {
+                sb.AppendLine($"{queHo.Name}: {queHo.TuongQue}");
+                sb.AppendLine();
+            }
             if (queBien != null)
             {
                 sb.AppendLine($"{queBien.Name}: {queBien.TuongQue}");
