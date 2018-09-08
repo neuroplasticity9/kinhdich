@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Windows.Forms;
 using DoanQueKinhDich.Business;
 using KinhDichCommon;
@@ -172,14 +173,28 @@ namespace DoanQueKinhDich
             int tongNoiQuai = GetTongCuaQuai(textCuaNoiQuai);
 
             // Tiên thiên đoán bằng số nên không cần giờ. Hậu thiên đoán bằng bát quái nên cần thêm giờ vào để tìm hào động.
-            int chiNumber = radTienThien.Checked ? 0 : amLich.GioAm.Chi.Id; 
+            int chiNumber = radTienThien.Checked ? 0 : amLich.GioAm.Chi.Id;
 
-            return new QueIndex
+            var queIndex = new QueIndex
             {
                 NgoaiQuaiIndex = (tongNgoaiQuai - 1 + 8) % 8,
                 NoiQuaiIndex = (tongNoiQuai - 1 + 8) % 8,
                 HaoDongIndex = (tongNgoaiQuai + tongNoiQuai + chiNumber) % 6,
             };
+
+            var sb = new StringBuilder();
+            sb.AppendLine($"1. Ngoại quái: số {tongNgoaiQuai} % 8 = {queIndex.NgoaiQuaiIndex + 1} = quẻ {BatQuai.All[queIndex.NgoaiQuaiIndex].Name}");
+            sb.AppendLine($"2. Nội quái:   số {tongNoiQuai} % 8 = {queIndex.NoiQuaiIndex + 1} = quẻ {BatQuai.All[queIndex.NoiQuaiIndex].Name}");
+            sb.AppendLine($"3. Động hào:   ngoại quái {tongNgoaiQuai} + nội quái {tongNoiQuai}{GetGioHauThienDesc(amLich.GioAm)} = {tongNgoaiQuai + tongNoiQuai + chiNumber} % 6 = {GetHaoDongDesc(queIndex.HaoDongIndex)}");
+
+            txtDesc.Text = sb.ToString();
+
+            return queIndex;
+        }
+
+        private string GetGioHauThienDesc(CanChi gio)
+        {
+            return radTienThien.Checked ? "" : $" + giờ {gio.Chi.Name} {gio.Chi.Id}";
         }
 
         private int GetTongCuaQuai(string textCuaQuai)
@@ -202,11 +217,31 @@ namespace DoanQueKinhDich
             int tongNgoaiQuai = GetTongNamThangNgay(amLich) + soHoacChu;
             int tongNoiQuai = GetTongNamThangNgayGio(amLich) + soHoacChu;
 
-            return new QueIndex {
+            var queIndex = new QueIndex
+            {
                 NgoaiQuaiIndex = (tongNgoaiQuai - 1 + 8) % 8,
                 NoiQuaiIndex = (tongNoiQuai - 1 + 8) % 8,
                 HaoDongIndex = tongNoiQuai % 6,
             };
+
+            var sb = new StringBuilder();
+            sb.AppendLine($"1. Ngoại quái: năm {GetNamDesc(amLich.NamAm)} + tháng {amLich.LunarMonth} + ngày {amLich.LunarDay} + số {soHoacChu} = {tongNgoaiQuai} % 8 = {queIndex.NgoaiQuaiIndex + 1} = quẻ {BatQuai.All[queIndex.NgoaiQuaiIndex].Name}");
+            sb.AppendLine($"2. Nội quái:   năm {GetNamDesc(amLich.NamAm)} + tháng {amLich.LunarMonth} + ngày {amLich.LunarDay} + số {soHoacChu} + giờ {amLich.GioAm.Chi.Name} {amLich.GioAm.Chi.Id} = {tongNoiQuai} % 8 = {queIndex.NoiQuaiIndex + 1} = quẻ {BatQuai.All[queIndex.NoiQuaiIndex].Name}");
+            sb.AppendLine($"3. Động hào:   tổng nội quái {tongNoiQuai} % 6 = {GetHaoDongDesc(queIndex.HaoDongIndex)}");
+
+            txtDesc.Text = sb.ToString();
+
+            return queIndex;
+        }
+
+        private int GetHaoDongDesc(int haoDongIndex)
+        {
+            return haoDongIndex == 0 ? 6 : haoDongIndex;
+        }
+
+        private string GetNamDesc(CanChi nam)
+        {
+            return chkUseNamCan.Checked ? $"{nam.Can.Name} {nam.Can.Id}" : $"{nam.Chi.Name} {nam.Chi.Id}";
         }
 
         private int GetTongNamThangNgay(AmLich amLich)

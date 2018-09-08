@@ -65,6 +65,7 @@
             this.radHauThien = new System.Windows.Forms.RadioButton();
             this.radTienThien = new System.Windows.Forms.RadioButton();
             this.ucQueDich = new DoanQueKinhDich.UserControls.ucQue();
+            this.txtDesc = new System.Windows.Forms.RichTextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -73,9 +74,9 @@
             // btnGo
             // 
             this.btnGo.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGo.Location = new System.Drawing.Point(923, 448);
+            this.btnGo.Location = new System.Drawing.Point(922, 449);
             this.btnGo.Name = "btnGo";
-            this.btnGo.Size = new System.Drawing.Size(140, 75);
+            this.btnGo.Size = new System.Drawing.Size(140, 47);
             this.btnGo.TabIndex = 3;
             this.btnGo.Text = "Lấy Quẻ";
             this.btnGo.UseVisualStyleBackColor = true;
@@ -602,17 +603,32 @@
             // 
             // ucQueDich
             // 
-            this.ucQueDich.Location = new System.Drawing.Point(20, 462);
+            this.ucQueDich.Location = new System.Drawing.Point(20, 473);
             this.ucQueDich.Name = "ucQueDich";
             this.ucQueDich.Size = new System.Drawing.Size(698, 201);
             this.ucQueDich.TabIndex = 2;
+            // 
+            // txtDesc
+            // 
+            this.txtDesc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDesc.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDesc.Location = new System.Drawing.Point(730, 513);
+            this.txtDesc.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDesc.Name = "txtDesc";
+            this.txtDesc.Size = new System.Drawing.Size(522, 148);
+            this.txtDesc.TabIndex = 11;
+            this.txtDesc.TabStop = false;
+            this.txtDesc.Text = "";
             // 
             // FormQueThoiGian
             // 
             this.AcceptButton = this.btnGo;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1313, 675);
+            this.ClientSize = new System.Drawing.Size(1276, 684);
+            this.Controls.Add(this.txtDesc);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ucQueDich);
             this.Controls.Add(this.groupBox2);
@@ -671,6 +687,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtSoHoacChu;
+        private System.Windows.Forms.RichTextBox txtDesc;
     }
 }
 
