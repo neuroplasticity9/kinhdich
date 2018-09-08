@@ -32,5 +32,10 @@ namespace KinhDichCommon
         /// Dương nhất, ở dưới cùng.
         /// </summary>
         public bool Duong1 { get; internal set; }
+
+        /// <summary>
+        /// Quẻ thể hay quẻ dụng.
+        /// </summary>
+        public bool QueThe { get; set; }
     }
 }

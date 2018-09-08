@@ -2,26 +2,28 @@
 
 namespace KinhDichCommon
 {
-    [DebuggerDisplay("{LucThan.Name,nq} {Chi.Name,nq} {Chi.Hanh.Name,nq}")]
+    [DebuggerDisplay("{AmDuongString} {LucThan.Name,nq} {Chi.Name,nq} {Chi.Hanh.Name,nq}")]
     public class Hao : BaseItem
     {
         public Chi Chi { get; set; }
 
-        public Hanh HanhCuaQue { get; set; }
-
         public Hanh Hanh => Chi.Hanh;
 
-        public Hanh LucThan => NguHanh.GetLucThan(HanhCuaQue, Hanh);
-
         public bool Duong { get; set; }
+
+        public string AmDuongString => Duong ? Utils.Duong : Utils.Am;
+
+        public Hanh HanhCuaQue { get; set; }
+
+        public Hanh LucThan => NguHanh.GetLucThan(HanhCuaQue, Hanh);
 
         public bool The { get; set; }
 
         public bool Ung { get; set; }
 
-        public string AmDuongString => Duong ? Utils.Duong : Utils.Am;
-
         public Hao HaoPhuc { get; set; }
+
+        public bool IsDongHao { get; set; }
 
         internal Hao CloneBasic()
         {

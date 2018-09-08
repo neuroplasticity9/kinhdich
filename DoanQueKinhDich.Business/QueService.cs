@@ -86,7 +86,7 @@ namespace DoanQueKinhDich.Business
                 return "";
             }
 
-            return $"   {que.Name} ({que.HanhQueThuan.Name}), {que.NgoaiQuai.Name} {que.NgoaiQuai.Hanh.Name} / {que.NoiQuai.Name} {que.NoiQuai.Hanh.Name}{GetHopXungString(que)}";
+            return $"   {que.Name} ({que.QueThuan.Hanh.Name}), {que.NgoaiQuai.Name} {que.NgoaiQuai.Hanh.Name} / {que.NoiQuai.Name} {que.NoiQuai.Hanh.Name}{GetHopXungString(que)}";
         }
 
         protected string GetTenQueShort(Que que)
@@ -96,7 +96,7 @@ namespace DoanQueKinhDich.Business
                 return "";
             }
 
-            return $"   {que.Name} ({que.HanhQueThuan.Name}), {que.NgoaiQuai.Name} {que.NgoaiQuai.Hanh.Name} / {que.NoiQuai.Name} {que.NoiQuai.Hanh.Name}";
+            return $"   {que.Name} ({que.QueThuan.Hanh.Name}), {que.NgoaiQuai.Name} {que.NgoaiQuai.Hanh.Name} / {que.NoiQuai.Name} {que.NoiQuai.Hanh.Name}";
         }
 
         protected string GetChiChuCuaQue(Que que)

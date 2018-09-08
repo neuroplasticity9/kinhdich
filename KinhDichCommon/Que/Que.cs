@@ -27,7 +27,6 @@ namespace KinhDichCommon
         public Hanh Hanh { get; set; }
 
         public Que QueThuan { get; set; }
-        public Hanh HanhQueThuan { get; set; }
 
         public Hao Hao6 { get; set; }
         public Hao Hao5 { get; set; }
@@ -160,5 +159,41 @@ namespace KinhDichCommon
             }
         }
 
+        public void ClearTheUng()
+        {
+            Hao6.Ung = Hao6.The = false;
+            Hao5.Ung = Hao5.The = false;
+            Hao4.Ung = Hao4.The = false;
+            Hao3.Ung = Hao3.The = false;
+            Hao2.Ung = Hao2.The = false;
+            Hao1.Ung = Hao1.The = false;
+        }
+
+        /// <summary>
+        /// Clone que.
+        /// </summary>
+        /// <returns></returns>
+        internal Que Clone()
+        {
+            var que = new Que {
+                Id = this.Id,
+                Name = this.Name,
+                NameShort = this.NameShort,
+                NameChinese = this.NameChinese,
+                Desc = this.Desc,
+                QueId = this.QueId,
+                Url = this.Url,
+                Hanh = this.Hanh,
+                QueThuan = this.QueThuan,
+                Hao6 = this.Hao6.CloneChoQueBien(this.Hanh),
+                Hao5 = this.Hao5.CloneChoQueBien(this.Hanh),
+                Hao4 = this.Hao4.CloneChoQueBien(this.Hanh),
+                Hao3 = this.Hao3.CloneChoQueBien(this.Hanh),
+                Hao2 = this.Hao2.CloneChoQueBien(this.Hanh),
+                Hao1 = this.Hao1.CloneChoQueBien(this.Hanh),
+            };
+
+            return que;
+        }
     }
 }
