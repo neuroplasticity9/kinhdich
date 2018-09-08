@@ -163,37 +163,7 @@ namespace DoanQueKinhDich.UserControls
             cbxNgoaiQuai.SelectedIndex = 0;
             cbxNoiQuai.SelectedIndex = 0;
         }
-
-        private void chkHao6_CheckedChanged(object sender, EventArgs e)
-        {
-            UpdateNgoaiQuai();
-        }
-
-        private void chkHao5_CheckedChanged(object sender, EventArgs e)
-        {
-            UpdateNgoaiQuai();
-        }
-
-        private void chkHao4_CheckedChanged(object sender, EventArgs e)
-        {
-            UpdateNgoaiQuai();
-        }
-
-        private void chkHao3_CheckedChanged(object sender, EventArgs e)
-        {
-            UpdateNoiQuai();
-        }
-
-        private void chkHao2_CheckedChanged(object sender, EventArgs e)
-        {
-            UpdateNoiQuai();
-        }
-
-        private void chkHao1_CheckedChanged(object sender, EventArgs e)
-        {
-            UpdateNoiQuai();
-        }
-
+        
         private void UpdateNgoaiQuai()
         {
             FormUtils.UpdateBatQuai(cbxNgoaiQuai, chkHao6, chkHao5, chkHao4);
@@ -230,44 +200,38 @@ namespace DoanQueKinhDich.UserControls
 
         private void chkHao6Dong_CheckedChanged(object sender, EventArgs e)
         {
-            FormUtils.ChangeTextAmDuong(chkBienHao6, chkHao6, chkIsHao6Dong);
+            FormUtils.ChangeTextAmDuong(chkHao6, chkIsHao6Dong, chkBienHao6);
             UpdateNgoaiQuai();
-            CheckedChanged?.Invoke(null, null);
         }
 
         private void chkHao5Dong_CheckedChanged(object sender, EventArgs e)
         {
-            FormUtils.ChangeTextAmDuong(chkBienHao5, chkHao5, chkIsHao5Dong);
+            FormUtils.ChangeTextAmDuong(chkHao5, chkIsHao5Dong, chkBienHao5);
             UpdateNgoaiQuai();
-            CheckedChanged?.Invoke(null, null);
         }
 
         private void chkHao4Dong_CheckedChanged(object sender, EventArgs e)
         {
-            FormUtils.ChangeTextAmDuong(chkBienHao4, chkHao4, chkIsHao4Dong);
+            FormUtils.ChangeTextAmDuong(chkHao4, chkIsHao4Dong, chkBienHao4);
             UpdateNgoaiQuai();
-            CheckedChanged?.Invoke(null, null);
         }
 
         private void chkHao3Dong_CheckedChanged(object sender, EventArgs e)
         {
-            FormUtils.ChangeTextAmDuong(chkBienHao3, chkHao3, chkIsHao3Dong);
+            FormUtils.ChangeTextAmDuong(chkHao3, chkIsHao3Dong, chkBienHao3);
             UpdateNoiQuai();
-            CheckedChanged?.Invoke(null, null);
         }
 
         private void chkHao2Dong_CheckedChanged(object sender, EventArgs e)
         {
-            FormUtils.ChangeTextAmDuong(chkBienHao2, chkHao2, chkIsHao2Dong);
+            FormUtils.ChangeTextAmDuong(chkHao2, chkIsHao2Dong, chkBienHao2);
             UpdateNoiQuai();
-            CheckedChanged?.Invoke(null, null);
         }
 
         private void chkHao1Dong_CheckedChanged(object sender, EventArgs e)
         {
-            FormUtils.ChangeTextAmDuong(chkBienHao1, chkHao1, chkIsHao1Dong);
+            FormUtils.ChangeTextAmDuong(chkHao1, chkIsHao1Dong, chkBienHao1);
             UpdateNoiQuai();
-            CheckedChanged?.Invoke(null, null);
         }
 
         /// <summary>
