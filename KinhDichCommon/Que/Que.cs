@@ -38,6 +38,8 @@ namespace KinhDichCommon
         public Cung NgoaiQuai => BatQuai.GetCung(Hao6.Duong, Hao5.Duong, Hao4.Duong);
         public Cung NoiQuai => BatQuai.GetCung(Hao3.Duong, Hao2.Duong, Hao1.Duong);
 
+        public bool IsTheQuaiOTren { get; set; } // Quẻ thể ở trên?
+
         public ViTriHao ViTriHaoPhuc { get; set; }
         public Hao HaoPhuc { get; set; }
 

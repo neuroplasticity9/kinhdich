@@ -44,9 +44,14 @@ namespace DoanQueKinhDich.Business
             sb.AppendLine(GetNgayThang(ngayLayQue, cachLayQue));
             sb.AppendLine();
 
+            sb.Append("   QUẺ CHỦ".PadRight(padRight));
+            sb.Append(queBien != null ? "   QUẺ BIẾN" : "");
+            sb.AppendLine();
+
             sb.Append(GetTenQueLong(queChu).PadRight(padRight));
             sb.Append(GetTenQueLong(queBien));
             sb.AppendLine();
+
             sb.Append(GetChiChuCuaQue(queChu).PadRight(padRight));
             sb.Append(GetChiChuCuaQue(queBien));
             sb.AppendLine();

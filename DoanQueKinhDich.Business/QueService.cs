@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Text;
 using KinhDichCommon;
-using static KinhDichCommon.NguHanh;
 
 namespace DoanQueKinhDich.Business
 {
@@ -25,6 +24,41 @@ namespace DoanQueKinhDich.Business
                 QueBien = QueDich.GetQueBien(QueChu, que.Hao6Dong, que.Hao5Dong, que.Hao4Dong, que.Hao3Dong, que.Hao2Dong, que.Hao1Dong);
             }
 
+            SetTheQuai();
+        }
+
+        private void SetTheQuai()
+        {
+            if (!IsTrenDong() && IsDuoiDong())
+            {
+                // dưới động thì thể quái ở trên.
+                QueChu.IsTheQuaiOTren = true;
+            }
+            else if (IsTrenDong() && !IsDuoiDong())
+            {
+                // trên động thì thể quái ở dưới.
+                QueChu.IsTheQuaiOTren = false;
+            }
+            else
+            {
+                // Nội quái và ngoại quái cùng động hoặc cùng tĩnh, tìm hào thế và hào ứng.
+                QueChu.IsTheQuaiOTren = IsHaoTheOTren();
+            }
+        }
+
+        private bool IsTrenDong()
+        {
+            return Que.Hao6Dong || Que.Hao5Dong || Que.Hao4Dong;
+        }
+
+        private bool IsDuoiDong()
+        {
+            return Que.Hao3Dong || Que.Hao2Dong || Que.Hao1Dong;
+        }
+
+        private bool IsHaoTheOTren()
+        {
+            return QueChu.Hao6.The || QueChu.Hao5.The || QueChu.Hao4.The;
         }
 
         /// <summary>

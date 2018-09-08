@@ -31,8 +31,8 @@ namespace DoanQueKinhDich.Business
         /// <param name="isHao1Dong"></param>
         /// <returns></returns>
         private string GetQueChuQueHoQueBienDesc(Que queChu, Que queBien, Que queHo, NgayLayQue ngayLayQue, CachLayQue cachLayQue,
-                                                    bool isHao6Dong = false, bool isHao5Dong = false, bool isHao4Dong = false,
-                                                    bool isHao3Dong = false, bool isHao2Dong = false, bool isHao1Dong = false)
+                                                 bool isHao6Dong = false, bool isHao5Dong = false, bool isHao4Dong = false,
+                                                 bool isHao3Dong = false, bool isHao2Dong = false, bool isHao1Dong = false)
         {
             var nhatThan = ngayLayQue.NgayAm;
             var nguyetKien = ngayLayQue.ThangAm;
@@ -41,6 +41,11 @@ namespace DoanQueKinhDich.Business
             var sb = new StringBuilder();
 
             sb.AppendLine(GetNgayThang(ngayLayQue, cachLayQue));
+            sb.AppendLine();
+
+            sb.Append("   QUẺ CHỦ".PadRight(padRight));
+            sb.Append("   QUẺ HỖ".PadRight(padRight));
+            sb.Append(queBien != null ? "   QUẺ BIẾN" : "");
             sb.AppendLine();
 
             sb.Append(GetTenQueShort(queChu).PadRight(padRight));
@@ -106,26 +111,48 @@ namespace DoanQueKinhDich.Business
             }
             result = result.PadRight(3);
 
-            if (hao.Id == 2)
-            {
-                result += $"{que.NoiQuai.Name} {que.NoiQuai.Hanh.Name}";
-            }
-            else if (hao.Id == 5)
+            if (hao.Id == 5)
             {
                 result += $"{que.NgoaiQuai.Name} {que.NgoaiQuai.Hanh.Name}";
+            }
+            else if (hao.Id == 2)
+            {
+                result += $"{que.NoiQuai.Name} {que.NoiQuai.Hanh.Name}";
             }
             result = result.PadRight(13);
 
             result += $"{hao.AmDuongString}";
             result = result.PadRight(18);
 
-            if (hao.Id == 2)
+            if (hao.Id == 5)
             {
-                result += $"{que.NoiQuai.Name} {que.NoiQuai.Hanh.Name}";
+                if (que == QueChu)
+                {
+                    result += QueChu.IsTheQuaiOTren ? "Quẻ thể" : "Quẻ dụng";
+                }
+                else if (que == QueHo)
+                {
+                    result += QueChu.IsTheQuaiOTren ? "Quẻ hỗ của thể" : "Quẻ hỗ của dụng";
+                }
+                else
+                {
+                    result += QueChu.IsTheQuaiOTren ? "Quẻ thể" : "Quẻ biến";
+                }
             }
-            else if (hao.Id == 5)
+            else if (hao.Id == 2)
             {
-                result += $"{que.NgoaiQuai.Name} {que.NgoaiQuai.Hanh.Name}";
+                if (que == QueChu)
+                {
+                    result += QueChu.IsTheQuaiOTren ? "Quẻ dụng" : "Quẻ thể";
+                }
+                else if (que == QueHo)
+                {
+                    result += QueChu.IsTheQuaiOTren ? "Quẻ hỗ của dụng" : "Quẻ hỗ của thể";
+                }
+                else
+                {
+                    result += QueChu.IsTheQuaiOTren ? "Quẻ biến" : "Quẻ thể";
+                }
             }
             result = result.PadRight(28);
 
