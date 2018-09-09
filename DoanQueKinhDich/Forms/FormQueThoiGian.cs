@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Windows.Forms;
 using DoanQueKinhDich.Business;
 using KinhDichCommon;
@@ -64,6 +65,8 @@ namespace DoanQueKinhDich
             SetChiCuaGio();
 
             GetQue();
+
+            txtSoHoacChu.Focus();
         }
 
         private void SetChiCuaGio()
@@ -141,7 +144,8 @@ namespace DoanQueKinhDich
 
             ucQueDich.uiNgoaiQuai.SelectedIndex = queIndex.NgoaiQuaiIndex;
             ucQueDich.uiNoiQuai.SelectedIndex = queIndex.NoiQuaiIndex;
-            
+
+            ucQueDich.ResetHaoDong();
             ucQueDich.uiIsHao1Dong.Checked = queIndex.HaoDongIndex == 1;
             ucQueDich.uiIsHao2Dong.Checked = queIndex.HaoDongIndex == 2;
             ucQueDich.uiIsHao3Dong.Checked = queIndex.HaoDongIndex == 3;
@@ -169,14 +173,28 @@ namespace DoanQueKinhDich
             int tongNoiQuai = GetTongCuaQuai(textCuaNoiQuai);
 
             // Tiên thiên đoán bằng số nên không cần giờ. Hậu thiên đoán bằng bát quái nên cần thêm giờ vào để tìm hào động.
-            int chiNumber = radTienThien.Checked ? 0 : amLich.GioAm.Chi.Id; 
+            int chiNumber = radTienThien.Checked ? 0 : amLich.GioAm.Chi.Id;
 
-            return new QueIndex
+            var queIndex = new QueIndex
             {
                 NgoaiQuaiIndex = (tongNgoaiQuai - 1 + 8) % 8,
                 NoiQuaiIndex = (tongNoiQuai - 1 + 8) % 8,
                 HaoDongIndex = (tongNgoaiQuai + tongNoiQuai + chiNumber) % 6,
             };
+
+            var sb = new StringBuilder();
+            sb.AppendLine($"1. Ngoại quái: số {tongNgoaiQuai} % 8 = {queIndex.NgoaiQuaiIndex + 1} = quẻ {BatQuai.All[queIndex.NgoaiQuaiIndex].Name}");
+            sb.AppendLine($"2. Nội quái:   số {tongNoiQuai} % 8 = {queIndex.NoiQuaiIndex + 1} = quẻ {BatQuai.All[queIndex.NoiQuaiIndex].Name}");
+            sb.AppendLine($"3. Động hào:   ngoại quái {tongNgoaiQuai} + nội quái {tongNoiQuai}{GetGioHauThienDesc(amLich.GioAm)} = {tongNgoaiQuai + tongNoiQuai + chiNumber} % 6 = {GetHaoDongDesc(queIndex.HaoDongIndex)}");
+
+            txtDesc.Text = sb.ToString();
+
+            return queIndex;
+        }
+
+        private string GetGioHauThienDesc(CanChi gio)
+        {
+            return radTienThien.Checked ? "" : $" + giờ {gio.Chi.Name} {gio.Chi.Id}";
         }
 
         private int GetTongCuaQuai(string textCuaQuai)
@@ -195,14 +213,35 @@ namespace DoanQueKinhDich
 
         private QueIndex GetQueIndexByTime(AmLich amLich)
         {
-            int tongNgoaiQuai = GetTongNamThangNgay(amLich);
-            int tongNoiQuai = GetTongNamThangNgayGio(amLich);
+            int soHoacChu = GetTongCuaQuai(txtSoHoacChu.Text);
+            int tongNgoaiQuai = GetTongNamThangNgay(amLich) + soHoacChu;
+            int tongNoiQuai = GetTongNamThangNgayGio(amLich) + soHoacChu;
 
-            return new QueIndex {
+            var queIndex = new QueIndex
+            {
                 NgoaiQuaiIndex = (tongNgoaiQuai - 1 + 8) % 8,
                 NoiQuaiIndex = (tongNoiQuai - 1 + 8) % 8,
                 HaoDongIndex = tongNoiQuai % 6,
             };
+
+            var sb = new StringBuilder();
+            sb.AppendLine($"1. Ngoại quái: năm {GetNamDesc(amLich.NamAm)} + tháng {amLich.LunarMonth} + ngày {amLich.LunarDay} + số {soHoacChu} = {tongNgoaiQuai} % 8 = {queIndex.NgoaiQuaiIndex + 1} = quẻ {BatQuai.All[queIndex.NgoaiQuaiIndex].Name}");
+            sb.AppendLine($"2. Nội quái:   năm {GetNamDesc(amLich.NamAm)} + tháng {amLich.LunarMonth} + ngày {amLich.LunarDay} + số {soHoacChu} + giờ {amLich.GioAm.Chi.Name} {amLich.GioAm.Chi.Id} = {tongNoiQuai} % 8 = {queIndex.NoiQuaiIndex + 1} = quẻ {BatQuai.All[queIndex.NoiQuaiIndex].Name}");
+            sb.AppendLine($"3. Động hào:   tổng nội quái {tongNoiQuai} % 6 = {GetHaoDongDesc(queIndex.HaoDongIndex)}");
+
+            txtDesc.Text = sb.ToString();
+
+            return queIndex;
+        }
+
+        private int GetHaoDongDesc(int haoDongIndex)
+        {
+            return haoDongIndex == 0 ? 6 : haoDongIndex;
+        }
+
+        private string GetNamDesc(CanChi nam)
+        {
+            return chkUseNamCan.Checked ? $"{nam.Can.Name} {nam.Can.Id}" : $"{nam.Chi.Name} {nam.Chi.Id}";
         }
 
         private int GetTongNamThangNgay(AmLich amLich)
@@ -225,7 +264,7 @@ namespace DoanQueKinhDich
 
         private int GetTongNamThangNgayGio(AmLich amLich)
         {
-            Chi gioChi = DiaChi.All[cbxGioChi.SelectedIndex];
+            DiaChi gioChi = DiaChi.All[cbxGioChi.SelectedIndex];
             return  GetTongNamThangNgay(amLich) + gioChi.Id;
         }
 
@@ -242,8 +281,8 @@ namespace DoanQueKinhDich
             cbxNamCan.SelectedIndex = namAm.Can.Id - 1;
             cbxNamChi.SelectedIndex = namAm.Chi.Id - 1;
 
-            Chi gioChi = DiaChi.All[cbxGioChi.SelectedIndex];
-            Can gioCan = amLich.GetCanCuaGio(gioChi);
+            DiaChi gioChi = DiaChi.All[cbxGioChi.SelectedIndex];
+            ThienCan gioCan = amLich.GetCanCuaGio(gioChi);
             cbxGioCan.SelectedIndex = gioCan.Id - 1;
 
             labelNgayAmLich.Text = $"Ngày âm lịch: {amLich.LunarYear}-{amLich.LunarMonth}-{amLich.LunarDay}";
@@ -281,6 +320,7 @@ namespace DoanQueKinhDich
             CachLayQue = CachLayQue.MaiHoaTienThien1;
 
             chkUseNamCan.Enabled = true;
+            txtSoHoacChu.Enabled = true;
             txtQueNgoai1.Text = "";
             txtQueNgoai1.Enabled = false;
             txtQueNgoai2.Text = "";
@@ -289,6 +329,8 @@ namespace DoanQueKinhDich
             txtQueNoi2.Enabled = false;
             radTienThien.Enabled = false;
             radHauThien.Enabled = false;
+
+            txtSoHoacChu.Focus();
         }
 
         private void radNgoaiSo_CheckedChanged(object sender, EventArgs e)
@@ -296,6 +338,7 @@ namespace DoanQueKinhDich
             CachLayQue = CachLayQue.MaiHoaTienThien2;
 
             chkUseNamCan.Enabled = false;
+            txtSoHoacChu.Enabled = false;
             txtQueNgoai1.Text = "";
             txtQueNgoai1.Enabled = true;
             txtQueNgoai2.Text = "";
@@ -313,6 +356,7 @@ namespace DoanQueKinhDich
             CachLayQue = CachLayQue.MaiHoaTienThien3;
 
             chkUseNamCan.Enabled = false;
+            txtSoHoacChu.Enabled = false;
             txtQueNgoai1.Text = "";
             txtQueNgoai1.Enabled = false;
             txtQueNgoai2.Text = "";
@@ -342,6 +386,11 @@ namespace DoanQueKinhDich
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void radTienThien_CheckedChanged(object sender, EventArgs e)
+        {
+            GetQue();
+        }
+
+        private void txtSoHoacChu_TextChanged(object sender, EventArgs e)
         {
             GetQue();
         }

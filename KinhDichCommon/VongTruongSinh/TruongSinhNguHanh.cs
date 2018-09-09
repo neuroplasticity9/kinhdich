@@ -4,12 +4,12 @@ namespace KinhDichCommon
 {
     public class TruongSinhNguHanh
     {
-        public List<Chi> DiaChi = new List<Chi>();
-        public Hanh Hanh { get; private set; }
+        public List<DiaChi> DiaChi = new List<DiaChi>();
+        public NguHanh NguHanh { get; private set; }
 
-        public TruongSinhNguHanh(Hanh hanh, Chi chiBatDau)
+        public TruongSinhNguHanh(NguHanh hanh, DiaChi chiBatDau)
         {
-            Hanh = hanh;
+            NguHanh = hanh;
             var index = chiBatDau.Id - 1;
             var lastIndex = KinhDichCommon.DiaChi.All.Count - 1;
 
@@ -24,7 +24,6 @@ namespace KinhDichCommon
                 index++;
             }
         }
-
 
     }
 }

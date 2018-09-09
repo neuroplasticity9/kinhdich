@@ -264,7 +264,7 @@
             this.chkHao6.Size = new System.Drawing.Size(43, 22);
             this.chkHao6.TabIndex = 5;
             this.chkHao6.Text = "———";
-            this.chkHao6.CheckedChanged += new System.EventHandler(this.chkHao6_CheckedChanged);
+            this.chkHao6.CheckedChanged += new System.EventHandler(this.chkHao6Dong_CheckedChanged);
             this.chkHao6.VisibleChanged += new System.EventHandler(this.chkHao4_VisibleChanged);
             // 
             // chkHao5
@@ -279,7 +279,7 @@
             this.chkHao5.Size = new System.Drawing.Size(43, 22);
             this.chkHao5.TabIndex = 6;
             this.chkHao5.Text = "———";
-            this.chkHao5.CheckedChanged += new System.EventHandler(this.chkHao5_CheckedChanged);
+            this.chkHao5.CheckedChanged += new System.EventHandler(this.chkHao5Dong_CheckedChanged);
             this.chkHao5.VisibleChanged += new System.EventHandler(this.chkHao4_VisibleChanged);
             // 
             // chkHao4
@@ -294,7 +294,7 @@
             this.chkHao4.Size = new System.Drawing.Size(43, 22);
             this.chkHao4.TabIndex = 7;
             this.chkHao4.Text = "———";
-            this.chkHao4.CheckedChanged += new System.EventHandler(this.chkHao4_CheckedChanged);
+            this.chkHao4.CheckedChanged += new System.EventHandler(this.chkHao4Dong_CheckedChanged);
             this.chkHao4.VisibleChanged += new System.EventHandler(this.chkHao4_VisibleChanged);
             // 
             // chkHao3
@@ -309,7 +309,7 @@
             this.chkHao3.Size = new System.Drawing.Size(43, 22);
             this.chkHao3.TabIndex = 8;
             this.chkHao3.Text = "———";
-            this.chkHao3.CheckedChanged += new System.EventHandler(this.chkHao3_CheckedChanged);
+            this.chkHao3.CheckedChanged += new System.EventHandler(this.chkHao3Dong_CheckedChanged);
             this.chkHao3.VisibleChanged += new System.EventHandler(this.chkHao1_VisibleChanged);
             // 
             // label4
@@ -335,7 +335,7 @@
             this.chkHao2.Size = new System.Drawing.Size(43, 22);
             this.chkHao2.TabIndex = 9;
             this.chkHao2.Text = "———";
-            this.chkHao2.CheckedChanged += new System.EventHandler(this.chkHao2_CheckedChanged);
+            this.chkHao2.CheckedChanged += new System.EventHandler(this.chkHao2Dong_CheckedChanged);
             this.chkHao2.VisibleChanged += new System.EventHandler(this.chkHao1_VisibleChanged);
             // 
             // label3
@@ -361,7 +361,7 @@
             this.chkHao1.Size = new System.Drawing.Size(43, 22);
             this.chkHao1.TabIndex = 10;
             this.chkHao1.Text = "———";
-            this.chkHao1.CheckedChanged += new System.EventHandler(this.chkHao1_CheckedChanged);
+            this.chkHao1.CheckedChanged += new System.EventHandler(this.chkHao1Dong_CheckedChanged);
             this.chkHao1.VisibleChanged += new System.EventHandler(this.chkHao1_VisibleChanged);
             // 
             // cbxNoiQuai

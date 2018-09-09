@@ -71,7 +71,7 @@
             this.txtQueDesc.Location = new System.Drawing.Point(17, 241);
             this.txtQueDesc.Margin = new System.Windows.Forms.Padding(2);
             this.txtQueDesc.Name = "txtQueDesc";
-            this.txtQueDesc.Size = new System.Drawing.Size(1737, 305);
+            this.txtQueDesc.Size = new System.Drawing.Size(1737, 518);
             this.txtQueDesc.TabIndex = 10;
             this.txtQueDesc.TabStop = false;
             this.txtQueDesc.Text = "";
@@ -216,7 +216,7 @@
             // 
             this.linkQueBien.AutoSize = true;
             this.linkQueBien.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkQueBien.Location = new System.Drawing.Point(930, 209);
+            this.linkQueBien.Location = new System.Drawing.Point(1081, 209);
             this.linkQueBien.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkQueBien.Name = "linkQueBien";
             this.linkQueBien.Size = new System.Drawing.Size(278, 27);
@@ -346,7 +346,7 @@
             this.AcceptButton = this.btnGo;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1774, 566);
+            this.ClientSize = new System.Drawing.Size(1774, 779);
             this.Controls.Add(this.linkQueHo);
             this.Controls.Add(this.radMaiHoa);
             this.Controls.Add(this.radLucHao);

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using static KinhDichCommon.NguHanh;
 
@@ -8,28 +9,59 @@ namespace KinhDichCommon
     /// <summary>
     /// Muoi hai dia chi.
     /// </summary>
-    public static class DiaChi
+    [DebuggerDisplay("{Name,nq} {NguHanh.Name,nq}, hợp {Hop.Name,nq}, xung {Xung.Name,nq}")]
+    public class DiaChi : BaseItem
     {
-        public static readonly Chi Ti = new Chi { Id = 1, Name = "Tí", NameChinese = "", Hanh = Thuy, Duong = true };
-        public static readonly Chi Suu = new Chi { Id = 2, Name = "Sửu", NameChinese = "", Hanh = Tho, Duong = false };
-        public static readonly Chi Dan = new Chi { Id = 3, Name = "Dần", NameChinese = "", Hanh = Moc, Duong = true };
-        public static readonly Chi Mao = new Chi { Id = 4, Name = "Mão", NameChinese = "", Hanh = Moc, Duong = false };
-        public static readonly Chi Thin = new Chi { Id = 5, Name = "Thìn", NameChinese = "", Hanh = Tho, Duong = true };
-        public static readonly Chi Ty = new Chi { Id = 6, Name = "Tỵ", NameChinese = "", Hanh = Hoa, Duong = false };
-        public static readonly Chi Ngo = new Chi { Id = 7, Name = "Ngọ", NameChinese = "", Hanh = Hoa, Duong = true };
-        public static readonly Chi Mui = new Chi { Id = 8, Name = "Mùi", NameChinese = "", Hanh = Tho, Duong = false };
-        public static readonly Chi Than = new Chi { Id = 9, Name = "Thân", NameChinese = "", Hanh = Kim, Duong = true };
-        public static readonly Chi Dau = new Chi { Id = 10, Name = "Dậu", NameChinese = "", Hanh = Kim, Duong = false };
-        public static readonly Chi Tuat = new Chi { Id = 11, Name = "Tuất", NameChinese = "", Hanh = Tho, Duong = true };
-        public static readonly Chi Hoi = new Chi { Id = 12, Name = "Hợi", NameChinese = "", Hanh = Thuy, Duong = false };
+        /// <summary>
+        /// Địa chi xung.
+        /// </summary>
+        public DiaChi Xung { get; set; }
+
+        /// <summary>
+        /// Địa chi hợp.
+        /// </summary>
+        public DiaChi Hop { get; set; }
+
+        /// <summary>
+        /// Ngũ hành của địa chi.
+        /// </summary>
+        public NguHanh NguHanh { get; set; }
+
+        /// <summary>
+        /// Âm hay dương.
+        /// </summary>
+        public bool Duong { get; set; }
+
+        /// <summary>
+        /// Tấn thần là địa chi nào.
+        /// </summary>
+        public DiaChi Tan { get; set; }
+
+        /// <summary>
+        /// Thoái thần là địa chi nào.
+        /// </summary>
+        public DiaChi Thoai { get; set; }
+
+        public static readonly DiaChi Ti = new DiaChi { Id = 1, Name = "Tí", NameChinese = "", NguHanh = Thuy, Duong = true };
+        public static readonly DiaChi Suu = new DiaChi { Id = 2, Name = "Sửu", NameChinese = "", NguHanh = Tho, Duong = false };
+        public static readonly DiaChi Dan = new DiaChi { Id = 3, Name = "Dần", NameChinese = "", NguHanh = Moc, Duong = true };
+        public static readonly DiaChi Mao = new DiaChi { Id = 4, Name = "Mão", NameChinese = "", NguHanh = Moc, Duong = false };
+        public static readonly DiaChi Thin = new DiaChi { Id = 5, Name = "Thìn", NameChinese = "", NguHanh = Tho, Duong = true };
+        public static readonly DiaChi Ty = new DiaChi { Id = 6, Name = "Tỵ", NameChinese = "", NguHanh = Hoa, Duong = false };
+        public static readonly DiaChi Ngo = new DiaChi { Id = 7, Name = "Ngọ", NameChinese = "", NguHanh = Hoa, Duong = true };
+        public static readonly DiaChi Mui = new DiaChi { Id = 8, Name = "Mùi", NameChinese = "", NguHanh = Tho, Duong = false };
+        public static readonly DiaChi Than = new DiaChi { Id = 9, Name = "Thân", NameChinese = "", NguHanh = Kim, Duong = true };
+        public static readonly DiaChi Dau = new DiaChi { Id = 10, Name = "Dậu", NameChinese = "", NguHanh = Kim, Duong = false };
+        public static readonly DiaChi Tuat = new DiaChi { Id = 11, Name = "Tuất", NameChinese = "", NguHanh = Tho, Duong = true };
+        public static readonly DiaChi Hoi = new DiaChi { Id = 12, Name = "Hợi", NameChinese = "", NguHanh = Thuy, Duong = false };
 
         // Id order and adding order must be the same.
-        public static readonly List<Chi> All = new List<Chi> { Ti, Suu, Dan, Mao, Thin, Ty, Ngo, Mui, Than, Dau, Tuat, Hoi };
+        public static readonly List<DiaChi> All = new List<DiaChi> { Ti, Suu, Dan, Mao, Thin, Ty, Ngo, Mui, Than, Dau, Tuat, Hoi };
 
-        public static readonly List<Chi> ThuyCuc = new List<Chi> { Than, Ti, Thin };
-        public static readonly List<Chi> MocCuc = new List<Chi> { Hoi, Mao, Mui };
-        public static readonly List<Chi> HoaCuc = new List<Chi> { Dan, Ngo, Tuat };
-        public static readonly List<Chi> KimCuc = new List<Chi> { Ty, Dau, Suu };
+        public static readonly List<DiaChi> ThuyCuc = new List<DiaChi> { Than, Ti, Thin };
+        public static readonly List<DiaChi> MocCuc = new List<DiaChi> { Hoi, Mao, Mui };
+        public static readonly List<DiaChi> HoaCuc = new List<DiaChi> { Dan, Ngo, Tuat };
+        public static readonly List<DiaChi> KimCuc = new List<DiaChi> { Ty, Dau, Suu };
 
         static DiaChi()
         {
@@ -67,12 +99,12 @@ namespace KinhDichCommon
             Suu.Thoai = Tuat;
         }
 
-        public static Chi GetChi(int chiId)
+        public static DiaChi GetChi(int chiId)
         {
             return All.FirstOrDefault(c => c.Id == chiId);
         }
 
-        private static void SetHopXung(List<Chi> list)
+        private static void SetHopXung(List<DiaChi> list)
         {
             var maxIndex = list.Count - 1;
 

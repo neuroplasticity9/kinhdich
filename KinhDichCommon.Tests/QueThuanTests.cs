@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using static KinhDichCommon.QueDich;
+using static KinhDichCommon.Que;
 
 namespace KinhDichCommon.Tests
 {

@@ -59,7 +59,7 @@ namespace KinhDichCommon.Tests
         public void TestGioAm()
         {
             DateTime duongLich = new DateTime(2018, 8, 28);
-            Can canGioTi = duongLich.ToAmLich().GetCanGioTi();
+            ThienCan canGioTi = duongLich.ToAmLich().GetCanGioTi();
             Assert.AreEqual(canGioTi, Canh);
 
             duongLich = new DateTime(2018, 8, 29);
@@ -81,9 +81,9 @@ namespace KinhDichCommon.Tests
             DateTime duongLich = new DateTime(2018, 8, 30);
             AmLich amLich = duongLich.ToAmLich();
 
-            Can canGioTi = amLich.GetCanGioTi();
+            ThienCan canGioTi = amLich.GetCanGioTi();
 
-            Can can = amLich.GetCanCuaGio(Ti);
+            ThienCan can = amLich.GetCanCuaGio(Ti);
             Assert.AreEqual(canGioTi, can);
 
             can = amLich.GetCanCuaGio(Suu);

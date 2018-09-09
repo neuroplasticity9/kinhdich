@@ -87,7 +87,7 @@ namespace KinhDichCommon
         /// Nhâm tí thị thuận hành.
         /// </summary>
         /// <returns></returns>
-        public Can GetCanGioTi()
+        public ThienCan GetCanGioTi()
         {
             int gioTiCanIndex = (GetCanChiNgay().Can.Id * 2 - 2) % 10;
             return ThienCan.All[gioTiCanIndex];
@@ -98,7 +98,7 @@ namespace KinhDichCommon
         /// </summary>
         /// <param name="chi"></param>
         /// <returns></returns>
-        public Can GetCanCuaGio(Chi chi)
+        public ThienCan GetCanCuaGio(DiaChi chi)
         {
             int chiIndex = 0;
             for (int i = 0; i < DiaChi.All.Count; i++)
@@ -110,7 +110,7 @@ namespace KinhDichCommon
                 }
             }
 
-            Can canGioTi = GetCanGioTi();
+            ThienCan canGioTi = GetCanGioTi();
             int canGioTiIndex = 0;
             for (int i = 0; i < ThienCan.All.Count; i++)
             {
@@ -126,7 +126,7 @@ namespace KinhDichCommon
             return ThienCan.All[canIndex];
         }
 
-        public Chi GetChiCuaGio(DateTime date)
+        public DiaChi GetChiCuaGio(DateTime date)
         {
             var currentTime = date.TimeOfDay;
 
@@ -154,8 +154,8 @@ namespace KinhDichCommon
         {
             if (_gioAm == null)
             {
-                Chi chi = GetChiCuaGio(SolarDate);
-                Can can = GetCanCuaGio(chi);
+                DiaChi chi = GetChiCuaGio(SolarDate);
+                ThienCan can = GetCanCuaGio(chi);
 
                 _gioAm = new CanChi { Can = can, Chi = chi };
             }

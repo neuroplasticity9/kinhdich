@@ -11,11 +11,11 @@ namespace KinhDichCommon.Tests
         public void TestPhucThanCuaQue()
         {
             // Son Hoa Bi
-            var que = QueDich.GetQue(BatQuai.Can, Ly);
+            var que = Que.GetQue(BatQuai.Can, Ly);
             Assert.AreEqual(que.HaoPhuc.LucThan, TuTon);
 
             // Dia Loi Phuc
-            que = QueDich.GetQue(BatQuai.Khon, Chan);
+            que = Que.GetQue(BatQuai.Khon, Chan);
             Assert.AreEqual(que.HaoPhuc.LucThan, PhuMau);
         }
 

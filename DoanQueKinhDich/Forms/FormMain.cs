@@ -62,27 +62,23 @@ namespace DoanQueKinhDich
                 return;
             }
 
-            var queService = new QueService(this);
+            QueService queService = radLucHao.Checked ? new LucHaoQueService(this) : new MaiHoaQueService(this) as QueService;
 
             linkQueChu.Visible = true;
             linkQueChu.Text = GetNameForLink(queService.QueChu);
             _queChuUrl = GetUrl(queService.QueChu.Name, queService.QueChu.QueId);
 
-            string queDesc;
             if (radLucHao.Checked)
             {
-                queDesc = queService.GetLucHaoDesc();
-
                 linkQueHo.Visible = false;
-                linkQueBien.Location = new System.Drawing.Point(927, linkQueChu.Location.Y);
+                linkQueBien.Location = new System.Drawing.Point(1081, linkQueChu.Location.Y);
             }
             else
             {
-                queDesc = queService.GetMaiHoaDesc();
                 linkQueBien.Location = new System.Drawing.Point(1147, linkQueChu.Location.Y);
             }
             
-            txtQueDesc.Text = queDesc;
+            txtQueDesc.Text = queService.GetQueDesc();
 
             if (this.CoQueBien())
             {
@@ -342,8 +338,8 @@ namespace DoanQueKinhDich
         /// <param name="comboboxToUpdate"></param>
         private void CapNhatChi(ComboBox combobox, ComboBox comboboxToUpdate)
         {
-            Can selectedCan = ThienCan.All[combobox.SelectedIndex];
-            Chi firstChi = CanChi.GetChiDauTienHopLe(selectedCan);
+            ThienCan selectedCan = ThienCan.All[combobox.SelectedIndex];
+            DiaChi firstChi = CanChi.GetChiDauTienHopLe(selectedCan);
 
             if (comboboxToUpdate.SelectedIndex < 0)
             {
@@ -351,7 +347,7 @@ namespace DoanQueKinhDich
             }
             else
             {
-                Chi currentChi = DiaChi.All[comboboxToUpdate.SelectedIndex];
+                DiaChi currentChi = DiaChi.All[comboboxToUpdate.SelectedIndex];
                 // Cập nhật chi nếu khác loại âm dương.
                 if (currentChi.Duong != firstChi.Duong)
                 {
@@ -367,8 +363,8 @@ namespace DoanQueKinhDich
         /// <param name="comboboxToUpdate"></param>
         private void CapNhatCan(ComboBox combobox, ComboBox comboboxToUpdate)
         {
-            Chi selectedChi = DiaChi.All[combobox.SelectedIndex];
-            Can firstCan = CanChi.GetCanDauTienHopLe(selectedChi);
+            DiaChi selectedChi = DiaChi.All[combobox.SelectedIndex];
+            ThienCan firstCan = CanChi.GetCanDauTienHopLe(selectedChi);
 
             if (comboboxToUpdate.SelectedIndex < 0)
             {
@@ -376,7 +372,7 @@ namespace DoanQueKinhDich
             }
             else
             {
-                Can currentCan = ThienCan.All[comboboxToUpdate.SelectedIndex];
+                ThienCan currentCan = ThienCan.All[comboboxToUpdate.SelectedIndex];
                 // Cập nhật chi nếu khác loại âm dương.
                 if (currentCan.Duong != firstCan.Duong)
                 {
