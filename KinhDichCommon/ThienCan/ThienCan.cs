@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 namespace KinhDichCommon
@@ -6,23 +7,27 @@ namespace KinhDichCommon
     /// <summary>
     /// Mười thiên can.
     /// </summary>
-    public static class ThienCan
+    [DebuggerDisplay("{Name,nq} {NguHanh.Name,nq}, hợp {Hop.Name,nq}, xung {Xung.Name,nq}")]
+    public class ThienCan : BaseItem
     {
-        public static readonly Can Giap = new Can { Id = 1, Name = "Giáp", NameChinese = "", Hanh = NguHanh.Moc, Duong = true };
-        public static readonly Can At = new Can { Id = 2, Name = "Ất", NameChinese = "", Hanh = NguHanh.Moc, Duong = false };
-        public static readonly Can Binh = new Can { Id = 3, Name = "Bính", NameChinese = "", Hanh = NguHanh.Hoa, Duong = true };
-        public static readonly Can Dinh = new Can { Id = 4, Name = "Đinh", NameChinese = "", Hanh = NguHanh.Hoa, Duong = false };
-        public static readonly Can Mau = new Can { Id = 5, Name = "Mậu", NameChinese = "", Hanh = NguHanh.Tho, Duong = true };
-        public static readonly Can Ky = new Can { Id = 6, Name = "Kỷ", NameChinese = "", Hanh = NguHanh.Tho, Duong = false };
-        public static readonly Can Canh = new Can { Id = 7, Name = "Canh", NameChinese = "", Hanh = NguHanh.Kim, Duong = true };
-        public static readonly Can Tan = new Can { Id = 8, Name = "Tân", NameChinese = "", Hanh = NguHanh.Kim, Duong = false };
-        public static readonly Can Nham = new Can { Id = 9, Name = "Nhâm", NameChinese = "", Hanh = NguHanh.Thuy, Duong = true };
-        public static readonly Can Quy = new Can { Id = 10, Name = "Quý", NameChinese = "", Hanh = NguHanh.Thuy, Duong = false };
+        public NguHanh NguHanh { get; internal set; }
+        public bool Duong { get; internal set; }
+
+        public static readonly ThienCan Giap = new ThienCan { Id = 1, Name = "Giáp", NameChinese = "", NguHanh = NguHanh.Moc, Duong = true };
+        public static readonly ThienCan At = new ThienCan { Id = 2, Name = "Ất", NameChinese = "", NguHanh = NguHanh.Moc, Duong = false };
+        public static readonly ThienCan Binh = new ThienCan { Id = 3, Name = "Bính", NameChinese = "", NguHanh = NguHanh.Hoa, Duong = true };
+        public static readonly ThienCan Dinh = new ThienCan { Id = 4, Name = "Đinh", NameChinese = "", NguHanh = NguHanh.Hoa, Duong = false };
+        public static readonly ThienCan Mau = new ThienCan { Id = 5, Name = "Mậu", NameChinese = "", NguHanh = NguHanh.Tho, Duong = true };
+        public static readonly ThienCan Ky = new ThienCan { Id = 6, Name = "Kỷ", NameChinese = "", NguHanh = NguHanh.Tho, Duong = false };
+        public static readonly ThienCan Canh = new ThienCan { Id = 7, Name = "Canh", NameChinese = "", NguHanh = NguHanh.Kim, Duong = true };
+        public static readonly ThienCan Tan = new ThienCan { Id = 8, Name = "Tân", NameChinese = "", NguHanh = NguHanh.Kim, Duong = false };
+        public static readonly ThienCan Nham = new ThienCan { Id = 9, Name = "Nhâm", NameChinese = "", NguHanh = NguHanh.Thuy, Duong = true };
+        public static readonly ThienCan Quy = new ThienCan { Id = 10, Name = "Quý", NameChinese = "", NguHanh = NguHanh.Thuy, Duong = false };
 
         // Id order and adding order must be the same.
-        public static readonly List<Can> All = new List<Can> { Giap, At, Binh, Dinh, Mau, Ky, Canh, Tan, Nham, Quy };
+        public static readonly List<ThienCan> All = new List<ThienCan> { Giap, At, Binh, Dinh, Mau, Ky, Canh, Tan, Nham, Quy };
 
-        public static Can GetCan(int canId)
+        public static ThienCan GetCan(int canId)
         {
             return All.FirstOrDefault(c => c.Id == canId);
         }

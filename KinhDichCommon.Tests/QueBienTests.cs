@@ -11,7 +11,7 @@ namespace KinhDichCommon.Tests
         public void TestLucThanCuaQueThuanKien()
         {
             // Can Vi Thien
-            Que que = QueDich.TamQueThuocKien[0];
+            Que que = Que.TamQueThuocKien[0];
             Assert.AreEqual(que.Hao6.LucThan, PhuMau);
             Assert.AreEqual(que.Hao5.LucThan, HuynhDe);
             Assert.AreEqual(que.Hao4.LucThan, QuanQuy);
@@ -27,7 +27,7 @@ namespace KinhDichCommon.Tests
         public void TestLucThanCuaQueKienBien1()
         {
             // Thiên Phong Cấu
-            Que que = QueDich.TamQueThuocKien[1];
+            Que que = Que.TamQueThuocKien[1];
             Assert.AreEqual(que.Hao6.LucThan, PhuMau);
             Assert.AreEqual(que.Hao5.LucThan, HuynhDe);
             Assert.AreEqual(que.Hao4.LucThan, QuanQuy);
@@ -43,7 +43,7 @@ namespace KinhDichCommon.Tests
         public void TestLucThanCuaQueKienBien2()
         {
             // Thiên Sơn Độn
-            Que que = QueDich.TamQueThuocKien[2];
+            Que que = Que.TamQueThuocKien[2];
             Assert.AreEqual(que.Hao6.LucThan, PhuMau);
             Assert.AreEqual(que.Hao5.LucThan, HuynhDe);
             Assert.AreEqual(que.Hao4.LucThan, QuanQuy);
@@ -59,7 +59,7 @@ namespace KinhDichCommon.Tests
         public void TestLucThanCuaQueKienBien3()
         {
             // Thiên Địa Phủ
-            Que que = QueDich.TamQueThuocKien[3];
+            Que que = Que.TamQueThuocKien[3];
             Assert.AreEqual(que.Hao6.LucThan, PhuMau);
             Assert.AreEqual(que.Hao5.LucThan, HuynhDe);
             Assert.AreEqual(que.Hao4.LucThan, QuanQuy);
@@ -75,7 +75,7 @@ namespace KinhDichCommon.Tests
         public void TestLucThanCuaQueKienBien4()
         {
             // Phong Địa Quan
-            Que que = QueDich.TamQueThuocKien[4];
+            Que que = Que.TamQueThuocKien[4];
             Assert.AreEqual(que.Hao6.LucThan, TheTai);
             Assert.AreEqual(que.Hao5.LucThan, QuanQuy);
             Assert.AreEqual(que.Hao4.LucThan, PhuMau);
@@ -91,7 +91,7 @@ namespace KinhDichCommon.Tests
         public void TestLucThanCuaQueKienBien5()
         {
             // Sơn Địa Bốc
-            Que que = QueDich.TamQueThuocKien[5];
+            Que que = Que.TamQueThuocKien[5];
             Assert.AreEqual(que.Hao6.LucThan, TheTai);
             Assert.AreEqual(que.Hao5.LucThan, TuTon);
             Assert.AreEqual(que.Hao4.LucThan, PhuMau);
@@ -107,7 +107,7 @@ namespace KinhDichCommon.Tests
         public void TestLucThanCuaQueKienBien6()
         {
             // Hỏa Địa Tấn
-            Que que = QueDich.TamQueThuocKien[6];
+            Que que = Que.TamQueThuocKien[6];
             Assert.AreEqual(que.Hao6.LucThan, QuanQuy);
             Assert.AreEqual(que.Hao5.LucThan, PhuMau);
             Assert.AreEqual(que.Hao4.LucThan, HuynhDe);
@@ -123,7 +123,7 @@ namespace KinhDichCommon.Tests
         public void TestLucThanCuaQueKienBien7()
         {
             // Hỏa Thiên Đại Hữu
-            Que que = QueDich.TamQueThuocKien[7];
+            Que que = Que.TamQueThuocKien[7];
             Assert.AreEqual(que.Hao6.LucThan, QuanQuy);
             Assert.AreEqual(que.Hao5.LucThan, PhuMau);
             Assert.AreEqual(que.Hao4.LucThan, HuynhDe);

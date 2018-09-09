@@ -143,7 +143,7 @@ namespace DoanQueKinhDich.Business
 
             result = result.PadRight(3);
 
-            result += $"{hao.Chi.Name} {hao.Chi.Hanh.Name}";
+            result += $"{hao.Chi.Name} {hao.Chi.NguHanh.Name}";
             result = result.PadRight(13);
 
             result += $"{hao.AmDuongString}";
@@ -208,9 +208,9 @@ namespace DoanQueKinhDich.Business
             }
 
             // Tháng thổ (thìn tuất sửu mùi) sẽ có hào gặp mộ.
-            if (nguyetKien.Chi.Hanh == Tho)
+            if (nguyetKien.Chi.NguHanh == Tho)
             {
-                if (VongTruongSinh.IsMo(hao.Chi.Hanh, nguyetKien.Chi))
+                if (VongTruongSinh.IsMo(hao.Chi.NguHanh, nguyetKien.Chi))
                 {
                     result += ", nguyệt mộ";
                 }
@@ -245,9 +245,9 @@ namespace DoanQueKinhDich.Business
             }
 
             // Ngày thổ (thìn tuất sửu mùi) sẽ có hào gặp mộ.
-            if (nhatThan.Chi.Hanh == Tho)
+            if (nhatThan.Chi.NguHanh == Tho)
             {
-                if (VongTruongSinh.IsMo(hao.Chi.Hanh, nhatThan.Chi))
+                if (VongTruongSinh.IsMo(hao.Chi.NguHanh, nhatThan.Chi))
                 {
                     result += ", nhật mộ";
                 }
@@ -259,11 +259,11 @@ namespace DoanQueKinhDich.Business
         private string GetHaoBienExtraDesc(Hao haoBien, Hao haoGoc)
         {
             var result = "";
-            if (haoBien.Hanh.Sinh == haoGoc.Hanh)
+            if (haoBien.NguHanh.Sinh == haoGoc.NguHanh)
             {
                 result += ", hồi đầu sinh";
             }
-            else if (haoBien.Hanh.Khac == haoGoc.Hanh)
+            else if (haoBien.NguHanh.Khac == haoGoc.NguHanh)
             {
                 result += ", hồi đầu khắc";
             }
@@ -272,7 +272,7 @@ namespace DoanQueKinhDich.Business
             {
                 result += ", hồi đầu xung";
             }
-            if (VongTruongSinh.IsMo(haoBien.Chi.Hanh, haoGoc.Chi))
+            if (VongTruongSinh.IsMo(haoBien.Chi.NguHanh, haoGoc.Chi))
             {
                 result += ", biến mộ";
             }
@@ -294,7 +294,7 @@ namespace DoanQueKinhDich.Business
         {
             if (que.ViTriHaoPhuc != ViTriHao.None)
             {
-                return $"{que.HaoPhuc.LucThan.Name} {que.HaoPhuc.Chi.Name} {que.HaoPhuc.Hanh.Name} phục thần ở hào {(int)que.ViTriHaoPhuc}.";
+                return $"{que.HaoPhuc.LucThan.Name} {que.HaoPhuc.Chi.Name} {que.HaoPhuc.NguHanh.Name} phục thần ở hào {(int)que.ViTriHaoPhuc}.";
             }
 
             return "";

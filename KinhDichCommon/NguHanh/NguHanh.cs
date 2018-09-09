@@ -1,27 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace KinhDichCommon
 {
-    public static class NguHanh
+    /// <summary>
+    /// Ngũ hành.
+    /// </summary>
+    [DebuggerDisplay("{Name,nq}, sinh {Sinh.Name,nq}, khắc {Khac.Name,nq}, được {SinhBoi.Name,nq} sinh, bị {KhacBoi.Name,nq} khắc.")]
+    public class NguHanh : BaseItem
     {
-        public static readonly Hanh Kim = new Hanh { Id = 1, Name = "Kim", NameChinese = "" };
-        public static readonly Hanh Thuy = new Hanh { Id = 2, Name = "Thủy", NameChinese = "" };
-        public static readonly Hanh Moc = new Hanh { Id = 3, Name = "Mộc", NameChinese = "" };
-        public static readonly Hanh Hoa = new Hanh { Id = 4, Name = "Hỏa", NameChinese = "" };
-        public static readonly Hanh Tho = new Hanh { Id = 5, Name = "Thổ", NameChinese = "" };
+        public NguHanh Sinh { get; set; }
+        public NguHanh Khac { get; set; }
+        public NguHanh SinhBoi { get; set; }
+        public NguHanh KhacBoi { get; set; }
+
+        public static readonly NguHanh Kim = new NguHanh { Id = 1, Name = "Kim", NameChinese = "" };
+        public static readonly NguHanh Thuy = new NguHanh { Id = 2, Name = "Thủy", NameChinese = "" };
+        public static readonly NguHanh Moc = new NguHanh { Id = 3, Name = "Mộc", NameChinese = "" };
+        public static readonly NguHanh Hoa = new NguHanh { Id = 4, Name = "Hỏa", NameChinese = "" };
+        public static readonly NguHanh Tho = new NguHanh { Id = 5, Name = "Thổ", NameChinese = "" };
 
         // Id order and adding order must be the same.
-        private static List<Hanh> _nguHanh = new List<Hanh> { Kim, Thuy, Moc, Hoa, Tho };
+        private static List<NguHanh> _nguHanh = new List<NguHanh> { Kim, Thuy, Moc, Hoa, Tho };
 
-        public static readonly Hanh QuanQuy = new Hanh { Id = 1, Name = "Quan Quỷ", NameChinese = "" };
-        public static readonly Hanh PhuMau = new Hanh { Id = 2, Name = "Phụ Mẫu", NameChinese = "" };
-        public static readonly Hanh HuynhDe = new Hanh { Id = 3, Name = "Huynh Đệ", NameChinese = "" };
-        public static readonly Hanh TuTon = new Hanh { Id = 4, Name = "Tử Tôn", NameChinese = "" };
-        public static readonly Hanh TheTai = new Hanh { Id = 5, Name = "Thê Tài", NameChinese = "" };
+        public static readonly NguHanh QuanQuy = new NguHanh { Id = 1, Name = "Quan Quỷ", NameChinese = "" };
+        public static readonly NguHanh PhuMau = new NguHanh { Id = 2, Name = "Phụ Mẫu", NameChinese = "" };
+        public static readonly NguHanh HuynhDe = new NguHanh { Id = 3, Name = "Huynh Đệ", NameChinese = "" };
+        public static readonly NguHanh TuTon = new NguHanh { Id = 4, Name = "Tử Tôn", NameChinese = "" };
+        public static readonly NguHanh TheTai = new NguHanh { Id = 5, Name = "Thê Tài", NameChinese = "" };
 
         // Id order and adding order must be the same.
-        private static List<Hanh> _lucThan = new List<Hanh> { QuanQuy, PhuMau, HuynhDe, TuTon, TheTai };
+        private static List<NguHanh> _lucThan = new List<NguHanh> { QuanQuy, PhuMau, HuynhDe, TuTon, TheTai };
 
         static NguHanh()
         {
@@ -29,7 +39,7 @@ namespace KinhDichCommon
             SetSinhKhac(_lucThan);
         }
 
-        private static void SetSinhKhac(List<Hanh> list)
+        private static void SetSinhKhac(List<NguHanh> list)
         {
             var maxIndex = list.Count - 1;
 
@@ -86,7 +96,7 @@ namespace KinhDichCommon
         /// <param name="hanhCuaQue"></param>
         /// <param name="hanhCuaHao"></param>
         /// <returns>Lục thân</returns>
-        public static Hanh GetLucThan(Hanh hanhCuaQue, Hanh hanhCuaHao)
+        public static NguHanh GetLucThan(NguHanh hanhCuaQue, NguHanh hanhCuaHao)
         {
             // Nếu hào có cùng ngũ hành với ta thì là huynh đệ.
             if (hanhCuaHao.Id == hanhCuaQue.Id)

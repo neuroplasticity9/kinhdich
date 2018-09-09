@@ -26,7 +26,7 @@ namespace KinhDichCommon
                         {
                             while (reader.Read())
                             {
-                                SetQue(QueDich.All[index], reader);
+                                SetQue(Que.All[index], reader);
 
                                 index++;
                             }

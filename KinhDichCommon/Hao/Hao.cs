@@ -2,20 +2,20 @@
 
 namespace KinhDichCommon
 {
-    [DebuggerDisplay("{AmDuongString} {LucThan.Name,nq} {Chi.Name,nq} {Chi.Hanh.Name,nq}")]
+    [DebuggerDisplay("{AmDuongString} {LucThan.Name,nq} {Chi.Name,nq} {Chi.NguHanh.Name,nq}")]
     public class Hao : BaseItem
     {
-        public Chi Chi { get; set; }
+        public DiaChi Chi { get; set; }
 
-        public Hanh Hanh => Chi.Hanh;
+        public NguHanh NguHanh => Chi.NguHanh;
 
         public bool Duong { get; set; }
 
         public string AmDuongString => Duong ? Utils.Duong : Utils.Am;
 
-        public Hanh HanhCuaQue { get; set; }
+        public NguHanh HanhCuaQue { get; set; }
 
-        public Hanh LucThan => NguHanh.GetLucThan(HanhCuaQue, Hanh);
+        public NguHanh LucThan => NguHanh.GetLucThan(HanhCuaQue, NguHanh);
 
         public bool The { get; set; }
 
@@ -38,7 +38,7 @@ namespace KinhDichCommon
             return hao;
         }
 
-        internal Hao CloneChoQueBien(Hanh hanhCuaQue)
+        internal Hao CloneChoQueBien(NguHanh hanhCuaQue)
         {
             var hao = new Hao{
                 HanhCuaQue = hanhCuaQue,

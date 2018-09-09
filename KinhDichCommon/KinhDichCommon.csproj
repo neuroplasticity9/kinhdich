@@ -62,7 +62,6 @@
     <Compile Include="AmLich\Calendar.cs" />
     <Compile Include="AmLich\AmLich.cs" />
     <Compile Include="BaseItem.cs" />
-    <Compile Include="BatQuai\Cung.cs" />
     <Compile Include="BatQuai\BatQuai.cs" />
     <Compile Include="Db\Sqlite.cs" />
     <Compile Include="Extensions\DateTimeExtensions.cs" />
@@ -78,16 +77,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Que\Que.Static.cs" />
     <Compile Include="Support\Utils.cs" />
-    <Compile Include="VongTruongSinh\ThoiKi.cs" />
     <Compile Include="VongTruongSinh\TruongSinhNguHanh.cs" />
     <Compile Include="VongTruongSinh\VongTruongSinh.cs" />
-    <Compile Include="Que\QueDich.cs" />
     <Compile Include="Que\Que.cs" />
-    <Compile Include="ThienCan\Can.cs" />
-    <Compile Include="DiaChi\Chi.cs" />
     <Compile Include="ThienCan\ThienCan.cs" />
-    <Compile Include="NguHanh\Hanh.cs" />
     <Compile Include="DiaChi\DiaChi.cs" />
     <Compile Include="NguHanh\NguHanh.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -27,7 +27,7 @@ namespace DoanQueKinhDich
         {
             if (haoThuong.Visible && haoTrung.Visible && haoHa.Visible)
             {
-                Cung cung;
+                BatQuai cung;
                 for (int i = 0; i < BatQuai.All.Count; i++)
                 {
                     cung = BatQuai.All[i];

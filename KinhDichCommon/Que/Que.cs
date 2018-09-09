@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -18,34 +17,31 @@ namespace KinhDichCommon
         Hao6 = 6,
     }
 
-    [DebuggerDisplay("{Name,nq}, thuộc {Hanh.Name,nq}")]
-    public class Que : BaseItem
+    /// <summary>
+    /// 64 quẻ của Kinh Dịch.
+    /// </summary>
+    [DebuggerDisplay("{Name,nq}, thuộc {NguHanh.Name,nq}")]
+    public partial class Que : BaseItem
     {
         public int QueId { get; set; }
         public string Url { get; set; }
         public string TuongQue { get; internal set; }
-
-        public Hanh Hanh { get; set; }
-
+        public NguHanh NguHanh { get; set; }
         public Que QueThuan { get; set; }
-
         public Hao Hao6 { get; set; }
         public Hao Hao5 { get; set; }
         public Hao Hao4 { get; set; }
         public Hao Hao3 { get; set; }
         public Hao Hao2 { get; set; }
         public Hao Hao1 { get; set; }
-
-        public Cung NgoaiQuai => BatQuai.GetCung(Hao6.Duong, Hao5.Duong, Hao4.Duong);
-        public Cung NoiQuai => BatQuai.GetCung(Hao3.Duong, Hao2.Duong, Hao1.Duong);
-
+        public BatQuai NgoaiQuai => BatQuai.GetCung(Hao6.Duong, Hao5.Duong, Hao4.Duong);
+        public BatQuai NoiQuai => BatQuai.GetCung(Hao3.Duong, Hao2.Duong, Hao1.Duong);
         public bool IsTheQuaiOTren { get; set; } // Quẻ thể ở trên?
-
         public ViTriHao ViTriHaoPhuc { get; set; }
         public Hao HaoPhuc { get; set; }
-
         public List<Hao> SauHao;
 
+        #region " Class methods "
         public void Init()
         {
             SauHao = new List<Hao> { Hao6, Hao5, Hao4, Hao3, Hao2, Hao1 };
@@ -90,7 +86,7 @@ namespace KinhDichCommon
             return IsHopCuc(DiaChi.KimCuc);
         }
 
-        private bool IsHopCuc(List<Chi> tamHopCuc)
+        private bool IsHopCuc(List<DiaChi> tamHopCuc)
         {
             int count = 0;
             for (int i = 0; i < tamHopCuc.Count; i++)
@@ -122,7 +118,7 @@ namespace KinhDichCommon
 
         public void SetPhucThan()
         {
-            var lucThanSauHao = new List<Hanh> { Hao6.LucThan, Hao5.LucThan, Hao4.LucThan, Hao3.LucThan, Hao2.LucThan, Hao1.LucThan };
+            var lucThanSauHao = new List<NguHanh> { Hao6.LucThan, Hao5.LucThan, Hao4.LucThan, Hao3.LucThan, Hao2.LucThan, Hao1.LucThan };
             if (!lucThanSauHao.Exists(lt => lt == TuTon))
             {
                 SetPhucThan(TuTon);
@@ -150,7 +146,7 @@ namespace KinhDichCommon
             }
         }
 
-        private void SetPhucThan(Hanh lucThanBiThieu)
+        private void SetPhucThan(NguHanh lucThanBiThieu)
         {
             for (int i = QueThuan.SauHao.Count - 1; i >= 0; i--)
             {
@@ -179,14 +175,14 @@ namespace KinhDichCommon
         /// <returns></returns>
         internal Que Clone()
         {
-            return Clone(this.Hanh);
+            return Clone(this.NguHanh);
         }
 
         /// <summary>
         /// Clone que.
         /// </summary>
         /// <returns></returns>
-        internal Que Clone(Hanh hanhCuaQue)
+        internal Que Clone(NguHanh hanhCuaQue)
         {
             var que = new Que
             {
@@ -199,7 +195,7 @@ namespace KinhDichCommon
                 Url = this.Url,
                 TuongQue = this.TuongQue,
                 QueThuan = this.QueThuan,
-                Hanh = hanhCuaQue,
+                NguHanh = hanhCuaQue,
                 Hao6 = this.Hao6.CloneChoQueBien(hanhCuaQue),
                 Hao5 = this.Hao5.CloneChoQueBien(hanhCuaQue),
                 Hao4 = this.Hao4.CloneChoQueBien(hanhCuaQue),
@@ -210,5 +206,7 @@ namespace KinhDichCommon
 
             return que;
         }
+        #endregion
+
     }
 }

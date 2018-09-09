@@ -15,13 +15,13 @@ namespace DoanQueKinhDich.Business
         {
             Que = que;
 
-            QueChu = QueDich.GetQue(que.Hao6, que.Hao5, que.Hao4, que.Hao3, que.Hao2, que.Hao1);
+            QueChu = KinhDichCommon.Que.GetQue(que.Hao6, que.Hao5, que.Hao4, que.Hao3, que.Hao2, que.Hao1);
 
-            QueHo = QueDich.GetQue(que.Hao5, que.Hao4, que.Hao3, que.Hao4, que.Hao3, que.Hao2);
+            QueHo = KinhDichCommon.Que.GetQue(que.Hao5, que.Hao4, que.Hao3, que.Hao4, que.Hao3, que.Hao2);
 
             if (que.CoQueBien())
             {
-                QueBien = QueDich.GetQueBien(QueChu, que.Hao6Dong, que.Hao5Dong, que.Hao4Dong, que.Hao3Dong, que.Hao2Dong, que.Hao1Dong);
+                QueBien = KinhDichCommon.Que.GetQueBien(QueChu, que.Hao6Dong, que.Hao5Dong, que.Hao4Dong, que.Hao3Dong, que.Hao2Dong, que.Hao1Dong);
             }
 
             SetTheQuai();
@@ -120,7 +120,7 @@ namespace DoanQueKinhDich.Business
                 return "";
             }
 
-            return $"   {que.Name} ({que.QueThuan.Hanh.Name}), {que.NgoaiQuai.Name} {que.NgoaiQuai.Hanh.Name} / {que.NoiQuai.Name} {que.NoiQuai.Hanh.Name}{GetHopXungString(que)}";
+            return $"   {que.Name} ({que.QueThuan.NguHanh.Name}), {que.NgoaiQuai.Name} {que.NgoaiQuai.NguHanh.Name} / {que.NoiQuai.Name} {que.NoiQuai.NguHanh.Name}{GetHopXungString(que)}";
         }
 
         protected string GetTenQueShort(Que que)
@@ -130,7 +130,7 @@ namespace DoanQueKinhDich.Business
                 return "";
             }
 
-            return $"   {que.Name} ({que.QueThuan.Hanh.Name}), {que.NgoaiQuai.Name} {que.NgoaiQuai.Hanh.Name} / {que.NoiQuai.Name} {que.NoiQuai.Hanh.Name}";
+            return $"   {que.Name} ({que.QueThuan.NguHanh.Name}), {que.NgoaiQuai.Name} {que.NgoaiQuai.NguHanh.Name} / {que.NoiQuai.Name} {que.NoiQuai.NguHanh.Name}";
         }
 
         protected string GetChiChuCuaQue(Que que)

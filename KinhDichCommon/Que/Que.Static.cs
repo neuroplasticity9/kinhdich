@@ -1,16 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using static KinhDichCommon.DiaChi;
 using static KinhDichCommon.NguHanh;
 
 namespace KinhDichCommon
 {
+
     /// <summary>
     /// 64 quẻ của Kinh Dịch.
     /// </summary>
-    public static class QueDich
+    public partial class Que
     {
+        #region "Static var and methods"
         public static readonly Que QueKien;
         public static readonly Que QueDoai;
         public static readonly Que QueLy;
@@ -18,9 +19,9 @@ namespace KinhDichCommon
         public static readonly Que QueTon;
         public static readonly Que QueKham;
         public static readonly Que QueCan;
-        public static readonly Que QueKhon; 
+        public static readonly Que QueKhon;
 
-        public static readonly List<Que> QueThuan = new List<Que>();
+        public static readonly List<Que> TamQueThuan = new List<Que>();
 
         public static readonly List<Que> TamQueThuocKien = new List<Que>();
         public static readonly List<Que> TamQueThuocDoai = new List<Que>();
@@ -33,14 +34,14 @@ namespace KinhDichCommon
 
         public static readonly List<Que> All = new List<Que>();
 
-        static QueDich()
+        static Que()
         {
             QueKien = new Que
             {
                 Id = 1,
                 Name = "Càn Vi Thiên",
                 NameShort = "Càn",
-                Hanh = Kim,
+                NguHanh = Kim,
                 Hao6 = new Hao { Id = 6, HanhCuaQue = Kim, Duong = true, Chi = Tuat, The = true },
                 Hao5 = new Hao { Id = 5, HanhCuaQue = Kim, Duong = true, Chi = Than },
                 Hao4 = new Hao { Id = 4, HanhCuaQue = Kim, Duong = true, Chi = Ngo },
@@ -54,7 +55,7 @@ namespace KinhDichCommon
                 Id = 2,
                 Name = "Đoài Vi Trạch",
                 NameShort = "Đoài",
-                Hanh = Kim,
+                NguHanh = Kim,
                 Hao6 = new Hao { Id = 6, HanhCuaQue = Kim, Duong = false, Chi = Mui, The = true },
                 Hao5 = new Hao { Id = 5, HanhCuaQue = Kim, Duong = true, Chi = Dau },
                 Hao4 = new Hao { Id = 4, HanhCuaQue = Kim, Duong = true, Chi = Hoi },
@@ -68,7 +69,7 @@ namespace KinhDichCommon
                 Id = 3,
                 Name = "Ly Vi Hỏa",
                 NameShort = "Ly",
-                Hanh = Hoa,
+                NguHanh = Hoa,
                 Hao6 = new Hao { Id = 6, HanhCuaQue = Hoa, Duong = true, Chi = Ty, The = true },
                 Hao5 = new Hao { Id = 5, HanhCuaQue = Hoa, Duong = false, Chi = Mui },
                 Hao4 = new Hao { Id = 4, HanhCuaQue = Hoa, Duong = true, Chi = Dau },
@@ -82,7 +83,7 @@ namespace KinhDichCommon
                 Id = 4,
                 Name = "Chấn Vi Lôi",
                 NameShort = "Lôi",
-                Hanh = Moc,
+                NguHanh = Moc,
                 Hao6 = new Hao { Id = 6, HanhCuaQue = Moc, Duong = false, Chi = Tuat, The = true },
                 Hao5 = new Hao { Id = 5, HanhCuaQue = Moc, Duong = false, Chi = Than },
                 Hao4 = new Hao { Id = 4, HanhCuaQue = Moc, Duong = true, Chi = Ngo },
@@ -96,7 +97,7 @@ namespace KinhDichCommon
                 Id = 5,
                 Name = "Tốn Vi Phong",
                 NameShort = "Tốn",
-                Hanh = Moc,
+                NguHanh = Moc,
                 Hao6 = new Hao { Id = 6, HanhCuaQue = Moc, Duong = true, Chi = Mao, The = true },
                 Hao5 = new Hao { Id = 5, HanhCuaQue = Moc, Duong = true, Chi = Ty },
                 Hao4 = new Hao { Id = 4, HanhCuaQue = Moc, Duong = false, Chi = Mui },
@@ -110,7 +111,7 @@ namespace KinhDichCommon
                 Id = 6,
                 Name = "Khảm Vi Thủy",
                 NameShort = "Khảm",
-                Hanh = Thuy,
+                NguHanh = Thuy,
                 Hao6 = new Hao { Id = 6, HanhCuaQue = Thuy, Duong = false, Chi = Ti, The = true },
                 Hao5 = new Hao { Id = 5, HanhCuaQue = Thuy, Duong = true, Chi = Tuat },
                 Hao4 = new Hao { Id = 4, HanhCuaQue = Thuy, Duong = false, Chi = Than },
@@ -124,7 +125,7 @@ namespace KinhDichCommon
                 Id = 7,
                 Name = "Cấn Vi Sơn",
                 NameShort = "Cấn",
-                Hanh = Tho,
+                NguHanh = Tho,
                 Hao6 = new Hao { Id = 6, HanhCuaQue = Tho, Duong = true, Chi = Dan, The = true },
                 Hao5 = new Hao { Id = 5, HanhCuaQue = Tho, Duong = false, Chi = Ti },
                 Hao4 = new Hao { Id = 4, HanhCuaQue = Tho, Duong = false, Chi = Tuat },
@@ -138,7 +139,7 @@ namespace KinhDichCommon
                 Id = 8,
                 Name = "Khôn Vi Địa",
                 NameShort = "Khôn",
-                Hanh = Tho,
+                NguHanh = Tho,
                 Hao6 = new Hao { Id = 6, HanhCuaQue = Tho, Duong = false, Chi = Dau, The = true },
                 Hao5 = new Hao { Id = 5, HanhCuaQue = Tho, Duong = false, Chi = Hoi },
                 Hao4 = new Hao { Id = 4, HanhCuaQue = Tho, Duong = false, Chi = Suu },
@@ -147,17 +148,8 @@ namespace KinhDichCommon
                 Hao1 = new Hao { Id = 1, HanhCuaQue = Tho, Duong = false, Chi = Mui },
             };
 
-            //SetQueThuan(QueKien);
-            //SetQueThuan(QueDoai);
-            //SetQueThuan(QueLy);
-            //SetQueThuan(QueChan);
-            //SetQueThuan(QueTon);
-            //SetQueThuan(QueKham);
-            //SetQueThuan(QueCan);
-            //SetQueThuan(QueKhon);
-
-            QueThuan = new List<Que> { QueKien, QueDoai, QueLy, QueChan, QueTon, QueKham, QueCan, QueKhon };
-            foreach (var queThuan in QueThuan)
+            TamQueThuan = new List<Que> { QueKien, QueDoai, QueLy, QueChan, QueTon, QueKham, QueCan, QueKhon };
+            foreach (var queThuan in TamQueThuan)
             {
                 SetQueThuan(queThuan);
             }
@@ -284,8 +276,8 @@ namespace KinhDichCommon
         private static void CapNhatChiChoQueNoi(Que que)
         {
             var cung = BatQuai.GetCung(que.Hao3.Duong, que.Hao2.Duong, que.Hao1.Duong);
-            var queThuan = QueThuan.FirstOrDefault(q => q.NoiQuai.Id == cung.Id && q.NgoaiQuai.Id == cung.Id);
-            
+            var queThuan = TamQueThuan.FirstOrDefault(q => q.NoiQuai.Id == cung.Id && q.NgoaiQuai.Id == cung.Id);
+
             que.Hao3.Chi = queThuan.Hao3.Chi;
             que.Hao2.Chi = queThuan.Hao2.Chi;
             que.Hao1.Chi = queThuan.Hao1.Chi;
@@ -294,7 +286,7 @@ namespace KinhDichCommon
         private static void CapNhatChiChoQueNgoai(Que que)
         {
             var cung = BatQuai.GetCung(que.Hao6.Duong, que.Hao5.Duong, que.Hao4.Duong);
-            var queThuan = QueThuan.FirstOrDefault(q => q.NoiQuai.Id == cung.Id && q.NgoaiQuai.Id == cung.Id);
+            var queThuan = TamQueThuan.FirstOrDefault(q => q.NoiQuai.Id == cung.Id && q.NgoaiQuai.Id == cung.Id);
 
             que.Hao6.Chi = queThuan.Hao6.Chi;
             que.Hao5.Chi = queThuan.Hao5.Chi;
@@ -328,7 +320,7 @@ namespace KinhDichCommon
         /// <param name="ngoaiQuai"></param>
         /// <param name="noiQuai"></param>
         /// <returns></returns>
-        public static Que GetQue(Cung ngoaiQuai, Cung noiQuai)
+        public static Que GetQue(BatQuai ngoaiQuai, BatQuai noiQuai)
         {
             return GetQue(ngoaiQuai.Duong3, ngoaiQuai.Duong2, ngoaiQuai.Duong1, noiQuai.Duong3, noiQuai.Duong2, noiQuai.Duong1);
         }
@@ -338,7 +330,7 @@ namespace KinhDichCommon
         /// </summary>
         /// <param name="cungThuan"></param>
         /// <returns></returns>
-        public static Que GetQue(Cung cungThuan)
+        public static Que GetQue(BatQuai cungThuan)
         {
             return GetQue(cungThuan, cungThuan);
         }
@@ -364,9 +356,10 @@ namespace KinhDichCommon
                                     dongHao1 ? !queChu.Hao1.Duong : queChu.Hao1.Duong);
 
             // Hành của quẻ biến sẽ theo quẻ chủ.
-            var hanhQueChu = queChu.Hanh;
+            var hanhQueChu = queChu.NguHanh;
 
             return queBienGoc.Clone(hanhQueChu);
         }
+        #endregion
     }
 }

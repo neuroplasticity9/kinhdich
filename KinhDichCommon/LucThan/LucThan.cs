@@ -29,7 +29,7 @@ namespace KinhDichCommon
 
         public static readonly List<LucThan> NgayNhamQuy = new List<LucThan> { HuyenVu, ThanhLong, ChuTuoc, CauTran, PhiXa, BachHo };
 
-        public static List<LucThan> GetLucThan(Can canCuaNgay)
+        public static List<LucThan> GetLucThan(ThienCan canCuaNgay)
         {
             if (canCuaNgay == Giap || canCuaNgay == At)
             {

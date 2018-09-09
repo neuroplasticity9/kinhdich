@@ -180,7 +180,7 @@ namespace DoanQueKinhDich.UserControls
 
         private void cbxNgoaiQuai_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Cung cung = BatQuai.All[cbxNgoaiQuai.SelectedIndex];
+            BatQuai cung = BatQuai.All[cbxNgoaiQuai.SelectedIndex];
             chkHao6.Checked = cung.Duong3;
             chkHao5.Checked = cung.Duong2;
             chkHao4.Checked = cung.Duong1;
@@ -190,7 +190,7 @@ namespace DoanQueKinhDich.UserControls
 
         private void cbxNoiQuai_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Cung cung = BatQuai.All[cbxNoiQuai.SelectedIndex];
+            BatQuai cung = BatQuai.All[cbxNoiQuai.SelectedIndex];
             chkHao3.Checked = cung.Duong3;
             chkHao2.Checked = cung.Duong2;
             chkHao1.Checked = cung.Duong1;
@@ -292,7 +292,7 @@ namespace DoanQueKinhDich.UserControls
 
         private void cbxBienNgoaiQuai_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Cung cung = BatQuai.All[cbxBienNgoaiQuai.SelectedIndex];
+            BatQuai cung = BatQuai.All[cbxBienNgoaiQuai.SelectedIndex];
             chkBienHao6.Checked = cung.Duong3;
             chkBienHao5.Checked = cung.Duong2;
             chkBienHao4.Checked = cung.Duong1;
@@ -302,7 +302,7 @@ namespace DoanQueKinhDich.UserControls
 
         private void cbxBienNoiQuai_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Cung cung = BatQuai.All[cbxBienNoiQuai.SelectedIndex];
+            BatQuai cung = BatQuai.All[cbxBienNoiQuai.SelectedIndex];
             chkBienHao3.Checked = cung.Duong3;
             chkBienHao2.Checked = cung.Duong2;
             chkBienHao1.Checked = cung.Duong1;

@@ -2,7 +2,7 @@
 {
     public static class CanChiExtensions
     {
-        public static Chi Next(this Chi chi)
+        public static DiaChi Next(this DiaChi chi)
         {
             if (chi.Id == DiaChi.All.Count)
             {
@@ -12,7 +12,7 @@
             return DiaChi.All[chi.Id];
         }
 
-        public static Can Next(this Can can)
+        public static ThienCan Next(this ThienCan can)
         {
             if (can.Id == ThienCan.All.Count)
             {

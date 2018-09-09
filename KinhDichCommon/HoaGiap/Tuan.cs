@@ -11,8 +11,8 @@ namespace KinhDichCommon
     {
         public const int SoNgay = 10;
 
-        public Chi Khong1 { get; private set; }
-        public Chi Khong2 { get; private set; }
+        public DiaChi Khong1 { get; private set; }
+        public DiaChi Khong2 { get; private set; }
 
         // Id order and adding order must be the same.
         public List<CanChi> All = new List<CanChi>();

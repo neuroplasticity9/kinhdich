@@ -128,11 +128,11 @@ namespace DoanQueKinhDich.Business
 
             if (hao.Id == 5)
             {
-                result += $"{que.NgoaiQuai.Name} {que.NgoaiQuai.Hanh.Name}";
+                result += $"{que.NgoaiQuai.Name} {que.NgoaiQuai.NguHanh.Name}";
             }
             else if (hao.Id == 2)
             {
-                result += $"{que.NoiQuai.Name} {que.NoiQuai.Hanh.Name}";
+                result += $"{que.NoiQuai.Name} {que.NoiQuai.NguHanh.Name}";
             }
             result = result.PadRight(13);
 

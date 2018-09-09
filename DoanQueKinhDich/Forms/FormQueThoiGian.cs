@@ -264,7 +264,7 @@ namespace DoanQueKinhDich
 
         private int GetTongNamThangNgayGio(AmLich amLich)
         {
-            Chi gioChi = DiaChi.All[cbxGioChi.SelectedIndex];
+            DiaChi gioChi = DiaChi.All[cbxGioChi.SelectedIndex];
             return  GetTongNamThangNgay(amLich) + gioChi.Id;
         }
 
@@ -281,8 +281,8 @@ namespace DoanQueKinhDich
             cbxNamCan.SelectedIndex = namAm.Can.Id - 1;
             cbxNamChi.SelectedIndex = namAm.Chi.Id - 1;
 
-            Chi gioChi = DiaChi.All[cbxGioChi.SelectedIndex];
-            Can gioCan = amLich.GetCanCuaGio(gioChi);
+            DiaChi gioChi = DiaChi.All[cbxGioChi.SelectedIndex];
+            ThienCan gioCan = amLich.GetCanCuaGio(gioChi);
             cbxGioCan.SelectedIndex = gioCan.Id - 1;
 
             labelNgayAmLich.Text = $"Ngày âm lịch: {amLich.LunarYear}-{amLich.LunarMonth}-{amLich.LunarDay}";
