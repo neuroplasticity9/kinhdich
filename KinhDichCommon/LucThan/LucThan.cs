@@ -6,7 +6,7 @@ using static KinhDichCommon.ThienCan;
 namespace KinhDichCommon
 {
     /// <summary>
-    /// Muoi hai dia chi.
+    /// Lục thần.
     /// </summary>
     public class LucThan : BaseItem
     {

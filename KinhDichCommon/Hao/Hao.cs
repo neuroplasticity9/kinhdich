@@ -15,6 +15,9 @@ namespace KinhDichCommon
 
         public NguHanh HanhCuaQue { get; set; }
 
+        /// <summary>
+        /// Lục thân (phụ mẫu, huynh đệ, tử tôn, thê tài, quan quỷ).
+        /// </summary>
         public NguHanh LucThan => NguHanh.GetLucThan(HanhCuaQue, NguHanh);
 
         public bool The { get; set; }

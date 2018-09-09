@@ -168,8 +168,8 @@ namespace DoanQueKinhDich.Business
             if (lucThan != null)
             {
                 result += $", {lucThan[hao.Id - 1].Name}";
+                result = result.PadRight(43);
             }
-            result = result.PadRight(43);
 
             return result;
         }
