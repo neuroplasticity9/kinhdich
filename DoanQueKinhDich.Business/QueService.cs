@@ -68,7 +68,7 @@ namespace DoanQueKinhDich.Business
         public abstract string GetQueDesc();
 
 
-        #region "Private methods"
+        #region "protected methods"
 
 
         protected string GetNgayThang(NgayLayQue ngayLayQue, CachLayQue cachLayQue)
