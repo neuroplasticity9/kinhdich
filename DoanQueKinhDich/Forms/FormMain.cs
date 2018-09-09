@@ -71,7 +71,7 @@ namespace DoanQueKinhDich
             if (radLucHao.Checked)
             {
                 linkQueHo.Visible = false;
-                linkQueBien.Location = new System.Drawing.Point(927, linkQueChu.Location.Y);
+                linkQueBien.Location = new System.Drawing.Point(1081, linkQueChu.Location.Y);
             }
             else
             {

@@ -216,7 +216,7 @@
             // 
             this.linkQueBien.AutoSize = true;
             this.linkQueBien.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkQueBien.Location = new System.Drawing.Point(930, 209);
+            this.linkQueBien.Location = new System.Drawing.Point(1081, 209);
             this.linkQueBien.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkQueBien.Name = "linkQueBien";
             this.linkQueBien.Size = new System.Drawing.Size(278, 27);

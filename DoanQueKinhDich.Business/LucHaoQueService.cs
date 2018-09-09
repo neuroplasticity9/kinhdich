@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text;
 using KinhDichCommon;
 using static KinhDichCommon.NguHanh;
@@ -32,13 +33,14 @@ namespace DoanQueKinhDich.Business
         /// <param name="isHao1Dong"></param>
         /// <returns></returns>
         private string GetQueChuVaQueBienDesc(Que queChu, Que queBien, NgayLayQue ngayLayQue, CachLayQue cachLayQue,
-                                                bool isHao6Dong = false, bool isHao5Dong = false, bool isHao4Dong = false,
-                                                bool isHao3Dong = false, bool isHao2Dong = false, bool isHao1Dong = false)
+                                              bool isHao6Dong = false, bool isHao5Dong = false, bool isHao4Dong = false,
+                                              bool isHao3Dong = false, bool isHao2Dong = false, bool isHao1Dong = false)
         {
             var nhatThan = ngayLayQue.NgayAm;
             var nguyetKien = ngayLayQue.ThangAm;
+            var lucThan = LucThan.GetLucThan(nhatThan.Can);
 
-            var padRight = 80;
+            var padRight = 94;
             var sb = new StringBuilder();
 
             sb.AppendLine(GetNgayThang(ngayLayQue, cachLayQue));
@@ -57,27 +59,27 @@ namespace DoanQueKinhDich.Business
             sb.AppendLine();
             sb.AppendLine();
 
-            sb.Append(GetHaoDesc(queChu.Hao6, isHao6Dong, nhatThan, nguyetKien).PadRight(padRight));
+            sb.Append(GetHaoDesc(queChu.Hao6, isHao6Dong, nhatThan, nguyetKien, lucThan).PadRight(padRight));
             sb.Append(queBien != null ? GetHaoBienDesc(queBien.Hao6, queChu.Hao6, isHao6Dong, nhatThan, nguyetKien) : "");
             sb.AppendLine();
 
-            sb.Append(GetHaoDesc(queChu.Hao5, isHao5Dong, nhatThan, nguyetKien).PadRight(padRight));
+            sb.Append(GetHaoDesc(queChu.Hao5, isHao5Dong, nhatThan, nguyetKien, lucThan).PadRight(padRight));
             sb.Append(queBien != null ? GetHaoBienDesc(queBien.Hao5, queChu.Hao5, isHao5Dong, nhatThan, nguyetKien) : "");
             sb.AppendLine();
 
-            sb.Append(GetHaoDesc(queChu.Hao4, isHao4Dong, nhatThan, nguyetKien).PadRight(padRight));
+            sb.Append(GetHaoDesc(queChu.Hao4, isHao4Dong, nhatThan, nguyetKien, lucThan).PadRight(padRight));
             sb.Append(queBien != null ? GetHaoBienDesc(queBien.Hao4, queChu.Hao4, isHao4Dong, nhatThan, nguyetKien) : "");
             sb.AppendLine();
 
-            sb.Append(GetHaoDesc(queChu.Hao3, isHao3Dong, nhatThan, nguyetKien).PadRight(padRight));
+            sb.Append(GetHaoDesc(queChu.Hao3, isHao3Dong, nhatThan, nguyetKien, lucThan).PadRight(padRight));
             sb.Append(queBien != null ? GetHaoBienDesc(queBien.Hao3, queChu.Hao3, isHao3Dong, nhatThan, nguyetKien) : "");
             sb.AppendLine();
 
-            sb.Append(GetHaoDesc(queChu.Hao2, isHao2Dong, nhatThan, nguyetKien).PadRight(padRight));
+            sb.Append(GetHaoDesc(queChu.Hao2, isHao2Dong, nhatThan, nguyetKien, lucThan).PadRight(padRight));
             sb.Append(queBien != null ? GetHaoBienDesc(queBien.Hao2, queChu.Hao2, isHao2Dong, nhatThan, nguyetKien) : "");
             sb.AppendLine();
 
-            sb.Append(GetHaoDesc(queChu.Hao1, isHao1Dong, nhatThan, nguyetKien).PadRight(padRight));
+            sb.Append(GetHaoDesc(queChu.Hao1, isHao1Dong, nhatThan, nguyetKien, lucThan).PadRight(padRight));
             sb.Append(queBien != null ? GetHaoBienDesc(queBien.Hao1, queChu.Hao1, isHao1Dong, nhatThan, nguyetKien) : "");
             sb.AppendLine();
 
@@ -89,12 +91,12 @@ namespace DoanQueKinhDich.Business
             return sb.ToString();
         }
 
-        private string GetHaoDesc(Hao hao, bool isHaoDong, CanChi nhatThan, CanChi nguyetKien)
+        private string GetHaoDesc(Hao hao, bool isHaoDong, CanChi nhatThan, CanChi nguyetKien, List<LucThan> lucThan)
         {
             var result = "";
             var isAmDong = IsAmDong(hao, nhatThan, nguyetKien);
 
-            result += GetDiaChiVaLucThanCuaHao(hao, isHaoDong, isAmDong);
+            result += GetDiaChiVaLucThanCuaHao(hao, isHaoDong, lucThan, isAmDong);
             result += GetSuyVuongCuaHao(hao, nhatThan, nguyetKien);
 
             return result;
@@ -103,7 +105,7 @@ namespace DoanQueKinhDich.Business
         private string GetHaoBienDesc(Hao haoBien, Hao haoGoc, bool isHaoDong, CanChi nhatThan, CanChi nguyetKien)
         {
             var result = "";
-            result = GetDiaChiVaLucThanCuaHao(haoBien, isHaoDong);
+            result = GetDiaChiVaLucThanCuaHao(haoBien, isHaoDong, null);
 
             if (!isHaoDong)
             {
@@ -117,7 +119,7 @@ namespace DoanQueKinhDich.Business
             return result;
         }
 
-        private string GetDiaChiVaLucThanCuaHao(Hao hao, bool isHaoDong, bool isAmDong = false)
+        private string GetDiaChiVaLucThanCuaHao(Hao hao, bool isHaoDong, List<LucThan> lucThan, bool isAmDong = false)
         {
             string result = "";
             if (isHaoDong)
@@ -162,6 +164,12 @@ namespace DoanQueKinhDich.Business
             {
                 result += "   ";
             }
+
+            if (lucThan != null)
+            {
+                result += $", {lucThan[hao.Id - 1].Name}";
+            }
+            result = result.PadRight(43);
 
             return result;
         }
