@@ -174,7 +174,8 @@ namespace KinhDichCommon
 
             InitAllQue();
 
-            Sqlite.SetQueFromDb();
+            Sqlite.LoadQueInfoFromDb();
+            // Sqlite.UpdateQueBackToDb(All);
         }
 
         private static void SetQueThuan(Que que)
