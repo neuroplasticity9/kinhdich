@@ -219,8 +219,6 @@ namespace DoanQueKinhDich
             cbxThangCan.SelectedIndex = AmLich.ThangAm.Can.Id - 1;
             cbxThangChi.SelectedIndex = AmLich.ThangAm.Chi.Id - 1;
             _disableNgayThangChange = false;
-
-            btnGo.PerformClick();
         }
 
         private void linkAmLich_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -240,7 +238,7 @@ namespace DoanQueKinhDich
             Clipboard.SetText(txtQueDesc.Text);
         }
 
-        private void btnLayQue_Click(object sender, EventArgs e)
+        private void btnTungXuLayQue_Click(object sender, EventArgs e)
         {
             var formLayQue = new FormQueTungXu();
 
@@ -250,10 +248,11 @@ namespace DoanQueKinhDich
             {
                 AmLich = formLayQue.AmLich;
                 LoadQue(formLayQue);
+                radLucHao.Checked = true;
             }
         }
 
-        private void btnLayQueTheoNgay_Click(object sender, EventArgs e)
+        private void btnLayQueMaiHoa_Click(object sender, EventArgs e)
         {
             _formQueThoiGian.IsDone = false;
             _formQueThoiGian.ShowDialog(this);
@@ -262,6 +261,7 @@ namespace DoanQueKinhDich
             {
                 AmLich = _formQueThoiGian.AmLich;
                 LoadQue(_formQueThoiGian);
+                radMaiHoa.Checked = true;
             }
         }
 

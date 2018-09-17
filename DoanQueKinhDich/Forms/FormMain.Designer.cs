@@ -39,7 +39,7 @@
             this.cbxThangCan = new System.Windows.Forms.ComboBox();
             this.linkQueChu = new System.Windows.Forms.LinkLabel();
             this.linkQueBien = new System.Windows.Forms.LinkLabel();
-            this.btnLayQue = new System.Windows.Forms.Button();
+            this.btnTungXuLayQue = new System.Windows.Forms.Button();
             this.linkAmLich = new System.Windows.Forms.LinkLabel();
             this.btnCopy = new System.Windows.Forms.Button();
             this.btnLayQueMaiHoa = new System.Windows.Forms.Button();
@@ -228,15 +228,15 @@
             // 
             // btnLayQue
             // 
-            this.btnLayQue.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLayQue.Location = new System.Drawing.Point(17, 47);
-            this.btnLayQue.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLayQue.Name = "btnLayQue";
-            this.btnLayQue.Size = new System.Drawing.Size(240, 48);
-            this.btnLayQue.TabIndex = 0;
-            this.btnLayQue.Text = "Tung Xu Lấy Quẻ";
-            this.btnLayQue.UseVisualStyleBackColor = true;
-            this.btnLayQue.Click += new System.EventHandler(this.btnLayQue_Click);
+            this.btnTungXuLayQue.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTungXuLayQue.Location = new System.Drawing.Point(17, 47);
+            this.btnTungXuLayQue.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTungXuLayQue.Name = "btnLayQue";
+            this.btnTungXuLayQue.Size = new System.Drawing.Size(240, 48);
+            this.btnTungXuLayQue.TabIndex = 0;
+            this.btnTungXuLayQue.Text = "Tung Xu Lấy Quẻ";
+            this.btnTungXuLayQue.UseVisualStyleBackColor = true;
+            this.btnTungXuLayQue.Click += new System.EventHandler(this.btnTungXuLayQue_Click);
             // 
             // linkAmLich
             // 
@@ -275,7 +275,7 @@
             this.btnLayQueMaiHoa.TabIndex = 1;
             this.btnLayQueMaiHoa.Text = "Lấy Quẻ Mai Hoa";
             this.btnLayQueMaiHoa.UseVisualStyleBackColor = true;
-            this.btnLayQueMaiHoa.Click += new System.EventHandler(this.btnLayQueTheoNgay_Click);
+            this.btnLayQueMaiHoa.Click += new System.EventHandler(this.btnLayQueMaiHoa_Click);
             // 
             // groupBox2
             // 
@@ -355,7 +355,7 @@
             this.Controls.Add(this.btnLayQueMaiHoa);
             this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.linkAmLich);
-            this.Controls.Add(this.btnLayQue);
+            this.Controls.Add(this.btnTungXuLayQue);
             this.Controls.Add(this.linkQueBien);
             this.Controls.Add(this.linkQueChu);
             this.Controls.Add(this.txtQueDesc);
@@ -384,7 +384,7 @@
         private System.Windows.Forms.ComboBox cbxThangCan;
         private System.Windows.Forms.LinkLabel linkQueChu;
         private System.Windows.Forms.LinkLabel linkQueBien;
-        private System.Windows.Forms.Button btnLayQue;
+        private System.Windows.Forms.Button btnTungXuLayQue;
         private System.Windows.Forms.LinkLabel linkAmLich;
         private System.Windows.Forms.Button btnCopy;
         private System.Windows.Forms.Button btnLayQueMaiHoa;
