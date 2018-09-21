@@ -71,7 +71,7 @@
             this.txtQueDesc.Location = new System.Drawing.Point(17, 266);
             this.txtQueDesc.Margin = new System.Windows.Forms.Padding(2);
             this.txtQueDesc.Name = "txtQueDesc";
-            this.txtQueDesc.Size = new System.Drawing.Size(1737, 493);
+            this.txtQueDesc.Size = new System.Drawing.Size(1737, 537);
             this.txtQueDesc.TabIndex = 10;
             this.txtQueDesc.TabStop = false;
             this.txtQueDesc.Text = "";
@@ -202,7 +202,7 @@
             // 
             this.linkQueChu.AutoSize = true;
             this.linkQueChu.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkQueChu.Location = new System.Drawing.Point(49, 233);
+            this.linkQueChu.Location = new System.Drawing.Point(49, 229);
             this.linkQueChu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkQueChu.Name = "linkQueChu";
             this.linkQueChu.Size = new System.Drawing.Size(264, 27);
@@ -216,7 +216,7 @@
             // 
             this.linkQueBien.AutoSize = true;
             this.linkQueBien.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkQueBien.Location = new System.Drawing.Point(1081, 233);
+            this.linkQueBien.Location = new System.Drawing.Point(1081, 229);
             this.linkQueBien.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkQueBien.Name = "linkQueBien";
             this.linkQueBien.Size = new System.Drawing.Size(278, 27);
@@ -324,7 +324,7 @@
             // 
             this.linkQueHo.AutoSize = true;
             this.linkQueHo.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkQueHo.Location = new System.Drawing.Point(599, 233);
+            this.linkQueHo.Location = new System.Drawing.Point(599, 229);
             this.linkQueHo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkQueHo.Name = "linkQueHo";
             this.linkQueHo.Size = new System.Drawing.Size(250, 27);
@@ -346,7 +346,7 @@
             this.AcceptButton = this.btnGo;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1774, 779);
+            this.ClientSize = new System.Drawing.Size(1774, 823);
             this.Controls.Add(this.linkQueHo);
             this.Controls.Add(this.radMaiHoa);
             this.Controls.Add(this.radLucHao);
