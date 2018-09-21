@@ -184,7 +184,9 @@ namespace DoanQueKinhDich
 
             var sb = new StringBuilder();
             sb.AppendLine($"1. Ngoại quái: số {tongNgoaiQuai} % 8 = {queIndex.NgoaiQuaiIndex + 1} = quẻ {BatQuai.All[queIndex.NgoaiQuaiIndex].Name}");
+            sb.AppendLine();
             sb.AppendLine($"2. Nội quái:   số {tongNoiQuai} % 8 = {queIndex.NoiQuaiIndex + 1} = quẻ {BatQuai.All[queIndex.NoiQuaiIndex].Name}");
+            sb.AppendLine();
             sb.AppendLine($"3. Động hào:   ngoại quái {tongNgoaiQuai} + nội quái {tongNoiQuai}{GetGioHauThienDesc(amLich.GioAm)} = {tongNgoaiQuai + tongNoiQuai + chiNumber} % 6 = {GetHaoDongDesc(queIndex.HaoDongIndex)}");
 
             txtDesc.Text = sb.ToString();
@@ -226,7 +228,9 @@ namespace DoanQueKinhDich
 
             var sb = new StringBuilder();
             sb.AppendLine($"1. Ngoại quái: năm {GetNamDesc(amLich.NamAm)} + tháng {amLich.LunarMonth} + ngày {amLich.LunarDay} + số {soHoacChu} = {tongNgoaiQuai} % 8 = {queIndex.NgoaiQuaiIndex + 1} = quẻ {BatQuai.All[queIndex.NgoaiQuaiIndex].Name}");
+            sb.AppendLine();
             sb.AppendLine($"2. Nội quái:   năm {GetNamDesc(amLich.NamAm)} + tháng {amLich.LunarMonth} + ngày {amLich.LunarDay} + số {soHoacChu} + giờ {amLich.GioAm.Chi.Name} {amLich.GioAm.Chi.Id} = {tongNoiQuai} % 8 = {queIndex.NoiQuaiIndex + 1} = quẻ {BatQuai.All[queIndex.NoiQuaiIndex].Name}");
+            sb.AppendLine();
             sb.AppendLine($"3. Động hào:   tổng nội quái {tongNoiQuai} % 6 = {GetHaoDongDesc(queIndex.HaoDongIndex)}");
 
             txtDesc.Text = sb.ToString();
@@ -285,8 +289,8 @@ namespace DoanQueKinhDich
             ThienCan gioCan = amLich.GetCanCuaGio(gioChi);
             cbxGioCan.SelectedIndex = gioCan.Id - 1;
 
-            labelNgayAmLich.Text = $"Ngày âm lịch: {amLich.LunarYear}-{amLich.LunarMonth}-{amLich.LunarDay}";
             labelNgayDuongLich.Text = $"Ngày dương lịch: {amLich.SolarDate.Year}-{amLich.SolarDate.Month}-{amLich.SolarDate.Day}";
+            labelNgayAmLich.Text = $"Ngày âm lịch: {amLich.LunarYear}-{amLich.LunarMonth}-{amLich.LunarDay}";
         }
 
         private void uiDatePicker_ValueChanged(object sender, EventArgs e)
@@ -392,6 +396,17 @@ namespace DoanQueKinhDich
 
         private void txtSoHoacChu_TextChanged(object sender, EventArgs e)
         {
+            GetQue();
+        }
+
+        private void btnLoadCurrentDateTime_Click(object sender, EventArgs e)
+        {
+            var now = DateTime.Now;
+
+            uiDate.SelectionRange = new SelectionRange(now, now);
+            uiDatePicker.Value = now;
+            uiHour.Value = now;
+
             GetQue();
         }
     }
