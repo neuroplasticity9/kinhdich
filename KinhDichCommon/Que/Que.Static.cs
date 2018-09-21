@@ -12,27 +12,27 @@ namespace KinhDichCommon
     public partial class Que
     {
         #region "Static var and methods"
-        public static Que QueKien;
-        public static Que QueDoai;
-        public static Que QueLy;
-        public static Que QueChan;
-        public static Que QueTon;
-        public static Que QueKham;
-        public static Que QueCan;
-        public static Que QueKhon;
-
-        public static List<Que> TamQueThuan = new List<Que>();
-
-        public static List<Que> TamQueThuocKien = new List<Que>();
-        public static List<Que> TamQueThuocDoai = new List<Que>();
-        public static List<Que> TamQueThuocLy = new List<Que>();
-        public static List<Que> TamQueThuocChan = new List<Que>();
-        public static List<Que> TamQueThuocTon = new List<Que>();
-        public static List<Que> TamQueThuocKham = new List<Que>();
-        public static List<Que> TamQueThuocCan = new List<Que>();
-        public static List<Que> TamQueThuocKhon = new List<Que>();
-
-        public static List<Que> All = new List<Que>();
+        public static readonly Que QueKien;
+        public static readonly Que QueDoai;
+        public static readonly Que QueLy;
+        public static readonly Que QueChan;
+        public static readonly Que QueTon;
+        public static readonly Que QueKham;
+        public static readonly Que QueCan;
+        public static readonly Que QueKhon;
+                      
+        public static readonly List<Que> TamQueThuan = new List<Que>();
+                      
+        public static readonly List<Que> TamQueThuocKien = new List<Que>();
+        public static readonly List<Que> TamQueThuocDoai = new List<Que>();
+        public static readonly List<Que> TamQueThuocLy = new List<Que>();
+        public static readonly List<Que> TamQueThuocChan = new List<Que>();
+        public static readonly List<Que> TamQueThuocTon = new List<Que>();
+        public static readonly List<Que> TamQueThuocKham = new List<Que>();
+        public static readonly List<Que> TamQueThuocCan = new List<Que>();
+        public static readonly List<Que> TamQueThuocKhon = new List<Que>();
+                      
+        public static readonly List<Que> All = new List<Que>();
 
         static Que()
         {
