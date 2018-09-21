@@ -44,6 +44,12 @@ namespace DoanQueKinhDich.UserControls
         {
             InitializeComponent();
         }
+        
+        private void ucQue_Load(object sender, EventArgs e)
+        {
+            cbxNgoaiQuai.SelectedIndex = 0;
+            cbxNoiQuai.SelectedIndex = 0;
+        }
 
         public void ShowCacHao(ViTriHao viTriHao)
         {
@@ -156,12 +162,9 @@ namespace DoanQueKinhDich.UserControls
             uiNoiQuai.Visible = newValue;
             uiBienNgoaiQuai.Visible = newValue;
             uiBienNoiQuai.Visible = newValue;
-        }
 
-        private void ucQue_Load(object sender, EventArgs e)
-        {
-            cbxNgoaiQuai.SelectedIndex = 0;
-            cbxNoiQuai.SelectedIndex = 0;
+            labelTenChuQuai.Visible = newValue;
+            labelTenBienQuai.Visible = newValue;
         }
         
         private void UpdateNgoaiQuai()
@@ -185,6 +188,8 @@ namespace DoanQueKinhDich.UserControls
             chkHao5.Checked = cung.Duong2;
             chkHao4.Checked = cung.Duong1;
 
+            UpdateTenQuai(cbxNgoaiQuai, cbxNoiQuai, labelTenChuQuai);
+
             CheckedChanged?.Invoke(null, null);
         }
 
@@ -195,7 +200,18 @@ namespace DoanQueKinhDich.UserControls
             chkHao2.Checked = cung.Duong2;
             chkHao1.Checked = cung.Duong1;
 
+            UpdateTenQuai(cbxNgoaiQuai, cbxNoiQuai, labelTenChuQuai);
+
             CheckedChanged?.Invoke(null, null);
+        }
+
+        private void UpdateTenQuai(ComboBox ngoaiQuai, ComboBox noiQuai, Label labelTen)
+        {
+            if (ngoaiQuai.Visible && cbxBienNoiQuai.Visible && ngoaiQuai.SelectedIndex >= 0 && noiQuai.SelectedIndex >= 0)
+            {
+                var que = Que.GetQue(ngoaiQuai.SelectedIndex + 1, noiQuai.SelectedIndex + 1);
+                labelTen.Text = que.Name;
+            }
         }
 
         private void chkHao6Dong_CheckedChanged(object sender, EventArgs e)
@@ -252,6 +268,15 @@ namespace DoanQueKinhDich.UserControls
         private void chkHao4_VisibleChanged(object sender, EventArgs e)
         {
             UpdateNgoaiQuai();
+
+            if (chkHao6.Visible)
+            {
+                UpdateTenQuai(cbxNgoaiQuai, cbxNoiQuai, labelTenChuQuai);
+                UpdateTenQuai(cbxBienNgoaiQuai, cbxBienNoiQuai, labelTenBienQuai);
+
+                labelTenChuQuai.Visible = true;
+                labelTenBienQuai.Visible = true;
+            }
         }
 
         private void uiBienHao6_CheckedChanged(object sender, EventArgs e)
@@ -297,6 +322,8 @@ namespace DoanQueKinhDich.UserControls
             chkBienHao5.Checked = cung.Duong2;
             chkBienHao4.Checked = cung.Duong1;
 
+            UpdateTenQuai(cbxBienNgoaiQuai, cbxBienNoiQuai, labelTenBienQuai);
+
             CheckedChanged?.Invoke(null, null);
         }
 
@@ -306,6 +333,8 @@ namespace DoanQueKinhDich.UserControls
             chkBienHao3.Checked = cung.Duong3;
             chkBienHao2.Checked = cung.Duong2;
             chkBienHao1.Checked = cung.Duong1;
+
+            UpdateTenQuai(cbxBienNgoaiQuai, cbxBienNoiQuai, labelTenBienQuai);
 
             CheckedChanged?.Invoke(null, null);
         }

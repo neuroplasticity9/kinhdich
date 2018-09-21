@@ -68,10 +68,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtQueDesc.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQueDesc.Location = new System.Drawing.Point(17, 241);
+            this.txtQueDesc.Location = new System.Drawing.Point(17, 266);
             this.txtQueDesc.Margin = new System.Windows.Forms.Padding(2);
             this.txtQueDesc.Name = "txtQueDesc";
-            this.txtQueDesc.Size = new System.Drawing.Size(1737, 518);
+            this.txtQueDesc.Size = new System.Drawing.Size(1737, 493);
             this.txtQueDesc.TabIndex = 10;
             this.txtQueDesc.TabStop = false;
             this.txtQueDesc.Text = "";
@@ -92,7 +92,7 @@
             "Tân",
             "Nhâm",
             "Quý"});
-            this.cbxNgayCan.Location = new System.Drawing.Point(34, 132);
+            this.cbxNgayCan.Location = new System.Drawing.Point(35, 127);
             this.cbxNgayCan.Margin = new System.Windows.Forms.Padding(2);
             this.cbxNgayCan.MaxDropDownItems = 12;
             this.cbxNgayCan.Name = "cbxNgayCan";
@@ -118,7 +118,7 @@
             "Dậu",
             "Tuất",
             "Hợi"});
-            this.cbxNgayChi.Location = new System.Drawing.Point(145, 132);
+            this.cbxNgayChi.Location = new System.Drawing.Point(146, 127);
             this.cbxNgayChi.Margin = new System.Windows.Forms.Padding(2);
             this.cbxNgayChi.MaxDropDownItems = 12;
             this.cbxNgayChi.Name = "cbxNgayChi";
@@ -130,7 +130,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(31, 106);
+            this.label1.Location = new System.Drawing.Point(32, 101);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 21);
@@ -141,7 +141,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(31, 31);
+            this.label2.Location = new System.Drawing.Point(32, 27);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 21);
@@ -166,7 +166,7 @@
             "Dậu",
             "Tuất",
             "Hợi"});
-            this.cbxThangChi.Location = new System.Drawing.Point(145, 57);
+            this.cbxThangChi.Location = new System.Drawing.Point(146, 53);
             this.cbxThangChi.Margin = new System.Windows.Forms.Padding(2);
             this.cbxThangChi.MaxDropDownItems = 12;
             this.cbxThangChi.Name = "cbxThangChi";
@@ -190,7 +190,7 @@
             "Tân",
             "Nhâm",
             "Quý"});
-            this.cbxThangCan.Location = new System.Drawing.Point(34, 57);
+            this.cbxThangCan.Location = new System.Drawing.Point(35, 53);
             this.cbxThangCan.Margin = new System.Windows.Forms.Padding(2);
             this.cbxThangCan.MaxDropDownItems = 12;
             this.cbxThangCan.Name = "cbxThangCan";
@@ -202,7 +202,7 @@
             // 
             this.linkQueChu.AutoSize = true;
             this.linkQueChu.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkQueChu.Location = new System.Drawing.Point(49, 209);
+            this.linkQueChu.Location = new System.Drawing.Point(49, 233);
             this.linkQueChu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkQueChu.Name = "linkQueChu";
             this.linkQueChu.Size = new System.Drawing.Size(264, 27);
@@ -216,7 +216,7 @@
             // 
             this.linkQueBien.AutoSize = true;
             this.linkQueBien.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkQueBien.Location = new System.Drawing.Point(1081, 209);
+            this.linkQueBien.Location = new System.Drawing.Point(1081, 233);
             this.linkQueBien.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkQueBien.Name = "linkQueBien";
             this.linkQueBien.Size = new System.Drawing.Size(278, 27);
@@ -226,12 +226,12 @@
             this.linkQueBien.Visible = false;
             this.linkQueBien.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkQueBien_LinkClicked);
             // 
-            // btnLayQue
+            // btnTungXuLayQue
             // 
             this.btnTungXuLayQue.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTungXuLayQue.Location = new System.Drawing.Point(17, 47);
             this.btnTungXuLayQue.Margin = new System.Windows.Forms.Padding(2);
-            this.btnTungXuLayQue.Name = "btnLayQue";
+            this.btnTungXuLayQue.Name = "btnTungXuLayQue";
             this.btnTungXuLayQue.Size = new System.Drawing.Size(240, 48);
             this.btnTungXuLayQue.TabIndex = 0;
             this.btnTungXuLayQue.Text = "Tung Xu Lấy Quẻ";
@@ -290,7 +290,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(269, 191);
+            this.groupBox2.Size = new System.Drawing.Size(269, 208);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             // 
@@ -324,7 +324,7 @@
             // 
             this.linkQueHo.AutoSize = true;
             this.linkQueHo.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkQueHo.Location = new System.Drawing.Point(599, 209);
+            this.linkQueHo.Location = new System.Drawing.Point(599, 233);
             this.linkQueHo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkQueHo.Name = "linkQueHo";
             this.linkQueHo.Size = new System.Drawing.Size(250, 27);
@@ -338,7 +338,7 @@
             // 
             this.ucQueDich.Location = new System.Drawing.Point(592, 8);
             this.ucQueDich.Name = "ucQueDich";
-            this.ucQueDich.Size = new System.Drawing.Size(685, 198);
+            this.ucQueDich.Size = new System.Drawing.Size(685, 210);
             this.ucQueDich.TabIndex = 3;
             // 
             // FormMain
