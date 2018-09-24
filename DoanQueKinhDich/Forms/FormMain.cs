@@ -49,10 +49,17 @@ namespace DoanQueKinhDich
             linkQueBien.Visible = false;
 
             SetNgayThangComboboxes(DateTime.Now);
+            _isFirstLoadFinished = true;
 
             this.ucQueDich.CheckedChanged += new System.EventHandler(ucQueDich_CheckedChanged);
+            SetQueMaiHoa();
+        }
 
-            _isFirstLoadFinished = true;
+        private void SetQueMaiHoa()
+        {
+            AmLich = _formQueThoiGian.AmLich;
+            LoadQue(_formQueThoiGian);
+            radMaiHoa.Checked = true;
         }
 
         private void btnGo_Click(object sender, EventArgs e)

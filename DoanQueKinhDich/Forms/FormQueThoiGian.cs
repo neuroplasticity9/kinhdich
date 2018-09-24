@@ -11,6 +11,16 @@ namespace DoanQueKinhDich
         public FormQueThoiGian()
         {
             InitializeComponent();
+
+            radThoiGian.Checked = true;
+
+            ucQueDich.DisableAllControls();
+
+            SetChiCuaGio();
+
+            GetQue();
+
+            txtSoHoacChu.Focus();
         }
 
         public bool Hao6 => ucQueDich.Hao6;
@@ -58,15 +68,7 @@ namespace DoanQueKinhDich
         /// <param name="e"></param>
         private void Main_Load(object sender, EventArgs e)
         {
-            radThoiGian.Checked = true;
 
-            ucQueDich.DisableAllControls();
-
-            SetChiCuaGio();
-
-            GetQue();
-
-            txtSoHoacChu.Focus();
         }
 
         private void SetChiCuaGio()
@@ -119,6 +121,22 @@ namespace DoanQueKinhDich
         
         private void SetNoiQuaiNgoaiQuai(AmLich amLich)
         {
+            QueIndex queIndex = GetQueIndex(amLich);
+
+            ucQueDich.uiNgoaiQuai.SelectedIndex = queIndex.NgoaiQuaiIndex;
+            ucQueDich.uiNoiQuai.SelectedIndex = queIndex.NoiQuaiIndex;
+
+            ucQueDich.ResetHaoDong();
+            ucQueDich.uiIsHao1Dong.Checked = queIndex.HaoDongIndex == 1;
+            ucQueDich.uiIsHao2Dong.Checked = queIndex.HaoDongIndex == 2;
+            ucQueDich.uiIsHao3Dong.Checked = queIndex.HaoDongIndex == 3;
+            ucQueDich.uiIsHao4Dong.Checked = queIndex.HaoDongIndex == 4;
+            ucQueDich.uiIsHao5Dong.Checked = queIndex.HaoDongIndex == 5;
+            ucQueDich.uiIsHao6Dong.Checked = queIndex.HaoDongIndex == 0;
+        }
+
+        private QueIndex GetQueIndex(AmLich amLich)
+        {
             var queIndex = new QueIndex();
 
             switch (CachLayQue)
@@ -142,16 +160,7 @@ namespace DoanQueKinhDich
                     break;
             }
 
-            ucQueDich.uiNgoaiQuai.SelectedIndex = queIndex.NgoaiQuaiIndex;
-            ucQueDich.uiNoiQuai.SelectedIndex = queIndex.NoiQuaiIndex;
-
-            ucQueDich.ResetHaoDong();
-            ucQueDich.uiIsHao1Dong.Checked = queIndex.HaoDongIndex == 1;
-            ucQueDich.uiIsHao2Dong.Checked = queIndex.HaoDongIndex == 2;
-            ucQueDich.uiIsHao3Dong.Checked = queIndex.HaoDongIndex == 3;
-            ucQueDich.uiIsHao4Dong.Checked = queIndex.HaoDongIndex == 4;
-            ucQueDich.uiIsHao5Dong.Checked = queIndex.HaoDongIndex == 5;
-            ucQueDich.uiIsHao6Dong.Checked = queIndex.HaoDongIndex == 0;
+            return queIndex;
         }
 
         private QueIndex GetQueIndexBySoAndTime(string textCuaQuai, AmLich amLich)
