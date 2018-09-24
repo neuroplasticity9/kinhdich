@@ -20,9 +20,9 @@ namespace KinhDichCommon
         public static readonly Que QueKham;
         public static readonly Que QueCan;
         public static readonly Que QueKhon;
-
+                      
         public static readonly List<Que> TamQueThuan = new List<Que>();
-
+                      
         public static readonly List<Que> TamQueThuocKien = new List<Que>();
         public static readonly List<Que> TamQueThuocDoai = new List<Que>();
         public static readonly List<Que> TamQueThuocLy = new List<Que>();
@@ -31,7 +31,7 @@ namespace KinhDichCommon
         public static readonly List<Que> TamQueThuocKham = new List<Que>();
         public static readonly List<Que> TamQueThuocCan = new List<Que>();
         public static readonly List<Que> TamQueThuocKhon = new List<Que>();
-
+                      
         public static readonly List<Que> All = new List<Que>();
 
         static Que()
@@ -174,7 +174,8 @@ namespace KinhDichCommon
 
             InitAllQue();
 
-            Sqlite.SetQueFromDb();
+            Sqlite.LoadQueInfoFromDb();
+            // Sqlite.UpdateQueBackToDb(All);
         }
 
         private static void SetQueThuan(Que que)
@@ -323,6 +324,20 @@ namespace KinhDichCommon
         public static Que GetQue(BatQuai ngoaiQuai, BatQuai noiQuai)
         {
             return GetQue(ngoaiQuai.Duong3, ngoaiQuai.Duong2, ngoaiQuai.Duong1, noiQuai.Duong3, noiQuai.Duong2, noiQuai.Duong1);
+        }
+
+        /// <summary>
+        /// Lấy quẻ dựa trên ngoại quái và nội quái.
+        /// </summary>
+        /// <param name="ngoaiQuai"></param>
+        /// <param name="noiQuai"></param>
+        /// <returns></returns>
+        public static Que GetQue(int ngoaiQuaiId, int noiQuaiId)
+        {
+            var ngoaiQuai = BatQuai.All[ngoaiQuaiId - 1];
+            var noiQuai = BatQuai.All[noiQuaiId - 1];
+
+            return GetQue(ngoaiQuai, noiQuai);
         }
 
         /// <summary>

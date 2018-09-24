@@ -70,9 +70,9 @@
             // 
             // ucQueDich
             // 
-            this.ucQueDich.Location = new System.Drawing.Point(316, 75);
+            this.ucQueDich.Location = new System.Drawing.Point(316, 62);
             this.ucQueDich.Name = "ucQueDich";
-            this.ucQueDich.Size = new System.Drawing.Size(685, 189);
+            this.ucQueDich.Size = new System.Drawing.Size(685, 210);
             this.ucQueDich.TabIndex = 1;
             // 
             // FormQueTungXu

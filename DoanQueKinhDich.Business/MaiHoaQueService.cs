@@ -89,21 +89,11 @@ namespace DoanQueKinhDich.Business
             sb.AppendLine();
             sb.AppendLine();
 
-            sb.AppendLine($"{queChu.Name}: {queChu.TuongQue}");
-            sb.AppendLine();
-            if (queChu.Id != queHo.Id)
-            {
-                sb.AppendLine($"{queHo.Name}: {queHo.TuongQue}");
-                sb.AppendLine();
-            }
-            if (queBien != null)
-            {
-                sb.AppendLine($"{queBien.Name}: {queBien.TuongQue}");
-                sb.AppendLine();
-            }
+            AddTuongQue(sb, queChu, queBien, queHo);
 
             return sb.ToString();
         }
+
 
         protected string GetHaoDesc(Que que, Hao hao, bool isHaoDong)
         {

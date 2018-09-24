@@ -26,6 +26,9 @@ namespace KinhDichCommon
         public int QueId { get; set; }
         public string Url { get; set; }
         public string TuongQue { get; internal set; }
+        public string EnglishName { get; internal set; }
+        public string Unicode { get; internal set; }
+
         public NguHanh NguHanh { get; set; }
         public Que QueThuan { get; set; }
         public Hao Hao6 { get; set; }
@@ -193,6 +196,8 @@ namespace KinhDichCommon
                 Desc = this.Desc,
                 QueId = this.QueId,
                 Url = this.Url,
+                EnglishName = this.EnglishName,
+                Unicode = this.Unicode,
                 TuongQue = this.TuongQue,
                 QueThuan = this.QueThuan,
                 NguHanh = hanhCuaQue,

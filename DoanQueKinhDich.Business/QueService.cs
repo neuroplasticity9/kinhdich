@@ -68,7 +68,7 @@ namespace DoanQueKinhDich.Business
         public abstract string GetQueDesc();
 
 
-        #region "Private methods"
+        #region "protected methods"
 
 
         protected string GetNgayThang(NgayLayQue ngayLayQue, CachLayQue cachLayQue)
@@ -142,8 +142,7 @@ namespace DoanQueKinhDich.Business
 
             return $"   {que.Desc}";
         }
-
-
+        
         protected string GetHopXungString(Que que)
         {
             if (que == null)
@@ -162,8 +161,27 @@ namespace DoanQueKinhDich.Business
 
             return "";
         }
+        
+        protected void AddTuongQue(StringBuilder sb, Que queChu, Que queBien, Que queHo)
+        {
+            sb.AppendLine(GetTuongQueString(queChu));
+            sb.AppendLine();
+            if (queHo != null && queHo.Id != queChu.Id)
+            {
+                sb.AppendLine(GetTuongQueString(queHo));
+                sb.AppendLine();
+            }
+            if (queBien != null)
+            {
+                sb.AppendLine(GetTuongQueString(queBien));
+                sb.AppendLine();
+            }
+        }
 
-
+        private string GetTuongQueString(Que que)
+        {
+            return $"{que.Name} ({que.EnglishName}): {que.TuongQue}";
+        }
         #endregion
 
     }
