@@ -47,6 +47,7 @@ namespace DoanQueKinhDich.Business
             sb.Append("   QUẺ HỖ".PadRight(padRight));
             sb.Append(queBien != null ? "   QUẺ BIẾN" : "");
             sb.AppendLine();
+            AddLongHR(padRight, sb);
 
             sb.Append(GetTenQueMaiHoa(queChu).PadRight(padRight));
             sb.Append(GetTenQueMaiHoa(queHo).PadRight(padRight));
@@ -89,6 +90,7 @@ namespace DoanQueKinhDich.Business
             sb.AppendLine();
             sb.AppendLine();
 
+            AddLongHR(padRight, sb);
             AddTuongQue(sb, queChu, queHo, queBien);
 
             return sb.ToString();
