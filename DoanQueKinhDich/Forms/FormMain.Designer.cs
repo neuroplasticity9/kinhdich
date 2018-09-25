@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            this.btnGo = new System.Windows.Forms.Button();
             this.txtQueDesc = new System.Windows.Forms.RichTextBox();
             this.cbxNgayCan = new System.Windows.Forms.ComboBox();
             this.cbxNgayChi = new System.Windows.Forms.ComboBox();
@@ -48,19 +47,9 @@
             this.radMaiHoa = new System.Windows.Forms.RadioButton();
             this.linkQueHo = new System.Windows.Forms.LinkLabel();
             this.ucQueDich = new DoanQueKinhDich.UserControls.ucQue();
+            this.radVietDich = new System.Windows.Forms.RadioButton();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnGo
-            // 
-            this.btnGo.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGo.Location = new System.Drawing.Point(1305, 93);
-            this.btnGo.Name = "btnGo";
-            this.btnGo.Size = new System.Drawing.Size(230, 76);
-            this.btnGo.TabIndex = 6;
-            this.btnGo.Text = "Hiện Quẻ";
-            this.btnGo.UseVisualStyleBackColor = true;
-            this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
             // 
             // txtQueDesc
             // 
@@ -299,7 +288,7 @@
             this.radLucHao.AutoSize = true;
             this.radLucHao.Checked = true;
             this.radLucHao.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLucHao.Location = new System.Drawing.Point(1305, 49);
+            this.radLucHao.Location = new System.Drawing.Point(1309, 43);
             this.radLucHao.Name = "radLucHao";
             this.radLucHao.Size = new System.Drawing.Size(105, 25);
             this.radLucHao.TabIndex = 4;
@@ -312,7 +301,7 @@
             // 
             this.radMaiHoa.AutoSize = true;
             this.radMaiHoa.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radMaiHoa.Location = new System.Drawing.Point(1430, 49);
+            this.radMaiHoa.Location = new System.Drawing.Point(1309, 104);
             this.radMaiHoa.Name = "radMaiHoa";
             this.radMaiHoa.Size = new System.Drawing.Size(105, 25);
             this.radMaiHoa.TabIndex = 5;
@@ -341,12 +330,24 @@
             this.ucQueDich.Size = new System.Drawing.Size(685, 210);
             this.ucQueDich.TabIndex = 3;
             // 
+            // radVietDich
+            // 
+            this.radVietDich.AutoSize = true;
+            this.radVietDich.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radVietDich.Location = new System.Drawing.Point(1309, 163);
+            this.radVietDich.Name = "radVietDich";
+            this.radVietDich.Size = new System.Drawing.Size(127, 25);
+            this.radVietDich.TabIndex = 36;
+            this.radVietDich.Text = "Việt Dịch";
+            this.radVietDich.UseVisualStyleBackColor = true;
+            this.radVietDich.CheckedChanged += new System.EventHandler(this.radMaiHoa_CheckedChanged);
+            // 
             // FormMain
             // 
-            this.AcceptButton = this.btnGo;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1774, 823);
+            this.Controls.Add(this.radVietDich);
             this.Controls.Add(this.linkQueHo);
             this.Controls.Add(this.radMaiHoa);
             this.Controls.Add(this.radLucHao);
@@ -359,7 +360,6 @@
             this.Controls.Add(this.linkQueBien);
             this.Controls.Add(this.linkQueChu);
             this.Controls.Add(this.txtQueDesc);
-            this.Controls.Add(this.btnGo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMain";
             this.Padding = new System.Windows.Forms.Padding(3);
@@ -374,7 +374,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnGo;
         private System.Windows.Forms.RichTextBox txtQueDesc;
         private System.Windows.Forms.ComboBox cbxNgayCan;
         private System.Windows.Forms.ComboBox cbxNgayChi;
@@ -393,6 +392,7 @@
         private System.Windows.Forms.RadioButton radLucHao;
         private System.Windows.Forms.RadioButton radMaiHoa;
         private System.Windows.Forms.LinkLabel linkQueHo;
+        private System.Windows.Forms.RadioButton radVietDich;
     }
 }
 

@@ -50,8 +50,8 @@ namespace DoanQueKinhDich.Business
             sb.Append(queBien != null ? "   QUẺ BIẾN" : "");
             sb.AppendLine();
 
-            sb.Append(GetTenQueLong(queChu).PadRight(padRight));
-            sb.Append(GetTenQueLong(queBien));
+            sb.Append(GetTenQueLucHao(queChu).PadRight(padRight));
+            sb.Append(GetTenQueLucHao(queBien));
             sb.AppendLine();
 
             sb.Append(GetChiChuCuaQue(queChu).PadRight(padRight));
@@ -89,7 +89,7 @@ namespace DoanQueKinhDich.Business
             sb.AppendLine(GetTamHopCuc(queChu));
             sb.AppendLine();
 
-            AddTuongQue(sb, queChu, queBien, null);
+            AddTuongQue(sb, queChu, null, queBien);
 
             return sb.ToString();
         }

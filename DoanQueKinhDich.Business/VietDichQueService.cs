@@ -3,11 +3,23 @@ using System.Text;
 
 namespace DoanQueKinhDich.Business
 {
-    public class MaiHoaQueService : QueService
+    public class VietDichQueService : QueService
     {
+        public Que QueChuDoiDai { get; }
+        public Que QueHoDoiDai { get; }
+        public Que QueBienDoiDai { get; }
 
-        public MaiHoaQueService(IQueLayDuoc que) : base(que)
+        public VietDichQueService(IQueLayDuoc que) : base(que)
         {
+            QueChuDoiDai = KinhDichCommon.Que.GetQueDoiDai(QueChu);
+
+            QueHoDoiDai = KinhDichCommon.Que.GetQueHo(QueChuDoiDai);
+
+            if (que.CoQueBien())
+            {
+                //QueBienDoiDai = KinhDichCommon.Que.GetQueBien(QueChuDoiDai, que.Hao6Dong, que.Hao5Dong, que.Hao4Dong, que.Hao3Dong, que.Hao2Dong, que.Hao1Dong);
+                QueBienDoiDai = KinhDichCommon.Que.GetQueDoiDai(QueBien);
+            }
         }
 
         public override string GetQueDesc()
@@ -47,15 +59,32 @@ namespace DoanQueKinhDich.Business
             sb.Append("   QUẺ HỖ".PadRight(padRight));
             sb.Append(queBien != null ? "   QUẺ BIẾN" : "");
             sb.AppendLine();
+            AddLongHR(padRight, sb);
 
-            sb.Append(GetTenQueMaiHoa(queChu).PadRight(padRight));
-            sb.Append(GetTenQueMaiHoa(queHo).PadRight(padRight));
-            sb.Append(GetTenQueMaiHoa(queBien));
+            AddBodyDesc(queChu, queHo, queBien, isHao6Dong, isHao5Dong, isHao4Dong, isHao3Dong, isHao2Dong, isHao1Dong, sb, padRight);
             sb.AppendLine();
-            sb.Append(GetChiChuCuaQue(queChu).PadRight(padRight));
-            sb.Append(GetChiChuCuaQue(queHo).PadRight(padRight));
-            sb.Append(GetChiChuCuaQue(queBien));
             sb.AppendLine();
+            AddLongHR(padRight, sb);
+
+            AddBodyDesc(QueChuDoiDai, QueHoDoiDai, QueBienDoiDai, isHao1Dong, isHao2Dong, isHao3Dong, isHao4Dong, isHao5Dong, isHao6Dong, sb, padRight);
+            sb.AppendLine();
+            sb.AppendLine();
+            AddLongHR(padRight, sb);
+
+            AddTuongQue(sb, queChu, queHo, queBien);
+            AddLongHR(padRight, sb);
+            AddTuongQue(sb, QueChuDoiDai, QueHoDoiDai, QueBienDoiDai);
+
+            return sb.ToString();
+        }
+
+
+
+        private void AddBodyDesc(Que queChu, Que queHo, Que queBien, bool isHao6Dong, bool isHao5Dong, bool isHao4Dong, bool isHao3Dong, bool isHao2Dong, bool isHao1Dong, StringBuilder sb, int padRight)
+        {
+            sb.Append(GetTenQueVietDich(queChu).PadRight(padRight));
+            sb.Append(GetTenQueVietDich(queHo).PadRight(padRight));
+            sb.Append(GetTenQueVietDich(queBien));
             sb.AppendLine();
 
             sb.Append(GetHaoDesc(queChu, queChu.Hao6, isHao6Dong).PadRight(padRight));
@@ -86,12 +115,6 @@ namespace DoanQueKinhDich.Business
             sb.Append(GetHaoDesc(queChu, queChu.Hao1, isHao1Dong).PadRight(padRight));
             sb.Append(GetHaoDesc(queHo, queHo.Hao1, false).PadRight(padRight));
             sb.Append(queBien != null ? GetHaoDesc(queBien, queBien.Hao1, isHao1Dong) : "");
-            sb.AppendLine();
-            sb.AppendLine();
-
-            AddTuongQue(sb, queChu, queHo, queBien);
-
-            return sb.ToString();
         }
 
         protected string GetHaoDesc(Que que, Hao hao, bool isHaoDong)
@@ -127,39 +150,6 @@ namespace DoanQueKinhDich.Business
 
             result += $"{hao.AmDuongString}";
             result = result.PadRight(18);
-
-            if (hao.Id == 5)
-            {
-                if (que == QueChu)
-                {
-                    result += QueChu.IsTheQuaiOTren ? "Quẻ thể" : "Quẻ dụng";
-                }
-                else if (que == QueHo)
-                {
-                    result += QueChu.IsTheQuaiOTren ? "Quẻ hỗ của thể" : "Quẻ hỗ của dụng";
-                }
-                else
-                {
-                    result += QueChu.IsTheQuaiOTren ? "Quẻ thể" : "Quẻ biến";
-                }
-            }
-            else if (hao.Id == 2)
-            {
-                if (que == QueChu)
-                {
-                    result += QueChu.IsTheQuaiOTren ? "Quẻ dụng" : "Quẻ thể";
-                }
-                else if (que == QueHo)
-                {
-                    result += QueChu.IsTheQuaiOTren ? "Quẻ hỗ của dụng" : "Quẻ hỗ của thể";
-                }
-                else
-                {
-                    result += QueChu.IsTheQuaiOTren ? "Quẻ biến" : "Quẻ thể";
-                }
-            }
-            result = result.PadRight(28);
-
 
             return result;
         }

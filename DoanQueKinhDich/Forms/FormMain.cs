@@ -52,24 +52,36 @@ namespace DoanQueKinhDich
             _isFirstLoadFinished = true;
 
             this.ucQueDich.CheckedChanged += new System.EventHandler(ucQueDich_CheckedChanged);
-            SetQueMaiHoa();
+            SetQueDefault();
         }
 
-        private void SetQueMaiHoa()
+        private void SetQueDefault()
         {
             AmLich = _formQueThoiGian.AmLich;
             LoadQue(_formQueThoiGian);
-            radMaiHoa.Checked = true;
+            radVietDich.Checked = true;
         }
 
-        private void btnGo_Click(object sender, EventArgs e)
+        private void DisplayQueToUI()
         {
             if (!_isFirstLoadFinished)
             {
                 return;
             }
 
-            QueService queService = radLucHao.Checked ? new LucHaoQueService(this) : new MaiHoaQueService(this) as QueService;
+            QueService queService = null;
+            if (radLucHao.Checked)
+            {
+                queService = new LucHaoQueService(this);
+            }
+            else if (radMaiHoa.Checked)
+            {
+                queService = new MaiHoaQueService(this);
+            }
+            else
+            {
+                queService = new VietDichQueService(this);
+            }
 
             linkQueChu.Visible = true;
             linkQueChu.Text = GetNameForLink(queService.QueChu);
@@ -150,7 +162,7 @@ namespace DoanQueKinhDich
 
         private void ucQueDich_CheckedChanged(object sender, EventArgs e)
         {
-            btnGo.PerformClick();
+            DisplayQueToUI();
         }
 
         private void SetNgayThangComboboxes(DateTime ngayLayQue)
@@ -279,7 +291,7 @@ namespace DoanQueKinhDich
         /// <param name="e"></param>
         private void radMaiHoa_CheckedChanged(object sender, EventArgs e)
         {
-            btnGo.PerformClick();
+            DisplayQueToUI();
         }
 
         private void cbxThangCan_SelectedIndexChanged(object sender, EventArgs e)
@@ -293,7 +305,7 @@ namespace DoanQueKinhDich
             var comboboxToUpdate = cbxThangChi;
             CapNhatChi(combobox, comboboxToUpdate);
             CachLayQue = CachLayQue.Manual;
-            btnGo.PerformClick();
+            DisplayQueToUI();
         }
 
         private void cbxThangChi_SelectedIndexChanged(object sender, EventArgs e)
@@ -307,7 +319,7 @@ namespace DoanQueKinhDich
             var comboboxToUpdate = cbxThangCan;
             CapNhatCan(combobox, comboboxToUpdate);
             CachLayQue = CachLayQue.Manual;
-            btnGo.PerformClick();
+            DisplayQueToUI();
         }
 
         private void cbxNgayCan_SelectedIndexChanged(object sender, EventArgs e)
@@ -321,7 +333,7 @@ namespace DoanQueKinhDich
             var comboboxToUpdate = cbxNgayChi;
             CapNhatChi(combobox, comboboxToUpdate);
             CachLayQue = CachLayQue.Manual;
-            btnGo.PerformClick();
+            DisplayQueToUI();
         }
 
         private void cbxNgayChi_SelectedIndexChanged(object sender, EventArgs e)
@@ -335,7 +347,7 @@ namespace DoanQueKinhDich
             var comboboxToUpdate = cbxNgayCan;
             CapNhatCan(combobox, comboboxToUpdate);
             CachLayQue = CachLayQue.Manual;
-            btnGo.PerformClick();
+            DisplayQueToUI();
         }
 
         /// <summary>
@@ -387,6 +399,5 @@ namespace DoanQueKinhDich
                 }
             }
         }
-
     }
 }
