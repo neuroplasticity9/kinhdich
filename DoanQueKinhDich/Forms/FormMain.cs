@@ -105,7 +105,7 @@ namespace DoanQueKinhDich
                 linkQueBien.Text = GetNameForLink(queService.QueBien);
                 _queBienUrl = GetUrl(queService.QueBien.Name, queService.QueBien.QueId);
 
-                if (radMaiHoa.Checked)
+                if (!radLucHao.Checked)
                 {
                     linkQueHo.Visible = true;
                     linkQueHo.Text = GetNameForLink(queService.QueHo);
@@ -280,7 +280,7 @@ namespace DoanQueKinhDich
             {
                 AmLich = _formQueThoiGian.AmLich;
                 LoadQue(_formQueThoiGian);
-                radMaiHoa.Checked = true;
+                radVietDich.Checked = true;
             }
         }
 

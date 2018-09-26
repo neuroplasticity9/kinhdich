@@ -8,6 +8,11 @@ namespace DoanQueKinhDich
 {
     public partial class FormQueThoiGian : Form, IQueLayDuoc
     {
+        private bool _useCurrentTime = true;
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
         public FormQueThoiGian()
         {
             InitializeComponent();
@@ -20,6 +25,7 @@ namespace DoanQueKinhDich
 
             GetQue();
 
+            btnLoadCurrentDateTime.PerformClick();
             txtSoHoacChu.Focus();
         }
 
@@ -38,6 +44,7 @@ namespace DoanQueKinhDich
         public bool Hao1Dong => ucQueDich.Hao1Dong;
 
         public bool IsDone { get; set; } = false;
+        public DateTime DuongLich { get; private set; } = DateTime.Now;
         public AmLich AmLich { get; private set; }
         public NgayLayQue NgayLayQue => AmLich.ToNgayLayQue();
         public CachLayQue CachLayQue { get; private set; }
@@ -316,8 +323,12 @@ namespace DoanQueKinhDich
         {
             // Cập nhật giờ dựa vào địa chi đã chọn.
             var datePart = uiHour.Value.Date;
-            var chiGioIndex = cbxGioChi.SelectedIndex;
-            var hourPart = TimeSpan.FromHours(chiGioIndex * 2);
+
+            var chiGioIndexCurrent = DuongLich.ToAmLich().GetCanChiGio().Chi.Id - 1;
+            var chiGioIndexSelected = cbxGioChi.SelectedIndex;
+            var diffHour = TimeSpan.FromHours((chiGioIndexSelected- chiGioIndexCurrent) * 2);
+            var hourPart = DuongLich.TimeOfDay + diffHour;
+
             uiHour.Value = datePart + hourPart;
 
             GetQue();
@@ -412,6 +423,7 @@ namespace DoanQueKinhDich
         {
             var now = DateTime.Now;
 
+            DuongLich = now;
             uiDate.SelectionRange = new SelectionRange(now, now);
             uiDatePicker.Value = now;
             uiHour.Value = now;
