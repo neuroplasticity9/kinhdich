@@ -17,13 +17,11 @@ namespace DoanQueKinhDich
         {
             InitializeComponent();
 
-            radThoiGian.Checked = true;
-
             ucQueDich.DisableAllControls();
 
             SetChiCuaGio();
 
-            GetQue();
+            radThoiGian.Checked = true;
 
             btnLoadCurrentDateTime.PerformClick();
             txtSoHoacChu.Focus();
@@ -345,16 +343,15 @@ namespace DoanQueKinhDich
 
             chkUseNamCan.Enabled = true;
             txtSoHoacChu.Enabled = true;
-            txtQueNgoai1.Text = "";
             txtQueNgoai1.Enabled = false;
-            txtQueNgoai2.Text = "";
             txtQueNgoai2.Enabled = false;
-            txtQueNoi2.Text = "";
             txtQueNoi2.Enabled = false;
             radTienThien.Enabled = false;
             radHauThien.Enabled = false;
 
             txtSoHoacChu.Focus();
+
+            GetQue();
         }
 
         private void radNgoaiSo_CheckedChanged(object sender, EventArgs e)
@@ -363,16 +360,15 @@ namespace DoanQueKinhDich
 
             chkUseNamCan.Enabled = false;
             txtSoHoacChu.Enabled = false;
-            txtQueNgoai1.Text = "";
             txtQueNgoai1.Enabled = true;
-            txtQueNgoai2.Text = "";
             txtQueNgoai2.Enabled = false;
-            txtQueNoi2.Text = "";
             txtQueNoi2.Enabled = false;
             radTienThien.Enabled = false;
             radHauThien.Enabled = false;
             
             txtQueNgoai1.Focus();
+
+            GetQue();
         }
 
         private void radioNgoaiSoNoiSo_CheckedChanged(object sender, EventArgs e)
@@ -381,17 +377,16 @@ namespace DoanQueKinhDich
 
             chkUseNamCan.Enabled = false;
             txtSoHoacChu.Enabled = false;
-            txtQueNgoai1.Text = "";
             txtQueNgoai1.Enabled = false;
-            txtQueNgoai2.Text = "";
             txtQueNgoai2.Enabled = true;
-            txtQueNoi2.Text = "";
             txtQueNoi2.Enabled = true;
             radTienThien.Enabled = true;
             radHauThien.Enabled = true;
             radTienThien.Checked = true;
 
             txtQueNgoai2.Focus();
+
+            GetQue();
         }
 
         /// <summary>

@@ -43,10 +43,7 @@ namespace DoanQueKinhDich.UserControls
         public ucQue()
         {
             InitializeComponent();
-        }
-        
-        private void ucQue_Load(object sender, EventArgs e)
-        {
+
             cbxNgoaiQuai.SelectedIndex = 0;
             cbxNoiQuai.SelectedIndex = 0;
         }

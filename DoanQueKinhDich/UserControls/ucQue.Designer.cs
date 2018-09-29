@@ -506,7 +506,6 @@
             this.Controls.Add(this.uiGroupBox);
             this.Name = "ucQue";
             this.Size = new System.Drawing.Size(679, 208);
-            this.Load += new System.EventHandler(this.ucQue_Load);
             this.uiGroupBox.ResumeLayout(false);
             this.uiGroupBox.PerformLayout();
             this.ResumeLayout(false);
