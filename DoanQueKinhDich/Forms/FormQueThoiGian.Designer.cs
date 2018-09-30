@@ -59,6 +59,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.radAlphaId = new System.Windows.Forms.RadioButton();
+            this.radStringLen = new System.Windows.Forms.RadioButton();
             this.label8 = new System.Windows.Forms.Label();
             this.txtSoHoacChu = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -69,6 +72,7 @@
             this.btnLoadCurrentDateTime = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -525,6 +529,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.panel2);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtSoHoacChu);
             this.groupBox1.Controls.Add(this.panel1);
@@ -543,9 +548,44 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(675, 401);
+            this.groupBox1.Size = new System.Drawing.Size(675, 433);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.radAlphaId);
+            this.panel2.Controls.Add(this.radStringLen);
+            this.panel2.Location = new System.Drawing.Point(5, 381);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(631, 46);
+            this.panel2.TabIndex = 49;
+            // 
+            // radAlphaId
+            // 
+            this.radAlphaId.AutoSize = true;
+            this.radAlphaId.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radAlphaId.Location = new System.Drawing.Point(211, 11);
+            this.radAlphaId.Name = "radAlphaId";
+            this.radAlphaId.Size = new System.Drawing.Size(182, 25);
+            this.radAlphaId.TabIndex = 1;
+            this.radAlphaId.Text = "Lấy ID chữ cái";
+            this.radAlphaId.UseVisualStyleBackColor = true;
+            this.radAlphaId.CheckedChanged += new System.EventHandler(this.radTienThien_CheckedChanged);
+            // 
+            // radStringLen
+            // 
+            this.radStringLen.AutoSize = true;
+            this.radStringLen.Checked = true;
+            this.radStringLen.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radStringLen.Location = new System.Drawing.Point(45, 11);
+            this.radStringLen.Name = "radStringLen";
+            this.radStringLen.Size = new System.Drawing.Size(127, 25);
+            this.radStringLen.TabIndex = 0;
+            this.radStringLen.TabStop = true;
+            this.radStringLen.Text = "Đếm ký tự";
+            this.radStringLen.UseVisualStyleBackColor = true;
+            this.radStringLen.CheckedChanged += new System.EventHandler(this.radTienThien_CheckedChanged);
             // 
             // label8
             // 
@@ -573,14 +613,14 @@
             this.panel1.Controls.Add(this.radTienThien);
             this.panel1.Location = new System.Drawing.Point(192, 311);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(444, 67);
+            this.panel1.Size = new System.Drawing.Size(444, 46);
             this.panel1.TabIndex = 48;
             // 
             // radHauThien
             // 
             this.radHauThien.AutoSize = true;
             this.radHauThien.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radHauThien.Location = new System.Drawing.Point(249, 21);
+            this.radHauThien.Location = new System.Drawing.Point(249, 11);
             this.radHauThien.Name = "radHauThien";
             this.radHauThien.Size = new System.Drawing.Size(127, 25);
             this.radHauThien.TabIndex = 1;
@@ -593,7 +633,7 @@
             this.radTienThien.AutoSize = true;
             this.radTienThien.Checked = true;
             this.radTienThien.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTienThien.Location = new System.Drawing.Point(68, 21);
+            this.radTienThien.Location = new System.Drawing.Point(68, 11);
             this.radTienThien.Name = "radTienThien";
             this.radTienThien.Size = new System.Drawing.Size(138, 25);
             this.radTienThien.TabIndex = 0;
@@ -657,6 +697,8 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -702,6 +744,9 @@
         private System.Windows.Forms.TextBox txtSoHoacChu;
         private System.Windows.Forms.RichTextBox txtDesc;
         private System.Windows.Forms.Button btnLoadCurrentDateTime;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.RadioButton radAlphaId;
+        private System.Windows.Forms.RadioButton radStringLen;
     }
 }
 

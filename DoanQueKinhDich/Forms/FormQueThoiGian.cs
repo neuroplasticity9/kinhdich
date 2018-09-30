@@ -8,7 +8,7 @@ namespace DoanQueKinhDich
 {
     public partial class FormQueThoiGian : Form, IQueLayDuoc
     {
-        private bool _useCurrentTime = true;
+        private bool _dontUpdateBack = false;
 
         /// <summary>
         /// Constructor.
@@ -74,30 +74,6 @@ namespace DoanQueKinhDich
         private void Main_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void SetChiCuaGio()
-        {
-            var currentTime = uiHour.Value.TimeOfDay;
-
-            var chiIndex = 0;
-            if (currentTime <= TimeSpan.FromHours(1))
-            {
-                chiIndex = 0;
-            }
-            else
-            {
-                for (int i = 1; i < DiaChi.All.Count; i++)
-                {
-                    if (currentTime <= TimeSpan.FromHours(i * 2 + 1))
-                    {
-                        chiIndex = i;
-                        break;
-                    }
-                }
-            }
-
-            cbxGioChi.SelectedIndex = chiIndex;
         }
 
         private void btnGo_Click(object sender, EventArgs e)
@@ -222,8 +198,22 @@ namespace DoanQueKinhDich
             }
             else
             {
-                // Đếm số chữ cái trong đoạn text.
-                return textCuaQuai.Replace(" ", "").Length;
+                if (radAlphaId.Checked)
+                {
+                    var newText = textCuaQuai.Replace(" ", "").ToUpperInvariant();
+                    var result = 0;
+                    foreach (var ch in newText.ToCharArray())
+                    {
+                        result += result + (int)ch - 64;
+                    }
+
+                    return result;
+                }
+                else
+                {
+                    // Đếm số chữ cái trong đoạn text.
+                    return textCuaQuai.Replace(" ", "").Length;
+                }
             }
         }
 
@@ -317,24 +307,59 @@ namespace DoanQueKinhDich
             GetQue();
         }
 
-        private void cbxGioChi_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Cập nhật giờ dựa vào địa chi đã chọn.
-            var datePart = uiHour.Value.Date;
-
-            var chiGioIndexCurrent = DuongLich.ToAmLich().GetCanChiGio().Chi.Id - 1;
-            var chiGioIndexSelected = cbxGioChi.SelectedIndex;
-            var diffHour = TimeSpan.FromHours((chiGioIndexSelected- chiGioIndexCurrent) * 2);
-            var hourPart = DuongLich.TimeOfDay + diffHour;
-
-            uiHour.Value = datePart + hourPart;
-
-            GetQue();
-        }
-
         private void uiHour_ValueChanged(object sender, EventArgs e)
         {
+            _dontUpdateBack = true;
+
             SetChiCuaGio();
+
+            _dontUpdateBack = false;
+        }
+
+        private void SetChiCuaGio()
+        {
+            var currentTime = uiHour.Value.TimeOfDay;
+
+            var chiIndex = 0;
+            if (currentTime <= TimeSpan.FromHours(1))
+            {
+                chiIndex = 0;
+            }
+            else
+            {
+                for (int i = 1; i < DiaChi.All.Count; i++)
+                {
+                    if (currentTime <= TimeSpan.FromHours(i * 2 + 1))
+                    {
+                        chiIndex = i;
+                        break;
+                    }
+                }
+            }
+
+            cbxGioChi.SelectedIndex = chiIndex;
+        }
+
+        private void cbxGioChi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!_dontUpdateBack)
+            {
+                // Cập nhật giờ dựa vào địa chi đã chọn.
+                var datePart = uiHour.Value.Date;
+                var chiGioIndexCurrent = DuongLich.ToAmLich().GetCanChiGio().Chi.Id - 1;
+                var chiGioIndexSelected = cbxGioChi.SelectedIndex;
+                var diffHour = TimeSpan.FromHours((chiGioIndexSelected - chiGioIndexCurrent) * 2);
+                var hourPart = DuongLich.TimeOfDay + diffHour;
+                if (chiGioIndexSelected == 0) // Gio Ti
+                {
+                    // Cong 1h de hien thi 0h, not 11PM.
+                    hourPart += TimeSpan.FromHours(1);
+                }
+
+                uiHour.Value = datePart + hourPart;
+            }
+
+            GetQue();
         }
 
         private void radThoiGian_CheckedChanged(object sender, EventArgs e)
@@ -400,7 +425,7 @@ namespace DoanQueKinhDich
         }
 
         /// <summary>
-        /// Note: events for 2 radio buttons.
+        /// Note: events for 4 radio buttons.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

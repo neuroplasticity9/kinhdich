@@ -43,9 +43,6 @@ namespace DoanQueKinhDich.UserControls
         public ucQue()
         {
             InitializeComponent();
-
-            cbxNgoaiQuai.SelectedIndex = 0;
-            cbxNoiQuai.SelectedIndex = 0;
         }
 
         public void ShowCacHao(ViTriHao viTriHao)

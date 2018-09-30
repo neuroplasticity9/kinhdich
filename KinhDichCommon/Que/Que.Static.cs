@@ -174,9 +174,6 @@ namespace KinhDichCommon
             All.AddRange(TamQueThuocKhon);
 
             InitAllQue();
-            
-            Sqlite.LoadQueInfoFromDb();
-            // Sqlite.UpdateQueBackToDb(All);
         }
 
         private static void SetQueThuan(Que que)
