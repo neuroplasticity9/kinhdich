@@ -192,7 +192,7 @@ namespace DoanQueKinhDich.Business
 
         private string GetTuongQueString(Que que)
         {
-            return $"{que.Name} ({que.EnglishName}): {que.TuongQue}";
+            return $"{que.Name} ({que.EnglishName} - {que.TuongQue}): {que.YNghia}{Environment.NewLine}{que.ViDu}";
         }
 
         protected void AddLongHR(int padRight, StringBuilder sb)
