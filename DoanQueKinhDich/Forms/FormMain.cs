@@ -399,5 +399,12 @@ namespace DoanQueKinhDich
                 }
             }
         }
+
+        private void btnHoc_Click(object sender, EventArgs e)
+        {
+            var form = new FormQueHoc();
+
+            form.ShowDialog(this);
+        }
     }
 }

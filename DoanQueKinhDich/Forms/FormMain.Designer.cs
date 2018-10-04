@@ -48,6 +48,7 @@
             this.linkQueHo = new System.Windows.Forms.LinkLabel();
             this.ucQueDich = new DoanQueKinhDich.UserControls.ucQue();
             this.radVietDich = new System.Windows.Forms.RadioButton();
+            this.btnHoc = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -218,7 +219,7 @@
             // btnTungXuLayQue
             // 
             this.btnTungXuLayQue.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTungXuLayQue.Location = new System.Drawing.Point(17, 47);
+            this.btnTungXuLayQue.Location = new System.Drawing.Point(17, 18);
             this.btnTungXuLayQue.Margin = new System.Windows.Forms.Padding(2);
             this.btnTungXuLayQue.Name = "btnTungXuLayQue";
             this.btnTungXuLayQue.Size = new System.Drawing.Size(240, 48);
@@ -257,7 +258,7 @@
             // btnLayQueMaiHoa
             // 
             this.btnLayQueMaiHoa.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLayQueMaiHoa.Location = new System.Drawing.Point(17, 121);
+            this.btnLayQueMaiHoa.Location = new System.Drawing.Point(17, 92);
             this.btnLayQueMaiHoa.Margin = new System.Windows.Forms.Padding(2);
             this.btnLayQueMaiHoa.Name = "btnLayQueMaiHoa";
             this.btnLayQueMaiHoa.Size = new System.Drawing.Size(240, 48);
@@ -342,11 +343,24 @@
             this.radVietDich.UseVisualStyleBackColor = true;
             this.radVietDich.CheckedChanged += new System.EventHandler(this.radMaiHoa_CheckedChanged);
             // 
+            // btnHoc
+            // 
+            this.btnHoc.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHoc.Location = new System.Drawing.Point(17, 165);
+            this.btnHoc.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHoc.Name = "btnHoc";
+            this.btnHoc.Size = new System.Drawing.Size(240, 48);
+            this.btnHoc.TabIndex = 37;
+            this.btnHoc.Text = "Học 64 Quẻ";
+            this.btnHoc.UseVisualStyleBackColor = true;
+            this.btnHoc.Click += new System.EventHandler(this.btnHoc_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1774, 823);
+            this.Controls.Add(this.btnHoc);
             this.Controls.Add(this.radVietDich);
             this.Controls.Add(this.linkQueHo);
             this.Controls.Add(this.radMaiHoa);
@@ -393,6 +407,7 @@
         private System.Windows.Forms.RadioButton radMaiHoa;
         private System.Windows.Forms.LinkLabel linkQueHo;
         private System.Windows.Forms.RadioButton radVietDich;
+        private System.Windows.Forms.Button btnHoc;
     }
 }
 
