@@ -26,6 +26,9 @@ namespace DoanQueKinhDich
 
         private void btnGo_Click(object sender, EventArgs e)
         {
+            labelKetQua.Text = "";
+            txtDesc.Text = "";
+
             var rand = new Random(DateTime.Now.Millisecond);
             var id = rand.Next(100000) % 64;
 
