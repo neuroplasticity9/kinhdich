@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQueHoc));
             this.btnGo = new System.Windows.Forms.Button();
             this.labelKetQua = new System.Windows.Forms.Label();
-            this.ucQueDon = new DoanQueKinhDich.UserControls.ucQueDon();
             this.btnShowResult = new System.Windows.Forms.Button();
             this.txtDesc = new System.Windows.Forms.RichTextBox();
+            this.ucQueDon = new DoanQueKinhDich.UserControls.ucQueDon();
             this.SuspendLayout();
             // 
             // btnGo
@@ -57,13 +57,6 @@
             this.labelKetQua.Size = new System.Drawing.Size(87, 21);
             this.labelKetQua.TabIndex = 19;
             this.labelKetQua.Text = "Kết quả";
-            // 
-            // ucQueDon
-            // 
-            this.ucQueDon.Location = new System.Drawing.Point(264, 90);
-            this.ucQueDon.Name = "ucQueDon";
-            this.ucQueDon.Size = new System.Drawing.Size(52, 154);
-            this.ucQueDon.TabIndex = 20;
             // 
             // btnShowResult
             // 
@@ -89,6 +82,14 @@
             this.txtDesc.TabIndex = 22;
             this.txtDesc.TabStop = false;
             this.txtDesc.Text = "";
+            // 
+            // ucQueDon
+            // 
+            this.ucQueDon.Location = new System.Drawing.Point(249, 87);
+            this.ucQueDon.Name = "ucQueDon";
+            this.ucQueDon.Que = null;
+            this.ucQueDon.Size = new System.Drawing.Size(84, 169);
+            this.ucQueDon.TabIndex = 20;
             // 
             // FormQueHoc
             // 

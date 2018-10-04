@@ -30,9 +30,9 @@ namespace DoanQueKinhDich
             txtDesc.Text = "";
 
             var rand = new Random(DateTime.Now.Millisecond);
-            var id = rand.Next(100000) % 64;
+            var index = rand.Next(100000) % 64;
 
-            var que = Que.All[id];
+            var que = Que.All[index];
             ucQueDon.SetQue(que);
         }
 
