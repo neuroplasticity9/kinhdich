@@ -67,9 +67,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.radHauThien = new System.Windows.Forms.RadioButton();
             this.radTienThien = new System.Windows.Forms.RadioButton();
-            this.ucQueDich = new DoanQueKinhDich.UserControls.ucQue();
             this.txtDesc = new System.Windows.Forms.RichTextBox();
             this.btnLoadCurrentDateTime = new System.Windows.Forms.Button();
+            this.ucQueDich = new DoanQueKinhDich.UserControls.ucQue();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -79,11 +79,11 @@
             // btnGo
             // 
             this.btnGo.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGo.Location = new System.Drawing.Point(1048, 418);
+            this.btnGo.Location = new System.Drawing.Point(1009, 418);
             this.btnGo.Name = "btnGo";
-            this.btnGo.Size = new System.Drawing.Size(163, 47);
+            this.btnGo.Size = new System.Drawing.Size(202, 47);
             this.btnGo.TabIndex = 3;
-            this.btnGo.Text = "Lấy Quẻ";
+            this.btnGo.Text = "Lấy Quẻ (F1)";
             this.btnGo.UseVisualStyleBackColor = true;
             this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
             // 
@@ -642,13 +642,6 @@
             this.radTienThien.UseVisualStyleBackColor = true;
             this.radTienThien.CheckedChanged += new System.EventHandler(this.radTienThien_CheckedChanged);
             // 
-            // ucQueDich
-            // 
-            this.ucQueDich.Location = new System.Drawing.Point(18, 448);
-            this.ucQueDich.Name = "ucQueDich";
-            this.ucQueDich.Size = new System.Drawing.Size(695, 214);
-            this.ucQueDich.TabIndex = 2;
-            // 
             // txtDesc
             // 
             this.txtDesc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -666,13 +659,20 @@
             // btnLoadCurrentDateTime
             // 
             this.btnLoadCurrentDateTime.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoadCurrentDateTime.Location = new System.Drawing.Point(741, 418);
+            this.btnLoadCurrentDateTime.Location = new System.Drawing.Point(717, 418);
             this.btnLoadCurrentDateTime.Name = "btnLoadCurrentDateTime";
-            this.btnLoadCurrentDateTime.Size = new System.Drawing.Size(227, 47);
+            this.btnLoadCurrentDateTime.Size = new System.Drawing.Size(268, 47);
             this.btnLoadCurrentDateTime.TabIndex = 12;
-            this.btnLoadCurrentDateTime.Text = "Ngày giờ hiện tại";
+            this.btnLoadCurrentDateTime.Text = "Ngày giờ hiện tại (F2)";
             this.btnLoadCurrentDateTime.UseVisualStyleBackColor = true;
             this.btnLoadCurrentDateTime.Click += new System.EventHandler(this.btnLoadCurrentDateTime_Click);
+            // 
+            // ucQueDich
+            // 
+            this.ucQueDich.Location = new System.Drawing.Point(18, 448);
+            this.ucQueDich.Name = "ucQueDich";
+            this.ucQueDich.Size = new System.Drawing.Size(695, 214);
+            this.ucQueDich.TabIndex = 2;
             // 
             // FormQueThoiGian
             // 
@@ -687,12 +687,14 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnGo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormQueThoiGian";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Lấy Quẻ Theo Mai Hoa Dịch Số";
             this.Load += new System.EventHandler(this.Main_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormQueThoiGian_KeyDown);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);

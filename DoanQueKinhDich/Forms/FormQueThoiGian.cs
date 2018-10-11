@@ -450,6 +450,22 @@ namespace DoanQueKinhDich
 
             GetQue();
         }
+
+        private void FormQueThoiGian_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                btnGo.PerformClick();
+            }
+            else if (e.KeyCode == Keys.F2)
+            {
+                btnLoadCurrentDateTime.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
     }
 
     class QueIndex

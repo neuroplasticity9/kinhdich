@@ -43,7 +43,7 @@
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(188, 103);
             this.btnGo.TabIndex = 0;
-            this.btnGo.Text = "Random";
+            this.btnGo.Text = "Random (F1)";
             this.btnGo.UseVisualStyleBackColor = true;
             this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
             // 
@@ -65,7 +65,7 @@
             this.btnShowResult.Name = "btnShowResult";
             this.btnShowResult.Size = new System.Drawing.Size(188, 103);
             this.btnShowResult.TabIndex = 21;
-            this.btnShowResult.Text = "Kết Quả";
+            this.btnShowResult.Text = "Hiện Kết Quả (F2)";
             this.btnShowResult.UseVisualStyleBackColor = true;
             this.btnShowResult.Click += new System.EventHandler(this.btnShowResult_Click);
             // 
@@ -103,12 +103,14 @@
             this.Controls.Add(this.labelKetQua);
             this.Controls.Add(this.btnGo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormQueHoc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Học 64 quẻ dịch";
             this.Load += new System.EventHandler(this.Main_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormQueHoc_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

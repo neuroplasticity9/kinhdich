@@ -224,7 +224,7 @@
             this.btnTungXuLayQue.Name = "btnTungXuLayQue";
             this.btnTungXuLayQue.Size = new System.Drawing.Size(240, 48);
             this.btnTungXuLayQue.TabIndex = 0;
-            this.btnTungXuLayQue.Text = "Tung Xu Lấy Quẻ";
+            this.btnTungXuLayQue.Text = "Tung Xu Lấy Quẻ (F1)";
             this.btnTungXuLayQue.UseVisualStyleBackColor = true;
             this.btnTungXuLayQue.Click += new System.EventHandler(this.btnTungXuLayQue_Click);
             // 
@@ -263,7 +263,7 @@
             this.btnLayQueMaiHoa.Name = "btnLayQueMaiHoa";
             this.btnLayQueMaiHoa.Size = new System.Drawing.Size(240, 48);
             this.btnLayQueMaiHoa.TabIndex = 1;
-            this.btnLayQueMaiHoa.Text = "Lấy Quẻ Mai Hoa";
+            this.btnLayQueMaiHoa.Text = "Lấy Quẻ Mai Hoa (F2)";
             this.btnLayQueMaiHoa.UseVisualStyleBackColor = true;
             this.btnLayQueMaiHoa.Click += new System.EventHandler(this.btnLayQueMaiHoa_Click);
             // 
@@ -351,7 +351,7 @@
             this.btnHoc.Name = "btnHoc";
             this.btnHoc.Size = new System.Drawing.Size(240, 48);
             this.btnHoc.TabIndex = 37;
-            this.btnHoc.Text = "Học 64 Quẻ";
+            this.btnHoc.Text = "Học 64 Quẻ (F3)";
             this.btnHoc.UseVisualStyleBackColor = true;
             this.btnHoc.Click += new System.EventHandler(this.btnHoc_Click);
             // 
@@ -375,11 +375,13 @@
             this.Controls.Add(this.linkQueChu);
             this.Controls.Add(this.txtQueDesc);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "FormMain";
             this.Padding = new System.Windows.Forms.Padding(3);
             this.Text = "Lấy Quẻ Kinh Dịch";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormMain_KeyDown);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);

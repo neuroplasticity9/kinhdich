@@ -406,5 +406,21 @@ namespace DoanQueKinhDich
 
             form.ShowDialog(this);
         }
+
+        private void FormMain_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                btnTungXuLayQue.PerformClick();
+            }
+            else if (e.KeyCode == Keys.F2)
+            {
+                btnLayQueMaiHoa.PerformClick();
+            }
+            else if (e.KeyCode == Keys.F3)
+            {
+                btnHoc.PerformClick();
+            }
+        }
     }
 }

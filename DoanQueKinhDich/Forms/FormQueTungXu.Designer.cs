@@ -42,7 +42,7 @@
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(188, 103);
             this.btnGo.TabIndex = 0;
-            this.btnGo.Text = "Tung Xu";
+            this.btnGo.Text = "Tung Xu (F1)";
             this.btnGo.UseVisualStyleBackColor = true;
             this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
             // 
@@ -86,12 +86,14 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnGo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormQueTungXu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Tung Xu 6 Lần Để Lấy Quẻ";
             this.Load += new System.EventHandler(this.Main_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormQueTungXu_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

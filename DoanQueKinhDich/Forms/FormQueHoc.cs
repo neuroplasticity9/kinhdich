@@ -41,7 +41,23 @@ namespace DoanQueKinhDich
             var que = ucQueDon.Que;
             labelKetQua.Text = $"{que.Name}";
 
-            txtDesc.Text = $"{que.Name} ({que.EnglishName} - {que.TuongQue}): {que.YNghia}{Environment.NewLine}{que.ViDu}";
+            txtDesc.Text = $"{que.Name} ({que.EnglishName} - {que.TuongQue}): {que.YNghia}{Environment.NewLine}{Environment.NewLine}{que.ViDu}";
+        }
+
+        private void FormQueHoc_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                btnGo.PerformClick();
+            }
+            else if (e.KeyCode == Keys.F2)
+            {
+                btnShowResult.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
         }
     }
 }
