@@ -448,6 +448,9 @@ namespace DoanQueKinhDich
             uiDatePicker.Value = now;
             uiHour.Value = now;
 
+            // Set back to use Thoi Gian.
+            radThoiGian.Checked = true;
+
             GetQue();
         }
 

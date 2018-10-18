@@ -222,7 +222,7 @@
             this.btnTungXuLayQue.Location = new System.Drawing.Point(17, 18);
             this.btnTungXuLayQue.Margin = new System.Windows.Forms.Padding(2);
             this.btnTungXuLayQue.Name = "btnTungXuLayQue";
-            this.btnTungXuLayQue.Size = new System.Drawing.Size(240, 48);
+            this.btnTungXuLayQue.Size = new System.Drawing.Size(269, 48);
             this.btnTungXuLayQue.TabIndex = 0;
             this.btnTungXuLayQue.Text = "Tung Xu Lấy Quẻ (F1)";
             this.btnTungXuLayQue.UseVisualStyleBackColor = true;
@@ -261,9 +261,9 @@
             this.btnLayQueMaiHoa.Location = new System.Drawing.Point(17, 92);
             this.btnLayQueMaiHoa.Margin = new System.Windows.Forms.Padding(2);
             this.btnLayQueMaiHoa.Name = "btnLayQueMaiHoa";
-            this.btnLayQueMaiHoa.Size = new System.Drawing.Size(240, 48);
+            this.btnLayQueMaiHoa.Size = new System.Drawing.Size(269, 48);
             this.btnLayQueMaiHoa.TabIndex = 1;
-            this.btnLayQueMaiHoa.Text = "Lấy Quẻ Mai Hoa (F2)";
+            this.btnLayQueMaiHoa.Text = "Lấy Quẻ Thời Gian (F2)";
             this.btnLayQueMaiHoa.UseVisualStyleBackColor = true;
             this.btnLayQueMaiHoa.Click += new System.EventHandler(this.btnLayQueMaiHoa_Click);
             // 
@@ -276,7 +276,7 @@
             this.groupBox2.Controls.Add(this.cbxThangChi);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Font = new System.Drawing.Font("Courier New", 13.77391F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(290, 5);
+            this.groupBox2.Location = new System.Drawing.Point(317, 5);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
@@ -289,7 +289,7 @@
             this.radLucHao.AutoSize = true;
             this.radLucHao.Checked = true;
             this.radLucHao.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLucHao.Location = new System.Drawing.Point(1309, 43);
+            this.radLucHao.Location = new System.Drawing.Point(1334, 58);
             this.radLucHao.Name = "radLucHao";
             this.radLucHao.Size = new System.Drawing.Size(105, 25);
             this.radLucHao.TabIndex = 4;
@@ -302,12 +302,13 @@
             // 
             this.radMaiHoa.AutoSize = true;
             this.radMaiHoa.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radMaiHoa.Location = new System.Drawing.Point(1309, 104);
+            this.radMaiHoa.Location = new System.Drawing.Point(1334, 104);
             this.radMaiHoa.Name = "radMaiHoa";
             this.radMaiHoa.Size = new System.Drawing.Size(105, 25);
             this.radMaiHoa.TabIndex = 5;
             this.radMaiHoa.Text = "Mai Hoa";
             this.radMaiHoa.UseVisualStyleBackColor = true;
+            this.radMaiHoa.Visible = false;
             this.radMaiHoa.CheckedChanged += new System.EventHandler(this.radMaiHoa_CheckedChanged);
             // 
             // linkQueHo
@@ -326,7 +327,7 @@
             // 
             // ucQueDich
             // 
-            this.ucQueDich.Location = new System.Drawing.Point(592, 8);
+            this.ucQueDich.Location = new System.Drawing.Point(619, 8);
             this.ucQueDich.Name = "ucQueDich";
             this.ucQueDich.Size = new System.Drawing.Size(685, 210);
             this.ucQueDich.TabIndex = 3;
@@ -335,7 +336,7 @@
             // 
             this.radVietDich.AutoSize = true;
             this.radVietDich.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radVietDich.Location = new System.Drawing.Point(1309, 163);
+            this.radVietDich.Location = new System.Drawing.Point(1334, 149);
             this.radVietDich.Name = "radVietDich";
             this.radVietDich.Size = new System.Drawing.Size(127, 25);
             this.radVietDich.TabIndex = 36;
@@ -349,7 +350,7 @@
             this.btnHoc.Location = new System.Drawing.Point(17, 165);
             this.btnHoc.Margin = new System.Windows.Forms.Padding(2);
             this.btnHoc.Name = "btnHoc";
-            this.btnHoc.Size = new System.Drawing.Size(240, 48);
+            this.btnHoc.Size = new System.Drawing.Size(269, 48);
             this.btnHoc.TabIndex = 37;
             this.btnHoc.Text = "Học 64 Quẻ (F3)";
             this.btnHoc.UseVisualStyleBackColor = true;

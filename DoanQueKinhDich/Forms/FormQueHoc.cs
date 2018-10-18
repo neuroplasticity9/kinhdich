@@ -41,7 +41,7 @@ namespace DoanQueKinhDich
             var que = ucQueDon.Que;
             labelKetQua.Text = $"{que.Name}";
 
-            txtDesc.Text = $"{que.Name} ({que.EnglishName} - {que.TuongQue}): {que.YNghia}{Environment.NewLine}{Environment.NewLine}{que.ViDu}";
+            txtDesc.Text = $"{que.EnglishName}{Environment.NewLine}{Environment.NewLine}{que.TuongQue}{Environment.NewLine}{Environment.NewLine}{que.YNghia}{Environment.NewLine}{Environment.NewLine}{que.ViDu}";
         }
 
         private void FormQueHoc_KeyDown(object sender, KeyEventArgs e)
