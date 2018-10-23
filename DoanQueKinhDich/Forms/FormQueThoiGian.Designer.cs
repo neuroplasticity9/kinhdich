@@ -692,7 +692,7 @@
             this.MinimizeBox = false;
             this.Name = "FormQueThoiGian";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Lấy Quẻ Theo Mai Hoa Dịch Số";
+            this.Text = "Lấy Quẻ Theo Thời Gian";
             this.Load += new System.EventHandler(this.Main_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormQueThoiGian_KeyDown);
             this.groupBox2.ResumeLayout(false);
