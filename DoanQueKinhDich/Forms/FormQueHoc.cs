@@ -12,6 +12,8 @@ namespace DoanQueKinhDich
         public FormQueHoc()
         {
             InitializeComponent();
+
+            this.ucQueDon.CheckedChanged += new System.EventHandler(ucQueDon_CheckedChanged);
         }
 
         /// <summary>
@@ -38,7 +40,7 @@ namespace DoanQueKinhDich
 
         private void btnShowResult_Click(object sender, EventArgs e)
         {
-            var que = ucQueDon.Que;
+            var que = ucQueDon.GetQue();
             labelKetQua.Text = $"{que.Name}";
 
             txtDesc.Text = $"{que.EnglishName}{Environment.NewLine}{Environment.NewLine}{que.TuongQue}{Environment.NewLine}{Environment.NewLine}{que.YNghia}{Environment.NewLine}{Environment.NewLine}{que.ViDu}";
@@ -57,6 +59,14 @@ namespace DoanQueKinhDich
             else if (e.KeyCode == Keys.Escape)
             {
                 this.Close();
+            }
+        }
+
+        private void ucQueDon_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtDesc.Text))
+            {
+                btnShowResult.PerformClick();
             }
         }
     }

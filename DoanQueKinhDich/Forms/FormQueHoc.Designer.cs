@@ -87,7 +87,6 @@
             // 
             this.ucQueDon.Location = new System.Drawing.Point(249, 87);
             this.ucQueDon.Name = "ucQueDon";
-            this.ucQueDon.Que = null;
             this.ucQueDon.Size = new System.Drawing.Size(84, 169);
             this.ucQueDon.TabIndex = 20;
             // 
