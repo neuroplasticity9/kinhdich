@@ -87,6 +87,8 @@ namespace KinhDichCommon
             que.NameChinese = reader["NameChinese"].ToString();
             que.Desc = reader["Desc"].ToString();
             que.Url = reader["Url"].ToString();
+            que.YNghia = reader["YNghia"].ToString();
+            que.ViDu = reader["ViDu"].ToString();
             que.TuongQue = reader["TuongQue"].ToString();
             que.EnglishName = reader["EnglishName"].ToString();
             que.Unicode = reader["Unicode"].ToString();

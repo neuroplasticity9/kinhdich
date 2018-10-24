@@ -14,6 +14,7 @@ namespace KinhDichCommon
         #region "Static var and methods"
         public static readonly Que QueKien;
         public static readonly Que QueDoai;
+        
         public static readonly Que QueLy;
         public static readonly Que QueChan;
         public static readonly Que QueTon;
@@ -173,9 +174,6 @@ namespace KinhDichCommon
             All.AddRange(TamQueThuocKhon);
 
             InitAllQue();
-
-            Sqlite.LoadQueInfoFromDb();
-            // Sqlite.UpdateQueBackToDb(All);
         }
 
         private static void SetQueThuan(Que que)
@@ -375,6 +373,36 @@ namespace KinhDichCommon
 
             return queBienGoc.Clone(hanhQueChu);
         }
+
+        /// <summary>
+        /// Lấy quẻ âm dương đối đãi theo Việt Dịch.
+        /// </summary>
+        /// <param name="que"></param>
+        /// <returns></returns>
+        public static Que GetQueDoiDai(Que que)
+        {
+            // Quay trục để có quẻ đối đãi (Tấn -> Minh Di, ...).
+            var queDoiDai = GetQue(que.Hao1.Duong, que.Hao2.Duong, que.Hao3.Duong, que.Hao4.Duong, que.Hao5.Duong, que.Hao6.Duong);
+
+            // Nếu quay trục ra cùng quẻ thì đổi âm dương các hào để có quẻ đối đãi (Càn -> Khôn, Trung Phu -> Tiểu Quá, ...).
+            if (queDoiDai.Id == que.Id)
+            {
+                queDoiDai = GetQue(!que.Hao6.Duong, !que.Hao5.Duong, !que.Hao4.Duong, !que.Hao3.Duong, !que.Hao2.Duong, !que.Hao1.Duong);
+            }
+
+            return queDoiDai;
+        }
+
+        /// <summary>
+        /// Lấy quẻ hỗ từ quẻ chủ.
+        /// </summary>
+        /// <param name="que"></param>
+        /// <returns></returns>
+        public static Que GetQueHo(Que que)
+        {
+            return GetQue(que.Hao5.Duong, que.Hao4.Duong, que.Hao3.Duong, que.Hao4.Duong, que.Hao3.Duong, que.Hao2.Duong);
+        }
+
         #endregion
     }
 }

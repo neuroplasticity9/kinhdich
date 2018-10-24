@@ -74,6 +74,12 @@
     <Compile Include="Forms\FormQueThoiGian.Designer.cs">
       <DependentUpon>FormQueThoiGian.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormQueHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormQueHoc.Designer.cs">
+      <DependentUpon>FormQueHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="TungXu.cs" />
     <Compile Include="FormUtils.cs" />
     <Compile Include="Forms\FormQueTungXu.cs">
@@ -90,6 +96,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\ucQueDon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucQueDon.Designer.cs">
+      <DependentUpon>ucQueDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ucQue.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -104,6 +116,9 @@
     </Compile>
     <EmbeddedResource Include="Forms\FormQueThoiGian.resx">
       <DependentUpon>FormQueThoiGian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormQueHoc.resx">
+      <DependentUpon>FormQueHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormQueTungXu.resx">
       <DependentUpon>FormQueTungXu.cs</DependentUpon>
@@ -122,6 +137,9 @@
     </Compile>
     <EmbeddedResource Include="UserControls\ucLabel.resx">
       <DependentUpon>ucLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucQueDon.resx">
+      <DependentUpon>ucQueDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucQue.resx">
       <DependentUpon>ucQue.cs</DependentUpon>

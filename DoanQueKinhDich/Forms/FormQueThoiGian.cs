@@ -8,18 +8,22 @@ namespace DoanQueKinhDich
 {
     public partial class FormQueThoiGian : Form, IQueLayDuoc
     {
+        private bool _dontUpdateBack = false;
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
         public FormQueThoiGian()
         {
             InitializeComponent();
-
-            radThoiGian.Checked = true;
 
             ucQueDich.DisableAllControls();
 
             SetChiCuaGio();
 
-            GetQue();
+            radThoiGian.Checked = true;
 
+            btnLoadCurrentDateTime.PerformClick();
             txtSoHoacChu.Focus();
         }
 
@@ -38,6 +42,7 @@ namespace DoanQueKinhDich
         public bool Hao1Dong => ucQueDich.Hao1Dong;
 
         public bool IsDone { get; set; } = false;
+        public DateTime DuongLich { get; private set; } = DateTime.Now;
         public AmLich AmLich { get; private set; }
         public NgayLayQue NgayLayQue => AmLich.ToNgayLayQue();
         public CachLayQue CachLayQue { get; private set; }
@@ -69,30 +74,6 @@ namespace DoanQueKinhDich
         private void Main_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void SetChiCuaGio()
-        {
-            var currentTime = uiHour.Value.TimeOfDay;
-
-            var chiIndex = 0;
-            if (currentTime <= TimeSpan.FromHours(1))
-            {
-                chiIndex = 0;
-            }
-            else
-            {
-                for (int i = 1; i < DiaChi.All.Count; i++)
-                {
-                    if (currentTime <= TimeSpan.FromHours(i * 2 + 1))
-                    {
-                        chiIndex = i;
-                        break;
-                    }
-                }
-            }
-
-            cbxGioChi.SelectedIndex = chiIndex;
         }
 
         private void btnGo_Click(object sender, EventArgs e)
@@ -217,8 +198,22 @@ namespace DoanQueKinhDich
             }
             else
             {
-                // Đếm số chữ cái trong đoạn text.
-                return textCuaQuai.Replace(" ", "").Length;
+                if (radAlphaId.Checked)
+                {
+                    var newText = textCuaQuai.Replace(" ", "").ToUpperInvariant();
+                    var result = 0;
+                    foreach (var ch in newText.ToCharArray())
+                    {
+                        result += result + (int)ch - 64;
+                    }
+
+                    return result;
+                }
+                else
+                {
+                    // Đếm số chữ cái trong đoạn text.
+                    return textCuaQuai.Replace(" ", "").Length;
+                }
             }
         }
 
@@ -312,20 +307,59 @@ namespace DoanQueKinhDich
             GetQue();
         }
 
-        private void cbxGioChi_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Cập nhật giờ dựa vào địa chi đã chọn.
-            var datePart = uiHour.Value.Date;
-            var chiGioIndex = cbxGioChi.SelectedIndex;
-            var hourPart = TimeSpan.FromHours(chiGioIndex * 2);
-            uiHour.Value = datePart + hourPart;
-
-            GetQue();
-        }
-
         private void uiHour_ValueChanged(object sender, EventArgs e)
         {
+            _dontUpdateBack = true;
+
             SetChiCuaGio();
+
+            _dontUpdateBack = false;
+        }
+
+        private void SetChiCuaGio()
+        {
+            var currentTime = uiHour.Value.TimeOfDay;
+
+            var chiIndex = 0;
+            if (currentTime <= TimeSpan.FromHours(1))
+            {
+                chiIndex = 0;
+            }
+            else
+            {
+                for (int i = 1; i < DiaChi.All.Count; i++)
+                {
+                    if (currentTime <= TimeSpan.FromHours(i * 2 + 1))
+                    {
+                        chiIndex = i;
+                        break;
+                    }
+                }
+            }
+
+            cbxGioChi.SelectedIndex = chiIndex;
+        }
+
+        private void cbxGioChi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!_dontUpdateBack)
+            {
+                // Cập nhật giờ dựa vào địa chi đã chọn.
+                var datePart = uiHour.Value.Date;
+                var chiGioIndexCurrent = DuongLich.ToAmLich().GetCanChiGio().Chi.Id - 1;
+                var chiGioIndexSelected = cbxGioChi.SelectedIndex;
+                var diffHour = TimeSpan.FromHours((chiGioIndexSelected - chiGioIndexCurrent) * 2);
+                var hourPart = DuongLich.TimeOfDay + diffHour;
+                if (chiGioIndexSelected == 0) // Gio Ti
+                {
+                    // Cong 1h de hien thi 0h, not 11PM.
+                    hourPart += TimeSpan.FromHours(1);
+                }
+
+                uiHour.Value = datePart + hourPart;
+            }
+
+            GetQue();
         }
 
         private void radThoiGian_CheckedChanged(object sender, EventArgs e)
@@ -334,16 +368,15 @@ namespace DoanQueKinhDich
 
             chkUseNamCan.Enabled = true;
             txtSoHoacChu.Enabled = true;
-            txtQueNgoai1.Text = "";
             txtQueNgoai1.Enabled = false;
-            txtQueNgoai2.Text = "";
             txtQueNgoai2.Enabled = false;
-            txtQueNoi2.Text = "";
             txtQueNoi2.Enabled = false;
             radTienThien.Enabled = false;
             radHauThien.Enabled = false;
 
             txtSoHoacChu.Focus();
+
+            GetQue();
         }
 
         private void radNgoaiSo_CheckedChanged(object sender, EventArgs e)
@@ -352,16 +385,15 @@ namespace DoanQueKinhDich
 
             chkUseNamCan.Enabled = false;
             txtSoHoacChu.Enabled = false;
-            txtQueNgoai1.Text = "";
             txtQueNgoai1.Enabled = true;
-            txtQueNgoai2.Text = "";
             txtQueNgoai2.Enabled = false;
-            txtQueNoi2.Text = "";
             txtQueNoi2.Enabled = false;
             radTienThien.Enabled = false;
             radHauThien.Enabled = false;
             
             txtQueNgoai1.Focus();
+
+            GetQue();
         }
 
         private void radioNgoaiSoNoiSo_CheckedChanged(object sender, EventArgs e)
@@ -370,17 +402,16 @@ namespace DoanQueKinhDich
 
             chkUseNamCan.Enabled = false;
             txtSoHoacChu.Enabled = false;
-            txtQueNgoai1.Text = "";
             txtQueNgoai1.Enabled = false;
-            txtQueNgoai2.Text = "";
             txtQueNgoai2.Enabled = true;
-            txtQueNoi2.Text = "";
             txtQueNoi2.Enabled = true;
             radTienThien.Enabled = true;
             radHauThien.Enabled = true;
             radTienThien.Checked = true;
 
             txtQueNgoai2.Focus();
+
+            GetQue();
         }
 
         /// <summary>
@@ -394,7 +425,7 @@ namespace DoanQueKinhDich
         }
 
         /// <summary>
-        /// Note: events for 2 radio buttons.
+        /// Note: events for 4 radio buttons.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -412,11 +443,31 @@ namespace DoanQueKinhDich
         {
             var now = DateTime.Now;
 
+            DuongLich = now;
             uiDate.SelectionRange = new SelectionRange(now, now);
             uiDatePicker.Value = now;
             uiHour.Value = now;
 
+            // Set back to use Thoi Gian.
+            radThoiGian.Checked = true;
+
             GetQue();
+        }
+
+        private void FormQueThoiGian_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                btnGo.PerformClick();
+            }
+            else if (e.KeyCode == Keys.F2)
+            {
+                btnLoadCurrentDateTime.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
         }
     }
 

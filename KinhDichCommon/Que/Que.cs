@@ -25,6 +25,8 @@ namespace KinhDichCommon
     {
         public int QueId { get; set; }
         public string Url { get; set; }
+        public string YNghia { get; internal set; }
+        public string ViDu { get; internal set; }
         public string TuongQue { get; internal set; }
         public string EnglishName { get; internal set; }
         public string Unicode { get; internal set; }
@@ -198,6 +200,8 @@ namespace KinhDichCommon
                 Url = this.Url,
                 EnglishName = this.EnglishName,
                 Unicode = this.Unicode,
+                YNghia = this.YNghia,
+                ViDu = this.ViDu,
                 TuongQue = this.TuongQue,
                 QueThuan = this.QueThuan,
                 NguHanh = hanhCuaQue,

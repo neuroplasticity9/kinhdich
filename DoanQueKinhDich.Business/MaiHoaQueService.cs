@@ -47,10 +47,11 @@ namespace DoanQueKinhDich.Business
             sb.Append("   QUẺ HỖ".PadRight(padRight));
             sb.Append(queBien != null ? "   QUẺ BIẾN" : "");
             sb.AppendLine();
+            AddLongHR(padRight, sb);
 
-            sb.Append(GetTenQueShort(queChu).PadRight(padRight));
-            sb.Append(GetTenQueShort(queHo).PadRight(padRight));
-            sb.Append(GetTenQueShort(queBien));
+            sb.Append(GetTenQueMaiHoa(queChu).PadRight(padRight));
+            sb.Append(GetTenQueMaiHoa(queHo).PadRight(padRight));
+            sb.Append(GetTenQueMaiHoa(queBien));
             sb.AppendLine();
             sb.Append(GetChiChuCuaQue(queChu).PadRight(padRight));
             sb.Append(GetChiChuCuaQue(queHo).PadRight(padRight));
@@ -89,11 +90,11 @@ namespace DoanQueKinhDich.Business
             sb.AppendLine();
             sb.AppendLine();
 
-            AddTuongQue(sb, queChu, queBien, queHo);
+            AddLongHR(padRight, sb);
+            AddTuongQue(sb, queChu, queHo, queBien);
 
             return sb.ToString();
         }
-
 
         protected string GetHaoDesc(Que que, Hao hao, bool isHaoDong)
         {

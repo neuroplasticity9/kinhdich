@@ -6,6 +6,8 @@ namespace DoanQueKinhDich.Business
 {
     public abstract class QueService
     {
+        private const char HRChar = '—';
+
         public IQueLayDuoc Que { get; set; }
         public Que QueChu { get; }
         public Que QueHo { get; }
@@ -17,7 +19,7 @@ namespace DoanQueKinhDich.Business
 
             QueChu = KinhDichCommon.Que.GetQue(que.Hao6, que.Hao5, que.Hao4, que.Hao3, que.Hao2, que.Hao1);
 
-            QueHo = KinhDichCommon.Que.GetQue(que.Hao5, que.Hao4, que.Hao3, que.Hao4, que.Hao3, que.Hao2);
+            QueHo = KinhDichCommon.Que.GetQueHo(QueChu);
 
             if (que.CoQueBien())
             {
@@ -113,7 +115,7 @@ namespace DoanQueKinhDich.Business
             return result;
         }
 
-        protected string GetTenQueLong(Que que)
+        protected string GetTenQueLucHao(Que que)
         {
             if (que == null)
             {
@@ -123,7 +125,7 @@ namespace DoanQueKinhDich.Business
             return $"   {que.Name} ({que.QueThuan.NguHanh.Name}), {que.NgoaiQuai.Name} {que.NgoaiQuai.NguHanh.Name} / {que.NoiQuai.Name} {que.NoiQuai.NguHanh.Name}{GetHopXungString(que)}";
         }
 
-        protected string GetTenQueShort(Que que)
+        protected string GetTenQueMaiHoa(Que que)
         {
             if (que == null)
             {
@@ -131,6 +133,16 @@ namespace DoanQueKinhDich.Business
             }
 
             return $"   {que.Name} ({que.QueThuan.NguHanh.Name}), {que.NgoaiQuai.Name} {que.NgoaiQuai.NguHanh.Name} / {que.NoiQuai.Name} {que.NoiQuai.NguHanh.Name}";
+        }
+
+        protected string GetTenQueVietDich(Que que)
+        {
+            if (que == null)
+            {
+                return "";
+            }
+
+            return $"   {que.Name} ({que.QueThuan.NguHanh.Name})";
         }
 
         protected string GetChiChuCuaQue(Que que)
@@ -162,7 +174,7 @@ namespace DoanQueKinhDich.Business
             return "";
         }
         
-        protected void AddTuongQue(StringBuilder sb, Que queChu, Que queBien, Que queHo)
+        protected void AddTuongQue(StringBuilder sb, Que queChu, Que queHo, Que queBien)
         {
             sb.AppendLine(GetTuongQueString(queChu));
             sb.AppendLine();
@@ -180,8 +192,19 @@ namespace DoanQueKinhDich.Business
 
         private string GetTuongQueString(Que que)
         {
-            return $"{que.Name} ({que.EnglishName}): {que.TuongQue}";
+            return $"{que.Name} ({que.EnglishName} - {que.TuongQue}): {que.YNghia}{Environment.NewLine}{que.ViDu}";
         }
+
+        protected void AddLongHR(int padRight, StringBuilder sb)
+        {
+            sb.AppendLine("".PadRight(padRight * 3, HRChar));
+        }
+
+        protected void AddShortHR(int padRight, StringBuilder sb)
+        {
+            sb.AppendLine("".PadRight(padRight * 2, HRChar));
+        }
+
         #endregion
 
     }
