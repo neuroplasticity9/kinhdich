@@ -198,23 +198,33 @@ namespace DoanQueKinhDich
             }
             else
             {
+                var newText = textCuaQuai.Replace(" ", "").ToUpperInvariant();
+
                 if (radAlphaId.Checked)
                 {
-                    var newText = textCuaQuai.Replace(" ", "").ToUpperInvariant();
-                    var result = 0;
-                    foreach (var ch in newText.ToCharArray())
-                    {
-                        result += result + (int)ch - 64;
-                    }
-
-                    return result;
+                    return GetTotalOfCharacters(newText, i => i);
+                }
+                if (radIDHalf.Checked)
+                {
+                    return GetTotalOfCharacters(newText, i => i % 9 == 0 ? 9 : i % 9);
                 }
                 else
                 {
                     // Đếm số chữ cái trong đoạn text.
-                    return textCuaQuai.Replace(" ", "").Length;
+                    return newText.Length;
                 }
             }
+        }
+
+        private static int GetTotalOfCharacters(string newText, Func<int, int> getCharInt)
+        {
+            var result = 0;
+            foreach (var ch in newText.ToCharArray())
+            {
+                result += getCharInt((int)ch - 64);
+            }
+
+            return result;
         }
 
         private QueIndex GetQueIndexByTime(AmLich amLich)
@@ -469,6 +479,13 @@ namespace DoanQueKinhDich
                 this.Close();
             }
         }
+
+        private void onTextBoxEntered(object sender, EventArgs e)
+        {
+            var textbox = sender as TextBox;
+            textbox?.SelectAll();
+        }
+
     }
 
     class QueIndex

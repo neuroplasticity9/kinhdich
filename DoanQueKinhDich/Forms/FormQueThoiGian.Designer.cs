@@ -60,6 +60,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.radIDHalf = new System.Windows.Forms.RadioButton();
             this.radAlphaId = new System.Windows.Forms.RadioButton();
             this.radStringLen = new System.Windows.Forms.RadioButton();
             this.label8 = new System.Windows.Forms.Label();
@@ -474,7 +475,9 @@
             this.txtQueNgoai1.Name = "txtQueNgoai1";
             this.txtQueNgoai1.Size = new System.Drawing.Size(444, 29);
             this.txtQueNgoai1.TabIndex = 3;
+            this.txtQueNgoai1.Click += new System.EventHandler(this.onTextBoxEntered);
             this.txtQueNgoai1.TextChanged += new System.EventHandler(this.txtQueNgoai1_TextChanged);
+            this.txtQueNgoai1.Enter += new System.EventHandler(this.onTextBoxEntered);
             // 
             // txtQueNgoai2
             // 
@@ -483,7 +486,9 @@
             this.txtQueNgoai2.Name = "txtQueNgoai2";
             this.txtQueNgoai2.Size = new System.Drawing.Size(444, 29);
             this.txtQueNgoai2.TabIndex = 5;
+            this.txtQueNgoai2.Click += new System.EventHandler(this.onTextBoxEntered);
             this.txtQueNgoai2.TextChanged += new System.EventHandler(this.txtQueNgoai1_TextChanged);
+            this.txtQueNgoai2.Enter += new System.EventHandler(this.onTextBoxEntered);
             // 
             // txtQueNoi2
             // 
@@ -492,7 +497,9 @@
             this.txtQueNoi2.Name = "txtQueNoi2";
             this.txtQueNoi2.Size = new System.Drawing.Size(444, 29);
             this.txtQueNoi2.TabIndex = 6;
+            this.txtQueNoi2.Click += new System.EventHandler(this.onTextBoxEntered);
             this.txtQueNoi2.TextChanged += new System.EventHandler(this.txtQueNgoai1_TextChanged);
+            this.txtQueNoi2.Enter += new System.EventHandler(this.onTextBoxEntered);
             // 
             // label3
             // 
@@ -554,12 +561,24 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.radIDHalf);
             this.panel2.Controls.Add(this.radAlphaId);
             this.panel2.Controls.Add(this.radStringLen);
             this.panel2.Location = new System.Drawing.Point(5, 381);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(631, 46);
             this.panel2.TabIndex = 49;
+            // 
+            // radIDHalf
+            // 
+            this.radIDHalf.AutoSize = true;
+            this.radIDHalf.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radIDHalf.Location = new System.Drawing.Point(399, 11);
+            this.radIDHalf.Name = "radIDHalf";
+            this.radIDHalf.Size = new System.Drawing.Size(160, 25);
+            this.radIDHalf.TabIndex = 2;
+            this.radIDHalf.Text = "Lấy ID tới 9";
+            this.radIDHalf.UseVisualStyleBackColor = true;
             // 
             // radAlphaId
             // 
@@ -605,7 +624,9 @@
             this.txtSoHoacChu.Name = "txtSoHoacChu";
             this.txtSoHoacChu.Size = new System.Drawing.Size(444, 29);
             this.txtSoHoacChu.TabIndex = 56;
+            this.txtSoHoacChu.Click += new System.EventHandler(this.onTextBoxEntered);
             this.txtSoHoacChu.TextChanged += new System.EventHandler(this.txtSoHoacChu_TextChanged);
+            this.txtSoHoacChu.Enter += new System.EventHandler(this.onTextBoxEntered);
             // 
             // panel1
             // 
@@ -749,6 +770,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.RadioButton radAlphaId;
         private System.Windows.Forms.RadioButton radStringLen;
+        private System.Windows.Forms.RadioButton radIDHalf;
     }
 }
 
