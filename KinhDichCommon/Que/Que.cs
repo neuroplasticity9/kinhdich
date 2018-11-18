@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -106,19 +107,9 @@ namespace KinhDichCommon
             return count == 3;
         }
 
-        public string QueDesc => GetQueDesc();
-
-        private string GetQueDesc()
+        public string GetQueDesc()
         {
-            var sb = new StringBuilder();
-            sb.AppendLine(Hao6.AmDuongString);
-            sb.AppendLine(Hao5.AmDuongString);
-            sb.AppendLine(Hao4.AmDuongString);
-            sb.AppendLine(Hao3.AmDuongString);
-            sb.AppendLine(Hao2.AmDuongString);
-            sb.AppendLine(Hao1.AmDuongString);
-
-            return sb.ToString();
+            return $"{this.EnglishName}{Environment.NewLine}{Environment.NewLine}{this.TuongQue}{Environment.NewLine}{Environment.NewLine}{this.YNghia}{Environment.NewLine}{Environment.NewLine}{this.ViDu}";
         }
 
         public void SetPhucThan()
