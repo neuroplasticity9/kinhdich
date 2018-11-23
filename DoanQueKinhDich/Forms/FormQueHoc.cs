@@ -8,6 +8,7 @@ namespace DoanQueKinhDich
 {
     public partial class FormQueHoc : Form
     {
+        private bool _luonHienKetQua = false;
 
         public FormQueHoc()
         {
@@ -24,13 +25,11 @@ namespace DoanQueKinhDich
         private void Main_Load(object sender, EventArgs e)
         {
             btnGo.PerformClick();
+            btnShowResult.PerformClick();
         }
 
         private void btnGo_Click(object sender, EventArgs e)
         {
-            labelKetQua.Text = "";
-            txtDesc.Text = "";
-
             var rand = new Random(DateTime.Now.Millisecond);
             var index = rand.Next(100000) % 64;
 
@@ -40,9 +39,27 @@ namespace DoanQueKinhDich
 
         private void btnShowResult_Click(object sender, EventArgs e)
         {
-            var que = ucQueDon.GetQue();
-            labelKetQua.Text = $"{que.Name}";
-            txtDesc.Text = que.GetQueDesc();
+            _luonHienKetQua = !_luonHienKetQua;
+
+            UpdateKetQua();
+        }
+
+        private void UpdateKetQua()
+        {
+            if (_luonHienKetQua)
+            {
+                btnShowResult.Text = "Giấu kết quả (F2)";
+
+                var que = ucQueDon.GetQue();
+                labelKetQua.Text = $"{que.Name}";
+                txtDesc.Text = que.GetQueDesc();
+            }
+            else
+            {
+                btnShowResult.Text = "Hiện kết quả (F2)";
+                labelKetQua.Text = "";
+                txtDesc.Text = "";
+            }
         }
 
         private void FormQueHoc_KeyDown(object sender, KeyEventArgs e)
@@ -65,7 +82,7 @@ namespace DoanQueKinhDich
         {
             if (!string.IsNullOrWhiteSpace(txtDesc.Text))
             {
-                btnShowResult.PerformClick();
+                UpdateKetQua();
             }
         }
     }
