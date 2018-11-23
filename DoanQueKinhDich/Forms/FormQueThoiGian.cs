@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using DoanQueKinhDich.Business;
@@ -9,6 +11,9 @@ namespace DoanQueKinhDich
     public partial class FormQueThoiGian : Form, IQueLayDuoc
     {
         private bool _dontUpdateBack = false;
+        private Color _normalColor;
+        private Color _selectedColor = Color.Blue;
+        private List<Button> _diaChiButtons = new List<Button>();
 
         /// <summary>
         /// Constructor.
@@ -17,6 +22,9 @@ namespace DoanQueKinhDich
         {
             InitializeComponent();
 
+            _diaChiButtons = new List<Button>() { btn1Ti, btn2Suu, btn3Dan, btn4Mao, btn5Thin, btn6Ty, btn7Ngo, btn8Mui, btn9Than, btn10Dau, btn11Tuat, btn12Hoi };
+            _normalColor = btn1Ti.BackColor;
+
             ucQueDich.DisableAllControls();
 
             SetChiCuaGio();
@@ -24,7 +32,8 @@ namespace DoanQueKinhDich
             radThoiGian.Checked = true;
 
             btnLoadCurrentDateTime.PerformClick();
-            txtSoHoacChu.Focus();
+
+            _diaChiButtons[cbxGioChi.SelectedIndex].PerformClick();
         }
 
         public bool Hao6 => ucQueDich.Hao6;
@@ -355,7 +364,7 @@ namespace DoanQueKinhDich
             if (!_dontUpdateBack)
             {
                 // Cập nhật giờ dựa vào địa chi đã chọn.
-                var datePart = uiHour.Value.Date;
+                var datePart = uiHour.Value.Date.AddHours(-1); // Start date from Ti hour.
                 var chiGioIndexCurrent = DuongLich.ToAmLich().GetCanChiGio().Chi.Id - 1;
                 var chiGioIndexSelected = cbxGioChi.SelectedIndex;
                 var diffHour = TimeSpan.FromHours((chiGioIndexSelected - chiGioIndexCurrent) * 2);
@@ -368,6 +377,8 @@ namespace DoanQueKinhDich
 
                 uiHour.Value = datePart + hourPart;
             }
+
+            UpdateButtonsBackColor(cbxGioChi.SelectedIndex);
 
             GetQue();
         }
@@ -486,6 +497,56 @@ namespace DoanQueKinhDich
             textbox?.SelectAll();
         }
 
+        private int GetButtonIndex(Button btn)
+        {
+            for (int i = 0; i < _diaChiButtons.Count; i++)
+            {
+                if (btn == _diaChiButtons[i])
+                {
+                    return i;
+                }
+            }
+
+            return 0;
+        }
+
+        private void UpdateButtonsBackColor(int clickedIndex)
+        {
+            for (int i = 0; i < _diaChiButtons.Count; i++)
+            {
+                if (i == clickedIndex)
+                {
+                    _diaChiButtons[i].BackColor = _selectedColor;
+                    _diaChiButtons[i].ForeColor = Color.White;
+                }
+                else
+                {
+                    _diaChiButtons[i].BackColor = _normalColor;
+                    _diaChiButtons[i].ForeColor = Color.Black;
+                }
+            }
+        }
+
+        /// <summary>
+        /// 12 buttons event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn12DiaChi_Click(object sender, EventArgs e)
+        {
+            var index = GetButtonIndex((Button)sender);
+            cbxGioChi.SelectedIndex = index;
+        }
+
+        /// <summary>
+        /// 12 buttons event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn12DiaChi_Enter(object sender, EventArgs e)
+        {
+            ((Button)sender).PerformClick();
+        }
     }
 
     class QueIndex
