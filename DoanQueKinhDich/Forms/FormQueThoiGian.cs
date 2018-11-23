@@ -364,18 +364,12 @@ namespace DoanQueKinhDich
             if (!_dontUpdateBack)
             {
                 // Cập nhật giờ dựa vào địa chi đã chọn.
-                var datePart = uiHour.Value.Date.AddHours(-1); // Start date from Ti hour.
-                var chiGioIndexCurrent = DuongLich.ToAmLich().GetCanChiGio().Chi.Id - 1;
+                var datePart = uiHour.Value.Date;
                 var chiGioIndexSelected = cbxGioChi.SelectedIndex;
-                var diffHour = TimeSpan.FromHours((chiGioIndexSelected - chiGioIndexCurrent) * 2);
-                var hourPart = DuongLich.TimeOfDay + diffHour;
-                if (chiGioIndexSelected == 0) // Gio Ti
-                {
-                    // Cong 1h de hien thi 0h, not 11PM.
-                    hourPart += TimeSpan.FromHours(1);
-                }
+                var newHour = TimeSpan.FromHours(chiGioIndexSelected * 2);
+                var newMinute = TimeSpan.FromMinutes(DuongLich.TimeOfDay.Minutes);
 
-                uiHour.Value = datePart + hourPart;
+                uiHour.Value = datePart + newHour + newMinute;
             }
 
             UpdateButtonsBackColor(cbxGioChi.SelectedIndex);
