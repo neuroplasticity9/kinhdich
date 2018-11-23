@@ -8,10 +8,13 @@ namespace DoanQueKinhDich
 {
     public partial class FormQueHoc : Form
     {
+        private bool _luonHienKetQua = false;
 
         public FormQueHoc()
         {
             InitializeComponent();
+
+            this.ucQueDon.CheckedChanged += new System.EventHandler(ucQueDon_CheckedChanged);
         }
 
         /// <summary>
@@ -22,13 +25,11 @@ namespace DoanQueKinhDich
         private void Main_Load(object sender, EventArgs e)
         {
             btnGo.PerformClick();
+            btnShowResult.PerformClick();
         }
 
         private void btnGo_Click(object sender, EventArgs e)
         {
-            labelKetQua.Text = "";
-            txtDesc.Text = "";
-
             var rand = new Random(DateTime.Now.Millisecond);
             var index = rand.Next(100000) % 64;
 
@@ -38,10 +39,27 @@ namespace DoanQueKinhDich
 
         private void btnShowResult_Click(object sender, EventArgs e)
         {
-            var que = ucQueDon.Que;
-            labelKetQua.Text = $"{que.Name}";
+            _luonHienKetQua = !_luonHienKetQua;
 
-            txtDesc.Text = $"{que.EnglishName}{Environment.NewLine}{Environment.NewLine}{que.TuongQue}{Environment.NewLine}{Environment.NewLine}{que.YNghia}{Environment.NewLine}{Environment.NewLine}{que.ViDu}";
+            UpdateKetQua();
+        }
+
+        private void UpdateKetQua()
+        {
+            if (_luonHienKetQua)
+            {
+                btnShowResult.Text = "Giấu kết quả (F2)";
+
+                var que = ucQueDon.GetQue();
+                labelKetQua.Text = $"{que.Name}";
+                txtDesc.Text = que.GetQueDesc();
+            }
+            else
+            {
+                btnShowResult.Text = "Hiện kết quả (F2)";
+                labelKetQua.Text = "";
+                txtDesc.Text = "";
+            }
         }
 
         private void FormQueHoc_KeyDown(object sender, KeyEventArgs e)
@@ -57,6 +75,14 @@ namespace DoanQueKinhDich
             else if (e.KeyCode == Keys.Escape)
             {
                 this.Close();
+            }
+        }
+
+        private void ucQueDon_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtDesc.Text))
+            {
+                UpdateKetQua();
             }
         }
     }

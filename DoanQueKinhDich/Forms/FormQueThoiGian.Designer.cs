@@ -48,6 +48,18 @@
             this.uiHour = new System.Windows.Forms.DateTimePicker();
             this.labelNgayAmLich = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn12Hoi = new System.Windows.Forms.Button();
+            this.btn11Tuat = new System.Windows.Forms.Button();
+            this.btn10Dau = new System.Windows.Forms.Button();
+            this.btn9Than = new System.Windows.Forms.Button();
+            this.btn8Mui = new System.Windows.Forms.Button();
+            this.btn7Ngo = new System.Windows.Forms.Button();
+            this.btn6Ty = new System.Windows.Forms.Button();
+            this.btn5Thin = new System.Windows.Forms.Button();
+            this.btn4Mao = new System.Windows.Forms.Button();
+            this.btn3Dan = new System.Windows.Forms.Button();
+            this.btn2Suu = new System.Windows.Forms.Button();
+            this.btn1Ti = new System.Windows.Forms.Button();
             this.labelNgayDuongLich = new System.Windows.Forms.Label();
             this.radNgoaiSo = new System.Windows.Forms.RadioButton();
             this.radThoiGian = new System.Windows.Forms.RadioButton();
@@ -60,6 +72,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.radIDHalf = new System.Windows.Forms.RadioButton();
             this.radAlphaId = new System.Windows.Forms.RadioButton();
             this.radStringLen = new System.Windows.Forms.RadioButton();
             this.label8 = new System.Windows.Forms.Label();
@@ -79,7 +92,7 @@
             // btnGo
             // 
             this.btnGo.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGo.Location = new System.Drawing.Point(1009, 418);
+            this.btnGo.Location = new System.Drawing.Point(1009, 463);
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(202, 47);
             this.btnGo.TabIndex = 3;
@@ -104,7 +117,7 @@
             "Tân",
             "Nhâm",
             "Quý"});
-            this.cbxNgayCan.Location = new System.Drawing.Point(292, 206);
+            this.cbxNgayCan.Location = new System.Drawing.Point(276, 182);
             this.cbxNgayCan.Margin = new System.Windows.Forms.Padding(2);
             this.cbxNgayCan.MaxDropDownItems = 12;
             this.cbxNgayCan.Name = "cbxNgayCan";
@@ -130,7 +143,7 @@
             "Dậu",
             "Tuất",
             "Hợi"});
-            this.cbxNgayChi.Location = new System.Drawing.Point(402, 206);
+            this.cbxNgayChi.Location = new System.Drawing.Point(386, 182);
             this.cbxNgayChi.Margin = new System.Windows.Forms.Padding(2);
             this.cbxNgayChi.MaxDropDownItems = 12;
             this.cbxNgayChi.Name = "cbxNgayChi";
@@ -141,7 +154,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(289, 180);
+            this.label1.Location = new System.Drawing.Point(273, 156);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 21);
@@ -152,7 +165,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(289, 108);
+            this.label2.Location = new System.Drawing.Point(273, 93);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 21);
@@ -178,7 +191,7 @@
             "Dậu",
             "Tuất",
             "Hợi"});
-            this.cbxThangChi.Location = new System.Drawing.Point(402, 134);
+            this.cbxThangChi.Location = new System.Drawing.Point(386, 119);
             this.cbxThangChi.Margin = new System.Windows.Forms.Padding(2);
             this.cbxThangChi.MaxDropDownItems = 12;
             this.cbxThangChi.Name = "cbxThangChi";
@@ -202,7 +215,7 @@
             "Tân",
             "Nhâm",
             "Quý"});
-            this.cbxThangCan.Location = new System.Drawing.Point(292, 134);
+            this.cbxThangCan.Location = new System.Drawing.Point(276, 119);
             this.cbxThangCan.Margin = new System.Windows.Forms.Padding(2);
             this.cbxThangCan.MaxDropDownItems = 12;
             this.cbxThangCan.Name = "cbxThangCan";
@@ -225,7 +238,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(289, 32);
+            this.label5.Location = new System.Drawing.Point(273, 30);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 21);
@@ -251,7 +264,7 @@
             "Dậu",
             "Tuất",
             "Hợi"});
-            this.cbxNamChi.Location = new System.Drawing.Point(402, 58);
+            this.cbxNamChi.Location = new System.Drawing.Point(386, 56);
             this.cbxNamChi.Margin = new System.Windows.Forms.Padding(2);
             this.cbxNamChi.MaxDropDownItems = 12;
             this.cbxNamChi.Name = "cbxNamChi";
@@ -275,7 +288,7 @@
             "Tân",
             "Nhâm",
             "Quý"});
-            this.cbxNamCan.Location = new System.Drawing.Point(292, 58);
+            this.cbxNamCan.Location = new System.Drawing.Point(276, 56);
             this.cbxNamCan.Margin = new System.Windows.Forms.Padding(2);
             this.cbxNamCan.MaxDropDownItems = 12;
             this.cbxNamCan.Name = "cbxNamCan";
@@ -286,7 +299,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(290, 252);
+            this.label6.Location = new System.Drawing.Point(274, 220);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 21);
@@ -311,7 +324,7 @@
             "Dậu",
             "Tuất",
             "Hợi"});
-            this.cbxGioChi.Location = new System.Drawing.Point(403, 278);
+            this.cbxGioChi.Location = new System.Drawing.Point(387, 246);
             this.cbxGioChi.Margin = new System.Windows.Forms.Padding(2);
             this.cbxGioChi.MaxDropDownItems = 12;
             this.cbxGioChi.Name = "cbxGioChi";
@@ -336,7 +349,7 @@
             "Tân",
             "Nhâm",
             "Quý"});
-            this.cbxGioCan.Location = new System.Drawing.Point(293, 278);
+            this.cbxGioCan.Location = new System.Drawing.Point(277, 246);
             this.cbxGioCan.Margin = new System.Windows.Forms.Padding(2);
             this.cbxGioCan.MaxDropDownItems = 12;
             this.cbxGioCan.Name = "cbxGioCan";
@@ -373,7 +386,7 @@
             this.uiHour.CalendarFont = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiHour.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiHour.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.uiHour.Location = new System.Drawing.Point(25, 278);
+            this.uiHour.Location = new System.Drawing.Point(25, 246);
             this.uiHour.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
             this.uiHour.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.uiHour.Name = "uiHour";
@@ -385,7 +398,7 @@
             // 
             this.labelNgayAmLich.AutoSize = true;
             this.labelNgayAmLich.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNgayAmLich.Location = new System.Drawing.Point(21, 363);
+            this.labelNgayAmLich.Location = new System.Drawing.Point(21, 343);
             this.labelNgayAmLich.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNgayAmLich.Name = "labelNgayAmLich";
             this.labelNgayAmLich.Size = new System.Drawing.Size(153, 21);
@@ -394,6 +407,18 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btn12Hoi);
+            this.groupBox2.Controls.Add(this.btn11Tuat);
+            this.groupBox2.Controls.Add(this.btn10Dau);
+            this.groupBox2.Controls.Add(this.btn9Than);
+            this.groupBox2.Controls.Add(this.btn8Mui);
+            this.groupBox2.Controls.Add(this.btn7Ngo);
+            this.groupBox2.Controls.Add(this.btn6Ty);
+            this.groupBox2.Controls.Add(this.btn5Thin);
+            this.groupBox2.Controls.Add(this.btn4Mao);
+            this.groupBox2.Controls.Add(this.btn3Dan);
+            this.groupBox2.Controls.Add(this.btn2Suu);
+            this.groupBox2.Controls.Add(this.btn1Ti);
             this.groupBox2.Controls.Add(this.labelNgayDuongLich);
             this.groupBox2.Controls.Add(this.cbxGioChi);
             this.groupBox2.Controls.Add(this.cbxNgayCan);
@@ -416,15 +441,159 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(522, 400);
+            this.groupBox2.Size = new System.Drawing.Size(699, 447);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
+            // 
+            // btn12Hoi
+            // 
+            this.btn12Hoi.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn12Hoi.Location = new System.Drawing.Point(500, 403);
+            this.btn12Hoi.Name = "btn12Hoi";
+            this.btn12Hoi.Size = new System.Drawing.Size(179, 36);
+            this.btn12Hoi.TabIndex = 56;
+            this.btn12Hoi.Text = "Hợi (21h-23h)";
+            this.btn12Hoi.UseVisualStyleBackColor = true;
+            this.btn12Hoi.Click += new System.EventHandler(this.btn12DiaChi_Click);
+            this.btn12Hoi.Enter += new System.EventHandler(this.btn12DiaChi_Enter);
+            // 
+            // btn11Tuat
+            // 
+            this.btn11Tuat.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn11Tuat.Location = new System.Drawing.Point(500, 368);
+            this.btn11Tuat.Name = "btn11Tuat";
+            this.btn11Tuat.Size = new System.Drawing.Size(179, 36);
+            this.btn11Tuat.TabIndex = 55;
+            this.btn11Tuat.Text = "Tuất (19h-21h)";
+            this.btn11Tuat.UseVisualStyleBackColor = true;
+            this.btn11Tuat.Click += new System.EventHandler(this.btn12DiaChi_Click);
+            this.btn11Tuat.Enter += new System.EventHandler(this.btn12DiaChi_Enter);
+            // 
+            // btn10Dau
+            // 
+            this.btn10Dau.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn10Dau.Location = new System.Drawing.Point(500, 333);
+            this.btn10Dau.Name = "btn10Dau";
+            this.btn10Dau.Size = new System.Drawing.Size(179, 36);
+            this.btn10Dau.TabIndex = 54;
+            this.btn10Dau.Text = "Dậu (17h-19h)";
+            this.btn10Dau.UseVisualStyleBackColor = true;
+            this.btn10Dau.Click += new System.EventHandler(this.btn12DiaChi_Click);
+            this.btn10Dau.Enter += new System.EventHandler(this.btn12DiaChi_Enter);
+            // 
+            // btn9Than
+            // 
+            this.btn9Than.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn9Than.Location = new System.Drawing.Point(500, 298);
+            this.btn9Than.Name = "btn9Than";
+            this.btn9Than.Size = new System.Drawing.Size(179, 36);
+            this.btn9Than.TabIndex = 53;
+            this.btn9Than.Text = "Thân (15h-17h)";
+            this.btn9Than.UseVisualStyleBackColor = true;
+            this.btn9Than.Click += new System.EventHandler(this.btn12DiaChi_Click);
+            this.btn9Than.Enter += new System.EventHandler(this.btn12DiaChi_Enter);
+            // 
+            // btn8Mui
+            // 
+            this.btn8Mui.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn8Mui.Location = new System.Drawing.Point(500, 263);
+            this.btn8Mui.Name = "btn8Mui";
+            this.btn8Mui.Size = new System.Drawing.Size(179, 36);
+            this.btn8Mui.TabIndex = 52;
+            this.btn8Mui.Text = "Mùi (13h-15h)";
+            this.btn8Mui.UseVisualStyleBackColor = true;
+            this.btn8Mui.Click += new System.EventHandler(this.btn12DiaChi_Click);
+            this.btn8Mui.Enter += new System.EventHandler(this.btn12DiaChi_Enter);
+            // 
+            // btn7Ngo
+            // 
+            this.btn7Ngo.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn7Ngo.Location = new System.Drawing.Point(500, 228);
+            this.btn7Ngo.Name = "btn7Ngo";
+            this.btn7Ngo.Size = new System.Drawing.Size(179, 36);
+            this.btn7Ngo.TabIndex = 51;
+            this.btn7Ngo.Text = "Ngọ (11h-13h)";
+            this.btn7Ngo.UseVisualStyleBackColor = true;
+            this.btn7Ngo.Click += new System.EventHandler(this.btn12DiaChi_Click);
+            this.btn7Ngo.Enter += new System.EventHandler(this.btn12DiaChi_Enter);
+            // 
+            // btn6Ty
+            // 
+            this.btn6Ty.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn6Ty.Location = new System.Drawing.Point(500, 193);
+            this.btn6Ty.Name = "btn6Ty";
+            this.btn6Ty.Size = new System.Drawing.Size(179, 36);
+            this.btn6Ty.TabIndex = 50;
+            this.btn6Ty.Text = "Tỵ (9h-11h)";
+            this.btn6Ty.UseVisualStyleBackColor = true;
+            this.btn6Ty.Click += new System.EventHandler(this.btn12DiaChi_Click);
+            this.btn6Ty.Enter += new System.EventHandler(this.btn12DiaChi_Enter);
+            // 
+            // btn5Thin
+            // 
+            this.btn5Thin.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn5Thin.Location = new System.Drawing.Point(500, 158);
+            this.btn5Thin.Name = "btn5Thin";
+            this.btn5Thin.Size = new System.Drawing.Size(179, 36);
+            this.btn5Thin.TabIndex = 49;
+            this.btn5Thin.Text = "Thìn (7h-9h)";
+            this.btn5Thin.UseVisualStyleBackColor = true;
+            this.btn5Thin.Click += new System.EventHandler(this.btn12DiaChi_Click);
+            this.btn5Thin.Enter += new System.EventHandler(this.btn12DiaChi_Enter);
+            // 
+            // btn4Mao
+            // 
+            this.btn4Mao.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn4Mao.Location = new System.Drawing.Point(500, 123);
+            this.btn4Mao.Name = "btn4Mao";
+            this.btn4Mao.Size = new System.Drawing.Size(179, 36);
+            this.btn4Mao.TabIndex = 48;
+            this.btn4Mao.Text = "Mão (5h-7h)";
+            this.btn4Mao.UseVisualStyleBackColor = true;
+            this.btn4Mao.Click += new System.EventHandler(this.btn12DiaChi_Click);
+            this.btn4Mao.Enter += new System.EventHandler(this.btn12DiaChi_Enter);
+            // 
+            // btn3Dan
+            // 
+            this.btn3Dan.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn3Dan.Location = new System.Drawing.Point(500, 88);
+            this.btn3Dan.Name = "btn3Dan";
+            this.btn3Dan.Size = new System.Drawing.Size(179, 36);
+            this.btn3Dan.TabIndex = 47;
+            this.btn3Dan.Text = "Dần (3h-5h)";
+            this.btn3Dan.UseVisualStyleBackColor = true;
+            this.btn3Dan.Click += new System.EventHandler(this.btn12DiaChi_Click);
+            this.btn3Dan.Enter += new System.EventHandler(this.btn12DiaChi_Enter);
+            // 
+            // btn2Suu
+            // 
+            this.btn2Suu.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn2Suu.Location = new System.Drawing.Point(500, 53);
+            this.btn2Suu.Name = "btn2Suu";
+            this.btn2Suu.Size = new System.Drawing.Size(179, 36);
+            this.btn2Suu.TabIndex = 46;
+            this.btn2Suu.Text = "Sửu (1h-3h)";
+            this.btn2Suu.UseVisualStyleBackColor = true;
+            this.btn2Suu.Click += new System.EventHandler(this.btn12DiaChi_Click);
+            this.btn2Suu.Enter += new System.EventHandler(this.btn12DiaChi_Enter);
+            // 
+            // btn1Ti
+            // 
+            this.btn1Ti.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn1Ti.Location = new System.Drawing.Point(500, 18);
+            this.btn1Ti.Name = "btn1Ti";
+            this.btn1Ti.Size = new System.Drawing.Size(179, 36);
+            this.btn1Ti.TabIndex = 13;
+            this.btn1Ti.Text = "Tí (23h-1h)";
+            this.btn1Ti.UseVisualStyleBackColor = true;
+            this.btn1Ti.Click += new System.EventHandler(this.btn12DiaChi_Click);
+            this.btn1Ti.Enter += new System.EventHandler(this.btn12DiaChi_Enter);
             // 
             // labelNgayDuongLich
             // 
             this.labelNgayDuongLich.AutoSize = true;
             this.labelNgayDuongLich.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNgayDuongLich.Location = new System.Drawing.Point(21, 327);
+            this.labelNgayDuongLich.Location = new System.Drawing.Point(21, 307);
             this.labelNgayDuongLich.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNgayDuongLich.Name = "labelNgayDuongLich";
             this.labelNgayDuongLich.Size = new System.Drawing.Size(186, 21);
@@ -474,7 +643,9 @@
             this.txtQueNgoai1.Name = "txtQueNgoai1";
             this.txtQueNgoai1.Size = new System.Drawing.Size(444, 29);
             this.txtQueNgoai1.TabIndex = 3;
+            this.txtQueNgoai1.Click += new System.EventHandler(this.onTextBoxEntered);
             this.txtQueNgoai1.TextChanged += new System.EventHandler(this.txtQueNgoai1_TextChanged);
+            this.txtQueNgoai1.Enter += new System.EventHandler(this.onTextBoxEntered);
             // 
             // txtQueNgoai2
             // 
@@ -483,7 +654,9 @@
             this.txtQueNgoai2.Name = "txtQueNgoai2";
             this.txtQueNgoai2.Size = new System.Drawing.Size(444, 29);
             this.txtQueNgoai2.TabIndex = 5;
+            this.txtQueNgoai2.Click += new System.EventHandler(this.onTextBoxEntered);
             this.txtQueNgoai2.TextChanged += new System.EventHandler(this.txtQueNgoai1_TextChanged);
+            this.txtQueNgoai2.Enter += new System.EventHandler(this.onTextBoxEntered);
             // 
             // txtQueNoi2
             // 
@@ -492,7 +665,9 @@
             this.txtQueNoi2.Name = "txtQueNoi2";
             this.txtQueNoi2.Size = new System.Drawing.Size(444, 29);
             this.txtQueNoi2.TabIndex = 6;
+            this.txtQueNoi2.Click += new System.EventHandler(this.onTextBoxEntered);
             this.txtQueNoi2.TextChanged += new System.EventHandler(this.txtQueNgoai1_TextChanged);
+            this.txtQueNoi2.Enter += new System.EventHandler(this.onTextBoxEntered);
             // 
             // label3
             // 
@@ -548,18 +723,30 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(675, 433);
+            this.groupBox1.Size = new System.Drawing.Size(675, 448);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.radIDHalf);
             this.panel2.Controls.Add(this.radAlphaId);
             this.panel2.Controls.Add(this.radStringLen);
             this.panel2.Location = new System.Drawing.Point(5, 381);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(631, 46);
             this.panel2.TabIndex = 49;
+            // 
+            // radIDHalf
+            // 
+            this.radIDHalf.AutoSize = true;
+            this.radIDHalf.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radIDHalf.Location = new System.Drawing.Point(399, 11);
+            this.radIDHalf.Name = "radIDHalf";
+            this.radIDHalf.Size = new System.Drawing.Size(160, 25);
+            this.radIDHalf.TabIndex = 2;
+            this.radIDHalf.Text = "Lấy ID tới 9";
+            this.radIDHalf.UseVisualStyleBackColor = true;
             // 
             // radAlphaId
             // 
@@ -605,7 +792,9 @@
             this.txtSoHoacChu.Name = "txtSoHoacChu";
             this.txtSoHoacChu.Size = new System.Drawing.Size(444, 29);
             this.txtSoHoacChu.TabIndex = 56;
+            this.txtSoHoacChu.Click += new System.EventHandler(this.onTextBoxEntered);
             this.txtSoHoacChu.TextChanged += new System.EventHandler(this.txtSoHoacChu_TextChanged);
+            this.txtSoHoacChu.Enter += new System.EventHandler(this.onTextBoxEntered);
             // 
             // panel1
             // 
@@ -647,11 +836,11 @@
             this.txtDesc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDesc.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDesc.Location = new System.Drawing.Point(717, 472);
+            this.txtDesc.Font = new System.Drawing.Font("Courier New", 12F);
+            this.txtDesc.Location = new System.Drawing.Point(717, 515);
             this.txtDesc.Margin = new System.Windows.Forms.Padding(2);
             this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(522, 180);
+            this.txtDesc.Size = new System.Drawing.Size(701, 161);
             this.txtDesc.TabIndex = 11;
             this.txtDesc.TabStop = false;
             this.txtDesc.Text = "";
@@ -659,7 +848,7 @@
             // btnLoadCurrentDateTime
             // 
             this.btnLoadCurrentDateTime.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoadCurrentDateTime.Location = new System.Drawing.Point(717, 418);
+            this.btnLoadCurrentDateTime.Location = new System.Drawing.Point(717, 463);
             this.btnLoadCurrentDateTime.Name = "btnLoadCurrentDateTime";
             this.btnLoadCurrentDateTime.Size = new System.Drawing.Size(268, 47);
             this.btnLoadCurrentDateTime.TabIndex = 12;
@@ -669,17 +858,16 @@
             // 
             // ucQueDich
             // 
-            this.ucQueDich.Location = new System.Drawing.Point(18, 448);
+            this.ucQueDich.Location = new System.Drawing.Point(18, 472);
             this.ucQueDich.Name = "ucQueDich";
             this.ucQueDich.Size = new System.Drawing.Size(695, 214);
             this.ucQueDich.TabIndex = 2;
             // 
             // FormQueThoiGian
             // 
-            this.AcceptButton = this.btnGo;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1258, 668);
+            this.ClientSize = new System.Drawing.Size(1437, 692);
             this.Controls.Add(this.btnLoadCurrentDateTime);
             this.Controls.Add(this.txtDesc);
             this.Controls.Add(this.groupBox1);
@@ -749,6 +937,19 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.RadioButton radAlphaId;
         private System.Windows.Forms.RadioButton radStringLen;
+        private System.Windows.Forms.RadioButton radIDHalf;
+        private System.Windows.Forms.Button btn12Hoi;
+        private System.Windows.Forms.Button btn11Tuat;
+        private System.Windows.Forms.Button btn10Dau;
+        private System.Windows.Forms.Button btn9Than;
+        private System.Windows.Forms.Button btn8Mui;
+        private System.Windows.Forms.Button btn7Ngo;
+        private System.Windows.Forms.Button btn6Ty;
+        private System.Windows.Forms.Button btn5Thin;
+        private System.Windows.Forms.Button btn4Mao;
+        private System.Windows.Forms.Button btn3Dan;
+        private System.Windows.Forms.Button btn2Suu;
+        private System.Windows.Forms.Button btn1Ti;
     }
 }
 

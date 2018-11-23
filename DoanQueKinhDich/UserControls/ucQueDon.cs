@@ -21,17 +21,20 @@ namespace DoanQueKinhDich.UserControls
         public bool Hao2 => chkHao2.Checked;
         public bool Hao1 => chkHao1.Checked;
 
-        public Que Que { get; set; }
-
         public ucQueDon()
         {
             InitializeComponent();
+
+            chkHao6.CheckedChanged += uiBienHao_CheckedChanged;
+            chkHao5.CheckedChanged += uiBienHao_CheckedChanged;
+            chkHao4.CheckedChanged += uiBienHao_CheckedChanged;
+            chkHao3.CheckedChanged += uiBienHao_CheckedChanged;
+            chkHao2.CheckedChanged += uiBienHao_CheckedChanged;
+            chkHao1.CheckedChanged += uiBienHao_CheckedChanged;
         }
 
         public void SetQue(Que que)
         {
-            Que = que;
-
             uiHao6.Checked = que.Hao6.Duong;
             uiHao5.Checked = que.Hao5.Duong;
             uiHao4.Checked = que.Hao4.Duong;
@@ -40,35 +43,15 @@ namespace DoanQueKinhDich.UserControls
             uiHao1.Checked = que.Hao1.Duong;
         }
 
-        private void uiBienHao6_CheckedChanged(object sender, EventArgs e)
+        public Que GetQue()
+        {
+            return Que.GetQue(uiHao6.Checked, uiHao5.Checked, uiHao4.Checked, uiHao3.Checked, uiHao2.Checked, uiHao1.Checked);
+        }
+
+        private void uiBienHao_CheckedChanged(object sender, EventArgs e)
         {
             CheckedChanged?.Invoke(null, null);
         }
-
-        private void uiBienHao5_CheckedChanged(object sender, EventArgs e)
-        {
-            CheckedChanged?.Invoke(null, null);
-        }
-
-        private void uiBienHao4_CheckedChanged(object sender, EventArgs e)
-        {
-            CheckedChanged?.Invoke(null, null);
-        }
-
-        private void uiBienHao3_CheckedChanged(object sender, EventArgs e)
-        {
-            CheckedChanged?.Invoke(null, null);
-        }
-
-        private void uiBienHao2_CheckedChanged(object sender, EventArgs e)
-        {
-            CheckedChanged?.Invoke(null, null);
-        }
-
-        private void uiBienHao1_CheckedChanged(object sender, EventArgs e)
-        {
-            CheckedChanged?.Invoke(null, null);
-        }
-
+        
     }
 }
