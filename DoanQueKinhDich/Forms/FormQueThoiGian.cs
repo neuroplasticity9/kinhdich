@@ -15,6 +15,8 @@ namespace DoanQueKinhDich
         private Color _selectedColor = Color.Blue;
         private List<Button> _diaChiButtons = new List<Button>();
 
+        private LayQueService _layQueService = new LayQueService();
+
         /// <summary>
         /// Constructor.
         /// </summary>
@@ -34,6 +36,8 @@ namespace DoanQueKinhDich
             btnLoadCurrentDateTime.PerformClick();
 
             _diaChiButtons[cbxGioChi.SelectedIndex].PerformClick();
+
+            UpdateGioChiButtonsText();
         }
 
         public bool Hao6 => ucQueDich.Hao6;
@@ -98,6 +102,23 @@ namespace DoanQueKinhDich
             GetQue();
 
             uiDatePicker.Value = uiDate.SelectionRange.Start;
+
+            UpdateGioChiButtonsText();
+        }
+
+        private void UpdateGioChiButtonsText()
+        {
+            var listQueTrong1Ngay = _layQueService.GetAllQueIndexesForADay(AmLich, txtSoHoacChu.Text);
+
+            for (int i = 0; i < _diaChiButtons.Count; i++)
+            {
+                _diaChiButtons[i].Text = GetButtonText(listQueTrong1Ngay[i]);
+            }
+        }
+
+        private string GetButtonText(QueIndex queIndex)
+        {
+            return $"{queIndex.GetQueChu().NameShort} -> {queIndex.GetQueBien().NameShort}";
         }
 
         private void GetQue()
@@ -111,7 +132,9 @@ namespace DoanQueKinhDich
         
         private void SetNoiQuaiNgoaiQuai(AmLich amLich)
         {
-            QueIndex queIndex = GetQueIndex(amLich);
+            QueIndex queIndex = GetQueIndex(CachLayQue, amLich);
+
+            txtDesc.Text = queIndex.Desc;
 
             ucQueDich.uiNgoaiQuai.SelectedIndex = queIndex.NgoaiQuaiIndex;
             ucQueDich.uiNoiQuai.SelectedIndex = queIndex.NoiQuaiIndex;
@@ -125,25 +148,25 @@ namespace DoanQueKinhDich
             ucQueDich.uiIsHao6Dong.Checked = queIndex.HaoDongIndex == 0;
         }
 
-        private QueIndex GetQueIndex(AmLich amLich)
+        private QueIndex GetQueIndex(CachLayQue cachLayQue, AmLich amLich)
         {
             var queIndex = new QueIndex();
 
-            switch (CachLayQue)
+            switch (cachLayQue)
             {
                 case CachLayQue.None:
                     break;
 
                 case CachLayQue.MaiHoaTienThien1:
-                    queIndex = GetQueIndexByTime(amLich);
+                    queIndex = _layQueService.GetQueIndexByTime(amLich, txtSoHoacChu.Text);
                     break;
 
                 case CachLayQue.MaiHoaTienThien2:
-                    queIndex = GetQueIndexBySoAndTime(txtQueNgoai1.Text, amLich);
+                    queIndex = _layQueService.GetQueIndexBySoAndTime(amLich, txtQueNgoai1.Text);
                     break;
 
                 case CachLayQue.MaiHoaTienThien3:
-                    queIndex = GetQueIndexBySoAndSo(txtQueNgoai2.Text, txtQueNoi2.Text, amLich);
+                    queIndex = _layQueService.GetQueIndexBySoAndSo(txtQueNgoai2.Text, txtQueNoi2.Text, amLich, radHauThien.Checked);
                     break;
 
                 default:
@@ -151,148 +174,6 @@ namespace DoanQueKinhDich
             }
 
             return queIndex;
-        }
-
-        private QueIndex GetQueIndexBySoAndTime(string textCuaQuai, AmLich amLich)
-        {
-            int tongNgoaiQuai = GetTongCuaQuai(textCuaQuai);
-            int tongNoiQuai = GetTongNamThangNgayGio(amLich);
-
-            return new QueIndex
-            {
-                NgoaiQuaiIndex = (tongNgoaiQuai - 1 + 8) % 8,
-                NoiQuaiIndex = (tongNoiQuai - 1 + 8) % 8,
-                HaoDongIndex = (tongNgoaiQuai + tongNoiQuai + amLich.GioAm.Chi.Id) % 6,
-            };
-        }
-
-        private QueIndex GetQueIndexBySoAndSo(string textCuaNgoaiQuai, string textCuaNoiQuai, AmLich amLich)
-        {
-            int tongNgoaiQuai = GetTongCuaQuai(textCuaNgoaiQuai);
-            int tongNoiQuai = GetTongCuaQuai(textCuaNoiQuai);
-
-            // Tiên thiên đoán bằng số nên không cần giờ. Hậu thiên đoán bằng bát quái nên cần thêm giờ vào để tìm hào động.
-            int chiNumber = radTienThien.Checked ? 0 : amLich.GioAm.Chi.Id;
-
-            var queIndex = new QueIndex
-            {
-                NgoaiQuaiIndex = (tongNgoaiQuai - 1 + 8) % 8,
-                NoiQuaiIndex = (tongNoiQuai - 1 + 8) % 8,
-                HaoDongIndex = (tongNgoaiQuai + tongNoiQuai + chiNumber) % 6,
-            };
-
-            var sb = new StringBuilder();
-            sb.AppendLine($"1. Ngoại quái: số {tongNgoaiQuai} % 8 = {queIndex.NgoaiQuaiIndex + 1} = quẻ {BatQuai.All[queIndex.NgoaiQuaiIndex].Name}");
-            sb.AppendLine();
-            sb.AppendLine($"2. Nội quái:   số {tongNoiQuai} % 8 = {queIndex.NoiQuaiIndex + 1} = quẻ {BatQuai.All[queIndex.NoiQuaiIndex].Name}");
-            sb.AppendLine();
-            sb.AppendLine($"3. Động hào:   ngoại quái {tongNgoaiQuai} + nội quái {tongNoiQuai}{GetGioHauThienDesc(amLich.GioAm)} = {tongNgoaiQuai + tongNoiQuai + chiNumber} % 6 = {GetHaoDongDesc(queIndex.HaoDongIndex)}");
-
-            txtDesc.Text = sb.ToString();
-
-            return queIndex;
-        }
-
-        private string GetGioHauThienDesc(CanChi gio)
-        {
-            return radTienThien.Checked ? "" : $" + giờ {gio.Chi.Name} {gio.Chi.Id}";
-        }
-
-        private int GetTongCuaQuai(string textCuaQuai)
-        {
-            if (int.TryParse(textCuaQuai, out int soCuaQuai))
-            {
-                // Nếu là 1 số thì lấy chính số đó.
-                return soCuaQuai;
-            }
-            else
-            {
-                var newText = textCuaQuai.Replace(" ", "").ToUpperInvariant();
-
-                if (radAlphaId.Checked)
-                {
-                    return GetTotalOfCharacters(newText, i => i);
-                }
-                if (radIDHalf.Checked)
-                {
-                    return GetTotalOfCharacters(newText, i => i % 9 == 0 ? 9 : i % 9);
-                }
-                else
-                {
-                    // Đếm số chữ cái trong đoạn text.
-                    return newText.Length;
-                }
-            }
-        }
-
-        private static int GetTotalOfCharacters(string newText, Func<int, int> getCharInt)
-        {
-            var result = 0;
-            foreach (var ch in newText.ToCharArray())
-            {
-                result += getCharInt((int)ch - 64);
-            }
-
-            return result;
-        }
-
-        private QueIndex GetQueIndexByTime(AmLich amLich)
-        {
-            int soHoacChu = GetTongCuaQuai(txtSoHoacChu.Text);
-            int tongNgoaiQuai = GetTongNamThangNgay(amLich) + soHoacChu;
-            int tongNoiQuai = GetTongNamThangNgayGio(amLich) + soHoacChu;
-
-            var queIndex = new QueIndex
-            {
-                NgoaiQuaiIndex = (tongNgoaiQuai - 1 + 8) % 8,
-                NoiQuaiIndex = (tongNoiQuai - 1 + 8) % 8,
-                HaoDongIndex = tongNoiQuai % 6,
-            };
-
-            var sb = new StringBuilder();
-            sb.AppendLine($"1. Ngoại quái: năm {GetNamDesc(amLich.NamAm)} + tháng {amLich.LunarMonth} + ngày {amLich.LunarDay} + số {soHoacChu} = {tongNgoaiQuai} % 8 = {queIndex.NgoaiQuaiIndex + 1} = quẻ {BatQuai.All[queIndex.NgoaiQuaiIndex].Name}");
-            sb.AppendLine();
-            sb.AppendLine($"2. Nội quái:   năm {GetNamDesc(amLich.NamAm)} + tháng {amLich.LunarMonth} + ngày {amLich.LunarDay} + số {soHoacChu} + giờ {amLich.GioAm.Chi.Name} {amLich.GioAm.Chi.Id} = {tongNoiQuai} % 8 = {queIndex.NoiQuaiIndex + 1} = quẻ {BatQuai.All[queIndex.NoiQuaiIndex].Name}");
-            sb.AppendLine();
-            sb.AppendLine($"3. Động hào:   tổng nội quái {tongNoiQuai} % 6 = {GetHaoDongDesc(queIndex.HaoDongIndex)}");
-
-            txtDesc.Text = sb.ToString();
-
-            return queIndex;
-        }
-
-        private int GetHaoDongDesc(int haoDongIndex)
-        {
-            return haoDongIndex == 0 ? 6 : haoDongIndex;
-        }
-
-        private string GetNamDesc(CanChi nam)
-        {
-            return chkUseNamCan.Checked ? $"{nam.Can.Name} {nam.Can.Id}" : $"{nam.Chi.Name} {nam.Chi.Id}";
-        }
-
-        private int GetTongNamThangNgay(AmLich amLich)
-        {
-            var tongNamThangNgay = 0;
-            if (chkUseNamCan.Checked)
-            {
-                // Dùng can của năm, theo Thiệu Vỹ Hoa.
-                tongNamThangNgay = amLich.NamAm.Can.Id + amLich.LunarMonth + amLich.LunarDay;
-            }
-            else
-            {
-                // Dùng chi của năm, theo Thiệu Khang Tiết.
-                tongNamThangNgay = amLich.NamAm.Chi.Id + amLich.LunarMonth + amLich.LunarDay;
-            }
-
-            return tongNamThangNgay;
-        }
-
-
-        private int GetTongNamThangNgayGio(AmLich amLich)
-        {
-            DiaChi gioChi = DiaChi.All[cbxGioChi.SelectedIndex];
-            return  GetTongNamThangNgay(amLich) + gioChi.Id;
         }
 
         private void SetUIControls(AmLich amLich)
@@ -381,7 +262,6 @@ namespace DoanQueKinhDich
         {
             CachLayQue = CachLayQue.MaiHoaTienThien1;
 
-            chkUseNamCan.Enabled = true;
             txtSoHoacChu.Enabled = true;
             txtQueNgoai1.Enabled = false;
             txtQueNgoai2.Enabled = false;
@@ -398,7 +278,6 @@ namespace DoanQueKinhDich
         {
             CachLayQue = CachLayQue.MaiHoaTienThien2;
 
-            chkUseNamCan.Enabled = false;
             txtSoHoacChu.Enabled = false;
             txtQueNgoai1.Enabled = true;
             txtQueNgoai2.Enabled = false;
@@ -415,7 +294,6 @@ namespace DoanQueKinhDich
         {
             CachLayQue = CachLayQue.MaiHoaTienThien3;
 
-            chkUseNamCan.Enabled = false;
             txtSoHoacChu.Enabled = false;
             txtQueNgoai1.Enabled = false;
             txtQueNgoai2.Enabled = true;
@@ -541,13 +419,6 @@ namespace DoanQueKinhDich
         {
             ((Button)sender).PerformClick();
         }
-    }
-
-    class QueIndex
-    {
-        public int NgoaiQuaiIndex { get; set; }
-        public int NoiQuaiIndex { get; set; }
-        public int HaoDongIndex { get; set; }
     }
 
 }
