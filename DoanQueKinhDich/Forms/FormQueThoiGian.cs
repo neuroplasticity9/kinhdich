@@ -118,7 +118,7 @@ namespace DoanQueKinhDich
 
         private string GetButtonText(QueIndex queIndex)
         {
-            return $"{queIndex.GetQueChu().NameShort} -> {queIndex.GetQueBien().NameShort}";
+            return $"{queIndex.GetQueChu().NameShort} → {queIndex.GetQueBien().NameShort}";
         }
 
         private void GetQue()
