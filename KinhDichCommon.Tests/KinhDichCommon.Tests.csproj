@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="CalendarTests.cs" />
     <Compile Include="AmLichTests.cs" />
+    <Compile Include="TenTests.cs" />
     <Compile Include="GetQueTests.cs" />
     <Compile Include="PhucThanTests.cs" />
     <Compile Include="LucThanTests.cs" />

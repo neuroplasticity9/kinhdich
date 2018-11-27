@@ -421,6 +421,11 @@ namespace DoanQueKinhDich
             {
                 btnHoc.PerformClick();
             }
+            else if (e.KeyCode == Keys.F12)
+            {
+                var formTimTen = new FormTimTen();
+                formTimTen.ShowDialog(this);
+            }
         }
     }
 }
