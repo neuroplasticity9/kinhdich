@@ -37,31 +37,31 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtLotChon = new System.Windows.Forms.RichTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkLotSac = new System.Windows.Forms.CheckBox();
+            this.chkLotNang = new System.Windows.Forms.CheckBox();
+            this.chkLotNga = new System.Windows.Forms.CheckBox();
+            this.chkLotHoi = new System.Windows.Forms.CheckBox();
+            this.chkLotHuyen = new System.Windows.Forms.CheckBox();
+            this.chkLotKhongDau = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rad11 = new System.Windows.Forms.RadioButton();
+            this.rad10 = new System.Windows.Forms.RadioButton();
+            this.rad9 = new System.Windows.Forms.RadioButton();
+            this.rad8 = new System.Windows.Forms.RadioButton();
             this.rad7 = new System.Windows.Forms.RadioButton();
             this.rad6 = new System.Windows.Forms.RadioButton();
             this.rad5 = new System.Windows.Forms.RadioButton();
-            this.rad9 = new System.Windows.Forms.RadioButton();
-            this.rad8 = new System.Windows.Forms.RadioButton();
-            this.rad10 = new System.Windows.Forms.RadioButton();
-            this.rad11 = new System.Windows.Forms.RadioButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtTenChon = new System.Windows.Forms.RichTextBox();
-            this.txtTenKy = new System.Windows.Forms.RichTextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.chkLotKhongDau = new System.Windows.Forms.CheckBox();
-            this.chkLotHuyen = new System.Windows.Forms.CheckBox();
-            this.chkLotNga = new System.Windows.Forms.CheckBox();
-            this.chkLotHoi = new System.Windows.Forms.CheckBox();
-            this.chkLotSac = new System.Windows.Forms.CheckBox();
-            this.chkLotNang = new System.Windows.Forms.CheckBox();
             this.chkTenSac = new System.Windows.Forms.CheckBox();
             this.chkTenNang = new System.Windows.Forms.CheckBox();
             this.chkTenNga = new System.Windows.Forms.CheckBox();
             this.chkTenHoi = new System.Windows.Forms.CheckBox();
             this.chkTenHuyen = new System.Windows.Forms.CheckBox();
             this.chkTenKhongDau = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtTenChon = new System.Windows.Forms.RichTextBox();
+            this.txtTenKy = new System.Windows.Forms.RichTextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnCopy = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -173,6 +173,66 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chữ lót (chữ đầu tiên)";
             // 
+            // chkLotSac
+            // 
+            this.chkLotSac.AutoSize = true;
+            this.chkLotSac.Location = new System.Drawing.Point(287, 39);
+            this.chkLotSac.Name = "chkLotSac";
+            this.chkLotSac.Size = new System.Drawing.Size(62, 25);
+            this.chkLotSac.TabIndex = 34;
+            this.chkLotSac.Text = "Sắc";
+            this.chkLotSac.UseVisualStyleBackColor = true;
+            // 
+            // chkLotNang
+            // 
+            this.chkLotNang.AutoSize = true;
+            this.chkLotNang.Location = new System.Drawing.Point(545, 39);
+            this.chkLotNang.Name = "chkLotNang";
+            this.chkLotNang.Size = new System.Drawing.Size(73, 25);
+            this.chkLotNang.TabIndex = 33;
+            this.chkLotNang.Text = "Nặng";
+            this.chkLotNang.UseVisualStyleBackColor = true;
+            // 
+            // chkLotNga
+            // 
+            this.chkLotNga.AutoSize = true;
+            this.chkLotNga.Location = new System.Drawing.Point(463, 39);
+            this.chkLotNga.Name = "chkLotNga";
+            this.chkLotNga.Size = new System.Drawing.Size(62, 25);
+            this.chkLotNga.TabIndex = 32;
+            this.chkLotNga.Text = "Ngã";
+            this.chkLotNga.UseVisualStyleBackColor = true;
+            // 
+            // chkLotHoi
+            // 
+            this.chkLotHoi.AutoSize = true;
+            this.chkLotHoi.Location = new System.Drawing.Point(372, 39);
+            this.chkLotHoi.Name = "chkLotHoi";
+            this.chkLotHoi.Size = new System.Drawing.Size(62, 25);
+            this.chkLotHoi.TabIndex = 31;
+            this.chkLotHoi.Text = "Hỏi";
+            this.chkLotHoi.UseVisualStyleBackColor = true;
+            // 
+            // chkLotHuyen
+            // 
+            this.chkLotHuyen.AutoSize = true;
+            this.chkLotHuyen.Location = new System.Drawing.Point(177, 39);
+            this.chkLotHuyen.Name = "chkLotHuyen";
+            this.chkLotHuyen.Size = new System.Drawing.Size(84, 25);
+            this.chkLotHuyen.TabIndex = 30;
+            this.chkLotHuyen.Text = "Huyền";
+            this.chkLotHuyen.UseVisualStyleBackColor = true;
+            // 
+            // chkLotKhongDau
+            // 
+            this.chkLotKhongDau.AutoSize = true;
+            this.chkLotKhongDau.Location = new System.Drawing.Point(28, 39);
+            this.chkLotKhongDau.Name = "chkLotKhongDau";
+            this.chkLotKhongDau.Size = new System.Drawing.Size(128, 25);
+            this.chkLotKhongDau.TabIndex = 29;
+            this.chkLotKhongDau.Text = "Không dấu";
+            this.chkLotKhongDau.UseVisualStyleBackColor = true;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.rad11);
@@ -189,6 +249,50 @@
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tổng số ký tự của 2 chữ của tên:";
+            // 
+            // rad11
+            // 
+            this.rad11.AutoSize = true;
+            this.rad11.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rad11.Location = new System.Drawing.Point(425, 28);
+            this.rad11.Name = "rad11";
+            this.rad11.Size = new System.Drawing.Size(50, 25);
+            this.rad11.TabIndex = 9;
+            this.rad11.Text = "11";
+            this.rad11.UseVisualStyleBackColor = true;
+            // 
+            // rad10
+            // 
+            this.rad10.AutoSize = true;
+            this.rad10.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rad10.Location = new System.Drawing.Point(354, 28);
+            this.rad10.Name = "rad10";
+            this.rad10.Size = new System.Drawing.Size(50, 25);
+            this.rad10.TabIndex = 8;
+            this.rad10.Text = "10";
+            this.rad10.UseVisualStyleBackColor = true;
+            // 
+            // rad9
+            // 
+            this.rad9.AutoSize = true;
+            this.rad9.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rad9.Location = new System.Drawing.Point(286, 28);
+            this.rad9.Name = "rad9";
+            this.rad9.Size = new System.Drawing.Size(39, 25);
+            this.rad9.TabIndex = 7;
+            this.rad9.Text = "9";
+            this.rad9.UseVisualStyleBackColor = true;
+            // 
+            // rad8
+            // 
+            this.rad8.AutoSize = true;
+            this.rad8.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rad8.Location = new System.Drawing.Point(216, 28);
+            this.rad8.Name = "rad8";
+            this.rad8.Size = new System.Drawing.Size(39, 25);
+            this.rad8.TabIndex = 6;
+            this.rad8.Text = "8";
+            this.rad8.UseVisualStyleBackColor = true;
             // 
             // rad7
             // 
@@ -225,50 +329,6 @@
             this.rad5.Text = "5";
             this.rad5.UseVisualStyleBackColor = true;
             // 
-            // rad9
-            // 
-            this.rad9.AutoSize = true;
-            this.rad9.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rad9.Location = new System.Drawing.Point(286, 28);
-            this.rad9.Name = "rad9";
-            this.rad9.Size = new System.Drawing.Size(39, 25);
-            this.rad9.TabIndex = 7;
-            this.rad9.Text = "9";
-            this.rad9.UseVisualStyleBackColor = true;
-            // 
-            // rad8
-            // 
-            this.rad8.AutoSize = true;
-            this.rad8.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rad8.Location = new System.Drawing.Point(216, 28);
-            this.rad8.Name = "rad8";
-            this.rad8.Size = new System.Drawing.Size(39, 25);
-            this.rad8.TabIndex = 6;
-            this.rad8.Text = "8";
-            this.rad8.UseVisualStyleBackColor = true;
-            // 
-            // rad10
-            // 
-            this.rad10.AutoSize = true;
-            this.rad10.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rad10.Location = new System.Drawing.Point(354, 28);
-            this.rad10.Name = "rad10";
-            this.rad10.Size = new System.Drawing.Size(50, 25);
-            this.rad10.TabIndex = 8;
-            this.rad10.Text = "10";
-            this.rad10.UseVisualStyleBackColor = true;
-            // 
-            // rad11
-            // 
-            this.rad11.AutoSize = true;
-            this.rad11.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rad11.Location = new System.Drawing.Point(425, 28);
-            this.rad11.Name = "rad11";
-            this.rad11.Size = new System.Drawing.Size(50, 25);
-            this.rad11.TabIndex = 9;
-            this.rad11.Text = "11";
-            this.rad11.UseVisualStyleBackColor = true;
-            // 
             // groupBox3
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -290,114 +350,6 @@
             this.groupBox3.TabIndex = 28;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tên (chữ thứ 2)";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Courier New", 13.77391F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(4, 221);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(252, 21);
-            this.label3.TabIndex = 26;
-            this.label3.Text = "Nằm trong các chữ sau:";
-            // 
-            // txtTenChon
-            // 
-            this.txtTenChon.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTenChon.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenChon.Location = new System.Drawing.Point(8, 244);
-            this.txtTenChon.Margin = new System.Windows.Forms.Padding(2);
-            this.txtTenChon.Name = "txtTenChon";
-            this.txtTenChon.Size = new System.Drawing.Size(1049, 51);
-            this.txtTenChon.TabIndex = 25;
-            this.txtTenChon.TabStop = false;
-            this.txtTenChon.Text = "";
-            // 
-            // txtTenKy
-            // 
-            this.txtTenKy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTenKy.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenKy.Location = new System.Drawing.Point(9, 105);
-            this.txtTenKy.Margin = new System.Windows.Forms.Padding(2);
-            this.txtTenKy.Name = "txtTenKy";
-            this.txtTenKy.Size = new System.Drawing.Size(1049, 105);
-            this.txtTenKy.TabIndex = 23;
-            this.txtTenKy.TabStop = false;
-            this.txtTenKy.Text = "";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Courier New", 13.77391F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(5, 82);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(263, 21);
-            this.label4.TabIndex = 24;
-            this.label4.Text = "Không dùng các chữ sau:";
-            // 
-            // chkLotKhongDau
-            // 
-            this.chkLotKhongDau.AutoSize = true;
-            this.chkLotKhongDau.Location = new System.Drawing.Point(28, 39);
-            this.chkLotKhongDau.Name = "chkLotKhongDau";
-            this.chkLotKhongDau.Size = new System.Drawing.Size(128, 25);
-            this.chkLotKhongDau.TabIndex = 29;
-            this.chkLotKhongDau.Text = "Không dấu";
-            this.chkLotKhongDau.UseVisualStyleBackColor = true;
-            // 
-            // chkLotHuyen
-            // 
-            this.chkLotHuyen.AutoSize = true;
-            this.chkLotHuyen.Location = new System.Drawing.Point(177, 39);
-            this.chkLotHuyen.Name = "chkLotHuyen";
-            this.chkLotHuyen.Size = new System.Drawing.Size(84, 25);
-            this.chkLotHuyen.TabIndex = 30;
-            this.chkLotHuyen.Text = "Huyền";
-            this.chkLotHuyen.UseVisualStyleBackColor = true;
-            // 
-            // chkLotNga
-            // 
-            this.chkLotNga.AutoSize = true;
-            this.chkLotNga.Location = new System.Drawing.Point(463, 39);
-            this.chkLotNga.Name = "chkLotNga";
-            this.chkLotNga.Size = new System.Drawing.Size(62, 25);
-            this.chkLotNga.TabIndex = 32;
-            this.chkLotNga.Text = "Ngã";
-            this.chkLotNga.UseVisualStyleBackColor = true;
-            // 
-            // chkLotHoi
-            // 
-            this.chkLotHoi.AutoSize = true;
-            this.chkLotHoi.Location = new System.Drawing.Point(372, 39);
-            this.chkLotHoi.Name = "chkLotHoi";
-            this.chkLotHoi.Size = new System.Drawing.Size(62, 25);
-            this.chkLotHoi.TabIndex = 31;
-            this.chkLotHoi.Text = "Hỏi";
-            this.chkLotHoi.UseVisualStyleBackColor = true;
-            // 
-            // chkLotSac
-            // 
-            this.chkLotSac.AutoSize = true;
-            this.chkLotSac.Location = new System.Drawing.Point(287, 39);
-            this.chkLotSac.Name = "chkLotSac";
-            this.chkLotSac.Size = new System.Drawing.Size(62, 25);
-            this.chkLotSac.TabIndex = 34;
-            this.chkLotSac.Text = "Sắc";
-            this.chkLotSac.UseVisualStyleBackColor = true;
-            // 
-            // chkLotNang
-            // 
-            this.chkLotNang.AutoSize = true;
-            this.chkLotNang.Location = new System.Drawing.Point(545, 39);
-            this.chkLotNang.Name = "chkLotNang";
-            this.chkLotNang.Size = new System.Drawing.Size(73, 25);
-            this.chkLotNang.TabIndex = 33;
-            this.chkLotNang.Text = "Nặng";
-            this.chkLotNang.UseVisualStyleBackColor = true;
             // 
             // chkTenSac
             // 
@@ -458,6 +410,54 @@
             this.chkTenKhongDau.TabIndex = 35;
             this.chkTenKhongDau.Text = "Không dấu";
             this.chkTenKhongDau.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Courier New", 13.77391F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(4, 221);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(252, 21);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "Nằm trong các chữ sau:";
+            // 
+            // txtTenChon
+            // 
+            this.txtTenChon.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTenChon.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenChon.Location = new System.Drawing.Point(8, 244);
+            this.txtTenChon.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTenChon.Name = "txtTenChon";
+            this.txtTenChon.Size = new System.Drawing.Size(1049, 51);
+            this.txtTenChon.TabIndex = 25;
+            this.txtTenChon.TabStop = false;
+            this.txtTenChon.Text = "";
+            // 
+            // txtTenKy
+            // 
+            this.txtTenKy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTenKy.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenKy.Location = new System.Drawing.Point(9, 105);
+            this.txtTenKy.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTenKy.Name = "txtTenKy";
+            this.txtTenKy.Size = new System.Drawing.Size(1049, 105);
+            this.txtTenKy.TabIndex = 23;
+            this.txtTenKy.TabStop = false;
+            this.txtTenKy.Text = "";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Courier New", 13.77391F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(5, 82);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(263, 21);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Không dùng các chữ sau:";
             // 
             // btnCopy
             // 

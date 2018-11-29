@@ -379,7 +379,7 @@
             this.KeyPreview = true;
             this.Name = "FormMain";
             this.Padding = new System.Windows.Forms.Padding(3);
-            this.Text = "Lấy Quẻ Kinh Dịch";
+            this.Text = "Lấy Quẻ Dịch";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormMain_KeyDown);
