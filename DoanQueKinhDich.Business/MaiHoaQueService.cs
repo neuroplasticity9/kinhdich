@@ -53,9 +53,9 @@ namespace DoanQueKinhDich.Business
             sb.Append(GetTenQueMaiHoa(queHo).PadRight(padRight));
             sb.Append(GetTenQueMaiHoa(queBien));
             sb.AppendLine();
-            sb.Append(GetChiChuCuaQue(queChu).PadRight(padRight));
-            sb.Append(GetChiChuCuaQue(queHo).PadRight(padRight));
-            sb.Append(GetChiChuCuaQue(queBien));
+            sb.Append(GetCachCuaQue(queChu).PadRight(padRight));
+            sb.Append(GetCachCuaQue(queHo).PadRight(padRight));
+            sb.Append(GetCachCuaQue(queBien));
             sb.AppendLine();
             sb.AppendLine();
 

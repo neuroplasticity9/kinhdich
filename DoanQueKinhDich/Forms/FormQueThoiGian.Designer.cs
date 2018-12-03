@@ -871,7 +871,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(675, 448);
+            this.groupBox1.Size = new System.Drawing.Size(675, 414);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -959,9 +959,9 @@
             // 
             // ucQueDich
             // 
-            this.ucQueDich.Location = new System.Drawing.Point(18, 472);
+            this.ucQueDich.Location = new System.Drawing.Point(20, 442);
             this.ucQueDich.Name = "ucQueDich";
-            this.ucQueDich.Size = new System.Drawing.Size(695, 214);
+            this.ucQueDich.Size = new System.Drawing.Size(695, 241);
             this.ucQueDich.TabIndex = 2;
             // 
             // FormQueThoiGian

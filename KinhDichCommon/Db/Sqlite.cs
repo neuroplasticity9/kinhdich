@@ -43,7 +43,7 @@ namespace KinhDichCommon
             }
         }
 
-        public static void UpdateQueBackToDb(List<Que> listQue)
+        public static void UpdateAllQueToDb(List<Que> listQue)
         {
             try
             {
@@ -55,7 +55,7 @@ namespace KinhDichCommon
 
                     foreach (var que in listQue)
                     {
-                        UpdateDb(connection, que);
+                        UpdateOneQueToDb(connection, que);
                     }
 
                     connection.Close(); // Close the connection to the database
@@ -67,15 +67,28 @@ namespace KinhDichCommon
             }
         }
 
-        private static void UpdateDb(SQLiteConnection connection, Que que)
+        private static void UpdateOneQueToDb(SQLiteConnection connection, Que que)
         {
             // Create a database command
             using (SQLiteCommand command = new SQLiteCommand(connection))
             {
-                command.CommandText = $"Update Que SET NgoaiQuaiId={que.NgoaiQuai.Id}, NoiQuaiId={que.NoiQuai.Id} WHERE ID = {que.Id}";
+                // command.CommandText = $"Update Que SET NgoaiQuaiId={que.NgoaiQuai.Id}, NoiQuaiId={que.NoiQuai.Id} WHERE ID = {que.Id}";
+
+                string yNghia = GetYNghiaNgan(que.YNghia);
+                command.CommandText = $"Update Que SET YNghiaNgan='{yNghia}' WHERE ID = {que.Id}";
 
                 var result = command.ExecuteNonQuery();
             }
+        }
+
+        private static string GetYNghiaNgan(string yNghia)
+        {
+            int firstDot = yNghia.IndexOf('.', 0);
+            int secondDot = yNghia.IndexOf('.', firstDot + 1);
+
+            var result = yNghia.Substring(firstDot+1, secondDot-firstDot-1).Trim();
+
+            return result;   
         }
 
         private static void SetQue(Que que, SQLiteDataReader reader)
@@ -85,8 +98,8 @@ namespace KinhDichCommon
             que.Name = reader["Name"].ToString();
             que.NameShort = reader["NameShort"].ToString();
             que.NameChinese = reader["NameChinese"].ToString();
-            que.Desc = reader["Desc"].ToString();
-            que.Url = reader["Url"].ToString();
+            que.Cach = reader["Cach"].ToString();
+            que.YNghiaNgan = reader["YNghiaNgan"].ToString();
             que.YNghia = reader["YNghia"].ToString();
             que.ViDu = reader["ViDu"].ToString();
             que.TuongQue = reader["TuongQue"].ToString();

@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.uiGroupBox = new System.Windows.Forms.GroupBox();
-            this.labelTenBienQuai = new System.Windows.Forms.Label();
-            this.labelTenChuQuai = new System.Windows.Forms.Label();
+            this.lblBienTen = new System.Windows.Forms.Label();
+            this.lblChuTen = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cbxBienNoiQuai = new System.Windows.Forms.ComboBox();
@@ -60,13 +60,17 @@
             this.chkIsHao1Dong = new System.Windows.Forms.CheckBox();
             this.ttChuQuai = new System.Windows.Forms.ToolTip(this.components);
             this.ttBienQuai = new System.Windows.Forms.ToolTip(this.components);
+            this.lblBienYNghia = new System.Windows.Forms.Label();
+            this.lblChuYNghia = new System.Windows.Forms.Label();
             this.uiGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // uiGroupBox
             // 
-            this.uiGroupBox.Controls.Add(this.labelTenBienQuai);
-            this.uiGroupBox.Controls.Add(this.labelTenChuQuai);
+            this.uiGroupBox.Controls.Add(this.lblBienYNghia);
+            this.uiGroupBox.Controls.Add(this.lblChuYNghia);
+            this.uiGroupBox.Controls.Add(this.lblBienTen);
+            this.uiGroupBox.Controls.Add(this.lblChuTen);
             this.uiGroupBox.Controls.Add(this.label1);
             this.uiGroupBox.Controls.Add(this.label2);
             this.uiGroupBox.Controls.Add(this.cbxBienNoiQuai);
@@ -98,33 +102,33 @@
             this.uiGroupBox.Margin = new System.Windows.Forms.Padding(2);
             this.uiGroupBox.Name = "uiGroupBox";
             this.uiGroupBox.Padding = new System.Windows.Forms.Padding(2);
-            this.uiGroupBox.Size = new System.Drawing.Size(675, 207);
+            this.uiGroupBox.Size = new System.Drawing.Size(675, 237);
             this.uiGroupBox.TabIndex = 0;
             this.uiGroupBox.TabStop = false;
             // 
             // labelTenBienQuai
             // 
-            this.labelTenBienQuai.AutoSize = true;
-            this.labelTenBienQuai.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTenBienQuai.Location = new System.Drawing.Point(423, 178);
-            this.labelTenBienQuai.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelTenBienQuai.Name = "labelTenBienQuai";
-            this.labelTenBienQuai.Size = new System.Drawing.Size(109, 21);
-            this.labelTenBienQuai.TabIndex = 44;
-            this.labelTenBienQuai.Text = "Biến quái";
-            this.labelTenBienQuai.Click += new System.EventHandler(this.labelTenBienQuai_Click);
+            this.lblBienTen.AutoSize = true;
+            this.lblBienTen.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBienTen.Location = new System.Drawing.Point(423, 177);
+            this.lblBienTen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblBienTen.Name = "labelTenBienQuai";
+            this.lblBienTen.Size = new System.Drawing.Size(109, 21);
+            this.lblBienTen.TabIndex = 44;
+            this.lblBienTen.Text = "Biến quái";
+            this.lblBienTen.Click += new System.EventHandler(this.labelTenBienQuai_Click);
             // 
             // labelTenChuQuai
             // 
-            this.labelTenChuQuai.AutoSize = true;
-            this.labelTenChuQuai.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTenChuQuai.Location = new System.Drawing.Point(132, 178);
-            this.labelTenChuQuai.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelTenChuQuai.Name = "labelTenChuQuai";
-            this.labelTenChuQuai.Size = new System.Drawing.Size(98, 21);
-            this.labelTenChuQuai.TabIndex = 43;
-            this.labelTenChuQuai.Text = "Chủ quái";
-            this.labelTenChuQuai.Click += new System.EventHandler(this.labelTenChuQuai_Click);
+            this.lblChuTen.AutoSize = true;
+            this.lblChuTen.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChuTen.Location = new System.Drawing.Point(132, 177);
+            this.lblChuTen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblChuTen.Name = "labelTenChuQuai";
+            this.lblChuTen.Size = new System.Drawing.Size(98, 21);
+            this.lblChuTen.TabIndex = 43;
+            this.lblChuTen.Text = "Chủ quái";
+            this.lblChuTen.Click += new System.EventHandler(this.labelTenChuQuai_Click);
             // 
             // label1
             // 
@@ -516,13 +520,35 @@
             this.ttChuQuai.UseAnimation = false;
             this.ttChuQuai.UseFading = false;
             // 
+            // lblBienYNghia
+            // 
+            this.lblBienYNghia.AutoSize = true;
+            this.lblBienYNghia.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBienYNghia.Location = new System.Drawing.Point(423, 207);
+            this.lblBienYNghia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblBienYNghia.Name = "lblBienYNghia";
+            this.lblBienYNghia.Size = new System.Drawing.Size(109, 21);
+            this.lblBienYNghia.TabIndex = 46;
+            this.lblBienYNghia.Text = "Biến quái";
+            // 
+            // lblChuYNghia
+            // 
+            this.lblChuYNghia.AutoSize = true;
+            this.lblChuYNghia.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChuYNghia.Location = new System.Drawing.Point(132, 207);
+            this.lblChuYNghia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblChuYNghia.Name = "lblChuYNghia";
+            this.lblChuYNghia.Size = new System.Drawing.Size(98, 21);
+            this.lblChuYNghia.TabIndex = 45;
+            this.lblChuYNghia.Text = "Chủ quái";
+            // 
             // ucQue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.uiGroupBox);
             this.Name = "ucQue";
-            this.Size = new System.Drawing.Size(679, 208);
+            this.Size = new System.Drawing.Size(679, 237);
             this.uiGroupBox.ResumeLayout(false);
             this.uiGroupBox.PerformLayout();
             this.ResumeLayout(false);
@@ -558,9 +584,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbxBienNoiQuai;
         private System.Windows.Forms.ComboBox cbxBienNgoaiQuai;
-        private System.Windows.Forms.Label labelTenBienQuai;
-        private System.Windows.Forms.Label labelTenChuQuai;
+        private System.Windows.Forms.Label lblBienTen;
+        private System.Windows.Forms.Label lblChuTen;
         private System.Windows.Forms.ToolTip ttChuQuai;
         private System.Windows.Forms.ToolTip ttBienQuai;
+        private System.Windows.Forms.Label lblBienYNghia;
+        private System.Windows.Forms.Label lblChuYNghia;
     }
 }
