@@ -114,6 +114,10 @@ namespace DoanQueKinhDich
             {
                 _diaChiButtons[i].Text = GetButtonText(listQueTrong1Ngay[i]);
             }
+
+            QueIndex queGioMui = listQueTrong1Ngay[7];
+
+            labelNgayDich.Text = $"Ngày {queGioMui.GetQueChu().NgoaiQuai.Tuong}, giờ Mùi động hào {queGioMui.HaoDongNumber}";
         }
 
         private string GetButtonText(QueIndex queIndex)

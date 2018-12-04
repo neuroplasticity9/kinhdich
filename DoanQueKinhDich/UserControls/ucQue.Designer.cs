@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.uiGroupBox = new System.Windows.Forms.GroupBox();
+            this.lblBienYNghia = new System.Windows.Forms.Label();
+            this.lblChuYNghia = new System.Windows.Forms.Label();
             this.lblBienTen = new System.Windows.Forms.Label();
             this.lblChuTen = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,8 +62,6 @@
             this.chkIsHao1Dong = new System.Windows.Forms.CheckBox();
             this.ttChuQuai = new System.Windows.Forms.ToolTip(this.components);
             this.ttBienQuai = new System.Windows.Forms.ToolTip(this.components);
-            this.lblBienYNghia = new System.Windows.Forms.Label();
-            this.lblChuYNghia = new System.Windows.Forms.Label();
             this.uiGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,25 +106,47 @@
             this.uiGroupBox.TabIndex = 0;
             this.uiGroupBox.TabStop = false;
             // 
-            // labelTenBienQuai
+            // lblBienYNghia
+            // 
+            this.lblBienYNghia.AutoSize = true;
+            this.lblBienYNghia.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBienYNghia.Location = new System.Drawing.Point(423, 207);
+            this.lblBienYNghia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblBienYNghia.Name = "lblBienYNghia";
+            this.lblBienYNghia.Size = new System.Drawing.Size(87, 21);
+            this.lblBienYNghia.TabIndex = 46;
+            this.lblBienYNghia.Text = "Ý nghĩa";
+            // 
+            // lblChuYNghia
+            // 
+            this.lblChuYNghia.AutoSize = true;
+            this.lblChuYNghia.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChuYNghia.Location = new System.Drawing.Point(132, 207);
+            this.lblChuYNghia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblChuYNghia.Name = "lblChuYNghia";
+            this.lblChuYNghia.Size = new System.Drawing.Size(87, 21);
+            this.lblChuYNghia.TabIndex = 45;
+            this.lblChuYNghia.Text = "Ý nghĩa";
+            // 
+            // lblBienTen
             // 
             this.lblBienTen.AutoSize = true;
             this.lblBienTen.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBienTen.Location = new System.Drawing.Point(423, 177);
             this.lblBienTen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblBienTen.Name = "labelTenBienQuai";
+            this.lblBienTen.Name = "lblBienTen";
             this.lblBienTen.Size = new System.Drawing.Size(109, 21);
             this.lblBienTen.TabIndex = 44;
             this.lblBienTen.Text = "Biến quái";
             this.lblBienTen.Click += new System.EventHandler(this.labelTenBienQuai_Click);
             // 
-            // labelTenChuQuai
+            // lblChuTen
             // 
             this.lblChuTen.AutoSize = true;
             this.lblChuTen.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChuTen.Location = new System.Drawing.Point(132, 177);
             this.lblChuTen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblChuTen.Name = "labelTenChuQuai";
+            this.lblChuTen.Name = "lblChuTen";
             this.lblChuTen.Size = new System.Drawing.Size(98, 21);
             this.lblChuTen.TabIndex = 43;
             this.lblChuTen.Text = "Chủ quái";
@@ -519,28 +541,6 @@
             this.ttChuQuai.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.ttChuQuai.UseAnimation = false;
             this.ttChuQuai.UseFading = false;
-            // 
-            // lblBienYNghia
-            // 
-            this.lblBienYNghia.AutoSize = true;
-            this.lblBienYNghia.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBienYNghia.Location = new System.Drawing.Point(423, 207);
-            this.lblBienYNghia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblBienYNghia.Name = "lblBienYNghia";
-            this.lblBienYNghia.Size = new System.Drawing.Size(109, 21);
-            this.lblBienYNghia.TabIndex = 46;
-            this.lblBienYNghia.Text = "Biến quái";
-            // 
-            // lblChuYNghia
-            // 
-            this.lblChuYNghia.AutoSize = true;
-            this.lblChuYNghia.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChuYNghia.Location = new System.Drawing.Point(132, 207);
-            this.lblChuYNghia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblChuYNghia.Name = "lblChuYNghia";
-            this.lblChuYNghia.Size = new System.Drawing.Size(98, 21);
-            this.lblChuYNghia.TabIndex = 45;
-            this.lblChuYNghia.Text = "Chủ quái";
             // 
             // ucQue
             // 

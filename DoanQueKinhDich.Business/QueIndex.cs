@@ -11,6 +11,8 @@ namespace DoanQueKinhDich.Business
         public int NoiQuaiIndex { get; set; }
         public int HaoDongIndex { get; set; }
 
+        public int HaoDongNumber => HaoDongIndex == 0 ? 6 : HaoDongIndex;
+
         public string Desc { get; set; }
                
         /// <summary>

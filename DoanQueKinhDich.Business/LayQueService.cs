@@ -40,7 +40,7 @@ namespace DoanQueKinhDich.Business
             sb.AppendLine();
             sb.AppendLine($"2. Nội quái:   năm {amLich.NamAm.Chi.Name} {amLich.NamAm.Chi.Id} + tháng {amLich.LunarMonth} + ngày {amLich.LunarDay} + số {soHoacChu} + giờ {amLich.GioAm.Chi.Name} {amLich.GioAm.Chi.Id} = {tongNoiQuai} % 8 = {queIndex.NoiQuaiIndex + 1} = quẻ {BatQuai.All[queIndex.NoiQuaiIndex].Name}");
             sb.AppendLine();
-            sb.AppendLine($"3. Động hào:   tổng nội quái {tongNoiQuai} % 6 = {GetHaoDongDesc(queIndex.HaoDongIndex)}");
+            sb.AppendLine($"3. Động hào:   tổng nội quái {tongNoiQuai} % 6 = {queIndex.HaoDongNumber}");
 
             queIndex.Desc = sb.ToString();
 
@@ -64,7 +64,7 @@ namespace DoanQueKinhDich.Business
             sb.AppendLine();
             sb.AppendLine($"2. Nội quái:   số {tongNoiQuai} % 8 = {queIndex.NoiQuaiIndex + 1} = quẻ {BatQuai.All[queIndex.NoiQuaiIndex].Name}");
             sb.AppendLine();
-            sb.AppendLine($"3. Động hào:   ngoại quái {tongNgoaiQuai} + nội quái {tongNoiQuai} = {tongNgoaiQuai + tongNoiQuai} % 6 = {GetHaoDongDesc(queIndex.HaoDongIndex)}");
+            sb.AppendLine($"3. Động hào:   ngoại quái {tongNgoaiQuai} + nội quái {tongNoiQuai} = {tongNgoaiQuai + tongNoiQuai} % 6 = {queIndex.HaoDongNumber}");
 
             queIndex.Desc = sb.ToString();
 
@@ -91,7 +91,7 @@ namespace DoanQueKinhDich.Business
             sb.AppendLine();
             sb.AppendLine($"2. Nội quái:   số {tongNoiQuai} % 8 = {queIndex.NoiQuaiIndex + 1} = quẻ {BatQuai.All[queIndex.NoiQuaiIndex].Name}");
             sb.AppendLine();
-            sb.AppendLine($"3. Động hào:   ngoại quái {tongNgoaiQuai} + nội quái {tongNoiQuai}{GetGioDescChoCongThucBatThuong(amLich.GioAm, batThuong)} = {tongNgoaiQuai + tongNoiQuai + chiNumber} % 6 = {GetHaoDongDesc(queIndex.HaoDongIndex)}");
+            sb.AppendLine($"3. Động hào:   ngoại quái {tongNgoaiQuai} + nội quái {tongNoiQuai}{GetGioDescChoCongThucBatThuong(amLich.GioAm, batThuong)} = {tongNgoaiQuai + tongNoiQuai + chiNumber} % 6 = {queIndex.HaoDongNumber}");
 
             queIndex.Desc = sb.ToString();
 
@@ -155,11 +155,6 @@ namespace DoanQueKinhDich.Business
         {
             DiaChi gioChi = DiaChi.All[amLich.GioAm.Chi.Id - 1];
             return GetTongNamThangNgay(amLich) + gioChi.Id;
-        }
-
-        private int GetHaoDongDesc(int haoDongIndex)
-        {
-            return haoDongIndex == 0 ? 6 : haoDongIndex;
         }
 
     }
