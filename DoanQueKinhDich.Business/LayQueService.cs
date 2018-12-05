@@ -100,7 +100,7 @@ namespace DoanQueKinhDich.Business
 
         private string GetGioDescChoCongThucBatThuong(CanChi gio, bool batThuong)
         {
-            return batThuong ? "" : $" + giờ {gio.Chi.Name} {gio.Chi.Id}";
+            return batThuong ? $" + giờ {gio.Chi.Name} {gio.Chi.Id}" : "";
         }
 
         private int GetTongCuaQuai(string textCuaQuai)

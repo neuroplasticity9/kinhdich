@@ -47,6 +47,7 @@
             this.uiHour = new System.Windows.Forms.DateTimePicker();
             this.labelNgayAmLich = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.labelNgayDich = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -82,18 +83,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkCongChiGio = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtSoHoacChu = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.radHauThien = new System.Windows.Forms.RadioButton();
-            this.radTienThien = new System.Windows.Forms.RadioButton();
             this.txtDesc = new System.Windows.Forms.RichTextBox();
             this.btnLoadCurrentDateTime = new System.Windows.Forms.Button();
-            this.labelNgayDich = new System.Windows.Forms.Label();
             this.ucQueDich = new DoanQueKinhDich.UserControls.ucQue();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnGo
@@ -453,6 +450,18 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
+            // labelNgayDich
+            // 
+            this.labelNgayDich.AutoSize = true;
+            this.labelNgayDich.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNgayDich.ForeColor = System.Drawing.Color.Red;
+            this.labelNgayDich.Location = new System.Drawing.Point(21, 275);
+            this.labelNgayDich.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelNgayDich.Name = "labelNgayDich";
+            this.labelNgayDich.Size = new System.Drawing.Size(65, 21);
+            this.labelNgayDich.TabIndex = 69;
+            this.labelNgayDich.Text = "Ngày:";
+            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -757,11 +766,11 @@
             // 
             this.radNgoaiSo.AutoSize = true;
             this.radNgoaiSo.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radNgoaiSo.Location = new System.Drawing.Point(28, 118);
+            this.radNgoaiSo.Location = new System.Drawing.Point(29, 268);
             this.radNgoaiSo.Name = "radNgoaiSo";
-            this.radNgoaiSo.Size = new System.Drawing.Size(479, 25);
+            this.radNgoaiSo.Size = new System.Drawing.Size(512, 25);
             this.radNgoaiSo.TabIndex = 2;
-            this.radNgoaiSo.Text = "Quẻ ngoại dùng thời gian, quẻ nội dùng số";
+            this.radNgoaiSo.Text = "Ngoại quái dùng thời gian, nội quái dùng số:";
             this.radNgoaiSo.UseVisualStyleBackColor = true;
             this.radNgoaiSo.CheckedChanged += new System.EventHandler(this.radNgoaiSo_CheckedChanged);
             // 
@@ -771,9 +780,9 @@
             this.radThoiGian.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radThoiGian.Location = new System.Drawing.Point(29, 28);
             this.radThoiGian.Name = "radThoiGian";
-            this.radThoiGian.Size = new System.Drawing.Size(182, 25);
+            this.radThoiGian.Size = new System.Drawing.Size(479, 25);
             this.radThoiGian.TabIndex = 0;
-            this.radThoiGian.Text = "Dùng thời gian";
+            this.radThoiGian.Text = "Dùng thời gian cho ngoại quái và nội quái";
             this.radThoiGian.UseVisualStyleBackColor = true;
             this.radThoiGian.CheckedChanged += new System.EventHandler(this.radThoiGian_CheckedChanged);
             // 
@@ -781,18 +790,18 @@
             // 
             this.radioNgoaiSoNoiSo.AutoSize = true;
             this.radioNgoaiSoNoiSo.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioNgoaiSoNoiSo.Location = new System.Drawing.Point(28, 208);
+            this.radioNgoaiSoNoiSo.Location = new System.Drawing.Point(28, 114);
             this.radioNgoaiSoNoiSo.Name = "radioNgoaiSoNoiSo";
-            this.radioNgoaiSoNoiSo.Size = new System.Drawing.Size(402, 25);
+            this.radioNgoaiSoNoiSo.Size = new System.Drawing.Size(413, 25);
             this.radioNgoaiSoNoiSo.TabIndex = 4;
-            this.radioNgoaiSoNoiSo.Text = "Quẻ ngoại dùng số, quẻ nội dùng số";
+            this.radioNgoaiSoNoiSo.Text = "Dùng số cho ngoại quái và nội quái:";
             this.radioNgoaiSoNoiSo.UseVisualStyleBackColor = true;
             this.radioNgoaiSoNoiSo.CheckedChanged += new System.EventHandler(this.radioNgoaiSoNoiSo_CheckedChanged);
             // 
             // txtQueNgoai1
             // 
             this.txtQueNgoai1.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQueNgoai1.Location = new System.Drawing.Point(192, 154);
+            this.txtQueNgoai1.Location = new System.Drawing.Point(193, 304);
             this.txtQueNgoai1.Name = "txtQueNgoai1";
             this.txtQueNgoai1.Size = new System.Drawing.Size(444, 29);
             this.txtQueNgoai1.TabIndex = 3;
@@ -803,7 +812,7 @@
             // txtQueNgoai2
             // 
             this.txtQueNgoai2.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQueNgoai2.Location = new System.Drawing.Point(192, 241);
+            this.txtQueNgoai2.Location = new System.Drawing.Point(192, 147);
             this.txtQueNgoai2.Name = "txtQueNgoai2";
             this.txtQueNgoai2.Size = new System.Drawing.Size(444, 29);
             this.txtQueNgoai2.TabIndex = 5;
@@ -814,7 +823,7 @@
             // txtQueNoi2
             // 
             this.txtQueNoi2.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQueNoi2.Location = new System.Drawing.Point(192, 276);
+            this.txtQueNoi2.Location = new System.Drawing.Point(192, 182);
             this.txtQueNoi2.Name = "txtQueNoi2";
             this.txtQueNoi2.Size = new System.Drawing.Size(444, 29);
             this.txtQueNoi2.TabIndex = 6;
@@ -826,40 +835,40 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(67, 157);
+            this.label3.Location = new System.Drawing.Point(79, 307);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 21);
+            this.label3.Size = new System.Drawing.Size(109, 21);
             this.label3.TabIndex = 46;
-            this.label3.Text = "Quẻ nội:";
+            this.label3.Text = "Nội quái:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(67, 244);
+            this.label4.Location = new System.Drawing.Point(56, 150);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 21);
+            this.label4.Size = new System.Drawing.Size(131, 21);
             this.label4.TabIndex = 54;
-            this.label4.Text = "Quẻ ngoại:";
+            this.label4.Text = "Ngoại quái:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(89, 279);
+            this.label7.Location = new System.Drawing.Point(78, 185);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(98, 21);
+            this.label7.Size = new System.Drawing.Size(109, 21);
             this.label7.TabIndex = 55;
-            this.label7.Text = "Quẻ nội:";
+            this.label7.Text = "Nội quái:";
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.chkCongChiGio);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtSoHoacChu);
-            this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.radThoiGian);
             this.groupBox1.Controls.Add(this.label4);
@@ -877,6 +886,17 @@
             this.groupBox1.Size = new System.Drawing.Size(675, 414);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // chkCongChiGio
+            // 
+            this.chkCongChiGio.AutoSize = true;
+            this.chkCongChiGio.Location = new System.Drawing.Point(192, 220);
+            this.chkCongChiGio.Name = "chkCongChiGio";
+            this.chkCongChiGio.Size = new System.Drawing.Size(348, 25);
+            this.chkCongChiGio.TabIndex = 58;
+            this.chkCongChiGio.Text = "Cộng chi giờ để tính hào động";
+            this.chkCongChiGio.UseVisualStyleBackColor = true;
+            this.chkCongChiGio.CheckedChanged += new System.EventHandler(this.chkCongChiGio_CheckedChanged);
             // 
             // label8
             // 
@@ -899,41 +919,6 @@
             this.txtSoHoacChu.Click += new System.EventHandler(this.onTextBoxEntered);
             this.txtSoHoacChu.TextChanged += new System.EventHandler(this.txtSoHoacChu_TextChanged);
             this.txtSoHoacChu.Enter += new System.EventHandler(this.onTextBoxEntered);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.radHauThien);
-            this.panel1.Controls.Add(this.radTienThien);
-            this.panel1.Location = new System.Drawing.Point(192, 311);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(444, 46);
-            this.panel1.TabIndex = 48;
-            // 
-            // radHauThien
-            // 
-            this.radHauThien.AutoSize = true;
-            this.radHauThien.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radHauThien.Location = new System.Drawing.Point(249, 11);
-            this.radHauThien.Name = "radHauThien";
-            this.radHauThien.Size = new System.Drawing.Size(127, 25);
-            this.radHauThien.TabIndex = 1;
-            this.radHauThien.Text = "Hậu thiên";
-            this.radHauThien.UseVisualStyleBackColor = true;
-            this.radHauThien.CheckedChanged += new System.EventHandler(this.radTienThien_CheckedChanged);
-            // 
-            // radTienThien
-            // 
-            this.radTienThien.AutoSize = true;
-            this.radTienThien.Checked = true;
-            this.radTienThien.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radTienThien.Location = new System.Drawing.Point(68, 11);
-            this.radTienThien.Name = "radTienThien";
-            this.radTienThien.Size = new System.Drawing.Size(138, 25);
-            this.radTienThien.TabIndex = 0;
-            this.radTienThien.TabStop = true;
-            this.radTienThien.Text = "Tiên thiên";
-            this.radTienThien.UseVisualStyleBackColor = true;
-            this.radTienThien.CheckedChanged += new System.EventHandler(this.radTienThien_CheckedChanged);
             // 
             // txtDesc
             // 
@@ -959,18 +944,6 @@
             this.btnLoadCurrentDateTime.Text = "Ngày giờ hiện tại (F2)";
             this.btnLoadCurrentDateTime.UseVisualStyleBackColor = true;
             this.btnLoadCurrentDateTime.Click += new System.EventHandler(this.btnLoadCurrentDateTime_Click);
-            // 
-            // labelNgayDich
-            // 
-            this.labelNgayDich.AutoSize = true;
-            this.labelNgayDich.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNgayDich.ForeColor = System.Drawing.Color.Red;
-            this.labelNgayDich.Location = new System.Drawing.Point(21, 275);
-            this.labelNgayDich.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelNgayDich.Name = "labelNgayDich";
-            this.labelNgayDich.Size = new System.Drawing.Size(65, 21);
-            this.labelNgayDich.TabIndex = 69;
-            this.labelNgayDich.Text = "Ngày:";
             // 
             // ucQueDich
             // 
@@ -1003,8 +976,6 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1040,9 +1011,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radHauThien;
-        private System.Windows.Forms.RadioButton radTienThien;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtSoHoacChu;
         private System.Windows.Forms.RichTextBox txtDesc;
@@ -1072,6 +1040,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label labelNgayDich;
+        private System.Windows.Forms.CheckBox chkCongChiGio;
     }
 }
 

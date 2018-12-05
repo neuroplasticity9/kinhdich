@@ -170,7 +170,7 @@ namespace DoanQueKinhDich
                     break;
 
                 case CachLayQue.MaiHoaTienThien3:
-                    queIndex = _layQueService.GetQueIndexBySoAndSo(txtQueNgoai2.Text, txtQueNoi2.Text, amLich, radHauThien.Checked);
+                    queIndex = _layQueService.GetQueIndexBySoAndSo(txtQueNgoai2.Text, txtQueNoi2.Text, amLich, chkCongChiGio.Checked);
                     break;
 
                 default:
@@ -270,8 +270,7 @@ namespace DoanQueKinhDich
             txtQueNgoai1.Enabled = false;
             txtQueNgoai2.Enabled = false;
             txtQueNoi2.Enabled = false;
-            radTienThien.Enabled = false;
-            radHauThien.Enabled = false;
+            chkCongChiGio.Enabled = false;
 
             txtSoHoacChu.Focus();
 
@@ -286,8 +285,7 @@ namespace DoanQueKinhDich
             txtQueNgoai1.Enabled = true;
             txtQueNgoai2.Enabled = false;
             txtQueNoi2.Enabled = false;
-            radTienThien.Enabled = false;
-            radHauThien.Enabled = false;
+            chkCongChiGio.Enabled = false;
             
             txtQueNgoai1.Focus();
 
@@ -302,9 +300,7 @@ namespace DoanQueKinhDich
             txtQueNgoai1.Enabled = false;
             txtQueNgoai2.Enabled = true;
             txtQueNoi2.Enabled = true;
-            radTienThien.Enabled = true;
-            radHauThien.Enabled = true;
-            radTienThien.Checked = true;
+            chkCongChiGio.Enabled = true;
 
             txtQueNgoai2.Focus();
 
@@ -322,11 +318,11 @@ namespace DoanQueKinhDich
         }
 
         /// <summary>
-        /// Note: events for 4 radio buttons.
+        /// 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void radTienThien_CheckedChanged(object sender, EventArgs e)
+        private void chkCongChiGio_CheckedChanged(object sender, EventArgs e)
         {
             GetQue();
         }
