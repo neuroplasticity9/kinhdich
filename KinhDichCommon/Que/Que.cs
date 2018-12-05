@@ -25,7 +25,8 @@ namespace KinhDichCommon
     public partial class Que : BaseItem
     {
         public int QueId { get; set; }
-        public string Url { get; set; }
+        public string Cach { get; set; }
+        public string YNghiaNgan { get; set; }
         public string YNghia { get; internal set; }
         public string ViDu { get; internal set; }
         public string TuongQue { get; internal set; }
@@ -188,7 +189,8 @@ namespace KinhDichCommon
                 NameChinese = this.NameChinese,
                 Desc = this.Desc,
                 QueId = this.QueId,
-                Url = this.Url,
+                Cach = this.Cach,
+                YNghiaNgan = this.YNghiaNgan,
                 EnglishName = this.EnglishName,
                 Unicode = this.Unicode,
                 YNghia = this.YNghia,

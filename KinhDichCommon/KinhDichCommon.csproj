@@ -79,6 +79,7 @@
     </Compile>
     <Compile Include="Que\Que.Static.cs" />
     <Compile Include="Support\Utils.cs" />
+    <Compile Include="Ten\TenService.cs" />
     <Compile Include="VongTruongSinh\TruongSinhNguHanh.cs" />
     <Compile Include="VongTruongSinh\VongTruongSinh.cs" />
     <Compile Include="Que\Que.cs" />

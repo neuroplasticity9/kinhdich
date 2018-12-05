@@ -145,14 +145,14 @@ namespace DoanQueKinhDich.Business
             return $"   {que.Name} ({que.QueThuan.NguHanh.Name})";
         }
 
-        protected string GetChiChuCuaQue(Que que)
+        protected string GetCachCuaQue(Que que)
         {
             if (que == null)
             {
                 return "";
             }
 
-            return $"   {que.Desc}";
+            return $"   {que.Cach}";
         }
         
         protected string GetHopXungString(Que que)

@@ -157,8 +157,10 @@ namespace DoanQueKinhDich.UserControls
             uiBienNgoaiQuai.Visible = newValue;
             uiBienNoiQuai.Visible = newValue;
 
-            labelTenChuQuai.Visible = newValue;
-            labelTenBienQuai.Visible = newValue;
+            lblChuTen.Visible = newValue;
+            lblBienTen.Visible = newValue;
+            lblChuYNghia.Visible = newValue;
+            lblBienYNghia.Visible = newValue;
         }
         
         private void UpdateNgoaiQuai()
@@ -182,7 +184,7 @@ namespace DoanQueKinhDich.UserControls
             chkHao5.Checked = cung.Duong2;
             chkHao4.Checked = cung.Duong1;
 
-            UpdateTenQuai(cbxNgoaiQuai, cbxNoiQuai, labelTenChuQuai, ttChuQuai);
+            UpdateTenQuai(cbxNgoaiQuai, cbxNoiQuai, lblChuTen, lblChuYNghia, ttChuQuai);
 
             CheckedChanged?.Invoke(null, null);
         }
@@ -194,17 +196,18 @@ namespace DoanQueKinhDich.UserControls
             chkHao2.Checked = cung.Duong2;
             chkHao1.Checked = cung.Duong1;
 
-            UpdateTenQuai(cbxNgoaiQuai, cbxNoiQuai, labelTenChuQuai, ttChuQuai);
+            UpdateTenQuai(cbxNgoaiQuai, cbxNoiQuai, lblChuTen, lblChuYNghia, ttChuQuai);
 
             CheckedChanged?.Invoke(null, null);
         }
 
-        private void UpdateTenQuai(ComboBox ngoaiQuai, ComboBox noiQuai, Label labelTen, ToolTip tooltip)
+        private void UpdateTenQuai(ComboBox ngoaiQuai, ComboBox noiQuai, Label labelTen, Label labelYNghia, ToolTip tooltip)
         {
             if (ngoaiQuai.Visible && cbxBienNoiQuai.Visible && ngoaiQuai.SelectedIndex >= 0 && noiQuai.SelectedIndex >= 0)
             {
                 var que = Que.GetQue(ngoaiQuai.SelectedIndex + 1, noiQuai.SelectedIndex + 1);
                 labelTen.Text = que.Name;
+                labelYNghia.Text = que.YNghiaNgan;
                 tooltip.ToolTipTitle = que.GetQueDesc();
             }
         }
@@ -266,11 +269,13 @@ namespace DoanQueKinhDich.UserControls
 
             if (chkHao6.Visible)
             {
-                UpdateTenQuai(cbxNgoaiQuai, cbxNoiQuai, labelTenChuQuai, ttChuQuai);
-                UpdateTenQuai(cbxBienNgoaiQuai, cbxBienNoiQuai, labelTenBienQuai, ttBienQuai);
+                UpdateTenQuai(cbxNgoaiQuai, cbxNoiQuai, lblChuTen, lblChuYNghia, ttChuQuai);
+                UpdateTenQuai(cbxBienNgoaiQuai, cbxBienNoiQuai, lblBienTen, lblBienYNghia, ttBienQuai);
 
-                labelTenChuQuai.Visible = true;
-                labelTenBienQuai.Visible = true;
+                lblChuTen.Visible = true;
+                lblBienTen.Visible = true;
+                lblChuYNghia.Visible = true;
+                lblBienYNghia.Visible = true;
             }
         }
 
@@ -317,7 +322,7 @@ namespace DoanQueKinhDich.UserControls
             chkBienHao5.Checked = cung.Duong2;
             chkBienHao4.Checked = cung.Duong1;
 
-            UpdateTenQuai(cbxBienNgoaiQuai, cbxBienNoiQuai, labelTenBienQuai, ttBienQuai);
+            UpdateTenQuai(cbxBienNgoaiQuai, cbxBienNoiQuai, lblBienTen, lblBienYNghia, ttBienQuai);
 
             CheckedChanged?.Invoke(null, null);
         }
@@ -329,19 +334,19 @@ namespace DoanQueKinhDich.UserControls
             chkBienHao2.Checked = cung.Duong2;
             chkBienHao1.Checked = cung.Duong1;
 
-            UpdateTenQuai(cbxBienNgoaiQuai, cbxBienNoiQuai, labelTenBienQuai, ttBienQuai);
+            UpdateTenQuai(cbxBienNgoaiQuai, cbxBienNoiQuai, lblBienTen, lblBienYNghia, ttBienQuai);
 
             CheckedChanged?.Invoke(null, null);
         }
 
         private void labelTenChuQuai_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(this, ttChuQuai.ToolTipTitle, labelTenChuQuai.Text);
+            MessageBox.Show(this, ttChuQuai.ToolTipTitle, lblChuTen.Text);
         }
 
         private void labelTenBienQuai_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(this, ttBienQuai.ToolTipTitle, labelTenBienQuai.Text);
+            MessageBox.Show(this, ttBienQuai.ToolTipTitle, lblBienTen.Text);
         }
     }
 }

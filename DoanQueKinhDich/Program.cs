@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using KinhDichCommon;
 
@@ -16,7 +13,7 @@ namespace DoanQueKinhDich
         static void Main()
         {
             Sqlite.LoadQueInfoFromDb();
-            // Sqlite.UpdateQueBackToDb(All);
+            //Sqlite.UpdateAllQueToDb(Que.All);
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

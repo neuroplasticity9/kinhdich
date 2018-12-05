@@ -41,7 +41,7 @@ namespace KinhDichCommon
             {
                 Id = 1,
                 Name = "Càn Vi Thiên",
-                NameShort = "Càn",
+                NameShort = "Thuần Càn",
                 NguHanh = Kim,
                 Hao6 = new Hao { Id = 6, HanhCuaQue = Kim, Duong = true, Chi = Tuat, The = true },
                 Hao5 = new Hao { Id = 5, HanhCuaQue = Kim, Duong = true, Chi = Than },
@@ -55,7 +55,7 @@ namespace KinhDichCommon
             {
                 Id = 2,
                 Name = "Đoài Vi Trạch",
-                NameShort = "Đoài",
+                NameShort = "Thuần Đoài",
                 NguHanh = Kim,
                 Hao6 = new Hao { Id = 6, HanhCuaQue = Kim, Duong = false, Chi = Mui, The = true },
                 Hao5 = new Hao { Id = 5, HanhCuaQue = Kim, Duong = true, Chi = Dau },
@@ -69,7 +69,7 @@ namespace KinhDichCommon
             {
                 Id = 3,
                 Name = "Ly Vi Hỏa",
-                NameShort = "Ly",
+                NameShort = "Thuần Ly",
                 NguHanh = Hoa,
                 Hao6 = new Hao { Id = 6, HanhCuaQue = Hoa, Duong = true, Chi = Ty, The = true },
                 Hao5 = new Hao { Id = 5, HanhCuaQue = Hoa, Duong = false, Chi = Mui },
@@ -83,7 +83,7 @@ namespace KinhDichCommon
             {
                 Id = 4,
                 Name = "Chấn Vi Lôi",
-                NameShort = "Lôi",
+                NameShort = "Thuần Chấn",
                 NguHanh = Moc,
                 Hao6 = new Hao { Id = 6, HanhCuaQue = Moc, Duong = false, Chi = Tuat, The = true },
                 Hao5 = new Hao { Id = 5, HanhCuaQue = Moc, Duong = false, Chi = Than },
@@ -97,7 +97,7 @@ namespace KinhDichCommon
             {
                 Id = 5,
                 Name = "Tốn Vi Phong",
-                NameShort = "Tốn",
+                NameShort = "Thuần Tốn",
                 NguHanh = Moc,
                 Hao6 = new Hao { Id = 6, HanhCuaQue = Moc, Duong = true, Chi = Mao, The = true },
                 Hao5 = new Hao { Id = 5, HanhCuaQue = Moc, Duong = true, Chi = Ty },
@@ -111,7 +111,7 @@ namespace KinhDichCommon
             {
                 Id = 6,
                 Name = "Khảm Vi Thủy",
-                NameShort = "Khảm",
+                NameShort = "Thuần Khảm",
                 NguHanh = Thuy,
                 Hao6 = new Hao { Id = 6, HanhCuaQue = Thuy, Duong = false, Chi = Ti, The = true },
                 Hao5 = new Hao { Id = 5, HanhCuaQue = Thuy, Duong = true, Chi = Tuat },
@@ -125,7 +125,7 @@ namespace KinhDichCommon
             {
                 Id = 7,
                 Name = "Cấn Vi Sơn",
-                NameShort = "Cấn",
+                NameShort = "Thuần Cấn",
                 NguHanh = Tho,
                 Hao6 = new Hao { Id = 6, HanhCuaQue = Tho, Duong = true, Chi = Dan, The = true },
                 Hao5 = new Hao { Id = 5, HanhCuaQue = Tho, Duong = false, Chi = Ti },
@@ -139,7 +139,7 @@ namespace KinhDichCommon
             {
                 Id = 8,
                 Name = "Khôn Vi Địa",
-                NameShort = "Khôn",
+                NameShort = "Thuần Khôn",
                 NguHanh = Tho,
                 Hao6 = new Hao { Id = 6, HanhCuaQue = Tho, Duong = false, Chi = Dau, The = true },
                 Hao5 = new Hao { Id = 5, HanhCuaQue = Tho, Duong = false, Chi = Hoi },
