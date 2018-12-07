@@ -89,6 +89,7 @@
             this.txtDesc = new System.Windows.Forms.RichTextBox();
             this.btnLoadCurrentDateTime = new System.Windows.Forms.Button();
             this.ucQueDich = new DoanQueKinhDich.UserControls.ucQue();
+            this.labelDongHaoGioTi = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -390,7 +391,7 @@
             // 
             this.labelNgayAmLich.AutoSize = true;
             this.labelNgayAmLich.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNgayAmLich.Location = new System.Drawing.Point(21, 346);
+            this.labelNgayAmLich.Location = new System.Drawing.Point(21, 381);
             this.labelNgayAmLich.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNgayAmLich.Name = "labelNgayAmLich";
             this.labelNgayAmLich.Size = new System.Drawing.Size(153, 21);
@@ -399,6 +400,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.labelDongHaoGioTi);
             this.groupBox2.Controls.Add(this.labelNgayDich);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.label18);
@@ -755,7 +757,7 @@
             // 
             this.labelNgayDuongLich.AutoSize = true;
             this.labelNgayDuongLich.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNgayDuongLich.Location = new System.Drawing.Point(21, 310);
+            this.labelNgayDuongLich.Location = new System.Drawing.Point(21, 345);
             this.labelNgayDuongLich.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNgayDuongLich.Name = "labelNgayDuongLich";
             this.labelNgayDuongLich.Size = new System.Drawing.Size(186, 21);
@@ -952,6 +954,18 @@
             this.ucQueDich.Size = new System.Drawing.Size(695, 241);
             this.ucQueDich.TabIndex = 2;
             // 
+            // labelDongHaoGioTi
+            // 
+            this.labelDongHaoGioTi.AutoSize = true;
+            this.labelDongHaoGioTi.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDongHaoGioTi.ForeColor = System.Drawing.Color.Red;
+            this.labelDongHaoGioTi.Location = new System.Drawing.Point(21, 310);
+            this.labelDongHaoGioTi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelDongHaoGioTi.Name = "labelDongHaoGioTi";
+            this.labelDongHaoGioTi.Size = new System.Drawing.Size(65, 21);
+            this.labelDongHaoGioTi.TabIndex = 70;
+            this.labelDongHaoGioTi.Text = "Ngày:";
+            // 
             // FormQueThoiGian
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1041,6 +1055,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label labelNgayDich;
         private System.Windows.Forms.CheckBox chkCongChiGio;
+        private System.Windows.Forms.Label labelDongHaoGioTi;
     }
 }
 
