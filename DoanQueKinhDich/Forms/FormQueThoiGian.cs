@@ -118,8 +118,8 @@ namespace DoanQueKinhDich
             QueIndex queGioMui = listQueTrong1Ngay[7];
             int dongHaoGioTi = queGioMui.HaoDongNumber - 1 <= 0 ? 6 : queGioMui.HaoDongNumber - 1;
 
-            labelNgayDich.Text = $"Ngày {queGioMui.GetQueChu().NgoaiQuai.Tuong}, giờ Mùi động hào {queGioMui.HaoDongNumber}";
-            labelDongHaoGioTi.Text = $"           Giờ Tí động hào {dongHaoGioTi}";
+            labelNgayDich.Text = $"Ngày {queGioMui.GetQueChu().NgoaiQuai.Tuong.PadRight(5)}  Giờ Mùi động hào {queGioMui.HaoDongNumber}";
+            labelDongHaoGioTi.Text = $"            Giờ Tí  động hào {dongHaoGioTi}";
         }
 
         private string GetButtonText(QueIndex queIndex)
