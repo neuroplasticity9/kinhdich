@@ -93,7 +93,7 @@ namespace DoanQueKinhDich.Business
                 case CachLayQue.MaiHoaTienThien2:
                 case CachLayQue.MaiHoaTienThien3:
                     var sb = new StringBuilder();
-                    var columnLen = 17;
+                    var columnLen = 11;
                     sb.Append($"   Năm {ngayLayQue.LunarYear}".PadRight(columnLen + 2));
                     sb.Append($"Tháng {ngayLayQue.LunarMonth}".PadRight(columnLen));
                     sb.Append($"Ngày {ngayLayQue.LunarDay}".PadRight(columnLen));
@@ -103,7 +103,7 @@ namespace DoanQueKinhDich.Business
                     sb.Append($"   {ngayLayQue.NamAm.Name}".PadRight(columnLen + 2));
                     sb.Append($"{ngayLayQue.ThangAm.Name}".PadRight(columnLen));
                     sb.Append($"{ngayLayQue.NgayAm.Name}".PadRight(columnLen));
-                    sb.Append($"{ngayLayQue.GioAm.Name} ({nhatThan.Khong1.Name} {nhatThan.Khong2.Name} lâm không)");
+                    sb.Append($"{ngayLayQue.GioAm.Name}");
 
                     result = sb.ToString();
 
@@ -142,7 +142,7 @@ namespace DoanQueKinhDich.Business
                 return "";
             }
 
-            return $"   {que.Name} ({que.QueThuan.NguHanh.Name})";
+            return $"   {que.Name}";
         }
 
         protected string GetCachCuaQue(Que que)

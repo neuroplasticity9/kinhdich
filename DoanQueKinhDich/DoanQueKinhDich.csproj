@@ -88,12 +88,6 @@
     </Compile>
     <Compile Include="TungXu.cs" />
     <Compile Include="FormUtils.cs" />
-    <Compile Include="Forms\FormQueTungXu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormQueTungXu.Designer.cs">
-      <DependentUpon>FormQueTungXu.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,9 +122,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormQueHoc.resx">
       <DependentUpon>FormQueHoc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormQueTungXu.resx">
-      <DependentUpon>FormQueTungXu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>

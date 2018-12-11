@@ -36,7 +36,6 @@ namespace DoanQueKinhDich
         public AmLich AmLich { get; set; }
 
         private bool _isFirstLoadFinished;
-        private bool _disableNgayThangChange;
 
         /// <summary>
         /// Form load event.
@@ -45,10 +44,6 @@ namespace DoanQueKinhDich
         /// <param name="e"></param>
         private void Main_Load(object sender, EventArgs e)
         {
-            linkQueChu.Visible = false;
-            linkQueBien.Visible = false;
-
-            SetNgayThangComboboxes(DateTime.Now);
             _isFirstLoadFinished = true;
 
             this.ucQueDich.CheckedChanged += new System.EventHandler(ucQueDich_CheckedChanged);
@@ -59,7 +54,6 @@ namespace DoanQueKinhDich
         {
             AmLich = _formQueThoiGian.AmLich;
             LoadQue(_formQueThoiGian);
-            radVietDich.Checked = true;
         }
 
         private void DisplayQueToUI()
@@ -69,62 +63,12 @@ namespace DoanQueKinhDich
                 return;
             }
 
-            QueService queService = null;
-            if (radLucHao.Checked)
-            {
-                queService = new LucHaoQueService(this);
-            }
-            else if (radMaiHoa.Checked)
-            {
-                queService = new MaiHoaQueService(this);
-            }
-            else
-            {
-                queService = new VietDichQueService(this);
-            }
-
-            linkQueChu.Visible = true;
-            linkQueChu.Text = GetNameForLink(queService.QueChu);
-            _queChuUrl = GetUrl(queService.QueChu.Name, queService.QueChu.QueId);
-
-            if (radLucHao.Checked)
-            {
-                linkQueHo.Visible = false;
-                linkQueBien.Location = new System.Drawing.Point(1081, linkQueChu.Location.Y);
-            }
-            else
-            {
-                linkQueBien.Location = new System.Drawing.Point(1147, linkQueChu.Location.Y);
-            }
-            
+            var queService = new VietDichQueService(this);
             txtQueDesc.Text = queService.GetQueDesc();
-
-            if (this.CoQueBien())
-            {
-                linkQueBien.Visible = true;
-                linkQueBien.Text = GetNameForLink(queService.QueBien);
-                _queBienUrl = GetUrl(queService.QueBien.Name, queService.QueBien.QueId);
-
-                if (!radLucHao.Checked)
-                {
-                    linkQueHo.Visible = true;
-                    linkQueHo.Text = GetNameForLink(queService.QueHo);
-                    _queHoUrl = GetUrl(queService.QueHo.Name, queService.QueHo.QueId);
-                }
-            }
-            else
-            {
-                linkQueBien.Visible = false;
-            }
         }
 
         private NgayLayQue GetNgayLayQue()
         {
-            if (CachLayQue == CachLayQue.Manual)
-            {
-                return new NgayLayQue(GetNhatThan(), GetNguyetKien());
-            }
-            
             return AmLich.ToNgayLayQue();
         }
 
@@ -140,40 +84,9 @@ namespace DoanQueKinhDich
             return result;
         }
 
-        private string GetUrl(string name, int queId)
-        {
-            if (string.IsNullOrWhiteSpace(name))
-            {
-                return "http://cohoc.net/64-que-dich.html";
-            }
-
-            return $"http://cohoc.net/{name.Replace(" ", "-")}-kid-{queId}.html";
-        }
-
-        private CanChi GetNguyetKien()
-        {
-            return FormUtils.GetCanChi(cbxThangCan, cbxThangChi);
-        }
-
-        private CanChi GetNhatThan()
-        {
-            return FormUtils.GetCanChi(cbxNgayCan, cbxNgayChi);
-        }
-
         private void ucQueDich_CheckedChanged(object sender, EventArgs e)
         {
             DisplayQueToUI();
-        }
-
-        private void SetNgayThangComboboxes(DateTime ngayLayQue)
-        {
-            CanChi ngayAm = ngayLayQue.ToAmLich().NgayAm;
-            CanChi thangAm = ngayLayQue.ToAmLich().ThangAm;
-
-            cbxNgayCan.SelectedIndex = ngayAm.Can.Id - 1;
-            cbxNgayChi.SelectedIndex = ngayAm.Chi.Id - 1;
-            cbxThangCan.SelectedIndex = thangAm.Can.Id - 1;
-            cbxThangChi.SelectedIndex = thangAm.Chi.Id - 1;
         }
 
         private void linkQueChu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -230,14 +143,6 @@ namespace DoanQueKinhDich
             ucQueDich.uiIsHao3Dong.Checked = que.Hao3Dong;
             ucQueDich.uiIsHao2Dong.Checked = que.Hao2Dong;
             ucQueDich.uiIsHao1Dong.Checked = que.Hao1Dong;
-
-            _disableNgayThangChange = true;
-            cbxNgayCan.SelectedIndex = AmLich.NgayAm.Can.Id - 1;
-            cbxNgayChi.SelectedIndex = AmLich.NgayAm.Chi.Id - 1;
-
-            cbxThangCan.SelectedIndex = AmLich.ThangAm.Can.Id - 1;
-            cbxThangChi.SelectedIndex = AmLich.ThangAm.Chi.Id - 1;
-            _disableNgayThangChange = false;
         }
 
         private void linkAmLich_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -257,21 +162,7 @@ namespace DoanQueKinhDich
             Clipboard.SetText(txtQueDesc.Text);
         }
 
-        private void btnTungXuLayQue_Click(object sender, EventArgs e)
-        {
-            var formLayQue = new FormQueTungXu();
-
-            formLayQue.ShowDialog(this);
-
-            if (formLayQue.IsDone)
-            {
-                AmLich = formLayQue.AmLich;
-                LoadQue(formLayQue);
-                radLucHao.Checked = true;
-            }
-        }
-
-        private void btnLayQueMaiHoa_Click(object sender, EventArgs e)
+        private void btnLayQue_Click(object sender, EventArgs e)
         {
             _formQueThoiGian.IsDone = false;
             _formQueThoiGian.ShowDialog(this);
@@ -280,98 +171,6 @@ namespace DoanQueKinhDich
             {
                 AmLich = _formQueThoiGian.AmLich;
                 LoadQue(_formQueThoiGian);
-                radVietDich.Checked = true;
-            }
-        }
-
-        /// <summary>
-        /// Event for 2 radio buttons.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void radMaiHoa_CheckedChanged(object sender, EventArgs e)
-        {
-            DisplayQueToUI();
-        }
-
-        private void cbxThangCan_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (_disableNgayThangChange)
-            {
-                return;
-            }
-
-            var combobox = sender as ComboBox;
-            var comboboxToUpdate = cbxThangChi;
-            CapNhatChi(combobox, comboboxToUpdate);
-            CachLayQue = CachLayQue.Manual;
-            DisplayQueToUI();
-        }
-
-        private void cbxThangChi_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (_disableNgayThangChange)
-            {
-                return;
-            }
-
-            var combobox = sender as ComboBox;
-            var comboboxToUpdate = cbxThangCan;
-            CapNhatCan(combobox, comboboxToUpdate);
-            CachLayQue = CachLayQue.Manual;
-            DisplayQueToUI();
-        }
-
-        private void cbxNgayCan_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (_disableNgayThangChange)
-            {
-                return;
-            }
-
-            var combobox = sender as ComboBox;
-            var comboboxToUpdate = cbxNgayChi;
-            CapNhatChi(combobox, comboboxToUpdate);
-            CachLayQue = CachLayQue.Manual;
-            DisplayQueToUI();
-        }
-
-        private void cbxNgayChi_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (_disableNgayThangChange)
-            {
-                return;
-            }
-
-            var combobox = sender as ComboBox;
-            var comboboxToUpdate = cbxNgayCan;
-            CapNhatCan(combobox, comboboxToUpdate);
-            CachLayQue = CachLayQue.Manual;
-            DisplayQueToUI();
-        }
-
-        /// <summary>
-        /// Nếu chọn can thì phải cập nhật lại chi.
-        /// </summary>
-        /// <param name="combobox"></param>
-        /// <param name="comboboxToUpdate"></param>
-        private void CapNhatChi(ComboBox combobox, ComboBox comboboxToUpdate)
-        {
-            ThienCan selectedCan = ThienCan.All[combobox.SelectedIndex];
-            DiaChi firstChi = CanChi.GetChiDauTienHopLe(selectedCan);
-
-            if (comboboxToUpdate.SelectedIndex < 0)
-            {
-                comboboxToUpdate.SelectedIndex = firstChi.Id - 1;
-            }
-            else
-            {
-                DiaChi currentChi = DiaChi.All[comboboxToUpdate.SelectedIndex];
-                // Cập nhật chi nếu khác loại âm dương.
-                if (currentChi.Duong != firstChi.Duong)
-                {
-                    comboboxToUpdate.SelectedIndex = firstChi.Id - 1;
-                }
             }
         }
 
@@ -411,13 +210,9 @@ namespace DoanQueKinhDich
         {
             if (e.KeyCode == Keys.F1)
             {
-                btnTungXuLayQue.PerformClick();
+                btnLayQue.PerformClick();
             }
             else if (e.KeyCode == Keys.F2)
-            {
-                btnLayQueMaiHoa.PerformClick();
-            }
-            else if (e.KeyCode == Keys.F3)
             {
                 btnHoc.PerformClick();
             }

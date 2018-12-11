@@ -18,7 +18,6 @@ namespace DoanQueKinhDich.Business
 
             if (que.CoQueBien())
             {
-                //QueBienDoiDai = KinhDichCommon.Que.GetQueBien(QueChuDoiDai, que.Hao6Dong, que.Hao5Dong, que.Hao4Dong, que.Hao3Dong, que.Hao2Dong, que.Hao1Dong);
                 QueBienDoiDai = KinhDichCommon.Que.GetQueDoiDai(QueBien);
             }
         }
@@ -51,15 +50,10 @@ namespace DoanQueKinhDich.Business
             var nguyetKien = ngayLayQue.ThangAm;
             var lucThan = LucThan.GetLucThan(nhatThan.Can);
 
-            var padRight = 50;
+            var padRight = 20;
             var sb = new StringBuilder();
 
             sb.AppendLine(GetNgayThang(ngayLayQue, cachLayQue));
-            sb.AppendLine();
-
-            sb.Append("   QUẺ CHỦ".PadRight(padRight));
-            sb.Append("   QUẺ HỖ".PadRight(padRight));
-            sb.Append(queBien != null ? "   QUẺ BIẾN" : "");
             sb.AppendLine();
             AddLongHR(padRight, sb);
 
@@ -68,10 +62,10 @@ namespace DoanQueKinhDich.Business
             sb.AppendLine();
             AddLongHR(padRight, sb);
 
-            AddBodyDesc(QueChuDoiDai, QueHoDoiDai, QueBienDoiDai, isHao1Dong, isHao2Dong, isHao3Dong, isHao4Dong, isHao5Dong, isHao6Dong, sb, padRight, false, null);
-            sb.AppendLine();
-            sb.AppendLine();
-            AddLongHR(padRight, sb);
+            //AddBodyDesc(QueChuDoiDai, QueHoDoiDai, QueBienDoiDai, isHao1Dong, isHao2Dong, isHao3Dong, isHao4Dong, isHao5Dong, isHao6Dong, sb, padRight, false, null);
+            //sb.AppendLine();
+            //sb.AppendLine();
+            //AddLongHR(padRight, sb);
 
             AddTuongQue(sb, queChu, queHo, queBien);
             AddLongHR(padRight, sb);
@@ -126,84 +120,22 @@ namespace DoanQueKinhDich.Business
                 return "";
             }
 
-            string result = "";
+            string result = "\t";
             if (isHaoDong)
             {
                 if (hao.Duong)
                 {
-                    result = "o"; // Dương động biến âm.
+                    result = "o\t"; // Dương động biến âm.
                 }
                 else
                 {
-                    result = "x"; // Âm động biến dương.
+                    result = "x\t"; // Âm động biến dương.
                 }
             }
-            result = result.PadRight(3);
-
-            if (hao.Id == 5)
-            {
-                result += $"{que.NgoaiQuai.Name} {que.NgoaiQuai.NguHanh.Name}";
-            }
-            else if (hao.Id == 2)
-            {
-                result += $"{que.NoiQuai.Name} {que.NoiQuai.NguHanh.Name}";
-            }
-            result = result.PadRight(13);
+            //result = result.PadRight(3);
 
             result += $"{hao.AmDuongString}";
             result = result.PadRight(18);
-
-            if (addQueTheDungBienDesc)
-            {
-                if (hao.Id == 5)
-                {
-                    if (que == QueChu)
-                    {
-                        result += QueChu.IsTheQuaiOTren ? "Quẻ thể" : "Quẻ dụng";
-                    }
-                    else if (que == QueHo)
-                    {
-                        // result += QueChu.IsTheQuaiOTren ? "Quẻ hỗ của thể" : "Quẻ hỗ của dụng";
-                    }
-                    else
-                    {
-                        result += QueChu.IsTheQuaiOTren ? "Quẻ thể" : "Quẻ biến";
-                    }
-                }
-                else if (hao.Id == 2)
-                {
-                    if (que == QueChu)
-                    {
-                        result += QueChu.IsTheQuaiOTren ? "Quẻ dụng" : "Quẻ thể";
-                    }
-                    else if (que == QueHo)
-                    {
-                        // result += QueChu.IsTheQuaiOTren ? "Quẻ hỗ của dụng" : "Quẻ hỗ của thể";
-                    }
-                    else
-                    {
-                        result += QueChu.IsTheQuaiOTren ? "Quẻ biến" : "Quẻ thể";
-                    }
-                }
-                result = result.PadRight(28);
-            }
-
-            if (que == QueChu)
-            {
-                if (lucThan != null)
-                {
-                    if (isHaoDong)
-                    {
-                        result += $"* {lucThan[hao.Id - 1].Name}";
-                    }
-                    else
-                    {
-                        result += $"  {lucThan[hao.Id - 1].Name}";
-                    }
-                    
-                    result = result.PadRight(43);
-                }
-            }
 
             return result;
         }
