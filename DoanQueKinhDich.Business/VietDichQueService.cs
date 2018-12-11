@@ -1,4 +1,5 @@
 ﻿using KinhDichCommon;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -50,12 +51,15 @@ namespace DoanQueKinhDich.Business
             var nguyetKien = ngayLayQue.ThangAm;
             var lucThan = LucThan.GetLucThan(nhatThan.Can);
 
-            var padRight = 20;
+            var padRight = 25;
             var sb = new StringBuilder();
 
             sb.AppendLine(GetNgayThang(ngayLayQue, cachLayQue));
             sb.AppendLine();
             AddLongHR(padRight, sb);
+
+            //AddTuongQue(queChu, queHo, queBien, sb, padRight);
+            //AddLongHR(padRight, sb);
 
             AddBodyDesc(queChu, queHo, queBien, isHao6Dong, isHao5Dong, isHao4Dong, isHao3Dong, isHao2Dong, isHao1Dong, sb, padRight, true, lucThan);
             sb.AppendLine();
@@ -74,7 +78,13 @@ namespace DoanQueKinhDich.Business
             return sb.ToString();
         }
 
-
+        private void AddTuongQue(Que queChu, Que queHo, Que queBien, StringBuilder sb, int padRight)
+        {
+            sb.Append(queChu.TuongQue.PadRight(padRight));
+            sb.Append(queHo.TuongQue.PadRight(padRight));
+            sb.Append(queBien.TuongQue);
+            sb.AppendLine();
+        }
 
         private void AddBodyDesc(Que queChu, Que queHo, Que queBien, bool isHao6Dong, bool isHao5Dong, bool isHao4Dong, bool isHao3Dong, bool isHao2Dong, bool isHao1Dong, StringBuilder sb, int padRight, bool addQueTheDungBienDesc, List<LucThan> lucThan)
         {
