@@ -27,12 +27,13 @@ namespace DoanQueKinhDich.Business
             int soHoacChu = GetTongCuaQuai(extraText);
             int tongNgoaiQuai = GetTongNamThangNgay(amLich) + soHoacChu;
             int tongNoiQuai = GetTongNamThangNgayGio(amLich) + soHoacChu;
+            var haoDongIndex = tongNoiQuai % 6;
 
             var queIndex = new QueIndex
             {
                 NgoaiQuaiIndex = (tongNgoaiQuai - 1 + 8) % 8,
                 NoiQuaiIndex = (tongNoiQuai - 1 + 8) % 8,
-                HaoDongIndex = tongNoiQuai % 6,
+                HaoDongNumber = haoDongIndex == 0 ? 6 : haoDongIndex,
             };
 
             var sb = new StringBuilder();
@@ -51,12 +52,13 @@ namespace DoanQueKinhDich.Business
         {
             int tongNgoaiQuai = GetTongNamThangNgayGio(amLich);
             int tongNoiQuai = GetTongCuaQuai(textCuaQuai);
+            var haoDongIndex = (tongNgoaiQuai + tongNoiQuai) % 6;
 
             var queIndex = new QueIndex
             {
                 NgoaiQuaiIndex = (tongNgoaiQuai - 1 + 8) % 8,
                 NoiQuaiIndex = (tongNoiQuai - 1 + 8) % 8,
-                HaoDongIndex = (tongNgoaiQuai + tongNoiQuai) % 6,
+                HaoDongNumber = haoDongIndex == 0 ? 6 : haoDongIndex,
             };
 
             var sb = new StringBuilder();
@@ -78,12 +80,13 @@ namespace DoanQueKinhDich.Business
 
             // Tiên thiên đoán bằng số nên không cần giờ. Hậu thiên đoán bằng bát quái nên cần thêm giờ vào để tìm hào động.
             int chiNumber = batThuong ? amLich.GioAm.Chi.Id : 0;
+            var haoDongIndex = (tongNgoaiQuai + tongNoiQuai + chiNumber) % 6;
 
             var queIndex = new QueIndex
             {
                 NgoaiQuaiIndex = (tongNgoaiQuai - 1 + 8) % 8,
                 NoiQuaiIndex = (tongNoiQuai - 1 + 8) % 8,
-                HaoDongIndex = (tongNgoaiQuai + tongNoiQuai + chiNumber) % 6,
+                HaoDongNumber = haoDongIndex == 0 ? 6 : haoDongIndex,
             };
 
             var sb = new StringBuilder();

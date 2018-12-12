@@ -124,7 +124,10 @@ namespace DoanQueKinhDich
 
         private string GetButtonText(QueIndex queIndex)
         {
-            return $"{queIndex.GetQueChu().NameShort} → {queIndex.GetQueBien().NameShort}";
+            LucThu thu = LucThu.GetLucThu(AmLich.NgayAm.Can, queIndex.HaoDongNumber - 1);
+
+
+            return $"{queIndex.GetQueChu().NameShort} → {queIndex.GetQueBien().NameShort} ({thu.Name})";
         }
 
         private void GetQue()
@@ -146,12 +149,12 @@ namespace DoanQueKinhDich
             ucQueDich.uiNoiQuai.SelectedIndex = queIndex.NoiQuaiIndex;
 
             ucQueDich.ResetHaoDong();
-            ucQueDich.uiIsHao1Dong.Checked = queIndex.HaoDongIndex == 1;
-            ucQueDich.uiIsHao2Dong.Checked = queIndex.HaoDongIndex == 2;
-            ucQueDich.uiIsHao3Dong.Checked = queIndex.HaoDongIndex == 3;
-            ucQueDich.uiIsHao4Dong.Checked = queIndex.HaoDongIndex == 4;
-            ucQueDich.uiIsHao5Dong.Checked = queIndex.HaoDongIndex == 5;
-            ucQueDich.uiIsHao6Dong.Checked = queIndex.HaoDongIndex == 0;
+            ucQueDich.uiIsHao1Dong.Checked = queIndex.HaoDongNumber == 1;
+            ucQueDich.uiIsHao2Dong.Checked = queIndex.HaoDongNumber == 2;
+            ucQueDich.uiIsHao3Dong.Checked = queIndex.HaoDongNumber == 3;
+            ucQueDich.uiIsHao4Dong.Checked = queIndex.HaoDongNumber == 4;
+            ucQueDich.uiIsHao5Dong.Checked = queIndex.HaoDongNumber == 5;
+            ucQueDich.uiIsHao6Dong.Checked = queIndex.HaoDongNumber == 6;
         }
 
         private QueIndex GetQueIndex(CachLayQue cachLayQue, AmLich amLich)

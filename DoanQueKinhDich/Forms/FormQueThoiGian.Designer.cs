@@ -47,6 +47,7 @@
             this.uiHour = new System.Windows.Forms.DateTimePicker();
             this.labelNgayAmLich = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.labelDongHaoGioTi = new System.Windows.Forms.Label();
             this.labelNgayDich = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -89,7 +90,6 @@
             this.txtDesc = new System.Windows.Forms.RichTextBox();
             this.btnLoadCurrentDateTime = new System.Windows.Forms.Button();
             this.ucQueDich = new DoanQueKinhDich.UserControls.ucQue();
-            this.labelDongHaoGioTi = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -448,9 +448,21 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(845, 456);
+            this.groupBox2.Size = new System.Drawing.Size(984, 456);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
+            // 
+            // labelDongHaoGioTi
+            // 
+            this.labelDongHaoGioTi.AutoSize = true;
+            this.labelDongHaoGioTi.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDongHaoGioTi.ForeColor = System.Drawing.Color.Red;
+            this.labelDongHaoGioTi.Location = new System.Drawing.Point(21, 310);
+            this.labelDongHaoGioTi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelDongHaoGioTi.Name = "labelDongHaoGioTi";
+            this.labelDongHaoGioTi.Size = new System.Drawing.Size(65, 21);
+            this.labelDongHaoGioTi.TabIndex = 70;
+            this.labelDongHaoGioTi.Text = "Ngày:";
             // 
             // labelNgayDich
             // 
@@ -602,7 +614,7 @@
             this.btn12Hoi.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn12Hoi.Location = new System.Drawing.Point(579, 407);
             this.btn12Hoi.Name = "btn12Hoi";
-            this.btn12Hoi.Size = new System.Drawing.Size(260, 36);
+            this.btn12Hoi.Size = new System.Drawing.Size(400, 36);
             this.btn12Hoi.TabIndex = 56;
             this.btn12Hoi.Text = "Hợi (21h-23h)";
             this.btn12Hoi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -615,7 +627,7 @@
             this.btn11Tuat.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn11Tuat.Location = new System.Drawing.Point(579, 372);
             this.btn11Tuat.Name = "btn11Tuat";
-            this.btn11Tuat.Size = new System.Drawing.Size(260, 36);
+            this.btn11Tuat.Size = new System.Drawing.Size(400, 36);
             this.btn11Tuat.TabIndex = 55;
             this.btn11Tuat.Text = "Tuất (19h-21h)";
             this.btn11Tuat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -628,7 +640,7 @@
             this.btn10Dau.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn10Dau.Location = new System.Drawing.Point(579, 337);
             this.btn10Dau.Name = "btn10Dau";
-            this.btn10Dau.Size = new System.Drawing.Size(260, 36);
+            this.btn10Dau.Size = new System.Drawing.Size(400, 36);
             this.btn10Dau.TabIndex = 54;
             this.btn10Dau.Text = "Dậu (17h-19h)";
             this.btn10Dau.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -641,7 +653,7 @@
             this.btn9Than.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn9Than.Location = new System.Drawing.Point(579, 302);
             this.btn9Than.Name = "btn9Than";
-            this.btn9Than.Size = new System.Drawing.Size(260, 36);
+            this.btn9Than.Size = new System.Drawing.Size(400, 36);
             this.btn9Than.TabIndex = 53;
             this.btn9Than.Text = "Thân (15h-17h)";
             this.btn9Than.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -654,7 +666,7 @@
             this.btn8Mui.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn8Mui.Location = new System.Drawing.Point(579, 267);
             this.btn8Mui.Name = "btn8Mui";
-            this.btn8Mui.Size = new System.Drawing.Size(260, 36);
+            this.btn8Mui.Size = new System.Drawing.Size(400, 36);
             this.btn8Mui.TabIndex = 52;
             this.btn8Mui.Text = "Mùi (13h-15h)";
             this.btn8Mui.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -667,7 +679,7 @@
             this.btn7Ngo.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn7Ngo.Location = new System.Drawing.Point(579, 232);
             this.btn7Ngo.Name = "btn7Ngo";
-            this.btn7Ngo.Size = new System.Drawing.Size(260, 36);
+            this.btn7Ngo.Size = new System.Drawing.Size(400, 36);
             this.btn7Ngo.TabIndex = 51;
             this.btn7Ngo.Text = "Ngọ (11h-13h)";
             this.btn7Ngo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -680,7 +692,7 @@
             this.btn6Ty.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn6Ty.Location = new System.Drawing.Point(579, 197);
             this.btn6Ty.Name = "btn6Ty";
-            this.btn6Ty.Size = new System.Drawing.Size(260, 36);
+            this.btn6Ty.Size = new System.Drawing.Size(400, 36);
             this.btn6Ty.TabIndex = 50;
             this.btn6Ty.Text = "Tỵ (9h-11h)";
             this.btn6Ty.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -693,7 +705,7 @@
             this.btn5Thin.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn5Thin.Location = new System.Drawing.Point(579, 162);
             this.btn5Thin.Name = "btn5Thin";
-            this.btn5Thin.Size = new System.Drawing.Size(260, 36);
+            this.btn5Thin.Size = new System.Drawing.Size(400, 36);
             this.btn5Thin.TabIndex = 49;
             this.btn5Thin.Text = "Thìn (7h-9h)";
             this.btn5Thin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -706,7 +718,7 @@
             this.btn4Mao.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn4Mao.Location = new System.Drawing.Point(579, 127);
             this.btn4Mao.Name = "btn4Mao";
-            this.btn4Mao.Size = new System.Drawing.Size(260, 36);
+            this.btn4Mao.Size = new System.Drawing.Size(400, 36);
             this.btn4Mao.TabIndex = 48;
             this.btn4Mao.Text = "Mão (5h-7h)";
             this.btn4Mao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -719,7 +731,7 @@
             this.btn3Dan.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn3Dan.Location = new System.Drawing.Point(579, 92);
             this.btn3Dan.Name = "btn3Dan";
-            this.btn3Dan.Size = new System.Drawing.Size(260, 36);
+            this.btn3Dan.Size = new System.Drawing.Size(400, 36);
             this.btn3Dan.TabIndex = 47;
             this.btn3Dan.Text = "Dần (3h-5h)";
             this.btn3Dan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -732,7 +744,7 @@
             this.btn2Suu.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn2Suu.Location = new System.Drawing.Point(579, 57);
             this.btn2Suu.Name = "btn2Suu";
-            this.btn2Suu.Size = new System.Drawing.Size(260, 36);
+            this.btn2Suu.Size = new System.Drawing.Size(400, 36);
             this.btn2Suu.TabIndex = 46;
             this.btn2Suu.Text = "Sửu (1h-3h)";
             this.btn2Suu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -745,7 +757,7 @@
             this.btn1Ti.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn1Ti.Location = new System.Drawing.Point(579, 22);
             this.btn1Ti.Name = "btn1Ti";
-            this.btn1Ti.Size = new System.Drawing.Size(260, 36);
+            this.btn1Ti.Size = new System.Drawing.Size(400, 36);
             this.btn1Ti.TabIndex = 13;
             this.btn1Ti.Text = "Tí (23h-1h)";
             this.btn1Ti.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -931,7 +943,7 @@
             this.txtDesc.Location = new System.Drawing.Point(717, 525);
             this.txtDesc.Margin = new System.Windows.Forms.Padding(2);
             this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(845, 151);
+            this.txtDesc.Size = new System.Drawing.Size(984, 151);
             this.txtDesc.TabIndex = 11;
             this.txtDesc.TabStop = false;
             this.txtDesc.Text = "";
@@ -954,23 +966,11 @@
             this.ucQueDich.Size = new System.Drawing.Size(695, 241);
             this.ucQueDich.TabIndex = 2;
             // 
-            // labelDongHaoGioTi
-            // 
-            this.labelDongHaoGioTi.AutoSize = true;
-            this.labelDongHaoGioTi.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDongHaoGioTi.ForeColor = System.Drawing.Color.Red;
-            this.labelDongHaoGioTi.Location = new System.Drawing.Point(21, 310);
-            this.labelDongHaoGioTi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelDongHaoGioTi.Name = "labelDongHaoGioTi";
-            this.labelDongHaoGioTi.Size = new System.Drawing.Size(65, 21);
-            this.labelDongHaoGioTi.TabIndex = 70;
-            this.labelDongHaoGioTi.Text = "Ngày:";
-            // 
             // FormQueThoiGian
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1581, 692);
+            this.ClientSize = new System.Drawing.Size(1720, 692);
             this.Controls.Add(this.btnLoadCurrentDateTime);
             this.Controls.Add(this.txtDesc);
             this.Controls.Add(this.groupBox1);

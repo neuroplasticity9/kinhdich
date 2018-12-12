@@ -81,7 +81,7 @@
             // btnLayQue
             // 
             this.btnLayQue.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLayQue.Location = new System.Drawing.Point(17, 10);
+            this.btnLayQue.Location = new System.Drawing.Point(17, 47);
             this.btnLayQue.Margin = new System.Windows.Forms.Padding(2);
             this.btnLayQue.Name = "btnLayQue";
             this.btnLayQue.Size = new System.Drawing.Size(269, 48);
@@ -93,7 +93,7 @@
             // btnHoc
             // 
             this.btnHoc.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHoc.Location = new System.Drawing.Point(17, 83);
+            this.btnHoc.Location = new System.Drawing.Point(17, 120);
             this.btnHoc.Margin = new System.Windows.Forms.Padding(2);
             this.btnHoc.Name = "btnHoc";
             this.btnHoc.Size = new System.Drawing.Size(269, 48);

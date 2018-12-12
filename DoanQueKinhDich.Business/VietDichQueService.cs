@@ -44,12 +44,12 @@ namespace DoanQueKinhDich.Business
         /// <param name="isHao1Dong"></param>
         /// <returns></returns>
         private string GetQueChuQueHoQueBienDesc(Que queChu, Que queBien, Que queHo, NgayLayQue ngayLayQue, CachLayQue cachLayQue,
-                                                 bool isHao6Dong = false, bool isHao5Dong = false, bool isHao4Dong = false,
-                                                 bool isHao3Dong = false, bool isHao2Dong = false, bool isHao1Dong = false)
+                                                     bool isHao6Dong = false, bool isHao5Dong = false, bool isHao4Dong = false,
+                                                     bool isHao3Dong = false, bool isHao2Dong = false, bool isHao1Dong = false)
         {
             var nhatThan = ngayLayQue.NgayAm;
             var nguyetKien = ngayLayQue.ThangAm;
-            var lucThan = LucThan.GetLucThan(nhatThan.Can);
+            var lucThan = LucThu.GetLucThuList(nhatThan.Can);
 
             var padRight = 25;
             var sb = new StringBuilder();
@@ -58,12 +58,12 @@ namespace DoanQueKinhDich.Business
             sb.AppendLine();
             AddLongHR(padRight, sb);
 
-            //AddTuongQue(queChu, queHo, queBien, sb, padRight);
-            //AddLongHR(padRight, sb);
-
             AddBodyDesc(queChu, queHo, queBien, isHao6Dong, isHao5Dong, isHao4Dong, isHao3Dong, isHao2Dong, isHao1Dong, sb, padRight, true, lucThan);
             sb.AppendLine();
             sb.AppendLine();
+            AddLongHR(padRight, sb);
+
+            AddYNghia(queChu, queHo, queBien, sb, padRight);
             AddLongHR(padRight, sb);
 
             //AddBodyDesc(QueChuDoiDai, QueHoDoiDai, QueBienDoiDai, isHao1Dong, isHao2Dong, isHao3Dong, isHao4Dong, isHao5Dong, isHao6Dong, sb, padRight, false, null);
@@ -78,15 +78,15 @@ namespace DoanQueKinhDich.Business
             return sb.ToString();
         }
 
-        private void AddTuongQue(Que queChu, Que queHo, Que queBien, StringBuilder sb, int padRight)
+        private void AddYNghia(Que queChu, Que queHo, Que queBien, StringBuilder sb, int padRight)
         {
-            sb.Append(queChu.TuongQue.PadRight(padRight));
-            sb.Append(queHo.TuongQue.PadRight(padRight));
-            sb.Append(queBien.TuongQue);
+            sb.Append("\t" + queChu.YNghiaNgan.PadRight(padRight));
+            sb.Append(queHo.YNghiaNgan.PadRight(padRight));
+            sb.Append(queBien != null ? queBien.YNghiaNgan : "");
             sb.AppendLine();
         }
 
-        private void AddBodyDesc(Que queChu, Que queHo, Que queBien, bool isHao6Dong, bool isHao5Dong, bool isHao4Dong, bool isHao3Dong, bool isHao2Dong, bool isHao1Dong, StringBuilder sb, int padRight, bool addQueTheDungBienDesc, List<LucThan> lucThan)
+        private void AddBodyDesc(Que queChu, Que queHo, Que queBien, bool isHao6Dong, bool isHao5Dong, bool isHao4Dong, bool isHao3Dong, bool isHao2Dong, bool isHao1Dong, StringBuilder sb, int padRight, bool addQueTheDungBienDesc, List<LucThu> lucThan)
         {
             sb.Append(GetTenQueVietDich(queChu).PadRight(padRight));
             sb.Append(GetTenQueVietDich(queHo).PadRight(padRight));
@@ -123,7 +123,7 @@ namespace DoanQueKinhDich.Business
             sb.Append(queBien != null ? GetHaoDesc(queBien, queBien.Hao1, isHao1Dong, addQueTheDungBienDesc, lucThan) : "");
         }
 
-        protected string GetHaoDesc(Que que, Hao hao, bool isHaoDong, bool addQueTheDungBienDesc, List<LucThan> lucThan)
+        protected string GetHaoDesc(Que que, Hao hao, bool isHaoDong, bool addQueTheDungBienDesc, List<LucThu> lucThan)
         {
             if (que == null)
             {

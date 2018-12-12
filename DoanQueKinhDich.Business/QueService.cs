@@ -94,13 +94,13 @@ namespace DoanQueKinhDich.Business
                 case CachLayQue.MaiHoaTienThien3:
                     var sb = new StringBuilder();
                     var columnLen = 11;
-                    sb.Append($"   Năm {ngayLayQue.LunarYear}".PadRight(columnLen + 2));
+                    sb.Append($"\tNăm {ngayLayQue.LunarYear}".PadRight(columnLen + 2));
                     sb.Append($"Tháng {ngayLayQue.LunarMonth}".PadRight(columnLen));
                     sb.Append($"Ngày {ngayLayQue.LunarDay}".PadRight(columnLen));
                     sb.Append($"Giờ {ngayLayQue.GioAm.Chi.Name} (dương lịch: {ngayLayQue.SolarDate.ToString("yyyy-MM-dd")})");
                     sb.AppendLine();
 
-                    sb.Append($"   {ngayLayQue.NamAm.Name}".PadRight(columnLen + 2));
+                    sb.Append($"\t{ngayLayQue.NamAm.Name}".PadRight(columnLen + 2));
                     sb.Append($"{ngayLayQue.ThangAm.Name}".PadRight(columnLen));
                     sb.Append($"{ngayLayQue.NgayAm.Name}".PadRight(columnLen));
                     sb.Append($"{ngayLayQue.GioAm.Name}");
@@ -122,7 +122,7 @@ namespace DoanQueKinhDich.Business
                 return "";
             }
 
-            return $"   {que.Name} ({que.QueThuan.NguHanh.Name}), {que.NgoaiQuai.Name} {que.NgoaiQuai.NguHanh.Name} / {que.NoiQuai.Name} {que.NoiQuai.NguHanh.Name}{GetHopXungString(que)}";
+            return $"\t{que.Name} ({que.QueThuan.NguHanh.Name}), {que.NgoaiQuai.Name} {que.NgoaiQuai.NguHanh.Name} / {que.NoiQuai.Name} {que.NoiQuai.NguHanh.Name}{GetHopXungString(que)}";
         }
 
         protected string GetTenQueMaiHoa(Que que)
@@ -132,7 +132,7 @@ namespace DoanQueKinhDich.Business
                 return "";
             }
 
-            return $"   {que.Name} ({que.QueThuan.NguHanh.Name}), {que.NgoaiQuai.Name} {que.NgoaiQuai.NguHanh.Name} / {que.NoiQuai.Name} {que.NoiQuai.NguHanh.Name}";
+            return $"\t{que.Name} ({que.QueThuan.NguHanh.Name}), {que.NgoaiQuai.Name} {que.NgoaiQuai.NguHanh.Name} / {que.NoiQuai.Name} {que.NoiQuai.NguHanh.Name}";
         }
 
         protected string GetTenQueVietDich(Que que)
@@ -142,7 +142,7 @@ namespace DoanQueKinhDich.Business
                 return "";
             }
 
-            return $"   {que.Name}";
+            return $"\t{que.Name}";
         }
 
         protected string GetCachCuaQue(Que que)
@@ -152,7 +152,7 @@ namespace DoanQueKinhDich.Business
                 return "";
             }
 
-            return $"   {que.Cach}";
+            return $"\t{que.Cach}";
         }
         
         protected string GetHopXungString(Que que)

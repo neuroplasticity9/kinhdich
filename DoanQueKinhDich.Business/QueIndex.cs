@@ -9,9 +9,7 @@ namespace DoanQueKinhDich.Business
 
         public int NgoaiQuaiIndex { get; set; }
         public int NoiQuaiIndex { get; set; }
-        public int HaoDongIndex { get; set; }
-
-        public int HaoDongNumber => HaoDongIndex == 0 ? 6 : HaoDongIndex;
+        public int HaoDongNumber { get; set; }
 
         public string Desc { get; set; }
                
@@ -48,7 +46,7 @@ namespace DoanQueKinhDich.Business
                 var hao3 = GetHao(3, noiQuai.Duong3);
                 var hao4 = GetHao(4, ngoaiQuai.Duong1);
                 var hao5 = GetHao(5, ngoaiQuai.Duong2);
-                var hao6 = GetHao(0, ngoaiQuai.Duong3);
+                var hao6 = GetHao(6, ngoaiQuai.Duong3);
 
                 _queBien = Que.GetQue(hao6, hao5, hao4, hao3, hao2, hao1);
             }
@@ -58,7 +56,7 @@ namespace DoanQueKinhDich.Business
 
         private bool GetHao(int haoIndex, bool haoDuong)
         {
-            return HaoDongIndex == haoIndex ? !haoDuong : haoDuong;
+            return HaoDongNumber == haoIndex ? !haoDuong : haoDuong;
         }
     }
 

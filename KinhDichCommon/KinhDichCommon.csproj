@@ -71,7 +71,7 @@
     <Compile Include="HoaGiap\CanChi.cs" />
     <Compile Include="HoaGiap\Tuan.cs" />
     <Compile Include="HoaGiap\HoaGiap.cs" />
-    <Compile Include="LucThan\LucThan.cs" />
+    <Compile Include="LucThu\LucThu.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
