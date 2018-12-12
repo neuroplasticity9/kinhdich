@@ -174,7 +174,7 @@ namespace DoanQueKinhDich.Business
             return "";
         }
         
-        protected void AddTuongQue(StringBuilder sb, Que queChu, Que queHo, Que queBien)
+        protected void AddTuongVaYNghiaCuaQue(StringBuilder sb, Que queChu, Que queHo, Que queBien)
         {
             sb.AppendLine(GetTuongQueString(queChu));
             sb.AppendLine();

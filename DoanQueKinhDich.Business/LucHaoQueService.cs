@@ -89,7 +89,7 @@ namespace DoanQueKinhDich.Business
             sb.AppendLine(GetTamHopCuc(queChu));
             sb.AppendLine();
 
-            AddTuongQue(sb, queChu, null, queBien);
+            AddTuongVaYNghiaCuaQue(sb, queChu, null, queBien);
 
             return sb.ToString();
         }

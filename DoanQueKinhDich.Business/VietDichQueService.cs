@@ -71,9 +71,9 @@ namespace DoanQueKinhDich.Business
             //sb.AppendLine();
             //AddLongHR(padRight, sb);
 
-            AddTuongQue(sb, queChu, queHo, queBien);
-            AddLongHR(padRight, sb);
-            AddTuongQue(sb, QueChuDoiDai, QueHoDoiDai, QueBienDoiDai);
+            AddTuongVaYNghiaCuaQue(sb, queChu, queHo, queBien);
+            //AddLongHR(padRight, sb);
+            //AddTuongQue(sb, QueChuDoiDai, QueHoDoiDai, QueBienDoiDai);
 
             return sb.ToString();
         }
