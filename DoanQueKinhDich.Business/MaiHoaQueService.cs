@@ -90,9 +90,6 @@ namespace DoanQueKinhDich.Business
             sb.AppendLine();
             sb.AppendLine();
 
-            AddLongHR(padRight, sb);
-            AddTuongVaYNghiaCuaQue(sb, queChu, queHo, queBien);
-
             return sb.ToString();
         }
 

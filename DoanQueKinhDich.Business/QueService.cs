@@ -9,6 +9,7 @@ namespace DoanQueKinhDich.Business
     {
         private const char HRChar = '—';
         
+        protected const string NewLine = "[a]";
         protected const string LeadingSpaces = "  ";
         protected const int DateColumnLen = 15;
         protected const int WordWrapSize = 30;
@@ -142,16 +143,6 @@ namespace DoanQueKinhDich.Business
             return $"\t{que.Name} ({que.QueThuan.NguHanh.Name}), {que.NgoaiQuai.Name} {que.NgoaiQuai.NguHanh.Name} / {que.NoiQuai.Name} {que.NoiQuai.NguHanh.Name}";
         }
 
-        protected string GetTenQueVietDich(Que que)
-        {
-            if (que == null)
-            {
-                return "";
-            }
-
-            return $"{que.Name}";
-        }
-
         protected string GetCachCuaQue(Que que)
         {
             if (que == null)
@@ -180,51 +171,75 @@ namespace DoanQueKinhDich.Business
 
             return "";
         }
-        
-        protected void AddTuongVaYNghiaCuaQue(StringBuilder sb, Que queChu, Que queHo, Que queBien)
+
+        protected void AddTuongCuaQue(StringBuilder sb, Que queChu, Que queHo, Que queBien)
         {
-            var queChuList = GetWordWrapLines(GetTuongQueString(queChu));
+            AddDescCuaQue(sb, queChu, queHo, queBien, que => $"{que.TuongQue}");
+        }
+
+        protected void AddYNghiaCuaQue(StringBuilder sb, Que queChu, Que queHo, Que queBien)
+        {
+            AddDescCuaQue(sb, queChu, queHo, queBien, que => $"{que.YNghia}");
+        }
+
+        protected void AddViDuCuaQue(StringBuilder sb, Que queChu, Que queHo, Que queBien)
+        {
+            AddDescCuaQue(sb, queChu, queHo, queBien, que => $"{que.ViDu}");
+        }
+
+        private void AddDescCuaQue(StringBuilder sb, Que queChu, Que queHo, Que queBien, Func<Que, string> func)
+        {
+            var queChuList = GetWordWrapLines(func(queChu));
             var queHoList = new List<string>();
             var queBienList = new List<string>();
 
             if (queHo != null && queHo.Id != queChu.Id)
             {
-                queHoList = GetWordWrapLines(GetTuongQueString(queHo));
+                queHoList = GetWordWrapLines(func(queHo));
             }
             if (queBien != null)
             {
-                queBienList = GetWordWrapLines(GetTuongQueString(queBien));
+                queBienList = GetWordWrapLines(func(queBien));
             }
 
-            AddTextTo3Columns(sb, queChuList, queHoList, queBienList, DescColumnLen);
+            AddTextToColumns(sb, DescColumnLen, queChuList, queHoList, queBienList);
         }
 
-        protected void AddTextTo3Columns(StringBuilder sb, List<string> queChuList, List<string> queHoList, List<string> queBienList, int columnLen)
+        protected void AddTextToColumns(StringBuilder sb, int columnLen, params List<string>[] queLists)
         {
-            var maxCount = Math.Max(Math.Max(queChuList.Count, queHoList.Count), queBienList.Count);
+            int maxCount = 0;
+
+            foreach (var list in queLists)
+            {
+                if (maxCount < list.Count)
+                {
+                    maxCount = list.Count;
+                }
+            }
+
             for (int i = 0; i < maxCount; i++)
             {
                 sb.Append(LeadingSpaces);
 
-                if (i < queChuList.Count)
+                var temp = "";
+                foreach (var list in queLists)
                 {
-                    sb.Append(queChuList[i].PadRight(columnLen));
+                    temp = i < list.Count ? list[i] : "";
+                    sb.Append(PaddingString(temp, columnLen));
                 }
-                if (i < queHoList.Count)
-                {
-                    sb.Append(queHoList[i].PadRight(columnLen));
-                }
-                if (i < queBienList.Count)
-                {
-                    sb.Append(queBienList[i].PadRight(columnLen));
-                }
+
                 sb.AppendLine();
             }
         }
 
+        private static string PaddingString(string text, int columnLen)
+        {
+            return text.PadRight(columnLen);
+        }
+
         private string GetTuongQueString(Que que)
         {
-            var tuongQue = $"{que.YNghia}{Environment.NewLine}{que.ViDu}";
+            var tuongQue = $"{que.TuongQue}{NewLine}{Environment.NewLine}{que.YNghia}{NewLine}{Environment.NewLine}{que.ViDu}";
 
             return tuongQue;
         }
