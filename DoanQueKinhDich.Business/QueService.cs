@@ -95,9 +95,9 @@ namespace DoanQueKinhDich.Business
                     break;
 
                 case CachLayQue.TungXu:
-                case CachLayQue.MaiHoaTienThien1:
-                case CachLayQue.MaiHoaTienThien2:
-                case CachLayQue.MaiHoaTienThien3:
+                case CachLayQue.ThoiGianOnly:
+                case CachLayQue.ThoiGianVaSo:
+                case CachLayQue.SoOnly:
                     var sb = new StringBuilder();
                     sb.Append(LeadingSpaces);
                     sb.Append($"Năm {ngayLayQue.LunarYear}".PadRight(DateColumnLen + 2));

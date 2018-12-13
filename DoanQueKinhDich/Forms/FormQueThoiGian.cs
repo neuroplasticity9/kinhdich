@@ -166,15 +166,15 @@ namespace DoanQueKinhDich
                 case CachLayQue.None:
                     break;
 
-                case CachLayQue.MaiHoaTienThien1:
+                case CachLayQue.ThoiGianOnly:
                     queIndex = _layQueService.GetQueIndexByTime(amLich, txtSoHoacChu.Text);
                     break;
 
-                case CachLayQue.MaiHoaTienThien2:
+                case CachLayQue.ThoiGianVaSo:
                     queIndex = _layQueService.GetQueIndexBySoAndTime(amLich, txtQueNgoai1.Text);
                     break;
 
-                case CachLayQue.MaiHoaTienThien3:
+                case CachLayQue.SoOnly:
                     queIndex = _layQueService.GetQueIndexBySoAndSo(txtQueNgoai2.Text, txtQueNoi2.Text, amLich, chkCongChiGio.Checked);
                     break;
 
@@ -273,7 +273,7 @@ namespace DoanQueKinhDich
 
         private void radThoiGian_CheckedChanged(object sender, EventArgs e)
         {
-            CachLayQue = CachLayQue.MaiHoaTienThien1;
+            CachLayQue = CachLayQue.ThoiGianOnly;
 
             txtSoHoacChu.Enabled = true;
             txtQueNgoai1.Enabled = false;
@@ -288,7 +288,7 @@ namespace DoanQueKinhDich
 
         private void radNgoaiSo_CheckedChanged(object sender, EventArgs e)
         {
-            CachLayQue = CachLayQue.MaiHoaTienThien2;
+            CachLayQue = CachLayQue.ThoiGianVaSo;
 
             txtSoHoacChu.Enabled = false;
             txtQueNgoai1.Enabled = true;
@@ -303,7 +303,7 @@ namespace DoanQueKinhDich
 
         private void radioNgoaiSoNoiSo_CheckedChanged(object sender, EventArgs e)
         {
-            CachLayQue = CachLayQue.MaiHoaTienThien3;
+            CachLayQue = CachLayQue.SoOnly;
 
             txtSoHoacChu.Enabled = false;
             txtQueNgoai1.Enabled = false;

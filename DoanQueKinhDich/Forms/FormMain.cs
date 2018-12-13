@@ -30,7 +30,7 @@ namespace DoanQueKinhDich
         public bool Hao2Dong => ucQueDich.Hao2Dong; 
         public bool Hao1Dong => ucQueDich.Hao1Dong;
 
-        public CachLayQue CachLayQue { get; private set; } = CachLayQue.Manual;
+        public CachLayQue CachLayQue { get; private set; } = CachLayQue.ThoiGianOnly;
         public NgayLayQue NgayLayQue => GetNgayLayQue();
         public bool IsDone { get; private set; } = false;
         public AmLich AmLich { get; set; }
@@ -89,47 +89,8 @@ namespace DoanQueKinhDich
             DisplayQueToUI();
         }
 
-        private void linkQueChu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            try
-            {
-                System.Diagnostics.Process.Start(_queChuUrl);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
-
-        private void linkQueHo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            try
-            {
-                System.Diagnostics.Process.Start(_queHoUrl);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
-        private void linkQueBien_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            try
-            {
-                System.Diagnostics.Process.Start(_queBienUrl);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
         private void LoadQue(IQueLayDuoc que)
         {
-            this.CachLayQue = que.CachLayQue;
-
             ucQueDich.uiHao6.Checked = que.Hao6;
             ucQueDich.uiHao5.Checked = que.Hao5;
             ucQueDich.uiHao4.Checked = que.Hao4;
@@ -143,6 +104,8 @@ namespace DoanQueKinhDich
             ucQueDich.uiIsHao3Dong.Checked = que.Hao3Dong;
             ucQueDich.uiIsHao2Dong.Checked = que.Hao2Dong;
             ucQueDich.uiIsHao1Dong.Checked = que.Hao1Dong;
+
+            this.CachLayQue = que.CachLayQue;
         }
 
         private void linkAmLich_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

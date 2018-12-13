@@ -1,5 +1,4 @@
 ﻿using KinhDichCommon;
-using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -52,19 +51,25 @@ namespace DoanQueKinhDich.Business
             var sb = new StringBuilder();
 
             sb.AppendLine();
-            sb.AppendLine(GetNgayThang(ngayLayQue, cachLayQue));
-            sb.AppendLine();
 
-            int haoDongIndex = GetHaoDongIndex(isHao6Dong, isHao5Dong, isHao4Dong, isHao3Dong, isHao2Dong, isHao1Dong);
-            if (haoDongIndex >= 0)
+            if (cachLayQue == CachLayQue.ThoiGianOnly || cachLayQue == CachLayQue.ThoiGianVaSo)
             {
-                var nhatThan = ngayLayQue.NgayAm;
-                var lucThu = LucThu.GetLucThu(nhatThan.Can, haoDongIndex);
+                sb.AppendLine(GetNgayThang(ngayLayQue, cachLayQue));
+                sb.AppendLine();
 
-                sb.AppendLine($"{LeadingSpaces}{lucThu.Name}: {lucThu.Desc}");
+                int haoDongIndex = GetHaoDongIndex(isHao6Dong, isHao5Dong, isHao4Dong, isHao3Dong, isHao2Dong, isHao1Dong);
+                if (haoDongIndex >= 0)
+                {
+                    var nhatThan = ngayLayQue.NgayAm;
+                    var lucThu = LucThu.GetLucThu(nhatThan.Can, haoDongIndex);
+
+                    sb.AppendLine($"{LeadingSpaces}{lucThu.Name}: {lucThu.Desc}");
+                    sb.AppendLine();
+                }
+
+                AddLongHR(columnLen, sb);
             }
 
-            AddLongHR(columnLen, sb);
             AddBodyDesc(queChu, queHo, queBien, isHao6Dong, isHao5Dong, isHao4Dong, isHao3Dong, isHao2Dong, isHao1Dong, sb, columnLen);
             sb.AppendLine();
 
