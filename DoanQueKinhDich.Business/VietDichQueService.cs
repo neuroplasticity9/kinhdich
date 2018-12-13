@@ -47,9 +47,6 @@ namespace DoanQueKinhDich.Business
                                                      bool isHao6Dong = false, bool isHao5Dong = false, bool isHao4Dong = false,
                                                      bool isHao3Dong = false, bool isHao2Dong = false, bool isHao1Dong = false)
         {
-            var nhatThan = ngayLayQue.NgayAm;
-            var nguyetKien = ngayLayQue.ThangAm;
-            var lucThan = LucThu.GetLucThuList(nhatThan.Can);
 
             var columnLen = DescColumnLen;
             var sb = new StringBuilder();
@@ -57,6 +54,15 @@ namespace DoanQueKinhDich.Business
             sb.AppendLine();
             sb.AppendLine(GetNgayThang(ngayLayQue, cachLayQue));
             sb.AppendLine();
+
+            int haoDongIndex = GetHaoDongIndex(isHao6Dong, isHao5Dong, isHao4Dong, isHao3Dong, isHao2Dong, isHao1Dong);
+            if (haoDongIndex >= 0)
+            {
+                var nhatThan = ngayLayQue.NgayAm;
+                var lucThu = LucThu.GetLucThu(nhatThan.Can, haoDongIndex);
+
+                sb.AppendLine($"{LeadingSpaces}{lucThu.Name}: {lucThu.Desc}");
+            }
 
             AddLongHR(columnLen, sb);
             AddBodyDesc(queChu, queHo, queBien, isHao6Dong, isHao5Dong, isHao4Dong, isHao3Dong, isHao2Dong, isHao1Dong, sb, columnLen);
@@ -73,6 +79,40 @@ namespace DoanQueKinhDich.Business
             AddTuongVaYNghiaCuaQue(sb, QueChuDoiDai, QueHoDoiDai, QueBienDoiDai);
 
             return sb.ToString();
+        }
+
+        private int GetHaoDongIndex(bool isHao6Dong, bool isHao5Dong, bool isHao4Dong, bool isHao3Dong, bool isHao2Dong, bool isHao1Dong)
+        {
+            if (isHao6Dong)
+            {
+                return 5;
+            }
+            else if (isHao5Dong)
+            {
+                return 4;
+            }
+            else if (isHao4Dong)
+            {
+                return 3;
+            }
+            else if (isHao4Dong)
+            {
+                return 3;
+            }
+            else if (isHao3Dong)
+            {
+                return 2;
+            }
+            else if (isHao2Dong)
+            {
+                return 1;
+            }
+            else if (isHao1Dong)
+            {
+                return 0;
+            }
+
+            return -1;
         }
 
         private void AddBodyDesc(Que queChu, Que queHo, Que queBien, bool isHao6Dong, bool isHao5Dong, bool isHao4Dong, bool isHao3Dong, bool isHao2Dong, bool isHao1Dong, StringBuilder sb, int padRight)
