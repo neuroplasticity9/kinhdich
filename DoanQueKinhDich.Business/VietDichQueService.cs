@@ -51,101 +51,82 @@ namespace DoanQueKinhDich.Business
             var nguyetKien = ngayLayQue.ThangAm;
             var lucThan = LucThu.GetLucThuList(nhatThan.Can);
 
-            var padRight = 25;
+            var columnLen = DescColumnLen;
             var sb = new StringBuilder();
 
+            sb.AppendLine();
             sb.AppendLine(GetNgayThang(ngayLayQue, cachLayQue));
             sb.AppendLine();
-            AddLongHR(padRight, sb);
 
-            AddBodyDesc(queChu, queHo, queBien, isHao6Dong, isHao5Dong, isHao4Dong, isHao3Dong, isHao2Dong, isHao1Dong, sb, padRight, true, lucThan);
+            AddLongHR(columnLen, sb);
+            AddBodyDesc(queChu, queHo, queBien, isHao6Dong, isHao5Dong, isHao4Dong, isHao3Dong, isHao2Dong, isHao1Dong, sb, columnLen);
             sb.AppendLine();
-            sb.AppendLine();
-            AddLongHR(padRight, sb);
 
-            AddYNghia(queChu, queHo, queBien, sb, padRight);
-            AddLongHR(padRight, sb);
-
-            //AddBodyDesc(QueChuDoiDai, QueHoDoiDai, QueBienDoiDai, isHao1Dong, isHao2Dong, isHao3Dong, isHao4Dong, isHao5Dong, isHao6Dong, sb, padRight, false, null);
-            //sb.AppendLine();
-            //sb.AppendLine();
-            //AddLongHR(padRight, sb);
-
+            AddLongHR(columnLen, sb);
             AddTuongVaYNghiaCuaQue(sb, queChu, queHo, queBien);
-            //AddLongHR(padRight, sb);
-            //AddTuongQue(sb, QueChuDoiDai, QueHoDoiDai, QueBienDoiDai);
+
+            sb.AppendLine();
+            sb.AppendLine();
+            AddBodyDesc(QueChuDoiDai, QueHoDoiDai, QueBienDoiDai, isHao1Dong, isHao2Dong, isHao3Dong, isHao4Dong, isHao5Dong, isHao6Dong, sb, columnLen);
+            sb.AppendLine();
+            AddLongHR(columnLen, sb);
+            AddTuongVaYNghiaCuaQue(sb, QueChuDoiDai, QueHoDoiDai, QueBienDoiDai);
 
             return sb.ToString();
         }
 
-        private void AddYNghia(Que queChu, Que queHo, Que queBien, StringBuilder sb, int padRight)
+        private void AddBodyDesc(Que queChu, Que queHo, Que queBien, bool isHao6Dong, bool isHao5Dong, bool isHao4Dong, bool isHao3Dong, bool isHao2Dong, bool isHao1Dong, StringBuilder sb, int padRight)
         {
-            sb.Append("\t" + queChu.YNghiaNgan.PadRight(padRight));
-            sb.Append(queHo.YNghiaNgan.PadRight(padRight));
-            sb.Append(queBien != null ? queBien.YNghiaNgan : "");
-            sb.AppendLine();
+            var queChuList = GetListStringInQue(queChu, isHao6Dong, isHao5Dong, isHao4Dong, isHao3Dong, isHao2Dong, isHao1Dong);
+
+            var queHoList = GetListStringInQue(queHo);
+
+            var queBienList = GetListStringInQue(queBien, isHao6Dong, isHao5Dong, isHao4Dong, isHao3Dong, isHao2Dong, isHao1Dong);
+
+            AddTextTo3Columns(sb, queChuList, queHoList, queBienList, DescColumnLen);
         }
 
-        private void AddBodyDesc(Que queChu, Que queHo, Que queBien, bool isHao6Dong, bool isHao5Dong, bool isHao4Dong, bool isHao3Dong, bool isHao2Dong, bool isHao1Dong, StringBuilder sb, int padRight, bool addQueTheDungBienDesc, List<LucThu> lucThan)
+        private List<string> GetListStringInQue(Que que, bool isHao6Dong = false, bool isHao5Dong = false, bool isHao4Dong = false, bool isHao3Dong = false, bool isHao2Dong = false, bool isHao1Dong = false)
         {
-            sb.Append(GetTenQueVietDich(queChu).PadRight(padRight));
-            sb.Append(GetTenQueVietDich(queHo).PadRight(padRight));
-            sb.Append(GetTenQueVietDich(queBien));
-            sb.AppendLine();
+            var list = new List<string>();
 
-            sb.Append(GetHaoDesc(queChu, queChu.Hao6, isHao6Dong, addQueTheDungBienDesc, lucThan).PadRight(padRight));
-            sb.Append(GetHaoDesc(queHo, queHo.Hao6, false, addQueTheDungBienDesc, lucThan).PadRight(padRight));
-            sb.Append(queBien != null ? GetHaoDesc(queBien, queBien.Hao6, isHao6Dong, addQueTheDungBienDesc, lucThan) : "");
-            sb.AppendLine();
+            if (que != null)
+            {
+                list.Add(GetTenQueVietDich(que));
+                list.Add(GetHaoDesc(que, que.Hao6, isHao6Dong));
+                list.Add(GetHaoDesc(que, que.Hao5, isHao5Dong));
+                list.Add(GetHaoDesc(que, que.Hao4, isHao4Dong));
+                list.Add(GetHaoDesc(que, que.Hao3, isHao3Dong));
+                list.Add(GetHaoDesc(que, que.Hao2, isHao2Dong));
+                list.Add(GetHaoDesc(que, que.Hao1, isHao1Dong));
 
-            sb.Append(GetHaoDesc(queChu, queChu.Hao5, isHao5Dong, addQueTheDungBienDesc, lucThan).PadRight(padRight));
-            sb.Append(GetHaoDesc(queHo, queHo.Hao5, false, addQueTheDungBienDesc, lucThan).PadRight(padRight));
-            sb.Append(queBien != null ? GetHaoDesc(queBien, queBien.Hao5, isHao5Dong, addQueTheDungBienDesc, lucThan) : "");
-            sb.AppendLine();
+                list.Add(que.YNghiaNgan);
+            }
 
-            sb.Append(GetHaoDesc(queChu, queChu.Hao4, isHao4Dong, addQueTheDungBienDesc, lucThan).PadRight(padRight));
-            sb.Append(GetHaoDesc(queHo, queHo.Hao4, false, addQueTheDungBienDesc, lucThan).PadRight(padRight));
-            sb.Append(queBien != null ? GetHaoDesc(queBien, queBien.Hao4, isHao4Dong, addQueTheDungBienDesc, lucThan) : "");
-            sb.AppendLine();
-
-            sb.Append(GetHaoDesc(queChu, queChu.Hao3, isHao3Dong, addQueTheDungBienDesc, lucThan).PadRight(padRight));
-            sb.Append(GetHaoDesc(queHo, queHo.Hao3, false, addQueTheDungBienDesc, lucThan).PadRight(padRight));
-            sb.Append(queBien != null ? GetHaoDesc(queBien, queBien.Hao3, isHao3Dong, addQueTheDungBienDesc, lucThan) : "");
-            sb.AppendLine();
-
-            sb.Append(GetHaoDesc(queChu, queChu.Hao2, isHao2Dong, addQueTheDungBienDesc, lucThan).PadRight(padRight));
-            sb.Append(GetHaoDesc(queHo, queHo.Hao2, false, addQueTheDungBienDesc, lucThan).PadRight(padRight));
-            sb.Append(queBien != null ? GetHaoDesc(queBien, queBien.Hao2, isHao2Dong, addQueTheDungBienDesc, lucThan) : "");
-            sb.AppendLine();
-
-            sb.Append(GetHaoDesc(queChu, queChu.Hao1, isHao1Dong, addQueTheDungBienDesc, lucThan).PadRight(padRight));
-            sb.Append(GetHaoDesc(queHo, queHo.Hao1, false, addQueTheDungBienDesc, lucThan).PadRight(padRight));
-            sb.Append(queBien != null ? GetHaoDesc(queBien, queBien.Hao1, isHao1Dong, addQueTheDungBienDesc, lucThan) : "");
+            return list;
         }
 
-        protected string GetHaoDesc(Que que, Hao hao, bool isHaoDong, bool addQueTheDungBienDesc, List<LucThu> lucThan)
+        protected string GetHaoDesc(Que que, Hao hao, bool isHaoDong)
         {
             if (que == null)
             {
                 return "";
             }
 
-            string result = "\t";
+            string result = "";
+
+            result += $"{hao.AmDuongString}";
             if (isHaoDong)
             {
                 if (hao.Duong)
                 {
-                    result = "o\t"; // Dương động biến âm.
+                    result += " o"; // Dương động biến âm.
                 }
                 else
                 {
-                    result = "x\t"; // Âm động biến dương.
+                    result += " x"; // Âm động biến dương.
                 }
             }
-            //result = result.PadRight(3);
-
-            result += $"{hao.AmDuongString}";
-            result = result.PadRight(18);
 
             return result;
         }

@@ -209,6 +209,8 @@ namespace DoanQueKinhDich
         private void uiDatePicker_ValueChanged(object sender, EventArgs e)
         {
             uiDate.SelectionRange = new SelectionRange(uiDatePicker.Value, uiDatePicker.Value);
+
+            radThoiGian.Checked = true;
         }
 
         private void chkUseNamCan_CheckedChanged(object sender, EventArgs e)
@@ -263,6 +265,8 @@ namespace DoanQueKinhDich
             }
 
             UpdateButtonsBackColor(cbxGioChi.SelectedIndex);
+
+            radThoiGian.Checked = true;
 
             GetQue();
         }
@@ -413,6 +417,8 @@ namespace DoanQueKinhDich
         {
             var index = GetButtonIndex((Button)sender);
             cbxGioChi.SelectedIndex = index;
+
+            radThoiGian.Checked = true;
         }
 
         /// <summary>
