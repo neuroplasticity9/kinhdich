@@ -8,8 +8,8 @@ namespace DoanQueKinhDich
 {
     public partial class FormTimTen : Form
     {
-        private bool _luonHienKetQua = false;
-        private TenService _tenService = new TenService();
+        private TenNuService _tenNuService = new TenNuService();
+        private TenNamService _tenNamService = new TenNamService();
 
         private List<CheckBox> _allCheckboxes;
 
@@ -34,6 +34,7 @@ namespace DoanQueKinhDich
                                              dungDauHoi: chkTenHoi.Checked, dungDauNga: chkTenNga.Checked, dungDauNang: chkTenNang.Checked);
 
             var list = new List<string>();
+            TenService tenService = GetTenService();
 
             for (int i = 0; i < _allCheckboxes.Count; i++)
             {
@@ -43,20 +44,30 @@ namespace DoanQueKinhDich
 
                     if (chkGhepTenNgauNhien.Checked)
                     {
-                        list.AddRange(_tenService.Get2ChuRandom(tongSoKyTu, lotOption, tenOption));
+                        list.AddRange(tenService.Get2ChuRandom(tongSoKyTu, lotOption, tenOption));
                     }
                     else
                     {
-                        list.AddRange(_tenService.Get2ChuTenDep(tongSoKyTu, lotOption, tenOption));
+                        list.AddRange(tenService.Get2ChuTenDep(tongSoKyTu, lotOption, tenOption));
                     }
                 }
             }
 
             var sortedNameList = list.OrderBy(name => name).ToList();
-            var result = _tenService.GetNamesInString(sortedNameList);
+            var result = _tenNuService.GetNamesInString(sortedNameList);
 
             txtDesc.Clear();
             txtDesc.Text = result;
+        }
+
+        private TenService GetTenService()
+        {
+            if (radBeGai.Checked)
+            {
+                return _tenNuService;
+            }
+
+            return _tenNamService;
         }
 
         private int GetTongSoKyTu(CheckBox checkBox)

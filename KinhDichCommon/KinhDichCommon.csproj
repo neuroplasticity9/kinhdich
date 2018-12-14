@@ -79,6 +79,9 @@
     </Compile>
     <Compile Include="Que\Que.Static.cs" />
     <Compile Include="Support\Utils.cs" />
+    <Compile Include="Ten\ListTenNam.cs" />
+    <Compile Include="Ten\TenNamService.cs" />
+    <Compile Include="Ten\TenNuService.cs" />
     <Compile Include="Ten\ListTenNu.cs" />
     <Compile Include="Ten\TenService.cs" />
     <Compile Include="VongTruongSinh\TruongSinhNguHanh.cs" />

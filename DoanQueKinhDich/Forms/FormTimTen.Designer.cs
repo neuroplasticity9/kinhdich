@@ -66,9 +66,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnCopy = new System.Windows.Forms.Button();
             this.chkGhepTenNgauNhien = new System.Windows.Forms.CheckBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.radBeGai = new System.Windows.Forms.RadioButton();
+            this.radBeTrai = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnGo
@@ -248,9 +252,9 @@
             this.groupBox2.Controls.Add(this.chk5);
             this.groupBox2.Controls.Add(this.chk4);
             this.groupBox2.Font = new System.Drawing.Font("Courier New", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 10);
+            this.groupBox2.Location = new System.Drawing.Point(413, 10);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(743, 78);
+            this.groupBox2.Size = new System.Drawing.Size(661, 78);
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tổng số ký tự của 2 chữ của tên:";
@@ -503,12 +507,49 @@
             this.chkGhepTenNgauNhien.Text = "Ghép tên ngẫu nhiên";
             this.chkGhepTenNgauNhien.UseVisualStyleBackColor = true;
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.radBeTrai);
+            this.groupBox4.Controls.Add(this.radBeGai);
+            this.groupBox4.Font = new System.Drawing.Font("Courier New", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(12, 9);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(385, 78);
+            this.groupBox4.TabIndex = 44;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Tìm tên có 2 chữ của";
+            // 
+            // radBeGai
+            // 
+            this.radBeGai.AutoSize = true;
+            this.radBeGai.Checked = true;
+            this.radBeGai.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radBeGai.Location = new System.Drawing.Point(75, 32);
+            this.radBeGai.Name = "radBeGai";
+            this.radBeGai.Size = new System.Drawing.Size(94, 25);
+            this.radBeGai.TabIndex = 5;
+            this.radBeGai.TabStop = true;
+            this.radBeGai.Text = "Bé gái";
+            this.radBeGai.UseVisualStyleBackColor = true;
+            // 
+            // radBeTrai
+            // 
+            this.radBeTrai.AutoSize = true;
+            this.radBeTrai.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radBeTrai.Location = new System.Drawing.Point(217, 32);
+            this.radBeTrai.Name = "radBeTrai";
+            this.radBeTrai.Size = new System.Drawing.Size(105, 25);
+            this.radBeTrai.TabIndex = 6;
+            this.radBeTrai.Text = "Bé trai";
+            this.radBeTrai.UseVisualStyleBackColor = true;
+            // 
             // FormTimTen
             // 
             this.AcceptButton = this.btnGo;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1309, 780);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.chkGhepTenNgauNhien);
             this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.groupBox3);
@@ -530,6 +571,8 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -573,6 +616,9 @@
         private System.Windows.Forms.CheckBox chk5;
         private System.Windows.Forms.CheckBox chk4;
         private System.Windows.Forms.CheckBox chkGhepTenNgauNhien;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.RadioButton radBeTrai;
+        private System.Windows.Forms.RadioButton radBeGai;
     }
 }
 

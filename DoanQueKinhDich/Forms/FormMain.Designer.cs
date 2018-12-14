@@ -35,6 +35,7 @@
             this.btnLayQue = new System.Windows.Forms.Button();
             this.btnHoc = new System.Windows.Forms.Button();
             this.ucQueDich = new DoanQueKinhDich.UserControls.ucQue();
+            this.btnTimTen = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtQueDesc
@@ -81,7 +82,7 @@
             // btnLayQue
             // 
             this.btnLayQue.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLayQue.Location = new System.Drawing.Point(17, 47);
+            this.btnLayQue.Location = new System.Drawing.Point(17, 31);
             this.btnLayQue.Margin = new System.Windows.Forms.Padding(2);
             this.btnLayQue.Name = "btnLayQue";
             this.btnLayQue.Size = new System.Drawing.Size(269, 48);
@@ -93,7 +94,7 @@
             // btnHoc
             // 
             this.btnHoc.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHoc.Location = new System.Drawing.Point(17, 120);
+            this.btnHoc.Location = new System.Drawing.Point(17, 104);
             this.btnHoc.Margin = new System.Windows.Forms.Padding(2);
             this.btnHoc.Name = "btnHoc";
             this.btnHoc.Size = new System.Drawing.Size(269, 48);
@@ -109,11 +110,24 @@
             this.ucQueDich.Size = new System.Drawing.Size(685, 240);
             this.ucQueDich.TabIndex = 3;
             // 
+            // btnTimTen
+            // 
+            this.btnTimTen.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimTen.Location = new System.Drawing.Point(17, 177);
+            this.btnTimTen.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTimTen.Name = "btnTimTen";
+            this.btnTimTen.Size = new System.Drawing.Size(269, 48);
+            this.btnTimTen.TabIndex = 38;
+            this.btnTimTen.Text = "Tìm tên (F3)";
+            this.btnTimTen.UseVisualStyleBackColor = true;
+            this.btnTimTen.Click += new System.EventHandler(this.btnTimTen_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1774, 823);
+            this.Controls.Add(this.btnTimTen);
             this.Controls.Add(this.btnHoc);
             this.Controls.Add(this.ucQueDich);
             this.Controls.Add(this.btnLayQue);
@@ -140,6 +154,7 @@
         private System.Windows.Forms.Button btnLayQue;
         private UserControls.ucQue ucQueDich;
         private System.Windows.Forms.Button btnHoc;
+        private System.Windows.Forms.Button btnTimTen;
     }
 }
 

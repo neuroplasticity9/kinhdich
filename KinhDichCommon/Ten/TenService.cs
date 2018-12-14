@@ -5,11 +5,10 @@ using System.Text;
 
 namespace KinhDichCommon
 {
-
     /// <summary>
-    /// 
+    /// Get ten.
     /// </summary>
-    public class TenService
+    public abstract class TenService
     {
         private List<string> _allFemaleNames1Chu = new List<string>();
         private List<string> _allFemaleNames2Chu = new List<string>();
@@ -20,10 +19,10 @@ namespace KinhDichCommon
         private List<string> _nguyenAmNga   = new List<string>() { "ã", "ẵ", "ẫ", "ẽ", "ễ", "ĩ", "õ", "ỗ", "ỡ", "ũ", "ữ", "ỹ", "Ã", "Ẵ", "Ẫ", "Ẽ", "Ễ", "Ĩ", "Õ", "Ỗ", "Ỡ", "Ũ", "Ữ", "Ỹ" };
         private List<string> _nguyenAmNang  = new List<string>() { "ạ", "ặ", "ậ", "ẹ", "ệ", "ị", "ọ", "ộ", "ợ", "ụ", "ự", "ỵ", "Ạ", "Ặ", "Ậ", "Ẹ", "Ệ", "Ị", "Ọ", "Ộ", "Ợ", "Ụ", "Ự", "Ỵ" };
 
-        public TenService()
+        public TenService(string listAllTen)
         {
-            _allFemaleNames1Chu = GetAllFemaleNames1Chu();
-            _allFemaleNames2Chu = GetAllFemaleNames2Chu();
+            _allFemaleNames1Chu = GetAllFemaleNames1Chu(listAllTen);
+            _allFemaleNames2Chu = GetAllFemaleNames2Chu(listAllTen);
         }
 
         public List<string> Get2ChuTenDep(int tongSo, TimTenOption lotOption, TimTenOption tenOption)
@@ -266,17 +265,17 @@ namespace KinhDichCommon
             return nameList.Where(name => name.Length == nameLength).ToList();
         }
 
-        public List<string> GetAllFemaleNames1Chu()
+        public List<string> GetAllFemaleNames1Chu(string listAllTen)
         {
-            var listName = GetAll1Chu(ListTenNu.All);
+            var listName = GetAll1Chu(listAllTen);
 
             var sortedNameList = listName.OrderBy(name => name).ToList();
             return sortedNameList;
         }
 
-        public List<string> GetAllFemaleNames2Chu()
+        public List<string> GetAllFemaleNames2Chu(string listAllTen)
         {
-            var listName = GetAll2ChuTenDep(ListTenNu.All);
+            var listName = GetAll2ChuTenDep(listAllTen);
 
             var sortedNameList = listName.OrderBy(name => name).ToList();
             return sortedNameList;
