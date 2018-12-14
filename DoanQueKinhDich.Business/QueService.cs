@@ -12,7 +12,7 @@ namespace DoanQueKinhDich.Business
         protected const string NewLine = "[a]";
         protected const string LeadingSpaces = "  ";
         protected const int DateColumnLen = 15;
-        protected const int WordWrapSize = 30;
+        protected const int WordWrapSize = 31;
         protected const int DescColumnLen = 35;
 
         public IQueLayDuoc Que { get; set; }
@@ -244,13 +244,21 @@ namespace DoanQueKinhDich.Business
             return tuongQue;
         }
 
-        private List<string> GetWordWrapLines(string tuongQue)
+        private List<string> GetWordWrapLines(string text)
         {
-            var wordWrapString = WordWrap(tuongQue, WordWrapSize);
+            var result = new List<string>();
 
-            var list = wordWrapString.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            var wordWrapString = WordWrap(text, WordWrapSize);
 
-            return new List<string>(list);
+            var lines = text.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            var temp = "";
+            for (int i = 0; i < lines.Length; i++)
+            {
+                temp = WordWrap(lines[i], WordWrapSize);
+                result.AddRange(temp.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries));
+            }
+
+            return result;
         }
 
         /// <summary>

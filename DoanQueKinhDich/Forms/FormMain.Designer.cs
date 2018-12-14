@@ -69,7 +69,7 @@
             // 
             this.btnCopy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCopy.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCopy.Location = new System.Drawing.Point(1600, 198);
+            this.btnCopy.Location = new System.Drawing.Point(1600, 193);
             this.btnCopy.Margin = new System.Windows.Forms.Padding(2);
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.Size = new System.Drawing.Size(154, 48);
@@ -86,7 +86,7 @@
             this.btnLayQue.Name = "btnLayQue";
             this.btnLayQue.Size = new System.Drawing.Size(269, 48);
             this.btnLayQue.TabIndex = 1;
-            this.btnLayQue.Text = "Lấy Quẻ Thời Gian (F1)";
+            this.btnLayQue.Text = "Lấy Quẻ Dịch (F1)";
             this.btnLayQue.UseVisualStyleBackColor = true;
             this.btnLayQue.Click += new System.EventHandler(this.btnLayQue_Click);
             // 
