@@ -7,9 +7,6 @@ namespace DoanQueKinhDich
 {
     public partial class FormMain : Form, IQueLayDuoc
     {
-        private string _queChuUrl;
-        private string _queHoUrl;
-        private string _queBienUrl;
         private FormQueThoiGian _formQueThoiGian = new FormQueThoiGian();
 
         public FormMain()
@@ -23,7 +20,7 @@ namespace DoanQueKinhDich
         public bool Hao2 => ucQueDich.Hao2; 
         public bool Hao1 => ucQueDich.Hao1; 
 
-        public bool Hao6Dong => ucQueDich.Hao6Dong; 
+        public bool Hao6Dong => ucQueDich.Hao6Dong;
         public bool Hao5Dong => ucQueDich.Hao5Dong; 
         public bool Hao4Dong => ucQueDich.Hao4Dong; 
         public bool Hao3Dong => ucQueDich.Hao3Dong; 
@@ -31,11 +28,11 @@ namespace DoanQueKinhDich
         public bool Hao1Dong => ucQueDich.Hao1Dong;
 
         public CachLayQue CachLayQue { get; private set; } = CachLayQue.ThoiGianOnly;
-        public NgayLayQue NgayLayQue => GetNgayLayQue();
+        public NgayLayQue NgayLayQue => AmLich.ToNgayLayQue();
         public bool IsDone { get; private set; } = false;
         public AmLich AmLich { get; set; }
 
-        private bool _isFirstLoadFinished;
+        private bool _doNotUpdateQueDesc;
 
         /// <summary>
         /// Form load event.
@@ -44,68 +41,60 @@ namespace DoanQueKinhDich
         /// <param name="e"></param>
         private void Main_Load(object sender, EventArgs e)
         {
-            _isFirstLoadFinished = true;
-
             this.ucQueDich.CheckedChanged += new System.EventHandler(ucQueDich_CheckedChanged);
-            SetQueDefault();
-        }
 
-        private void SetQueDefault()
-        {
             AmLich = _formQueThoiGian.AmLich;
             LoadQue(_formQueThoiGian);
         }
 
         private void DisplayQueToUI()
         {
-            if (!_isFirstLoadFinished)
-            {
-                return;
-            }
-
             var queService = new VietDichQueService(this);
             txtQueDesc.Text = queService.GetQueDesc();
         }
 
-        private NgayLayQue GetNgayLayQue()
-        {
-            return AmLich.ToNgayLayQue();
-        }
-
-        private string GetNameForLink(Que que)
-        {
-            var result = $"{que.NameShort} {que.NameChinese} - Quẻ {que.QueId}";
-
-            if (que.QueThuan != null)
-            {
-                result += $" thuộc {que.QueThuan.NameShort} {que.QueThuan.NameChinese}";
-            }
-
-            return result;
-        }
-
         private void ucQueDich_CheckedChanged(object sender, EventArgs e)
         {
-            DisplayQueToUI();
+            if (_doNotUpdateQueDesc)
+            {
+                // do nothing.
+            }
+            else
+            {
+                CachLayQue = CachLayQue.Manual;
+
+                DisplayQueToUI();
+            }
         }
 
         private void LoadQue(IQueLayDuoc que)
         {
-            ucQueDich.uiHao6.Checked = que.Hao6;
-            ucQueDich.uiHao5.Checked = que.Hao5;
-            ucQueDich.uiHao4.Checked = que.Hao4;
-            ucQueDich.uiHao3.Checked = que.Hao3;
-            ucQueDich.uiHao2.Checked = que.Hao2;
-            ucQueDich.uiHao1.Checked = que.Hao1;
+            try
+            {
+                _doNotUpdateQueDesc = true;
 
-            ucQueDich.uiIsHao6Dong.Checked = que.Hao6Dong;
-            ucQueDich.uiIsHao5Dong.Checked = que.Hao5Dong;
-            ucQueDich.uiIsHao4Dong.Checked = que.Hao4Dong;
-            ucQueDich.uiIsHao3Dong.Checked = que.Hao3Dong;
-            ucQueDich.uiIsHao2Dong.Checked = que.Hao2Dong;
-            ucQueDich.uiIsHao1Dong.Checked = que.Hao1Dong;
+                ucQueDich.uiHao6.Checked = que.Hao6;
+                ucQueDich.uiHao5.Checked = que.Hao5;
+                ucQueDich.uiHao4.Checked = que.Hao4;
+                ucQueDich.uiHao3.Checked = que.Hao3;
+                ucQueDich.uiHao2.Checked = que.Hao2;
+                ucQueDich.uiHao1.Checked = que.Hao1;
 
-            this.CachLayQue = que.CachLayQue;
+                ucQueDich.uiIsHao6Dong.Checked = que.Hao6Dong;
+                ucQueDich.uiIsHao5Dong.Checked = que.Hao5Dong;
+                ucQueDich.uiIsHao4Dong.Checked = que.Hao4Dong;
+                ucQueDich.uiIsHao3Dong.Checked = que.Hao3Dong;
+                ucQueDich.uiIsHao2Dong.Checked = que.Hao2Dong;
+                ucQueDich.uiIsHao1Dong.Checked = que.Hao1Dong;
+            }
+            finally
+            {
+                _doNotUpdateQueDesc = false;
+
+                this.CachLayQue = que.CachLayQue;
+
+                DisplayQueToUI();
+            }
         }
 
         private void linkAmLich_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -134,31 +123,6 @@ namespace DoanQueKinhDich
             {
                 AmLich = _formQueThoiGian.AmLich;
                 LoadQue(_formQueThoiGian);
-            }
-        }
-
-        /// <summary>
-        /// Nếu chọn chi thì phải cập nhật lại can.
-        /// </summary>
-        /// <param name="combobox"></param>
-        /// <param name="comboboxToUpdate"></param>
-        private void CapNhatCan(ComboBox combobox, ComboBox comboboxToUpdate)
-        {
-            DiaChi selectedChi = DiaChi.All[combobox.SelectedIndex];
-            ThienCan firstCan = CanChi.GetCanDauTienHopLe(selectedChi);
-
-            if (comboboxToUpdate.SelectedIndex < 0)
-            {
-                comboboxToUpdate.SelectedIndex = firstCan.Id - 1;
-            }
-            else
-            {
-                ThienCan currentCan = ThienCan.All[comboboxToUpdate.SelectedIndex];
-                // Cập nhật chi nếu khác loại âm dương.
-                if (currentCan.Duong != firstCan.Duong)
-                {
-                    comboboxToUpdate.SelectedIndex = firstCan.Id - 1;
-                }
             }
         }
 

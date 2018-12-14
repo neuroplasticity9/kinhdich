@@ -10,12 +10,12 @@ namespace KinhDichCommon
     /// </summary>
     public class LucThu : BaseItem
     {
-        public static readonly LucThu ThanhLong = new LucThu { Id = 1, Name = "Thanh Long", NameChinese = "", Desc="Tiền bạc, vui vẻ, hỉ tín, ..." };
-        public static readonly LucThu ChuTuoc = new LucThu { Id = 2, Name = "Chu Tước", NameChinese = "", Desc="Báo tin, văn chương, nghệ thuật, ..." };
-        public static readonly LucThu CauTran = new LucThu { Id = 3, Name = "Câu Trần", NameChinese = "", Desc="Chậm chạp, lâu dài, ..." };
-        public static readonly LucThu PhiXa = new LucThu { Id = 4, Name = "Phi Xà", NameChinese = "", Desc="Nhanh lẹ, quái dị, ..." };
-        public static readonly LucThu BachHo = new LucThu { Id = 5, Name = "Bạch Hổ", NameChinese = "", Desc="Cứng mạnh, hung bạo, ..." };
-        public static readonly LucThu HuyenVu = new LucThu { Id = 6, Name = "Huyền Vũ", NameChinese = "", Desc="Mờ ám, chưa rõ, ..." };
+        public static readonly LucThu ThanhLong = new LucThu { Id = 1, Name = "Thanh Long", NameChinese = "", Desc="Thuộc MỘC - Tiền bạc, vui vẻ, hỉ tín, ..." };
+        public static readonly LucThu ChuTuoc = new LucThu { Id = 2, Name = "Chu Tước", NameChinese = "", Desc="Thuộc HỎA - Báo tin, văn chương, nghệ thuật, ..." };
+        public static readonly LucThu CauTran = new LucThu { Id = 3, Name = "Câu Trần", NameChinese = "", Desc="Thuộc THỔ - Chậm chạp, lâu dài, ..." };
+        public static readonly LucThu PhiXa = new LucThu { Id = 4, Name = "Đằng Xà", NameChinese = "", Desc="Thuộc HỎA - Nhanh lẹ, quái dị, ..." };
+        public static readonly LucThu BachHo = new LucThu { Id = 5, Name = "Bạch Hổ", NameChinese = "", Desc="Thuộc KIM - Cứng mạnh, hung bạo, ..." };
+        public static readonly LucThu HuyenVu = new LucThu { Id = 6, Name = "Huyền Vũ", NameChinese = "", Desc="Thuộc THỦY - Mờ ám, chưa rõ, ..." };
 
         public static readonly List<LucThu> NgayGiapAt = new List<LucThu> { ThanhLong, ChuTuoc, CauTran, PhiXa, BachHo, HuyenVu };
 
