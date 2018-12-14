@@ -9,7 +9,7 @@ namespace KinhDichCommon.Tests
         public void GetTen()
         {
             var tenService = new TenService();
-            tenService.GetAllFemaleNames();
+            tenService.GetAllFemaleNames1Chu();
         }
         
     }

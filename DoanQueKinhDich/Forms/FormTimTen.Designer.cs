@@ -44,13 +44,15 @@
             this.chkLotHuyen = new System.Windows.Forms.CheckBox();
             this.chkLotKhongDau = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rad11 = new System.Windows.Forms.RadioButton();
-            this.rad10 = new System.Windows.Forms.RadioButton();
-            this.rad9 = new System.Windows.Forms.RadioButton();
-            this.rad8 = new System.Windows.Forms.RadioButton();
-            this.rad7 = new System.Windows.Forms.RadioButton();
-            this.rad6 = new System.Windows.Forms.RadioButton();
-            this.rad5 = new System.Windows.Forms.RadioButton();
+            this.chk12 = new System.Windows.Forms.CheckBox();
+            this.chk11 = new System.Windows.Forms.CheckBox();
+            this.chk10 = new System.Windows.Forms.CheckBox();
+            this.chk6 = new System.Windows.Forms.CheckBox();
+            this.chk9 = new System.Windows.Forms.CheckBox();
+            this.chk8 = new System.Windows.Forms.CheckBox();
+            this.chk7 = new System.Windows.Forms.CheckBox();
+            this.chk5 = new System.Windows.Forms.CheckBox();
+            this.chk4 = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.chkTenSac = new System.Windows.Forms.CheckBox();
             this.chkTenNang = new System.Windows.Forms.CheckBox();
@@ -63,6 +65,7 @@
             this.txtTenKy = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnCopy = new System.Windows.Forms.Button();
+            this.chkGhepTenNgauNhien = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -114,7 +117,7 @@
             this.txtLotKy.Size = new System.Drawing.Size(1049, 105);
             this.txtLotKy.TabIndex = 23;
             this.txtLotKy.TabStop = false;
-            this.txtLotKy.Text = "Chung Trung Trinh Thoa Thương Khuyên Phong Quyên Xuyến";
+            this.txtLotKy.Text = "";
             // 
             // label1
             // 
@@ -134,9 +137,9 @@
             this.label2.Location = new System.Drawing.Point(4, 217);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(252, 21);
+            this.label2.Size = new System.Drawing.Size(263, 21);
             this.label2.TabIndex = 26;
-            this.label2.Text = "Nằm trong các chữ sau:";
+            this.label2.Text = "Là 1 trong các chữ sau:";
             // 
             // txtLotChon
             // 
@@ -235,99 +238,116 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.rad11);
-            this.groupBox2.Controls.Add(this.rad10);
-            this.groupBox2.Controls.Add(this.rad9);
-            this.groupBox2.Controls.Add(this.rad8);
-            this.groupBox2.Controls.Add(this.rad7);
-            this.groupBox2.Controls.Add(this.rad6);
-            this.groupBox2.Controls.Add(this.rad5);
+            this.groupBox2.Controls.Add(this.chk12);
+            this.groupBox2.Controls.Add(this.chk11);
+            this.groupBox2.Controls.Add(this.chk10);
+            this.groupBox2.Controls.Add(this.chk6);
+            this.groupBox2.Controls.Add(this.chk9);
+            this.groupBox2.Controls.Add(this.chk8);
+            this.groupBox2.Controls.Add(this.chk7);
+            this.groupBox2.Controls.Add(this.chk5);
+            this.groupBox2.Controls.Add(this.chk4);
             this.groupBox2.Font = new System.Drawing.Font("Courier New", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 10);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(493, 74);
+            this.groupBox2.Size = new System.Drawing.Size(743, 78);
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tổng số ký tự của 2 chữ của tên:";
             // 
-            // rad11
+            // chk12
             // 
-            this.rad11.AutoSize = true;
-            this.rad11.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rad11.Location = new System.Drawing.Point(425, 28);
-            this.rad11.Name = "rad11";
-            this.rad11.Size = new System.Drawing.Size(50, 25);
-            this.rad11.TabIndex = 9;
-            this.rad11.Text = "11";
-            this.rad11.UseVisualStyleBackColor = true;
+            this.chk12.AutoSize = true;
+            this.chk12.Location = new System.Drawing.Point(588, 33);
+            this.chk12.Name = "chk12";
+            this.chk12.Size = new System.Drawing.Size(51, 25);
+            this.chk12.TabIndex = 43;
+            this.chk12.Text = "12";
+            this.chk12.UseVisualStyleBackColor = true;
             // 
-            // rad10
+            // chk11
             // 
-            this.rad10.AutoSize = true;
-            this.rad10.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rad10.Location = new System.Drawing.Point(354, 28);
-            this.rad10.Name = "rad10";
-            this.rad10.Size = new System.Drawing.Size(50, 25);
-            this.rad10.TabIndex = 8;
-            this.rad10.Text = "10";
-            this.rad10.UseVisualStyleBackColor = true;
+            this.chk11.AutoSize = true;
+            this.chk11.Location = new System.Drawing.Point(513, 33);
+            this.chk11.Name = "chk11";
+            this.chk11.Size = new System.Drawing.Size(51, 25);
+            this.chk11.TabIndex = 42;
+            this.chk11.Text = "11";
+            this.chk11.UseVisualStyleBackColor = true;
             // 
-            // rad9
+            // chk10
             // 
-            this.rad9.AutoSize = true;
-            this.rad9.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rad9.Location = new System.Drawing.Point(286, 28);
-            this.rad9.Name = "rad9";
-            this.rad9.Size = new System.Drawing.Size(39, 25);
-            this.rad9.TabIndex = 7;
-            this.rad9.Text = "9";
-            this.rad9.UseVisualStyleBackColor = true;
+            this.chk10.AutoSize = true;
+            this.chk10.Location = new System.Drawing.Point(435, 33);
+            this.chk10.Name = "chk10";
+            this.chk10.Size = new System.Drawing.Size(51, 25);
+            this.chk10.TabIndex = 41;
+            this.chk10.Text = "10";
+            this.chk10.UseVisualStyleBackColor = true;
             // 
-            // rad8
+            // chk6
             // 
-            this.rad8.AutoSize = true;
-            this.rad8.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rad8.Location = new System.Drawing.Point(216, 28);
-            this.rad8.Name = "rad8";
-            this.rad8.Size = new System.Drawing.Size(39, 25);
-            this.rad8.TabIndex = 6;
-            this.rad8.Text = "8";
-            this.rad8.UseVisualStyleBackColor = true;
+            this.chk6.AutoSize = true;
+            this.chk6.Location = new System.Drawing.Point(160, 33);
+            this.chk6.Name = "chk6";
+            this.chk6.Size = new System.Drawing.Size(40, 25);
+            this.chk6.TabIndex = 40;
+            this.chk6.Text = "6";
+            this.chk6.UseVisualStyleBackColor = true;
             // 
-            // rad7
+            // chk9
             // 
-            this.rad7.AutoSize = true;
-            this.rad7.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rad7.Location = new System.Drawing.Point(150, 28);
-            this.rad7.Name = "rad7";
-            this.rad7.Size = new System.Drawing.Size(39, 25);
-            this.rad7.TabIndex = 5;
-            this.rad7.Text = "7";
-            this.rad7.UseVisualStyleBackColor = true;
+            this.chk9.AutoSize = true;
+            this.chk9.Checked = true;
+            this.chk9.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chk9.Location = new System.Drawing.Point(364, 33);
+            this.chk9.Name = "chk9";
+            this.chk9.Size = new System.Drawing.Size(40, 25);
+            this.chk9.TabIndex = 39;
+            this.chk9.Text = "9";
+            this.chk9.UseVisualStyleBackColor = true;
             // 
-            // rad6
+            // chk8
             // 
-            this.rad6.AutoSize = true;
-            this.rad6.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rad6.Location = new System.Drawing.Point(84, 28);
-            this.rad6.Name = "rad6";
-            this.rad6.Size = new System.Drawing.Size(39, 25);
-            this.rad6.TabIndex = 4;
-            this.rad6.Text = "6";
-            this.rad6.UseVisualStyleBackColor = true;
+            this.chk8.AutoSize = true;
+            this.chk8.Checked = true;
+            this.chk8.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chk8.Location = new System.Drawing.Point(296, 33);
+            this.chk8.Name = "chk8";
+            this.chk8.Size = new System.Drawing.Size(40, 25);
+            this.chk8.TabIndex = 38;
+            this.chk8.Text = "8";
+            this.chk8.UseVisualStyleBackColor = true;
             // 
-            // rad5
+            // chk7
             // 
-            this.rad5.AutoSize = true;
-            this.rad5.Checked = true;
-            this.rad5.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rad5.Location = new System.Drawing.Point(19, 28);
-            this.rad5.Name = "rad5";
-            this.rad5.Size = new System.Drawing.Size(39, 25);
-            this.rad5.TabIndex = 3;
-            this.rad5.TabStop = true;
-            this.rad5.Text = "5";
-            this.rad5.UseVisualStyleBackColor = true;
+            this.chk7.AutoSize = true;
+            this.chk7.Location = new System.Drawing.Point(226, 33);
+            this.chk7.Name = "chk7";
+            this.chk7.Size = new System.Drawing.Size(40, 25);
+            this.chk7.TabIndex = 37;
+            this.chk7.Text = "7";
+            this.chk7.UseVisualStyleBackColor = true;
+            // 
+            // chk5
+            // 
+            this.chk5.AutoSize = true;
+            this.chk5.Location = new System.Drawing.Point(93, 33);
+            this.chk5.Name = "chk5";
+            this.chk5.Size = new System.Drawing.Size(40, 25);
+            this.chk5.TabIndex = 36;
+            this.chk5.Text = "5";
+            this.chk5.UseVisualStyleBackColor = true;
+            // 
+            // chk4
+            // 
+            this.chk4.AutoSize = true;
+            this.chk4.Location = new System.Drawing.Point(29, 33);
+            this.chk4.Name = "chk4";
+            this.chk4.Size = new System.Drawing.Size(40, 25);
+            this.chk4.TabIndex = 35;
+            this.chk4.Text = "4";
+            this.chk4.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -418,9 +438,9 @@
             this.label3.Location = new System.Drawing.Point(4, 221);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(252, 21);
+            this.label3.Size = new System.Drawing.Size(263, 21);
             this.label3.TabIndex = 26;
-            this.label3.Text = "Nằm trong các chữ sau:";
+            this.label3.Text = "Là 1 trong các chữ sau:";
             // 
             // txtTenChon
             // 
@@ -472,12 +492,24 @@
             this.btnCopy.UseVisualStyleBackColor = true;
             this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
+            // chkGhepTenNgauNhien
+            // 
+            this.chkGhepTenNgauNhien.AutoSize = true;
+            this.chkGhepTenNgauNhien.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkGhepTenNgauNhien.Location = new System.Drawing.Point(626, 731);
+            this.chkGhepTenNgauNhien.Name = "chkGhepTenNgauNhien";
+            this.chkGhepTenNgauNhien.Size = new System.Drawing.Size(238, 25);
+            this.chkGhepTenNgauNhien.TabIndex = 44;
+            this.chkGhepTenNgauNhien.Text = "Ghép tên ngẫu nhiên";
+            this.chkGhepTenNgauNhien.UseVisualStyleBackColor = true;
+            // 
             // FormTimTen
             // 
             this.AcceptButton = this.btnGo;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1309, 780);
+            this.Controls.Add(this.chkGhepTenNgauNhien);
             this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -491,7 +523,6 @@
             this.Name = "FormTimTen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Tìm tên có 2 chữ cái";
-            this.Load += new System.EventHandler(this.Main_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormQueHoc_KeyDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -514,13 +545,6 @@
         private System.Windows.Forms.RichTextBox txtLotKy;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton rad11;
-        private System.Windows.Forms.RadioButton rad10;
-        private System.Windows.Forms.RadioButton rad9;
-        private System.Windows.Forms.RadioButton rad8;
-        private System.Windows.Forms.RadioButton rad7;
-        private System.Windows.Forms.RadioButton rad6;
-        private System.Windows.Forms.RadioButton rad5;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox txtTenChon;
@@ -539,6 +563,16 @@
         private System.Windows.Forms.CheckBox chkTenHuyen;
         private System.Windows.Forms.CheckBox chkTenKhongDau;
         private System.Windows.Forms.Button btnCopy;
+        private System.Windows.Forms.CheckBox chk12;
+        private System.Windows.Forms.CheckBox chk11;
+        private System.Windows.Forms.CheckBox chk10;
+        private System.Windows.Forms.CheckBox chk6;
+        private System.Windows.Forms.CheckBox chk9;
+        private System.Windows.Forms.CheckBox chk8;
+        private System.Windows.Forms.CheckBox chk7;
+        private System.Windows.Forms.CheckBox chk5;
+        private System.Windows.Forms.CheckBox chk4;
+        private System.Windows.Forms.CheckBox chkGhepTenNgauNhien;
     }
 }
 
