@@ -9,7 +9,6 @@ namespace DoanQueKinhDich.Business
     {
         private const char HRChar = '—';
         
-        protected const string NewLine = "[a]";
         protected const string LeadingSpaces = "  ";
         protected const int DateColumnLen = 15;
         protected const int WordWrapSize = 31;
@@ -225,36 +224,22 @@ namespace DoanQueKinhDich.Business
                 foreach (var list in queLists)
                 {
                     temp = i < list.Count ? list[i] : "";
-                    sb.Append(PaddingString(temp, columnLen));
+                    sb.Append(temp.PadRight(columnLen));
                 }
 
                 sb.AppendLine();
             }
         }
 
-        private static string PaddingString(string text, int columnLen)
-        {
-            return text.PadRight(columnLen);
-        }
-
-        private string GetTuongQueString(Que que)
-        {
-            var tuongQue = $"{que.TuongQue}{NewLine}{Environment.NewLine}{que.YNghia}{NewLine}{Environment.NewLine}{que.ViDu}";
-
-            return tuongQue;
-        }
-
         private List<string> GetWordWrapLines(string text)
         {
             var result = new List<string>();
-
-            var wordWrapString = WordWrap(text, WordWrapSize);
 
             var lines = text.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
             var temp = "";
             for (int i = 0; i < lines.Length; i++)
             {
-                temp = WordWrap(lines[i], WordWrapSize);
+                temp = WordWrapOneLine(lines[i], WordWrapSize);
                 result.AddRange(temp.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries));
             }
 
@@ -268,7 +253,7 @@ namespace DoanQueKinhDich.Business
         /// <param name="width">Width, in characters, to which the text
         /// should be word wrapped</param>
         /// <returns>The modified text</returns>
-        public static string WordWrap(string text, int width)
+        public static string WordWrapOneLine(string text, int width)
         {
             int pos, next;
             StringBuilder sb = new StringBuilder();
