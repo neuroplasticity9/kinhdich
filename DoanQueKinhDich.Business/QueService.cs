@@ -96,7 +96,6 @@ namespace DoanQueKinhDich.Business
 
                 case CachLayQue.TungXu:
                 case CachLayQue.ThoiGianOnly:
-                case CachLayQue.ThoiGianVaSo:
                 case CachLayQue.SoOnly:
                     var sb = new StringBuilder();
                     sb.Append(LeadingSpaces);

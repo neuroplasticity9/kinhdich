@@ -10,13 +10,14 @@ namespace DoanQueKinhDich
 {
     public partial class FormQueThoiGian : Form, IQueLayDuoc
     {
-        private bool _dontUpdateBack = false;
         private Color _normalColor;
         private Color _selectedColor = Color.Blue;
         private List<Button> _diaChiButtons = new List<Button>();
         private LayQueService _layQueService = new LayQueService();
 
         private FormTimTen _formTimTen = new FormTimTen();
+
+        private int _selectedChiCuaGio = 0;
 
         /// <summary>
         /// Constructor.
@@ -36,7 +37,7 @@ namespace DoanQueKinhDich
 
             btnLoadCurrentDateTime.PerformClick();
 
-            _diaChiButtons[cbxGioChi.SelectedIndex].PerformClick();
+            _diaChiButtons[_selectedChiCuaGio].PerformClick();
 
             UpdateGioChiButtonsText();
         }
@@ -60,16 +61,6 @@ namespace DoanQueKinhDich
         public AmLich AmLich { get; private set; }
         public NgayLayQue NgayLayQue => AmLich.ToNgayLayQue();
         public CachLayQue CachLayQue { get; private set; }
-
-        private CanChi GetNguyetKien()
-        {
-            return GetCanChi(cbxThangCan.SelectedIndex, cbxThangChi.SelectedIndex);
-        }
-
-        private CanChi GetNhatThan()
-        {
-            return GetCanChi(cbxNgayCan.SelectedIndex, cbxNgayChi.SelectedIndex);
-        }
 
         private CanChi GetCanChi(int canIndex, int chiIndex)
         {
@@ -174,10 +165,6 @@ namespace DoanQueKinhDich
                     queIndex = _layQueService.GetQueIndexByTime(amLich, txtSoHoacChu.Text);
                     break;
 
-                case CachLayQue.ThoiGianVaSo:
-                    queIndex = _layQueService.GetQueIndexBySoAndTime(amLich, txtQueNgoai1.Text);
-                    break;
-
                 case CachLayQue.SoOnly:
                     queIndex = _layQueService.GetQueIndexBySoAndSo(txtQueNgoai2.Text, txtQueNoi2.Text, amLich, chkCongChiGio.Checked);
                     break;
@@ -194,17 +181,6 @@ namespace DoanQueKinhDich
             CanChi ngayAm = amLich.NgayAm;
             CanChi thangAm = amLich.ThangAm;
             CanChi namAm = amLich.NamAm;
-
-            cbxNgayCan.SelectedIndex = ngayAm.Can.Id - 1;
-            cbxNgayChi.SelectedIndex = ngayAm.Chi.Id - 1;
-            cbxThangCan.SelectedIndex = thangAm.Can.Id - 1;
-            cbxThangChi.SelectedIndex = thangAm.Chi.Id - 1;
-            cbxNamCan.SelectedIndex = namAm.Can.Id - 1;
-            cbxNamChi.SelectedIndex = namAm.Chi.Id - 1;
-
-            DiaChi gioChi = DiaChi.All[cbxGioChi.SelectedIndex];
-            ThienCan gioCan = amLich.GetCanCuaGio(gioChi);
-            cbxGioCan.SelectedIndex = gioCan.Id - 1;
 
             labelNgayDuongLich.Text = $"Ngày dương lịch: {amLich.SolarDate.Year}-{amLich.SolarDate.Month}-{amLich.SolarDate.Day}";
             labelNgayAmLich.Text = $"Ngày âm lịch: {amLich.LunarYear}-{amLich.LunarMonth}-{amLich.LunarDay}";
@@ -224,14 +200,19 @@ namespace DoanQueKinhDich
 
         private void uiHour_ValueChanged(object sender, EventArgs e)
         {
-            _dontUpdateBack = true;
-
             SetChiCuaGio();
-
-            _dontUpdateBack = false;
         }
 
         private void SetChiCuaGio()
+        {
+            int chiIndex = GetCurrentChiCuaGio();
+
+            _selectedChiCuaGio = chiIndex;
+
+            OnUpdatedChiCuaGio(chiIndex);
+        }
+
+        private int GetCurrentChiCuaGio()
         {
             var currentTime = uiHour.Value.TimeOfDay;
 
@@ -252,27 +233,7 @@ namespace DoanQueKinhDich
                 }
             }
 
-            cbxGioChi.SelectedIndex = chiIndex;
-        }
-
-        private void cbxGioChi_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (!_dontUpdateBack)
-            {
-                // Cập nhật giờ dựa vào địa chi đã chọn.
-                var datePart = uiHour.Value.Date;
-                var chiGioIndexSelected = cbxGioChi.SelectedIndex;
-                var newHour = TimeSpan.FromHours(chiGioIndexSelected * 2);
-                var newMinute = TimeSpan.FromMinutes(DuongLich.TimeOfDay.Minutes);
-
-                uiHour.Value = datePart + newHour + newMinute;
-            }
-
-            UpdateButtonsBackColor(cbxGioChi.SelectedIndex);
-
-            radThoiGian.Checked = true;
-
-            GetQue();
+            return chiIndex;
         }
 
         private void radThoiGian_CheckedChanged(object sender, EventArgs e)
@@ -280,7 +241,6 @@ namespace DoanQueKinhDich
             CachLayQue = CachLayQue.ThoiGianOnly;
 
             txtSoHoacChu.Enabled = true;
-            txtQueNgoai1.Enabled = false;
             txtQueNgoai2.Enabled = false;
             txtQueNoi2.Enabled = false;
             chkCongChiGio.Enabled = false;
@@ -290,27 +250,11 @@ namespace DoanQueKinhDich
             GetQue();
         }
 
-        private void radNgoaiSo_CheckedChanged(object sender, EventArgs e)
-        {
-            CachLayQue = CachLayQue.ThoiGianVaSo;
-
-            txtSoHoacChu.Enabled = false;
-            txtQueNgoai1.Enabled = true;
-            txtQueNgoai2.Enabled = false;
-            txtQueNoi2.Enabled = false;
-            chkCongChiGio.Enabled = false;
-            
-            txtQueNgoai1.Focus();
-
-            GetQue();
-        }
-
         private void radioNgoaiSoNoiSo_CheckedChanged(object sender, EventArgs e)
         {
             CachLayQue = CachLayQue.SoOnly;
 
             txtSoHoacChu.Enabled = false;
-            txtQueNgoai1.Enabled = false;
             txtQueNgoai2.Enabled = true;
             txtQueNoi2.Enabled = true;
             chkCongChiGio.Enabled = true;
@@ -428,10 +372,26 @@ namespace DoanQueKinhDich
         /// <param name="e"></param>
         private void btn12DiaChi_Click(object sender, EventArgs e)
         {
-            var index = GetButtonIndex((Button)sender);
-            cbxGioChi.SelectedIndex = index;
-
             radThoiGian.Checked = true;
+
+            var index = GetButtonIndex((Button)sender);
+            _selectedChiCuaGio = index;
+
+            OnUpdatedChiCuaGio(_selectedChiCuaGio);
+
+            GetQue();
+        }
+
+        private void OnUpdatedChiCuaGio(int selectedChiCuaGio)
+        {
+            // Cập nhật giờ dựa vào địa chi đã chọn.
+            var datePart = uiHour.Value.Date;
+            var newHour = TimeSpan.FromHours(selectedChiCuaGio * 2);
+            var newMinute = TimeSpan.FromMinutes(DuongLich.TimeOfDay.Minutes);
+
+            uiHour.Value = datePart + newHour + newMinute;
+
+            UpdateButtonsBackColor(selectedChiCuaGio);
         }
 
         /// <summary>

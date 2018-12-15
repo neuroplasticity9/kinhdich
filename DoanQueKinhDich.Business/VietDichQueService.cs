@@ -50,7 +50,7 @@ namespace DoanQueKinhDich.Business
             var columnLen = DescColumnLen;
             var sb = new StringBuilder();
 
-            if (cachLayQue == CachLayQue.ThoiGianOnly || cachLayQue == CachLayQue.ThoiGianVaSo)
+            if (cachLayQue == CachLayQue.ThoiGianOnly)
             {
                 sb.AppendLine(GetNgayThang(ngayLayQue, cachLayQue));
                 sb.AppendLine();
@@ -78,8 +78,8 @@ namespace DoanQueKinhDich.Business
             AddYNghiaCuaQue(sb, queChu, queHo, queBien);
             sb.AppendLine();
 
-            AddViDuCuaQue(sb, queChu, queHo, queBien);
-            sb.AppendLine();
+            //AddViDuCuaQue(sb, queChu, queHo, queBien);
+            //sb.AppendLine();
 
             sb.AppendLine();
             AddBodyDesc(QueChuDoiDai, QueHoDoiDai, QueBienDoiDai, isHao1Dong, isHao2Dong, isHao3Dong, isHao4Dong, isHao5Dong, isHao6Dong, sb, columnLen);
