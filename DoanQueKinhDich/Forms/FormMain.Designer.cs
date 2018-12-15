@@ -46,7 +46,7 @@
             this.txtQueDesc.Location = new System.Drawing.Point(17, 251);
             this.txtQueDesc.Margin = new System.Windows.Forms.Padding(2);
             this.txtQueDesc.Name = "txtQueDesc";
-            this.txtQueDesc.Size = new System.Drawing.Size(1737, 552);
+            this.txtQueDesc.Size = new System.Drawing.Size(523, 367);
             this.txtQueDesc.TabIndex = 10;
             this.txtQueDesc.TabStop = false;
             this.txtQueDesc.Text = "";

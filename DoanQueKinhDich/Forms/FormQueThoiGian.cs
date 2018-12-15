@@ -144,7 +144,7 @@ namespace DoanQueKinhDich
         {
             QueIndex queIndex = GetQueIndex(CachLayQue, amLich);
 
-            txtDesc.Text = queIndex.Desc;
+            txtCalculationDesc.Text = queIndex.Desc;
 
             ucQueDich.uiNgoaiQuai.SelectedIndex = queIndex.NgoaiQuaiIndex;
             ucQueDich.uiNoiQuai.SelectedIndex = queIndex.NoiQuaiIndex;
@@ -156,6 +156,9 @@ namespace DoanQueKinhDich
             ucQueDich.uiIsHao4Dong.Checked = queIndex.HaoDongNumber == 4;
             ucQueDich.uiIsHao5Dong.Checked = queIndex.HaoDongNumber == 5;
             ucQueDich.uiIsHao6Dong.Checked = queIndex.HaoDongNumber == 6;
+
+            var queService = new VietDichQueService(this);
+            txtQueDesc.Text = queService.GetQueDesc();
         }
 
         private QueIndex GetQueIndex(CachLayQue cachLayQue, AmLich amLich)
@@ -361,19 +364,19 @@ namespace DoanQueKinhDich
         {
             if (e.KeyCode == Keys.F1)
             {
-                btnGo.PerformClick();
+                btnLoadCurrentDateTime.PerformClick();
             }
             else if (e.KeyCode == Keys.F2)
             {
-                btnLoadCurrentDateTime.PerformClick();
+                btnHoc.PerformClick();
             }
             else if (e.KeyCode == Keys.F3)
             {
                 btnTimTen.PerformClick();
             }
-            else if (e.KeyCode == Keys.Escape)
+            else if (e.KeyCode == Keys.F4)
             {
-                this.Close();
+                btnCopy.PerformClick();
             }
         }
 
@@ -439,6 +442,19 @@ namespace DoanQueKinhDich
         private void btn12DiaChi_Enter(object sender, EventArgs e)
         {
             ((Button)sender).PerformClick();
+        }
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(txtQueDesc.Text);
+
+            MessageBox.Show(this, "Đã copy kết quả vào clipboard.");
+        }
+
+        private void btnHoc_Click(object sender, EventArgs e)
+        {
+            var form = new FormQueHoc();
+            form.ShowDialog(this);
         }
     }
 

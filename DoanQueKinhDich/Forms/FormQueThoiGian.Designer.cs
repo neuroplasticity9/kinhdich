@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQueThoiGian));
-            this.btnGo = new System.Windows.Forms.Button();
             this.cbxNgayCan = new System.Windows.Forms.ComboBox();
             this.cbxNgayChi = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -88,23 +87,26 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtSoHoacChu = new System.Windows.Forms.TextBox();
             this.btnTimTen = new System.Windows.Forms.Button();
-            this.txtDesc = new System.Windows.Forms.RichTextBox();
+            this.txtCalculationDesc = new System.Windows.Forms.RichTextBox();
             this.btnLoadCurrentDateTime = new System.Windows.Forms.Button();
+            this.splitContainerMain = new System.Windows.Forms.SplitContainer();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.txtQueDesc = new System.Windows.Forms.RichTextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnCopy = new System.Windows.Forms.Button();
+            this.btnHoc = new System.Windows.Forms.Button();
             this.ucQueDich = new DoanQueKinhDich.UserControls.ucQue();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerMain)).BeginInit();
+            this.splitContainerMain.Panel1.SuspendLayout();
+            this.splitContainerMain.Panel2.SuspendLayout();
+            this.splitContainerMain.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnGo
-            // 
-            this.btnGo.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGo.Location = new System.Drawing.Point(1405, 472);
-            this.btnGo.Name = "btnGo";
-            this.btnGo.Size = new System.Drawing.Size(200, 47);
-            this.btnGo.TabIndex = 3;
-            this.btnGo.Text = "Lấy Quẻ (F1)";
-            this.btnGo.UseVisualStyleBackColor = true;
-            this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
             // 
             // cbxNgayCan
             // 
@@ -401,6 +403,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.labelDongHaoGioTi);
             this.groupBox2.Controls.Add(this.labelNgayDich);
             this.groupBox2.Controls.Add(this.label17);
@@ -445,11 +449,11 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.cbxNamChi);
             this.groupBox2.Font = new System.Drawing.Font("Courier New", 13.77391F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(717, 11);
+            this.groupBox2.Location = new System.Drawing.Point(2, -8);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(1045, 456);
+            this.groupBox2.Size = new System.Drawing.Size(1201, 447);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
@@ -461,9 +465,9 @@
             this.labelDongHaoGioTi.Location = new System.Drawing.Point(6, 310);
             this.labelDongHaoGioTi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelDongHaoGioTi.Name = "labelDongHaoGioTi";
-            this.labelDongHaoGioTi.Size = new System.Drawing.Size(65, 21);
+            this.labelDongHaoGioTi.Size = new System.Drawing.Size(109, 21);
             this.labelDongHaoGioTi.TabIndex = 70;
-            this.labelDongHaoGioTi.Text = "Ngày:";
+            this.labelDongHaoGioTi.Text = "Hào động:";
             // 
             // labelNgayDich
             // 
@@ -481,7 +485,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(452, 416);
+            this.label17.Location = new System.Drawing.Point(479, 413);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(175, 21);
@@ -492,7 +496,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(452, 381);
+            this.label18.Location = new System.Drawing.Point(479, 378);
             this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(175, 21);
@@ -503,7 +507,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(452, 346);
+            this.label19.Location = new System.Drawing.Point(479, 343);
             this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(175, 21);
@@ -514,7 +518,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(452, 311);
+            this.label20.Location = new System.Drawing.Point(479, 308);
             this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(175, 21);
@@ -526,7 +530,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(463, 276);
+            this.label13.Location = new System.Drawing.Point(490, 273);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(164, 21);
@@ -537,7 +541,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(463, 241);
+            this.label14.Location = new System.Drawing.Point(490, 238);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(164, 21);
@@ -548,7 +552,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(463, 206);
+            this.label15.Location = new System.Drawing.Point(490, 203);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(164, 21);
@@ -559,7 +563,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(463, 171);
+            this.label16.Location = new System.Drawing.Point(490, 168);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(153, 21);
@@ -570,7 +574,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(463, 136);
+            this.label11.Location = new System.Drawing.Point(490, 133);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(153, 21);
@@ -581,7 +585,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(463, 101);
+            this.label12.Location = new System.Drawing.Point(490, 98);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(153, 21);
@@ -592,7 +596,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(463, 66);
+            this.label10.Location = new System.Drawing.Point(490, 63);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(153, 21);
@@ -603,7 +607,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(463, 31);
+            this.label9.Location = new System.Drawing.Point(490, 28);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(153, 21);
@@ -612,10 +616,12 @@
             // 
             // btn12Hoi
             // 
+            this.btn12Hoi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn12Hoi.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn12Hoi.Location = new System.Drawing.Point(640, 407);
+            this.btn12Hoi.Location = new System.Drawing.Point(667, 404);
             this.btn12Hoi.Name = "btn12Hoi";
-            this.btn12Hoi.Size = new System.Drawing.Size(400, 36);
+            this.btn12Hoi.Size = new System.Drawing.Size(521, 36);
             this.btn12Hoi.TabIndex = 56;
             this.btn12Hoi.Text = "Hợi (21h-23h)";
             this.btn12Hoi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -625,10 +631,12 @@
             // 
             // btn11Tuat
             // 
+            this.btn11Tuat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn11Tuat.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn11Tuat.Location = new System.Drawing.Point(640, 372);
+            this.btn11Tuat.Location = new System.Drawing.Point(667, 369);
             this.btn11Tuat.Name = "btn11Tuat";
-            this.btn11Tuat.Size = new System.Drawing.Size(400, 36);
+            this.btn11Tuat.Size = new System.Drawing.Size(521, 36);
             this.btn11Tuat.TabIndex = 55;
             this.btn11Tuat.Text = "Tuất (19h-21h)";
             this.btn11Tuat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -638,10 +646,12 @@
             // 
             // btn10Dau
             // 
+            this.btn10Dau.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn10Dau.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn10Dau.Location = new System.Drawing.Point(640, 337);
+            this.btn10Dau.Location = new System.Drawing.Point(667, 334);
             this.btn10Dau.Name = "btn10Dau";
-            this.btn10Dau.Size = new System.Drawing.Size(400, 36);
+            this.btn10Dau.Size = new System.Drawing.Size(521, 36);
             this.btn10Dau.TabIndex = 54;
             this.btn10Dau.Text = "Dậu (17h-19h)";
             this.btn10Dau.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -651,10 +661,12 @@
             // 
             // btn9Than
             // 
+            this.btn9Than.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn9Than.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn9Than.Location = new System.Drawing.Point(640, 302);
+            this.btn9Than.Location = new System.Drawing.Point(667, 299);
             this.btn9Than.Name = "btn9Than";
-            this.btn9Than.Size = new System.Drawing.Size(400, 36);
+            this.btn9Than.Size = new System.Drawing.Size(521, 36);
             this.btn9Than.TabIndex = 53;
             this.btn9Than.Text = "Thân (15h-17h)";
             this.btn9Than.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -664,10 +676,12 @@
             // 
             // btn8Mui
             // 
+            this.btn8Mui.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn8Mui.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn8Mui.Location = new System.Drawing.Point(640, 267);
+            this.btn8Mui.Location = new System.Drawing.Point(667, 264);
             this.btn8Mui.Name = "btn8Mui";
-            this.btn8Mui.Size = new System.Drawing.Size(400, 36);
+            this.btn8Mui.Size = new System.Drawing.Size(521, 36);
             this.btn8Mui.TabIndex = 52;
             this.btn8Mui.Text = "Mùi (13h-15h)";
             this.btn8Mui.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -677,10 +691,12 @@
             // 
             // btn7Ngo
             // 
+            this.btn7Ngo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn7Ngo.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn7Ngo.Location = new System.Drawing.Point(640, 232);
+            this.btn7Ngo.Location = new System.Drawing.Point(667, 229);
             this.btn7Ngo.Name = "btn7Ngo";
-            this.btn7Ngo.Size = new System.Drawing.Size(400, 36);
+            this.btn7Ngo.Size = new System.Drawing.Size(521, 36);
             this.btn7Ngo.TabIndex = 51;
             this.btn7Ngo.Text = "Ngọ (11h-13h)";
             this.btn7Ngo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -690,10 +706,12 @@
             // 
             // btn6Ty
             // 
+            this.btn6Ty.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn6Ty.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn6Ty.Location = new System.Drawing.Point(640, 197);
+            this.btn6Ty.Location = new System.Drawing.Point(667, 194);
             this.btn6Ty.Name = "btn6Ty";
-            this.btn6Ty.Size = new System.Drawing.Size(400, 36);
+            this.btn6Ty.Size = new System.Drawing.Size(521, 36);
             this.btn6Ty.TabIndex = 50;
             this.btn6Ty.Text = "Tỵ (9h-11h)";
             this.btn6Ty.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -703,10 +721,12 @@
             // 
             // btn5Thin
             // 
+            this.btn5Thin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn5Thin.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn5Thin.Location = new System.Drawing.Point(640, 162);
+            this.btn5Thin.Location = new System.Drawing.Point(667, 159);
             this.btn5Thin.Name = "btn5Thin";
-            this.btn5Thin.Size = new System.Drawing.Size(400, 36);
+            this.btn5Thin.Size = new System.Drawing.Size(521, 36);
             this.btn5Thin.TabIndex = 49;
             this.btn5Thin.Text = "Thìn (7h-9h)";
             this.btn5Thin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -716,10 +736,12 @@
             // 
             // btn4Mao
             // 
+            this.btn4Mao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn4Mao.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn4Mao.Location = new System.Drawing.Point(640, 127);
+            this.btn4Mao.Location = new System.Drawing.Point(667, 124);
             this.btn4Mao.Name = "btn4Mao";
-            this.btn4Mao.Size = new System.Drawing.Size(400, 36);
+            this.btn4Mao.Size = new System.Drawing.Size(521, 36);
             this.btn4Mao.TabIndex = 48;
             this.btn4Mao.Text = "Mão (5h-7h)";
             this.btn4Mao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -729,10 +751,12 @@
             // 
             // btn3Dan
             // 
+            this.btn3Dan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn3Dan.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn3Dan.Location = new System.Drawing.Point(640, 92);
+            this.btn3Dan.Location = new System.Drawing.Point(667, 89);
             this.btn3Dan.Name = "btn3Dan";
-            this.btn3Dan.Size = new System.Drawing.Size(400, 36);
+            this.btn3Dan.Size = new System.Drawing.Size(521, 36);
             this.btn3Dan.TabIndex = 47;
             this.btn3Dan.Text = "Dần (3h-5h)";
             this.btn3Dan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -742,10 +766,12 @@
             // 
             // btn2Suu
             // 
+            this.btn2Suu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn2Suu.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn2Suu.Location = new System.Drawing.Point(640, 57);
+            this.btn2Suu.Location = new System.Drawing.Point(667, 54);
             this.btn2Suu.Name = "btn2Suu";
-            this.btn2Suu.Size = new System.Drawing.Size(400, 36);
+            this.btn2Suu.Size = new System.Drawing.Size(521, 36);
             this.btn2Suu.TabIndex = 46;
             this.btn2Suu.Text = "Sửu (1h-3h)";
             this.btn2Suu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -755,10 +781,12 @@
             // 
             // btn1Ti
             // 
+            this.btn1Ti.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn1Ti.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn1Ti.Location = new System.Drawing.Point(640, 22);
+            this.btn1Ti.Location = new System.Drawing.Point(667, 19);
             this.btn1Ti.Name = "btn1Ti";
-            this.btn1Ti.Size = new System.Drawing.Size(400, 36);
+            this.btn1Ti.Size = new System.Drawing.Size(521, 36);
             this.btn1Ti.TabIndex = 13;
             this.btn1Ti.Text = "Tí (23h-1h)";
             this.btn1Ti.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -781,7 +809,7 @@
             // 
             this.radNgoaiSo.AutoSize = true;
             this.radNgoaiSo.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radNgoaiSo.Location = new System.Drawing.Point(29, 268);
+            this.radNgoaiSo.Location = new System.Drawing.Point(29, 241);
             this.radNgoaiSo.Name = "radNgoaiSo";
             this.radNgoaiSo.Size = new System.Drawing.Size(512, 25);
             this.radNgoaiSo.TabIndex = 2;
@@ -805,7 +833,7 @@
             // 
             this.radioNgoaiSoNoiSo.AutoSize = true;
             this.radioNgoaiSoNoiSo.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioNgoaiSoNoiSo.Location = new System.Drawing.Point(28, 114);
+            this.radioNgoaiSoNoiSo.Location = new System.Drawing.Point(28, 105);
             this.radioNgoaiSoNoiSo.Name = "radioNgoaiSoNoiSo";
             this.radioNgoaiSoNoiSo.Size = new System.Drawing.Size(259, 25);
             this.radioNgoaiSoNoiSo.TabIndex = 4;
@@ -815,10 +843,12 @@
             // 
             // txtQueNgoai1
             // 
+            this.txtQueNgoai1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtQueNgoai1.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQueNgoai1.Location = new System.Drawing.Point(193, 304);
+            this.txtQueNgoai1.Location = new System.Drawing.Point(193, 277);
             this.txtQueNgoai1.Name = "txtQueNgoai1";
-            this.txtQueNgoai1.Size = new System.Drawing.Size(444, 29);
+            this.txtQueNgoai1.Size = new System.Drawing.Size(467, 29);
             this.txtQueNgoai1.TabIndex = 3;
             this.txtQueNgoai1.Click += new System.EventHandler(this.onTextBoxEntered);
             this.txtQueNgoai1.TextChanged += new System.EventHandler(this.txtQueNgoai1_TextChanged);
@@ -826,10 +856,12 @@
             // 
             // txtQueNgoai2
             // 
+            this.txtQueNgoai2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtQueNgoai2.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQueNgoai2.Location = new System.Drawing.Point(192, 147);
+            this.txtQueNgoai2.Location = new System.Drawing.Point(192, 138);
             this.txtQueNgoai2.Name = "txtQueNgoai2";
-            this.txtQueNgoai2.Size = new System.Drawing.Size(444, 29);
+            this.txtQueNgoai2.Size = new System.Drawing.Size(467, 29);
             this.txtQueNgoai2.TabIndex = 5;
             this.txtQueNgoai2.Click += new System.EventHandler(this.onTextBoxEntered);
             this.txtQueNgoai2.TextChanged += new System.EventHandler(this.txtQueNgoai1_TextChanged);
@@ -837,10 +869,12 @@
             // 
             // txtQueNoi2
             // 
+            this.txtQueNoi2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtQueNoi2.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQueNoi2.Location = new System.Drawing.Point(192, 182);
+            this.txtQueNoi2.Location = new System.Drawing.Point(192, 173);
             this.txtQueNoi2.Name = "txtQueNoi2";
-            this.txtQueNoi2.Size = new System.Drawing.Size(444, 29);
+            this.txtQueNoi2.Size = new System.Drawing.Size(467, 29);
             this.txtQueNoi2.TabIndex = 6;
             this.txtQueNoi2.Click += new System.EventHandler(this.onTextBoxEntered);
             this.txtQueNoi2.TextChanged += new System.EventHandler(this.txtQueNgoai1_TextChanged);
@@ -850,7 +884,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(79, 307);
+            this.label3.Location = new System.Drawing.Point(79, 280);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(109, 21);
@@ -861,7 +895,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(56, 150);
+            this.label4.Location = new System.Drawing.Point(56, 141);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(131, 21);
@@ -872,7 +906,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(78, 185);
+            this.label7.Location = new System.Drawing.Point(78, 176);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(109, 21);
@@ -881,6 +915,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.chkCongChiGio);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtSoHoacChu);
@@ -894,18 +930,18 @@
             this.groupBox1.Controls.Add(this.txtQueNgoai2);
             this.groupBox1.Controls.Add(this.txtQueNgoai1);
             this.groupBox1.Font = new System.Drawing.Font("Courier New", 13.77391F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(20, 10);
+            this.groupBox1.Location = new System.Drawing.Point(2, -9);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(675, 414);
+            this.groupBox1.Size = new System.Drawing.Size(679, 317);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // chkCongChiGio
             // 
             this.chkCongChiGio.AutoSize = true;
-            this.chkCongChiGio.Location = new System.Drawing.Point(192, 220);
+            this.chkCongChiGio.Location = new System.Drawing.Point(192, 211);
             this.chkCongChiGio.Name = "chkCongChiGio";
             this.chkCongChiGio.Size = new System.Drawing.Size(348, 25);
             this.chkCongChiGio.TabIndex = 58;
@@ -926,10 +962,12 @@
             // 
             // txtSoHoacChu
             // 
+            this.txtSoHoacChu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSoHoacChu.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoHoacChu.Location = new System.Drawing.Point(192, 61);
             this.txtSoHoacChu.Name = "txtSoHoacChu";
-            this.txtSoHoacChu.Size = new System.Drawing.Size(444, 29);
+            this.txtSoHoacChu.Size = new System.Drawing.Size(467, 29);
             this.txtSoHoacChu.TabIndex = 56;
             this.txtSoHoacChu.Click += new System.EventHandler(this.onTextBoxEntered);
             this.txtSoHoacChu.TextChanged += new System.EventHandler(this.txtSoHoacChu_TextChanged);
@@ -938,43 +976,141 @@
             // btnTimTen
             // 
             this.btnTimTen.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimTen.Location = new System.Drawing.Point(850, 472);
+            this.btnTimTen.Location = new System.Drawing.Point(58, 672);
             this.btnTimTen.Margin = new System.Windows.Forms.Padding(2);
             this.btnTimTen.Name = "btnTimTen";
-            this.btnTimTen.Size = new System.Drawing.Size(200, 48);
+            this.btnTimTen.Size = new System.Drawing.Size(268, 48);
             this.btnTimTen.TabIndex = 59;
             this.btnTimTen.Text = "Tìm tên (F3)";
             this.btnTimTen.UseVisualStyleBackColor = true;
             this.btnTimTen.Click += new System.EventHandler(this.btnTimTen_Click);
             // 
-            // txtDesc
+            // txtCalculationDesc
             // 
-            this.txtDesc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtCalculationDesc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDesc.Font = new System.Drawing.Font("Courier New", 14F);
-            this.txtDesc.Location = new System.Drawing.Point(717, 525);
-            this.txtDesc.Margin = new System.Windows.Forms.Padding(2);
-            this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(1045, 151);
-            this.txtDesc.TabIndex = 11;
-            this.txtDesc.TabStop = false;
-            this.txtDesc.Text = "";
+            this.txtCalculationDesc.Font = new System.Drawing.Font("Courier New", 14F);
+            this.txtCalculationDesc.Location = new System.Drawing.Point(3, 3);
+            this.txtCalculationDesc.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCalculationDesc.Name = "txtCalculationDesc";
+            this.txtCalculationDesc.Size = new System.Drawing.Size(1177, 407);
+            this.txtCalculationDesc.TabIndex = 11;
+            this.txtCalculationDesc.TabStop = false;
+            this.txtCalculationDesc.Text = "";
             // 
             // btnLoadCurrentDateTime
             // 
             this.btnLoadCurrentDateTime.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoadCurrentDateTime.Location = new System.Drawing.Point(1091, 472);
+            this.btnLoadCurrentDateTime.Location = new System.Drawing.Point(58, 601);
             this.btnLoadCurrentDateTime.Name = "btnLoadCurrentDateTime";
             this.btnLoadCurrentDateTime.Size = new System.Drawing.Size(268, 47);
             this.btnLoadCurrentDateTime.TabIndex = 12;
-            this.btnLoadCurrentDateTime.Text = "Ngày giờ hiện tại (F2)";
+            this.btnLoadCurrentDateTime.Text = "Ngày giờ hiện tại (F1)";
             this.btnLoadCurrentDateTime.UseVisualStyleBackColor = true;
             this.btnLoadCurrentDateTime.Click += new System.EventHandler(this.btnLoadCurrentDateTime_Click);
             // 
+            // splitContainerMain
+            // 
+            this.splitContainerMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainerMain.Location = new System.Drawing.Point(0, 1);
+            this.splitContainerMain.Name = "splitContainerMain";
+            // 
+            // splitContainerMain.Panel1
+            // 
+            this.splitContainerMain.Panel1.Controls.Add(this.btnHoc);
+            this.splitContainerMain.Panel1.Controls.Add(this.btnCopy);
+            this.splitContainerMain.Panel1.Controls.Add(this.groupBox1);
+            this.splitContainerMain.Panel1.Controls.Add(this.btnTimTen);
+            this.splitContainerMain.Panel1.Controls.Add(this.btnLoadCurrentDateTime);
+            this.splitContainerMain.Panel1.Controls.Add(this.ucQueDich);
+            // 
+            // splitContainerMain.Panel2
+            // 
+            this.splitContainerMain.Panel2.Controls.Add(this.tabControl1);
+            this.splitContainerMain.Panel2.Controls.Add(this.groupBox2);
+            this.splitContainerMain.Size = new System.Drawing.Size(1895, 885);
+            this.splitContainerMain.SplitterDistance = 686;
+            this.splitContainerMain.TabIndex = 60;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(3, 444);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1192, 438);
+            this.tabControl1.TabIndex = 1;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.txtQueDesc);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1184, 412);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Kết quả";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // txtQueDesc
+            // 
+            this.txtQueDesc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtQueDesc.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.txtQueDesc.Location = new System.Drawing.Point(3, 3);
+            this.txtQueDesc.Margin = new System.Windows.Forms.Padding(2);
+            this.txtQueDesc.Name = "txtQueDesc";
+            this.txtQueDesc.Size = new System.Drawing.Size(1177, 407);
+            this.txtQueDesc.TabIndex = 11;
+            this.txtQueDesc.TabStop = false;
+            this.txtQueDesc.Text = "";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.txtCalculationDesc);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1184, 412);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Tính toán";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnCopy
+            // 
+            this.btnCopy.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCopy.Location = new System.Drawing.Point(375, 672);
+            this.btnCopy.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.Size = new System.Drawing.Size(268, 48);
+            this.btnCopy.TabIndex = 60;
+            this.btnCopy.Text = "Copy Kết Quả (F4)";
+            this.btnCopy.UseVisualStyleBackColor = true;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
+            // 
+            // btnHoc
+            // 
+            this.btnHoc.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHoc.Location = new System.Drawing.Point(375, 601);
+            this.btnHoc.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHoc.Name = "btnHoc";
+            this.btnHoc.Size = new System.Drawing.Size(268, 48);
+            this.btnHoc.TabIndex = 61;
+            this.btnHoc.Text = "Học 64 Quẻ (F2)";
+            this.btnHoc.UseVisualStyleBackColor = true;
+            this.btnHoc.Click += new System.EventHandler(this.btnHoc_Click);
+            // 
             // ucQueDich
             // 
-            this.ucQueDich.Location = new System.Drawing.Point(20, 442);
+            this.ucQueDich.Location = new System.Drawing.Point(3, 337);
             this.ucQueDich.Name = "ucQueDich";
             this.ucQueDich.Size = new System.Drawing.Size(695, 241);
             this.ucQueDich.TabIndex = 2;
@@ -983,33 +1119,31 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1781, 692);
-            this.Controls.Add(this.btnTimTen);
-            this.Controls.Add(this.btnLoadCurrentDateTime);
-            this.Controls.Add(this.txtDesc);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.ucQueDich);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.btnGo);
+            this.ClientSize = new System.Drawing.Size(1897, 887);
+            this.Controls.Add(this.splitContainerMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "FormQueThoiGian";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Lấy Quẻ Theo Thời Gian";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Lấy Quẻ Dịch";
             this.Load += new System.EventHandler(this.Main_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormQueThoiGian_KeyDown);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.splitContainerMain.Panel1.ResumeLayout(false);
+            this.splitContainerMain.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerMain)).EndInit();
+            this.splitContainerMain.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btnGo;
         private System.Windows.Forms.ComboBox cbxNgayCan;
         private System.Windows.Forms.ComboBox cbxNgayChi;
         private System.Windows.Forms.Label label1;
@@ -1041,7 +1175,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtSoHoacChu;
-        private System.Windows.Forms.RichTextBox txtDesc;
+        private System.Windows.Forms.RichTextBox txtCalculationDesc;
         private System.Windows.Forms.Button btnLoadCurrentDateTime;
         private System.Windows.Forms.Button btn12Hoi;
         private System.Windows.Forms.Button btn11Tuat;
@@ -1071,6 +1205,13 @@
         private System.Windows.Forms.CheckBox chkCongChiGio;
         private System.Windows.Forms.Label labelDongHaoGioTi;
         private System.Windows.Forms.Button btnTimTen;
+        private System.Windows.Forms.SplitContainer splitContainerMain;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.RichTextBox txtQueDesc;
+        private System.Windows.Forms.Button btnCopy;
+        private System.Windows.Forms.Button btnHoc;
     }
 }
 

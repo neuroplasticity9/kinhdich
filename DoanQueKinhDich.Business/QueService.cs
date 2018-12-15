@@ -9,7 +9,7 @@ namespace DoanQueKinhDich.Business
     {
         private const char HRChar = '—';
         
-        protected const string LeadingSpaces = "  ";
+        protected const string LeadingSpaces = " ";
         protected const int DateColumnLen = 15;
         protected const int WordWrapSize = 31;
         protected const int DescColumnLen = 35;

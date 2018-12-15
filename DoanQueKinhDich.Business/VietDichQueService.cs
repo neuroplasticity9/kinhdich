@@ -50,8 +50,6 @@ namespace DoanQueKinhDich.Business
             var columnLen = DescColumnLen;
             var sb = new StringBuilder();
 
-            sb.AppendLine();
-
             if (cachLayQue == CachLayQue.ThoiGianOnly || cachLayQue == CachLayQue.ThoiGianVaSo)
             {
                 sb.AppendLine(GetNgayThang(ngayLayQue, cachLayQue));
