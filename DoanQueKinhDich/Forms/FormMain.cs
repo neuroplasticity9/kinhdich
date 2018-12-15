@@ -8,7 +8,6 @@ namespace DoanQueKinhDich
     public partial class FormMain : Form, IQueLayDuoc
     {
         private FormQueThoiGian _formQueThoiGian = new FormQueThoiGian();
-        private FormTimTen _formTimTen = new FormTimTen();
 
         public FormMain()
         {
@@ -145,15 +144,7 @@ namespace DoanQueKinhDich
             {
                 btnHoc.PerformClick();
             }
-            else if (e.KeyCode == Keys.F3)
-            {
-                btnTimTen.PerformClick();
-            }
         }
 
-        private void btnTimTen_Click(object sender, EventArgs e)
-        {
-            _formTimTen.ShowDialog(this);
-        }
     }
 }

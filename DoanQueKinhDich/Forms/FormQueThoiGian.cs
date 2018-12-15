@@ -14,8 +14,9 @@ namespace DoanQueKinhDich
         private Color _normalColor;
         private Color _selectedColor = Color.Blue;
         private List<Button> _diaChiButtons = new List<Button>();
-
         private LayQueService _layQueService = new LayQueService();
+
+        private FormTimTen _formTimTen = new FormTimTen();
 
         /// <summary>
         /// Constructor.
@@ -366,10 +367,19 @@ namespace DoanQueKinhDich
             {
                 btnLoadCurrentDateTime.PerformClick();
             }
+            else if (e.KeyCode == Keys.F3)
+            {
+                btnTimTen.PerformClick();
+            }
             else if (e.KeyCode == Keys.Escape)
             {
                 this.Close();
             }
+        }
+
+        private void btnTimTen_Click(object sender, EventArgs e)
+        {
+            _formTimTen.ShowDialog(this);
         }
 
         private void onTextBoxEntered(object sender, EventArgs e)

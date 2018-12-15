@@ -87,6 +87,7 @@
             this.chkCongChiGio = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtSoHoacChu = new System.Windows.Forms.TextBox();
+            this.btnTimTen = new System.Windows.Forms.Button();
             this.txtDesc = new System.Windows.Forms.RichTextBox();
             this.btnLoadCurrentDateTime = new System.Windows.Forms.Button();
             this.ucQueDich = new DoanQueKinhDich.UserControls.ucQue();
@@ -97,9 +98,9 @@
             // btnGo
             // 
             this.btnGo.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGo.Location = new System.Drawing.Point(1009, 472);
+            this.btnGo.Location = new System.Drawing.Point(1405, 472);
             this.btnGo.Name = "btnGo";
-            this.btnGo.Size = new System.Drawing.Size(202, 47);
+            this.btnGo.Size = new System.Drawing.Size(200, 47);
             this.btnGo.TabIndex = 3;
             this.btnGo.Text = "Lấy Quẻ (F1)";
             this.btnGo.UseVisualStyleBackColor = true;
@@ -794,9 +795,9 @@
             this.radThoiGian.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radThoiGian.Location = new System.Drawing.Point(29, 28);
             this.radThoiGian.Name = "radThoiGian";
-            this.radThoiGian.Size = new System.Drawing.Size(479, 25);
+            this.radThoiGian.Size = new System.Drawing.Size(259, 25);
             this.radThoiGian.TabIndex = 0;
-            this.radThoiGian.Text = "Dùng thời gian cho ngoại quái và nội quái";
+            this.radThoiGian.Text = "Công thức hữu thường:";
             this.radThoiGian.UseVisualStyleBackColor = true;
             this.radThoiGian.CheckedChanged += new System.EventHandler(this.radThoiGian_CheckedChanged);
             // 
@@ -806,9 +807,9 @@
             this.radioNgoaiSoNoiSo.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioNgoaiSoNoiSo.Location = new System.Drawing.Point(28, 114);
             this.radioNgoaiSoNoiSo.Name = "radioNgoaiSoNoiSo";
-            this.radioNgoaiSoNoiSo.Size = new System.Drawing.Size(413, 25);
+            this.radioNgoaiSoNoiSo.Size = new System.Drawing.Size(259, 25);
             this.radioNgoaiSoNoiSo.TabIndex = 4;
-            this.radioNgoaiSoNoiSo.Text = "Dùng số cho ngoại quái và nội quái:";
+            this.radioNgoaiSoNoiSo.Text = "Công thức bất thường:";
             this.radioNgoaiSoNoiSo.UseVisualStyleBackColor = true;
             this.radioNgoaiSoNoiSo.CheckedChanged += new System.EventHandler(this.radioNgoaiSoNoiSo_CheckedChanged);
             // 
@@ -934,6 +935,18 @@
             this.txtSoHoacChu.TextChanged += new System.EventHandler(this.txtSoHoacChu_TextChanged);
             this.txtSoHoacChu.Enter += new System.EventHandler(this.onTextBoxEntered);
             // 
+            // btnTimTen
+            // 
+            this.btnTimTen.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimTen.Location = new System.Drawing.Point(850, 472);
+            this.btnTimTen.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTimTen.Name = "btnTimTen";
+            this.btnTimTen.Size = new System.Drawing.Size(200, 48);
+            this.btnTimTen.TabIndex = 59;
+            this.btnTimTen.Text = "Tìm tên (F3)";
+            this.btnTimTen.UseVisualStyleBackColor = true;
+            this.btnTimTen.Click += new System.EventHandler(this.btnTimTen_Click);
+            // 
             // txtDesc
             // 
             this.txtDesc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -951,7 +964,7 @@
             // btnLoadCurrentDateTime
             // 
             this.btnLoadCurrentDateTime.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoadCurrentDateTime.Location = new System.Drawing.Point(717, 472);
+            this.btnLoadCurrentDateTime.Location = new System.Drawing.Point(1091, 472);
             this.btnLoadCurrentDateTime.Name = "btnLoadCurrentDateTime";
             this.btnLoadCurrentDateTime.Size = new System.Drawing.Size(268, 47);
             this.btnLoadCurrentDateTime.TabIndex = 12;
@@ -971,6 +984,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1781, 692);
+            this.Controls.Add(this.btnTimTen);
             this.Controls.Add(this.btnLoadCurrentDateTime);
             this.Controls.Add(this.txtDesc);
             this.Controls.Add(this.groupBox1);
@@ -1056,6 +1070,7 @@
         private System.Windows.Forms.Label labelNgayDich;
         private System.Windows.Forms.CheckBox chkCongChiGio;
         private System.Windows.Forms.Label labelDongHaoGioTi;
+        private System.Windows.Forms.Button btnTimTen;
     }
 }
 
