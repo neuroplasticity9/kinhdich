@@ -183,7 +183,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(623, 634);
+            this.groupBox2.Size = new System.Drawing.Size(623, 638);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
@@ -685,7 +685,7 @@
             this.txtCalculationDesc.Location = new System.Drawing.Point(3, 3);
             this.txtCalculationDesc.Margin = new System.Windows.Forms.Padding(2);
             this.txtCalculationDesc.Name = "txtCalculationDesc";
-            this.txtCalculationDesc.Size = new System.Drawing.Size(1177, 407);
+            this.txtCalculationDesc.Size = new System.Drawing.Size(1186, 443);
             this.txtCalculationDesc.TabIndex = 11;
             this.txtCalculationDesc.TabStop = false;
             this.txtCalculationDesc.Text = "";
@@ -757,7 +757,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(3, 241);
+            this.tabControl1.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Location = new System.Drawing.Point(12, 241);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1166, 637);
@@ -766,10 +767,11 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.txtQueDesc);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage1.Location = new System.Drawing.Point(4, 30);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1158, 611);
+            this.tabPage1.Size = new System.Drawing.Size(1158, 603);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Kết quả";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -783,7 +785,7 @@
             this.txtQueDesc.Location = new System.Drawing.Point(3, 3);
             this.txtQueDesc.Margin = new System.Windows.Forms.Padding(2);
             this.txtQueDesc.Name = "txtQueDesc";
-            this.txtQueDesc.Size = new System.Drawing.Size(1151, 606);
+            this.txtQueDesc.Size = new System.Drawing.Size(1151, 598);
             this.txtQueDesc.TabIndex = 11;
             this.txtQueDesc.TabStop = false;
             this.txtQueDesc.Text = "";
@@ -791,10 +793,11 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.txtCalculationDesc);
+            this.tabPage2.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1149, 575);
+            this.tabPage2.Size = new System.Drawing.Size(1158, 611);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Tính toán";
             this.tabPage2.UseVisualStyleBackColor = true;
