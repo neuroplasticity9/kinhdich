@@ -37,9 +37,9 @@ namespace DoanQueKinhDich.Business
             };
 
             var sb = new StringBuilder();
-            sb.AppendLine($"1. Ngoại quái: năm {amLich.NamAm.Chi.Name} {amLich.NamAm.Chi.Id} + tháng {amLich.LunarMonth} + ngày {amLich.LunarDay} + số {soHoacChu} = {tongNgoaiQuai} % 8 = {queIndex.NgoaiQuaiIndex + 1} = quẻ {BatQuai.All[queIndex.NgoaiQuaiIndex].Name}");
+            sb.AppendLine($"1. Ngoại quái: năm {amLich.NamAm.Chi.Name} {amLich.NamAm.Chi.Id} + tháng {amLich.LunarMonth} + ngày {amLich.LunarDay} = {tongNgoaiQuai} % 8 = {queIndex.NgoaiQuaiIndex + 1} = quẻ {BatQuai.All[queIndex.NgoaiQuaiIndex].Name}");
             sb.AppendLine();
-            sb.AppendLine($"2. Nội quái:   năm {amLich.NamAm.Chi.Name} {amLich.NamAm.Chi.Id} + tháng {amLich.LunarMonth} + ngày {amLich.LunarDay} + số {soHoacChu} + giờ {amLich.GioAm.Chi.Name} {amLich.GioAm.Chi.Id} = {tongNoiQuai} % 8 = {queIndex.NoiQuaiIndex + 1} = quẻ {BatQuai.All[queIndex.NoiQuaiIndex].Name}");
+            sb.AppendLine($"2. Nội quái:   năm {amLich.NamAm.Chi.Name} {amLich.NamAm.Chi.Id} + tháng {amLich.LunarMonth} + ngày {amLich.LunarDay} + giờ {amLich.GioAm.Chi.Name} {amLich.GioAm.Chi.Id} = {tongNoiQuai} % 8 = {queIndex.NoiQuaiIndex + 1} = quẻ {BatQuai.All[queIndex.NoiQuaiIndex].Name}");
             sb.AppendLine();
             sb.AppendLine($"3. Động hào:   tổng nội quái {tongNoiQuai} % 6 = {queIndex.HaoDongNumber}");
 

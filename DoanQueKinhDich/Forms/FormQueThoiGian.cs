@@ -101,7 +101,7 @@ namespace DoanQueKinhDich
 
         private void UpdateGioChiButtonsText()
         {
-            var listQueTrong1Ngay = _layQueService.GetAllQueIndexesForADay(AmLich, txtSoHoacChu.Text);
+            var listQueTrong1Ngay = _layQueService.GetAllQueIndexesForADay(AmLich, "");
 
             for (int i = 0; i < _diaChiButtons.Count; i++)
             {
@@ -111,16 +111,14 @@ namespace DoanQueKinhDich
             QueIndex queGioMui = listQueTrong1Ngay[7];
             int dongHaoGioTi = queGioMui.HaoDongNumber - 1 <= 0 ? 6 : queGioMui.HaoDongNumber - 1;
 
-            labelNgayDich.Text = $"Ngày {queGioMui.GetQueChu().NgoaiQuai.Tuong.PadRight(5)}  Giờ Mùi động hào {queGioMui.HaoDongNumber}";
-            labelDongHaoGioTi.Text = $"            Giờ Tí  động hào {dongHaoGioTi}";
+            labelNgayDich.Text = $"Ngày {queGioMui.GetQueChu().NgoaiQuai.Tuong}.  Giờ Mùi động hào {queGioMui.HaoDongNumber}";
         }
 
         private string GetButtonText(QueIndex queIndex)
         {
             LucThu thu = LucThu.GetLucThu(AmLich.NgayAm.Can, queIndex.HaoDongNumber - 1);
 
-
-            return $"{queIndex.GetQueChu().NameShort} → {queIndex.GetQueBien().NameShort} ({thu.Name})";
+            return $"{queIndex.GetQueChu().NameShort} → {queIndex.GetQueBien().NameShort} ({thu.Name} - {queIndex.HaoDongNumber})";
         }
 
         private void GetQue()
@@ -163,7 +161,7 @@ namespace DoanQueKinhDich
                     break;
 
                 case CachLayQue.ThoiGianOnly:
-                    queIndex = _layQueService.GetQueIndexByTime(amLich, txtSoHoacChu.Text);
+                    queIndex = _layQueService.GetQueIndexByTime(amLich, "");
                     break;
 
                 case CachLayQue.SoOnly:
@@ -241,12 +239,9 @@ namespace DoanQueKinhDich
         {
             CachLayQue = CachLayQue.ThoiGianOnly;
 
-            txtSoHoacChu.Enabled = true;
             txtQueNgoai2.Enabled = false;
             txtQueNoi2.Enabled = false;
             chkCongChiGio.Enabled = false;
-
-            txtSoHoacChu.Focus();
 
             GetQue();
         }
@@ -255,7 +250,6 @@ namespace DoanQueKinhDich
         {
             CachLayQue = CachLayQue.SoOnly;
 
-            txtSoHoacChu.Enabled = false;
             txtQueNgoai2.Enabled = true;
             txtQueNoi2.Enabled = true;
             chkCongChiGio.Enabled = true;
