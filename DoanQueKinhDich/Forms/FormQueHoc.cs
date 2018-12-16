@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Windows.Forms;
 using DoanQueKinhDich.Business;
 using DoanQueKinhDich.UserControls;
@@ -8,8 +9,6 @@ namespace DoanQueKinhDich
 {
     public partial class FormQueHoc : Form
     {
-        private bool _luonHienKetQua = false;
-
         public FormQueHoc()
         {
             InitializeComponent();
@@ -25,7 +24,6 @@ namespace DoanQueKinhDich
         private void Main_Load(object sender, EventArgs e)
         {
             btnGo.PerformClick();
-            btnShowResult.PerformClick();
         }
 
         private void btnGo_Click(object sender, EventArgs e)
@@ -35,31 +33,41 @@ namespace DoanQueKinhDich
 
             var que = Que.All[index];
             ucQueDon.SetQue(que);
+
+            HienThiKetQua();
         }
 
-        private void btnShowResult_Click(object sender, EventArgs e)
+        private void HienThiKetQua()
         {
-            _luonHienKetQua = !_luonHienKetQua;
+            var que = ucQueDon.GetQue();
+            //labelKetQua.Text = $"{que.Name}";
+            txtDesc.Text = GetQueDescDeHoc(que);
 
-            UpdateKetQua();
         }
 
-        private void UpdateKetQua()
+        private string GetQueDescDeHoc(Que que)
         {
-            if (_luonHienKetQua)
-            {
-                btnShowResult.Text = "Giấu kết quả (F2)";
+            var sb = new StringBuilder();
 
-                var que = ucQueDon.GetQue();
-                labelKetQua.Text = $"{que.Name}";
-                txtDesc.Text = que.GetQueDesc();
-            }
-            else
+            if (chkHienTenQue.Checked)
             {
-                btnShowResult.Text = "Hiện kết quả (F2)";
-                labelKetQua.Text = "";
-                txtDesc.Text = "";
+                sb.AppendLine(que.Name);
+                sb.AppendLine();
             }
+
+            if (chkHienNghia.Checked)
+            {
+                sb.AppendLine(que.YNghia);
+                sb.AppendLine();
+            }
+
+            if (chkHienTuong.Checked)
+            {
+                sb.AppendLine(que.TuongQue);
+                sb.AppendLine();
+            }
+
+            return sb.ToString();
         }
 
         private void FormQueHoc_KeyDown(object sender, KeyEventArgs e)
@@ -67,10 +75,6 @@ namespace DoanQueKinhDich
             if (e.KeyCode == Keys.F1)
             {
                 btnGo.PerformClick();
-            }
-            else if (e.KeyCode == Keys.F2)
-            {
-                btnShowResult.PerformClick();
             }
             else if (e.KeyCode == Keys.Escape)
             {
@@ -80,10 +84,12 @@ namespace DoanQueKinhDich
 
         private void ucQueDon_CheckedChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtDesc.Text))
-            {
-                UpdateKetQua();
-            }
+            HienThiKetQua();
+        }
+
+        private void chkHienTuong_CheckedChanged(object sender, EventArgs e)
+        {
+            HienThiKetQua();
         }
     }
 }

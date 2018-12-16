@@ -16,6 +16,7 @@ namespace DoanQueKinhDich
         private LayQueService _layQueService = new LayQueService();
 
         private FormTimTen _formTimTen = new FormTimTen();
+        private FormQueHoc _formHoc = new FormQueHoc();
 
         private int _selectedChiCuaGio = 0;
 
@@ -413,8 +414,7 @@ namespace DoanQueKinhDich
 
         private void btnHoc_Click(object sender, EventArgs e)
         {
-            var form = new FormQueHoc();
-            form.ShowDialog(this);
+            _formHoc.ShowDialog(this);
         }
     }
 
