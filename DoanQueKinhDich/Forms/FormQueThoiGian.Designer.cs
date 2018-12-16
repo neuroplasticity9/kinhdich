@@ -685,7 +685,7 @@
             this.txtCalculationDesc.Location = new System.Drawing.Point(3, 3);
             this.txtCalculationDesc.Margin = new System.Windows.Forms.Padding(2);
             this.txtCalculationDesc.Name = "txtCalculationDesc";
-            this.txtCalculationDesc.Size = new System.Drawing.Size(1186, 443);
+            this.txtCalculationDesc.Size = new System.Drawing.Size(1151, 598);
             this.txtCalculationDesc.TabIndex = 11;
             this.txtCalculationDesc.TabStop = false;
             this.txtCalculationDesc.Text = "";
@@ -794,10 +794,10 @@
             // 
             this.tabPage2.Controls.Add(this.txtCalculationDesc);
             this.tabPage2.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 30);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1158, 611);
+            this.tabPage2.Size = new System.Drawing.Size(1158, 603);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Tính toán";
             this.tabPage2.UseVisualStyleBackColor = true;
